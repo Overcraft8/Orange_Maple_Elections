@@ -592,7 +592,7 @@ table {
   font-size: 14px !important;
   line-height: 1.5em !important;
   font-weight: 500 !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   transform: translateY(5px);
   text-align: center;
 }

@@ -38,18 +38,18 @@ Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="Social Democratic Party of Canada"> CCF </span>!}: [+ ccf_r +]%
+{!<span class="tooltip-text" title="Co-operative Commonwealth Federation">!}[? if not ccf_name: NDP?][? if ccf_name != 0 : [+ ccf_name +]?]{!</span>!}: [+ ccf_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="RPC Party + Bavarian People's Party"> RPC </span>!}: [+ rpc_r +]%
+{!<span class="tooltip-text" title="Reconstruction Party">!}[? if not rpc_name: RPC?][? if rpc_name != 0 : [+ rpc_name +]?]{!</span>!}: [+ rpc_r +]%
 # 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="Communist Party of Canada"> CP</span> !}: [+ cp_r +]%
+{!<span class="tooltip-text" title="Communist Party of Canada">!}[? if not cp_name: LPC?][? if cp_name != 0 : [+ cp_name +]?]{!</span>!}: [+ cp_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-{!<span class="tooltip-text" title="Canadian Democratic Party">!}[? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]{!</span>!}: [+ lpc_r +]%
+{!<span class="tooltip-text" title="Liberal Party">!}[? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]{!</span>!}: [+ lpc_r +]%
 # 1928: 9, 1930: 5
-{!<span class="tooltip-text" title="Canadian People's Party"> CPC </span>!}: [+ cpc_r +]%
+{!<span class="tooltip-text" title="Conservative Party>!}[? if not cpc_name: CPC?][? if cpc_name != 0 : [+ cpc_name +]?]{!</span>!}: [+ cpc_r +]%
 # 1928: 14, 1930: 7
-{!<span class="tooltip-text" title="Canadian National People's Party"> SCP </span>!}: [+ scp_r +]%
+{!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</span>!}: [+ scp_r +]%
 # 1928: 3, 1930: 18
 {!<span class="tooltip-text" title="National-Socialist Canadian Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_r +]%
 # 1928: 9, 1930: 10

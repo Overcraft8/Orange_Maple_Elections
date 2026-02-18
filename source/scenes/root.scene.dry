@@ -326,7 +326,6 @@ Q.catholics_other = 6;
 // Current Commons composition
 // % of Commons in Jan 1928
 // source: wikipedia
-// note: the RPC figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.ccf_r = 0;

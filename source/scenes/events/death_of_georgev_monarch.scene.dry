@@ -268,7 +268,7 @@ go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
 The RPC Party is convinced! They will be supporting [+ ccf_candidate +] for the election.
 
-[? if rpc_relation < 40 : Unfortunately, the BVP is breaking with the RPC on this election, supporting Seldte of the SCP instead.  ?]
+[? if rpc_relation < 40 : Unfortunately, the is breaking with the RPC on this election, supporting Seldte of the SCP instead.  ?]
 
 @rpc_partial
 
@@ -286,7 +286,7 @@ go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
 With our resources, the RPC are convinced to support [+ ccf_candidate +]. Konrad Adenauer will drop out of the race.
 
-[? if rpc_relation < 40 and scp_candidate = "Seldte" : Unfortunately, the BVP is breaking with the RPC on this election, supporting Seldte of the SCP instead.  ?]
+[? if rpc_relation < 40 and scp_candidate = "Seldte" : Unfortunately, the is breaking with the RPC on this election, supporting Seldte of the SCP instead.  ?]
 
 
 @convince_lpc_unity

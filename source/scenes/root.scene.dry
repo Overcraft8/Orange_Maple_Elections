@@ -198,6 +198,42 @@ Q.capital_strike_progress = 0;
 
 Q.budget = 4;
 
+
+//District data
+//All seat numbers for each district are based of the 1984
+//Displayed one
+Q.district_name = "Name Of";
+Q.district_sinhala = 0;
+Q.district_sltamil = 0;
+Q.district_itamil = 0;
+Q.district_muslim = 0;
+Q.district_other = 0;
+
+Q.district_worker = 0;
+Q.district_middle = 0;
+Q.district_upper = 0;
+Q.district_rural = 0;
+
+Q.district_control = 10;
+Q.district_infastructure = 0;
+Q.district_seats = 0;
+Q.district_industries = ['Major industries'];
+
+//mannar
+Q.mannar_d_sinhala = 8.2;
+Q.mannar_d_sltamil = 51.3;
+Q.mannar_d_itamil = 13.0;
+Q.mannar_d_muslim = 26.1;
+Q.mannar_d_other = 1.4;
+
+Q.mannar_d_upper = 1;
+Q.mannar_d_middle = 9;
+Q.mannar_d_worker = 11;
+Q.mannar_d_rural = 79;
+
+Q.mannar_d_seats = 5;
+Q.mannar_d_pop_weight = 0.72;
+
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
 Q.workers = 48; // industry and trade

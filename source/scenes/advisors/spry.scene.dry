@@ -1,7 +1,7 @@
 title: Graham Spry
 is-pinned-card: true
 tags: advisor
-card-image: img/portraits/SpryGraham.jpeg
+card-image: img/portraits/SpryGraham.jpg
 view-if: spry_advisor = 1
 new-page: true 
 

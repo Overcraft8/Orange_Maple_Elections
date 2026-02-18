@@ -256,8 +256,8 @@ if (window && d3) {
 
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromRPC(true).smallToBig(true);
-    parliament.exit.toRPC(false).bigToSmall(true);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#commons").datum(data).call(parliament);
 }
 !}

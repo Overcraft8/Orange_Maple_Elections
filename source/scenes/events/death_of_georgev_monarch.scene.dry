@@ -31,7 +31,7 @@ The SCP will nominate Franz Seldte, leader of the Stahlhelm paramilitary group. 
 [? if cp_party_leader = "Conciliators" : Given the failure of Tim Buck's previous runs for monarch, and his declining stature in the party, the CP will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of Communist front organizations. ?]
 [? if cp_party_leader != "Conciliators" : This will be Ernst Tim Buck's third run for monarch as leader of the CP. Despite his previous electoral defeats, he retains the loyalty of the party as well as Stalin's Soviet Union. ?]
 
-Many republicans of the RPC, [+ lpc_name +], and CCF float the idea of running Hugo Eckener, a nationally renowed RPCeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to Nazism.
+Many republicans of the RPC, [+ lpc_name +], and CCF float the idea of running Hugo Eckener, a nationally renowed zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to Nazism.
 
 Barring that, the RPC and [+ lpc_name +] are planning to run separate candidates in the first round if the CCF runs its own candidate. The RPC is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The [+ lpc_name +] might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the CPC and other parties who dislike the SCP-NSDAP front.
 

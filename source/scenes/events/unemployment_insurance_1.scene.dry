@@ -49,7 +49,7 @@ Fine. If the bourgeoisie wish to blow up the government, let them do so. Sociali
 
 [? if prime_minister_party = "CCF" : Heinrich Brüning of the RPC Party has been appointed Prime Minister. ?] Brüning now leads an all-bourgeois cabinet. Using the emergency powers of Article 48, Brüning and Monarch George V have passed the welfare cuts over the objections of the Reichstag.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
 @accept
 on-arrival: workers_ccf -= 0.15*workers_ccf; unemployed_ccf -= 0.3*unemployed_ccf; workers_cp += 7; workers_nsdap += 7; unemployed_cp += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; month += 1; pro_republic -= 4; cp_relation -= 8; inflation -= 2; economic_growth -= 0.6

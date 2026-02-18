@@ -31,7 +31,7 @@ call: set_next_election_time
 
 We have broken with the [+ prime_minister +] government, and have voted against them in a vote of no confidence. Welfare has been saved, but at what cost?
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
 
 @vote_yes

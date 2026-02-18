@@ -91,11 +91,11 @@ on-arrival: prime_minister = "Brüning"; prime_minister_party = "RPC"; welfare -
 
 The vote succeeds, and our government has resigned. Prime Minister Brüning has been appointed as the head of an acting government, consisting solely of the bourgeois parties. He immediately proceeds to cut welfare spending substantially.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
 @let_it_happen_woodsworth
 on-arrival: ccf_caretaker = 1
 
 The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of a caretaker government, but no longer has the power to enact new policies.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].

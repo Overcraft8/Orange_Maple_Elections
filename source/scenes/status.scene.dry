@@ -57,7 +57,7 @@ Others: [+ other_r +]%
 
 [? if ccf_in_government = 1 : Budget: [+ budget +] ?]
 
-Next election: [+ next_election_month : month +] [+ next_election_year +]
+Next Parliamentary Election: [+ next_parl_election_month : month +] [+ next_parl_election_year +]
 
 = Economics
 
@@ -66,7 +66,6 @@ Inflation: [+ inflation_2 +]%
 [? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
 
 Economic growth: [+ economic_growth_2 +]%
-
 
 
 # = Public Opinion

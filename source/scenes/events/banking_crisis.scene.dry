@@ -45,4 +45,4 @@ call: set_next_election_time
 
 We are tired of [+ prime_minister +]'s policy of austerity. After [+ prime_minister +]'s attempt to use emergency powers to pass another welfare cut, we have worked with the other parties to reverse this policy. In response, the Reichstag has been dissolved, and new elections called.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].

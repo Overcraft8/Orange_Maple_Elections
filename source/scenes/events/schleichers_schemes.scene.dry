@@ -48,7 +48,7 @@ call: set_next_election_time
 
 # hack to set next election time
 
-The scheme has succeeded - there is a majority in the Reichstag backing Schleicher. New elections have been tentatively set for [+ next_election_month : month +] [+ next_election_year +].
+The scheme has succeeded - there is a majority in the Reichstag backing Schleicher. New elections have been tentatively set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
 @schleicher_failed
 

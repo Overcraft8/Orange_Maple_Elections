@@ -45,7 +45,7 @@ call: set_next_election_time
 
 With the support of the CP and [+ lpc_name +], we have successfully stopped the formation of the customs union. This results in the fall of the [+ prime_minister +] government.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
 @end_toleration_fail
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2

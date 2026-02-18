@@ -58,4 +58,4 @@ choose-if: advisor_action_timer == 0 and (prime_minister == "Coldwell")
 on-arrival: advisor_action_timer = 6; time_to_election = 3
 call: set_next_election_time
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+We have called for new elections, set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].

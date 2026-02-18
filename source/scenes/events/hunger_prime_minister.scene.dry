@@ -27,8 +27,8 @@ Our policy of toleration continues.
 @break_toleration
 subtitle: This is likely to result in new elections.
 view-if: ccf_toleration == 1
-on-arrival: next_election_time = time+3 if next_election_time >= time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; ccf_in_government = 0; in_grand_coalition = 0; ccf_toleration = 0;
+on-arrival: next_election_time = time+3 if next_election_time >= time+3; next_parl_election_month = month + 3 if next_election_time >= time+3; next_parl_election_year = year if next_election_time >= time+3; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; ccf_in_government = 0; in_grand_coalition = 0; ccf_toleration = 0;
 
 We have definitively broken with the [+ prime_minister +] government, and have voted against them in a vote of no confidence.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].

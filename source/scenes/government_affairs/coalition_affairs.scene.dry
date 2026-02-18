@@ -40,9 +40,9 @@ No. We will not do this.
 
 @bring_down
 subtitle: Bring down this government before our opponents do.
-on-arrival: ccf_in_government = 0; in_grand_coalition = 0; in_weimar_coalition = 0; prime_minister = "Brüning"; prime_minister_party = "RPC"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; ccf_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_ccf -= 3; rural_ccf -= 3; old_middle_ccf -= 3; catholics_ccf -= 3; reformist_dissent += 5
+on-arrival: ccf_in_government = 0; in_grand_coalition = 0; in_weimar_coalition = 0; prime_minister = "Brüning"; prime_minister_party = "RPC"; next_election_time = time + 3 if next_election_time > time+3; next_parl_election_month = month + 3 if next_election_time >= time+3; next_parl_election_year = year if next_election_time >= time+3; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; ccf_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_ccf -= 3; rural_ccf -= 3; old_middle_ccf -= 3; catholics_ccf -= 3; reformist_dissent += 5
 
 We have called for a vote of no confidence in ourselves, and have brought down this government. Prime Minister [+ prime_minister +] currently rules as acting prime_minister.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 

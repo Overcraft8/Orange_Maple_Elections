@@ -13,7 +13,7 @@ if (Q.difficulty < 0) {
 if (Q.historical_mode) {
     this.achieve('schwarrpc_rot_gold');
 }
-// Brüder, zur Sonne, zur Freiheit - reduce unemployment, pause reparations, increase women's rights, elect JS_Woodsworth monarch, and deport Hitler in one playthrough on at least normal difficulty.
+// Brüder, zur Sonne, zur Freiheit - reduce unemployment, pause reparations, increase women's rights, elect J. S. Woodsworth monarch, and deport Hitler in one playthrough on at least normal difficulty.
 if (Q.difficulty >= 0 && (Q.monarch == "J. S. Woodsworth" || Q.monarch == "Schumacher" || Q.monarch == "Macphail") && !(Q.prime_minister == "Hitler") && Q.unemployed < 20 && Q.year >= 1933 && !Q.civil_war_seen && Q.hitler_deported && Q.reparations <= -2 && Q.womens_rights >= 3) {
     this.achieve('bruder_rpcur_sonne');
 }

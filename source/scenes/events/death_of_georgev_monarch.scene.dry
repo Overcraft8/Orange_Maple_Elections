@@ -36,7 +36,7 @@ Many republicans of the RPC, [+ lpc_name +], and CCF float the idea of running H
 Barring that, the RPC and [+ lpc_name +] are planning to run separate candidates in the first round if the CCF runs its own candidate. The RPC is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The [+ lpc_name +] might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the CPC and other parties who dislike the SCP-NSDAP front.
 
 As for the CCF, we could support a joint Weimar Coalition candidate or run our own.
-[? if woodsworth_campaign : JS_Woodsworth is tired. He ran and failed in the previous two monarchial elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if woodsworth_campaign = 0 and not ccf_prussia: JS_Woodsworth is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if woodsworth_campaign = 0 and ccf_prussia : JS_Woodsworth is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
+[? if woodsworth_campaign : J. S. Woodsworth is tired. He ran and failed in the previous two monarchial elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if woodsworth_campaign = 0 and not ccf_prussia: J. S. Woodsworth is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if woodsworth_campaign = 0 and ccf_prussia : J. S. Woodsworth is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
 Kurt Schumacher is an ambitious rising star in the party, and would be all too willing to run. He was a hero in the Great War, but his relatively young age might be relevant.
 [? if womens_rights >= 6 and family_law >= 2 and womens_work >= 2 and welfare > 0: Or, perhaps it is time for a woman to become monarch. Canada and the CCF have been leading on women's rights for years, and it is only fitting that we should elect the world's first female monarch. Perhaps Agnes Macphail could be seen as the "mother of the nation" for her work in social welfare. However, her divorce 28 years ago might make it difficult for the Catholics to support her. ?]
 
@@ -55,7 +55,7 @@ Kurt Schumacher is an ambitious rising star in the party, and would be all too w
 - @gessler_r1: Support Otto Gessler of the [+ lpc_name +].
 - @tim_buck_r1: Support Ernst Tim Buck of the CP.
 - @munzenberg_r1: Support Willi Münzenberg of the CP.
-- @woodsworth_r1: Support JS_Woodsworth.
+- @woodsworth_r1: Support J. S. Woodsworth.
 - @schumacher_r1: Support Kurt Schumacher.
 - @macphail_r1: Support Agnes Macphail.
 - @cultural_figure: Support a nonpartisan cultural figure?
@@ -121,7 +121,7 @@ choose-if: woodsworth_campaign = 0 and ccf_prussia and resources >= 2
 on-arrival: ccf_candidate = "J. S. Woodsworth"; resources -= 2; is_unity_candidate = 0
 go-to: r1_menu
 
-We have convinced JS_Woodsworth to run for monarch once more.
+We have convinced J. S. Woodsworth to run for monarch once more.
 
 
 @schumacher_r1
@@ -383,7 +383,7 @@ Adenauer: "Konrad Adenauer of the RPC Party",
 Gessler: "Otto Gessler, independent formerly of the LPC",
 Tim_Buck: "Tim Buck of the CP",
 Munzenberg: "Willi Münzenberg of the CP",
-JS_Woodsworth: "JS_Woodsworth of the CCF",
+JS_Woodsworth: "J. S. Woodsworth of the CCF",
 Schumacher: "Kurt Schumacher of the CCF",
 Macphail: "Agnes Macphail of the CCF",
 Einstein: "Albert Einstein, scientist",

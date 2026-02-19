@@ -362,7 +362,7 @@ choose-if: (cp_relation >= 60 and communist_coalition >= 3) or cp_party_leader =
 go-to: popular_front_success
 
 @popular_front_woodsworth
-title: Use pressure from Monarch JS_Woodsworth to force the parties to cooperate.
+title: Use pressure from Monarch J. S. Woodsworth to force the parties to cooperate.
 view-if: monarch == "J. S. Woodsworth"
 go-to: popular_front_success
 
@@ -415,7 +415,7 @@ There are enough votes for the Nazis and the SCP to form a coalition. [+ nsdap_l
 @far_right_win
 on-arrival: prime_minister = nsdap_leader; prime_minister_party = "NSDAP"
 
-[? if monarch == "George V" : Monarch George V's camarilla ?][? if monarch == "J. S. Woodsworth" : Monarch JS_Woodsworth somehow ?] has decided that [+ nsdap_leader +] must be prime_minister [? if monarch == "George V": , and the aging monarch accepts their recommendations. ?][? if monarch == "J. S. Woodsworth" : because it is what the constitution would stipulate. ?]
+[? if monarch == "George V" : Monarch George V's camarilla ?][? if monarch == "J. S. Woodsworth" : Monarch J. S. Woodsworth somehow ?] has decided that [+ nsdap_leader +] must be prime_minister [? if monarch == "George V": , and the aging monarch accepts their recommendations. ?][? if monarch == "J. S. Woodsworth" : because it is what the constitution would stipulate. ?]
 
 - @hitler_takes_power: What do we do now?
 
@@ -432,11 +432,11 @@ New elections have been set for [+ next_parl_election_month : month +] [+ next_p
 @far_right_woodsworth
 on-arrival: coup_progress += 2
 
-Monarch JS_Woodsworth faces a dilemma. Is it "democratic" to let democracy be destroyed, if the majority of voters have willed it so? Some, even on the left, suggest that the Nazis would not *truly* be as horrific as their platform suggests, and that giving them power would let them discredit themselves in the eyes of the public.
+Monarch J. S. Woodsworth faces a dilemma. Is it "democratic" to let democracy be destroyed, if the majority of voters have willed it so? Some, even on the left, suggest that the Nazis would not *truly* be as horrific as their platform suggests, and that giving them power would let them discredit themselves in the eyes of the public.
 
-Alternatively, JS_Woodsworth could use the emergency powers of the presidency. Article 48 has been used by George V to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
+Alternatively, J. S. Woodsworth could use the emergency powers of the presidency. Article 48 has been used by George V to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
 
-- @emergency_woodsworth: We will form an emergency government with JS_Woodsworth's support.
+- @emergency_woodsworth: We will form an emergency government with J. S. Woodsworth's support.
 - @new_elections: We will have new elections.
 - @far_right_win: Let the Nazis form their government.
 
@@ -638,7 +638,7 @@ Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-
 Who should be prime_minister?
 
 - @join_bruning: For better or for worse, it must be Heinrich Brüning of the RPC.
-- @woodsworth_prime_minister_new: JS_Woodsworth for Prime Minister?
+- @woodsworth_prime_minister_new: J. S. Woodsworth for Prime Minister?
 
 @woodsworth_prime_minister_new
 subtitle: This will reduce our leverage in the ministries.
@@ -646,7 +646,7 @@ view-if: not historical_mode or not ccf_prussia
 on-arrival: leverage -= 10; prime_minister = "J. S. Woodsworth"; prime_minister_party = "CCF"
 go-to: ministries
 
-We have assembled a new coalition under JS_Woodsworth.
+We have assembled a new coalition under J. S. Woodsworth.
 
 
 @unity_government
@@ -733,7 +733,7 @@ Finally, the CCF can govern alone! Our long campaign of electioneering has paid 
 
 Who should be prime_minister?
 
-- @woodsworth_majority_prime_minister: JS_Woodsworth for Prime Minister.
+- @woodsworth_majority_prime_minister: J. S. Woodsworth for Prime Minister.
 - @gardiner_majority_prime_minister: Robert Gardiner for Prime Minister.
 - @douglas_majority_prime_minister: Tommy Douglas for Prime Minister.
 - @coldwell_majority_prime_minister: Major James Coldwell for Prime Minister.
@@ -742,8 +742,8 @@ Who should be prime_minister?
 view-if: not historical_mode or not ccf_prussia
 on-arrival: prime_minister = "J. S. Woodsworth"
 
-[? if monarch == "J. S. Woodsworth": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Prime Minister also being the Monarch (the Monarch may not be a member of the Commons; there is no law saying that the Prime Minister must be a member of the Commons). Thus, we have Prime Minister-Monarch JS_Woodsworth. ?]
-[? if monarch != "J. S. Woodsworth": JS_Woodsworth has become prime_minister of the CCF majority. ?]
+[? if monarch == "J. S. Woodsworth": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Prime Minister also being the Monarch (the Monarch may not be a member of the Commons; there is no law saying that the Prime Minister must be a member of the Commons). Thus, we have Prime Minister-Monarch J. S. Woodsworth. ?]
+[? if monarch != "J. S. Woodsworth": J. S. Woodsworth has become prime_minister of the CCF majority. ?]
 
 @gardiner_majority_prime_minister
 on-arrival: prime_minister = "Gardiner"
@@ -767,12 +767,12 @@ Major James Coldwell has become prime_minister of the CCF majority.
 
 @woodsworths_dilemma
 title: There is no clear governing majority.
-subtitle: Monarch JS_Woodsworth faces a dilemma.
+subtitle: Monarch J. S. Woodsworth faces a dilemma.
 view-if: monarch == "J. S. Woodsworth" and (grand_coalition < 50 or grand_coalition_failed == 1)
 
-Monarch JS_Woodsworth faces a dilemma. He desperately desires a socialist or at least democratic government, but the electoral results are not there for such. Article 48 has been used by George V to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
+Monarch J. S. Woodsworth faces a dilemma. He desperately desires a socialist or at least democratic government, but the electoral results are not there for such. Article 48 has been used by George V to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
 
-- @emergency_woodsworth: We will form an emergency government with JS_Woodsworth's support.
+- @emergency_woodsworth: We will form an emergency government with J. S. Woodsworth's support.
 - @new_elections: We will have new elections.
 - @new_grand_coalition
 - @left_coalition
@@ -782,13 +782,13 @@ Monarch JS_Woodsworth faces a dilemma. He desperately desires a socialist or at 
 
 
 @emergency_woodsworth
-title: We will form an emergency government with JS_Woodsworth's support.
+title: We will form an emergency government with J. S. Woodsworth's support.
 subtitle: This may have the effect of inflamming public sentiment against us, and the reactionaries will be against us each step of the way.
 on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1
 
 Yes, an emergency minority government, with the support of the CCF. Who should lead this emergency minority government?
 
-- @woodsworth_emergency_prime_minister: JS_Woodsworth for Prime Minister-Monarch!
+- @woodsworth_emergency_prime_minister: J. S. Woodsworth for Prime Minister-Monarch!
 - @gardiner_emergency_prime_minister: Robert Gardiner for emergency Prime Minister.
 - @bruning_emergency_prime_minister: Brüning of the RPC Party, as a goodwill gesture toward the bourgeoisie.
 - @wirth_emergency_prime_minister: Joseph Wirth of the RPC Party, as a gesture of republican unity.
@@ -800,7 +800,7 @@ on-arrival: prime_minister = "J. S. Woodsworth"; prime_minister_party = "CCF"; c
 
 Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Prime Minister also being the Monarch (the Monarch may not be a member of the Commons; there is no law saying that the Prime Minister *must* be a member of the Commons).
 
-Thus, we have Prime Minister-Monarch JS_Woodsworth. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with dictatorship or monarchy, are now clamoring for the restoration of democracy.
+Thus, we have Prime Minister-Monarch J. S. Woodsworth. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with dictatorship or monarchy, are now clamoring for the restoration of democracy.
 
 - @far_right_coup
 - @emergency_no_confidence: The Nazis immediately call a no-confidence vote against us...
@@ -1143,23 +1143,23 @@ go-to: ministries
 Major James Coldwell's appointment as prime_minister is approved by our potential allies.
 
 @woodsworth
-title: JS_Woodsworth for Prime Minister
+title: J. S. Woodsworth for Prime Minister
 view-if: not historical_mode or not ccf_prussia
-subtitle: JS_Woodsworth is currently the Minister-Monarch of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
+subtitle: J. S. Woodsworth is currently the Minister-Monarch of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
-The RPC party has significant qualms about appointing JS_Woodsworth as prime_minister, given that he is already Minister-Monarch of Prussia. They ask for either more cabinet positions, or for JS_Woodsworth to resign his state government role. The latter is completely unacceptable.
+The RPC party has significant qualms about appointing J. S. Woodsworth as prime_minister, given that he is already Minister-Monarch of Prussia. They ask for either more cabinet positions, or for J. S. Woodsworth to resign his state government role. The latter is completely unacceptable.
 
 - @douglas
 - @coldwell
 - @woodsworth_2: Let the RPC have their cabinet positions.
 
 @woodsworth_2
-subtitle: JS_Woodsworth will be Prime Minister.
+subtitle: J. S. Woodsworth will be Prime Minister.
 view-if: not historical_mode
 on-arrival: ccf_in_government = 1; prime_minister = "J. S. Woodsworth"; prime_minister_party = "CCF"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
-We have promised to let the RPC have more influence in the government in response to the appointment of JS_Woodsworth as prime_minister.
+We have promised to let the RPC have more influence in the government in response to the appointment of J. S. Woodsworth as prime_minister.
 
 
 @rpc_prime_minister

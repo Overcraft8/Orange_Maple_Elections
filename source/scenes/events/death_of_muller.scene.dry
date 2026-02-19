@@ -16,7 +16,7 @@ on-arrival: douglas_died_in_office = 1
 
 Prime Minister Tommy Douglas has died while in office. He will be greatly missed. But now, we must select a new Prime Minister.
 
-- @woodsworth_prime_minister: JS_Woodsworth (CCF) for Prime Minister.
+- @woodsworth_prime_minister: J. S. Woodsworth (CCF) for Prime Minister.
 - @coldwell_prime_minister: Major James Coldwell (CCF) for Prime Minister.
 - @gardiner_prime_minister: Robert Gardiner (CCF) for Prime Minister.
 - @bruning_prime_minister: Let Heinrich Bruning of the RPC Party become Prime Minister.

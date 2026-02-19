@@ -18,13 +18,13 @@ The monarchial election is coming up soon. [? if ccf_in_government = 0 : While t
 # if hitler is deported, who would nsdap run? Duesterberg? or Goering?
 # Goering runs, essentially as a proxy for Hitler, who is now stateless.
 
-Many are calling for us to support the incumbent George V, despite his well-known reactionary tendencies. Is he truly the best bulwark against Hitler's ascension? On the other hand, many in our party are calling for JS_Woodsworth to run again, but he is reluctant.
+Many are calling for us to support the incumbent George V, despite his well-known reactionary tendencies. Is he truly the best bulwark against Hitler's ascension? On the other hand, many in our party are calling for J. S. Woodsworth to run again, but he is reluctant.
 
 [? if cp_relation >= 50 : Another strange possibilty is an united front with the Communists, either to support Tim Buck or our own candidate. ?]
 
 
 - @support_georgev: Support George V.
-- @support_woodsworth: Run JS_Woodsworth of the CCF.
+- @support_woodsworth: Run J. S. Woodsworth of the CCF.
 - @support_tim_buck: Support Ernst Tim Buck of the CP.
 
 @support_georgev
@@ -41,9 +41,9 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 2; woodsworth_campaign = 1
 go-to: woodsworth_campaign
 
-It takes effort to run a somewhat unexpected campaign. First, JS_Woodsworth has to be convinced to run. He himself had supported voting for George V, and it takes a good deal of prodding to convince him of his destiny.
+It takes effort to run a somewhat unexpected campaign. First, J. S. Woodsworth has to be convinced to run. He himself had supported voting for George V, and it takes a good deal of prodding to convince him of his destiny.
 
-The miniscule remnants of the Democratic Party (now called the Canadian State Party) will likely support us. Who else will? Can we convince the RPC to support JS_Woodsworth? What about the Communists?
+The miniscule remnants of the Democratic Party (now called the Canadian State Party) will likely support us. Who else will? Can we convince the RPC to support J. S. Woodsworth? What about the Communists?
 
 
 @support_tim_buck
@@ -53,7 +53,7 @@ unavailable-subtitle: [? if cp_relation < 50 : We do not have good enough relati
 Supporting Tim Buck is rather unpopular in our party, even if the Communists accept our support. Are we sure?
 
 - @support_tim_buck_2: Yes, we will support Tim Buck, despite the reformists' pleas against it.
-- @support_woodsworth: Support JS_Woodsworth instead.
+- @support_woodsworth: Support J. S. Woodsworth instead.
 - @support_georgev: Support George V instead.
 
 @support_tim_buck_2
@@ -86,12 +86,12 @@ if (Q.rpc_relation >= 55 || (Q.rpc_relation > 35 && Q.rpc_party_leader == "Joos"
 go-to: rpc_failed if rpc_support_woodsworth = 0 or (rpc_support_woodsworth == 2 and historical_mode); rpc_success if rpc_support_woodsworth = 1; rpc_partial if rpc_support_woodsworth = 2 and not historical_mode
 max-visits: 1
 
-We remind the RPC leaders of George V's anti-Catholicism, and try to convince them that George V's path will eventually lead to Hitler. We also remind them of the successes they've had as part of the Weimar coalition in Prussia with JS_Woodsworth, and our support for the RPC candidate R.B. Bennett in the 1925 monarchial election.
+We remind the RPC leaders of George V's anti-Catholicism, and try to convince them that George V's path will eventually lead to Hitler. We also remind them of the successes they've had as part of the Weimar coalition in Prussia with J. S. Woodsworth, and our support for the RPC candidate R.B. Bennett in the 1925 monarchial election.
 
 @rpc_success
 go-to: woodsworth_campaign
 
-The RPC are convinced! They will be part of the JS_Woodsworth coalition.
+The RPC are convinced! They will be part of the J. S. Woodsworth coalition.
 
 @rpc_partial
 
@@ -107,7 +107,7 @@ unavailable-subtitle: Not enough resources (need 3)
 on-arrival: resources -= 3; rpc_support_woodsworth = 1
 go-to: woodsworth_campaign
 
-With our resources, the RPC are convinced to support JS_Woodsworth over George V.
+With our resources, the RPC are convinced to support J. S. Woodsworth over George V.
 
 @rpc_failed
 go-to: woodsworth_campaign
@@ -119,7 +119,7 @@ choose-if: ccf_votes >= cp_votes
 unavailable-subtitle: The CP knows that they are more popular than us; they do not see a reason to support our candidate.
 max-visits: 1
 
-The CP is supporting their own candidate, Ernst Tim Buck. [? if cp_relation >= 50 : However, they are willing to be convinced to drop their campaign and support JS_Woodsworth; how do we convince them? ?][? if cp_relation < 50 or cp_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
+The CP is supporting their own candidate, Ernst Tim Buck. [? if cp_relation >= 50 : However, they are willing to be convinced to drop their campaign and support J. S. Woodsworth; how do we convince them? ?][? if cp_relation < 50 or cp_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
 
 - @cp_resources: Use our resources.
 - @cp_relations: Use our good relations.
@@ -133,7 +133,7 @@ unavailable-subtitle: Not enough resources (need 3).
 on-arrival: resources -= 3; cp_support_woodsworth = 1
 go-to: woodsworth_campaign
 
-The CP now endorses JS_Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+The CP now endorses J. S. Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
 
 @cp_relations
 view-if: cp_relation >= 60 or (cp_party_leader == "Conciliators" and cp_relation >= 45)
@@ -141,7 +141,7 @@ unavailable-subtitle: Our relations are not good enough.
 on-arrival: cp_support_woodsworth = 1
 go-to: woodsworth_campaign
 
-The CP now endorses JS_Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+The CP now endorses J. S. Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
 
 
 
@@ -149,19 +149,19 @@ The CP now endorses JS_Woodsworth in the monarchial election! We ask them to kee
 max-visits: 1
 go-to: convince_liberals_success if cpc_relation >= 50; convince_liberals_fail if cpc_relation < 50
 
-The liberal vote ([+ lpc_name +] and CPC) has been falling over time, so they will probably be of minimal help to us. For what it's worth, the [+ lpc_name +] is already willing to support JS_Woodsworth.
+The liberal vote ([+ lpc_name +] and CPC) has been falling over time, so they will probably be of minimal help to us. For what it's worth, the [+ lpc_name +] is already willing to support J. S. Woodsworth.
 
 @convince_liberals_success
 on-arrival: cpc_support_woodsworth = 1
 go-to: woodsworth_campaign
 
-Thanks to our good relations, the CPC has promised to support JS_Woodsworth in the election.
+Thanks to our good relations, the CPC has promised to support J. S. Woodsworth in the election.
 
 @convince_liberals_fail
 on-arrival: cpc_support_woodsworth = 0
 go-to: woodsworth_campaign
 
-We failed to convince the CPC to support JS_Woodsworth.
+We failed to convince the CPC to support J. S. Woodsworth.
 
 
 
@@ -270,7 +270,7 @@ George V - [+ georgev_votes_disp +]%
 
 [? if cp_support_woodsworth == 0 : Tim Buck - [+ tim_buck_votes_disp +]% ?]
 
-[? if woodsworth_campaign > 0 : JS_Woodsworth - [+ woodsworth_votes_disp +]% ?]
+[? if woodsworth_campaign > 0 : J. S. Woodsworth - [+ woodsworth_votes_disp +]% ?]
 
 @no_majority_round1
 on-arrival: hitler_support_georgev = 1 if (woodsworth_plurality or tim_buck_plurality)
@@ -296,7 +296,7 @@ choose-if: ccf_votes >= rpc_votes
 unavailable-subtitle: The RPC knows that they are more popular than us; they do not see a reason to support our candidate.
 on-arrival: {!
 Q.rpc_support_woodsworth = 0;
-// if George V support is greater than Hitler and JS_Woodsworth support, this should be much harder
+// if George V support is greater than Hitler and J. S. Woodsworth support, this should be much harder
 
 if ((Q.rpc_relation >= 55 && Q.woodsworth_votes >= Q.georgev_votes) || (Q.rpc_relation > 35 && Q.rpc_party_leader == "Joos")) {
     Q.rpc_support_woodsworth = 1;
@@ -319,9 +319,9 @@ max-visits: 1
 go-to: round2_menu
 on-departure: hitler_support_georgev = 1 if woodsworth_votes + rpc_votes > hitler_votes
 
-[? if hitler_support_georgev : The RPC's opinion is affected by the Nazis' support of George V, and is willing to turn away from him. ?] The RPC are convinced! They will be part of the JS_Woodsworth coalition. [? if hitler_support_georgev : In addition, they will also bring in some minor parties who will support us. ?]
+[? if hitler_support_georgev : The RPC's opinion is affected by the Nazis' support of George V, and is willing to turn away from him. ?] The RPC are convinced! They will be part of the J.S. Woodsworth coalition. [? if hitler_support_georgev : In addition, they will also bring in some minor parties who will support us. ?]
 
-[? if not hitler_support_georgev and woodsworth_votes + rpc_votes > hitler_votes: With the RPC Party supporting JS_Woodsworth, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed George V to prevent a socialist from becoming monarch. ?]
+[? if not hitler_support_georgev and woodsworth_votes + rpc_votes > hitler_votes: With the RPC Party supporting J. S. Woodsworth, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed George V to prevent a socialist from becoming monarch. ?]
 
 @r2_rpc_partial
 
@@ -338,14 +338,14 @@ on-arrival: resources -= 2; rpc_support_woodsworth = 1
 on-departure: hitler_support_georgev = 1 if woodsworth_votes + rpc_votes > hitler_votes
 go-to: round2_menu
 
-With our resources, the RPC are convinced to support JS_Woodsworth over George V.
+With our resources, the RPC are convinced to support J. S. Woodsworth over George V.
 
-[? if not hitler_support_georgev and woodsworth_votes + rpc_votes > hitler_votes: With the RPC Party supporting JS_Woodsworth, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed George V to prevent a socialist from becoming monarch. ?]
+[? if not hitler_support_georgev and woodsworth_votes + rpc_votes > hitler_votes: With the RPC Party supporting J. S. Woodsworth, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed George V to prevent a socialist from becoming monarch. ?]
 
 @r2_rpc_failed
 go-to: round2_menu
 
-Unfortunately, we fail to turn them away from George V. [? if georgev_votes > woodsworth_votes : Given that George V received more votes than JS_Woodsworth, they believe that we should turn to George V, not the other way around. ?]
+Unfortunately, we fail to turn them away from George V. [? if georgev_votes > woodsworth_votes : Given that George V received more votes than J. S. Woodsworth, they believe that we should turn to George V, not the other way around. ?]
 
 
 
@@ -356,7 +356,7 @@ unavailable-subtitle: The CP knows that they are more popular than us; they do n
 view-if: woodsworth_campaign > 0 and cp_support_woodsworth == 0 
 max-visits: 1
 
-The CP is committed to supporting Ernst Tim Buck. [? if cp_relation >= 45 : However, the Nazi-George V coalition worries them enough that they are willing to be convinced to drop their campaign and support JS_Woodsworth. ?][? if cp_relation < 45 : They do not seem willing to be convinced. ?]
+The CP is committed to supporting Ernst Tim Buck. [? if cp_relation >= 45 : However, the Nazi-George V coalition worries them enough that they are willing to be convinced to drop their campaign and support J. S. Woodsworth. ?][? if cp_relation < 45 : They do not seem willing to be convinced. ?]
 
 - @r2_cp_resources: Use our resources.
 - @r2_cp_relations: Use our good relations.
@@ -370,7 +370,7 @@ unavailable-subtitle: Not enough resources (need 3).
 on-arrival: resources -= 3; cp_support_woodsworth = 1
 go-to: round2_menu
 
-The CP now endorses JS_Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
+The CP now endorses J. S. Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters.
 
 @r2_cp_relations
 view-if: cp_relation >= 60 or (cp_party_leader == "Conciliators" and cp_relation >= 45)
@@ -378,7 +378,7 @@ unavailable-subtitle: Our relations are not good enough.
 on-arrival: cp_support_woodsworth = 1
 go-to: round2_menu
 
-The CP now endorses JS_Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters. 
+The CP now endorses J. S. Woodsworth in the monarchial election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters. 
 
 @round2_tim_buck
 view-if: ccf_support_tim_buck == 0 and cp_support_woodsworth == 0
@@ -441,4 +441,4 @@ on-arrival: monarch = nsdap_candidate; prime_minister = "Hitler"; prime_minister
 @woodsworth_wins
 on-arrival: monarch = "J. S. Woodsworth"; reformist_dissent -= 15; center_dissent -= 15; labor_dissent -= 15; left_dissent -= 5; workers_ccf += 8*(1-dissent); old_middle_ccf += 5*(1-dissent); new_middle_ccf += 5*(1-dissent); rural_ccf += 5*(1-dissent); unemployed_ccf += 5*(1-dissent);
 
-JS_Woodsworth of the CCF has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.
+J. S. Woodsworth of the CCF has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.

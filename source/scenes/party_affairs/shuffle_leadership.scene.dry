@@ -83,13 +83,13 @@ go-to: rm_main
 MacInnis has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_woodsworth
-title: Remove JS_Woodsworth
+title: Remove J. S. Woodsworth
 view-if: woodsworth_advisor = 1
 tags: remove_advisor
 on-arrival: woodsworth_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-JS_Woodsworth has been removed as an advisor. The Reformist faction disapproves.
+J. S. Woodsworth has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_macphail
 title: Remove Macphail
@@ -402,7 +402,7 @@ view-if: woodsworth_advisor = 0 and n_advisors < 3
 on-arrival: woodsworth_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-JS_Woodsworth is now an advisor.
+J. S. Woodsworth is now an advisor.
 
 @add_macphail
 title: Agnes Macphail

@@ -148,7 +148,7 @@ Influenced by his inner circle and by the fascists in the streets, Monarch Georg
 @resign
 title: Resign our positions in the government.
 choose-if: monarch != "J. S. Woodsworth"
-unavailable-subtitle: Monarch JS_Woodsworth cannot resign.
+unavailable-subtitle: Monarch J. S. Woodsworth cannot resign.
 on-arrival: prime_minister = "Papen"; prime_minister_party = "I"; ccf_in_government = 0;
 go-to: accept
 

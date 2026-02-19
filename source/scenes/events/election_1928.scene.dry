@@ -188,7 +188,7 @@ data = [
         "id": "cp",
         "legend": "CP",
         "name": "CP",
-        "seats": Math.round(Q.cp_r*5),
+        "seats": Math.round(Q.cp_r*0.5),
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -196,7 +196,7 @@ if (Q.sapd_formed && Q.sapd_r) {
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
-            "seats": Math.round(Q.sapd_r*5),
+            "seats": Math.round(Q.sapd_r*0.5),
             });
 }
 data = data.concat([
@@ -204,43 +204,43 @@ data = data.concat([
         "id": "ccf",
         "legend": "CCF",
         "name": "CCF",
-        "seats": Math.round(Q.ccf_r*5),
+        "seats": Math.round(Q.ccf_r*0.5),
     },
     {
         "id": "lpc",
         "legend": Q.lpc_name,
         "name": Q.lpc_name,
-        "seats": Math.round(Q.lpc_r*5),
+        "seats": Math.round(Q.lpc_r*0.5),
     },
     {
         "id": "rpc",
         "legend": "RPC",
         "name": "RPC",
-        "seats": Math.round(Q.rpc_r*5),
+        "seats": Math.round(Q.rpc_r*0.5),
     },
     {
         "id": "cpc",
         "legend": "CPC",
         "name": "CPC",
-        "seats": Math.round(Q.cpc_r*5),
+        "seats": Math.round(Q.cpc_r*0.5),
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_r*5),
+        "seats": Math.round(Q.other_r*0.5),
     },
     {
         "id": "scp",
         "legend": "SCP",
         "name": "SCP",
-        "seats": Math.round(Q.scp_r*5),
+        "seats": Math.round(Q.scp_r*0.5),
     },
     {
         "id": "nsdap",
         "legend": "NSDAP",
         "name": "NSDAP",
-        "seats": Math.round(Q.nsdap_r*5),
+        "seats": Math.round(Q.nsdap_r*0.5),
     },
 ]);
 

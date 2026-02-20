@@ -656,7 +656,7 @@ go-to: 1928_main
 audio: shuffle music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3 music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
-z
+
 = 1928
 
 It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Gardiner has been unable to effectively address the crisis. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.

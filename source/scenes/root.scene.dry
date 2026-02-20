@@ -229,13 +229,13 @@ Q.mannar_d_pop_weight = 0.72;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
-Q.workers = 15; // industry and trade
-Q.old_middle = 5; // "old mittelstand"
+Q.workers = 48; // industry and trade
+Q.old_middle = 13; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 5; // "new mittelstand"
-Q.rural = 60; // agriculture and forestry employment... but many of those are proletarians so...
+Q.new_middle = 14; // "new mittelstand"
+Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
-Q.unemployed = 15;
+Q.unemployed = 8.6;
 Q.catholics = 30;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
@@ -268,7 +268,7 @@ Q.sapd_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_ccf = 70;
+Q.workers_ccf = 10;
 Q.workers_cp = 3;
 Q.workers_rpc = 3;
 Q.workers_lpc = 35;
@@ -295,7 +295,7 @@ Q.new_middle_scp = 13;
 Q.new_middle_nsdap = 0;
 Q.new_middle_other = 2;
 
-Q.rural_ccf = 70;
+Q.rural_ccf = 13;
 Q.rural_cp = 0;
 Q.rural_rpc = 6;
 Q.rural_lpc= 36;
@@ -653,7 +653,7 @@ this.state.disableSaves = true;
 go-to: 1928_main
 
 @1928_main
-audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/RPCurSonne_rpcurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
+audio: shuffle music/O_CANADA-COLDSTREAM_GUARDS.mp3/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/RPCurSonne_rpcurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 

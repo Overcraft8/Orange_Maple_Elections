@@ -1,6 +1,6 @@
 const tooltipList = [{
     searchString: "FLP",
-    explanationText: "<The Farmer-Labour Group - Us"
+    explanationText: "The Farmer-Labour Group - Us"
 }, 
 {
     searchString: "CP", 

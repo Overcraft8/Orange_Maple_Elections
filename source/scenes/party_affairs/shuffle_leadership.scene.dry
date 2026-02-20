@@ -343,7 +343,7 @@ John Brockelbank is now an advisor.
 
 @add_nicholson
 title: Alexander Nicholson
-subtitle: Alexander Nicholson was a United Church preacher and farmer. He is now a CCF organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+subtitle: Alexander Nicholson was a United Church preacher and farmer. He is now a FLP organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
 card-image: img/portraits/NicholsonAlexander.jpg
 tags: agrarian_advisor
@@ -376,6 +376,18 @@ go-to: advisor_menu
 tags: agrarian_advisor
 
 Frank Eliason is now an advisor.
+
+@add_irvine
+title: William Irvine
+subtitle: William Irvine is a social gospeler and has affiliated with the ALP and UFA in the past. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
+is-card: true
+card-image: img/portraits/.jpg
+view-if: irvine_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: irvine_advisor = 1; n_advisors += 1; agrarian_strength += 5
+go-to: advisor_menu
+tags: agrarian_advisor
+
+William Irvine is now an advisor.
 
 #                                      reformist
 
@@ -430,18 +442,6 @@ go-to: advisor_menu
 tags: left_advisor
 
 Ernest Winch is now an advisor.
-
-@add_irvine
-title: William Irvine
-subtitle: William Irvine is a social gospeler and has affiliated with the ALP and UFA in the past. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
-is-card: true
-card-image: img/portraits/.jpg
-view-if: irvine_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: irvine_advisor = 1; n_advisors += 1; left_strength += 5
-go-to: advisor_menu
-tags: left_advisor
-
-William Irvine is now an advisor.
 
 @add_nielsen
 title: Dorise Nielsen

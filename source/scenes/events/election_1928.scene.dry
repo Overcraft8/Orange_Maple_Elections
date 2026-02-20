@@ -41,6 +41,23 @@ on-arrival: {!
 // set old results
 // election threshold constitutional reform
 // banning parties
+
+// --- Apply FPTP-style distortion to _votes BEFORE assigning _r ---
+var p = 3.0; // adjust strength of FPTP effect
+var distorted = {};
+var distorted_sum = 0;
+
+// Step 1: exponentiate each party's vote share
+for (var party of Q.parties) {
+    distorted[party] = Math.pow(Q[party + '_votes'], p);
+    distorted_sum += distorted[party];
+}
+
+// Step 2: convert to distorted percentages (0–100)
+for (var party of Q.parties) {
+    distorted[party] = distorted[party] / distorted_sum * 100;
+}
+
 var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
@@ -48,11 +65,13 @@ for (var party of Q.parties) {
         if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
             Q[party + '_r'] = 0;
         } else {
-            Q[party + '_r'] = Q[party + '_votes'];
+            Q[party + '_r'] = distorted[party];
+
         }
         new_party_sum += Q[party + '_r'];
     } else {
-        Q[party + '_r'] = Q[party + '_votes'];
+        Q[party + '_r'] = distorted[party];
+
     }
     // if we use decimals, then we might want to truncate the numbers
     if (Q.use_decimals) {
@@ -188,7 +207,7 @@ data = [
         "id": "cp",
         "legend": "CP",
         "name": "CP",
-        "seats": Math.round(Q.cp_r*5),
+        "seats": Math.round(Q.cp_r /2 ),
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -196,7 +215,7 @@ if (Q.sapd_formed && Q.sapd_r) {
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
-            "seats": Math.round(Q.sapd_r*5),
+            "seats": Math.round(Q.sapd_r / 2),
             });
 }
 data = data.concat([
@@ -268,25 +287,25 @@ go-to: coalition_menu
 {!<svg id="commons" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+{!<tr><td>Party</td><td>Seat share</td><td>% Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **CCF:** {!</td><td>!} **[+ ccf_r +]%** {!</td><td>!} **[+ str_change_ccf +]** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **CCF:** {!</td><td>!} **[+ ccf_r_disp +]%** {!</td><td>!} **[+ str_change_ccf +]** {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r_disp +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CP: {!</td><td>!} [+ cp_r_disp +]% {!</td><td>!} [+ str_change_cp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lpc_name +]: {!</td><td>!} [+ lpc_r +]% {!</td><td>!} [+ str_change_lpc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lpc_name +]: {!</td><td>!} [+ lpc_r_disp +]% {!</td><td>!} [+ str_change_lpc +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} RPC: {!</td><td>!} [+ rpc_r +]% {!</td><td>!} [+ str_change_rpc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} RPC: {!</td><td>!} [+ rpc_r_disp +]% {!</td><td>!} [+ str_change_rpc +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPC: {!</td><td>!} [+ cpc_r +]% {!</td><td>!} [+ str_change_cpc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPC: {!</td><td>!} [+ cpc_r_disp +]% {!</td><td>!} [+ str_change_cpc +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r_disp +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCP: {!</td><td>!} [+ scp_r +]% {!</td><td>!} [+ str_change_scp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCP: {!</td><td>!} [+ scp_r_disp +]% {!</td><td>!} [+ str_change_scp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#954B00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r_disp +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**

@@ -268,7 +268,7 @@ Q.sapd_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_ccf = 10;
+Q.workers_ccf = 70;
 Q.workers_cp = 3;
 Q.workers_rpc = 3;
 Q.workers_lpc = 35;
@@ -295,7 +295,7 @@ Q.new_middle_scp = 13;
 Q.new_middle_nsdap = 0;
 Q.new_middle_other = 2;
 
-Q.rural_ccf = 13;
+Q.rural_ccf = 70;
 Q.rural_cp = 0;
 Q.rural_rpc = 6;
 Q.rural_lpc= 36;

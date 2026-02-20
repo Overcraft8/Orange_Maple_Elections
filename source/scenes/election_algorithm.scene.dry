@@ -35,21 +35,45 @@ for (var party of Q.parties) {
     Q[party + '_support'] = party_support;
     total_support += party_support;
 }
+
+// --- FPTP-style distortion (Option 3) ---
+var p = 1; // adjust for stronger/weaker FPTP effect
+
+// Step 1: compute raw proportional shares
+var rawShares = {};
+var rawSum = 0;
+
+for (var party of Q.parties) {
+    rawShares[party] = Q[party + '_support'] / total_support;
+    rawSum += Math.pow(rawShares[party], p);
+}
+
+// Step 2: compute distorted shares
+for (var party of Q.parties) {
+    Q[party + '_normalized'] = Math.pow(rawShares[party], p) / rawSum;
+}
+// ----------------------------------------
+
+
 // 2. normalize support (fraction)
 // 3. Round to integers
 // TODO: round to 1 decimal instead of rounding to integers
 // to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
 for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10;
-    if (Q.use_decimals) {
-        Q[party+'_votes'] = Q[party+'_votes_dec'];
-        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-    } else {
-        //integer mode
-        Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
-        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-    }
+    //Q[party+'_normalized'] = Q[party + '_support']/total_support;
+    // Always compute vote share with one decimal
+var vote_percent = Q[party + '_normalized'] * 100;
+
+// Display value (always 1 decimal)
+Q[party + '_votes_disp'] = vote_percent.toFixed(1);
+
+// Internal numeric value
+if (Q.use_decimals) {
+    Q[party + '_votes'] = Number(Q[party + '_votes_disp']);
+} else {
+    Q[party + '_votes'] = Math.round(vote_percent);
+}
+
     //Q[party+'_votes'] = Q[party+'_votes_dec'];
     // display
 }

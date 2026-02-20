@@ -1,13 +1,13 @@
-title: Stanley Knowles
+title: Clarence Fines
 is-pinned-card: true
-tags: advisor, left
-card-image: img/portraits/KnowlesStanley.jpg
-view-if: knowles_advisor = 1
+tags: advisor, labor
+card-image: img/portraits/FinesClarence.jpg
+view-if: fines_advisor = 1
 new-page: true 
 
-= Stanley Knowles
+= Clarence Fines
 
-Stanley Knowles is an MP and an expert on parliamentary procedure.
+Clarence Fines is a protege of Coldwell. He is a former ILP member and effective organizer. He is among the right wing of the party. 
 
 - @building_the_left
 - @cp_cooperation
@@ -29,4 +29,4 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 5; cp_relation += 6*(1-dissent); reformist_dissent += 3; communist_coalition += 1 if cp_cooperation_seen <= 1; cp_cooperation_seen += 1
 
-Knowles attempts to reach out to his former colleagues to dissuade the CP from their current extreme Stalinist path. Some concessions are extracted.
+Fines attempts to reach out to his former colleagues to dissuade the CP from their current extreme Stalinist path. Some concessions are extracted.

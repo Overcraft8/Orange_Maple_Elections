@@ -61,7 +61,7 @@ Q.neorevisionist_dissent = 10;
 
 // secret events...
 Q.unions_independent = 0;
-Q.centrists_resign = 0;
+Q.agrarians_resign = 0;
 Q.left_split = 0;
 Q.reformists_resigned = 0;
 
@@ -576,10 +576,10 @@ Q.nicholson_advisor = 1; // Alexander Nicholson
 
 // left advisors
 Q.jamieson_advisor = 0; // Laura Jamieson
-Q.knowles_advisor = 0; // Stanley Knowles
-Q.knowles_dead = 0;
+Q.fines_advisor = 0; // Clarence Fines
+Q.fines_dead = 0;
 Q.winch_advisor = 0; // Ernest Winch
-Q.seydewitrpc_advisor = 0; // William Irvine
+Q.irvine_advisor = 0; // William Irvine
 
 // agrarian alternate advisors
 Q.eliason_advisor = 0; // Frank Eliason
@@ -604,7 +604,6 @@ Q.leber_advisor = 0; // Julius Leber (post-1930)
 Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 
 // Nonfactional advisors
-Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.underhill_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
 !}

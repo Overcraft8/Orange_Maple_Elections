@@ -18,8 +18,8 @@ After our discussion with the Soviets, we are inclined to believe that Stalin is
 
 @conciliator_success
 title: The Conciliators are the new leadership of the CP.
-choose-if: (knowles_advisor or winch_advisor) and (left_strength >= reformist_strength) and (cp_relation >= 50) 
-unavailable-subtitle: [?  if not knowles_advisor and not winch_advisor: Our party leadership is not left-wing enough. ?] [? if left_strength < reformist_strength: The Comintern doubts our commitment to socialism. ?]
+choose-if: (fines_advisor or winch_advisor) and (left_strength >= reformist_strength) and (cp_relation >= 50) 
+unavailable-subtitle: [?  if not fines_advisor and not winch_advisor: Our party leadership is not left-wing enough. ?] [? if left_strength < reformist_strength: The Comintern doubts our commitment to socialism. ?]
 on-arrival: cp_party_leader = "Conciliators"; communist_coalition += 3; cp_relation += 10*(1-dissent); left_strength += 5; left_dissent -= 8
 achievement: versohnler
 

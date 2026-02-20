@@ -3,13 +3,13 @@ new-page: true
 subtitle: The Left's disagreements with our policies have grown too severe.
 tags: event
 view-if: left_dissent >= 60
-on-arrival: left_split = 1; left_strength = left_strength/2; workers_flp -= 5; unemployed_flp -= 5; workers_other += 5; workers_cp += 3; n_advisors -= 1 if knowles_advisor == 1; knowles_advisor = 0; rb_strength -= 300; cp_relation -= 5; rb_militancy -= 0.05 if rb_militancy >= 0.1; n_advisors -= 1 if seydewitrpc_advisor == 1; seydewitrpc_advisor = 0; n_advisors -= 1 if winch_advisor == 1; winch_advisor = 0; n_advisors -= 1 if nielsen_advisor == 1; nielsen_advisor = 0
-go-to: sapd_formed if centrists_resign = 1 and not sapd_formed
+on-arrival: left_split = 1; left_strength = left_strength/2; workers_flp -= 5; unemployed_flp -= 5; workers_other += 5; workers_cp += 3; n_advisors -= 1 if fines_advisor == 1; fines_advisor = 0; rb_strength -= 300; cp_relation -= 5; rb_militancy -= 0.05 if rb_militancy >= 0.1; n_advisors -= 1 if irvine_advisor == 1; irvine_advisor = 0; n_advisors -= 1 if winch_advisor == 1; winch_advisor = 0; n_advisors -= 1 if nielsen_advisor == 1; nielsen_advisor = 0
+go-to: sapd_formed if agrarians_resign = 1 and not sapd_formed
 max-visits: 1
 
 = Left-wing members split
 
 Our policy choices have greatly offended the left, and many of their leaders have split to form a new party, the SAPD, or Socialist Worker's Party. They do not count a huge section of our membership, so this should be survivable.
 
-[? if centrists_resign = 1 : Many former Agrarian Marxists have joined with the SAPD, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the FLP for the support of the working class. ?]
+[? if agrarians_resign = 1 : Many former Agrarian Marxists have joined with the SAPD, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the FLP for the support of the working class. ?]
 

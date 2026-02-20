@@ -3,7 +3,7 @@ new-page: true
 subtitle: Agrarian disagreements with our policies have grown too severe.
 tags: event
 view-if: center_dissent >= 60
-on-arrival: agrarian_strength *= 0.3; workers_flp -= 5; n_advisors -= 1 if coldwell_advisor == 1; n_advisors -= 1 if nicholson_advisor == 1; n_advisors -= 1 if douglas_advisor == 1; coldwell_advisor = 0; nicholson_advisor = 0; douglas_advisor = 0; rb_strength -= 100; centrists_resign = 1
+on-arrival: agrarian_strength *= 0.3; workers_flp -= 5; n_advisors -= 1 if coldwell_advisor == 1; n_advisors -= 1 if nicholson_advisor == 1; n_advisors -= 1 if douglas_advisor == 1; coldwell_advisor = 0; nicholson_advisor = 0; douglas_advisor = 0; rb_strength -= 100; agrarians_resign = 1
 go-to: sapd_formed if left_split = 1 and not sapd_formed
 max-visits: 1
 

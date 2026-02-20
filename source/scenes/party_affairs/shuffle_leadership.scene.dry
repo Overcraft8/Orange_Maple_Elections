@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
+tags: agrarian_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -36,7 +36,7 @@ tags: remove_advisor
 @remove_nicholson
 title: Remove Nicholson
 view-if: nicholson_advisor = 1
-on-arrival: nicholson_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: nicholson_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
@@ -46,26 +46,26 @@ Nicholson has been removed as an advisor. The Agrarian faction disapproves.
 title: Remove Coldwell
 view-if: coldwell_advisor = 1
 tags: remove_advisor
-on-arrival: coldwell_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: coldwell_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Coldwell has been removed as an advisor. The Agrarian faction disapproves.
+Coldwell has been removed as an advisor. The Labor faction disapproves.
 
 @remove_douglas
 title: Remove Douglas
 view-if: douglas_advisor = 1
 tags: remove_advisor
-on-arrival: douglas_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: douglas_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Douglas has been removed as an advisor. The Agrarian faction disapproves.
+Douglas has been removed as an advisor. The Labor faction disapproves.
 
 
 @remove_williams
 title: Remove Williams
 view-if: williams_advisor = 1
 tags: remove_advisor
-on-arrival: williams_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: williams_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Williams has been removed as an advisor. The Agrarian faction disapproves.
@@ -77,10 +77,10 @@ Williams has been removed as an advisor. The Agrarian faction disapproves.
 title: Remove Brockelbank
 view-if: brockelbank_advisor = 1
 tags: remove_advisor
-on-arrival: brockelbank_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: brockelbank_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Brockelbank has been removed as an advisor. The Reformist faction disapproves.
+Brockelbank has been removed as an advisor. The Agrarian faction disapproves.
 
 @remove_woodsworth
 title: Remove J. S. Woodsworth
@@ -104,10 +104,10 @@ Lucas has been removed as an advisor. The Reformist faction disapproves.
 title: Remove Eliason
 view-if: eliason_advisor = 1
 tags: remove_advisor
-on-arrival: eliason_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: eliason_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Eliason has been removed as an advisor. The Reformist faction disapproves.
+Eliason has been removed as an advisor. The Agrarian faction disapproves.
 
 
 # labor
@@ -125,10 +125,10 @@ Heaps has been removed as an advisor. The Labor faction disapproves.
 title: Remove Phelps
 view-if: phelps_advisor = 1
 tags: remove_advisor
-on-arrival: phelps_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: phelps_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Phelps has been removed as an advisor. The Labor faction disapproves.
+Phelps has been removed as an advisor. The Agrarian faction disapproves.
 
 @remove_carlyle
 title: Remove Carlyle
@@ -144,21 +144,21 @@ Carlyle has been removed as an advisor. The Labor faction disapproves.
 title: Remove Forsey
 view-if: forsey_advisor = 1
 tags: remove_advisor
-on-arrival: forsey_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: forsey_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Forsey has been removed as an advisor. The Labor faction disapproves.
+Forsey has been removed as an advisor. 
 
 # left
 
-@remove_knowles
-title: Remove Knowles
-view-if: knowles_advisor = 1
+@remove_fines
+title: Remove Fines
+view-if: fines_advisor = 1
 tags: remove_advisor
-on-arrival: knowles_advisor = 0; left_dissent += 5; n_advisors -= 1
+on-arrival: fines_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Knowles has been removed as an advisor. The Leftist faction disapproves.
+Fines has been removed as an advisor. The Labor faction disapproves.
 
 @remove_jamieson
 title: Remove Jamieson
@@ -180,12 +180,12 @@ Winch has been removed as an advisor. The Leftist faction disapproves.
 
 @remove_irvine
 title: Remove Irvine
-view-if: seydewitrpc_advisor = 1
+view-if: irvine_advisor = 1
 tags: remove_advisor
-on-arrival: seydewitrpc_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: irvine_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Irvine has been removed as an advisor. The Leftist faction disapproves.
+Irvine has been removed as an advisor. The Agrarian faction disapproves.
 
 @remove_nielsen
 title: Remove Nielsen
@@ -237,22 +237,10 @@ Schumacher has been removed as an advisor. The Neorevisionist faction disapprove
 title: Remove Wright
 view-if: wright_advisor = 1
 tags: remove_advisor
-on-arrival: wright_advisor = 0; n_advisors -= 1
+on-arrival: wright_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Wright has been removed as an advisor.
-
-#The Reformist faction disapproves.
-
-
-@remove_hirschfeld
-title: Remove Hirschfeld
-view-if: hirschfeld_advisor = 1
-tags: remove_advisor
-on-arrival: hirschfeld_advisor = 0; n_advisors -= 1
-go-to: rm_main
-
-Hirschfeld has been removed as an advisor. 
+Wright has been removed as an advisor. The Agrarian faction disapproves.
 
 @remove_spry
 title: Remove Spry
@@ -286,7 +274,7 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
+tags: agrarian_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
 
@@ -302,7 +290,7 @@ frequency: 1
 @agrarian
 view-if: n_advisors < 3
 
-- #center_advisor
+- #agrarian_advisor
 
 @reformist
 view-if: n_advisors < 3
@@ -324,73 +312,72 @@ view-if: neorevisionism > 0 and n_advisors < 3
 
 - #neorev_advisor
 
-@nonfactional
+@agrarian
 view-if: n_advisors < 3
 
-- #nonfactional_advisor
-
-@add_nicholson
-title: Alexander Nicholson
-subtitle: Alexander Nicholson is a founding member of the LSR, the FLP's de facto intellectual organization. He is an expert on constitutional law. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
-is-card: true
-card-image: img/portraits/NicholsonAlexander.jpg
-tags: center_advisor
-view-if: nicholson_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: nicholson_advisor = 1; n_advisors += 1
-go-to: advisor_menu
-
-Alexander Nicholson is now an advisor.
-
-@add_coldwell
-title: Major James Coldwell
-subtitle: Major James Coldwell is a former school teacher and long-time party organizer. He was Leader of the provincial FLP affiliate in Saskatchewan, the Farmer-Labour Group, while it was official opposition. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
-is-card: true
-card-image: img/portraits/ColdwellRudolf.jpg
-tags: center_advisor
-view-if: coldwell_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: coldwell_advisor = 1; n_advisors += 1
-go-to: advisor_menu
-
-Major James Coldwell is now an advisor.
-
-@add_douglas
-title: Tommy Douglas
-subtitle: Tommy Douglas is a minister hailing from Saskatchewan. He is known for his skill in oratory. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
-is-card: true
-card-image: img/portraits/DouglasTommy.jpg
-tags: center_advisor
-view-if: douglas_advisor = 0 and douglas_dead = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: douglas_advisor = 1; n_advisors += 1
-go-to: advisor_menu
-
-Tommy Douglas is now an advisor.
+-                                          #agrarian
 
 @add_williams
 title: George Hara Williams
-subtitle: George Hara Williams is a farmer and long serving UFA MP. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: George Hara Williams is the serving President of the FLP. He is a farmer by trade and was a key figure in activating agrarian socialism across Saskatchewan.  {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/WilliamsHaraGeorge.jpg
 view-if: williams_advisor = 0 and n_advisors < 3
 on-arrival: williams_advisor = 1; n_advisors += 1
 go-to: advisor_menu
-tags: center_advisor
+tags: agrarian_advisor
 
 George Hara Williams is now an advisor.
 
-# reformist
-
-
 @add_brockelbank
 title: John Brockelbank
-subtitle: John Brockelbank is a trade unionist. He was one of the ILP MPs who helped form first the Ginger Group and later the FLP. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
+subtitle: John Brockelbank is a militant from the UFC(SS) and was active in it's wheat pool campaign. He is fiercely loyal to George Williams.  {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
 is-card: true
 card-image: img/portraits/BrockelbankJohn.jpg
-tags: reformist_advisor
-view-if: brockelbank_advisor = 0 and n_advisors < 3
-on-arrival: brockelbank_advisor = 1; n_advisors += 1; reformist_strength += 5
+tags: agrarian_advisor
+view-if: brockelbank_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: brockelbank_advisor = 1; n_advisors += 1; agrarian_strength += 5
 go-to: advisor_menu
 
 John Brockelbank is now an advisor.
+
+@add_nicholson
+title: Alexander Nicholson
+subtitle: Alexander Nicholson was a United Church preacher and farmer. He is now a CCF organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/NicholsonAlexander.jpg
+tags: agrarian_advisor
+view-if: nicholson_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: nicholson_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Alexander Nicholson is now an advisor.
+
+@add_wright
+title: Percy Wright
+subtitle: Percy Wright is a farmer by trade and a candidate in the Melfort riding. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
+is-card: true
+card-image: img/portraits/WrightPercy.jpg
+view-if: wright_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: wright_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: agrarian_advisor
+
+Percy Wright is now an advisor.
+
+@add_eliason
+title: Frank Eliason is secretary of the FLP and UFC(SS). 
+subtitle: {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
+is-card: true
+card-image: img/portraits/EliasonFrank.jpg
+view-if: eliason_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: eliason_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: agrarian_advisor
+
+Frank Eliason is now an advisor.
+
+#                                      reformist
 
 @add_woodsworth
 title: J. S. Woodsworth
@@ -406,7 +393,7 @@ J. S. Woodsworth is now an advisor.
 
 @add_lucas
 title: Louise Lucas
-subtitle: Louise Lucas is the first woman to be elected to the House of Commons. She is a women's rights activist and proponent of peace. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+subtitle: Louise Lucas is a leading feminist farmer, member of the FLP's Board of Directors, and President of the Women's FLP section. She is an outstanding orator.  {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
 card-image: img/portraits/LucasLouise.jpg
 view-if: lucas_advisor = 0 and n_advisors < 3
@@ -416,33 +403,9 @@ tags: reformist_advisor
 
 Louise Lucas is now an advisor.
 
-@add_eliason
-title: Frank Eliason
-subtitle: Frank Eliason is the BC FLP Party leader. A moderate, he is part of the LSR. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
-is-card: true
-card-image: img/portraits/EliasonFrank.jpg
-view-if: eliason_advisor = 0 and n_advisors < 3
-on-arrival: eliason_advisor = 1; n_advisors += 1
-go-to: advisor_menu
-tags: reformist_advisor
-
-Frank Eliason is now an advisor.
 
 
-
-# left
-
-@add_knowles
-title: Stanley Knowles
-subtitle: Stanley Knowles is an MP and an expert on parliamentary procedure. (Joined 1934). {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP ?]
-is-card: true
-card-image: img/portraits/KnowlesStanley.jpg
-view-if: knowles_advisor = 0 and knowles_dead = 0 and n_advisors < 3 and left_split = 0
-on-arrival: knowles_advisor = 1; n_advisors += 1; left_strength += 5
-go-to: advisor_menu
-tags: left_advisor
-
-Stanley Knowles is now an advisor.
+#                                        left
 
 @add_jamieson
 title: Laura Jamieson
@@ -473,8 +436,8 @@ title: William Irvine
 subtitle: William Irvine is a social gospeler and has affiliated with the ALP and UFA in the past. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
 is-card: true
 card-image: img/portraits/.jpg
-view-if: seydewitrpc_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: seydewitrpc_advisor = 1; n_advisors += 1; left_strength += 5
+view-if: irvine_advisor = 0 and n_advisors < 3 and left_split = 0
+on-arrival: irvine_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
@@ -494,7 +457,31 @@ Dorise Nielsen is now an advisor.
 
 
 
-# labor
+#                                 labor
+
+@add_coldwell
+title: Major James Coldwell
+subtitle: Major James Coldwell is a former school teacher and long-time party organizer. He was Leader of the provincial FLP affiliate in Saskatchewan, the Farmer-Labour Group, while it was official opposition. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
+is-card: true
+card-image: img/portraits/ColdwellRudolf.jpg
+tags: agrarian_advisor
+view-if: coldwell_advisor = 0 and n_advisors < 3 and labor_resign = 0
+on-arrival: coldwell_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Major James Coldwell is now an advisor.
+
+@add_fines
+title: Clarence Fines
+subtitle: Clarence Fines is a protege of Coldwell. He is a former ILP member and effective organizer. He is among the right wing of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP ?]
+is-card: true
+card-image: img/portraits/FinesClarence.jpg
+view-if: fines_advisor = 0 and fines_dead = 0 and n_advisors < 3 and labor_split = 0
+on-arrival: fines_advisor = 1; n_advisors += 1; labor_strength += 5
+go-to: advisor_menu
+tags: labor_advisor
+
+Clarence Fines is now an advisor.
 
 @add_heaps
 title: Albert Heaps
@@ -508,9 +495,21 @@ go-to: advisor_menu
 
 Albert Heaps is now an advisor.
 
+@add_douglas
+title: Tommy Douglas
+subtitle: Tommy Douglas is a minister hailing from Saskatchewan. He is known for his skill in oratory. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
+is-card: true
+card-image: img/portraits/DouglasTommy.jpg
+tags: labor_advisor
+view-if: douglas_advisor = 0 and douglas_dead = 0 and n_advisors < 3 and labor_resign = 0
+on-arrival: douglas_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Tommy Douglas is now an advisor.
+
 @add_phelps
 title: Joe Phelps
-subtitle: Joe Phelps is a rising member of the United Workers of America. (Joined 1938) {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
+subtitle: Joe Phelps is a radical agrarian and advocate for public ownership of natural resources. (Joined 1938) {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/PhelpsJoe.jpg
 tags: labor_advisor
@@ -522,7 +521,7 @@ Joe Phelps is now an advisor.
 
 @add_carlyle
 title: Carlyle King
-subtitle: Carlyle King is a teacher and moderate FLP. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
+subtitle: Carlyle King is a professor at Usask and a principled pacifist.  {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
 is-card: true
 card-image: img/portraits/KingCarlyle.jpg
 tags: labor_advisor
@@ -533,89 +532,23 @@ go-to: advisor_menu
 Carlyle King is now an advisor.
 
 
+# Nonfactional advisors
+
 @add_forsey
 title: Eugene Forsey
 subtitle: Eugene Forsey is lecterur on economics and political science. He is a convert from the CPC and member of the LSR. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
 is-card: true
 card-image: img/portraits/ForseyEugene.jpg
-tags: labor_advisor
-view-if: forsey_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: forsey_advisor = 1; n_advisors += 1; labor_strength += 3
+tags: nonfactional_advisor
+view-if: forsey_advisor = 0 and n_advisors < 3
+on-arrival: forsey_advisor = 1; n_advisors += 1; 
 go-to: advisor_menu
 
 Eugene Forsey is now an advisor.
 
-
-# neorevisionist leaders
-
-@add_mierendorff
-title: Carlo Mierendorff
-subtitle: Carlo Mierendorff is one of the youngest members of the Commons, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist. {!<br><br>!}[? if difficulty < 0 : Actions - Build the Iron Front, Warning About the Nazis ?]
-is-card: true
-card-image: img/portraits/MierendorffCarlo.jpg
-view-if: mierendorff_advisor = 0 and n_advisors < 3
-on-arrival: mierendorff_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
-go-to: advisor_menu
-tags: neorev_advisor
-
-Carlo Mierendorff is now an advisor.
-
-@add_schumacher
-title: Kurt Schumacher
-subtitle: Kurt Schumacher is a Great War veteran and energetic speaker for the social-democratic cause, and favors reformist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Building the Reichsbanner, Addressing the Economic Crisis ?]
-is-card: true
-card-image: img/portraits/SchumacherKurt.jpg
-tags: neorev_advisor
-view-if: schumacher_advisor = 0 and n_advisors < 3
-on-arrival: schumacher_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
-go-to: advisor_menu
-
-Kurt Schumacher is now an advisor.
-
-@add_leber
-title: Julius Leber
-subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition to the Kapp coup attempt. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Democracy, Military Affairs, Building a People's Party ?]
-is-card: true
-card-image: img/portraits/LeberJulius.jpg
-view-if: leber_advisor = 0 and n_advisors < 3
-on-arrival: leber_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
-go-to: advisor_menu
-tags: neorev_advisor
-
-Julius Leber is now an advisor.
-
-# Nonfactional advisors
-
-@add_wright
-title: Percy Wright
-subtitle: Percy Wright is a farmer by trade and one of the foremost members of the Agrarian wing. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
-is-card: true
-card-image: img/portraits/WrightPercy.jpg
-view-if: wright_advisor = 0 and n_advisors < 3
-on-arrival: wright_advisor = 1; n_advisors += 1
-go-to: advisor_menu
-tags: nonfactional_advisor
-
-Percy Wright is now an advisor.
-
-
-@add_hirschfeld
-title: Magnus Hirschfeld
-subtitle: Magnus Hirschfeld is the founder of the Institut für Sexualwissenschaft and an advocate for the rights of sexual minorities. {!<br><br>!}[? if difficulty < 0 : Actions - Homosexual Rights, Women's Rights, Science Funding ?]
-is-card: true
-card-image: img/portraits/HirschfeldMagnus.jpg
-view-if: hirschfeld_advisor = 0 and n_advisors < 3
-on-arrival: hirschfeld_advisor = 1; n_advisors += 1
-go-to: advisor_menu
-tags: nonfactional_advisor
-
-Magnus Hirschfeld is now an advisor.
-
-# TODO: add underhill, spry
-
 @add_underhill
 title: Frank Underhill
-subtitle: Frank Underhill is a renowned legal scholar. {} {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
+subtitle: Frank Underhill is a renowned legal scholar and cofounder of the LSR. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
 is-card: true
 card-image: img/portraits/UnderhillFrank.jpg
 view-if: underhill_advisor = 0 and n_advisors < 3

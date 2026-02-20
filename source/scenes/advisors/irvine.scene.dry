@@ -1,8 +1,8 @@
 title: William Irvine
 is-pinned-card: true
-tags: advisor, left
+tags: advisor, agrarian
 card-image: img/portraits/IrvineWilliam.jpg
-view-if: seydewitrpc_advisor = 1
+view-if: irvine_advisor = 1
 new-page: true 
 
 = William Irvine

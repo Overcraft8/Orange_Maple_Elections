@@ -1,13 +1,13 @@
 title: Percy Wright
 is-pinned-card: true
-tags: advisor, reformist
+tags: advisor, agrarian
 card-image: img/portraits/WrightPercy.jpg
 view-if: wright_advisor = 1
 new-page: true 
 
 = Percy Wright
 
-Percy Wright is a farmer by trade and one of the foremost members of the Agrarian wing.
+Percy Wright is a farmer by trade and a candidate in the Melfort riding. 
 
 - @agriculture
 - @rural_campaign

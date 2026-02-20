@@ -26,7 +26,7 @@ const tooltipList = [{
 
 
 const colourList = [{
-        word: "CCF",
+        word: "FLP",
         style: "color: #D26E28; font-weight: bold;"
     },
     {

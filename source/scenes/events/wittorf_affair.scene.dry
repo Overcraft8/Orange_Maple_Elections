@@ -35,7 +35,7 @@ The information spreads without our help, leading to some loss of CP support amo
 
 @secret
 title: It is best to keep this information secret. Prevent the Leninbund and dissident CP members from spreading this.
-choose-if: knowles_advisor or winch_advisor
+choose-if: fines_advisor or winch_advisor
 unavailable-subtitle: We do not have contacts among the dissident communists.
 on-arrival: wittorf_secret = 1; reformist_dissent += 5; left_dissent += 5
 

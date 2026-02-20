@@ -1,13 +1,13 @@
 title: Joe Phelps
 is-pinned-card: true
-tags: advisor, reformist
+tags: advisor, agrarian
 card-image: img/portraits/PhelpsJoe.jpg
 view-if: phelps_advisor = 1
 new-page: true 
 
 = Joe Phelps
 
-Joe Phelps is a rising member of the United Workers of America.
+Joe Phelps is a radical agrarian and advocate for public ownership of natural resources.
 
 - @white_collar
 - @union_unity

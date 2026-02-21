@@ -29,7 +29,7 @@ This might be the Nazis' last hurrah; the party's internal contradictions are he
 The SCP will nominate Franz Seldte, leader of the Stahlhelm paramilitary group. He will be endorsed by many of George V's most right-wing supporters. They are working more closely with the Nazis than before, and in the second round, the far-right parties are expected to consolidate into a single anti-republican front.
 
 [? if cp_party_leader = "Conciliators" : Given the failure of Tim Buck's previous runs for monarch, and his declining stature in the party, the CP will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of Communist front organizations. ?]
-[? if cp_party_leader != "Conciliators" : This will be Ernst Tim Buck's third run for monarch as leader of the CP. Despite his previous electoral defeats, he retains the loyalty of the party as well as Stalin's Soviet Union. ?]
+[? if cp_party_leader != "Conciliators" : This will be Tim Buck's third run for monarch as leader of the CP. Despite his previous electoral defeats, he retains the loyalty of the party as well as Stalin's Soviet Union. ?]
 
 Many republicans of the RPC, [+ lpc_name +], and FLP float the idea of running Hugo Eckener, a nationally renowed zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to Nazism.
 
@@ -53,7 +53,7 @@ Kurt Schumacher is an ambitious rising star in the party, and would be all too w
 - @eckener_r1: Support Hugo Eckener as a joint Weimar Coalition candidate.
 - @adenauer_r1: Support Konrad Adenauer of the RPC Party.
 - @gessler_r1: Support Otto Gessler of the [+ lpc_name +].
-- @tim_buck_r1: Support Ernst Tim Buck of the CP.
+- @tim_buck_r1: Support Tim Buck of the CP.
 - @munzenberg_r1: Support Willi Münzenberg of the CP.
 - @woodsworth_r1: Support J. S. Woodsworth.
 - @schumacher_r1: Support Kurt Schumacher.
@@ -100,7 +100,7 @@ Supporting Tim Buck is rather unpopular in our party, even if the Communists acc
 on-arrival: flp_candidate = "Tim Buck"; cp_relation += 5; reformist_dissent += 10; agrarian_dissent += 6; labor_dissent += 5; neorevisionist_dissent += 10; catholics_flp -= 5; new_middle_flp -= 5; old_middle_flp -= 5; rural_flp -= 5; lpc_relation -= 8; cpc_relation -= 15; rpc_relation -= 10; communist_coalition += 2; is_unity_candidate = 0
 go-to: r1_menu
 
-Fine. We have endorsed Ernst Tim Buck of the CP for monarch.
+Fine. We have endorsed Tim Buck of the CP for monarch.
 
 
 @munzenberg_r1
@@ -546,7 +546,7 @@ on-arrival: reformist_dissent += 15; agrarian_dissent += 10; labor_dissent += 5;
 on-departure: rpc_candidate = "Adenauer" if rpc_candidate = "J. S. Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Lucas"; lpc_candidate = rpc_candidate if lpc_candidate = "J. S. Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Lucas"; cpc_candidate = rpc_candidate if cpc_candidate = "J. S. Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Lucas"; flp_candidate = "Tim Buck"; 
 max-visits: 1
 
-We have switched our endorsement to Ernst Tim Buck of the CP. [? if rpc_candidate = flp_candidate : Our former allies in the RPC Party see this as a betrayal. ?][? if rpc_candidate = "J. S. Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Lucas": Now, they will support Konrad Adenauer once again. ?][? if lpc_candidate = "J. S. Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Lucas": The [+ lpc_name +] will switch their support to the RPC Party candidate. ?][? if cpc_candidate = "J. S. Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Lucas": The CPC will also support the RPC Party candidate. ?]
+We have switched our endorsement to Tim Buck of the CP. [? if rpc_candidate = flp_candidate : Our former allies in the RPC Party see this as a betrayal. ?][? if rpc_candidate = "J. S. Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Lucas": Now, they will support Konrad Adenauer once again. ?][? if lpc_candidate = "J. S. Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Lucas": The [+ lpc_name +] will switch their support to the RPC Party candidate. ?][? if cpc_candidate = "J. S. Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Lucas": The CPC will also support the RPC Party candidate. ?]
 
 - @r2_vote: Let the voting begin.
 

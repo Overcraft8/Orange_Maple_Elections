@@ -177,6 +177,24 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 = Infrastructure
 
+Railway length: [+ railway_length +] km
+
+Road length: [+ road_length +] km
+
+Rural Electrification: [+ rural_electrification +]%
+
+Rural Sanitation Access: [+ rural_sanitation +]%
+
+Rural Telephone Access: [+ rural_telephone +]%
+
+= Tax Rates 
+
+Lower income tax: [+ lower_tax_rates +]
+
+Upper income tax: [+ Upper_tax_rates +]
+
+Tariffs: [+ tariffs +]
+
 @economy
 
 = Status of the Economy

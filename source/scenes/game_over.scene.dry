@@ -50,7 +50,7 @@ if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_ri
     this.achieve('equality');
 }
 
-// Sohn seiner Klasse - elect Ernst Tim Buck as monarch or prime_minister.
+// Sohn seiner Klasse - elect Tim Buck as monarch or prime_minister.
 if (Q.prime_minister == "Tim Buck" || Q.monarch == "Tim Buck") {
     this.achieve('sohn_seiner_klasse');
 }
@@ -360,7 +360,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volkspartei: **Volkspartei** - the FLP is a People's Party. ?]
 
-[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Tim Buck is either monarch or prime_minister. ?]
+[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or prime_minister. ?]
 
 [? if game_achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
@@ -469,7 +469,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volkspartei: **Volkspartei** - the FLP is a People's Party. ?]
 
-[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Tim Buck is either monarch or prime_minister. ?]
+[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or prime_minister. ?]
 
 [? if achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
@@ -576,7 +576,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volkspartei: **Volkspartei** - the FLP is a People's Party. ?]
 
-[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Tim Buck is either monarch or prime_minister. ?]
+[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or prime_minister. ?]
 
 [? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 

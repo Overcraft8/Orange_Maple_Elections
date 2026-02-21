@@ -1,43 +1,17 @@
-title: The Nation
+title: Party Hierarchy
 new-page: true
 is-special: true
 
-= [+ district_name +] District
-
-Working class: [+ district_worker +]
-
-Middle class: [+ district_middle +]
-
-Upper class: [+ district_upper +]
-
-Rural: [+ district_rural +]
-
-Seats in parliament: [+ district_seats +] 
-
-Industries: [+ district_industries +]
-
-{!<svg id="sri-lanka-map" viewBox="0 0 450 850" width="200" height="380" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
-  <style>
-    .district { fill: #E1B300; stroke: #000000; stroke-width: 2px; }
-    .district:hover { fill: #FFD700; opacity: 0.8; cursor: pointer; }
-  </style>
-
-  <text x="225" y="833" text-anchor="middle" font-size="22" fill="#333">Click on districts to view specific information</text>
-
-  <path class="district" onclick="Mannar_info()" d="m 54.737125,209.37075 0.39,-1.14 -1.34,-0.5 0.95,-6.25 1.29,-4.56 0.5,0.11 -0.17,1.41 1.34,-3.04 -0.45,-1.01 -0.28,2.2 -0.67,-0.06 0.45,-3.43 -0.73,-2.81 -4.99,-7.6 1.58,1.18 0.72,-2.08 -1.28,0.56 -1.01,-0.56 0.56,-1.3 -0.73,0.23 -2.02,-1.52 0.78,-0.73 -0.22,-0.96 -1.9,-0.45 -4.81,-6.36 -8.9,-7.21 -5.26,-3.44 -8.9,-4.05 -9.91,-2.14 0.06,-1.92 -1.34,-0.39 2.29,-2.25 7.45,-1.18 9.01,1.35 15.34,5.41 5.21,4.28 3.36,3.21 1.62,2.76 3.47,2.65 -2.01,0.17 -3.19,-2.7 -5.88,-2.08 0.95,2.87 2.74,2.87 2.63,2.25 4.7,2.48 -0.17,1.18 -4.87,-0.34 -0.45,1.01 0.95,0.28 -1.85,0.56 0.11,1.58 2.41,0.28 -0.67,2.2 2.91,-2.65 0.84,2.87 3.7,0.34 5.15,-4.79 3.81,-1.24 0.95,-4.05 2.63,-1.07 1.9,-2.25 2.91,-1.01 2.52,0.11 -0.39,-0.84 2.46,-3.1 1.29,-3.55 2.3,-2.48 0.89,-3.15 -0.28,-2.31 1.23,-1.24 -0.78,-1.58 0.78,-2.87 -0.34,-1.24 1.51,-1.75 0.67,-2.25 2.01,-1.63 0.95,-1.8 0.95,-7.27 0.73,0.28 1.45,-2.4 0,0 6.430005,-0.33 8.62,-5.31 0,0 0.75,12.42 4.36,6.67 1.75,6.08 -1.95,3.23 0.79,8.6 -5.07,1.82 -3.77,9.98 2.59,2.36 0.21,1.13 -2.61,1.64 0.19,3.3 -0.61,0.96 15.01,-0.27 18.25999,-1.51 0,0 5.8,2.38 2.46001,2.53 1.00999,5.63 2.91,6.34 0.39,3.81 -1.73,1.59 -4.55,1.85 -10.84,1.89 -4.05,2.1 -13.66,-1.55 -4.52,7.87 -1.86,4.94 -4.07,-2 -1.4,5.22 4.7,3.1 1.76,3.33 2.03,1.61 0.55,1.38 1.08,0.31 0.87,2.11 2,2 0,0 -24.509995,6.27 -5.49,-1.38 -1.3,0.53 -7.19,-3.97 2.19,7.34 -1,23.29 -3.18,-0.44 -0.42,-0.62 0,0 -4.14,-1.44 -2.21,-2.33 -2.08,0.46 -2.59,-2.09 -1.9,0.53 -2.22,-0.43 -1.64,-1.49 -2.42,0.68 -2.6,-1.64 0,0 -0.95,-1 -0.13,-3.75 2.63,-4.33 2.41,-2.25 0.73,-2.59 -0.9,-3.94 1.9,-5.01 -0.56,-6.19 2.07,-3.49 -3.75,-6.75 -1.85,-5.35 -2.85,-3.1 1.01,0.39 1.23,-0.84 -1.73,-0.38 z"/>
-
-</svg>!}
-
-@party
-
 = Leader of the FLP
 
-[? if the_split == 0 : <div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;">George Hara Williams</p> ?]
+ if the_split == 0 : <div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;">George Hara Williams</p> ?]
 
 = Parliamentary Party Leader 
 
 <div><img src="img/portraits/ColdwellMajorJames.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
 <p style="text-align: center;margin-bottom: 0;"> [+ flp_parliament_leader +] </p>
+
+@party factions
 
 = Internal Factions of the <span style="color: #00008B;">**FLP**</span>
 

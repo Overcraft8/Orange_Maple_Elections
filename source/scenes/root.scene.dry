@@ -110,16 +110,15 @@ Q.SCP_relation = 10;
 Q.NSDAP_relation = 0;
 
 Q.cp_leader = "Tim Buck";
-// alternative is the Conciliators as party leader
 Q.flp_parliament_leader = "Major James Coldwell";
+Q.flp_president = "George Hara Williams";
 Q.cp_party_leader = "Tim Buck";
 Q.cpc_leader = "James Anderson";
-Q.lpc_leader = "Mackenzie King";
+Q.lpc_leader = "James Gardiner";
 Q.scp_leader = "Joseph Needham"; 
 Q.rpc_leader = "Henry Stevens";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the FLP.
 Q.rpc_party_leader = "Henry Stevens";
-Q.nsdap_leader = "Hitler";
 
 // hmm... maybe we can play nice with George V???
 Q.georgev_relation = 25;
@@ -470,10 +469,6 @@ Q.education_science = 0;
 //                   Living Standards
 // level of welfare relative to 1928 (can go negative)
 Q.welfare = 0;
-// Rural Access to electricity
-Q.rural_electrification = 0;
-// Rural Access to sewage
-Q.rural_sewage = 0;
 
 
 //                 Foreign Relations
@@ -489,7 +484,12 @@ Q.soviet_relation = 0;
 Q.public_transit = 0;
 // Have we nationalized the provinces' resources?
 Q.resource_nationalization = 0;
-
+// Rural Access to electricity
+Q.rural_electrification = 0;
+// Rural Access to sanitation
+Q.rural_sanitation = 0;
+// Railway Length
+Q.railway_length = 6500; // in km
 
 // Tax rates relative to 1928 baseline
 Q.lower_tax_rates = 0;

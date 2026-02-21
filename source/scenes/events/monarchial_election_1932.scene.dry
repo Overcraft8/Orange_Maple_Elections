@@ -12,7 +12,7 @@ face-image: img/georgev_election.jpg
 
 @pres_election
 
-The monarchial election is coming up soon. [? if flp_in_government = 0 : While the position of Prime Minister is typically more important, recent governments have depended on the monarch's emergency decree powers, making the office vital. ?] [? if hitler_deported==0 : The Nazis will run Hitler, while the CP will run Tim Buck. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if hitler_deported==1 : Since Hitler has been deported, the Nazis will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Canada. Meanwhile, the CP will run Ernst Tim Buck. ?]
+The monarchial election is coming up soon. [? if flp_in_government = 0 : While the position of Prime Minister is typically more important, recent governments have depended on the monarch's emergency decree powers, making the office vital. ?] [? if hitler_deported==0 : The Nazis will run Hitler, while the CP will run Tim Buck. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if hitler_deported==1 : Since Hitler has been deported, the Nazis will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Canada. Meanwhile, the CP will run Tim Buck. ?]
 [? if sapd_formed: The SAPD, our former leftists, are supporting Tim Buck of the CP, and will likely share an endorsement with the Communists. ?]
 
 # if hitler is deported, who would nsdap run? Duesterberg? or Goering?
@@ -25,7 +25,7 @@ Many are calling for us to support the incumbent George V, despite his well-know
 
 - @support_georgev: Support George V.
 - @support_woodsworth: Run J. S. Woodsworth of the FLP.
-- @support_tim_buck: Support Ernst Tim Buck of the CP.
+- @support_tim_buck: Support Tim Buck of the CP.
 
 @support_georgev
 subtitle: This is the default option.
@@ -119,7 +119,7 @@ choose-if: flp_votes >= cp_votes
 unavailable-subtitle: The CP knows that they are more popular than us; they do not see a reason to support our candidate.
 max-visits: 1
 
-The CP is supporting their own candidate, Ernst Tim Buck. [? if cp_relation >= 50 : However, they are willing to be convinced to drop their campaign and support J. S. Woodsworth; how do we convince them? ?][? if cp_relation < 50 or cp_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
+The CP is supporting their own candidate, Tim Buck. [? if cp_relation >= 50 : However, they are willing to be convinced to drop their campaign and support J. S. Woodsworth; how do we convince them? ?][? if cp_relation < 50 or cp_party_leader != "Conciliators" : They do not seem willing to be convinced. ?]
 
 - @cp_resources: Use our resources.
 - @cp_relations: Use our good relations.
@@ -356,7 +356,7 @@ unavailable-subtitle: The CP knows that they are more popular than us; they do n
 view-if: woodsworth_campaign > 0 and cp_support_woodsworth == 0 
 max-visits: 1
 
-The CP is committed to supporting Ernst Tim Buck. [? if cp_relation >= 45 : However, the Nazi-George V coalition worries them enough that they are willing to be convinced to drop their campaign and support J. S. Woodsworth. ?][? if cp_relation < 45 : They do not seem willing to be convinced. ?]
+The CP is committed to supporting Tim Buck. [? if cp_relation >= 45 : However, the Nazi-George V coalition worries them enough that they are willing to be convinced to drop their campaign and support J. S. Woodsworth. ?][? if cp_relation < 45 : They do not seem willing to be convinced. ?]
 
 - @r2_cp_resources: Use our resources.
 - @r2_cp_relations: Use our good relations.
@@ -425,7 +425,7 @@ As expected, the incumbent George V wins the presidency. Let's hope he continues
 @tim_buck_wins
 on-arrival: monarch = "Tim Buck"; cp_relation = 80;
 
-Ernst Tim Buck of the CP has won the presidency. Immediately, the far-right launches a coup attempt against the government. We have no choice but to unite with the CP against the fascists...
+Tim Buck of the CP has won the presidency. Immediately, the far-right launches a coup attempt against the government. We have no choice but to unite with the CP against the fascists...
 
 - @civil_war: This is civil war.
 

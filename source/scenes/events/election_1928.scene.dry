@@ -339,7 +339,7 @@ The far-right might attempt a coup, if such a coalition were formed.
 @popular_front_2
 view-if: rpc_party_leader != "Joos" or cp_party_leader != "Conciliators"
 
-Somehow, both the Communists and RPC are at the very least willing to entertain negotiations. Of course, CP radicals and RPC conservatives derail the negotiations almost immediately. The CP demands leadership of the coalition for themselves and their chairman Ernst Tim Buck, [? if flp_r > cp_r : despite our higher vote share, ?]while the RPC is offended by the prospect of helping Bolsheviks enter government. *Something* must be done to restore balance.
+Somehow, both the Communists and RPC are at the very least willing to entertain negotiations. Of course, CP radicals and RPC conservatives derail the negotiations almost immediately. The CP demands leadership of the coalition for themselves and their chairman Tim Buck, [? if flp_r > cp_r : despite our higher vote share, ?]while the RPC is offended by the prospect of helping Bolsheviks enter government. *Something* must be done to restore balance.
 
 - @popular_front_resources
 - @popular_front_democracy
@@ -463,7 +463,7 @@ A far left coalition is impossible.
 
 @left_coalition_possible
 
-The CP is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Tim Buck as prime_minister in exchange for a coalition. [? if monarch == "George V" : There is no chance whatsoever that Monarch George V would approve of the appointment of a die-hard communist as prime_minister. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as prime_minister.
+The CP is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Tim Buck as prime_minister in exchange for a coalition. [? if monarch == "George V" : There is no chance whatsoever that Monarch George V would approve of the appointment of a die-hard communist as prime_minister. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as prime_minister.
 
 - @tim_buck_prime_minister: Appoint Tim Buck as prime_minister.
 - @left_coalition_resources

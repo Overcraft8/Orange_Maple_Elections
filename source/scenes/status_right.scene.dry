@@ -1,4 +1,4 @@
-title: partyhierarchy
+title: Party Hierarchy
 new-page: true
 is-special: true
 
@@ -13,7 +13,7 @@ is-special: true
 
 @partyfactions
 
-= Internal Factions of the <span style="color: #00008B;">**FLP**</span>
+= Internal Factions of the <span style="color: **FLP**
 
 <span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #a7d11c;">**Agrarians**</span> 
 Strength: [+ agrarian_strength : strength +] 

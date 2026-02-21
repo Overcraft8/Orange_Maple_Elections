@@ -109,9 +109,18 @@ Q.cpc_relation = 35;
 Q.SCP_relation = 10;
 Q.NSDAP_relation = 0;
 
-Q.cp_leader = "Tim Buck";
+
 Q.flp_parliament_leader = "Major James Coldwell";
 Q.flp_president = "George Hara Williams";
+Q.flp_secretary = "Frank Eliason";
+
+Q.flp_board_one = "Alexander Nicholson";
+Q.flp_board_two = "Louise Lucas";
+Q.flp_board_three = "John Brockelbank";
+Q.flp_board_four = "Clarence Fines";
+
+
+Q.cp_leader = "Tim Buck";
 Q.cp_party_leader = "Tim Buck";
 Q.cpc_leader = "James Anderson";
 Q.lpc_leader = "James Gardiner";

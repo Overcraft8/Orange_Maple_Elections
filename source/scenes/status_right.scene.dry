@@ -4,16 +4,37 @@ is-special: true
 
 = Leader of the FLP
 
- if the_split == 0 : <div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;">George Hara Williams</p> 
+ [if the_split == 0 : <div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;">George Hara Williams</p> ]
 
 = Parliamentary Party Leader 
 
 <div><img src="img/portraits/ColdwellMajorJames.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
 <p style="text-align: center;margin-bottom: 0;"> [+ flp_parliament_leader +] </p>
 
+= Party Secretary
+
+<div><img src="img/portraits/EliasonFrank.jpg" style="width: 40%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<p style="text-align: center;margin-bottom: 0;"> [+ flp_secretary +] </p>
+
+= Board of Directors 
+
+<div><img src="img/portraits/NicholsonAlexander.jpg" style="width: 5%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<p style="text-align: center;margin-bottom: 0;"> [+ flp_board_one +] </p>
+
+<div><img src="img/portraits/LouiseLucas.jpg" style="width: 5%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<p style="text-align: center;margin-bottom: 0;"> [+ flp_board_two +] </p>
+
+<div><img src="img/portraits/BrockelbankJohn.jpg" style="width: 5%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<p style="text-align: center;margin-bottom: 0;"> [+ flp_board_three +] </p>
+
+<div><img src="img/portraits/FinesClarence.jpg" style="width: 5%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<p style="text-align: center;margin-bottom: 0;"> [+ flp_board_four +] </p>
+
+
+
 @partyfactions
 
-= Internal Factions of the <span style=" >**FLP**</span>
+= Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
 
 <span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #a7d11c;">**Agrarians**</span> 
 Strength: [+ agrarian_strength : strength +] 
@@ -27,6 +48,6 @@ Dissent: [+ labor_dissent : dissent +]
 Strength: [+ left_strength : strength +] 
 Dissent: [+ left_dissent : dissent +]
 
-<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #ca8610;">**Reformist**</span> 
+<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span> 
 Strength: [+ reformist_strength : strength +] 
 Dissent: [+ reformist_dissent : dissent +]

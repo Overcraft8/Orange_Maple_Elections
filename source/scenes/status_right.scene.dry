@@ -18,29 +18,33 @@ is-special: true
 
 = Board of Directors 
 
-<div style="display: flex; justify-content: center; gap: 2px;">
+<!-- ROW 1 -->
 
-    <div style="text-align: center; font-size: 4px;">
-        <img src="img/portraits/NicholsonAlexander.jpg" style="width: 80px;">
+<div style="display: flex; justify-content: center; font-size: 4px; gap: 2px; margin-bottom: 4px;">
+
+    <div style="text-align: center;">
+        <img src="img/portraits/NicholsonAlexander.jpg" style="width: 40px;">
         <p>[+ flp_board_one +]</p>
     </div>
 
     <div style="text-align: center;">
-        <img src="img/portraits/LouiseLucas.jpg" style="width: 80px;">
+        <img src="img/portraits/LucasLouise.jpg" style="width: 40px;">
         <p>[+ flp_board_two +]</p>
     </div>
 
 </div>
 
-<div style="display: flex; justify-content: center; gap: 2px;">
+<!-- ROW 2 -->
+
+<div style="display: flex; justify-content: center; font-size: 4px; gap: 2px;">
 
 <div style="text-align: center;">
-        <img src="img/portraits/BrockelbankJohn.jpg" style="width: 80px;">
+        <img src="img/portraits/BrockelbankJohn.jpg" style="width: 40px;">
         <p>[+ flp_board_three +]</p>
     </div>
 
     <div style="text-align: center;">
-        <img src="img/portraits/FinesClarence.jpg" style="width: 80px;">
+        <img src="img/portraits/FinesClarence.jpg" style="width: 40px;">
         <p>[+ flp_board_four +]</p>
     </div>
 

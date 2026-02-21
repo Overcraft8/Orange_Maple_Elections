@@ -113,7 +113,7 @@ Q.cp_leader = "Tim Buck";
 // alternative is the Conciliators as party leader
 Q.flp_party_leader = "J.S. Woodsworth";
 Q.cp_party_leader = "Tim Buck";
-Q.cpc_leader = "R. B. Bennett";
+Q.cpc_leader = "James Anderson";
 Q.lpc_leader = "Mackenzie King";
 Q.scp_leader = "William Aberhart"; 
 Q.rpc_leader = "Henry Stevens";
@@ -364,8 +364,8 @@ Q.economic_records = [];
 
 // State of the government
 Q.monarch = "George V";
-// starting prime_minister: R.B. Bennett
-Q.prime_minister = "R.B. Bennett";
+// starting prime_minister: R.B. Anderson
+Q.prime_minister = "R.B. Anderson";
 Q.prime_minister_party = 'CPC';
 Q.flp_in_government = 0;
 Q.rpc_in_government = 0;

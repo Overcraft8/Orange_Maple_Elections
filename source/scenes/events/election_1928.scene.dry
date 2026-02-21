@@ -563,7 +563,7 @@ Even though the SCP is very reluctant to participate in such a coalition, they s
 title: There is no clear governing majority.
 view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_failed == 1) and monarch = "George V" and far_right_coalition < 50
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning if prime_minister = "Brüning" or prime_minister = "Wirth"; no_majority_papen if prime_minister = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if prime_minister == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if prime_minister = "Schleicher"; no_majority_flp if prime_minister_party = "FLP" or prime_minister == "R.B. Bennett"
+go-to: no_majority_bruning if prime_minister = "Brüning" or prime_minister = "Wirth"; no_majority_papen if prime_minister = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if prime_minister == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if prime_minister = "Schleicher"; no_majority_flp if prime_minister_party = "FLP" or prime_minister == "R.B. Anderson"
 
 # TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
 
@@ -1170,7 +1170,7 @@ go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
 
-[? if year == 1928 : Since R.B. Bennett resigned, Heinrich Brüning has been appointed prime_minister. ?]
+[? if year == 1928 : Since R.B. Anderson resigned, Heinrich Brüning has been appointed prime_minister. ?]
 [? if year > 1928: Heinrich Brüning of the RPC Party has been appointed prime_minister. ?]
 
 @rpc_prime_minister_wirth
@@ -1215,7 +1215,7 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; prime_minister = "Brüning" if prime_minister == "R.B. Bennett"; flp_in_government = 0; grand_coalition_failed = 1
+on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; prime_minister = "Brüning" if prime_minister == "R.B. Anderson"; flp_in_government = 0; grand_coalition_failed = 1
 go-to: right_coalition_post_flp if right_coalition >= 50 and monarch != "J. S. Woodsworth" and year < 1929; new_elections_flp if (right_coalition < 50 or year >= 1929) and monarch != "J. S. Woodsworth"; woodsworths_dilemma if monarch == "J. S. Woodsworth"
 
 

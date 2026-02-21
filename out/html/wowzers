@@ -27,9 +27,9 @@ body.dark-mode {
   --bg-color: #000;
   --border-color: #fff;
   --content-bg-color: #242424;
-  --text-color: #efefef;
+  --text-color: #fff;
   --link-color: #ff8080;
-  --link-hover-color: rgba(255, 255, 255, 0.06);
+  --link-hover-color: rgba(100, 100, 100, 0.1);
   --tab-bg-color: #555555;
   --tab-color: #505050;
   --tab-hover-color: #242424;
@@ -73,15 +73,13 @@ header {
 #header-links {
   text-align: left;
   float: left;
-  display: inline-block;
   margin-bottom: 0.5em;
   padding: 0;
-  padding-left: 1em;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
   background-color: transparent;
 }
 #header-links a {
-      display: inline-block;
+  display: inline-block;
   padding: 0.35em 0.9em;
   margin-right: 0.4em;
   border-radius: 4px;
@@ -344,6 +342,60 @@ img.inline-img.icon {
   border: 2px solid var(--htext-color);
 }
 
+/* tooltips from originalname/Dynamic Dev */
+.mytooltip {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 2px 1px;
+}
+.mytooltip:hover { background-color: rgb(100, 140, 220); }
+
+.mytooltip .mytooltiptext {
+  position: fixed;
+  z-index: 999999;
+  width: 120px;
+  background: #fff4e6;
+  color: #3b1f0a;
+  text-align: left;
+  border-radius: 8px;
+  padding: 12px 14px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  border: 1px solid #b22222;
+  pointer-events: none;
+  font-size: 14px !important;
+  line-height: 1.5em !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: translateY(5px);
+  text-align: center;
+}
+.mytooltip:hover .mytooltiptext { opacity: 1; }
+.mytooltip .mytooltiptext img { display: block; margin: 0 auto 4px auto; max-width: 90%; height: auto; }
+
+.mytooltip .mytooltiptext {
+  bottom: auto;
+  top: calc(var(--mouse-y, 0px) - 20px);
+  left: calc(var(--mouse-x, 0px));
+  transform: translate(-50%, -100%);
+}
+
+/* coalition cards system */
+.ccard{padding:10px 14px;border-radius:8px;margin-bottom:10px;box-shadow:2px 2px 8px rgba(0,0,0,0.2);background:#FDFFDB}
+.chdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.cname{color:#000;font-size:0.95em;font-weight:600}
+.clead{font-size:0.85em;color:#000;margin-bottom:6px}
+.clead b{color:#000}
+.cmem{display:flex;flex-wrap:wrap;gap:5px}
+.cno{text-align:center;padding:20px;color:#888;font-style:italic;background:rgba(0,0,0,0.04);border-radius:8px;border:1px dashed #ccc}
+
+/* sri lanka map hover effect */
+#sri-lanka-map path:hover {
+  fill: #FFD700;
+  opacity: 0.8;
+}
+
 .overlay {
     background: rgba(0,0,0,0.7);
     display: none;
@@ -356,9 +408,6 @@ img.inline-img.icon {
     left: 0;
     z-index: 2;
     overflow: scroll;
-}
-.options {
-    text-align: right;
 }
 .overlay_top {
     position: relative;
@@ -423,6 +472,9 @@ ul.decks, ul.hand, ul.pinned-cards {
 .deck {
 
 }
+
+
+
 
 a.card {
   display: inline-block;
@@ -572,6 +624,7 @@ img {
       margin-right: 0.4em;
   }
 }
+
 /* mobile: move the stat box to the top if the screen is too small,
  * and reduce font size slightly. */
 @media screen and (max-width: 560px) {
@@ -601,7 +654,9 @@ img {
   }
   .tools.right {
       float: none;
-      right: 0;
+      right: 0.4em;
+      position: relative;
+      z-index: 10;
   }
   #mid_panel {
       margin: 0 auto;
@@ -632,7 +687,22 @@ img {
   }
 }
 
-
+/* Mobile adjustments */
+@media screen and (max-width: 560px) {
+    .support-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .support-item span {
+        min-width: auto;
+    }
+    
+    .support-bar {
+        width: 100%;
+    }
+}
 /* New stuff just for this game */
 
 /* colored box div */
@@ -647,72 +717,68 @@ table {
 }
 
 /* Styles for parties */
-.seat.cp {
-    fill: #8B0000;
+.seat.unp {
+    fill: #006400;
 }
-.seat.flp {
-    fill: #D26E28;
+.seat.slfp {
+    fill: #00008B;
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
-.seat.lpc {
-    fill: #BE0028;
+.seat.tulf {
+    fill: #F7D917;
 }
-.seat.rpc {
-    fill: #E7DB73;
+.seat.cwc {
+    fill: #E52B50;
 }
-.seat.cpc {
-    fill: #0055A5;
+.seat.actc {
+    fill: #FDCC01;
 }
-.seat.other {
-    fill: #909090;
+.seat.cpsl {
+    fill: #65000B;
 }
-.seat.scp {
-    fill: #50E23D;
+.seat.jvp {
+    fill: #FF2226;
 }
-.seat.nsdap {
-    fill: #954B00;
+.seat.slpp {
+    fill: #E52B50;
 }
-.seat.sapd {
-    fill: #C40000;
+.seat.slmp {
+    fill: #663399;
 }
-
-.mytooltip {
-  position: relative;
-  cursor: pointer;
-  background-color: transparent;
-  padding: 2px 5px;
+.seat.eros {
+    fill: #FF2400;
 }
-
-.mytooltip:hover { background-color: #f3f3e3; }
-
-.mytooltip .mytooltiptext {
-  position: fixed;
-  z-index: 999999;
-  width: 240px;
-  background: #fff4e6;
-  color: #3b1f0a;
-  text-align: left;
-  border-radius: 8px;
-  padding: 12px 14px;
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-  border: 1px solid #b22222;
-  pointer-events: none;
-  font-size: 14px !important;
-  line-height: 1.5em !important;
-  font-weight: 500 !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  transform: translateY(5px);
-  text-align: center;
+.seat.lssp {
+    fill: #A91101;
+}
+.seat.nssp {
+    fill: #FF8080;
+}
+.seat.dplf {
+    fill: #CE2029;
+}
+.seat.mep {
+    fill: #FF3915;
+}
+.seat.pflt {
+    fill: #DC143C;
+}
+.seat.slmc {
+    fill: #2DCF3E;
+}
+.seat.npp {
+    fill: #9F005D;
+}
+.seat.vacant {
+    fill: #808080;
 }
 
-.mytooltip:hover .mytooltiptext { opacity: 1; }
-.mytooltip .mytooltiptext img { display: block; margin: 0 auto 4px auto; max-width: 90%; height: auto; }
 
-.mytooltip .mytooltiptext {
-  bottom: auto;
-  top: calc(var(--mouse-y, 0px) - 20px);
-  left: calc(var(--mouse-x, 0px));
-  transform: translate(-50%, -100%);
+.tooltip-text {
+    text-decoration: underline;
+    text-decoration-style: dotted;
 }
+    </style>
+</head>
+<body>

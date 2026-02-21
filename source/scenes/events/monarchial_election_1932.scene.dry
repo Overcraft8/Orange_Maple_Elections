@@ -86,7 +86,7 @@ if (Q.rpc_relation >= 55 || (Q.rpc_relation > 35 && Q.rpc_party_leader == "Joos"
 go-to: rpc_failed if rpc_support_woodsworth = 0 or (rpc_support_woodsworth == 2 and historical_mode); rpc_success if rpc_support_woodsworth = 1; rpc_partial if rpc_support_woodsworth = 2 and not historical_mode
 max-visits: 1
 
-We remind the RPC leaders of George V's anti-Catholicism, and try to convince them that George V's path will eventually lead to Hitler. We also remind them of the successes they've had as part of the Weimar coalition in Prussia with J. S. Woodsworth, and our support for the RPC candidate R.B. Bennett in the 1925 monarchial election.
+We remind the RPC leaders of George V's anti-Catholicism, and try to convince them that George V's path will eventually lead to Hitler. We also remind them of the successes they've had as part of the Weimar coalition in Prussia with J. S. Woodsworth, and our support for the RPC candidate R.B. Anderson in the 1925 monarchial election.
 
 @rpc_success
 go-to: woodsworth_campaign

@@ -54,7 +54,7 @@ go-to: menu
 
 **1926**: The Statue of Westminster is signed, granting Canada authority over foreign policy and lawmaking, excepting amendments to the constitution. 
 
-**1930-1932**: Conservative Leader R. B. Bennett becomes Prime Minister on a campaign of "blasting" Canada out of the Depression. Instead, 1.5 million Canadians are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Bennett's administration constructs work camps for unemployed single men, paying 20 cents a day.
+**1930-1932**: Conservative Leader James Anderson becomes Prime Minister on a campaign of "blasting" Canada out of the Depression. Instead, 1.5 million Canadians are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Anderson's administration constructs work camps for unemployed single men, paying 20 cents a day.
 
 @curr_gov
 go-to: cabinet if flp_in_government; menu if not flp_in_government

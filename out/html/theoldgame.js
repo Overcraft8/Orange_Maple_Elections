@@ -224,14 +224,6 @@ function applyWholesome(str) {
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
 
-    window.updateSidebarRight = function() {
-    $('#qualities_right').empty();
-    var scene = dendryUI.game.scenes[window.statusTabRight];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
-  };
-
   window.changeTab = function(newTab, tabId) {
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
           window.alert('Polls are not available in historical mode.');
@@ -247,25 +239,9 @@ function applyWholesome(str) {
       window.updateSidebar();
   };
 
-  window.changeTabRight = function(newTab, tabId) {
-    var tabButton = document.getElementById(tabId);
-    var tabButtons = document.getElementsByClassName('tab_button');
-    
-    var rightSidebar = document.getElementById('stats_sidebar_right');
-    var rightTabButtons = rightSidebar.getElementsByClassName('tab_button');
-    for (i = 0; i < rightTabButtons.length; i++) {
-        rightTabButtons[i].className = rightTabButtons[i].className.replace(' active', '');
-    }
-    tabButton.className += ' active';
-    window.statusTabRight = newTab;
-    window.updateSidebarRight();
-  };
-
   window.onDisplayContent = function() {
       window.updateSidebar();
-      window.updateSidebarRight();
   };
-
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator
@@ -301,7 +277,6 @@ function applyWholesome(str) {
 
   window.justLoaded = true;
   window.statusTab = "status";
-  window.statusTabRight = "status_right";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 

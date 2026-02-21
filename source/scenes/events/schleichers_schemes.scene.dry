@@ -1,6 +1,6 @@
 title: Schleicher's Schemes
 subtitle: Prime Minister Schleicher claims to have a plan to save Canada...
-view-if: year >= 1932 and monarch = "George V" and prime_minister = "Schleicher" and flp_in_government = 0 and largest_party = "SCP" and needham_deported = 0 and not monarchial_powers
+view-if: year >= 1932 and monarch = "George V" and prime_minister = "Schleicher" and flp_in_government = 0 and largest_party = "SCP" and not monarchial_powers
 on-arrival: economic_growth += 1; budget -= 1; unemployed -= 3 if unemployed > 10; rural_scp += 3; old_middle_scp += 3; new_middle_scp += 3; workers_scp += 3
 new-page: true
 max-visits: 1

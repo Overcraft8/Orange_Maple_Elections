@@ -146,7 +146,6 @@ Adolf Needham has taken power in Canada. However, we have rallied the democratic
 
 Needham does not yet control Canada. [? if prime_minister == "Papen" : However, Prime Minister Papen's authoritarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if prime_minister == "Schleicher" : However, Prime Minister Schleicher's authoritarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if prime_minister == "Brüning" : However, Prime Minister Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
 
-[? if needham_deported == 1 : We have deported Needham back to Austria. Hopefully he will never return. ?]
 
 
 
@@ -355,8 +354,6 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
 
-[? if game_achievement_deport_needham : **Der österreichische Gefreite** - deported Needham ?]
-
 [? if game_achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
 [? if game_achievement_wirtschaftswunder: **Wirtschaftswunder** - After 1932, have unemployment less than in 1928, inflation below 5%, and a budget surplus. ?]
@@ -464,8 +461,6 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
 
-[? if achievement_deport_needham : **Der österreichische Gefreite** - deported Needham ?]
-
 [? if achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
 [? if achievement_wirtschaftswunder: **Wirtschaftswunder** - After 1932, have unemployment less than in 1928, inflation below 5%, and a budget surplus. ?]
@@ -570,8 +565,6 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 [? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
 [? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
-
-[? if not achievement_deport_needham : **Der österreichische Gefreite** - deported Needham ?]
 
 [? if not achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 

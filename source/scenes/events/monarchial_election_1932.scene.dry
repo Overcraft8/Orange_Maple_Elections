@@ -12,7 +12,7 @@ face-image: img/georgev_election.jpg
 
 @pres_election
 
-The monarchial election is coming up soon. [? if flp_in_government = 0 : While the position of Prime Minister is typically more important, recent governments have depended on the monarch's emergency decree powers, making the office vital. ?] [? if needham_deported==0 : The SCPs will run Needham, while the CP will run Tim Buck. A victory for Needham would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if needham_deported==1 : Since Needham has been deported, the SCPs will run Hermann Needham in his stead. He is widely seen as a proxy for Needham, who, despite his legal persecution, retains a popular base who wishes to see him returned to Canada. Meanwhile, the CP will run Tim Buck. ?]
+The monarchial election is coming up soon. [? if flp_in_government = 0 : While the position of Prime Minister is typically more important, recent governments have depended on the monarch's emergency decree powers, making the office vital. ?]
 [? if sapd_formed: The SAPD, our former leftists, are supporting Tim Buck of the CP, and will likely share an endorsement with the Communists. ?]
 
 # if needham is deported, who would scp run? Duesterberg? or Goering?

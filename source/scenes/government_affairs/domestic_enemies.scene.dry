@@ -11,7 +11,6 @@ view-if: flp_in_government = 1 and interior_minister_party = "FLP"
 
 As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organizations.
 
-- @deport_needham
 - @ban_sa: Ban the SA.
 - @unban_sa: Unban the SA.
 - @persecute_sa

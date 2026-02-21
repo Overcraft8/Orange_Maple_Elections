@@ -5,7 +5,6 @@ on-arrival: flp_in_government = 0
 tags: event
 new-page: true
 
-[? if needham_deported and monarch != "Needham" and prime_minister != "Needham": The first act that Prime Minister [+ prime_minister +] takes upon assuming office is bringing Adolf Needham back to Canada, and giving him citizenship and an official cabinet position. ?]
 
 Needham has promised a campaign of revenge against the socialists, and the SCPs have already spilled much blood on the streets. In his published manifesto, he promises a campaign of unspeakable horror against our Jews, and endless wars of violent expansion that will ruin all of Europe.
 

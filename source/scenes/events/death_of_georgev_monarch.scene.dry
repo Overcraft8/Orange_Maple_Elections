@@ -22,8 +22,6 @@ New monarchial elections are to be held as soon as possible. The Canadian politi
 @candidates
 go-to: candidate_menu
 
-[? if not needham_deported : Of course, Adolf Needham will be running for the SCPs, in his third run. We have kept him out of power so far, but nothing is certain. ?]
-[? if needham_deported : With Needham deported, the SCPs will be running Hermann Needham as their candidate. ?]
 This might be the SCPs' last hurrah; the party's internal contradictions are heightening, and it is in desperate shortage of funds.
 
 The SCP will nominate Franz Seldte, leader of the Stahlhelm paramilitary group. He will be endorsed by many of George V's most right-wing supporters. They are working more closely with the SCPs than before, and in the second round, the far-right parties are expected to consolidate into a single anti-republican front.

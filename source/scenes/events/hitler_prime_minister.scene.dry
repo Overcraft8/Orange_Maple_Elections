@@ -1,13 +1,13 @@
 title: Needham appointed Prime Minister!
 subtitle: The beginning of the end...
-view-if: year >= 1933 and monarch = "George V" and (prime_minister = "Papen" or prime_minister = "Schleicher") and in_grand_coalition = 0 and flp_in_government = 0 and largest_party = "SCP" and needham_deported = 0 and not monarchial_powers and not schleichers_scheme_success
+view-if: year >= 1933 and monarch = "George V" and (prime_minister = "Papen" or prime_minister = "Schleicher") and in_grand_coalition = 0 and flp_in_government = 0 and largest_party = "SCP" and not monarchial_powers and not schleichers_scheme_success
 on-departure: prime_minister = "Needham"; prime_minister_party = "SCP"
 tags: event
 new-page: true
 
 = Needham Appointed Prime Minister!
 
-Internal scheming by the camarilla surrounding the monarch has caused Monarch George V to appoint Needham as prime_minister, replacing the unpopular [+ prime_minister +]. [? if needham_deported : Despite his earlier deportation, the SCPs leaders and their reactionary allies have connived for the monarch to give him Canadian citizenship after all. ?] Some of the reactionaries surrounding George V believe that he will restore Canada to its supposed former glory, while others believe that they can control him and his movement.
+Internal scheming by the camarilla surrounding the monarch has caused Monarch George V to appoint Needham as prime_minister, replacing the unpopular [+ prime_minister +]. Some of the reactionaries surrounding George V believe that he will restore Canada to its supposed former glory, while others believe that they can control him and his movement.
 
 He has promised a campaign of revenge against the socialists, and the SCPs have already spilled blood. In his published manifesto, he promises a campaign of unspeakable horror against Jews, and endless wars of violent expansion that will ruin all of Europe.
 

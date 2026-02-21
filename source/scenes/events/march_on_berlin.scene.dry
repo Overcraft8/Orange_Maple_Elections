@@ -30,13 +30,6 @@ on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_p
 Monarch [+ monarch +] has called for emergency elections, to be held next month, under a caretaker government. The SA is permitted to act with impunity, intimidating voters into supporting the fascists.
 
 
-@accept_needham
-on-arrival: prime_minister = "Needham"; prime_minister_party = "SCP"; flp_in_government = 0
-
-After the resignation of the prime_minister, Needham has been appointed prime_minister[? if needham_deported: , after being made a citizen again ?].
-
-- @needham_takes_power
-
 @ask_resign
 
 Monarch [+ monarch +] has asked our government to resign.
@@ -164,5 +157,3 @@ unavailable-subtitle: There is no way Monarch [+ monarch +] could do such a blat
 on-arrival: prime_minister = "Needham"; prime_minister_party = "SCP"; flp_in_government = 0
 
 Threatened with a civil war, and unwilling to fight anymore, Monarch [+ monarch +] dismisses the current government and appoints Needham of the SCP as prime_minister.
-
-- @needham_takes_power

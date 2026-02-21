@@ -413,8 +413,7 @@ on-arrival: prime_minister = scp_leader; prime_minister_party = "SCP"
 
 [? if monarch == "George V" : Monarch George V's camarilla ?][? if monarch == "J. S. Woodsworth" : Monarch J. S. Woodsworth somehow ?] has decided that [+ scp_leader +] must be prime_minister [? if monarch == "George V": , and the aging monarch accepts their recommendations. ?][? if monarch == "J. S. Woodsworth" : because it is what the constitution would stipulate. ?]
 
-- @needham_takes_power: What do we do now?
-
+The SCPs have won. The establishment is in shock, but there is little they can do about it. The SCPs will now be able to consolidate their power and implement their agenda.
 
 @far_right_fail
 on-arrival: prime_minister = "Schleicher"; prime_minister_party = "I"; pro_republic -= 10; next_election_time = time+5; next_parl_election_month = month + 5; next_parl_election_year = year; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12;
@@ -707,14 +706,6 @@ New elections have been set for [+ next_parl_election_month : month +] [+ next_p
 go-to: needham_prime_minister
 
 # TODO: there should be a second Schleicher option if the SCP isn't the strongest
-
-
-@needham_prime_minister
-on-arrival: prime_minister = "Needham"; prime_minister_party = "SCP"
-
-There is no path to a majority government for now. The scheming around Monarch George V is leading to only one path - that of Prime Minister Adolf Needham. [? if largest_party == "SCP" : Since they are the largest party, it is not exactly contrary to parliamentary procedure, so it is difficult to raise objections solely on procedural grounds. ?] [? if needham_deported: Despite his earlier deportation, the SCPs leaders and their reactionary allies have connived for the monarch to give him Canadian citizenship after all. ?]
-
-- @needham_takes_power: What now?
 
 # if SCP is largest party and George V is monarch, then George V appoints Needham prime_minister.
 

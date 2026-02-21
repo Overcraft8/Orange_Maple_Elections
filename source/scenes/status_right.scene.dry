@@ -4,7 +4,7 @@ is-special: true
 
 = Leader of the FLP
 
- if the_split == 0 : <div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;">George Hara Williams</p> ?
+ if the_split == 0 : <div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;">George Hara Williams</p> 
 
 = Parliamentary Party Leader 
 
@@ -13,7 +13,7 @@ is-special: true
 
 @partyfactions
 
-= Internal Factions of the <span style="color: **FLP**
+= Internal Factions of the <span style=" >**FLP**</span>
 
 <span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #a7d11c;">**Agrarians**</span> 
 Strength: [+ agrarian_strength : strength +] 
@@ -22,8 +22,6 @@ Dissent: [+ agrarian_dissent : dissent +]
 <span class="tooltip-text" title="A faction of trade unionists and labor activists, representing the urban workers." style="color: #0F52BA;">**Labor**</span> 
 Strength: [+ labor_strength : strength +] 
 Dissent: [+ labor_dissent : dissent +]
-
-<span class="tooltip-text" title="Consisting of mostly National CCF members that can aid us in our goals." style="color: #1d1d1e;">**Nonfactional**</span> 
 
 <span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Left**</span> 
 Strength: [+ left_strength : strength +] 

@@ -16,25 +16,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 The Commons elections are to be held now.
 
 - @election_algorithm: May we do our best...
-- @cancel_elections
 
-@cancel_elections
-title: We cannot hold the elections now. Cancel the elections.
-subtitle: This is an anti-democratic move that may backfire.
-view-if: in_emergency_government == 1 and monarch == "J. S. Woodsworth" and not monarchial_powers
-
-Since we are currently ruling as part of an emergency government, we may use quasi-constitutional trickery to significantly delay these elections, and continue governing via Article 48. This is likely to be extremely unpopular both with our base and with the other parties. However, this may be necessary to prevent the extremists from gaining power.
-
-- @cancel_elections_2: Yes, do it.
-- @election_algorithm: No, let's hold the elections.
-
-@cancel_elections_2
-on-departure: next_parl_election_year = next_parl_election_year + 1; next_election_time = time + 12; pro_republic -= 10; cpc_relation -= 8; rpc_relation -= 8; lpc_relation -= 10; cp_relation -= 8; coup_progress += 2; workers_flp -= 4; new_middle_flp -= 5; old_middle_flp -= 5; rural_flp -= 5; catholics_flp -= 5; unemployed_flp -= 5; coup_progress += 2 
-achievement: ausnahmezustand
-
-Fine. Monarch [+ monarch +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
-
-Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!
@@ -420,7 +402,6 @@ Monarch J. S. Woodsworth faces a dilemma. Is it "democratic" to let democracy be
 
 Alternatively, J. S. Woodsworth could use the emergency powers of the presidency. Article 48 has been used by George V to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
 
-- @emergency_woodsworth: We will form an emergency government with J. S. Woodsworth's support.
 - @new_elections: We will have new elections.
 - @scp_win: Let the SCPs form their government.
 
@@ -741,79 +722,11 @@ view-if: monarch == "J. S. Woodsworth" and (grand_coalition < 50 or grand_coalit
 
 Monarch J. S. Woodsworth faces a dilemma. He desperately desires a socialist or at least democratic government, but the electoral results are not there for such. Article 48 has been used by George V to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
 
-- @emergency_woodsworth: We will form an emergency government with J. S. Woodsworth's support.
 - @new_elections: We will have new elections.
 - @new_grand_coalition
 - @left_coalition
 - @popular_front_coalition
 - @scp_majority
-
-
-
-@emergency_woodsworth
-title: We will form an emergency government with J. S. Woodsworth's support.
-subtitle: This may have the effect of inflamming public sentiment against us, and the reactionaries will be against us each step of the way.
-on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1
-
-Yes, an emergency minority government, with the support of the FLP. Who should lead this emergency minority government?
-
-- @woodsworth_emergency_prime_minister: J. S. Woodsworth for Prime Minister-Monarch!
-- @williams_emergency_prime_minister: George Hara Williams for emergency Prime Minister.
-- @bruning_emergency_prime_minister: Brüning of the RPC Party, as a goodwill gesture toward the bourgeoisie.
-- @wirth_emergency_prime_minister: Joseph Wirth of the RPC Party, as a gesture of republican unity.
-
-@woodsworth_emergency_prime_minister
-subtitle: This is unprecedented.
-view-if: not historical_mode or not flp_prussia
-on-arrival: prime_minister = "J. S. Woodsworth"; prime_minister_party = "FLP"; flp_in_government = 1; pro_republic -= 5; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labor_minister_party = "FLP"; reichswehr_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP"; reichswehr_loyalty -= 0.1; 
-
-Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Prime Minister also being the Monarch (the Monarch may not be a member of the Commons; there is no law saying that the Prime Minister *must* be a member of the Commons).
-
-Thus, we have Prime Minister-Monarch J. S. Woodsworth. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with dictatorship or monarchy, are now clamoring for the restoration of democracy.
-
-- @far_right_coup
-- @emergency_no_confidence: The SCPs immediately call a no-confidence vote against us...
-
-@williams_emergency_prime_minister
-subtitle: The Communists are warming to him...
-on-arrival: prime_minister = "Williams"; prime_minister_party = "FLP"; flp_in_government = 1; cp_relation += 5; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labor_minister_party = "FLP"; reichswehr_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP"; reichswehr_loyalty -= 0.1;
-
-We have appointed George Hara Williams as emergency prime_minister. The Communists consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
-
-- @far_right_coup
-- @emergency_no_confidence
-
-
-@bruning_emergency_prime_minister
-on-arrival: prime_minister = "Brüning"; prime_minister_party = "RPC"; flp_in_government = 1; rpc_relation += 10; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labor_minister_party = "FLP"; reichswehr_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP" 
-
-The RPC Party is pleased, and somewhat surprised, that we have appointed [+ prime_minister +] as prime_minister.
-
-- @far_right_coup
-- @emergency_no_confidence
-
-@wirth_emergency_prime_minister
-view-if: rpc_party_leader == "Joos"
-on-arrival: prime_minister = "Wirth"; prime_minister_party = "RPC"; flp_in_government = 1; rpc_relation += 10; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labor_minister_party = "FLP"; reichswehr_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP" 
-
-The RPC Party is pleased that we have appointed [+ prime_minister +] as prime_minister.
-
-
-- @emergency_no_confidence
-
-
-
-@emergency_no_confidence
-title: The SCPs immediately call a no-confidence vote against us...
-view-if: scp_majority < 45
-on-arrival: rpc_no_confidence = 1 if rpc_relation < 45; cp_no_confidence = 1 if cp_relation < 45; other_no_confidence = 1 if (rpc_relation + cpc_relation)/2 < 45; cpc_no_confidence = 1 if cpc_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = scp_r + scp_r; no_confidence_votes += rpc_r if rpc_no_confidence; no_confidence_votes += cpc_r if cpc_no_confidence; no_confidence_votes += cp_r if cp_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
-
-The SCP and SCP will vote against us, of course. The other parties vote their conscience. [? if rpc_no_confidence: The RPC Party is voting against us. ?] [? if cp_no_confidence: The CP votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
-
-In total, [+ no_confidence_votes +]% of the Commons is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
-
-- @no_confidence_elections_new: There will be new elections, which we will try to delay.
-- @no_confidence_win: We have won, for now.
 
 
 @no_confidence_elections_new

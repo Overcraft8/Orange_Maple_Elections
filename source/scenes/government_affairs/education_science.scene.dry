@@ -116,13 +116,13 @@ Are you sure about this? The Weimar Coalition had an agreement to not touch reli
 
 @secularize_2
 on-arrival: secularized = 1; catholics_flp -= 15; rpc_relation -= 15; cpc_relation += 6*(1-dissent); lpc_relation += 6*(1-dissent); cp_relation += 6*(1-dissent); new_middle_flp += 3*(1-dissent); workers_flp += 3*(1-dissent); education_science += 0.5; new_middle_lpc += 4; new_middle_cpc += 4
-go-to: vote_of_no_confidence.vonc_menu if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government
+go-to: vote_of_no_confidence.vonc_menu if in_weimar_coalition or in_grand_coalition or in_popular_front
 
 # instant VONC from zentrum
 
 The FLP, [+ lpc_name +], CPC, and CP vote in favor of secular education, overcoming the opposition of the religiously-oriented RPC Party and SCP. We have funded secular community schools to replace some previous denominational schools.
 
-[? if in_weimar_coalition or in_grand_coalition or in_popular_front or in_emergency_government: Of course, the RPC Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
+[? if in_weimar_coalition or in_grand_coalition or in_popular_front: Of course, the RPC Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
 
 
 

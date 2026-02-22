@@ -235,12 +235,6 @@ go-to: eg_menu
 Unemployment is still at dangerously high levels. Even though Needham is not in power, the situation is ripe for instability and extremism.
 
 
-@emergency_government
-title: FLP ruling in an emergency government.
-view-if: in_emergency_government == 1
-tags: endings
-go-to: eg_menu
-
 The FLP is ruling as part of an emergency minority government, led by Monarch [+ monarch +] and Prime Minister [+ prime_minister +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
 
 @peoples_party_achieved

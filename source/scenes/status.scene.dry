@@ -21,7 +21,7 @@ if (Q.economic_growth) {
 Resources available: [+ resources +]
 
 FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
-[? if in_weimar_coalition and flp_in_government: Weimar Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_popular_front and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?][? if in_emergency_government and flp_in_government: emergency government ?]
+[? if in_weimar_coalition and flp_in_government: Weimar Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_popular_front and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
 
 [? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 

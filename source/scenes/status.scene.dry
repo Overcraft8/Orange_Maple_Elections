@@ -96,7 +96,7 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-{!<span class="tooltip-text" title="The UFC(SS) Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the FLG.">UFC(SS)</span>!} Strength: [+ rb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The UFC(SS) is a popular organization for defending democracy, mostly affiliated with the FLG.">UFC(SS)</span>!} Strength: [+ rb_strength_2 +] thousand
 
 UFC(SS) Militarization: [+ rb_militancy : militancy +]
 

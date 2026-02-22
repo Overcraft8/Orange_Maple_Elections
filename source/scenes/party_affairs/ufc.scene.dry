@@ -10,7 +10,7 @@ max-visits: 6
 
 = UFC(SS)
 
-The *UFC(SS) Schwarz-Rot-Gold* is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLG, RPC, and [+ lpc_name +], but by far the largest component is with the FLG.
+The *UFC(SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLG, RPC, and [+ lpc_name +], but by far the largest component is with the FLG.
 
 [? if workers_flg < 46 or workers_flg < workers_scp or workers_flg < workers_cp : The UFC(SS) is having a more difficult time recruiting, as the FLG is no longer the dominant party among the workers. Many of its members have left. ?]
 

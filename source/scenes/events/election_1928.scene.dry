@@ -544,7 +544,7 @@ Even though the SCP is very reluctant to participate in such a coalition, they s
 title: There is no clear governing majority.
 view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_failed == 1) and monarch = "George V" and scp_majority < 50
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning if prime_minister = "Brüning" or prime_minister = "Wirth"; no_majority_papen if prime_minister = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if prime_minister == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if prime_minister = "Schleicher"; no_majority_flp if prime_minister_party = "FLP" or prime_minister == "James Anderson"
+go-to: no_majority_bruning if prime_minister = "Brüning" or prime_minister = "Wirth"; no_majority_papen if prime_minister = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if prime_minister == "Papen" and no_majority_papen_elections > 0; no_majority_flp if prime_minister_party = "FLP" or prime_minister == "James Anderson"
 
 # TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
 
@@ -686,10 +686,6 @@ There is no path to a majority government. George V is displeased with Papen, an
 Schleicher's government is deeply unpopular among all parties of the Commons. Despite his support for a coalition with the SCP, the SCPs want power all to themselves, without Schleicher.
 
 New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
-
-
-@no_majority_schleicher
-go-to: needham_prime_minister
 
 # TODO: there should be a second Schleicher option if the SCP isn't the strongest
 

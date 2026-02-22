@@ -25,15 +25,15 @@ go-to: rally.pacifism
 
 @curriculum_
 title: Change the educational curriculum.
-choose-if: advisor_action_timer = 0 and flg_in_government and prime_minister_party = "FLG" and flg_prussia and curriculum_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flg_in_government : The FLG is not currently in government. ?][? if prime_minister_party != "FLG": The FLG must control the prime_ministership. ?][? if not flg_prussia: The FLG must control the Prussian government. ?][? if curriculum_timer > 0 : It is too early to change the curriculum again. ?]
+choose-if: advisor_action_timer = 0 and flg_in_government and premier_party = "FLG" and flg_prussia and curriculum_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flg_in_government : The FLG is not currently in government. ?][? if premier_party != "FLG": The FLG must control the premiership. ?][? if not flg_prussia: The FLG must control the Prussian government. ?][? if curriculum_timer > 0 : It is too early to change the curriculum again. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_science.curriculum
 
 
 @structure_
 title: Change the structure and funding of education.
-choose-if: advisor_action_timer = 0 and flg_in_government and prime_minister_party = "FLG" and flg_prussia
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flg_in_government : The FLG is not currently in government. ?][? if prime_minister_party != "FLG": The FLG must control the prime_ministership. ?][? if not flg_prussia: The FLG must control the Prussian government. ?]
+choose-if: advisor_action_timer = 0 and flg_in_government and premier_party = "FLG" and flg_prussia
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flg_in_government : The FLG is not currently in government. ?][? if premier_party != "FLG": The FLG must control the premiership. ?][? if not flg_prussia: The FLG must control the Prussian government. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_science.structure

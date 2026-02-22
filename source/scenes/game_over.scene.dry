@@ -8,8 +8,8 @@ Q.game_over = 1;
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
-// Roter RPCar von Preußen - At the end of the game, JS_Woodsworth is monarch, prime_minister, and minister-monarch of prussia at the same time.
-if (Q.monarch == 'JS_Woodsworth' && Q.prime_minister == 'JS_Woodsworth' && Q.flg_prussia) {
+// Roter RPCar von Preußen - At the end of the game, JS_Woodsworth is monarch, premier, and minister-monarch of prussia at the same time.
+if (Q.monarch == 'JS_Woodsworth' && Q.premier == 'JS_Woodsworth' && Q.flg_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
 // Sieg für die Republik - victory for the republic
@@ -40,14 +40,14 @@ if (Q.republic_victory && Q.resist_coup) {
 if (Q.homosexual_rights >= 2) {
     this.achieve('hirschfeld');
 }
-// Mädchen und Uniform - a woman's place is in the Reichsbanner.
+// Mädchen und Uniform - a woman's place is in the UFC(SS).
 // Gleichheit - Support and enact reforms for women's rights.
 if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_rights >= 3)) {
     this.achieve('equality');
 }
 
-// Sohn seiner Klasse - elect Tim Buck as monarch or prime_minister.
-if (Q.prime_minister == "Tim Buck" || Q.monarch == "Tim Buck") {
+// Sohn seiner Klasse - elect Tim Buck as monarch or premier.
+if (Q.premier == "Tim Buck" || Q.monarch == "Tim Buck") {
     this.achieve('sohn_seiner_klasse');
 }
 
@@ -89,7 +89,7 @@ if (Q.flg_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democ
     this.achieve('raterepublik');
 }
 // Polykrise - survive both a fascist coup and a capital strike.
-if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.prime_minister != "Needham" && Q.monarch != "Needham" && !Q.total_defeat) {
+if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.premier != "Needham" && Q.monarch != "Needham" && !Q.total_defeat) {
     this.achieve("polykrise");
 }
 // Wirtschaftsexperiment - implement two different economic plans.
@@ -101,7 +101,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Stolperstein - lose the civil war against Needham.
-if ((Q.prime_minister_party == "LPC" || Q.prime_minister == "James Gardiner" || Q.monarch == "Mackenzie King") && Q.total_defeat) {
+if ((Q.premier_party == "LPC" || Q.premier == "James Gardiner" || Q.monarch == "Mackenzie King") && Q.total_defeat) {
     this.achieve('stolperstein');
 }
 // Heidelberger Programm - fulfill the goals of the Heidelberg programm - increase welfare, reform justice, support women's rights, progressive taxation, works councils, build a European Union.
@@ -120,7 +120,7 @@ if ((Q.welfare > 0 && Q.judicial_reform >= 2 && Q.womens_work >= 1 && Q.family_l
 
 
 @needham_wins
-view-if: (prime_minister == "Needham" or monarch == "Needham") and (total_defeat==1)
+view-if: (premier == "Needham" or monarch == "Needham") and (total_defeat==1)
 title: Adolf Needham is in undisputed control over Canada.
 tags: endings
 go-to: eg_menu
@@ -128,7 +128,7 @@ go-to: eg_menu
 Adolf Needham is in undisputed control over Canada. The FLG, along with all of the democratic forces, have failed.
 
 @war_against_needham
-view-if: (prime_minister == "Needham" or monarch == "Needham") and (long_war == 1)
+view-if: (premier == "Needham" or monarch == "Needham") and (long_war == 1)
 title: Adolf Needham is in power, but we are fighting to stop him.
 tags: endings
 go-to: eg_menu
@@ -136,7 +136,7 @@ go-to: eg_menu
 Adolf Needham has taken power in Canada. However, we have rallied the democratic forces of the country against him, and are fighting back. The outcome of this war is uncertain.
 
 
-Needham does not yet control Canada. [? if prime_minister == "Papen" : However, Prime Minister Papen's authoritarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if prime_minister == "Schleicher" : However, Prime Minister Schleicher's authoritarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if prime_minister == "Brüning" : However, Prime Minister Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
+Needham does not yet control Canada. [? if premier == "Papen" : However, Premier Papen's authoritarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if premier == "Schleicher" : However, Premier Schleicher's authoritarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if premier == "Brüning" : However, Premier Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
 
 
 @long_war
@@ -186,15 +186,15 @@ Albert Einstein, possibly the most famous scientist in the world, has been elect
 
 @flg_victorious
 title: FLG still in government
-view-if: flg_in_government == 1 and prime_minister_party == "FLG" and total_defeat == 0 and long_war == 0
+view-if: flg_in_government == 1 and premier_party == "FLG" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The FLG is still in government, under Prime Minister [+ prime_minister +]. Given the circumstances, this is a substantial accomplishment.
+The FLG is still in government, under Premier [+ premier +]. Given the circumstances, this is a substantial accomplishment.
 
 @communist_victory
 title: Communist victory
-view-if: prime_minister_party == "CP" or monarch == "Tim Buck" and total_defeat == 0 and long_war == 0
+view-if: premier_party == "CP" or monarch == "Tim Buck" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
@@ -228,14 +228,14 @@ Unemployment levels have fallen substantially! This is a success of our economic
 
 @unemployment_high
 title: Unemployment is still too high.
-view-if: unemployed >= 20 and (prime_minister != "Needham" and monarch != "Needham") and (total_defeat == 0) and long_war == 0
+view-if: unemployed >= 20 and (premier != "Needham" and monarch != "Needham") and (total_defeat == 0) and long_war == 0
 tags: endings
 go-to: eg_menu
 
 Unemployment is still at dangerously high levels. Even though Needham is not in power, the situation is ripe for instability and extremism.
 
 
-The FLG is ruling as part of an emergency minority government, led by Monarch [+ monarch +] and Prime Minister [+ prime_minister +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
+The FLG is ruling as part of an emergency minority government, led by Monarch [+ monarch +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
 
 @peoples_party_achieved
 title: The FLG is a "People's Party".
@@ -293,7 +293,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if game_achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if game_achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
 
 [? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLG and CP. ?]
 
@@ -315,7 +315,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volkspartei: **Volkspartei** - the FLG is a People's Party. ?]
 
-[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or prime_minister. ?]
+[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or premier. ?]
 
 [? if game_achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
@@ -333,7 +333,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if game_achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
+[? if game_achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if game_achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
@@ -399,7 +399,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
 
 [? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLG and CP. ?]
 
@@ -421,7 +421,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volkspartei: **Volkspartei** - the FLG is a People's Party. ?]
 
-[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or prime_minister. ?]
+[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or premier. ?]
 
 [? if achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
@@ -439,7 +439,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
+[? if achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
@@ -502,7 +502,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if not achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if not achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
 
 [? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLG and CP. ?]
 
@@ -524,7 +524,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volkspartei: **Volkspartei** - the FLG is a People's Party. ?]
 
-[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or prime_minister. ?]
+[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or premier. ?]
 
 [? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
@@ -542,7 +542,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if not achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
+[? if not achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if not achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 

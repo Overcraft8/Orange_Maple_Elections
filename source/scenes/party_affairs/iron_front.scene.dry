@@ -9,11 +9,11 @@ tags: party_affairs, antifascism
 
 = The Iron Front
 
-The Iron Front is our new antifascist coordination front, consisting of the FLG, the trade unions, and the Reichsbanner. How should we use the Iron Front?
+The Iron Front is our new antifascist coordination front, consisting of the FLG, the trade unions, and the UFC(SS). How should we use the Iron Front?
 
-[? if workers_flg < 45 or workers_flg < workers_scp or workers_flg < workers_cp : Unfortunately, the Iron Front's effectiveness is dragged down by the FLG's unpopularity, as the FLG is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested. ?]
+[? if workers_flg < 45 or workers_flg < workers_scp or workers_flg < workers_cp : Unfortunately, the Iron Front's effectiveness is dragged down by the FLG's unpopularity, as the FLG is no longer the dominant party among the workers. Many UFC(SS) members have left, and many workers are not interested. ?]
 
-- @defense: Rally for defense against the fascists with the Reichsbanner.
+- @defense: Rally for defense against the fascists with the UFC(SS).
 - @pacifism: Rally for pacifism, against nationalism and war.
 - @republic: Rally to save the democratic republic against dictatorship.
 - @wtb: Rally for economic change and the WTB-Plan.
@@ -25,9 +25,9 @@ subtitle: -[+ rb_militarization_cost +] resources
 choose-if: resources >= rb_militarization_cost
 on-arrival: resources -= rb_militarization_cost; rb_strength += 50; rb_militancy += 0.05; rpc_relation -= 5 if historical_mode
 
-The Iron Front rallies for the militant defense of the republic against the fascist paramilitaries, strengthening the Reichsbanner.
+The Iron Front rallies for the militant defense of the republic against the fascist paramilitaries, strengthening the UFC(SS).
 
-[? if historical_mode : The RPC Party decries the militarization of the Reichsbanner and Iron Front, and its members are leaving the republican organization. ?]
+[? if historical_mode : The RPC Party decries the militarization of the UFC(SS) and Iron Front, and its members are leaving the republican organization. ?]
 
 
 @pacifism

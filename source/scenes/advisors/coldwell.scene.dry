@@ -53,8 +53,8 @@ We have gained +[+ dues +] resources.
 @snap_election
 title: Snap Election
 subtitle: Call a snap election.
-unavailable-subtitle: [? if prime_minister != "Coldwell" : Coldwell must be Prime Minister or Monarch. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and (prime_minister == "Coldwell")
+unavailable-subtitle: [? if premier != "Coldwell" : Coldwell must be Premier or Monarch. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and (premier == "Coldwell")
 on-arrival: advisor_action_timer = 6; time_to_election = 3
 call: set_next_election_time
 

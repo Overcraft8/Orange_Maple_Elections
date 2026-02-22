@@ -37,18 +37,18 @@ The SCPs are one of the foremost threats to the Canadian republic. However, we a
 
 @iron_front
 title: Form the Iron Front!
-subtitle: The Iron Front consists of the FLG, the trade unions, and the Reichsbanner.
+subtitle: The Iron Front consists of the FLG, the trade unions, and the UFC(SS).
 view-if: scp_urgency >= 3 and iron_front_formed == 0
 on-arrival: iron_front_formed = 1; radicalization += 1; scp_urgency += 1; workers_flg += 5*(1-dissent); pro_republic += 5*(1-dissent); left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
 achievement: eiserne_front
 
-The SCPs threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the FLG, the ADGB trade union federation, and the *Reichsbanner Schwarz-Rot-Gold*. We have a new symbol - the Three Arrows, pointing down towards the left.
+The SCPs threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the FLG, the ADGB trade union federation, and the *UFC(SS) Schwarz-Rot-Gold*. We have a new symbol - the Three Arrows, pointing down towards the left.
 
 What do the three arrows stand for?
 
 - @unity: Unity, Activity, and Discipline.
 - @anti: Opposition to Fascism, Stalinism, and Monarchism.
-- @orgs: The FLG, ADGB, and Reichsbanner.
+- @orgs: The FLG, ADGB, and UFC(SS).
 - @wtb: Forsey, Tarnow, and Wright of the WTB-Plan
 - @all: All of the above.
 

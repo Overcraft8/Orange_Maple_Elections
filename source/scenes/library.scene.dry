@@ -23,9 +23,9 @@ Herein contains relevant information about the government and politics of the Ca
 @government
 go-to: menu
 
-The Dominion of Canada is a parliamentary constitutional monarchy with a ceremonial monarch and a dominant lower house, the House of Commons. The leader of the majority party becomes the Prime Minister. The unelected upper house, the Senate of Canada is appointed by the Governor General. The British parliament retains the exclusive power to amend the Canadian constitution. The Governor General is a Monarchial appointee responsible for dissolving Parliament and calling an election. They traditionally defer to the Prime Minister's decision.
+The Dominion of Canada is a parliamentary constitutional monarchy with a ceremonial monarch and a dominant lower house, the House of Commons. The leader of the majority party becomes the Premier. The unelected upper house, the Senate of Canada is appointed by the Governor General. The British parliament retains the exclusive power to amend the Canadian constitution. The Governor General is a Monarchial appointee responsible for dissolving Parliament and calling an election. They traditionally defer to the Premier's decision.
 
-The House of Commons is elected using a first-past-the-post system, with the plurality candidate in each electoral district (colloquially called ridings) winning. A majority of the Commons then selects the Prime Minister. The Cabinet is selected by the Prime Minister and are responsible for government. A majority vote-of-no-confidence, including Federal Budget proposals can remove the current government.
+The House of Commons is elected using a first-past-the-post system, with the plurality candidate in each electoral district (colloquially called ridings) winning. A majority of the Commons then selects the Premier. The Cabinet is selected by the Premier and are responsible for government. A majority vote-of-no-confidence, including Federal Budget proposals can remove the current government.
 
 Canada is divided into a number of provinces, each of which have their own governments with some responsibilities. By far the largest and most important states are Ontario and Quebec. The FLG is most popular in the Western provinces. 
 
@@ -50,11 +50,11 @@ go-to: menu
 
 **1919**: The Winnipeg General Strike is violently shut down by the RCMP, resulting in 2 deaths and 30 injured. The event would act as a catalyst for the rise in Labour politics across Canada. J.S. Woodsworth would be elected to the Commons in the Winnipeg Centre riding 2 years later.
 
-**1926**: Prime Minister Mackenzie King requests Governor General Byng to dissolve parliament and call an election, suspecting that a recent Liberal scandal would lose them the support of the Progressive Party and therefore, a majority. Byng declines, insisting that Conservative Leader Meighan be given a chance to govern and negotiate with other parties to obtain a majority. Instead, Meighan loses a confidence vote 3 days later, forcing Byng to call an election anyways. 
+**1926**: Premier Mackenzie King requests Governor General Byng to dissolve parliament and call an election, suspecting that a recent Liberal scandal would lose them the support of the Progressive Party and therefore, a majority. Byng declines, insisting that Conservative Leader Meighan be given a chance to govern and negotiate with other parties to obtain a majority. Instead, Meighan loses a confidence vote 3 days later, forcing Byng to call an election anyways. 
 
 **1926**: The Statue of Westminster is signed, granting Canada authority over foreign policy and lawmaking, excepting amendments to the constitution. 
 
-**1930-1932**: Conservative Leader James Anderson becomes Prime Minister on a campaign of "blasting" Canada out of the Depression. Instead, 1.5 million Canadians are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Anderson's administration constructs work camps for unemployed single men, paying 20 cents a day.
+**1930-1932**: Conservative Leader James Anderson becomes Premier on a campaign of "blasting" Canada out of the Depression. Instead, 1.5 million Canadians are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Anderson's administration constructs work camps for unemployed single men, paying 20 cents a day.
 
 @curr_gov
 go-to: cabinet if flg_in_government; menu if not flg_in_government
@@ -63,7 +63,7 @@ go-to: cabinet if flg_in_government; menu if not flg_in_government
 
 Monarch: [+ monarch +]
 
-Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
+Premier: [+ premier +] ([+ premier_party +])
 
 Commons composition:
 
@@ -232,17 +232,17 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner Schwarz-Rot-Gold**: There are various farmer's organizations in Canada, mainly acting as wheat pool cooperatives. They have are represented by the reformist wing of our party.
+**UFC(SS) Schwarz-Rot-Gold**: There are various farmer's organizations in Canada, mainly acting as wheat pool cooperatives. They have are represented by the reformist wing of our party.
 
 Strength: [+ rb_strength +] thousand
 
 Militarization: [+ rb_militancy : militancy +]
 
-**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the CP.
+**Workers Unity League (WUL)**: The "Red Front Fighter's League" is associated with the CP.
 
-Strength: [+ rfb_strength +] thousand
+Strength: [+ wul_strength +] thousand
 
-Militarization: [+ rfb_militancy : militancy +]
+Militarization: [+ wul_militancy : militancy +]
 
 **Der Stahlhelm**: A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the SCP.
 

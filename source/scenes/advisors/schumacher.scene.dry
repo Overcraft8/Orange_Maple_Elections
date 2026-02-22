@@ -10,7 +10,7 @@ new-page: true
 A Great War veteran and a neorevisionist leader, Kurt Schumacher argues for a strong resistance against the SCPs.
 
 - @emergency_fundraising
-- @build_reichsbanner
+- @build_ufc
 - @moderate_economic_plan
 - @root: Return to main
 
@@ -26,13 +26,13 @@ on-arrival: advisor_action_timer = 6; resources += dues
 
 We have gained +[+ dues +] resources.
 
-@build_reichsbanner
-title: Reichsbanner
-subtitle: Schumacher supports providing more resources to the Reichsbanner.
+@build_ufc
+title: UFC(SS)
+subtitle: Schumacher supports providing more resources to the UFC(SS).
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; reichsbanner_timer -= 6; last_advisor_action = 1
-go-to: reichsbanner
+on-arrival: advisor_action_timer = 6; ufc_timer -= 6; last_advisor_action = 1
+go-to: ufc
 
 @moderate_economic_plan
 title: Support the reformist economic plan

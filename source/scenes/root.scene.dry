@@ -141,7 +141,7 @@ Q.prussian_government = "FLG";
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
-// Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
+// UFC(SS), stahlhelm, SA, Workers Unity League
 Q.rb_strength = 2000;
 Q.rb_militancy = 0.01;
 Q.women_in_rb = 0;
@@ -154,10 +154,10 @@ Q.sa_strength = 80;
 Q.sa_militancy = 0.5;
 Q.sa_banned = 0;
 Q.sa_banned_prussia = 0;
-Q.rfb_strength = 130;
-Q.rfb_militancy = 0.5;
-Q.rfb_banned = 0;
-Q.rfb_banned_prussia = 0;
+Q.wul_strength = 130;
+Q.wul_militancy = 0.5;
+Q.wul_banned = 0;
+Q.wul_banned_prussia = 0;
 
 Q.interior_police_strength = 50;
 Q.interior_police_militancy = 1;
@@ -362,9 +362,9 @@ Q.economic_records = [];
 
 // State of the government
 Q.monarch = "George V";
-// starting prime_minister: James Anderson
-Q.prime_minister = "James Anderson";
-Q.prime_minister_party = 'CPC';
+// starting premier: James Anderson
+Q.premier = "James Anderson";
+Q.premier_party = 'CPC';
 Q.flg_in_government = 0;
 Q.rpc_in_government = 0;
 Q.lpc_in_government = 0;
@@ -512,7 +512,7 @@ Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
-            'party_organizations', 'rally', 'reichsbanner',
+            'party_organizations', 'rally', 'ufc',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
             'party_disunity',
             // govt
@@ -526,7 +526,7 @@ Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
             'education_science', 'curriculum',
             // events
             'emergency_cuts', 'unemployment_insurance',
-            'sa_ban', 'sh_ban', 'papen_prime_minister',
+            'sa_ban', 'sh_ban', 'papen_premier',
             'cp_policy', 'cp_ultimatum', 'popular_front_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'schleichers_schemes'];
@@ -543,7 +543,7 @@ Q.media_timer = 0;
 Q.enemies_timer = 0;
 Q.party_organizations_timer =  0;
 Q.rally_timer = 0;
-Q.reichsbanner_timer = 0;
+Q.ufc_timer = 0;
 Q.shuffle_leadership_timer = 0;
 Q.streetfighting_timer = 0;
 Q.peoples_party_timer = 0;

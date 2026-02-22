@@ -68,7 +68,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; scp_relation += 2 if scp_party_leader == "Joos"
-go-to: social_credit_op if scp_in_government = 1 and flg_in_government = 0 and prime_minister != "Needham"; social_credit_coalition if flg_in_government = 1 and scp_in_government = 1; social_credit_needham if prime_minister = "Needham"
+go-to: social_credit_op if scp_in_government = 1 and flg_in_government = 0 and premier != "Needham"; social_credit_coalition if flg_in_government = 1 and scp_in_government = 1; social_credit_needham if premier = "Needham"
 
 @social_credit_op
 on-arrival: scp_relation += 5*(1 - dissent)

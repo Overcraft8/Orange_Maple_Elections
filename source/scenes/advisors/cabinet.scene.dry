@@ -2,13 +2,13 @@ title: Cabinet
 is-pinned-card: true
 tags: advisor
 card-image: img/muller_cabinet.jpg
-view-if: difficulty < 0 and flg_in_government and prime_minister_party = "FLG"
+view-if: difficulty < 0 and flg_in_government and premier_party = "FLG"
 on-arrival: last_cabinet_action = 1
 new-page: true 
 
 = Cabinet
 
-With an FLG prime_minister and FLG cabinet members, we can direct the affairs of the national government.
+With an FLG premier and FLG cabinet members, we can direct the affairs of the national government.
 
 - #cabinet
 - @back: Return to main

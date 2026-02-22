@@ -17,12 +17,12 @@ Carlo Mierendorff is the founder of the neo-revisionist ideological tendency, an
 
 @iron_front_buildup
 title: Build up the Iron Front
-subtitle: Increase our propaganda measures to recruit more members into the Reichsbanner. 
+subtitle: Increase our propaganda measures to recruit more members into the UFC(SS). 
 choose-if: advisor_action_timer == 0 and iron_front_formed
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if iron_front_formed == 0 : The Iron Front has not yet been formed. ?]
 on-arrival: advisor_action_timer = 6; rb_strength += 200*workers_flg/(workers_flg+workers_cp+workers_rpc+workers_scp+workers_other);
 
-We have recruited more members into the Reichsbanner.
+We have recruited more members into the UFC(SS).
 
 
 @form_iron_front

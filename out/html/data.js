@@ -1,5 +1,5 @@
 const tooltipList = [{
-    searchString: "FLP",
+    searchString: "FLG",
     explanationText: "The Farmer-Labour Group - Us"
 }, 
 {
@@ -21,12 +21,16 @@ const tooltipList = [{
 {
     searchString: "SCP", 
     explanationText: "The Social Credit Party"
+}, 
+{
+    searchString: "UFC(SS)",
+    explanationText: "The United Farmers of Canada (Saskatchewan Section"
 }
 ];
 
 
 const colourList = [{
-        word: "FLP",
+        word: "FLG",
         style: "color: #D26E28; font-weight: bold;"
     },
     {
@@ -48,6 +52,10 @@ const colourList = [{
     {
         word: "SCP", 
         style: "color: #50E23D; font-weight: bold;"
+    },
+    {
+        word: "UFC(SS)",
+        style: "color: #a7d11c; font-weight: bold;"
     }
 ];
 

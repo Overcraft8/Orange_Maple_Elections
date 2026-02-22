@@ -36,8 +36,8 @@ go-to: prussian_affairs
 @snap_election
 title: Snap Election
 subtitle: Call a snap election.
-unavailable-subtitle: [? if prime_minister != "J. S. Woodsworth" and monarch != "J. S. Woodsworth" : J. S. Woodsworth must be Prime Minister or Monarch. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if monarch = "J. S. Woodsworth" and monarchial_powers : We have removed this power from the monarch with a constitutional reform. ?]
-choose-if: advisor_action_timer == 0 and (prime_minister == "J. S. Woodsworth" or (monarch == "J. S. Woodsworth" and not monarchial_powers))
+unavailable-subtitle: [? if premier != "J. S. Woodsworth" and monarch != "J. S. Woodsworth" : J. S. Woodsworth must be Premier or Monarch. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if monarch = "J. S. Woodsworth" and monarchial_powers : We have removed this power from the monarch with a constitutional reform. ?]
+choose-if: advisor_action_timer == 0 and (premier == "J. S. Woodsworth" or (monarch == "J. S. Woodsworth" and not monarchial_powers))
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_parl_election_month = month + 3 if next_election_time >= time+3; next_parl_election_year = year if next_election_time >= time+3; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; 
 
 We have called for new elections, set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].

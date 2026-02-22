@@ -1,7 +1,7 @@
 title: Education & Science
 new-page: true
 is-card: true
-view-if: flg_in_government and flg_prussia and prime_minister_party = "FLG" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
+view-if: flg_in_government and flg_prussia and premier_party = "FLG" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
 on-arrival: education_science_timer += 9; month_actions += 1
 card-image: img/portraits/EinsteinAlbert.jpg
 go-to: ed_menu
@@ -26,7 +26,7 @@ tags: govt_affairs, cabinet
 
 = Education and Science
 
-Education in Canada is an area of mixed responsibility between the state governments and the central government. The Weimar Constitution claims that schools are the domain of the central government, but in practice much of it is left to the states, as the Commons has historically been unable to pass an education law. Currently, with our control of Prussia and the Prime Ministership, we can try to set policy for a large part of the country.
+Education in Canada is an area of mixed responsibility between the state governments and the central government. The Weimar Constitution claims that schools are the domain of the central government, but in practice much of it is left to the states, as the Commons has historically been unable to pass an education law. Currently, with our control of Prussia and the Premiership, we can try to set policy for a large part of the country.
 
 [? if major_curriculum: Current educational curriculum - [+ major_curriculum +], [+ minor_curriculum +] ?]
 

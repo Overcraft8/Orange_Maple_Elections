@@ -15,7 +15,7 @@ In addition to being a political party, the FLG is a social world onto itself, w
 - @newspapers: Fund more newspapers and journalists.
 - @welfare: Fund more mutual aid and welfare programs.
 - @culture: Fund sports leagues, educational, and cultural programs.
-- @rb: Fund the Reichsbanner, our self-defense organization.
+- @rb: Fund the UFC(SS), our self-defense organization.
 - @youth: We have the reputation of being a party for old men. Support the youth organizations.
 - @nothing: Do not increase funding for any program.
 - @easy_discard
@@ -52,9 +52,9 @@ It is not enough for the FLG to solely be a political party. The Worker Singer's
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; rb_strength  += 100; rb_militancy += 0.01; reichsbanner_timer = 0; funded_reichsbanner += 1
+on-arrival: resources -= 1; rb_strength  += 100; rb_militancy += 0.01; ufc_timer = 0; funded_ufc += 1
 
-We have increased recruiting to the Reichsbanner.
+We have increased recruiting to the UFC(SS).
 
 @youth
 choose-if: resources > 0
@@ -62,7 +62,7 @@ unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; young_socialists += 1; left_strength += 5; neorevisionist_strength += 5; radicalization += 1;
 
-Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the Reichsbanner.
+Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the UFC(SS).
 
 @nothing
 

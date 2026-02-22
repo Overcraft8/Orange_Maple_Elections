@@ -2,7 +2,7 @@ title: Women's Rights
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-view-if: flg_in_government = 1 and womens_rights_timer = 0 and prime_minister_party == "FLG"
+view-if: flg_in_government = 1 and womens_rights_timer = 0 and premier_party == "FLG"
 on-arrival: womens_rights_timer += 10; month_actions += 1
 card-image: img/portraits/EliasonFrank.jpg
 frequency: 50

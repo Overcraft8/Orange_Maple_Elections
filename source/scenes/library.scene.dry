@@ -450,7 +450,7 @@ if (d3 && window) {
 
 = Election history
 
-[? if year = 1928 and month < 5 : No new elections yet. ?]
+[? if year = 1932 and month < 5 : No new elections yet. ?]
 
 {!<svg id="election_history" style="width: 500px; height: 400px;"> </svg>!}
 

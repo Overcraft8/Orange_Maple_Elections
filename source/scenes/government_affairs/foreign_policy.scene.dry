@@ -82,7 +82,7 @@ on-arrival: cp_relation += 8*(1-dissent); communist_coalition += 1 if cp_foreign
 We also mention the CP in our conversations with the Soviet ambassador. They claim that the CP is entirely independent of the Soviet government, and that the conflict is Tim Buck's doing. But, soon after our conversation we notice a slight improvement in attitudes from the CP.
 
 @wittorf
-view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
+view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1932) and wittorf_soviet_union = 0
 unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
 on-arrival: wittorf_soviet_union = 1; cp_relation += 6*(1-dissent); cp_foreign_seen = 1
 max-visits: 1

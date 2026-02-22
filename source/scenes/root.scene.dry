@@ -21,7 +21,7 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
-Q.year = 1928;
+Q.year = 1932;
 Q.month = 1;
 // how many actions have been taken this month?
 Q.month_actions = 0;
@@ -114,9 +114,13 @@ Q.flg_president = "George Hara Williams";
 Q.flg_secretary = "Frank Eliason";
 
 Q.flg_board_one = "Alexander Nicholson";
+Q.flg_board_one_faction = "agrarian";
 Q.flg_board_two = "Louise Lucas";
+Q.flg_board_one_faction = "agrarian";
 Q.flg_board_three = "John Brockelbank";
+Q.flg_board_one_faction = "agrarian";
 Q.flg_board_four = "Clarence Fines";
+Q.flg_board_one_faction = "labor";
 
 
 Q.cp_leader = "Tim Buck";
@@ -259,7 +263,7 @@ Q.economic_growth = 4.4;
 // economic expansion timer
 Q.economic_expansion = 0;
 
-// quality of life (as % of 1928 - currently unused - should be welfare-adjusted.)
+// quality of life (as % of 1932 - currently unused - should be welfare-adjusted.)
 Q.workers_qol = 100;
 Q.rural_qol = 100;
 Q.unemployed_qol = 100;
@@ -324,7 +328,7 @@ Q.catholics_other = 6;
 
 
 // Current Commons composition
-// % of Commons in Jan 1928
+// % of Commons in Jan 1932
 // source: wikipedia
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
@@ -465,7 +469,7 @@ Q.education_science = 0;
 
 
 //                   Living Standards
-// level of welfare relative to 1928 (can go negative)
+// level of welfare relative to 1932 (can go negative)
 Q.welfare = 0;
 
 
@@ -553,9 +557,9 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_parl_election_year = 1928;
-Q.next_parl_election_month = 5;
-Q.next_election_time = 5;
+Q.next_parl_election_year = 1934;
+Q.next_parl_election_month = 6;
+Q.next_election_time = 30; //months until the next election
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
@@ -633,20 +637,20 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of Canada, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1928_easy: Begin (easy difficulty)
-- @1928_main: Begin (normal difficulty)
-- @1928_hard: Begin (hard difficulty)
-- @1928_historical: Begin (historical mode)
+- @1932_easy: Begin (easy difficulty)
+- @1932_main: Begin (normal difficulty)
+- @1932_hard: Begin (hard difficulty)
+- @1932_historical: Begin (historical mode)
 
-@1928_easy
+@1932_easy
 on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; cp_relation = 29; rpc_relation = 54; cpc_relation = 49; budget = 5;
-go-to: 1928_main
+go-to: 1932_main
 
-@1928_hard
+@1932_hard
 on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; agrarian_dissent = 25; rpc_relation = 41; cp_relation = 16; cpc_relation = 31; budget = 3;
-go-to: 1928_main
+go-to: 1932_main
 
-@1928_historical
+@1932_historical
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
 on-arrival: {!
 Q.difficulty = 2;
@@ -664,16 +668,16 @@ Q.cpc_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
-go-to: 1928_main
+go-to: 1932_main
 
-@1928_main
+@1932_main
 audio: shuffle music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3 music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1928
+= 1932
 
-It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Gardiner has been unable to effectively address the crisis. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
+It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Anderson has been unable to effectively address the crisis. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
 
 The Farmer-Labour Group (FLG) is the only party offering a real alternative to the old order. However, we are a young and inexperienced party, and we face opposition not only from the right-wing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLG's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Canada.
 

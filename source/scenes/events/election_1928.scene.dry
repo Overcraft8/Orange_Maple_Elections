@@ -1040,8 +1040,8 @@ go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
 
-[? if year == 1928 : Since James Anderson resigned, Heinrich Brüning has been appointed premier. ?]
-[? if year > 1928: Heinrich Brüning of the RPC Party has been appointed premier. ?]
+[? if year == 1932 : Since James Anderson resigned, Heinrich Brüning has been appointed premier. ?]
+[? if year > 1932: Heinrich Brüning of the RPC Party has been appointed premier. ?]
 
 @rpc_premier_wirth
 title: Let Joseph Wirth of the RPC Party be premier.

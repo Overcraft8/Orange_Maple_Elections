@@ -54,4 +54,4 @@ view-if: confronting_antisemitism > 1
 on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_scp -= 4*(1-dissent); unemployed_scp -= 4*(1-dissent);
 
 # TODO
-The SCPs and other far-right political movements are increasingly turning their hatred against the Jewish community of Canada. The Iron Front rallies in defense of individual Jews and the broader community against violence.
+The SCPs and other far-right political movements are increasingly turning their hatred against the Jewish community of Saskatchewan. The Iron Front rallies in defense of individual Jews and the broader community against violence.

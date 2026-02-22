@@ -66,7 +66,7 @@ for (var c of Q.classes) {
 }
 
 // Die Rote Fahne - join the CP in the May Day march.
-// Mehrheitspartei - form an FLG majority government in the Commons.
+// Mehrheitspartei - form an FLG majority government in the Assembly.
 // Panik im Mittelstand - have over 50% of New Middle Class support.
 if (Q.new_middle_flg_normalized && Q.new_middle_flg_normalized >= 50) {
     this.achieve('panik_im_mittelstand');
@@ -121,11 +121,11 @@ if ((Q.welfare > 0 && Q.judicial_reform >= 2 && Q.womens_work >= 1 && Q.family_l
 
 @needham_wins
 view-if: (premier == "Needham" or monarch == "Needham") and (total_defeat==1)
-title: Adolf Needham is in undisputed control over Canada.
+title: Adolf Needham is in undisputed control over Saskatchewan.
 tags: endings
 go-to: eg_menu
 
-Adolf Needham is in undisputed control over Canada. The FLG, along with all of the democratic forces, have failed.
+Adolf Needham is in undisputed control over Saskatchewan. The FLG, along with all of the democratic forces, have failed.
 
 @war_against_needham
 view-if: (premier == "Needham" or monarch == "Needham") and (long_war == 1)
@@ -133,21 +133,21 @@ title: Adolf Needham is in power, but we are fighting to stop him.
 tags: endings
 go-to: eg_menu
 
-Adolf Needham has taken power in Canada. However, we have rallied the democratic forces of the country against him, and are fighting back. The outcome of this war is uncertain.
+Adolf Needham has taken power in Saskatchewan. However, we have rallied the democratic forces of the country against him, and are fighting back. The outcome of this war is uncertain.
 
 
-Needham does not yet control Canada. [? if premier == "Papen" : However, Premier Papen's authoritarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if premier == "Schleicher" : However, Premier Schleicher's authoritarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if premier == "Brüning" : However, Premier Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
+Needham does not yet control Saskatchewan. [? if premier == "Papen" : However, Premier Papen's authoritarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if premier == "Schleicher" : However, Premier Schleicher's authoritarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if premier == "Brüning" : However, Premier Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
 
 
 @long_war
-title: Canada is gripped by civil war.
+title: Saskatchewan is gripped by civil war.
 view-if: long_war == 1
 tags: endings
 go-to: eg_menu
 
-Canada is currently in the grip of a civil war, a brutal affair that has no obvious end. Thousands of lives have already been extinguished, and it is likely that the war will not stop until Canada's cities are reduced to ruins. 
+Saskatchewan is currently in the grip of a civil war, a brutal affair that has no obvious end. Thousands of lives have already been extinguished, and it is likely that the war will not stop until Saskatchewan's cities are reduced to ruins. 
 
-[? if is_favorable == 0 : The current conditions are not favorable for us. ?][? if american_relation >= 2: Our cause is popular in the West, but their sclerotic governments are reluctant to send us aid. ?][? if soviet_aid >= 1 : The Soviet Union has aided the Communists, but not the socialists and democrats, in an attempt to shape Canada's future government. ?][? if east_aid >= 1 : Poland and Czechoslovakia have sent some assistance against the fascists. ?]
+[? if is_favorable == 0 : The current conditions are not favorable for us. ?][? if american_relation >= 2: Our cause is popular in the West, but their sclerotic governments are reluctant to send us aid. ?][? if soviet_aid >= 1 : The Soviet Union has aided the Communists, but not the socialists and democrats, in an attempt to shape Saskatchewan's future government. ?][? if east_aid >= 1 : Poland and Czechoslovakia have sent some assistance against the fascists. ?]
 
 
 @woodsworth_victorious
@@ -156,7 +156,7 @@ view-if: monarch == "JS_Woodsworth"
 tags: endings
 go-to: eg_menu
 
-JS_Woodsworth has been elected as Monarch of Canada. He had never desired to be the most powerful man in Canada, but now he is.
+JS_Woodsworth has been elected as Monarch of Saskatchewan. He had never desired to be the most powerful man in Saskatchewan, but now he is.
 
 @monarch_schumacher
 title: Kurt Schumacher victorious
@@ -164,7 +164,7 @@ view-if: monarch == "Schumacher"
 tags: endings
 go-to: eg_menu
 
-Kurt Schumacher has been elected as Monarch of Canada. As a young and ambitious FLG member, he will be shaping Canada for years to come.
+Kurt Schumacher has been elected as Monarch of Saskatchewan. As a young and ambitious FLG member, he will be shaping Saskatchewan for years to come.
 
 @monarch_macphail
 title: Agnes Macphail is Monarch
@@ -172,7 +172,7 @@ view-if: monarch == "Macphail"
 tags: endings
 go-to: eg_menu
 
-Agnes Macphail has been elected as Monarch of Canada. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Canada for years to come.
+Agnes Macphail has been elected as Monarch of Saskatchewan. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Saskatchewan for years to come.
 
 @monarch_einstein
 title: Albert Einstein is Monarch
@@ -180,7 +180,7 @@ view-if: monarch == "Einstein"
 tags: endings
 go-to: eg_menu
 
-Albert Einstein, possibly the most famous scientist in the world, has been elected as Monarch of Canada. As a Canadian Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Canadian Republic that has moved beyond its checkered past.
+Albert Einstein, possibly the most famous scientist in the world, has been elected as Monarch of Saskatchewan. As a Saskatchewaner Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Saskatchewaner Republic that has moved beyond its checkered past.
 
 
 
@@ -198,7 +198,7 @@ view-if: premier_party == "CP" or monarch == "Tim Buck" and total_defeat == 0 an
 tags: endings
 go-to: eg_menu
 
-The CP has won power in Canada, with our assistance. They will try to remake Canada in the Soviet image. How much they succeed is yet to be determined.
+The CP has won power in Saskatchewan, with our assistance. They will try to remake Saskatchewan in the Soviet image. How much they succeed is yet to be determined.
 
 @works_program
 title: Works program enacted!

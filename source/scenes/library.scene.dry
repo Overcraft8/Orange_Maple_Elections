@@ -5,12 +5,12 @@ go-to: menu
 
 = The Library
 
-Herein contains relevant information about the government and politics of the Canadian republic.
+Herein contains relevant information about the government and politics of the Saskatchewaner republic.
 
 @menu
 
-- @government: Canada's system of government
-- @Canadian_timeline: Timeline of the Dominion of Canada
+- @government: Saskatchewan's system of government
+- @Saskatchewaner_timeline: Timeline of the Province of Saskatchewan
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -23,38 +23,36 @@ Herein contains relevant information about the government and politics of the Ca
 @government
 go-to: menu
 
-The Dominion of Canada is a parliamentary constitutional monarchy with a ceremonial monarch and a dominant lower house, the House of Commons. The leader of the majority party becomes the Premier. The unelected upper house, the Senate of Canada is appointed by the Governor General. The British parliament retains the exclusive power to amend the Canadian constitution. The Governor General is a Monarchial appointee responsible for dissolving Parliament and calling an election. They traditionally defer to the Premier's decision.
+The Province of Saskatchewan has a unicameral legislature, the Legislative Assembly of Saskatchewan. The Premier is the head of government, and is the leader of the party with the most seats in the Assembly. The Premier appoints a cabinet of ministers to oversee various departments of government. There are 55 seats in the Assembly. 
 
-The House of Commons is elected using a first-past-the-post system, with the plurality candidate in each electoral district (colloquially called ridings) winning. A majority of the Commons then selects the Premier. The Cabinet is selected by the Premier and are responsible for government. A majority vote-of-no-confidence, including Federal Budget proposals can remove the current government.
+Saskatchewaner provinces oversee various policy areas, including education, healthcare, agriculture, natural resources, among others. 
 
-Canada is divided into a number of provinces, each of which have their own governments with some responsibilities. By far the largest and most important states are Ontario and Quebec. The FLG is most popular in the Western provinces. 
-
-@Canadian_timeline
+@Saskatchewaner_timeline
 go-to: menu
 
 = Timeline of the FLG and the Republic (until 1928)
 
 **1774**: The Quebec Act is signed into law, protecting French civil law and Catholic rights. 
 
-**1867**: Canada is granted Dominion status, allowing it to run its internal affairs. The Liberals and Conservatives become the 2 dominant parties. 
+**1867**: Saskatchewan is granted Dominion status, allowing it to run its internal affairs. The Liberals and Conservatives become the 2 dominant parties. 
 
-**1870**: The province of Manitoba joins Confederation after the Metis-led Red River Rebellion is crushed. The Red River Rebellion becomes the first symbol of East-West political antagonism in Canada.
+**1870**: The province of Manitoba joins Confederation after the Metis-led Red River Rebellion is crushed. The Red River Rebellion becomes the first symbol of East-West political antagonism in Saskatchewan.
 
 **1871**: The province of British Columbia enters Confederataion, having been promised a transcontinental railway to the east. 
 
-**1873**: Prince Edward Island joins Confederation, having been promised more than proportional seats in the Commons. 
+**1873**: Prince Edward Island joins Confederation, having been promised more than proportional seats in the Assembly. 
 
-**1885**: The Metis-led Northwest Rebellion is crushed by Canadian soldiers arriving through the promised Canadian Pacific Railway. 
+**1885**: The Metis-led Northwest Rebellion is crushed by Saskatchewaner soldiers arriving through the promised Saskatchewaner Pacific Railway. 
 
-**1914-1918**: Canada enters the First World War. Conscription measures lead to riots among the largely anti-war Quebecois population.
+**1914-1918**: Saskatchewan enters the First World War. Conscription measures lead to riots among the largely anti-war Quebecois population.
 
-**1919**: The Winnipeg General Strike is violently shut down by the RCMP, resulting in 2 deaths and 30 injured. The event would act as a catalyst for the rise in Labour politics across Canada. J.S. Woodsworth would be elected to the Commons in the Winnipeg Centre riding 2 years later.
+**1919**: The Winnipeg General Strike is violently shut down by the RCMP, resulting in 2 deaths and 30 injured. The event would act as a catalyst for the rise in Labour politics across Saskatchewan. J.S. Woodsworth would be elected to the Assembly in the Winnipeg Centre riding 2 years later.
 
 **1926**: Premier Mackenzie King requests Governor General Byng to dissolve parliament and call an election, suspecting that a recent Liberal scandal would lose them the support of the Progressive Party and therefore, a majority. Byng declines, insisting that Conservative Leader Meighan be given a chance to govern and negotiate with other parties to obtain a majority. Instead, Meighan loses a confidence vote 3 days later, forcing Byng to call an election anyways. 
 
-**1926**: The Statue of Westminster is signed, granting Canada authority over foreign policy and lawmaking, excepting amendments to the constitution. 
+**1926**: The Statue of Westminster is signed, granting Saskatchewan authority over foreign policy and lawmaking, excepting amendments to the constitution. 
 
-**1930-1932**: Conservative Leader James Anderson becomes Premier on a campaign of "blasting" Canada out of the Depression. Instead, 1.5 million Canadians are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Anderson's administration constructs work camps for unemployed single men, paying 20 cents a day.
+**1930-1932**: Conservative Leader James Anderson becomes Premier on a campaign of "blasting" Saskatchewan out of the Depression. Instead, 1.5 million Saskatchewaners are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Anderson's administration constructs work camps for unemployed single men, paying 20 cents a day.
 
 @curr_gov
 go-to: cabinet if flg_in_government; menu if not flg_in_government
@@ -65,7 +63,7 @@ Monarch: [+ monarch +]
 
 Premier: [+ premier +] ([+ premier_party +])
 
-Commons composition:
+Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 FLG: [+ flg_r +]%
@@ -202,11 +200,11 @@ go-to: menu
 Current relations: [+ rpc_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**LPC** - *Liberal Party* - a center-left big tent liberal party, popular among the intelligensia and educated middle class. They are proponents of free trade. They are one of the 2 dominant parties of the Canadian parliament. 
+**LPC** - *Liberal Party* - a center-left big tent liberal party, popular among the intelligensia and educated middle class. They are proponents of free trade. They are one of the 2 dominant parties of the Saskatchewaner parliament. 
 
 Current relations: [+ lpc_relation : relationships +]
 
-**CPC** - *Conservative Party* - a conservative-liberal party, supported by the middle classes and bourgeoisie. They are more isolationist. They are the other dominant party of the Canadian parliament. 
+**CPC** - *Conservative Party* - a conservative-liberal party, supported by the middle classes and bourgeoisie. They are more isolationist. They are the other dominant party of the Saskatchewaner parliament. 
 
 Current relations: [+ cpc_relation : relationships +]
 
@@ -218,7 +216,7 @@ Current relations: [+ scp_relation : relationships +]
 
 Current relations: [+ cp_relation : relationships +]
 
-[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Canada) - a party recently formed in a split from the FLG, the SAPD is essentially an agglomeration of various left-wing splinter groups between the FLG and CP. ?]
+[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Saskatchewan) - a party recently formed in a split from the FLG, the SAPD is essentially an agglomeration of various left-wing splinter groups between the FLG and CP. ?]
 
 **Other parties** - there is a multitude of small parties, including the United Farmers parties. There are also independent Liberal, Progressive, and Conservative candidates who have not been nominated yet support the parties' positions.
 
@@ -232,7 +230,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**UFC(SS) **: There are various farmer's organizations in Canada, mainly acting as wheat pool cooperatives. They have are represented by the reformist wing of our party.
+**UFC(SS) **: There are various farmer's organizations in Saskatchewan, mainly acting as wheat pool cooperatives. They have are represented by the reformist wing of our party.
 
 Strength: [+ rb_strength +] thousand
 
@@ -258,7 +256,7 @@ Militarization: [+ sa_militancy : militancy +]
 
 **Official military/paramilitary groups:**
 
-**Reichswehr**: [+ reichswehr_strength +] thousand troops. This is Canada's military.
+**Reichswehr**: [+ reichswehr_strength +] thousand troops. This is Saskatchewan's military.
 
 Loyalty: [+ reichswehr_loyalty : loyalty +]
 
@@ -385,13 +383,13 @@ if (d3 && window) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("commons").style.height = screenWidth/2 + "px";
+        document.getElementById("assembly").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromRPC(true).smallToBig(true);
     parliament.exit.toRPC(false).bigToSmall(true);
-    d3.select("#commons").datum(data).call(parliament);
+    d3.select("#assembly").datum(data).call(parliament);
 
     var lines = d3.linegraph(false, false,
             Q.parties,
@@ -426,9 +424,9 @@ if (d3 && window) {
 }
 !}
 
-= Commons composition
+= Assembly composition
 
-{!<svg id="commons" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div></td><td>!} **FLG:** {!</td><td>!} **[+ flg_r +]%** {!</td></tr>!}

@@ -10,7 +10,7 @@ max-visits: 4
 
 At the Labor and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
 
-- @usa: Build relationships with the French SFIO and British Labour Party to move their governments in Canada's favor.
+- @usa: Build relationships with the French SFIO and British Labour Party to move their governments in Saskatchewan's favor.
 - @britain: Learn organization and street fighting from the Austrian SDAPÖ.
 - @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
 - @comintern: Forget the second international - embed a spy in the Comintern's conference.
@@ -33,7 +33,7 @@ unavailable-subtitle: Not enough resources.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
 on-arrival: resources -= 1; britain_relation += 1; 
 
-Britain is Canada's main trading partner. It would be wise to build good relations with the British government and the British Labour Party. 
+Britain is Saskatchewan's main trading partner. It would be wise to build good relations with the British government and the British Labour Party. 
 
 
 @scandi

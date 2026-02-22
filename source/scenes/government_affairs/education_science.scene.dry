@@ -8,7 +8,7 @@ go-to: ed_menu
 tags: govt_affairs, cabinet
 
 # options:
-# - fund research (basic science research at the KWI, medical research, applied and industrial research to benefit Canada's economy)
+# - fund research (basic science research at the KWI, medical research, applied and industrial research to benefit Saskatchewan's economy)
 # - change the educational curriculum (only once per 3 years) - will have a "major" and "minor" option:
 # - democratic education - focus on critical thinking and democratic values rather than authoritarian teaching. (+ democratization, pro_republic)
 # - scientific education - focus on the sciences, mathematics, and technical skills (+ NMC, science)
@@ -18,15 +18,15 @@ tags: govt_affairs, cabinet
 # - increase educational opportunities for working-class families.
 # - Secularize education (+ CPC, instant RPC vonc)
 
-# source for some of the education stuff: Martin, G. W. “Educational Reform in Canada 1918-1933.” Masters, Durham University, 1972. https://etheses.dur.ac.uk/9738/.
+# source for some of the education stuff: Martin, G. W. “Educational Reform in Saskatchewan 1918-1933.” Masters, Durham University, 1972. https://etheses.dur.ac.uk/9738/.
 
-# Forman, Paul. “The Financial Support and Political Alignment of Physicists in Weimar Canada.” Minerva 12, no. 1 (1974): 39–66.
+# Forman, Paul. “The Financial Support and Political Alignment of Physicists in Weimar Saskatchewan.” Minerva 12, no. 1 (1974): 39–66.
 
 # science increases economic growth...
 
 = Education and Science
 
-Education in Canada is an area of mixed responsibility between the state governments and the central government. The Weimar Constitution claims that schools are the domain of the central government, but in practice much of it is left to the states, as the Commons has historically been unable to pass an education law. Currently, with our control of Prussia and the Premiership, we can try to set policy for a large part of the country.
+Education in Saskatchewan is an area of mixed responsibility between the state governments and the central government. The Weimar Constitution claims that schools are the domain of the central government, but in practice much of it is left to the states, as the Assembly has historically been unable to pass an education law. Currently, with our control of Prussia and the Premiership, we can try to set policy for a large part of the country.
 
 [? if major_curriculum: Current educational curriculum - [+ major_curriculum +], [+ minor_curriculum +] ?]
 
@@ -46,7 +46,7 @@ title: Increase funding for scientific research.
 choose-if: economic_minister_party = "FLG"
 unavailable-subtitle: This requires the Economic Ministry.
 
-Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the Canadian Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
+Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the Saskatchewaner Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
 
 - @kwg
 - @applied
@@ -93,7 +93,7 @@ We have cut funding for science. This has a negative effect on our economic grow
 @structure
 title: Change the structure and funding of education.
 
-Education in Canada has traditionally been organized on religious and class lines. Schools are often either Protestant or Catholic (or rarely Jewish), and religious classes are required in most mixed-denomination schools. In addition, the working class has at most eight years of public education in primary and middle schools, while the middle and upper classes have access to private schools and Gymnasiums that prepare students for universities. Thus, the universities tend to be dominated by conservatives and reactionaries, which has negative consequences for bureaucratic recruitment.
+Education in Saskatchewan has traditionally been organized on religious and class lines. Schools are often either Protestant or Catholic (or rarely Jewish), and religious classes are required in most mixed-denomination schools. In addition, the working class has at most eight years of public education in primary and middle schools, while the middle and upper classes have access to private schools and Gymnasiums that prepare students for universities. Thus, the universities tend to be dominated by conservatives and reactionaries, which has negative consequences for bureaucratic recruitment.
 
 - @secularize
 - @public_hs
@@ -150,7 +150,7 @@ title: Change the educational curriculum.
 choose-if: curriculum_timer = 0
 unavailable-subtitle: [? if curriculum_timer > 0 : It is too early to change the curriculum again. ?][? if not flg_prussia: We are not in control of the Prussian state government. ?]
 
-Many socialists believe that education in Canada is not fit for the modern era. Much of the educational system still follows imperial-era traditions of militaristic discipline, and far-right professors and students rule the universities. Nevertheless, there have been strides in bringing working-class children into the schools.
+Many socialists believe that education in Saskatchewan is not fit for the modern era. Much of the educational system still follows imperial-era traditions of militaristic discipline, and far-right professors and students rule the universities. Nevertheless, there have been strides in bringing working-class children into the schools.
 
 What should be the major focus of our new curriculum?
 

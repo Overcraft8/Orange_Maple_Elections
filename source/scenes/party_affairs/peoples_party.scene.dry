@@ -35,7 +35,7 @@ unavailable-subtitle: The opposition is too strong.
 on-arrival: neorevisionist_strength += 15; reformist_strength += 15; neorevisionist_dissent -= 10; reformist_dissent -= 10; peoples_party = 1; workers_flg -= 12; rural_flg += 10; new_middle_flg += 10; old_middle_flg += 8; catholics_flg += 8; left_dissent += 25; agrarian_dissent += 20; cp_relation -= 10; cp_coalition_dissent += 1; coalition_dissent -= 1; rpc_relation += 5*(1-dissent); cpc_relation += 5*(1-dissent)
 achievement: volkspartei
 
-In an emergency conference, we have decided to become a people's party that encompasses all of the regular people of Canada, not just the workers and urban poor. The Left and Agrarians claim that our new party platform is a betrayal of our founding principles, a turn away from Marxism towards bourgeois opportunism. Whatever the case, we are now a party representing all of the people, not just the proletariat.
+In an emergency conference, we have decided to become a people's party that encompasses all of the regular people of Saskatchewan, not just the workers and urban poor. The Left and Agrarians claim that our new party platform is a betrayal of our founding principles, a turn away from Marxism towards bourgeois opportunism. Whatever the case, we are now a party representing all of the people, not just the proletariat.
 
 Should we run a new campaign to publicize our new platform?
 

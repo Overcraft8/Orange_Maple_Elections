@@ -29,7 +29,7 @@ choose-if: progressive_coalition >= 50
 on-arrival: repealed_175 = 1; homosexual_rights += 1; rpc_relation -= 5; cp_relation += 4*(1-dissent); lpc_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_flg -= 4; economic_growth += 0.1;
 audio: shuffle music/1928_1933/Das_lila_lied_normalized.mp3
 
-Together with the progressives in the CP and [+ lpc_name +], we have effectively decriminalized homosexual sex in Canada. Persecution of homosexuals for their private acts will stop, as long as the police are loyal to the republic.
+Together with the progressives in the CP and [+ lpc_name +], we have effectively decriminalized homosexual sex in Saskatchewan. Persecution of homosexuals for their private acts will stop, as long as the police are loyal to the republic.
 
 Of course, conservatives and the far right accuse us of "degeneracy".
 

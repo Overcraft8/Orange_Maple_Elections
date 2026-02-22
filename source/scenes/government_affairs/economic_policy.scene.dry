@@ -174,11 +174,11 @@ choose-if: budget >= 2 and unemployed >= 8
 on-arrival: budget -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_flg += 6*(1-dissent); unemployed_flg += 4*(1-dissent); new_middle_flg += 3*(1-dissent); old_middle_flg += 2*(1-dissent); rural_flg += 2*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_popular_front or in_left_front; economic_growth += 1.6; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
-[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Canada, reducing unemployment. ?]
+[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Saskatchewan, reducing unemployment. ?]
 
-[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Canada. ?]
+[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Saskatchewan. ?]
 
-[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Canada's economy. ?]
+[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Saskatchewan's economy. ?]
 
 [? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
 
@@ -193,11 +193,11 @@ choose-if: budget >= 1 and unemployed >= 8
 on-arrival: budget -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_flg += 4*(1-dissent); unemployed_flg += 2*(1-dissent); new_middle_flg += 2*(1-dissent); old_middle_flg += 1*(1-dissent); rural_flg += 1*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_popular_front or in_left_front; economic_growth += 0.7; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
-[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Canada, reducing unemployment. ?]
+[? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Saskatchewan, reducing unemployment. ?]
 
-[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Canada. ?]
+[? if moderate_plan_progress > 1 : We have continued to fund the job-creation plan, using our funds to build public works throughout Saskatchewan. ?]
 
-[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Canada's economy. ?]
+[? if unemployed >= 10 : The bourgeois approve of this plan as the "least bad" alternative, seeing it as necessary to save Saskatchewan's economy. ?]
 
 [? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
 

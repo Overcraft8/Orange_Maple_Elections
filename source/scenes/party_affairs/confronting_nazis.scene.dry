@@ -8,7 +8,7 @@ tags: party_affairs; antifascism
 
 # Forming the Iron Front
 
-The SCPs' strength is gaining, as shown by their recent election results and their violent presence in the streets. Their fascism threatens to plunge Canada once again into the abyss.
+The SCPs' strength is gaining, as shown by their recent election results and their violent presence in the streets. Their fascism threatens to plunge Saskatchewan once again into the abyss.
 
 Many in our party are calling for urgent action. The "neorevisionist" faction, led by young socialists like Carlo Mierendorff and Julius Leber, have formed specifically around this cause. But many in all factions of the party are calling for action.
 
@@ -33,7 +33,7 @@ go-to: crisis_program
 view-if: scp_urgency < 5
 on-arrival: scp_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_strength += 5
 
-The SCPs are one of the foremost threats to the Canadian republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
+The SCPs are one of the foremost threats to the Saskatchewaner republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
 
 @iron_front
 title: Form the Iron Front!

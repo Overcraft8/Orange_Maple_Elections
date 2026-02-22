@@ -561,7 +561,7 @@ Frank Underhill is now an advisor.
 
 @add_spry
 title: Graham Spry
-subtitle: Graham Spry is a cofounder of the LSR. He also owns the New Commonwealth and Canadian Forum papers. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the CP ?]
+subtitle: Graham Spry is a cofounder of the LSR. He also owns the New Commonwealth and Saskatchewaner Forum papers. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the CP ?]
 is-card: true
 card-image: img/portraits/SpryGraham.jpg
 view-if: spry_advisor = 0 and n_advisors < 3

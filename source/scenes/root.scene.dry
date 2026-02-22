@@ -31,7 +31,7 @@ Q.difficulty = 0;
 Q.historical_mode = 0;
 // old demographics
 Q.old_demographics = 0;
-// use decimals for commons seats
+// use decimals for assembly seats
 // TODO: not yet implemented
 Q.use_decimals = 1;
 
@@ -189,7 +189,7 @@ Q.pro_republic = 59;
 
 Q.emergency_rule = 0;
 
-// minimum percentage of votes to be represented in the Commons
+// minimum percentage of votes to be represented in the Assembly
 Q.electoral_threshold = 0;
 // constitutional reform level
 Q.constitutional_reform = 0;
@@ -327,8 +327,8 @@ Q.catholics_scp = 5;
 Q.catholics_other = 6;
 
 
-// Current Commons composition
-// % of Commons in Jan 1932
+// Current Assembly composition
+// % of Assembly in Jan 1932
 // source: wikipedia
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
@@ -635,7 +635,7 @@ new-page: true
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
-For more information on the politics and government of Canada, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+For more information on the politics and government of Saskatchewan, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
 - @1932_easy: Begin (easy difficulty)
 - @1932_main: Begin (normal difficulty)
@@ -671,7 +671,7 @@ this.state.disableSaves = true;
 go-to: 1932_main
 
 @1932_main
-audio: shuffle music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3 music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 
+audio: shuffle music/OSaskatchewanColdstreamGuards.mp3 music/COURAGE.mp3 music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
@@ -679,5 +679,5 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Anderson has been unable to effectively address the crisis. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
 
-The Farmer-Labour Group (FLG) is the only party offering a real alternative to the old order. However, we are a young and inexperienced party, and we face opposition not only from the right-wing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLG's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Canada.
+The Farmer-Labour Group (FLG) is the only party offering a real alternative to the old order. However, we are a young and inexperienced party, and we face opposition not only from the right-wing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLG's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
 

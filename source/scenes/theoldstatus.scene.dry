@@ -35,7 +35,7 @@ Monarch: [+ monarch +]
 
 Premier: [+ premier +] ([+ premier_party +])
 
-Commons composition:
+Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Farmer-Labour Group">!}[? if not flg_name: FLG?][? if flg_name != 0 : [+ flg_name +]?]{!</span>!}: [+ flg_r +]%
@@ -43,7 +43,7 @@ Commons composition:
 # 1928: 15, 1930: 15, 1932: 
 {!<span class="tooltip-text" title="Reconstruction Party">!}[? if not rpc_name: RPC?][? if rpc_name != 0 : [+ rpc_name +]?]{!</span>!}: [+ rpc_r +]%
 # 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="Communist Party of Canada">!}[? if not cp_name: CP?][? if cp_name != 0 : [+ cp_name +]?]{!</span>!}: [+ cp_r +]%
+{!<span class="tooltip-text" title="Communist Party of Saskatchewan">!}[? if not cp_name: CP?][? if cp_name != 0 : [+ cp_name +]?]{!</span>!}: [+ cp_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 {!<span class="tooltip-text" title="Liberal Party">!}[? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]{!</span>!}: [+ lpc_r +]%
 # 1928: 9, 1930: 5

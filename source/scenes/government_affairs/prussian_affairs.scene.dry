@@ -9,7 +9,7 @@ card-image: img/woodsworth.jpg
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Canada, is governed by our party, in a coalition with the RPC and Democratic parties. It is the most stable and democratic state government in Canada, led by the able J. S. Woodsworth.
+Prussia, by far the largest and most important state in Saskatchewan, is governed by our party, in a coalition with the RPC and Democratic parties. It is the most stable and democratic state government in Saskatchewan, led by the able J. S. Woodsworth.
 
 We can enact policies in Prussia.
 
@@ -94,4 +94,4 @@ We are making progress towards negotiating a concordat between Prussia and the C
 view-if: prussian_concordat_progress >= 1 and prussian_concordat = 0
 on-arrival: prussian_concordat = 1; rpc_relation += 5; catholics_flg += 3*(1-dissent)
 
-We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Canada.
+We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Saskatchewan.

@@ -18,7 +18,7 @@ Leber is a former army officer who turned against the military leaders of the Ka
 
 @democratic_rally
 title: Rally for democracy
-subtitle: Rally our party and the Canadian people to defend democracy and freedom.
+subtitle: Rally our party and the Saskatchewaner people to defend democracy and freedom.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; reformist_strength += 3; workers_flg += 4*(1-dissent) if democratization >= 4; new_middle_flg += 3*(1-dissent) if democratization >= 4

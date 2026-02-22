@@ -10,7 +10,7 @@ max-visits: 6
 
 = Women's Rights
 
-According to the Constitution, women are equal to men, but this is not followed in practice. Women in the workforce are not paid equally for the same work, in addition to often being pushed out of employment after marriage. Men are still favored in marriage and family policy, and there are restrictions on women's rights in many other domains. And that is not to mention the overwhelming patriarchal culture present in Canada.
+According to the Constitution, women are equal to men, but this is not followed in practice. Women in the workforce are not paid equally for the same work, in addition to often being pushed out of employment after marriage. Men are still favored in marriage and family policy, and there are restrictions on women's rights in many other domains. And that is not to mention the overwhelming patriarchal culture present in Saskatchewan.
 
 For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if flg_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
 
@@ -53,9 +53,9 @@ go-to: liberalize_fail if progressive_coalition < 50; liberalize_success if prog
 @liberalize_fail
 on-arrival: rpc_relation -= 5; coalition_dissent += 1; workers_flg += 3*(1-dissent); catholics_flg -= 5;
 
-Unfortunately, our proposal is voted down in the Commons, with the Catholic RPC party (our long-time partners) speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
+Unfortunately, our proposal is voted down in the Assembly, with the Catholic RPC party (our long-time partners) speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
 
 @liberalize_success
 on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; rpc_relation -= 8; catholics_flg -= 10; cpc_relation -= 5; workers_flg += 3*(1-dissent); new_middle_flg += 3*(1-dissent); workers_rpc += 3; new_middle_rpc += 3; old_middle_rpc += 3; old_middle_scp += 3; rural_scp += 3; workers_scp -= 3; new_middle_scp -= 3; old_middle_scp -= 2; rural_scp -= 2; unemployed_scp -= 2; unemployed_rpc += 3; unemployed_flg += 3*(1-dissent)
 
-With the support of a "progressive coalition" including the CP and [+ lpc_name +], we have successfully passed a bill to legalize abortion in Canada! This has heartened our more progressive supporters, while hurting our relations with the RPC Party. With the increasing political discourse around abortion, the religiously-oriented RPC Party and SCP have gained conservative votes at the expense of the SCP.
+With the support of a "progressive coalition" including the CP and [+ lpc_name +], we have successfully passed a bill to legalize abortion in Saskatchewan! This has heartened our more progressive supporters, while hurting our relations with the RPC Party. With the increasing political discourse around abortion, the religiously-oriented RPC Party and SCP have gained conservative votes at the expense of the SCP.

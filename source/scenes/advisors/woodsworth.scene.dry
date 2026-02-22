@@ -9,7 +9,7 @@ new-page: true
 
 James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the FLG's Party Leader.
 
-J. S. Woodsworth [? if flg_prussia = 1 : is ?][? if flg_prussia = 0 : was ?] the Minister-Monarch of Prussia, the largest state in Canada. He is a reformist leader who seeks to work with the bourgeois parties.
+J. S. Woodsworth [? if flg_prussia = 1 : is ?][? if flg_prussia = 0 : was ?] the Minister-Monarch of Prussia, the largest state in Saskatchewan. He is a reformist leader who seeks to work with the bourgeois parties.
 
 - @coalition
 - @prussian_bulwark
@@ -18,7 +18,7 @@ J. S. Woodsworth [? if flg_prussia = 1 : is ?][? if flg_prussia = 0 : was ?] the
 
 @coalition
 title: Negotiating with the Coalition
-subtitle: J.S. Woodsworth can improve our relationships with our centrist and center-right coalition partners in Prussia as well as in the Commons.
+subtitle: J.S. Woodsworth can improve our relationships with our centrist and center-right coalition partners in Prussia as well as in the Assembly.
 choose-if: advisor_action_timer <= 0 and (flg_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not flg_prussia : The FLG does not control the Prussian government. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if flg_in_government = 1 and coalition_dissent > 0; rpc_relation += 6; lpc_relation += 6; cpc_relation += 2; cpc_relation += 3 if in_grand_coalition

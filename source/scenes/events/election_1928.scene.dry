@@ -1,4 +1,4 @@
-title: Commons Elections
+title: Assembly Elections
 new-page: true
 tags: event
 priority: -1
@@ -13,7 +13,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-The Commons elections are to be held now.
+The Assembly elections are to be held now.
 
 - @election_algorithm: May we do our best...
 
@@ -230,21 +230,21 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 
         height = width;
-        document.getElementById("commons").style.height = screenWidth/2 + "px";
+        document.getElementById("assembly").style.height = screenWidth/2 + "px";
     } 
 
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#commons").datum(data).call(parliament);
+    d3.select("#assembly").datum(data).call(parliament);
 }
 !}
 go-to: coalition_menu
 
 = Election results
 
-{!<svg id="commons" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
@@ -277,9 +277,9 @@ Bourgeois Coalition (RPC + [+ lpc_name +] + CPC + Others): [+ bourgeois_coalitio
 
 Right-wing Coalition (RPC + CPC + Others + SCP): [+ right_coalition +]%
 
-[? if scp_urgency <= 1 and scp_r >= 15 : The rapid rise in SCP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Canada. ?]
+[? if scp_urgency <= 1 and scp_r >= 15 : The rapid rise in SCP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Saskatchewan. ?]
 
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic CP, SCP, and SCP have a majority in the Commons. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 : Together, the anti-democratic CP, SCP, and SCP have a majority in the Assembly. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
@@ -391,7 +391,7 @@ on-arrival: premier = "Schleicher"; premier_party = "I"; pro_republic -= 10; nex
 
 The reactionary establishment is still very skeptical of the SCPs, so instead, [+ monarch +] appoints Kurt von Schleicher, a former general, as premier, to try to "tame" the SCPs.
 
-Schleicher's government is deeply unpopular among all parties of the Commons. Despite his support for a coalition with the SCP, the SCPs want power all to themselves, without Schleicher.
+Schleicher's government is deeply unpopular among all parties of the Assembly. Despite his support for a coalition with the SCP, the SCPs want power all to themselves, without Schleicher.
 
 New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
@@ -442,7 +442,7 @@ on-arrival: premier = "Tim Buck"; premier_party = "CP"; cp_relation = 80; in_lef
 
 With great reluctance, Monarch [+ monarch +] appoints [+ premier +] as premier.
 
-Immediately, [+ premier +] goes to work building a "Soviet Canada": consolidating as much power as possible in the CP, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+Immediately, [+ premier +] goes to work building a "Soviet Saskatchewan": consolidating as much power as possible in the CP, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
 
 In response to [+ premier +] being appointed Premier, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and SCPs SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the CP from taking power. We are forced to be on the same side as the CP, whether we want to or not.
 
@@ -503,7 +503,7 @@ There are enough votes for a right-wing coalition of the RPC, CPC, SCP, and mino
 @no_right_coalition
 go-to: no_majority
 
-However, the SCP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the RPC Party. Thus, there is no clear path towards a Commons majority.
+However, the SCP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the RPC Party. Thus, there is no clear path towards a Assembly majority.
 
 @right_coalition_sure
 subtitle: This will be extremely unpopular within our party.
@@ -654,7 +654,7 @@ We have supported a minority government led by the RPC Party under Premier Josep
 @no_majority_papen
 on-arrival: pro_republic -= 10; next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; no_majority_papen_elections += 1; workers_flg -= 8 if pro_republic < 45; workers_flg *= 0.85 if pro_republic < 40;
 
-After the elections, Papen is still deeply unpopular, without any hint of coalition support, and there is a vote of no confidence called against him almost immediately. No matter how we vote, the measure would pass. The Commons is dissolved once more.
+After the elections, Papen is still deeply unpopular, without any hint of coalition support, and there is a vote of no confidence called against him almost immediately. No matter how we vote, the measure would pass. The Assembly is dissolved once more.
 
 New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
@@ -664,7 +664,7 @@ on-arrival: premier = "Schleicher"; pro_republic -= 10; next_election_time = tim
 
 There is no path to a majority government. George V is displeased with Papen, and calls on him to resign. Now, former army general Kurt von Schleicher has been appointed premier, again as part of a monarchial government.
 
-Schleicher's government is deeply unpopular among all parties of the Commons. Despite his support for a coalition with the SCP, the SCPs want power all to themselves, without Schleicher.
+Schleicher's government is deeply unpopular among all parties of the Assembly. Despite his support for a coalition with the SCP, the SCPs want power all to themselves, without Schleicher.
 
 New elections have been set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
@@ -692,7 +692,7 @@ Who should be premier?
 view-if: not historical_mode or not flg_prussia
 on-arrival: premier = "J. S. Woodsworth"
 
-[? if monarch == "J. S. Woodsworth": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Premier also being the Monarch (the Monarch may not be a member of the Commons; there is no law saying that the Premier must be a member of the Commons). Thus, we have Premier-Monarch J. S. Woodsworth. ?]
+[? if monarch == "J. S. Woodsworth": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Premier also being the Monarch (the Monarch may not be a member of the Assembly; there is no law saying that the Premier must be a member of the Assembly). Thus, we have Premier-Monarch J. S. Woodsworth. ?]
 [? if monarch != "J. S. Woodsworth": J. S. Woodsworth has become premier of the FLG majority. ?]
 
 @williams_majority_premier
@@ -914,9 +914,9 @@ if (Q.scp_majority >= 50) {
 }
 !}
 
-There is no path to a workable Commons majority or minority government. The next elections are set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
+There is no path to a workable Assembly majority or minority government. The next elections are set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
-The people's faith in democracy is shaken by this ordeal. Of course, the SCPs are exploiting the instability to claim that democracy is unworkable, and that Canada needs a strong leader.
+The people's faith in democracy is shaken by this ordeal. Of course, the SCPs are exploiting the instability to claim that democracy is unworkable, and that Saskatchewan needs a strong leader.
 
 
 @toleration_bruning

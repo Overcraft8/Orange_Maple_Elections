@@ -9,7 +9,7 @@ go-to: reforms_menu
 tags: govt_affairs, cabinet
 #subtitle: Major changes to government.
 
-# technically you could do some trickery to get a 2/3 quorum in the Commons by stopping some people from attending... if the SCP is boycotting the Commons, or if the SCP or SCP are banned in the aftermath of a coup atempt...
+# technically you could do some trickery to get a 2/3 quorum in the Assembly by stopping some people from attending... if the SCP is boycotting the Assembly, or if the SCP or SCP are banned in the aftermath of a coup atempt...
 
 # alternatively, a constitutional referendum can be initiated, that requires a simple majority of voters to pass (as I understand article 76). This should depend on support for the republic and for democracy, and the relationships with the other parties (more similar to the monarchial election).
 
@@ -19,7 +19,7 @@ tags: govt_affairs, cabinet
 
 Many neorevisionists consider the Weimar Constitution to be inadequate. They believe that the clauses of the constitution are in part responsible for the instability of the country, and must change in order to build a more stable democratic republic. Ideas from both socialists and liberals
 
-A constitutional reform requires either a two-thirds supermajority in the Commons, or a constitutional referendum with support from a majority of the electorate. If we do not have a supermajority in the Commons, we must be assured of strong support from the other parties for the constitutional referendum.
+A constitutional reform requires either a two-thirds supermajority in the Assembly, or a constitutional referendum with support from a majority of the electorate. If we do not have a supermajority in the Assembly, we must be assured of strong support from the other parties for the constitutional referendum.
 
 @reforms_menu
 
@@ -32,7 +32,7 @@ A constitutional reform requires either a two-thirds supermajority in the Common
 #- @constitutional_bans: Allow the banning of anti-constitutional parties.
 
 @vote_threshold
-subtitle: Change the vote threshold to 5% for parties to be represented in the Commons.
+subtitle: Change the vote threshold to 5% for parties to be represented in the Assembly.
 on-arrival: {!
 Q.reform_support = Q.flg_normalized;
 if (Q.rpc_relation > 30) {
@@ -98,7 +98,7 @@ achievement: verfassungsreform
 We have successfully passed a constitutional amendment to ban votes of no confidence when a new government cannot be formed. Hopefully this increases the stability of our governments.
 
 @monarchial_powers
-subtitle: The monarch can no longer dissolve the Commons at will, or call a *Reichsexekution* on state governments.
+subtitle: The monarch can no longer dissolve the Assembly at will, or call a *Reichsexekution* on state governments.
 on-arrival: {!
 Q.reform_support = Q.flg_normalized + Q.lpc_normalized + Q.cp_normalized;
 if (Q.rpc_relation > 49 && (Q.monarch == "George V" || Q.monarch == "Eckener")) {
@@ -122,7 +122,7 @@ unavailable-subtitle: We do not have enough support for this policy. [? if pro_r
 on-arrival: constitutional_reform += 1; monarchial_powers = 1
 achievement: verfassungsreform
 
-We have successfully passed a constitutional amendment to limit monarchial powers! Hopefully this results in a less authoritarian Canada.
+We have successfully passed a constitutional amendment to limit monarchial powers! Hopefully this results in a less authoritarian Saskatchewan.
 
 
 

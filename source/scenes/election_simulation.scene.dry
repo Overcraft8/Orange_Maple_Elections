@@ -45,7 +45,7 @@ Q.anti_democratic_coalition = Q.cp_r
 Q.neo_weimar_coalition = Q.flg_r + Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
 !}
 
-The electoral system is essentially proportional, with the proportion of Commons seats roughly equal to the proportion of votes.
+The electoral system is essentially proportional, with the proportion of Assembly seats roughly equal to the proportion of votes.
  
 **Election results:**
 

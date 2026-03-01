@@ -7,7 +7,7 @@ new-page: true
 
 = Albert Heaps
 
-Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the FLG.
+Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the FLP.
 
 - @organizing
 - @depression
@@ -21,7 +21,7 @@ title: Organizing workers
 subtitle: Improve our standing among the workers.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; workers_flg += 4*(1-dissent); workers_flg += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
+on-arrival: advisor_action_timer = 6; workers_flp += 4*(1-dissent); workers_flp += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
 
 We have increased our organizing among the workers.
 

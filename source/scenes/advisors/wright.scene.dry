@@ -17,8 +17,8 @@ Percy Wright is a farmer by trade and a candidate in the Melfort riding.
 @agriculture
 title: Agricultural Policy
 subtitle: Wright is the Minister of Agriculture.
-choose-if: advisor_action_timer <= 0 and flg_in_government and agriculture_minister_party == "FLG"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flg_in_government : The FLG is not in government. ?][? if agriculture_minister_party != "FLG": The FLG does not have the Agriculture Ministry. ?]
+choose-if: advisor_action_timer <= 0 and flp_in_government and agriculture_minister_party == "FLP"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flp_in_government : The FLP is not in government. ?][? if agriculture_minister_party != "FLP": The FLP does not have the Agriculture Ministry. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
 go-to: agricultural_policy
 
@@ -28,7 +28,7 @@ title: Rural Campaign
 subtitle: Try to campaign among the rural populace.
 choose-if: advisor_action_timer == 0 and rural_policy > 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
-on-arrival: advisor_action_timer = 6; rural_flg += 5*(1-dissent); peoples_party_support += 1
+on-arrival: advisor_action_timer = 6; rural_flp += 5*(1-dissent); peoples_party_support += 1
 
 We have increased our campaigning among farmers and the rural populace.
 

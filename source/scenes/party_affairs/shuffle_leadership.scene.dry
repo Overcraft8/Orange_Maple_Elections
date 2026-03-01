@@ -321,7 +321,7 @@ view-if: n_advisors < 3
 
 @add_williams
 title: George Hara Williams
-subtitle: George Hara Williams is the serving President of the FLG. He is a farmer by trade and was a key figure in activating agrarian socialism across Saskatchewan.  {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: George Hara Williams is the serving President of the FLP. He is a farmer by trade and was a key figure in activating agrarian socialism across Saskatchewan.  {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/WilliamsHaraGeorge.jpg
 view-if: williams_advisor = 0 and n_advisors < 3
@@ -345,7 +345,7 @@ John Brockelbank is now an advisor.
 
 @add_nicholson
 title: Alexander Nicholson
-subtitle: Alexander Nicholson was a United Church preacher and farmer. He is now a FLG organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+subtitle: Alexander Nicholson was a United Church preacher and farmer. He is now a FLP organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
 card-image: img/portraits/NicholsonAlexander.jpg
 tags: agrarian_advisor
@@ -369,7 +369,7 @@ Percy Wright is now an advisor.
 
 @add_eliason
 title: Frank Eliason
-subtitle: Frank Eliason is secretary of the FLG and UFC(SS). {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
+subtitle: Frank Eliason is secretary of the FLP and UFC(SS). {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
 is-card: true
 card-image: img/portraits/EliasonFrank.jpg
 view-if: eliason_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
@@ -395,7 +395,7 @@ William Irvine is now an advisor.
 
 @add_woodsworth
 title: J. S. Woodsworth
-subtitle: James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the FLG's Party Leader. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
+subtitle: James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the FLP's Party Leader. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
 is-card: true
 card-image: img/portraits/WoodsworthJS.jpg
 tags: reformist_advisor
@@ -407,7 +407,7 @@ J. S. Woodsworth is now an advisor.
 
 @add_lucas
 title: Louise Lucas
-subtitle: Louise Lucas is a leading feminist farmer, member of the FLG's Board of Directors, and President of the Women's FLG section. She is an outstanding orator.  {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+subtitle: Louise Lucas is a leading feminist farmer, member of the FLP's Board of Directors, and President of the Women's FLP section. She is an outstanding orator.  {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
 card-image: img/portraits/LucasLouise.jpg
 view-if: lucas_advisor = 0 and n_advisors < 3
@@ -435,7 +435,7 @@ Laura Jamieson is now an advisor.
 
 @add_winch
 title: Ernest Winch
-subtitle: Ernest Winch is a left FLG who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP, Against Toleration ?]
+subtitle: Ernest Winch is a left FLP who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP, Against Toleration ?]
 is-card: true
 card-image: img/portraits/WinchErnest.jpg
 view-if: winch_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -447,7 +447,7 @@ Ernest Winch is now an advisor.
 
 @add_nielsen
 title: Dorise Nielsen
-subtitle: Dorise Nielsen is a left FLG and campaign manager. (Joined 1934) {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
+subtitle: Dorise Nielsen is a left FLP and campaign manager. (Joined 1934) {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
 card-image: img/portraits/NielsenDorise.png
 view-if: nielsen_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -463,7 +463,7 @@ Dorise Nielsen is now an advisor.
 
 @add_coldwell
 title: Major James Coldwell
-subtitle: Major James Coldwell is a former school teacher and long-time party organizer. He was Leader of the provincial FLG affiliate in Saskatchewan, the Farmer-Labour Group, while it was official opposition. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
+subtitle: Major James Coldwell is a former school teacher and long-time party organizer. He was Leader of the provincial FLP affiliate in Saskatchewan, the Farmer-Labour Group, while it was official opposition. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
 is-card: true
 card-image: img/portraits/ColdwellRudolf.jpg
 tags: agrarian_advisor
@@ -487,7 +487,7 @@ Clarence Fines is now an advisor.
 
 @add_heaps
 title: Albert Heaps
-subtitle: Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the FLG. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+subtitle: Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the FLP. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/HeapsAA.jpg
 tags: labor_advisor

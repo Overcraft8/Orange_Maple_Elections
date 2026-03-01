@@ -7,9 +7,9 @@ new-page: true
 
 = J. S. Woodsworth
 
-James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the FLG's Party Leader.
+James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the FLP's Party Leader.
 
-J. S. Woodsworth [? if flg_prussia = 1 : is ?][? if flg_prussia = 0 : was ?] the Minister-Monarch of Prussia, the largest state in Saskatchewan. He is a reformist leader who seeks to work with the bourgeois parties.
+J. S. Woodsworth [? if flp_prussia = 1 : is ?][? if flp_prussia = 0 : was ?] the Minister-Monarch of Prussia, the largest state in Saskatchewan. He is a reformist leader who seeks to work with the bourgeois parties.
 
 - @coalition
 - @prussian_bulwark
@@ -19,17 +19,17 @@ J. S. Woodsworth [? if flg_prussia = 1 : is ?][? if flg_prussia = 0 : was ?] the
 @coalition
 title: Negotiating with the Coalition
 subtitle: J.S. Woodsworth can improve our relationships with our centrist and center-right coalition partners in Prussia as well as in the Assembly.
-choose-if: advisor_action_timer <= 0 and (flg_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not flg_prussia : The FLG does not control the Prussian government. ?]
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if flg_in_government = 1 and coalition_dissent > 0; rpc_relation += 6; lpc_relation += 6; cpc_relation += 2; cpc_relation += 3 if in_grand_coalition
+choose-if: advisor_action_timer <= 0 and (flp_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not flp_prussia : The FLP does not control the Prussian government. ?]
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if flp_in_government = 1 and coalition_dissent > 0; rpc_relation += 6; lpc_relation += 6; cpc_relation += 2; cpc_relation += 3 if in_grand_coalition
 
 We have improved our relations with the [? if in_grand_coalition : RPC Party, [+ lpc_name +], and CPC, ?][? if not in_grand_coalition: RPC Party and [+ lpc_name +], ?] and reduced tensions with the coalition.
 
 @prussian_bulwark
 title: The Prussian Bulwark
 subtitle: As the Minister-Monarch of Prussia, J.S. Woodsworth has power over the Prussian bureaucracy and security services.
-choose-if: advisor_action_timer <= 0 and flg_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if flg_prussia == 0 : The FLG does not control Prussia. ?]
+choose-if: advisor_action_timer <= 0 and flp_prussia = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if flp_prussia == 0 : The FLP does not control Prussia. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
 go-to: prussian_affairs
 

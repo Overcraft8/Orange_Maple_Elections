@@ -2,19 +2,19 @@ title: Party Hierarchy
 new-page: true
 is-special: true
 
-= President of the FLG
+= President of the FLP
 
-<div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;"> [+ flg_president +] </p>
+<div><img src="img/portraits/WilliamsHaraGeorge.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;"> [+ flp_president +] </p>
 
 = Legislative Party Leader 
 
 <div><img src="img/portraits/ColdwellMajorJames.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
-<p style="text-align: center;margin-bottom: 0;"> [+ flg_parliament_leader +] </p>
+<p style="text-align: center;margin-bottom: 0;"> [+ flp_parliament_leader +] </p>
 
 = Party Secretary
 
 <div><img src="img/portraits/EliasonFrank.jpg" style="width: 40%;display: block;margin: auto;margin-bottom: 5px;"></div>
-<p style="text-align: center;margin-bottom: 0;"> [+ flg_secretary +] </p>
+<p style="text-align: center;margin-bottom: 0;"> [+ flp_secretary +] </p>
 
 = Board of Directors 
 
@@ -23,11 +23,11 @@ is-special: true
 <div style="display: flex; justify-content: center; font-size: 12px; gap: 2px; margin-bottom: 4px;">
 
     <div style="text-align: center;">
-        <p>[+ flg_board_one +]</p>
+        <p>[+ flp_board_one +]</p>
     </div>
 
     <div style="text-align: center;">
-        <p>[+ flg_board_two +]</p>
+        <p>[+ flp_board_two +]</p>
     </div>
 
 </div>
@@ -37,11 +37,11 @@ is-special: true
 <div style="display: flex; justify-content: center; font-size: 12px; gap: 2px;">
 
 <div style="text-align: center;">
-        <p>[+ flg_board_three +]</p>
+        <p>[+ flp_board_three +]</p>
     </div>
 
     <div style="text-align: center;">
-        <p>[+ flg_board_four +]</p>
+        <p>[+ flp_board_four +]</p>
     </div>
 
 </div>
@@ -49,7 +49,7 @@ is-special: true
 
 @partyfactions
 
-= Internal Factions of the <span style="color: #d26e28;">**FLG**</span>
+= Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
 
 <div style="width: 100%;">
     <div id="factionBar" class="bar-container"></div>
@@ -63,17 +63,17 @@ Dissent: [+ agrarian_dissent : dissent +]
 Strength: [+ labor_strength : strength +] 
 Dissent: [+ labor_dissent : dissent +]
 
-<span class="tooltip-text" title="A faction of radical FLGers. Most of them have ties to the CP." style="color: #7b1616;">**Left**</span> 
+<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Left**</span> 
 Strength: [+ left_strength : strength +] 
 Dissent: [+ left_dissent : dissent +]
 
-<span class="tooltip-text" title="The moderate wing of the FLG and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span> 
+<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span> 
 Strength: [+ reformist_strength : strength +] 
 Dissent: [+ reformist_dissent : dissent +]
 
 @partyorganizations
 
-= Party Affiliates of the FLG
+= Party Affiliates of the FLP
 
 <span style="color: #7b1616;">**CCYM**</span> 
 [+ ccym_strength +] strength

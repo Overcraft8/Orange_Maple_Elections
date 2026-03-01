@@ -7,7 +7,7 @@ new-page: true
 
 = Frank Eliason
 
-Frank Eliason is secretary of the FLG and UFC(SS). 
+Frank Eliason is secretary of the FLP and UFC(SS). 
 
 - @support_peoples_party
 - @build_peoples_party
@@ -47,7 +47,7 @@ go-to: peoples_party_campaigning
 @womens_rights_
 title: Women's rights
 subtitle: Enact policy with regards to women's rights.
-choose-if: advisor_action_timer = 0 and flg_in_government
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flg_in_government : The FLG is not currently in government. ?]
+choose-if: advisor_action_timer = 0 and flp_in_government
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flp_in_government : The FLP is not currently in government. ?]
 on-arrival: advisor_action_timer = 6; womens_rights_timer -= 10; last_advisor_action = 1
 go-to: womens_rights

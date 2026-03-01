@@ -1,0 +1,7 @@
+title = Leadership of the FLP
+subtitle = We must choose a President
+on-arrival: 
+tags: event
+view-if: year = 1932 and month = 2
+priority: 2
+max-visits: 1

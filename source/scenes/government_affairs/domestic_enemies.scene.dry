@@ -1,6 +1,6 @@
 title: Investigating Domestic Enemies
 on-arrival: month_actions += 1
-view-if: flg_in_government = 1 and interior_minister_party = "FLG"
+view-if: flp_in_government = 1 and interior_minister_party = "FLP"
 #card-image: img/portraits/BrockelbankJohn.jpg
 #is-card: true
 #new-page: true
@@ -44,10 +44,10 @@ on-arrival: sa_strength *= 0.7; sa_militancy -= 0.05
 We have arrested more of the SA's leaders and confiscated their weapons.
 
 @ban_sh
-on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if interior_police_loyalty >= 0.7; sh_banned = 1; cpc_relation -= 5; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if flg_in_government = 1 and in_grand_coalition = 1 and monarch = "George V"; sh_ban_timer = 6;
+on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if interior_police_loyalty >= 0.7; sh_banned = 1; cpc_relation -= 5; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V"; sh_ban_timer = 6;
 view-if: sh_banned == 0
 
-[? if monarch == "George V": Banning the Stahlhelm weakens our relationship with Monarch George V, as well as the political right and the police. ?][? if monarch != "George V": Banning the Stahlhelm weakens our relationship with the political right and the police. ?] [? if flg_in_government = 1 and in_grand_coalition = 1 and monarch = "George V" : It also weakens our coalition due to the influence of George V on the right wing of our coalition. ?] In addition, the Stahlhelm still operates out of public sight.
+[? if monarch == "George V": Banning the Stahlhelm weakens our relationship with Monarch George V, as well as the political right and the police. ?][? if monarch != "George V": Banning the Stahlhelm weakens our relationship with the political right and the police. ?] [? if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V" : It also weakens our coalition due to the influence of George V on the right wing of our coalition. ?] In addition, the Stahlhelm still operates out of public sight.
 
 @unban_sh
 view-if: sh_banned = 1
@@ -60,7 +60,7 @@ title: Further persecute the Stahlhelm.
 view-if: sh_banned = 1
 choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
 unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
-on-arrival: sh_strength *= 0.7; sh_militancy -= 0.05; cpc_relation -= 5; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if flg_in_government = 1 and in_grand_coalition = 1 and monarch = "George V";
+on-arrival: sh_strength *= 0.7; sh_militancy -= 0.05; cpc_relation -= 5; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V";
 
 We have arrested more of the Stahlhelm's leaders and confiscated their weapons.
 

@@ -25,8 +25,8 @@ go-to: crisis_program.plan_adopted
 @carry_out_policy
 title: Carry out the economic plan.
 subtitle: If we are in government, we can carry out a public works program such as the WTB-Plan.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if flg_in_government == 0 : The FLG is not in government. ?][? if works_program >= 2 : We have already started implementing the plan. ?]
-choose-if: advisor_action_timer <= 0 and wtb_adopted and flg_in_government and wtb_implemented <= 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if flp_in_government == 0 : The FLP is not in government. ?][? if works_program >= 2 : We have already started implementing the plan. ?]
+choose-if: advisor_action_timer <= 0 and wtb_adopted and flp_in_government and wtb_implemented <= 1
 on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
 go-to: economic_policy
 
@@ -38,4 +38,4 @@ choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and black_thursday_see
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
 on-arrival: advisor_action_timer = 6; wtb_support += 2; agrarian_dissent += 10; labor_strength += 1
 
-The WTB-plan, named for its primary supporters Forsey, Tarnow, and Wright, has been adopted as the unions' plan for getting us out of the depression. Forsey canvasses in favor of this policy through the FLG and the unions.
+The WTB-plan, named for its primary supporters Forsey, Tarnow, and Wright, has been adopted as the unions' plan for getting us out of the depression. Forsey canvasses in favor of this policy through the FLP and the unions.

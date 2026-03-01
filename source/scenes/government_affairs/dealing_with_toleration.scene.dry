@@ -2,7 +2,7 @@ title: Dealing with Toleration
 new-page: true
 is-card: true
 card-image: img/portraits/BrüningHeinrich.jpg
-view-if: dealing_with_toleration_timer = 0 and flg_toleration and premier_party == "RPC"
+view-if: dealing_with_toleration_timer = 0 and flp_toleration and premier_party == "RPC"
 on-arrival: dealing_with_toleration_timer += 6; month_actions += 1
 tags: govt_affairs
 #subtitle: Despite not being in government, we can still provide support.
@@ -28,7 +28,7 @@ Are we sure about this? A vote of no confidence would trigger new elections, and
 - @stay_course: No, we should stay the course.
 
 @vonc
-on-arrival: flg_in_government = 0; flg_toleration = 0; in_grand_coalition = 0; premier = "Brüning"; premier_party = "RPC"; next_election_time = time + 3 if next_election_time > time+3; next_parl_election_month = month + 3 if next_election_time >= time+3; next_parl_election_year = year if next_election_time >= time+3; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; flg_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_flg -= 3; rural_flg -= 3; old_middle_flg -= 3; catholics_flg -= 3; reformist_dissent += 5; left_dissent -= 5
+on-arrival: flp_in_government = 0; flp_toleration = 0; in_grand_coalition = 0; premier = "Brüning"; premier_party = "RPC"; next_election_time = time + 3 if next_election_time > time+3; next_parl_election_month = month + 3 if next_election_time >= time+3; next_parl_election_year = year if next_election_time >= time+3; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; flp_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_flp -= 3; rural_flp -= 3; old_middle_flp -= 3; catholics_flp -= 3; reformist_dissent += 5; left_dissent -= 5
 
 We have called for a vote of no confidence, and have brought down this government. Premier [+ premier +] currently rules as acting premier.
 
@@ -41,7 +41,7 @@ unavailable-subtitle: This can only happen with a budget surplus.
 go-to: urge_success if cpc_relation >= 30 and rpc_relation >= 40; urge_failure if cpc_relation < 30 or rpc_relation < 40
 
 @urge_success
-on-arrival: welfare += 1; budget -= 1; workers_flg += 5*(1-dissent); unemployed_flg += 5*(1-dissent); rpc_relation -= 3; cpc_relation -= 3; reformist_dissent -= 5; agrarian_dissent -= 5; labor_dissent -= 5;
+on-arrival: welfare += 1; budget -= 1; workers_flp += 5*(1-dissent); unemployed_flp += 5*(1-dissent); rpc_relation -= 3; cpc_relation -= 3; reformist_dissent -= 5; agrarian_dissent -= 5; labor_dissent -= 5;
 
 We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
 
@@ -68,7 +68,7 @@ view-if: neo_weimar_coalition >= 50
 choose-if: rpc_relation >= 50 and cpc_relation >= 30 and resources >= 2
 subtitle: We will need 2 resources to smooth out the process of forming the coalition.
 unavailable-subtitle: [? if rpc_relation < 50 : We do not have adequate relations with the RPC Party. ?][? if cpc_relation < 30 : We do not have adequate relations with the CPC. ?] [? if resources < 2 : We do not have enough resources. ?]
-on-arrival: resources -= 2; flg_in_government = 1; in_grand_coalition = 1; flg_toleration = 0; left_dissent += 6; reformist_strength += 5; leverage = 20 if leverage >= 20
+on-arrival: resources -= 2; flp_in_government = 1; in_grand_coalition = 1; flp_toleration = 0; left_dissent += 6; reformist_strength += 5; leverage = 20 if leverage >= 20
 achievement: constitutional_coalition
 
 Our negotiations have succeeded, and the RPC Party and CPC have agreed to form a new coalition government with us!

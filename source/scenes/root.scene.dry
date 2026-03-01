@@ -68,17 +68,17 @@ Q.reformists_resigned = 0;
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
-// crisis_urgency indicates how seriously the FLG is taking the economic crisis - scale from 0 to 10.
+// crisis_urgency indicates how seriously the FLP is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
-// scp_urgency indicates how seriously the FLG takes the scp - scale from 0 to 10.
+// scp_urgency indicates how seriously the FLP takes the scp - scale from 0 to 10.
 Q.scp_urgency = 0;
-// radicalization indicates how radical the FLG's rhetoric is - scale from 0 to 10.
+// radicalization indicates how radical the FLP's rhetoric is - scale from 0 to 10.
 Q.radicalization = 0;
 // Support for the WTB plan and proto-Keynesian works creation plans in general
 Q.wtb_support = 0;
-// Support for Pacifism within the FLG relative to 1928
+// Support for Pacifism within the FLP relative to 1928
 Q.pacifism = 0;
-// Support for democratic reform within the FLG relative to 1928
+// Support for democratic reform within the FLP relative to 1928
 Q.democratization = 0;
 // Support for a communist coalition relative to 1928
 Q.communist_coalition = 0;
@@ -109,18 +109,18 @@ Q.cpc_relation = 35;
 Q.SCP_relation = 10;
 
 
-Q.flg_parliament_leader = "Major James Coldwell";
-Q.flg_president = "George Hara Williams";
-Q.flg_secretary = "Frank Eliason";
+Q.flp_parliament_leader = "Major James Coldwell";
+Q.flp_president = "George Hara Williams";
+Q.flp_secretary = "Frank Eliason";
 
-Q.flg_board_one = "Alexander Nicholson";
-Q.flg_board_one_faction = "agrarian";
-Q.flg_board_two = "Louise Lucas";
-Q.flg_board_one_faction = "agrarian";
-Q.flg_board_three = "John Brockelbank";
-Q.flg_board_one_faction = "agrarian";
-Q.flg_board_four = "Clarence Fines";
-Q.flg_board_one_faction = "labor";
+Q.flp_board_one = "Alexander Nicholson";
+Q.flp_board_one_faction = "agrarian";
+Q.flp_board_two = "Louise Lucas";
+Q.flp_board_one_faction = "agrarian";
+Q.flp_board_three = "John Brockelbank";
+Q.flp_board_one_faction = "agrarian";
+Q.flp_board_four = "Clarence Fines";
+Q.flp_board_one_faction = "labor";
 
 
 Q.cp_leader = "Tim Buck";
@@ -129,7 +129,7 @@ Q.cpc_leader = "James Anderson";
 Q.lpc_leader = "James Gardiner";
 Q.scp_leader = "Joseph Needham"; 
 Q.rpc_leader = "Henry Stevens";
-// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the FLG.
+// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the FLP.
 Q.rpc_party_leader = "Henry Stevens";
 
 // hmm... maybe we can play nice with George V???
@@ -138,10 +138,10 @@ Q.georgev_relation = 25;
 Q.georgev_enabled = 0;
 
 
-// Does the FLG lead in Prussia?
-Q.flg_prussia = 1;
-// Options: flg, lpc, cpc, scp
-Q.prussian_government = "FLG";
+// Does the FLP lead in Prussia?
+Q.flp_prussia = 1;
+// Options: flp, lpc, cpc, scp
+Q.prussian_government = "FLP";
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
@@ -254,7 +254,7 @@ Q.catholics = 30;
 Q.income = 1600;
 // what about incomes for different classes? rural workers? middle-class workers?
 
-// inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BFLGRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
+// inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BFLPRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
 Q.inflation = 2.9;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
@@ -271,14 +271,14 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['flg', 'cp', 'rpc', 'lpc', 'cpc', 'scp', 'other'];
+Q.parties = ['flp', 'cp', 'rpc', 'lpc', 'cpc', 'scp', 'other'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_flg = 10;
+Q.workers_flp = 10;
 Q.workers_cp = 3;
 Q.workers_rpc = 3;
 Q.workers_lpc = 35;
@@ -286,7 +286,7 @@ Q.workers_cpc = 32;
 Q.workers_scp = 5;
 Q.workers_other = 12;
 
-Q.old_middle_flg = 2;
+Q.old_middle_flp = 2;
 Q.old_middle_cp = 0;
 Q.old_middle_rpc = 5;
 Q.old_middle_lpc= 38;
@@ -294,7 +294,7 @@ Q.old_middle_cpc = 35;
 Q.old_middle_scp = 15;
 Q.old_middle_other = 2;
 
-Q.new_middle_flg = 5;
+Q.new_middle_flp = 5;
 Q.new_middle_cp = 1;
 Q.new_middle_rpc = 12;
 Q.new_middle_lpc= 34;
@@ -302,7 +302,7 @@ Q.new_middle_cpc = 31;
 Q.new_middle_scp = 13;
 Q.new_middle_other = 2;
 
-Q.rural_flg = 13;
+Q.rural_flp = 13;
 Q.rural_cp = 0;
 Q.rural_rpc = 6;
 Q.rural_lpc= 36;
@@ -310,7 +310,7 @@ Q.rural_cpc = 32;
 Q.rural_scp = 10;
 Q.rural_other = 3;
 
-Q.unemployed_flg = 9;
+Q.unemployed_flp = 9;
 Q.unemployed_cp = 4;
 Q.unemployed_rpc = 7;
 Q.unemployed_lpc = 37;
@@ -318,7 +318,7 @@ Q.unemployed_cpc = 30;
 Q.unemployed_scp = 6;
 Q.unemployed_other = 5;
 
-Q.catholics_flg = 7;
+Q.catholics_flp = 7;
 Q.catholics_cp = 2;
 Q.catholics_rpc = 10;
 Q.catholics_lpc = 40;
@@ -332,7 +332,7 @@ Q.catholics_other = 6;
 // source: wikipedia
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
-Q.flg_r = 0;
+Q.flp_r = 0;
 Q.cp_r = 0;
 Q.rpc_r = 1;
 Q.lpc_r = 42;
@@ -341,7 +341,7 @@ Q.scp_r = 0;
 Q.other_r = 4;
 
 // diff from prev
-Q.old_flg_r = 26;
+Q.old_flp_r = 26;
 Q.old_cp_r = 9;
 Q.old_rpc_r = 17;
 Q.old_lpc_r = 6;
@@ -356,7 +356,7 @@ Q.old_sapd_r = 0;
 // for changing the LPC's name to the DStP
 Q.lpc_name = "LPC";
 
-// array of objects of the form {date: Date(), flg: 10, cp: 12, ...} for each election
+// array of objects of the form {date: Date(), flp: 10, cp: 12, ...} for each election
 Q.election_records = [];
 // party support records for every month
 Q.party_support_records = [];
@@ -369,7 +369,7 @@ Q.monarch = "George V";
 // starting premier: James Anderson
 Q.premier = "James Anderson";
 Q.premier_party = 'CPC';
-Q.flg_in_government = 0;
+Q.flp_in_government = 0;
 Q.rpc_in_government = 0;
 Q.lpc_in_government = 0;
 Q.cpc_in_government = 1;
@@ -377,20 +377,20 @@ Q.scp_in_government = 0;
 Q.cp_in_government = 0;
 
 Q.in_right_coalition = 0;
-// Weimar coalition = FLG + RPC + LPC
+// Weimar coalition = FLP + RPC + LPC
 Q.in_weimar_coalition = 0;
-// Grand coalition = FLG + RPC + LPC + CPC
-// also includes the "new grand coalition" of FLG + RPC + LPC + CPC + Others
+// Grand coalition = FLP + RPC + LPC + CPC
+// also includes the "new grand coalition" of FLP + RPC + LPC + CPC + Others
 Q.in_grand_coalition = 0;
-// Popular front = FLG + CP + RPC + LPC
+// Popular front = FLP + CP + RPC + LPC
 Q.in_popular_front = 0;
-// left coalition = FLG + CP + left-splinters
+// left coalition = FLP + CP + left-splinters
 Q.in_left_front = 0;
-// emergency government containing the FLG: only monarch JS_Woodsworth can do this.
+// emergency government containing the FLP: only monarch JS_Woodsworth can do this.
 Q.in_emergency_government = 0;
-Q.in_flg_majority = 0;
+Q.in_flp_majority = 0;
 Q.grand_coalition_failed = 0;
-// if the FLG is ruling as part of a minority government
+// if the FLP is ruling as part of a minority government
 Q.in_minority_government = 0;
 // national unity governmet
 
@@ -399,8 +399,8 @@ Q.coalition_dissent = 0;
 // dissent from the CP, in a popular front or left front government
 Q.cp_coalition_dissent = 0;
 
-// does the FLG tolerate the government even if it is not a participant?
-Q.flg_toleration = 0;
+// does the FLP tolerate the government even if it is not a participant?
+Q.flp_toleration = 0;
 
 // is the current government a monarchial minority government?
 Q.minority_government = 0;
@@ -527,10 +527,10 @@ Q.tariffs = 0;
 Q.electoral_threshold = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
-// did the FLG vote against the previous government in a vote of no confidence?
-Q.flg_no_confidence = 0;
-// was the last FLG government taken down in a vote of no confidence by right-wing coalition partners?
-Q.no_confidence_against_flg = 0;
+// did the FLP vote against the previous government in a vote of no confidence?
+Q.flp_no_confidence = 0;
+// was the last FLP government taken down in a vote of no confidence by right-wing coalition partners?
+Q.no_confidence_against_flp = 0;
 
 
 // Deaths
@@ -733,5 +733,5 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Anderson has been unable to effectively address the crisis. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
 
-The Farmer-Labour Group (FLG) is the only party offering a real alternative to the old order. However, we are a young and inexperienced party, and we face opposition not only from the right-wing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLG's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
+The Farmer-Labour Group (FLP) is the only party offering a real alternative to the old order. However, we are a young and inexperienced party, and we face opposition not only from the right-wing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLP's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
 

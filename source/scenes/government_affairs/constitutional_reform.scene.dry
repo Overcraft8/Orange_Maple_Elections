@@ -1,7 +1,7 @@
 title: Constitutional Reform
 new-page: true
 is-card: true
-view-if: flg_in_government = 1 and justice_minister_party = "FLG" and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_weimar_coalition) or (in_flg_majority) or (in_left_front) or (in_popular_front)) and constitutional_reform < 3
+view-if: flp_in_government = 1 and justice_minister_party = "FLP" and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_weimar_coalition) or (in_flp_majority) or (in_left_front) or (in_popular_front)) and constitutional_reform < 3
 frequency: 25
 on-arrival: month_actions += 1; constitutional_reform_timer += 12; pass_threshold = 0.51; pass_threshold = 0.6 if pro_republic < 65;
 card-image: img/portraits/UnderhillFrank.jpg
@@ -34,7 +34,7 @@ A constitutional reform requires either a two-thirds supermajority in the Assemb
 @vote_threshold
 subtitle: Change the vote threshold to 5% for parties to be represented in the Assembly.
 on-arrival: {!
-Q.reform_support = Q.flg_normalized;
+Q.reform_support = Q.flp_normalized;
 if (Q.rpc_relation > 30) {
     Q.reform_support += Q.rpc_normalized - 0.03;
 }
@@ -53,7 +53,7 @@ Some political thinkers believe that the proliferation of minor parties is respo
 
 The smaller parties will obviously oppose this reform. [? if rpc_relation > 30 : The RPC Party supports this reform. ?] [? if cp_relation > 50 and cp_normalized >= 0.1 : Perhaps surprisingly, the CP supports this reform. ?] [? if scp_normalized >= 0.2 : The SCP supports this reform, as they believe they have something to gain. ?]
 
-The FLG Left opposes this change, as they believe it to be anti-democratic.
+The FLP Left opposes this change, as they believe it to be anti-democratic.
 
 - @vote_threshold_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.
@@ -74,7 +74,7 @@ We have passed a constitutional amendment to increase the electoral threshold to
 @constructive_vonc
 subtitle: Votes of no confidence can only be called if an alternative plan for government formation can be passed, greatly reducing their incidence.
 on-arrival: {!
-Q.reform_support = Q.flg_normalized + Q.lpc_normalized;
+Q.reform_support = Q.flp_normalized + Q.lpc_normalized;
 if (Q.rpc_relation >= 30) {
     Q.reform_support += Q.rpc_normalized - 0.03;
 }
@@ -100,7 +100,7 @@ We have successfully passed a constitutional amendment to ban votes of no confid
 @monarchial_powers
 subtitle: The monarch can no longer dissolve the Assembly at will, or call a *Reichsexekution* on state governments.
 on-arrival: {!
-Q.reform_support = Q.flg_normalized + Q.lpc_normalized + Q.cp_normalized;
+Q.reform_support = Q.flp_normalized + Q.lpc_normalized + Q.cp_normalized;
 if (Q.rpc_relation > 49 && (Q.monarch == "George V" || Q.monarch == "Eckener")) {
     Q.reform_support += Q.rpc_normalized;
 } else if (Q.monarch == "J. S. Woodsworth") {

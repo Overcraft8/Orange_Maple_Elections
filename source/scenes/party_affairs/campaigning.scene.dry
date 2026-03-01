@@ -24,7 +24,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_flg += 6*(1-dissent); workers_flg -= 2 if unemployed >= 15; workers_flg -= 2 if unemployed >= 25; workers_flg += 6*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_flg += 3*(1-dissent) if nationalization_progress >= 1;
+on-arrival: workers_flp += 6*(1-dissent); workers_flp -= 2 if unemployed >= 15; workers_flp -= 2 if unemployed >= 25; workers_flp += 6*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_flp += 3*(1-dissent) if nationalization_progress >= 1;
 
 We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
 
@@ -32,7 +32,7 @@ We have increased our campaigning among the workers. [? if unemployed >= 15: The
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_flg += 6*(1-dissent); new_middle_flg -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
+on-arrival: new_middle_flp += 6*(1-dissent); new_middle_flp -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
 
 We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
 
@@ -40,7 +40,7 @@ We have increased our campaigning among the new middle class. [? if socialism <=
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: old_middle_flg += 5*(1-dissent); resources -= 1; old_middle_flg -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
+on-arrival: old_middle_flp += 5*(1-dissent); resources -= 1; old_middle_flp -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
 
 We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
 
@@ -48,7 +48,7 @@ We have increased our campaigning among the old middle class. [? if nationalism 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: rural_flg += 5*(1-dissent); resources -= 1; rural_flg += 3*(1-dissent) if rural_policy >= 2
+on-arrival: rural_flp += 5*(1-dissent); resources -= 1; rural_flp += 3*(1-dissent) if rural_policy >= 2
 
 We have increased our campaigning among farmers. The farmers are a traditional voting bloc of ours[? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
 
@@ -56,7 +56,7 @@ We have increased our campaigning among farmers. The farmers are a traditional v
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: unemployed_flg += 6*(1-dissent); resources -= 1; unemployed_flg -= 3 if welfare < 0; unemployed_flg += 6*(1-dissent) if wtb_adopted = 1; unemployed_flg += 3*(1-dissent) if welfare >= 2;
+on-arrival: unemployed_flp += 6*(1-dissent); resources -= 1; unemployed_flp -= 3 if welfare < 0; unemployed_flp += 6*(1-dissent) if wtb_adopted = 1; unemployed_flp += 3*(1-dissent) if welfare >= 2;
 
 We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
 
@@ -65,6 +65,6 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 view-if: peoples_party == 1
-on-arrival: catholics_flg += 6*(1-dissent); resources -= 1
+on-arrival: catholics_flp += 6*(1-dissent); resources -= 1
 
 We have increased our campaigning among Catholics.

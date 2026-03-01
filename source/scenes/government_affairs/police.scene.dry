@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: police_timer += 6; month_actions += 1
-view-if: flg_in_government = 1 and interior_minister_party = "FLG" and police_timer <= 0
+view-if: flp_in_government = 1 and interior_minister_party = "FLP" and police_timer <= 0
 card-image: img/portraits/BrockelbankJohn.jpg
 
 = Internal Security
@@ -32,9 +32,9 @@ Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
 go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investigate_corruption_failure if interior_police_loyalty < 0.5
 
 @investigate_corruption_success
-on-arrival: investigate_corruption += 1; workers_flg += 5*(1-dissent); inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8
+on-arrival: investigate_corruption += 1; workers_flp += 5*(1-dissent); inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8
 
-Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the FLG.
+Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the FLP.
 
 
 @investigate_corruption_failure
@@ -45,7 +45,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 go-to: investigate_far_right_success if interior_police_loyalty >= 0.55; investigate_far_right_failure if interior_police_loyalty < 0.55
 
 @investigate_far_right_success
-on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_scp -= 3; new_middle_scp -= 3; scp_urgency += 1 if investigate_far_right == 2; scp_urgency += 2 if investigate_far_right == 3; workers_scp -= 3 if investigate_far_right == 3; new_middle_scp -= 3 if investigate_far_right == 3; old_middle_scp -= 3 if investigate_far_right == 3; unemployed_flg -= 3 if investigate_far_right == 3; coup_progress -= 1 if coup_progress >= 7
+on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_scp -= 3; new_middle_scp -= 3; scp_urgency += 1 if investigate_far_right == 2; scp_urgency += 2 if investigate_far_right == 3; workers_scp -= 3 if investigate_far_right == 3; new_middle_scp -= 3 if investigate_far_right == 3; old_middle_scp -= 3 if investigate_far_right == 3; unemployed_flp -= 3 if investigate_far_right == 3; coup_progress -= 1 if coup_progress >= 7
 
 [? if investigate_far_right == 1 : We have discovered collusion between Hjalmar Schacht, monarch of the Reichsbank, and the SCPs. This is very useful information. ?]
 [? if investigate_far_right == 2 : We have discovered illegal arms smuggling by the SA, the SCPs paramilitary. ?]

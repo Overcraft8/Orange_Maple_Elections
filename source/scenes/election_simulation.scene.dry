@@ -9,7 +9,7 @@ set-jump: post_election
 @post_election
 on-arrival: {!
 // set congress proportion to votes
-Q.flg_r = Q.flg_votes;
+Q.flp_r = Q.flp_votes;
 Q.rpc_r = Q.rpc_votes;
 Q.cp_r = Q.cp_votes;
 Q.lpc_r = Q.lpc_votes;
@@ -17,32 +17,32 @@ Q.cpc_r = Q.cpc_votes;
 Q.scp_r = Q.scp_votes;
 Q.other_r = Q.other_votes;
 
-// The largest party can only be the FLG, LPC, CPC, or SCP.
-Q.largest_party = 'FLG';
+// The largest party can only be the FLP, LPC, CPC, or SCP.
+Q.largest_party = 'FLP';
 
-if (Q.lpc_r >= Q.flg_r && Q.lpc_r >= Q.cpc_r && Q.lpc_r >= Q.scp_r) {
+if (Q.lpc_r >= Q.flp_r && Q.lpc_r >= Q.cpc_r && Q.lpc_r >= Q.scp_r) {
     Q.largest_party = 'LPC';
 }
-if (Q.cpc_r >= Q.flg_r && Q.cpc_r >= Q.lpc_r && Q.cpc_r >= Q.scp_r) {
+if (Q.cpc_r >= Q.flp_r && Q.cpc_r >= Q.lpc_r && Q.cpc_r >= Q.scp_r) {
     Q.largest_party = 'CP';
 }
-if (Q.scp_r >= Q.flg_r && Q.scp_r >= Q.lpc_r && Q.scp_r >= Q.cpc_r) {
+if (Q.scp_r >= Q.flp_r && Q.scp_r >= Q.lpc_r && Q.scp_r >= Q.cpc_r) {
     Q.largest_party = 'CP';
 }
 
 // coalitions
-Q.weimar_coalition = Q.flg_r + Q.lpc_r + Q.rpc_r;
-Q.grand_coalition = Q.flg_r + Q.lpc_r + Q.rpc_r + Q.cpc_r;
+Q.weimar_coalition = Q.flp_r + Q.lpc_r + Q.rpc_r;
+Q.grand_coalition = Q.flp_r + Q.lpc_r + Q.rpc_r + Q.cpc_r;
 Q.bourgeois_coalition = Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
 Q.center_right_coalition = Q.rpc_r + Q.lpc_r + Q.cpc_r + Q.other_r + Q.scp_r;
 Q.right_coalition = Q.rpc_r + Q.cpc_r + Q.other_r + Q.scp_r;
 Q.scp_majority = Q.scp_r 
-Q.left_coalition = Q.flg_r + Q.cp_r;
+Q.left_coalition = Q.flp_r + Q.cp_r;
 // this is an absurd concept lol
-Q.united_front_coalition = Q.flg_r + Q.cp_r + Q.rpc_r + Q.lpc_r - 3;
+Q.united_front_coalition = Q.flp_r + Q.cp_r + Q.rpc_r + Q.lpc_r - 3;
 Q.anti_democratic_coalition = Q.cp_r
 // aka everyone except scp, cp, scp
-Q.neo_weimar_coalition = Q.flg_r + Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
+Q.neo_weimar_coalition = Q.flp_r + Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
 !}
 
 The electoral system is essentially proportional, with the proportion of Assembly seats roughly equal to the proportion of votes.
@@ -50,7 +50,7 @@ The electoral system is essentially proportional, with the proportion of Assembl
 **Election results:**
 
 # 1928: 30, 1930: 25, 1932: 22
-FLG: [+ flg_r +]
+FLP: [+ flp_r +]
 
 # 1928: 15, 1930: 15, 1932: 
 RPC: [+ rpc_r +]
@@ -73,9 +73,9 @@ Other: [+ other_r +]
 
 **Potential coalitions:**
 
-Weimar Coalition (FLG + RPC + LPC): [+ weimar_coalition +]
+Weimar Coalition (FLP + RPC + LPC): [+ weimar_coalition +]
 
-Grand Coalition (FLG + RPC + LPC + CPC): [+ grand_coalition +]
+Grand Coalition (FLP + RPC + LPC + CPC): [+ grand_coalition +]
 
 Bourgeois Coalition (RPC + LPC + CPC + Others): [+ bourgeois_coalition +]
 

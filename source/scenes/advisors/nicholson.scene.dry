@@ -8,7 +8,7 @@ new-page: true
 
 = Alexander Nicholson
 
-Alexander Nicholson was a United Church preacher and farmer. He is now a FLG organizer and provincial candidate. 
+Alexander Nicholson was a United Church preacher and farmer. He is now a FLP organizer and provincial candidate. 
 
 - @against_right_and_left
 - @toleration
@@ -28,8 +28,8 @@ We have reduced the strength of the dissident factions in the party.
 @toleration
 title: Defending Toleration
 subtitle: Nicholson supports cooperation with the bourgeois parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flg_toleration: The FLG is not in toleration. ?]
-choose-if: flg_in_government = 0 and flg_toleration = 1 and advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flp_toleration: The FLP is not in toleration. ?]
+choose-if: flp_in_government = 0 and flp_toleration = 1 and advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent -= 8; agrarian_dissent -= 5
 
 We have reduced dissent among the anti-toleration factions.
@@ -37,15 +37,15 @@ We have reduced dissent among the anti-toleration factions.
 @finance_ministry_
 title: Fiscal Policy
 subtitle: As Finance Minister, Nicholson can enact tax policies.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if flg_in_government = 0 : FLG not in government: ?] [? if finance_minister_party != "FLG" : The FLG does not control the finance ministry. ?]
-choose-if: advisor_action_timer == 0 and flg_in_government == 1 and finance_minister_party == "FLG"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if flp_in_government = 0 : FLP not in government: ?] [? if finance_minister_party != "FLP" : The FLP does not control the finance ministry. ?]
+choose-if: advisor_action_timer == 0 and flp_in_government == 1 and finance_minister_party == "FLP"
 on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6; last_advisor_action = 1
 go-to: fiscal_policy
 
 @economic_democracy_
 title: Economic Democracy
 subtitle: Enact policies to build a more democratic economy.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if flg_in_government = 0 : FLG not in government: ?] [? if labor_minister_party != "FLG" or (finance_minister_party != "FLG" and economic_minister_party != "FLG") : We do not have the necessary government ministers. ?]
-choose-if: advisor_action_timer == 0 and flg_in_government == 1 and (economic_minister_party == "FLG" or finance_minister_party == "FLG") and (labor_minister_party == "FLG")
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if flp_in_government = 0 : FLP not in government: ?] [? if labor_minister_party != "FLP" or (finance_minister_party != "FLP" and economic_minister_party != "FLP") : We do not have the necessary government ministers. ?]
+choose-if: advisor_action_timer == 0 and flp_in_government == 1 and (economic_minister_party == "FLP" or finance_minister_party == "FLP") and (labor_minister_party == "FLP")
 on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
 go-to: economic_democracy

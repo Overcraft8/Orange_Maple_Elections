@@ -20,12 +20,12 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
-FLG position: [? if flg_toleration : toleration ?][? if flg_in_government : in government - ?][? if flg_toleration == 0 and flg_in_government == 0 and flg_caretaker == 0 : opposition ?][? if flg_caretaker : caretaker government ?]
-[? if in_weimar_coalition and flg_in_government: Weimar Coalition ?][? if in_grand_coalition and flg_in_government: Grand Coalition ?][? if in_popular_front and flg_in_government: Popular Front ?][? if in_left_front and flg_in_government: Left Front ?][? if in_flg_majority and flg_in_government: FLG majority ?][? if in_minority_government and flg_in_government: minority government ?]
+FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
+[? if in_weimar_coalition and flp_in_government: Weimar Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_popular_front and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
 
-[? if flg_in_government and not in_flg_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if flg_in_government and (in_left_front or in_popular_front): CP coalition dissent: [+ cp_coalition_dissent : coalition_dissent +] ?]
+[? if flp_in_government and (in_left_front or in_popular_front): CP coalition dissent: [+ cp_coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
@@ -38,7 +38,7 @@ Premier: [+ premier +] ([+ premier_party +])
 Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="Farmer-Labour Group">!}[? if not flg_name: FLG?][? if flg_name != 0 : [+ flg_name +]?]{!</span>!}: [+ flg_r +]%
+{!<span class="tooltip-text" title="Farmer-Labour Group">!}[? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 {!<span class="tooltip-text" title="Reconstruction Party">!}[? if not rpc_name: RPC?][? if rpc_name != 0 : [+ rpc_name +]?]{!</span>!}: [+ rpc_r +]%
@@ -53,7 +53,7 @@ Assembly composition:
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-[? if flg_in_government = 1 : Budget: [+ budget +] ?]
+[? if flp_in_government = 1 : Budget: [+ budget +] ?]
 
 Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_election_year +]
 
@@ -83,7 +83,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</span>!}: [+ scp_relation : relationships +]
 
-= Internal Factions of the FLG
+= Internal Factions of the FLP
 
 {!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the CP.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
 
@@ -114,7 +114,7 @@ if (Q.sa_strength) {
 
 = Organizations
 
-{!<span class="tooltip-text" title="The UFC(SS)  is a popular organization for defending democracy, mostly affiliated with the FLG.">UFC(SS)</span>!} Strength: [+ ufc_strength_2 +] thousand
+{!<span class="tooltip-text" title="The UFC(SS)  is a popular organization for defending democracy, mostly affiliated with the FLP.">UFC(SS)</span>!} Strength: [+ ufc_strength_2 +] thousand
 
 UFC(SS) Militarization: [+ ufc_militancy : militancy +]
 
@@ -140,7 +140,7 @@ Prussian police: [+ prussian_police_strength +] thousand members.
 
 Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
-[? if flg_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
+[? if flp_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 
 @polls
 on-arrival: {!
@@ -153,7 +153,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-FLG: [+ flg_votes +]%
+FLP: [+ flp_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
@@ -171,16 +171,16 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: FLG: [+ workers_flg_display +]%, RPC: [+ workers_rpc_display +]%, CP: [+ workers_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ workers_lpc_display +]%, CPC: [+ workers_cpc_display +]%; SCP: [+ workers_scp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: FLP: [+ workers_flp_display +]%, RPC: [+ workers_rpc_display +]%, CP: [+ workers_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ workers_lpc_display +]%, CPC: [+ workers_cpc_display +]%; SCP: [+ workers_scp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: FLG: [+ new_middle_flg_display +]%, RPC: [+ new_middle_rpc_display +]%, CP: [+ new_middle_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ new_middle_lpc_display +]%, CPC: [+ new_middle_cpc_display +]%; SCP: [+ new_middle_scp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: FLP: [+ new_middle_flp_display +]%, RPC: [+ new_middle_rpc_display +]%, CP: [+ new_middle_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ new_middle_lpc_display +]%, CPC: [+ new_middle_cpc_display +]%; SCP: [+ new_middle_scp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: FLG: [+ old_middle_flg_display +]%, RPC: [+ old_middle_rpc_display +]%, CP: [+ old_middle_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ old_middle_lpc_display +]%, CPC: [+ old_middle_cpc_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: FLP: [+ old_middle_flp_display +]%, RPC: [+ old_middle_rpc_display +]%, CP: [+ old_middle_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ old_middle_lpc_display +]%, CPC: [+ old_middle_cpc_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: FLG: [+ rural_flg_display +]%, RPC: [+ rural_rpc_display +]%, CP: [+ rural_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ rural_lpc_display +]%, CPC: [+ rural_cpc_display +]%; SCP: [+ rural_scp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: FLP: [+ rural_flp_display +]%, RPC: [+ rural_rpc_display +]%, CP: [+ rural_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ rural_lpc_display +]%, CPC: [+ rural_cpc_display +]%; SCP: [+ rural_scp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: FLG: [+ unemployed_flg_display +]%, RPC: [+ unemployed_rpc_display +]%, CP: [+ unemployed_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ unemployed_lpc_display +]%, CPC: [+ unemployed_cpc_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: FLP: [+ unemployed_flp_display +]%, RPC: [+ unemployed_rpc_display +]%, CP: [+ unemployed_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ unemployed_lpc_display +]%, CPC: [+ unemployed_cpc_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: FLG: [+ catholics_flg_display +]%, RPC: [+ catholics_rpc_display +]%, CP: [+ catholics_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ catholics_lpc_display +]%, CPC: [+ catholics_cpc_display +]%; SCP: [+ catholics_scp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: FLP: [+ catholics_flp_display +]%, RPC: [+ catholics_rpc_display +]%, CP: [+ catholics_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ catholics_lpc_display +]%, CPC: [+ catholics_cpc_display +]%; SCP: [+ catholics_scp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%

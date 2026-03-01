@@ -10,12 +10,12 @@ max-visits: 12
 
 = Inter-Party Relationships
 
-The FLG cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the FLG, RPC, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The FLP cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the FLP, RPC, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
 - @liberals: Strengthen our bonds with the Liberal Party.
 - @social_credit: Strengthen our bonds with the Social Credit Party.
 - @cp: Work towards repairing relationships with the Communist Party.
-- @flg_alone: The FLG can stand alone for now.
+- @flp_alone: The FLP can stand alone for now.
 - @easy_discard
 
 
@@ -33,7 +33,7 @@ The communists are suspicious of our overtures, especially the Stalinist leaders
 
 @cp_rectification_of_history
 
-One stumbling block for our relations with the CP is our history of conflict, dating back to 1918 and 1919. The CP is especially contemptuous of Gustav Noske, the FLG "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two FLG-turned-CP leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the CP is our history of conflict, dating back to 1918 and 1919. The CP is especially contemptuous of Gustav Noske, the FLP "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two FLP-turned-CP leaders who were killed during the suppression of the uprising.
 
 For further improvements in CP relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
@@ -68,7 +68,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; scp_relation += 2 if scp_party_leader == "Joos"
-go-to: social_credit_op if scp_in_government = 1 and flg_in_government = 0 and premier != "Needham"; social_credit_coalition if flg_in_government = 1 and scp_in_government = 1; social_credit_needham if premier = "Needham"
+go-to: social_credit_op if scp_in_government = 1 and flp_in_government = 0 and premier != "Needham"; social_credit_coalition if flp_in_government = 1 and scp_in_government = 1; social_credit_needham if premier = "Needham"
 
 @social_credit_op
 on-arrival: scp_relation += 5*(1 - dissent)
@@ -106,7 +106,7 @@ The liberal party [+ lpc_name +] is electorally moribund, so perhaps our efforts
 
 However, given the influence of the CPC among the other right-leaning parties[? if monarch == "George V": and with Monarch George V ?], it can still be helpful to influence them.
 
-@flg_alone
+@flp_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
 

@@ -4,7 +4,7 @@ is-card: true
 card-image: img/hirschfeld.jpg
 frequency: 25
 max-visits: 3
-view-if: flg_in_government == 1 and (progressive_coalition >= 50) and premier_party == "FLG" and homosexual_rights_timer == 0 and homosexual_rights < 3
+view-if: flp_in_government == 1 and (progressive_coalition >= 50) and premier_party == "FLP" and homosexual_rights_timer == 0 and homosexual_rights < 3
 on-arrival: homosexual_rights_timer += 11; month_actions += 1
 tags: govt_affairs, cabinet
 
@@ -26,7 +26,7 @@ subtitle: Paragraph 175 currently criminalizes homosexual acts. We can pass a la
 unavailable-subtitle: We do not have majority support for this policy.
 view-if: repealed_175 == 0
 choose-if: progressive_coalition >= 50 
-on-arrival: repealed_175 = 1; homosexual_rights += 1; rpc_relation -= 5; cp_relation += 4*(1-dissent); lpc_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_flg -= 4; economic_growth += 0.1;
+on-arrival: repealed_175 = 1; homosexual_rights += 1; rpc_relation -= 5; cp_relation += 4*(1-dissent); lpc_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_flp -= 4; economic_growth += 0.1;
 audio: shuffle music/1928_1933/Das_lila_lied_normalized.mp3
 
 Together with the progressives in the CP and [+ lpc_name +], we have effectively decriminalized homosexual sex in Saskatchewan. Persecution of homosexuals for their private acts will stop, as long as the police are loyal to the republic.
@@ -39,7 +39,7 @@ subtitle: Paragraph 183 criminalizes public homosexual displays and cross-dressi
 unavailable-subtitle: We do not have majority support for this policy.
 view-if: reformed_183 == 0
 choose-if: progressive_coalition >= 50 
-on-arrival: reformed_183 = 1; homosexual_rights += 1; rpc_relation -= 5; cp_relation += 4*(1-dissent); lpc_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_flg -= 4; economic_growth += 0.1;
+on-arrival: reformed_183 = 1; homosexual_rights += 1; rpc_relation -= 5; cp_relation += 4*(1-dissent); lpc_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_flp -= 4; economic_growth += 0.1;
 audio: shuffle music/1928_1933/Das_lila_lied_normalized.mp3
 
 Voting together with the progressives in the CP and [+ lpc_name +], we have reformed Paragraph 183 so that it no longer criminalizes public homosexuality and cross-dressing.
@@ -50,7 +50,7 @@ subtitle: We can create a legal process for individuals to change their sex, mak
 unavailable-subtitle: We do not have majority support for this policy.
 view-if: trans_rights == 0
 choose-if: progressive_coalition >= 50
-on-arrival: trans_rights = 1; homosexual_rights += 1; rpc_relation -= 5; cp_relation += 4*(1-dissent); lpc_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_flg -= 4; economic_growth += 0.1
+on-arrival: trans_rights = 1; homosexual_rights += 1; rpc_relation -= 5; cp_relation += 4*(1-dissent); lpc_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_flp -= 4; economic_growth += 0.1
 audio: shuffle music/1928_1933/Das_lila_lied_normalized.mp3
 
 We have passed a bill to allow legal recognition of transsexual and transvestite individuals as the sex in which they live, and allow them to change their name, dress as they wish without police persecution, and undergo medical treatment.

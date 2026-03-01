@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: military_policy_timer += 6; month_actions += 1
-view-if: flg_in_government = 1 and rcmp_minister_party = "FLG" and military_policy_timer <= 0
+view-if: flp_in_government = 1 and rcmp_minister_party = "FLP" and military_policy_timer <= 0
 card-image: img/portraits/LeberJulius.jpg
 #subtitle: Dealing with the RCMP.
 

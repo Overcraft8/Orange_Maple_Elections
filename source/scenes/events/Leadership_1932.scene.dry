@@ -1,5 +1,6 @@
-title = Leadership of the FLP
-subtitle = We must choose a President
+title: Leadership of the FLP
+new-page: true
+subtitle: We must choose a President
 on-arrival: flp_president = "none"
 tags: event
 view-if: year = 1932 and month = 2

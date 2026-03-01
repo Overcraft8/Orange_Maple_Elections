@@ -2,7 +2,7 @@ title: FLP President Election
 new-page: true
 subtitle: Who will lead our party?
 tags: event
-view-if: year = 1929 and month = 5
+view-if: year = 1932 and month = 5
 max-visits: 1
 face-image: img/Calgary_Conference.jpg
 

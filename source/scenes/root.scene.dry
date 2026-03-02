@@ -48,15 +48,15 @@ Q.dissent_percent = 5;
 // factions
 Q.factions = ['left', 'agrarian', 'labor', 'reformist', 'neorevisionist'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
+Q.left_strength = 5;
 Q.left_dissent = 20;
-Q.agrarian_strength = 30;
+Q.agrarian_strength = 55;
 Q.agrarian_dissent = 0;
 Q.labor_strength = 25;
 Q.labor_dissent = 5;
-Q.reformist_strength = 25;
+Q.reformist_strength = 15;
 Q.reformist_dissent = 5;
-Q.neorevisionist_strength = 5;
+Q.neorevisionist_strength = 0;
 Q.neorevisionist_dissent = 10;
 
 // secret events...
@@ -113,7 +113,7 @@ Q.flp_legislative_leader = "None";
 Q.flp_legislative_leader_img = "Question_Mark.jpg";
 Q.flp_president = "None";
 Q.flp_president_img = "Question_Mark.jpg";
-Q.flp_secretary = "None";
+Q.flp_secretary = "Frank Eliason";
 
 Q.flp_board_one = "Alexander Nicholson";
 Q.flp_board_one_faction = "agrarian";
@@ -153,7 +153,7 @@ Q.ufc_militancy = 0.30;
 Q.women_in_rb = 0;
 Q.ufc_banned = 0;
 Q.ccym_militancy = 0.15;
-Q.scsa_militancu = 0.03;
+Q.scsa_militancy = 0.03;
 Q.sh_strength = 500;
 Q.sh_militancy = 0.5;
 Q.sh_banned = 0;

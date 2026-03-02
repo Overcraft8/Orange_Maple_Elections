@@ -336,3 +336,11 @@ document.addEventListener('mousemove', e => {
         el.style.setProperty('--mouse-y', e.clientY + 'px');
     });
 });
+
+
+// President Buttons
+
+window.flpPresidentClicked = function() {
+    window.dendryUI.dendryEngine.goToScene("flp_president");
+
+};

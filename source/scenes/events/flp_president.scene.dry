@@ -1,0 +1,14 @@
+title: FLP President
+id: flp_president
+tags: event
+view-if: 
+max-visits: 1
+face-image: img/[+ flp_president_img +]
+
+= Our President
+
+The President of the FLP holds many key roles. 
+
+- @Back: Back to Main Screen
+
+@Back

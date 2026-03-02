@@ -4,7 +4,15 @@ is-special: true
 
 = President of the FLP
 
-<div><img src="img/portraits/[+ flp_president_img  +]" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;"> [+ flp_president +] </p>
+<div>
+  <img 
+  src="img/portraits/[+ flp_president_img +]" 
+  style="width: 60%; display: block; margin: auto; margin-bottom: 5px; cursor: pointer; transition: 0.2s;"
+  onclick="flpPresidentClicked()"
+  onmouseover="this.style.opacity='0.85'"
+  onmouseout="this.style.opacity='1'"
+>
+</div>
 
 = Legislative Party Leader 
 

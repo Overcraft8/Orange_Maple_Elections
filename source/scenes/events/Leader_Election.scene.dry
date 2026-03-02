@@ -4,25 +4,27 @@ subtitle: Who will lead our party?
 tags: event
 view-if: year = 1932 and month = 2
 max-visits: 1
-face-image: img/Calgary_Conference.jpg
+face-image: img/CCF_Convention.jpg
 
 = Selection of our President
 
-The FLP is a traditionally agrarian party. 
+The time has come for the FLP to select a President. Five distinguished party members have been nominated though 3 have already declined to run. That leaves 2, George Williams and Major James Coldwell. 
 
-Yes. 
+George Williams is the architect behind the Saskatchewan farmer's entrance into politics. Having served as President of the UFC(SS), he steered the organization against endorsing the disorganized and ineffective PPS, instead making moves to create his own Farmer's party. He is a radical agrarian socialist and does not back away from criticizing capitalism and the banking system. 
 
-- @GeorgeWilliams: We must unite the farmers behind the FLP!
-- @Coldwell: The urban labourers must not be forgotten!
+Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. He maintains a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat. 
+
+- @GeorgeWilliams: George Williams will surely lead the FLP to victory.
+- @Coldwell: Coldwell will surely lead the FLP to victory. 
 
 @GeorgeWilliams 
-on-arrival: flp_rural += 4; agrarian_strength += 4
+on-arrival: flp_rural += 4; agrarian_strength += 4; flp_president = "George Hara Williams"; flp_president_img = "WilliamsHaraGeorge.jpg"
 face-image: img/portraits/WilliamsHaraGeorge.jpg
 
 Williams will lead us to victory!
 
 @Coldwell
-on-arrival: flp_workers += 4; labor_strength += 4
+on-arrival: flp_workers += 4; labor_strength += 4; flp_president = "Major James Coldwell"; flp_president_img = "ColdwellMajorJames.jpg"
 face-image: img/portraits/ColdwellMajorJames.jpg
 
 Coldwell will lead us to victory!

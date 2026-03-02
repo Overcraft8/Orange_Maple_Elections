@@ -110,7 +110,9 @@ Q.SCP_relation = 10;
 
 
 Q.flp_legislative_leader = "None";
+Q.flp_legislative_leader_img = "Question_Mark.jpg";
 Q.flp_president = "None";
+Q.flp_president_img = "Question_Mark.jpg";
 Q.flp_secretary = "None";
 
 Q.flp_board_one = "Alexander Nicholson";

@@ -4,11 +4,11 @@ is-special: true
 
 = President of the FLP
 
-<div><img src="img/portraits/Question_Mark.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;"> [+ flp_president +] </p>
+<div><img src="img/portraits/[+ flp_president_img  +]" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div><p style="text-align: center;margin-bottom: 0;"> [+ flp_president +] </p>
 
 = Legislative Party Leader 
 
-<div><img src="img/portraits/Question_Mark.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<div><img src="img/portraits/[+ flp_legislative_leader_img  +]" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
 <p style="text-align: center;margin-bottom: 0;"> [+ flp_legislative_leader +] </p>
 
 = Party Secretary

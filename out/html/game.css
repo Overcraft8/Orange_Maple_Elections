@@ -717,3 +717,33 @@ table {
     font-family: sans-serif;
 }
 
+.econ-img-button,
+.politics-img-button,
+.defense-img-button,
+.polls-img-button,
+.interior-img-button,
+.living-img-button,
+.main-img-button {
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    margin: 12px auto;
+}
+
+
+/* Assign images */
+.econ-img-button {
+    background-image: url('images/WilliamsHaraGeorge.jpg');
+}
+
+.politics-img-button {
+    background-image: url('CCF_Conference.jpg');
+}
+
+.defense-img-button {
+    background-image: url('CCYM_Sings.jpg');
+}
+
+/* etc… */

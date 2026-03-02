@@ -215,14 +215,64 @@ function applyWholesome(str) {
     }
   };
 
+
+  window.sidebarImages = {
+    "status": [
+        { class: "main-img-button", action: "mainButtonAction()" }
+    ],
+    "status.politics": [
+        { class: "politics-img-button", action: "politicsButtonAction()" }
+    ],
+    "status.organizations": [
+        { class: "defense-img-button", action: "defenseButtonAction()" }
+    ],
+    "status.polls": [
+        { class: "polls-img-button", action: "pollsButtonAction()" }
+    ],
+    "status.interior": [
+        { class: "interior-img-button", action: "interiorButtonAction()" }
+    ],
+    "status.economy": [
+        { class: "econ-img-button", action: "econButtonAction()" }
+    ],
+    "status.livingstandards": [
+        { class: "living-img-button", action: "livingButtonAction()" }
+    ]
+};
+
+
   // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
-      $('#qualities').empty();
-      var scene = dendryUI.game.scenes[window.statusTab];
-      dendryUI.dendryEngine._runActions(scene.onArrival);
-      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-  };
+    $('#qualities').empty();
+    var scene = dendryUI.game.scenes[window.statusTab];
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+
+    // Inject images for the active tab
+    const images = window.sidebarImages[window.statusTab];
+    if (images) {
+        images.forEach(img => {
+            $('#qualities').append(`
+                <div class="${img.class}" onclick="${img.action}"></div>
+            `);
+        });
+    }
+};
+
+window.econButtonAction = function() {
+    alert("Economy button clicked!");
+};
+
+window.politicsButtonAction = function() {
+    alert("Politics button clicked!");
+};
+
+window.defenseButtonAction = function() {
+    alert("Defense button clicked!");
+};
+
+
 
     window.updateSidebarRight = function() {
     $('#qualities_right').empty();

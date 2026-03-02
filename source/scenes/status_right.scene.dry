@@ -7,10 +7,8 @@ is-special: true
 <div>
   <img 
   src="img/portraits/[+ flp_president_img +]" 
-  style="width: 60%; display: block; margin: auto; margin-bottom: 5px; cursor: pointer; transition: 0.2s;"
-  onclick="flpPresidentClicked()"
-  onmouseover="this.style.opacity='0.85'"
-  onmouseout="this.style.opacity='1'"
+  style="width: 60%; display: block; margin: auto; margin-bottom: 5px; cursor: pointer;"
+  onclick="goToFLPPresident()"
 >
 </div>
 

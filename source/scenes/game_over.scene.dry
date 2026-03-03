@@ -40,7 +40,7 @@ if (Q.republic_victory && Q.resist_coup) {
 if (Q.homosexual_rights >= 2) {
     this.achieve('hirschfeld');
 }
-// Mädchen und Uniform - a woman's place is in the [+ UFC_name +].
+// Mädchen und Uniform - a woman's place is in the UFC(SS).
 // Gleichheit - Support and enact reforms for women's rights.
 if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_rights >= 3)) {
     this.achieve('equality');
@@ -333,7 +333,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if game_achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the [+ UFC_name +]. ?]
+[? if game_achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if game_achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
@@ -439,7 +439,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the [+ UFC_name +]. ?]
+[? if achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
@@ -542,7 +542,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if not achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the [+ UFC_name +]. ?]
+[? if not achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if not achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 

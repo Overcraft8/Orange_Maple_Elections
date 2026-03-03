@@ -1,3 +1,10 @@
+title: Faction Strength Screen
+new-page: true
+subtitle: The strength of the factions
+tags: event
+view-if: 2 = 1
+max-visits: 1
+
 <svg id="factionsSvg" width="600" height="300" style="display:block; margin:auto;"></svg>
 
 <script>

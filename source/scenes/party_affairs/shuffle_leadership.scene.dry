@@ -333,7 +333,7 @@ George Hara Williams is now an advisor.
 
 @add_brockelbank
 title: John Brockelbank
-subtitle: John Brockelbank is a militant from the [+ UFC_name +] and was active in it's wheat pool campaign. He is fiercely loyal to George Williams.  {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Police Affairs ?]
+subtitle: John Brockelbank is a militant from the UFC(SS) and was active in it's wheat pool campaign. He is fiercely loyal to George Williams.  {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Police Affairs ?]
 is-card: true
 card-image: img/portraits/BrockelbankJohn.jpg
 tags: agrarian_advisor
@@ -369,7 +369,7 @@ Percy Wright is now an advisor.
 
 @add_eliason
 title: Frank Eliason
-subtitle: Frank Eliason is secretary of the FLP and [+ UFC_name +]. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
+subtitle: Frank Eliason is secretary of the FLP and UFC(SS). {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
 is-card: true
 card-image: img/portraits/EliasonFrank.jpg
 view-if: eliason_advisor = 0 and n_advisors < 3 and agrarians_resign = 0

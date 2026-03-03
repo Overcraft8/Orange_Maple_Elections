@@ -95,20 +95,15 @@ CCYM Influence: [+ ccym_strength +]%
 CCYM Relations: [+ ccym_relations +] 
 CCYM Militancy: [+ ccym_militancy : militancy +]
 
-<span style="color: #a7d11c;">**[+ UFC_name +]**</span> 
-[+ UFC_name +] Influence: [+ UFCSS_strength +]%
-[+ UFC_name +] Relations: [+ UFCSS_relations +]
-[+ UFC_name +] Militancy: [+ ufc_militancy : militancy +]
+<span style="color: #a7d11c;">**UFC(SS)**</span> 
+UFC(SS) Influence: [+ UFCSS_strength +]%
+UFC(SS) Relations: [+ UFCSS_relations +]
+UFC(SS) Militancy: [+ ufc_militancy : militancy +]
 
 <span style="color: #d26e28;">**SCSA**</span> 
 SCSA Influence: [+ SCSA_strength +]%
 SCSA Relations: [+ SCSA_relations +]
 SCSA Militancy: [+ scsa_militancy : militancy +]
-
-{!<span class="tooltip-text" title="The WUL (Workers Unity League) is a communist group associated with the CP.">WUL</span>!} Strength: [+ wul_strength_2 +] thousand
-
-WUL Influence: [+ wul_strength +]%
-WUL Militancy: [+ wul_militancy : militancy +]
 
 
 

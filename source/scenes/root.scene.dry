@@ -194,7 +194,7 @@ Q.city_government = "FLP";
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
-// [+ UFC_name +], stahlhelm, SA, Workers Unity League
+// UFC(SS), stahlhelm, SA, Workers Unity League
 Q.ufc_strength = 2000;
 Q.ufc_militancy = 0.30;
 Q.women_in_rb = 0;
@@ -597,8 +597,6 @@ Q.George_Williams_Dead = 0;
 
 
 // SASKATCHEWAN CCF ORGANIZATIONS
-
-Q.UFC_name = "UFC(SS)";
 
 
 Q.ccym_strength = 0;

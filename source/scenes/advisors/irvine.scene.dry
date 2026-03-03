@@ -31,7 +31,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 choose-if: advisor_action_timer = 0 and resources > 0
 on-arrival: advisor_action_timer = 6; resources -= 1; left_strength += 5; left_dissent -= 3; ufc_strength += 50; ufc_militancy += 0.025; workers_flp += 2*(1-dissent); new_middle_flp += 1; radicalization += 1;
 
-Irvine supports building up the Socialist Youth, which attracts support to the Left and increases the militancy of the [+ UFC_name +].
+Irvine supports building up the Socialist Youth, which attracts support to the Left and increases the militancy of the UFC(SS).
 
 @against_toleration
 title: Against toleration

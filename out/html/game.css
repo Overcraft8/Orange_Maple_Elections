@@ -716,3 +716,7 @@ table {
     justify-content: center;
     font-family: sans-serif;
 }
+
+#factionsSvg {
+    display: block;
+}

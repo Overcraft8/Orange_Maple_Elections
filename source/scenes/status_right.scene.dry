@@ -57,7 +57,7 @@ is-special: true
 
 = Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
 
-<svg id="factionsSvg" width="600" height="300"></svg>
+<svg id="factionsSvg" width="600" height="300" style="display:block; margin:auto;"></svg>
 
 <script>
 d3.select("#factionsSvg")
@@ -68,6 +68,7 @@ d3.select("#factionsSvg")
       .innerRadiusCoef(0.35)
   );
 </script>
+
 
 
 

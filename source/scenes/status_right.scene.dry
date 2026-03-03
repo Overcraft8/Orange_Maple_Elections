@@ -57,6 +57,9 @@ is-special: true
 
 = Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
 
+<svg id="factionsSvg" width="600" height="300"></svg>
+
+<script>
 d3.select("#factionsSvg")
   .datum(factionData)
   .call(
@@ -64,6 +67,8 @@ d3.select("#factionsSvg")
       .width(600)
       .innerRadiusCoef(0.35)
   );
+</script>
+
 
 
 <div style="width: 100%;">

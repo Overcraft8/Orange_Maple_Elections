@@ -7,7 +7,7 @@ max-visits: 1
 
 = Faction Strength
 
--@ Back: Back to main screen
+- @Back: Back to main screen
 
 <svg id="factionsSvg" width="600" height="300" style="display:block; margin:auto;"></svg>
 

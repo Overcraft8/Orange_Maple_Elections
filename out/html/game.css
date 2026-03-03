@@ -48,7 +48,7 @@ body.dark-mode .tools {
 }
 header, #content, footer {
   color: var(--text-color);
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
   overflow: auto;
 }
@@ -222,7 +222,7 @@ img.inline-img.icon {
 }
 /* This is mostly copied from undum. */
 #mid_panel {
-  margin: 0 8rem;
+  margin: 0 11rem;
 }
 #page {
   margin: 0 auto;
@@ -238,7 +238,7 @@ img.inline-img.icon {
 }
 .tools {
   padding: 0.6em;
-  width: 18rem;
+  width: 16rem;
   color: var(--text-color);
   background-color: var(--content-bg-color);
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);

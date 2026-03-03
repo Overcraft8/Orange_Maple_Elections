@@ -259,7 +259,7 @@ if (Q.month_actions >= 1) {
 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce FLP support...
-    if (Q.pro_republic < (Q.flp_votes + Q.lpc_votes + Q.rpc_votes - 3)) {
+    if (Q.pro_republic < (Q.flp_votes + Q.lps_votes + Q.pps_votes - 3)) {
         if (Q.new_middle_flp > 0) {
             Q.new_middle_flp -= 5/12;
         }
@@ -278,14 +278,14 @@ if (Q.month_actions >= 1) {
         if (Q.unemployed_flp_normalized > 10) {
             Q.unemployed_flp -= 4/12;
         }
-        if (Q.new_middle_lpc > 0) {
-            Q.new_middle_lpc -= 4/12;
+        if (Q.new_middle_lps > 0) {
+            Q.new_middle_lps -= 4/12;
         }
-        if (Q.old_middle_lpc > 0) {
-            Q.old_middle_lpc -= 5/12;
+        if (Q.old_middle_lps > 0) {
+            Q.old_middle_lps -= 5/12;
         }
-        if (Q.rural_lpc > 0) {
-            Q.rural_lpc -= 5/12;
+        if (Q.rural_lps > 0) {
+            Q.rural_lps -= 5/12;
         }
     }
 
@@ -294,8 +294,8 @@ if (Q.month_actions >= 1) {
         Q.unemployed += 3/12;
         Q.inflation -= 1/12;
         // increase SCP vote share
-        Q.new_middle_lpc -= 5/12;
-        Q.new_middle_cpc -= 5/12;
+        Q.new_middle_lps -= 5/12;
+        Q.new_middle_cps -= 5/12;
         Q.workers_cp += 5/12;
         Q.sa_strength += 50/12;
         Q.sh_strength += 100/12;
@@ -303,17 +303,17 @@ if (Q.month_actions >= 1) {
     } else if (Q.year == 1930) {
 
         Q.rural_scp -= 15/12;
-        Q.new_middle_cpc -= 5/12;
-        Q.old_middle_cpc -= 6/12;
-        Q.new_middle_lpc -= 5/12;
-        Q.old_middle_lpc -= 6/12;
+        Q.new_middle_cps -= 5/12;
+        Q.old_middle_cps -= 6/12;
+        Q.new_middle_lps -= 5/12;
+        Q.old_middle_lps -= 6/12;
         Q.new_middle_other += 4/12;
         Q.old_middle_other += 4/12;
         Q.rural_other += 5/12;
 
-        Q.workers_rpc += 1/12;
-        Q.old_middle_rpc += 2/12;
-        Q.new_middle_rpc += 2/12;
+        Q.workers_pps += 1/12;
+        Q.old_middle_pps += 2/12;
+        Q.new_middle_pps += 2/12;
         if (!Q.works_program) {
             Q.workers_other += 5/12;
             Q.workers_cp += 2/12;
@@ -321,21 +321,21 @@ if (Q.month_actions >= 1) {
         Q.sa_strength += 100/12;
         Q.sh_strength += 100/12;
     } else if (Q.year == 1931) {
-        Q.catholics_rpc += 2/12;
-        Q.rural_cpc -= 8/12;
-        Q.old_middle_cpc -= 8/12;
-        Q.new_middle_cpc -= 8/12;
-        Q.old_middle_lpc -= 8/12;
-        Q.new_middle_lpc -= 8/12;
+        Q.catholics_pps += 2/12;
+        Q.rural_cps -= 8/12;
+        Q.old_middle_cps -= 8/12;
+        Q.new_middle_cps -= 8/12;
+        Q.old_middle_lps -= 8/12;
+        Q.new_middle_lps -= 8/12;
         Q.sa_strength += 50/12;
         Q.sh_strength += 50/12;
         Q.sa_militancy += 0.1/12;
         Q.rural_other -= 5/12;
         // TODO: economic policies should reduce SCP rurals
         if (!Q.works_program) {
-            Q.old_middle_cpc -= 6/12;
-            Q.new_middle_cpc -= 6/12;
-            Q.rural_cpc -= 6/12;
+            Q.old_middle_cps -= 6/12;
+            Q.new_middle_cps -= 6/12;
+            Q.rural_cps -= 6/12;
             Q.workers -= 4/12;
             Q.unemployed_cp += 2/12;
             Q.rural_other -= 12/12;
@@ -343,9 +343,9 @@ if (Q.month_actions >= 1) {
             Q.sa_strength += 100/12;
             Q.sh_strength += 50/12;
         } else if (Q.unemployed > 15) {
-            Q.old_middle_cpc -= 4/12;
-            Q.new_middle_cpc -= 4/12;
-            Q.rural_cpc -= 4/12;
+            Q.old_middle_cps -= 4/12;
+            Q.new_middle_cps -= 4/12;
+            Q.rural_cps -= 4/12;
         }
     } else if (Q.year == 1932) {
         Q.old_middle_other -= 7/12;
@@ -353,7 +353,7 @@ if (Q.month_actions >= 1) {
         if (!Q.works_program) {
             Q.unemployed += 5/12;
             Q.inflation -= 2/12;
-            Q.catholics_rpc += 2/12;
+            Q.catholics_pps += 2/12;
             Q.workers -= 4/12;
             Q.rural_scp -= 4/12;
             Q.unemployed_cp += 2/12;
@@ -361,29 +361,29 @@ if (Q.month_actions >= 1) {
             Q.sa_strength += 200/12;
             Q.new_middle_scp += 4/12;
             Q.new_middle_scp += 4/12;
-            Q.new_middle_cpc -= 4/12;
-            Q.old_middle_cpc -= 4/12;
-            Q.rural_cpc -= 4/12;
+            Q.new_middle_cps -= 4/12;
+            Q.old_middle_cps -= 4/12;
+            Q.rural_cps -= 4/12;
         } else if (Q.unemployed > 25) {
             Q.sa_strength += 50/12;
         }
     } else if (Q.year >= 1933) {
         if (Q.return_to_normalcy) {
             // return to normalcy -> voters return to the base
-            if (Q.new_middle_lpc_normalized < 40) {
-                Q.new_middle_lpc += 6/12;
+            if (Q.new_middle_lps_normalized < 40) {
+                Q.new_middle_lps += 6/12;
             }
-            if (Q.new_middle_cpc_normalized < 25) {
-                Q.new_middle_cpc += 3/12;
+            if (Q.new_middle_cps_normalized < 25) {
+                Q.new_middle_cps += 3/12;
             }
-            if (Q.old_middle_cpc_normalized < 40) {
-                Q.old_middle_cpc += 6/12;
+            if (Q.old_middle_cps_normalized < 40) {
+                Q.old_middle_cps += 6/12;
             }
             if (Q.rural_scp_normalized < 40) {
                 Q.rural_scp += 6/12;
             }
-            if (Q.catholics_rpc_normalized < 40) {
-                Q.catholics_rpc += 6/12;
+            if (Q.catholics_pps_normalized < 40) {
+                Q.catholics_pps += 6/12;
             }
         }
         if (Q.unemployed > 20) {

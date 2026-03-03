@@ -31,11 +31,11 @@ Many [+ UFC_name +] members are not ready for actual fighting, and thus quit. Ho
 subtitle: -[+ ufc_militarization_cost +] resource
 choose-if: resources >= ufc_militarization_cost
 unavailable-subtitle: Not enough resources ([+ ufc_militarization_cost +] needed).
-on-arrival: resources -= ufc_militarization_cost; ufc_militancy += 0.06; ufc_strength += 50; sa_strength += 50; rpc_relation -= 5 if historical_mode 
+on-arrival: resources -= ufc_militarization_cost; ufc_militancy += 0.06; ufc_strength += 50; sa_strength += 50; pps_relation -= 5 if historical_mode 
 
 We have increased training and purchased more armaments for the [+ UFC_name +].
 
-[? if historical_mode : The RPC Party decries the militarization of the [+ UFC_name +], and its members are leaving the republican organization. ?]
+[? if historical_mode : The PPS Party decries the militarization of the [+ UFC_name +], and its members are leaving the republican organization. ?]
 
 
 @if_training

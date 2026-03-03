@@ -33,7 +33,7 @@ go-to: crisis_program
 view-if: scp_urgency < 5
 on-arrival: scp_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_strength += 5
 
-The SCPs are one of the foremost threats to the Saskatchewaner republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
+The SCPs are one of the foremost threats to the Saskatchewanian republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
 
 @iron_front
 title: Form the Iron Front!

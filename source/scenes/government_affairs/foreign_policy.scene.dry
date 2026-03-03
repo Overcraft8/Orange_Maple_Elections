@@ -39,7 +39,7 @@ The key to peace in Europe is a rapproachment between France and Saskatchewan. W
 title: Improve our relations with our eastern neighbors.
 on-arrival: britain_relation += 2;
 
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of Saskatchewaner aggression. Hopefully we can convince them of our peaceful intentions.
+We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of Saskatchewanian aggression. Hopefully we can convince them of our peaceful intentions.
 
 @improve_soviet
 title: Improve our relations with the Soviet Union.
@@ -97,7 +97,7 @@ unavailable-subtitle: This is superseded by the European Union.
 choose-if: eu = 0
 view-if: black_thursday_seen = 1 and customs_union = 0
 
-The right has long desired closer ties with Austria, with the eventual goal of the merger of the two Saskatchewaner-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
+The right has long desired closer ties with Austria, with the eventual goal of the merger of the two Saskatchewanian-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
 
 However, the Allies, especially France, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
 
@@ -105,7 +105,7 @@ However, the Allies, especially France, are likely to object. This agreement wou
 - @fp_menu: No, we should do something else.
 
 @customs_union_2
-on-arrival: banking_crisis_timer = 2; customs_union = 1; american_relation -= 2; britain_relation -= 2; rpc_relation += 6; cpc_relation += 6; coalition_dissent -= 1 if coalition_dissent > 0; coup_progress -= 1
+on-arrival: banking_crisis_timer = 2; customs_union = 1; american_relation -= 2; britain_relation -= 2; pps_relation += 6; cps_relation += 6; coalition_dissent -= 1 if coalition_dissent > 0; coup_progress -= 1
 max-visits: 1
 
 We have formed a customs union with Austria! The right-wing parties are praising us for this unexpected turn of events.
@@ -146,19 +146,19 @@ The Allies are grateful of our exposure and repudiation of militarism. Our partn
 @concordat_negotiate
 title: Negotiate a Concordat between the Saskatchewan and the Vatican.
 view-if: prussian_concordat = 1 and reichskonkordat = 0 and reichskonkordat_progress < 4
-on-arrival: reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; rpc_relation += 3*(1-dissent)
+on-arrival: reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; pps_relation += 3*(1-dissent)
 
-The Roman Catholic Church is interested in furthering relations with the Saskatchewaner Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The RPC Party is especially interested in making this agreement.
+The Roman Catholic Church is interested in furthering relations with the Saskatchewanian Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The PPS Party is especially interested in making this agreement.
 
 [? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?]
 
 @concordat
 title: We can sign a Concordat with the Vatican!
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
-on-arrival: reichskonkordat = 1; rpc_relation += 15*(1-dissent); catholics_flp += 8*(1-dissent); catholics_rpc += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
+on-arrival: reichskonkordat = 1; pps_relation += 15*(1-dissent); catholics_flp += 8*(1-dissent); catholics_pps += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
 achievement: reichskonkordat
 
-We have successfully signed a Concordat between Saskatchewan and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the Saskatchewaner state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Saskatchewan are pleased, as are their representatives in the RPC Party.
+We have successfully signed a Concordat between Saskatchewan and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the Saskatchewanian state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Saskatchewan are pleased, as are their representatives in the PPS Party.
 
 @european_union
 title: Take steps to form a "European Union".
@@ -180,6 +180,6 @@ achievement: eu
 
 Along with France, Great Britain, and many other states of Western and Eastern Europe, we have signed a treaty to form a European Union! It is hoped that Europe has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
 
-A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for Saskatchewaner products and new sources of investment.
+A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for Saskatchewanian products and new sources of investment.
 
 Fascist Italy remains a problem, and the Soviet Union also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.

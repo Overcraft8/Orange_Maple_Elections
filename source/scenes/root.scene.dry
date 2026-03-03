@@ -101,10 +101,10 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
-Q.rpc_relation = 50;
+Q.pps_relation = 50;
 Q.cp_relation = 25;
-Q.lpc_relation = 60;
-Q.cpc_relation = 35;
+Q.lps_relation = 60;
+Q.cps_relation = 35;
 // SCP are invariably hostile
 Q.SCP_relation = 10;
 
@@ -127,12 +127,12 @@ Q.flp_board_one_faction = "labour";
 
 Q.cp_leader = "Tim Buck";
 Q.cp_party_leader = "Tim Buck";
-Q.cpc_leader = "James Anderson";
-Q.lpc_leader = "James Gardiner";
+Q.cps_leader = "James Anderson";
+Q.lps_leader = "James Gardiner";
 Q.scp_leader = "Joseph Needham"; 
-Q.rpc_leader = "Henry Stevens";
+Q.pps_leader = "Henry Stevens";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the FLP.
-Q.rpc_party_leader = "Henry Stevens";
+Q.pps_party_leader = "Henry Stevens";
 
 // hmm... maybe we can play nice with George V???
 Q.georgev_relation = 25;
@@ -142,7 +142,7 @@ Q.georgev_enabled = 0;
 
 // Does the FLP lead in Prussia?
 Q.flp_prussia = 1;
-// Options: flp, lpc, cpc, scp
+// Options: flp, lps, cps, scp
 Q.prussian_government = "FLP";
 
 // The array of forces - paramilitary groups
@@ -275,7 +275,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['flp', 'cp', 'rpc', 'lpc', 'cpc', 'scp', 'other'];
+Q.parties = ['flp', 'cp', 'pps', 'lps', 'cps', 'scp', 'other'];
 
 
 
@@ -287,49 +287,49 @@ Q.sapd_formed = 0;
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_flp = 10;
 Q.workers_cp = 3;
-Q.workers_rpc = 3;
-Q.workers_lpc = 35;
-Q.workers_cpc = 32;
+Q.workers_pps = 3;
+Q.workers_lps = 35;
+Q.workers_cps = 32;
 Q.workers_scp = 5;
 Q.workers_other = 12;
 
 Q.old_middle_flp = 2;
 Q.old_middle_cp = 0;
-Q.old_middle_rpc = 5;
-Q.old_middle_lpc= 38;
-Q.old_middle_cpc = 35;
+Q.old_middle_pps = 5;
+Q.old_middle_lps= 38;
+Q.old_middle_cps = 35;
 Q.old_middle_scp = 15;
 Q.old_middle_other = 2;
 
 Q.new_middle_flp = 5;
 Q.new_middle_cp = 1;
-Q.new_middle_rpc = 12;
-Q.new_middle_lpc= 34;
-Q.new_middle_cpc = 31;
+Q.new_middle_pps = 12;
+Q.new_middle_lps= 34;
+Q.new_middle_cps = 31;
 Q.new_middle_scp = 13;
 Q.new_middle_other = 2;
 
 Q.rural_flp = 13;
 Q.rural_cp = 0;
-Q.rural_rpc = 6;
-Q.rural_lpc= 36;
-Q.rural_cpc = 32;
+Q.rural_pps = 6;
+Q.rural_lps= 36;
+Q.rural_cps = 32;
 Q.rural_scp = 10;
 Q.rural_other = 3;
 
 Q.unemployed_flp = 9;
 Q.unemployed_cp = 4;
-Q.unemployed_rpc = 7;
-Q.unemployed_lpc = 37;
-Q.unemployed_cpc = 30;
+Q.unemployed_pps = 7;
+Q.unemployed_lps = 37;
+Q.unemployed_cps = 30;
 Q.unemployed_scp = 6;
 Q.unemployed_other = 5;
 
 Q.catholics_flp = 7;
 Q.catholics_cp = 2;
-Q.catholics_rpc = 10;
-Q.catholics_lpc = 40;
-Q.catholics_cpc = 30;
+Q.catholics_pps = 10;
+Q.catholics_lps = 40;
+Q.catholics_cps = 30;
 Q.catholics_scp = 5;
 Q.catholics_other = 6;
 
@@ -341,18 +341,18 @@ Q.catholics_other = 6;
 // They did not have a CDU/CSU-style relationship.
 Q.flp_r = 0;
 Q.cp_r = 0;
-Q.rpc_r = 1;
-Q.lpc_r = 42;
-Q.cpc_r = 53;
+Q.pps_r = 1;
+Q.lps_r = 42;
+Q.cps_r = 53;
 Q.scp_r = 0;
 Q.other_r = 4;
 
 // diff from prev
 Q.old_flp_r = 26;
 Q.old_cp_r = 9;
-Q.old_rpc_r = 17;
-Q.old_lpc_r = 6;
-Q.old_cpc_r = 10;
+Q.old_pps_r = 17;
+Q.old_lps_r = 6;
+Q.old_cps_r = 10;
 Q.old_scp_r = 20;
 Q.old_other_r = 9;
 
@@ -360,8 +360,8 @@ Q.old_other_r = 9;
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
-// for changing the LPC's name to the DStP
-Q.lpc_name = "LPC";
+// for changing the LPS's name to the DStP
+Q.lps_name = "LPS";
 
 // array of objects of the form {date: Date(), flp: 10, cp: 12, ...} for each election
 Q.election_records = [];
@@ -375,21 +375,21 @@ Q.economic_records = [];
 Q.monarch = "George V";
 // starting premier: James Anderson
 Q.premier = "James Anderson";
-Q.premier_party = 'CPC';
+Q.premier_party = 'CPS';
 Q.flp_in_government = 0;
-Q.rpc_in_government = 0;
-Q.lpc_in_government = 0;
-Q.cpc_in_government = 1;
+Q.pps_in_government = 0;
+Q.lps_in_government = 0;
+Q.cps_in_government = 1;
 Q.scp_in_government = 0;
 Q.cp_in_government = 0;
 
 Q.in_right_coalition = 0;
-// Weimar coalition = FLP + RPC + LPC
+// Weimar coalition = FLP + PPS + LPS
 Q.in_weimar_coalition = 0;
-// Grand coalition = FLP + RPC + LPC + CPC
-// also includes the "new grand coalition" of FLP + RPC + LPC + CPC + Others
+// Grand coalition = FLP + PPS + LPS + CPS
+// also includes the "new grand coalition" of FLP + PPS + LPS + CPS + Others
 Q.in_grand_coalition = 0;
-// Popular front = FLP + CP + RPC + LPC
+// Popular front = FLP + CP + PPS + LPS
 Q.in_popular_front = 0;
 // left coalition = FLP + CP + left-splinters
 Q.in_left_front = 0;
@@ -419,33 +419,33 @@ Q.minority_government = 0;
 
 
 Q.cooperatives_minister = "None";
-Q.cooperatives_minister_party = "CPC";
+Q.cooperatives_minister_party = "CPS";
 Q.education_minister = "None";
-Q.education_minister_party = "CPC";
+Q.education_minister_party = "CPS";
 Q.mineral_resources_minister = "None";
-Q.mineral_resources_minister_party = "CPC";
+Q.mineral_resources_minister_party = "CPS";
 Q.municipal_minister = "None";
-Q.municipal_minister_party = "CPC";
+Q.municipal_minister_party = "CPS";
 Q.transportation_minister = "None";
-Q.transportation_minister_party = "CPC";
+Q.transportation_minister_party = "CPS";
 Q.telephones_telegraphs_minister = "None";
-Q.telephones_telegraphs_minister_party = "CPC";
+Q.telephones_telegraphs_minister_party = "CPS";
 
 
 Q.foreign_minister = 'Streseman';
-Q.foreign_minister_party = 'CPC';
+Q.foreign_minister_party = 'CPS';
 Q.interior_minister = 'von Keudell';
 Q.interior_minister_party = 'SCP';
 Q.justice_minister = 'Hergt';
 Q.justice_minister_party = 'SCP';
 Q.labour_minister = 'JS_Woodsworth';
-Q.labour_minister_party = 'RPC';
+Q.labour_minister_party = 'PPS';
 Q.rcmp_minister = 'Groener';
 Q.rcmp_minister_party = 'I';
 Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'CPC';
+Q.economic_minister_party = 'CPS';
 Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'RPC';
+Q.finance_minister_party = 'PPS';
 Q.agriculture_minister = 'Schiele';
 Q.agriculture_minister_party = 'SCP';
 
@@ -669,7 +669,7 @@ Q.williams_advisor = 0; // George Hara Williams
 // Reformist advisors
 Q.brockelbank_advisor = 0; // John Brockelbank
 Q.woodsworth_advisor = 0; // JS_Woodsworth
-Q.juchaczrpc_advisor = 0; // Louise Lucas
+Q.juchaczpps_advisor = 0; // Louise Lucas
 Q.wright_advisor = 0; // Percy Wright
 
 // Labour advisors
@@ -705,11 +705,11 @@ For more information on the politics and government of Saskatchewan, see the "Li
 - @1932_historical: Begin (historical mode)
 
 @1932_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 2500; cp_relation = 29; rpc_relation = 54; cpc_relation = 49; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 2500; cp_relation = 29; pps_relation = 54; cps_relation = 49; budget = 5;
 go-to: 1932_main
 
 @1932_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 1000; reformist_dissent = 25; left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; rpc_relation = 41; cp_relation = 16; cpc_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 1000; reformist_dissent = 25; left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_relation = 16; cps_relation = 31; budget = 3;
 go-to: 1932_main
 
 @1932_historical
@@ -724,9 +724,9 @@ Q.reformist_dissent = 25;
 Q.left_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;
-Q.rpc_relation = 41;
+Q.pps_relation = 41;
 Q.cp_relation = 16;
-Q.cpc_relation = 31;
+Q.cps_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}

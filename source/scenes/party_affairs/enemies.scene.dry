@@ -17,7 +17,7 @@ In our media and campaign materials, who should we consider as our main opponent
 - @far_right: The far right - the SCP 
 - @scp: The SCP alone.
 - @cp: The CP.
-- @bourgeois: The bourgeois parties - the RPC and CPC.
+- @bourgeois: The bourgeois parties - the PPS and CPS.
 - @easy_discard
 
 @anti_dem
@@ -36,11 +36,11 @@ on-arrival: enemies = "SCP"; neorevisionist_strength += 5; scp_urgency += 1; wor
 [? if scp_urgency == 0 or scp_r < 10 : The SCP is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scp_urgency > 0 and scp_r >= 10 : The SCPs are the most urgent problem for us to deal with. ?]
 
 @cp
-on-arrival: enemies = "CP"; reformist_strength += 5; left_dissent += 8; reformist_dissent -= 5; cp_relation -= 15; cpc_relation += 5; rpc_relation += 5; workers_cp -= 4;
+on-arrival: enemies = "CP"; reformist_strength += 5; left_dissent += 8; reformist_dissent -= 5; cp_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cp -= 4;
 
 Attacking the CP is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the CP, this may not be the best choice.
 
 @bourgeois
-on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; cpc_relation -= 5; rpc_relation -= 5; cp_relation += 5; reformist_dissent += 8; workers_rpc -= 3; coalition_dissent += 1
+on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_relation += 5; reformist_dissent += 8; workers_pps -= 3; coalition_dissent += 1
 
 Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.

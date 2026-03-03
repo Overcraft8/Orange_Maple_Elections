@@ -9,7 +9,7 @@ max-visits: 1
 
 = Assembly War Guilt Inquiry
 
-The War Guilt Inquiry has been an intermittent Assembly committee for investigating the causes of the Great War and the Saskatchewaner defeat. So far, it has faced massive resistance from the military establishment up to Monarch George V.
+The War Guilt Inquiry has been an intermittent Assembly committee for investigating the causes of the Great War and the Saskatchewanian defeat. So far, it has faced massive resistance from the military establishment up to Monarch George V.
 
 - @restart: Restart the inquiry.
 - @root: Do nothing.
@@ -22,7 +22,7 @@ on-arrival: war_guilt += 1
 What is the goal of this tribunal?
 
 - @pure_history: To provide a historical record of the events of the war.
-- @rewrite: To revise the popular Saskatchewaner histories and finally put to rest the "stabbed in the back" myth.
+- @rewrite: To revise the popular Saskatchewanian histories and finally put to rest the "stabbed in the back" myth.
 
 @pure_history
 

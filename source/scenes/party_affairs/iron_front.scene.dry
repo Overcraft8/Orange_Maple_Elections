@@ -23,11 +23,11 @@ The Iron Front is our new antifascist coordination front, consisting of the FLP,
 @defense
 subtitle: -[+ ufc_militarization_cost +] resources
 choose-if: resources >= ufc_militarization_cost
-on-arrival: resources -= ufc_militarization_cost; ufc_strength += 50; ufc_militancy += 0.05; rpc_relation -= 5 if historical_mode
+on-arrival: resources -= ufc_militarization_cost; ufc_strength += 50; ufc_militancy += 0.05; pps_relation -= 5 if historical_mode
 
 The Iron Front rallies for the militant defense of the republic against the fascist organizations, strengthening the [+ UFC_name +].
 
-[? if historical_mode : The RPC Party decries the militarization of the [+ UFC_name +] and Iron Front, and its members are leaving the republican organization. ?]
+[? if historical_mode : The PPS Party decries the militarization of the [+ UFC_name +] and Iron Front, and its members are leaving the republican organization. ?]
 
 
 @pacifism

@@ -41,13 +41,13 @@ Assembly composition:
 {!<span class="tooltip-text" title="Farmer-Labour Group">!}[? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="Reconstruction Party">!}[? if not rpc_name: RPC?][? if rpc_name != 0 : [+ rpc_name +]?]{!</span>!}: [+ rpc_r +]%
+{!<span class="tooltip-text" title="Progressive Party">!}[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_r +]%
 # 1928: 10, 1930: 13
 {!<span class="tooltip-text" title="Communist Party of Saskatchewan">!}[? if not cp_name: CP?][? if cp_name != 0 : [+ cp_name +]?]{!</span>!}: [+ cp_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-{!<span class="tooltip-text" title="Liberal Party">!}[? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]{!</span>!}: [+ lpc_r +]%
+{!<span class="tooltip-text" title="Liberal Party">!}[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_r +]%
 # 1928: 9, 1930: 5
-{!<span class="tooltip-text" title="Conservative Party">!}[? if not cpc_name: CPC?][? if cpc_name != 0 : [+ cpc_name +]?]{!</span>!}: [+ cpc_r +]%
+{!<span class="tooltip-text" title="Conservative Party">!}[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_r +]%
 # 1928: 14, 1930: 7
 {!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</span>!}: [+ scp_r +]%
 # 1928: 9, 1930: 10
@@ -73,11 +73,11 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 
-{!<span class="tooltip-text" title="Reconstruction Party">!}[? if not rpc_name: RPC?][? if rpc_name != 0 : [+ rpc_name +]?]{!</span>!}: [+ rpc_relation : relationships +]
+{!<span class="tooltip-text" title="Progressive Party">!}[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_relation : relationships +]
 
-{!<span class="tooltip-text" title="Liberal Party">!}[? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]{!</span>!}: [+ lpc_relation : relationships +]
+{!<span class="tooltip-text" title="Liberal Party">!}[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_relation : relationships +]
 
-{!<span class="tooltip-text" title="Conservative Party">!}[? if not cpc_name: CPC?][? if cpc_name != 0 : [+ cpc_name +]?]{!</span>!}: [+ cpc_relation : relationships +]
+{!<span class="tooltip-text" title="Conservative Party">!}[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_relation : relationships +]
 
 {!<span class="tooltip-text" title="Communist Party">!}[? if not cp_name: CP?][? if cp_name != 0 : [+ cp_name +]?]{!</span>!}: [+ cp_relation : relationships +]
 
@@ -157,13 +157,13 @@ FLP: [+ flp_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-RPC: [+ rpc_votes +]%
+PPS: [+ pps_votes +]%
 
 CP: [+ cp_votes +]%
 
-[? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ lpc_votes +]%
+[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ lps_votes +]%
 
-CPC: [+ cpc_votes +]%
+CPS: [+ cps_votes +]%
 
 SCP: [+ scp_votes +]%
 
@@ -171,16 +171,16 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: FLP: [+ workers_flp_display +]%, RPC: [+ workers_rpc_display +]%, CP: [+ workers_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ workers_lpc_display +]%, CPC: [+ workers_cpc_display +]%; SCP: [+ workers_scp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: FLP: [+ workers_flp_display +]%, PPS: [+ workers_pps_display +]%, CP: [+ workers_cp_display +]%, [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ workers_lps_display +]%, CPS: [+ workers_cps_display +]%; SCP: [+ workers_scp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: FLP: [+ new_middle_flp_display +]%, RPC: [+ new_middle_rpc_display +]%, CP: [+ new_middle_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ new_middle_lpc_display +]%, CPC: [+ new_middle_cpc_display +]%; SCP: [+ new_middle_scp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: FLP: [+ new_middle_flp_display +]%, PPS: [+ new_middle_pps_display +]%, CP: [+ new_middle_cp_display +]%, [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ new_middle_lps_display +]%, CPS: [+ new_middle_cps_display +]%; SCP: [+ new_middle_scp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: FLP: [+ old_middle_flp_display +]%, RPC: [+ old_middle_rpc_display +]%, CP: [+ old_middle_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ old_middle_lpc_display +]%, CPC: [+ old_middle_cpc_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: FLP: [+ old_middle_flp_display +]%, PPS: [+ old_middle_pps_display +]%, CP: [+ old_middle_cp_display +]%, [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: FLP: [+ rural_flp_display +]%, RPC: [+ rural_rpc_display +]%, CP: [+ rural_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ rural_lpc_display +]%, CPC: [+ rural_cpc_display +]%; SCP: [+ rural_scp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: FLP: [+ rural_flp_display +]%, PPS: [+ rural_pps_display +]%, CP: [+ rural_cp_display +]%, [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ rural_lps_display +]%, CPS: [+ rural_cps_display +]%; SCP: [+ rural_scp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: FLP: [+ unemployed_flp_display +]%, RPC: [+ unemployed_rpc_display +]%, CP: [+ unemployed_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ unemployed_lpc_display +]%, CPC: [+ unemployed_cpc_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: FLP: [+ unemployed_flp_display +]%, PPS: [+ unemployed_pps_display +]%, CP: [+ unemployed_cp_display +]%, [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: FLP: [+ catholics_flp_display +]%, RPC: [+ catholics_rpc_display +]%, CP: [+ catholics_cp_display +]%, [? if not lpc_name: LPC?][? if lpc_name != 0 : [+ lpc_name +]?]: [+ catholics_lpc_display +]%, CPC: [+ catholics_cpc_display +]%; SCP: [+ catholics_scp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: FLP: [+ catholics_flp_display +]%, PPS: [+ catholics_pps_display +]%, CP: [+ catholics_cp_display +]%, [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ catholics_lps_display +]%, CPS: [+ catholics_cps_display +]%; SCP: [+ catholics_scp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%

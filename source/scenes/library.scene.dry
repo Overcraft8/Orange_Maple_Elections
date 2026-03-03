@@ -5,12 +5,12 @@ go-to: menu
 
 = The Library
 
-Herein contains relevant information about the government and politics of the Saskatchewaner republic.
+Herein contains relevant information about the government and politics of the Saskatchewanian republic.
 
 @menu
 
 - @government: Saskatchewan's system of government
-- @Saskatchewaner_timeline: Timeline of the Province of Saskatchewan
+- @Saskatchewanian_timeline: Timeline of the Province of Saskatchewan
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -25,9 +25,9 @@ go-to: menu
 
 The Province of Saskatchewan has a unicameral legislature, the Legislative Assembly of Saskatchewan. The Premier is the head of government, and is the leader of the party with the most seats in the Assembly. The Premier appoints a cabinet of ministers to oversee various departments of government. There are 55 seats in the Assembly. 
 
-Saskatchewaner provinces oversee various policy areas, including education, healthcare, agriculture, natural resources, among others. 
+Saskatchewanian provinces oversee various policy areas, including education, healthcare, agriculture, natural resources, among others. 
 
-@Saskatchewaner_timeline
+@Saskatchewanian_timeline
 go-to: menu
 
 = Timeline of the FLP and the Republic (until 1928)
@@ -42,7 +42,7 @@ go-to: menu
 
 **1873**: Prince Edward Island joins Confederation, having been promised more than proportional seats in the Assembly. 
 
-**1885**: The Metis-led Northwest Rebellion is crushed by Saskatchewaner soldiers arriving through the promised Saskatchewaner Pacific Railway. 
+**1885**: The Metis-led Northwest Rebellion is crushed by Saskatchewanian soldiers arriving through the promised Saskatchewanian Pacific Railway. 
 
 **1914-1918**: Saskatchewan enters the First World War. Conscription measures lead to riots among the largely anti-war Quebecois population.
 
@@ -52,7 +52,7 @@ go-to: menu
 
 **1926**: The Statue of Westminster is signed, granting Saskatchewan authority over foreign policy and lawmaking, excepting amendments to the constitution. 
 
-**1930-1932**: Conservative Leader James Anderson becomes Premier on a campaign of "blasting" Saskatchewan out of the Depression. Instead, 1.5 million Saskatchewaners are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Anderson's administration constructs work camps for unemployed single men, paying 20 cents a day.
+**1930-1932**: Conservative Leader James Anderson becomes Premier on a campaign of "blasting" Saskatchewan out of the Depression. Instead, 1.5 million Saskatchewanians are left in poverty, 10% of the population. Drought across the Prairies, hailed as the "Dirty Thirties" leads to a rise in Farmer co-ops and support for socialist policies amongst rural voters. Anderson's administration constructs work camps for unemployed single men, paying 20 cents a day.
 
 @curr_gov
 go-to: cabinet if flp_in_government; menu if not flp_in_government
@@ -69,13 +69,13 @@ Assembly composition:
 FLP: [+ flp_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-RPC: [+ rpc_r +]%
+PPS: [+ pps_r +]%
 # 1928: 10, 1930: 13
 CP: [+ cp_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-[+ lpc_name +]: [+ lpc_r +]%
+[+ lps_name +]: [+ lps_r +]%
 # 1928: 9, 1930: 5
-CPC: [+ cpc_r +]%
+CPS: [+ cps_r +]%
 # 1928: 14, 1930: 7
 SCP: [+ scp_r +]%
 # 1928: 3, 1930: 18
@@ -116,17 +116,17 @@ go-to: menu
 
 **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the FLP or CP. They make up 40-50% of the population.
+**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Many are socialist, supporting either the FLP or CP. They make up 40-50% of the population.
 
 **Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
 
 **New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. Protestant farmers often support the SCP. 20-30% of the population.
+**Rural**: Small and large farmers and independent rural workers. This is the base of the FLP. They have been radicalized by the Depression and the Drought they they remain committed to holding their property. 60-65% of the population.
 
-**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the RPC Party (or the Bavarian People's Party in Bavaria).
+**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the PPS Party (or the Bavarian People's Party in Bavaria).
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPC, although substantial numbers support the FLP or CP.
+**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPS, although substantial numbers support the FLP or CP.
 
 
 @public_opinion
@@ -159,16 +159,16 @@ FLP: [+ flp_votes +]%
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
-RPC: [+ rpc_votes +]%
+PPS: [+ pps_votes +]%
 
 # 1928: 10, 1930: 13
 CP: [+ cp_votes +]%
 
 # 1928: 5, 1930: 4 (as DstP)
-[+ lpc_name +]: [+ lpc_votes +]%
+[+ lps_name +]: [+ lps_votes +]%
 
 # 1928: 9, 1930: 5
-CPC: [+ cpc_votes +]%
+CPS: [+ cps_votes +]%
 
 # 1928: 14, 1930: 7
 SCP: [+ scp_votes +]%
@@ -178,35 +178,35 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: FLP: [+ workers_flp_display +]%, RPC: [+ workers_rpc_display +]%, CP: [+ workers_cp_display +]%, [+ lpc_name +]: [+ workers_lpc_display +]%, CPC: [+ workers_cpc_display +]%; SCP: [+ workers_scp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: FLP: [+ workers_flp_display +]%, PPS: [+ workers_pps_display +]%, CP: [+ workers_cp_display +]%, [+ lps_name +]: [+ workers_lps_display +]%, CPS: [+ workers_cps_display +]%; SCP: [+ workers_scp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: FLP: [+ new_middle_flp_display +]%, RPC: [+ new_middle_rpc_display +]%, CP: [+ new_middle_cp_display +]%, [+ lpc_name +]: [+ new_middle_lpc_display +]%, CPC: [+ new_middle_cpc_display +]%; SCP: [+ new_middle_scp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: FLP: [+ new_middle_flp_display +]%, PPS: [+ new_middle_pps_display +]%, CP: [+ new_middle_cp_display +]%, [+ lps_name +]: [+ new_middle_lps_display +]%, CPS: [+ new_middle_cps_display +]%; SCP: [+ new_middle_scp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: FLP: [+ old_middle_flp_display +]%, RPC: [+ old_middle_rpc_display +]%, CP: [+ old_middle_cp_display +]%, [+ lpc_name +]: [+ old_middle_lpc_display +]%, CPC: [+ old_middle_cpc_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: FLP: [+ old_middle_flp_display +]%, PPS: [+ old_middle_pps_display +]%, CP: [+ old_middle_cp_display +]%, [+ lps_name +]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: FLP: [+ rural_flp_display +]%, RPC: [+ rural_rpc_display +]%, CP: [+ rural_cp_display +]%, [+ lpc_name +]: [+ rural_lpc_display +]%, CPC: [+ rural_cpc_display +]%; SCP: [+ rural_scp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: FLP: [+ rural_flp_display +]%, PPS: [+ rural_pps_display +]%, CP: [+ rural_cp_display +]%, [+ lps_name +]: [+ rural_lps_display +]%, CPS: [+ rural_cps_display +]%; SCP: [+ rural_scp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: FLP: [+ unemployed_flp_display +]%, RPC: [+ unemployed_rpc_display +]%, CP: [+ unemployed_cp_display +]%, [+ lpc_name +]: [+ unemployed_lpc_display +]%, CPC: [+ unemployed_cpc_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: FLP: [+ unemployed_flp_display +]%, PPS: [+ unemployed_pps_display +]%, CP: [+ unemployed_cp_display +]%, [+ lps_name +]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: FLP: [+ catholics_flp_display +]%, RPC: [+ catholics_rpc_display +]%, CP: [+ catholics_cp_display +]%, [+ lpc_name +]: [+ catholics_lpc_display +]%, CPC: [+ catholics_cpc_display +]%; SCP: [+ catholics_scp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: FLP: [+ catholics_flp_display +]%, PPS: [+ catholics_pps_display +]%, CP: [+ catholics_cp_display +]%, [+ lps_name +]: [+ catholics_lps_display +]%, CPS: [+ catholics_cps_display +]%; SCP: [+ catholics_scp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @parties
 go-to: menu
 
-**FLP** - *Farmer-Labour Group* - this is us. We are a multi-faceted socialist party, home to reformist populists, radical labour members, and social gospelers. We are the foremost representative of those struck down by the capitalist system. 
+**FLP** - *Farmer-Labour Group* - this is us. We are a multi-faceted socialist party, home to agrarian socialists, radical labour members, and social gospelers. We are the foremost representative of those struck down by the capitalist system. 
 
-**RPC** - *Reconstruction Party*  - An offshoot of the Conservatives, the RPC is a center-right party that supports moderate economic reform and increased social spending, but within the confines of capitalism. 
+**PPS** - *Progressive Party*  - One of the original arbiters of the Farmers' entrance into politics, they are primarily an agrarian party though they remain deeply divided ideologically. They have recently entered power on a coalition government with the Tories. 
 
-Current relations: [+ rpc_relation : relationships +]
+Current relations: [+ pps_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**LPC** - *Liberal Party* - a center-left big tent liberal party, popular among the intelligensia and educated middle class. They are proponents of free trade. They are one of the 2 dominant parties of the Saskatchewaner parliament. 
+**LPS** - *Liberal Party* (The Grits) - a center-left big tent liberal party, popular among the intelligensia and educated middle class. They are proponents of free trade and generally supportive of American investment. They are one of the 2 dominant parties of the Saskatchewan Legislative Assembly. 
 
-Current relations: [+ lpc_relation : relationships +]
+Current relations: [+ lps_relation : relationships +]
 
-**CPC** - *Conservative Party* - a conservative-liberal party, supported by the middle classes and bourgeoisie. They are more isolationist. They are the other dominant party of the Saskatchewaner parliament. 
+**CPS** - *Conservative Party* (The Tories) - a centre-right conservative party, supported by the middle classes and bourgeoisie. They are more isolationist and prefer to keep close economic ties with Britain. . They are the other dominant party of the Saskatchewan Legistlative Assembly. 
 
-Current relations: [+ cpc_relation : relationships +]
+Current relations: [+ cps_relation : relationships +]
 
 **SCP** - *Social Credit Party* - a recently emerged right-wing populist party advocating for social credit reforms of the monetary system. They see much support in the province of Alberta. 
 
@@ -218,7 +218,7 @@ Current relations: [+ cp_relation : relationships +]
 
 [? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Saskatchewan) - a party recently formed in a split from the FLP, the SAPD is essentially an agglomeration of various left-wing splinter groups between the FLP and CP. ?]
 
-**Other parties** - there is a multitude of small parties, including the United Farmers parties. There are also independent Liberal, Progressive, and Conservative candidates who have not been nominated yet support the parties' positions.
+**Other parties** - there is a multitude of small parties, including the miniscule Labour party and Economic Group. There are many candidates nominated by the LPS, CPS, or PPS that run as independents and also fusion candidates such as Liberal-Labour candidates. 
 
 @organizations
 on-arrival: {!
@@ -320,7 +320,7 @@ Dissent: [+ neorevisionist_dissent : dissent +]
 @figures
 title: Figures and Charts
 go-to: menu
-on-arrival: rpc_r = rpc_r;
+on-arrival: pps_r = pps_r;
 on-display: {!
 data = [
     {
@@ -345,22 +345,22 @@ data = data.concat([
         "seats": Q.flp_r / 2,
     },
     {
-        "id": "lpc",
-        "legend": "LPC",
-        "name": "LPC",
-        "seats": Q.lpc_r / 2,
+        "id": "lps",
+        "legend": "LPS",
+        "name": "LPS",
+        "seats": Q.lps_r / 2,
     },
     {
-        "id": "rpc",
-        "legend": "RPC",
-        "name": "RPC",
-        "seats": Q.rpc_r / 2,
+        "id": "pps",
+        "legend": "PPS",
+        "name": "PPS",
+        "seats": Q.pps_r / 2,
     },
     {
-        "id": "cpc",
-        "legend": "CPC",
-        "name": "CPC",
-        "seats": Q.cpc_r / 2,
+        "id": "cps",
+        "legend": "CPS",
+        "name": "CPS",
+        "seats": Q.cps_r / 2,
     },
     {
         "id": "other",
@@ -387,14 +387,14 @@ if (d3 && window) {
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromRPC(true).smallToBig(true);
-    parliament.exit.toRPC(false).bigToSmall(true);
+    parliament.enter.fromPPS(true).smallToBig(true);
+    parliament.exit.toPPS(false).bigToSmall(true);
     d3.select("#assembly").datum(data).call(parliament);
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'flp': '#D26E28', 'cp': '#8B0000', 'lpc': '#BE0028', 'rpc': '#E7DB73', 'cpc': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'flp': 'FLP', 'cp': 'CP', 'lpc': Q.lpc_name, 'rpc': 'RPC', 'cpc': 'CPC', 'scp': 'SCP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'flp': '#D26E28', 'cp': '#8B0000', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'flp': 'FLP', 'cp': 'CP', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scp': 'SCP', 'other': 'Others', 'sapd': 'SAPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -406,8 +406,8 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'flp': '#D26E28', 'cp': '#8B0000', 'lpc': '#BE0028', 'rpc': '#E7DB73', 'cpc': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'flp': 'FLP', 'cp': 'CP', 'lpc': Q.lpc_name, 'rpc': 'RPC', 'cpc': 'CPC', 'scp': 'SCP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'flp': '#D26E28', 'cp': '#8B0000', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'flp': 'FLP', 'cp': 'CP', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scp': 'SCP', 'other': 'Others', 'sapd': 'SAPD'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -435,12 +435,12 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!} CP: {!</td><td>!} [+ cp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lpc_name +]: {!</td><td>!} [+ lpc_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E7DB73'> </div></td><td>!} RPC: {!</td><td>!} [+ rpc_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E7DB73'> </div></td><td>!} PPS: {!</td><td>!} [+ pps_r +]% {!</td></tr>!}
 
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div></td><td>!} CPC: {!</td><td>!} [+ cpc_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div></td><td>!} CPS: {!</td><td>!} [+ cps_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 

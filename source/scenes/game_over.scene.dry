@@ -8,7 +8,7 @@ Q.game_over = 1;
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
-// Roter RPCar von Preußen - At the end of the game, JS_Woodsworth is monarch, premier, and minister-monarch of prussia at the same time.
+// Roter PPSar von Preußen - At the end of the game, JS_Woodsworth is monarch, premier, and minister-monarch of prussia at the same time.
 if (Q.monarch == 'JS_Woodsworth' && Q.premier == 'JS_Woodsworth' && Q.flp_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
@@ -101,7 +101,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Stolperstein - lose the civil war against Needham.
-if ((Q.premier_party == "LPC" || Q.premier == "James Gardiner" || Q.monarch == "Mackenzie King") && Q.total_defeat) {
+if ((Q.premier_party == "LPS" || Q.premier == "James Gardiner" || Q.monarch == "Mackenzie King") && Q.total_defeat) {
     this.achieve('stolperstein');
 }
 // Heidelberger Programm - fulfill the goals of the Heidelberg programm - increase welfare, reform justice, support women's rights, progressive taxation, works councils, build a European Union.
@@ -180,7 +180,7 @@ view-if: monarch == "Einstein"
 tags: endings
 go-to: eg_menu
 
-Albert Einstein, possibly the most famous scientist in the world, has been elected as Monarch of Saskatchewan. As a Saskatchewaner Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Saskatchewaner Republic that has moved beyond its checkered past.
+Albert Einstein, possibly the most famous scientist in the world, has been elected as Monarch of Saskatchewan. As a Saskatchewanian Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Saskatchewanian Republic that has moved beyond its checkered past.
 
 
 
@@ -287,21 +287,21 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_einigkeit_und_recht_und_freiheit : **Einigkeit und Recht und Freiheit** - reach the end of the game without a civil war on hard. ?]
 
-[? if game_achievement_schwarrpc_rot_gold : **** - reach the end of the game without a civil war on historical mode. ?]
+[? if game_achievement_schwarpps_rot_gold : **** - reach the end of the game without a civil war on historical mode. ?]
 
 [? if game_achievement_victory_for_the_republic: **Sieg für die Republik** - win the civil war. ?]
 
 [? if game_achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if game_achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if game_achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
 
 [? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
 
 [? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
 
-[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, RPC, and LPC. ?]
+[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the RPC Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, RPC, and LPC. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
 
 [? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
 
@@ -337,7 +337,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
-[? if game_achievement_bruder_rpcur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
+[? if game_achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
 
 [? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
 
@@ -367,7 +367,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
-[? if game_achievement_rpceppelin_kapitan : **RPCeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
+[? if game_achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
 
 [? if game_achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected monarch. ?]
 
@@ -393,21 +393,21 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_einigkeit_und_recht_und_freiheit : **Einigkeit und Recht und Freiheit** - reach the end of the game without a civil war on hard. ?]
 
-[? if achievement_schwarrpc_rot_gold : **** - reach the end of the game without a civil war on historical mode. ?]
+[? if achievement_schwarpps_rot_gold : **** - reach the end of the game without a civil war on historical mode. ?]
 
 [? if achievement_victory_for_the_republic: **Sieg für die Republik** - win the civil war. ?]
 
 [? if achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
 
 [? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
 
 [? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
 
-[? if achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, RPC, and LPC. ?]
+[? if achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
 
-[? if achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the RPC Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, RPC, and LPC. ?]
+[? if achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
 
 [? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
 
@@ -443,7 +443,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
-[? if achievement_bruder_rpcur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
+[? if achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
 
 [? if achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
 
@@ -473,7 +473,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
-[? if achievement_rpceppelin_kapitan : **RPCeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
+[? if achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
 
 [? if achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected monarch. ?]
 
@@ -496,21 +496,21 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_einigkeit_und_recht_und_freiheit : **Einigkeit und Recht und Freiheit** - reach the end of the game without a civil war on hard. ?]
 
-[? if not achievement_schwarrpc_rot_gold : **** - reach the end of the game without a civil war on historical mode. ?]
+[? if not achievement_schwarpps_rot_gold : **** - reach the end of the game without a civil war on historical mode. ?]
 
 [? if not achievement_victory_for_the_republic: **Sieg für die Republik** - win the civil war. ?]
 
 [? if not achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if not achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if not achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
 
 [? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
 
 [? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
 
-[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, RPC, and LPC. ?]
+[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
 
-[? if not achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the RPC Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, RPC, and LPC. ?]
+[? if not achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
 
 [? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
 
@@ -546,7 +546,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
-[? if not achievement_bruder_rpcur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
+[? if not achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
 
 [? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
 
@@ -576,7 +576,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
-[? if not achievement_rpceppelin_kapitan : **RPCeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
+[? if not achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
 
 [? if not achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected monarch. ?]
 

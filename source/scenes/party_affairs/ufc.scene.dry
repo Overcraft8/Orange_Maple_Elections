@@ -10,7 +10,7 @@ max-visits: 6
 
 = [+ UFC_name +]
 
-The *[+ UFC_name +] * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLP, RPC, and [+ lpc_name +], but by far the largest component is with the FLP.
+The *[+ UFC_name +] * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLP, PPS, and [+ lps_name +], but by far the largest component is with the FLP.
 
 [? if workers_flp < 46 or workers_flp < workers_scp or workers_flp < workers_cp : The [+ UFC_name +] is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
 
@@ -28,11 +28,11 @@ The *[+ UFC_name +] * is a mass organization for the defense of the Republic aga
 choose-if: resources >= ufc_militarization_cost
 unavailable-subtitle: Not enough resources ([+ ufc_militarization_cost +] needed).
 subtitle: -[+ ufc_militarization_cost +] resources
-on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; flp_militancy += 0.05; workers_flp += 2*(1-dissent); unemployed_flp += 2*(1-dissent); rpc_relation -= 5 if historical_mode 
+on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; flp_militancy += 0.05; workers_flp += 2*(1-dissent); unemployed_flp += 2*(1-dissent); pps_relation -= 5 if historical_mode 
 
 Some in our party decry the increasing militarization of the [+ UFC_name +]. They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
 
-[? if historical_mode : The RPC Party decries the militarization of the [+ UFC_name +], and its members are leaving the republican organization. ?]
+[? if historical_mode : The PPS Party decries the militarization of the [+ UFC_name +], and its members are leaving the republican organization. ?]
 
 
 @militant_2

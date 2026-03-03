@@ -21,9 +21,9 @@ title: Negotiating with the Coalition
 subtitle: J.S. Woodsworth can improve our relationships with our centrist and center-right coalition partners in Prussia as well as in the Assembly.
 choose-if: advisor_action_timer <= 0 and (flp_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not flp_prussia : The FLP does not control the Prussian government. ?]
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if flp_in_government = 1 and coalition_dissent > 0; rpc_relation += 6; lpc_relation += 6; cpc_relation += 2; cpc_relation += 3 if in_grand_coalition
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if flp_in_government = 1 and coalition_dissent > 0; pps_relation += 6; lps_relation += 6; cps_relation += 2; cps_relation += 3 if in_grand_coalition
 
-We have improved our relations with the [? if in_grand_coalition : RPC Party, [+ lpc_name +], and CPC, ?][? if not in_grand_coalition: RPC Party and [+ lpc_name +], ?] and reduced tensions with the coalition.
+We have improved our relations with the [? if in_grand_coalition : PPS Party, [+ lps_name +], and CPS, ?][? if not in_grand_coalition: PPS Party and [+ lps_name +], ?] and reduced tensions with the coalition.
 
 @prussian_bulwark
 title: The Prussian Bulwark

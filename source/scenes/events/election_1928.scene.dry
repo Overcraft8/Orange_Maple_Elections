@@ -70,36 +70,36 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 // get change arrows and signs
 
 
-// The largest party can only be the FLP, LPC, CPC, or SCP.
+// The largest party can only be the FLP, LPS, CPS, or SCP.
 Q.largest_party = 'FLP';
 
-if (Q.lpc_r >= Q.flp_r && Q.lpc_r >= Q.cpc_r && Q.lpc_r >= Q.scp_r) {
-    Q.largest_party = 'LPC';
+if (Q.lps_r >= Q.flp_r && Q.lps_r >= Q.cps_r && Q.lps_r >= Q.scp_r) {
+    Q.largest_party = 'LPS';
 }
-if (Q.cpc_r >= Q.flp_r && Q.cpc_r >= Q.lpc_r && Q.cpc_r >= Q.scp_r) {
+if (Q.cps_r >= Q.flp_r && Q.cps_r >= Q.lps_r && Q.cps_r >= Q.scp_r) {
     Q.largest_party = 'CP';
 }
-if (Q.scp_r >= Q.flp_r && Q.scp_r >= Q.lpc_r && Q.scp_r >= Q.cpc_r) {
+if (Q.scp_r >= Q.flp_r && Q.scp_r >= Q.lps_r && Q.scp_r >= Q.cps_r) {
     Q.largest_party = 'CP';
 }
 
 // coalitions
-Q.weimar_coalition = Q.flp_r + Q.lpc_r + Q.rpc_r;
-Q.grand_coalition = Q.flp_r + Q.lpc_r + Q.rpc_r + Q.cpc_r;
-Q.bourgeois_coalition = Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
-Q.center_right_coalition = Q.rpc_r + Q.lpc_r + Q.cpc_r + Q.other_r + Q.scp_r;
-Q.right_coalition = Q.rpc_r + Q.cpc_r + Q.other_r + Q.scp_r;
+Q.weimar_coalition = Q.flp_r + Q.lps_r + Q.pps_r;
+Q.grand_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r;
+Q.bourgeois_coalition = Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
+Q.center_right_coalition = Q.pps_r + Q.lps_r + Q.cps_r + Q.other_r + Q.scp_r;
+Q.right_coalition = Q.pps_r + Q.cps_r + Q.other_r + Q.scp_r;
 Q.scp_majority = Q.scp_r 
 Q.left_coalition = Q.flp_r + Q.cp_r + Q.sapd_r;
 // this is an absurd concept lol
-Q.popular_front_coalition = Q.flp_r + Q.cp_r + Q.rpc_r + Q.lpc_r + Q.sapd_r;
+Q.popular_front_coalition = Q.flp_r + Q.cp_r + Q.pps_r + Q.lps_r + Q.sapd_r;
 Q.anti_democratic_coalition = Q.cp_r + Q.scp_r;
 // aka everyone except scp, cp, scp
-Q.neo_weimar_coalition = Q.flp_r + Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
-// Needham + Right-wing parties (only comes into effect if you've alienated RPC too badly)
-Q.needham_right_coalition = Q.rpc_r + Q.scp_r
+Q.neo_weimar_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
+// Needham + Right-wing parties (only comes into effect if you've alienated PPS too badly)
+Q.needham_right_coalition = Q.pps_r + Q.scp_r
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = Q.flp_r + Q.cp_r + Q.lpc_r + Q.sapd_r;
+Q.progressive_coalition = Q.flp_r + Q.cp_r + Q.lps_r + Q.sapd_r;
 
 if (Q.cp_relation >= 30) {
     Q.weimar_coalition += Q.sapd_r;
@@ -122,21 +122,21 @@ Q.in_unity_government = 0;
 Q.flp_toleration = 0;
 Q.flp_caretaker = 0;
 // New Ministries
-Q.cooperatives_minister_party = 'RPC';
-Q.education_minister_party = 'RPC';
-Q.Mineral_resources_minister_party = 'RPC';
-Q.Municipal_affairs_minister_party = 'RPC';
-Q.transportation_minister_party = 'RPC';
-Q.telephones_telegraphs_minister_party = 'RPC';
+Q.cooperatives_minister_party = 'PPS';
+Q.education_minister_party = 'PPS';
+Q.Mineral_resources_minister_party = 'PPS';
+Q.Municipal_affairs_minister_party = 'PPS';
+Q.transportation_minister_party = 'PPS';
+Q.telephones_telegraphs_minister_party = 'PPS';
 // Old Ministries
-Q.foreign_minister_party = 'CPC';
-Q.interior_minister_party = 'RPC';
+Q.foreign_minister_party = 'CPS';
+Q.interior_minister_party = 'PPS';
 Q.justice_minister_party = 'I';
-Q.labour_minister_party = 'RPC';
+Q.labour_minister_party = 'PPS';
 Q.rcmp_minister_party = 'I';
-Q.economic_minister_party = Q.lpc_name;
-Q.finance_minister_party = 'CPC';
-Q.agriculture_minister_party = 'RPC';
+Q.economic_minister_party = Q.lps_name;
+Q.finance_minister_party = 'CPS';
+Q.agriculture_minister_party = 'PPS';
 
 // reset CP goals
 Q.cp_goals_seen = 0;
@@ -161,7 +161,7 @@ Q.rcmp_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 
-Q.rpc_r = Q.rpc_r;
+Q.pps_r = Q.pps_r;
 
 // understanding the enemy
 if (Q.scp_r >= 15) {
@@ -200,22 +200,22 @@ data = data.concat([
         "seats": Math.round(Q.flp_r/2),
     },
     {
-        "id": "lpc",
-        "legend": Q.lpc_name,
-        "name": Q.lpc_name,
-        "seats": Math.round(Q.lpc_r/2),
+        "id": "lps",
+        "legend": Q.lps_name,
+        "name": Q.lps_name,
+        "seats": Math.round(Q.lps_r/2),
     },
     {
-        "id": "rpc",
-        "legend": "RPC",
-        "name": "RPC",
-        "seats": Math.round(Q.rpc_r/2),
+        "id": "pps",
+        "legend": "PPS",
+        "name": "PPS",
+        "seats": Math.round(Q.pps_r/2),
     },
     {
-        "id": "cpc",
-        "legend": "CPC",
-        "name": "CPC",
-        "seats": Math.round(Q.cpc_r/2),
+        "id": "cps",
+        "legend": "CPS",
+        "name": "CPS",
+        "seats": Math.round(Q.cps_r/2),
     },
     {
         "id": "other",
@@ -263,11 +263,11 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lpc_name +]: {!</td><td>!} [+ lpc_r +]% {!</td><td>!} [+ str_change_lpc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td><td>!} [+ str_change_lps +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} RPC: {!</td><td>!} [+ rpc_r +]% {!</td><td>!} [+ str_change_rpc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_r +]% {!</td><td>!} [+ str_change_pps +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPC: {!</td><td>!} [+ cpc_r +]% {!</td><td>!} [+ str_change_cpc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_r +]% {!</td><td>!} [+ str_change_cps +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
@@ -277,13 +277,13 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Weimar Coalition (FLP + RPC + [+ lpc_name +]): [+ weimar_coalition +]%
+Weimar Coalition (FLP + PPS + [+ lps_name +]): [+ weimar_coalition +]%
 
-Grand Coalition (FLP + RPC + [+ lpc_name +] + CPC): [+ grand_coalition +]%
+Grand Coalition (FLP + PPS + [+ lps_name +] + CPS): [+ grand_coalition +]%
 
-Bourgeois Coalition (RPC + [+ lpc_name +] + CPC + Others): [+ bourgeois_coalition +]%
+Bourgeois Coalition (PPS + [+ lps_name +] + CPS + Others): [+ bourgeois_coalition +]%
 
-Right-wing Coalition (RPC + CPC + Others + SCP): [+ right_coalition +]%
+Right-wing Coalition (PPS + CPS + Others + SCP): [+ right_coalition +]%
 
 [? if scp_urgency <= 1 and scp_r >= 15 : The rapid rise in SCP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Saskatchewan. ?]
 
@@ -310,12 +310,12 @@ There are some potential coalition arrangements.
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
-subtitle: FLP + CP + RPC + [+ lpc_name +]  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
-unavailable-subtitle: FLP + CP + RPC + [+ lpc_name +] [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%) - [? if ((cp_relation < 65 and cp_party_leader == "Tim Buck") or (cp_relation < 45 and cp_party_leader == "Conciliators")): We do not have good enough relations with the CP. ?][? if (rpc_relation < 45 and rpc_party_leader == "Joos") or (rpc_relation < 65 and rpc_party_leader != "Joos" and cp_party_leader != "Conciliators") or (rpc_relation < 55 and rpc_party_leader != "Joos" and cp_party_leader == "Conciliators"): We do not have good enough relations with the RPC Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?]
+subtitle: FLP + CP + PPS + [+ lps_name +]  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
+unavailable-subtitle: FLP + CP + PPS + [+ lps_name +] [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%) - [? if ((cp_relation < 65 and cp_party_leader == "Tim Buck") or (cp_relation < 45 and cp_party_leader == "Conciliators")): We do not have good enough relations with the CP. ?][? if (pps_relation < 45 and pps_party_leader == "Joos") or (pps_relation < 65 and pps_party_leader != "Joos" and cp_party_leader != "Conciliators") or (pps_relation < 55 and pps_party_leader != "Joos" and cp_party_leader == "Conciliators"): We do not have good enough relations with the PPS Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?]
 view-if: popular_front_coalition >= 50
-choose-if: (((cp_relation >= 65 and cp_party_leader == "Tim Buck") or (cp_relation >= 45 and cp_party_leader == "Conciliators")) and ((rpc_relation >= 45 and rpc_party_leader == "Joos") or (rpc_relation >= 65 and rpc_party_leader != "Joos" and cp_party_leader != "Conciliators") or (rpc_relation >= 55 and rpc_party_leader != "Joos" and cp_party_leader == "Conciliators")) and lpc_relation >= 50 and communist_coalition >= 3) or (rpc_party_leader == "Joos" and cp_party_leader == "Conciliators" and rpc_relation >= 30 and cp_relation >= 30)
+choose-if: (((cp_relation >= 65 and cp_party_leader == "Tim Buck") or (cp_relation >= 45 and cp_party_leader == "Conciliators")) and ((pps_relation >= 45 and pps_party_leader == "Joos") or (pps_relation >= 65 and pps_party_leader != "Joos" and cp_party_leader != "Conciliators") or (pps_relation >= 55 and pps_party_leader != "Joos" and cp_party_leader == "Conciliators")) and lps_relation >= 50 and communist_coalition >= 3) or (pps_party_leader == "Joos" and cp_party_leader == "Conciliators" and pps_relation >= 30 and cp_relation >= 30)
 
-Could we really form a coalition that included both the RPC and the Communists? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
+Could we really form a coalition that included both the PPS and the Communists? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
 
 The far-right might attempt a coup, if such a coalition were formed.
 
@@ -323,9 +323,9 @@ The far-right might attempt a coup, if such a coalition were formed.
 - @great_popular_front: Form the Popular Front!
 
 @popular_front_2
-view-if: rpc_party_leader != "Joos" or cp_party_leader != "Conciliators"
+view-if: pps_party_leader != "Joos" or cp_party_leader != "Conciliators"
 
-Somehow, both the Communists and RPC are at the very least willing to entertain negotiations. Of course, CP radicals and RPC conservatives derail the negotiations almost immediately. The CP demands leadership of the coalition for themselves and their chairman Tim Buck, [? if flp_r > cp_r : despite our higher vote share, ?]while the RPC is offended by the prospect of helping Bolsheviks enter government. *Something* must be done to restore balance.
+Somehow, both the Communists and PPS are at the very least willing to entertain negotiations. Of course, CP radicals and PPS conservatives derail the negotiations almost immediately. The CP demands leadership of the coalition for themselves and their chairman Tim Buck, [? if flp_r > cp_r : despite our higher vote share, ?]while the PPS is offended by the prospect of helping Bolsheviks enter government. *Something* must be done to restore balance.
 
 - @popular_front_resources
 - @popular_front_democracy
@@ -353,22 +353,22 @@ view-if: monarch == "J. S. Woodsworth"
 go-to: popular_front_success
 
 @great_popular_front
-view-if: rpc_party_leader == "Joos" and cp_party_leader == "Conciliators"
+view-if: pps_party_leader == "Joos" and cp_party_leader == "Conciliators"
 on-arrival: flp_in_government = 1; in_popular_front = 1; premier = "Williams"; premier_party = "FLP"; cp_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 achievement: grosse_volksfront
 go-to: popular_front_success
 
-Somehow, the coalition is successfully formed! The conciliatory leadership of the RPC Party and CP helped make the negotiations possible. We still need a premier; the only acceptable choice among the parties was George Hara Williams of the FLP, acceptable to the RPC and CP [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
+Somehow, the coalition is successfully formed! The conciliatory leadership of the PPS Party and CP helped make the negotiations possible. We still need a premier; the only acceptable choice among the parties was George Hara Williams of the FLP, acceptable to the PPS and CP [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
 
 @popular_front_success
 on-arrival: flp_in_government = 1; in_popular_front = 1; premier = "Williams"; premier_party = "FLP"; cp_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 go-to: popular_front_no_civil_war
 achievement: volksfront
 
-Somehow, surprisingly, the coalition is successfully formed! We still need a premier; the only acceptable choice among the parties was George Hara Williams of the FLP, acceptable to the RPC and CP [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
+Somehow, surprisingly, the coalition is successfully formed! We still need a premier; the only acceptable choice among the parties was George Hara Williams of the FLP, acceptable to the PPS and CP [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
 
 @popular_front_no_civil_war
-on-arrival: cp_goals_seen = 0; finance_minister_party = "RPC"; interior_minister_party = "RPC"; economic_minister_party = "RPC"; labour_minister_party = "RPC"; foreign_minister_party = "RPC"; agriculture_minister_party = "RPC"; rcmp_minister = "I"; leverage = flp_r + cp_r;
+on-arrival: cp_goals_seen = 0; finance_minister_party = "PPS"; interior_minister_party = "PPS"; economic_minister_party = "PPS"; labour_minister_party = "PPS"; foreign_minister_party = "PPS"; agriculture_minister_party = "PPS"; rcmp_minister = "I"; leverage = flp_r + cp_r;
 achievement: volksfront
 
 In response to the CP's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
@@ -498,12 +498,12 @@ on-arrival: rcmp_loyalty += 0.1
 
 @right_coalition
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: RPC + CPC + SCP + Others ([+ right_coalition +]%)
-unavailable-subtitle: The SCP is not interested in a coalition with the RPC.
+subtitle: PPS + CPS + SCP + Others ([+ right_coalition +]%)
+unavailable-subtitle: The SCP is not interested in a coalition with the PPS.
 view-if: right_coalition >= 50
 choose-if: year < 1929
 
-There are enough votes for a right-wing coalition of the RPC, CPC, SCP, and minor conservative parties. [? if largest_party == "FLP": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
+There are enough votes for a right-wing coalition of the PPS, CPS, SCP, and minor conservative parties. [? if largest_party == "FLP": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
 - @right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
 - @grand_coalition: Actually, we wish to form a grand coalition after all.
@@ -511,19 +511,19 @@ There are enough votes for a right-wing coalition of the RPC, CPC, SCP, and mino
 @no_right_coalition
 go-to: no_majority
 
-However, the SCP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the RPC Party. Thus, there is no clear path towards a Assembly majority.
+However, the SCP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the PPS Party. Thus, there is no clear path towards a Assembly majority.
 
 @right_coalition_sure
 subtitle: This will be extremely unpopular within our party.
-on-arrival: pro_republic -= 5; agrarian_dissent += 15; left_dissent += 10; labour_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; rpc_relation -= 5; lpc_relation -= 5; cpc_relation -= 5
+on-arrival: pro_republic -= 5; agrarian_dissent += 15; left_dissent += 10; labour_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; pps_relation -= 5; lps_relation -= 5; cps_relation -= 5
 go-to: right_coalition_2
 
 
 @right_coalition_2
-unavailable-subtitle: The SCP is not interested in a coalition with the RPC.
+unavailable-subtitle: The SCP is not interested in a coalition with the PPS.
 view-if: right_coalition >= 50
 choose-if: year < 1929
-on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "SCP"; justice_minister_party = "SCP"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "CPC"; finance_minister_party = "RPC"; agriculture_minister_party = "SCP"; in_right_coalition = 1;
+on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCP"; justice_minister_party = "SCP"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCP"; in_right_coalition = 1;
 
 Even though the SCP is very reluctant to participate in such a coalition, they still accede to Monarch George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
 
@@ -540,9 +540,9 @@ go-to: no_majority_bruning if premier = "Brüning" or premier = "Wirth"; no_majo
 # either new elections, or George V appoints either Brüning, Papen, Schleicher, or Needham.
 
 @no_majority_flp
-on-arrival: premier = "Brüning"; premier_party = "RPC"
+on-arrival: premier = "Brüning"; premier_party = "PPS"
 
-There is no path to an obviously workable majority. Since Monarch George V is unwilling to work with a minority or caretaker FLP government, his preferred premier is Heinrich Brüning of the RPC Party, who could lead a "monarchial" government.
+There is no path to an obviously workable majority. Since Monarch George V is unwilling to work with a minority or caretaker FLP government, his preferred premier is Heinrich Brüning of the PPS Party, who could lead a "monarchial" government.
 
 - @toleration_bruning: We will tolerate Brüning.
 - @new_grand_coalition: We will try to form a new grand coalition.
@@ -557,7 +557,7 @@ go-to: no_majority_bruning_toleration if (no_majority_elections <= 3 and anti_de
 @georgev_appoints_papen
 on-arrival: premier = "Papen"; premier_party = "I"; next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; sa_banned = 0; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labour_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; rcmp_minister = "I";
 
-There is no path to a majority government. Monarch George V is tired of the chaos, and appoints Franz von Papen as premier instead of Brüning. Papen is a indenpendent formerly from the RPC Party, and is significantly to the right of the majority of the RPC Party.
+There is no path to a majority government. Monarch George V is tired of the chaos, and appoints Franz von Papen as premier instead of Brüning. Papen is a indenpendent formerly from the PPS Party, and is significantly to the right of the majority of the PPS Party.
 
 Papen is immediately faced with a vote of no confidence, given his unpopularity. However the FLP votes, he is guaranteed to fall, due to the unanimous hatred against him from all other parties.
 
@@ -580,12 +580,12 @@ The third option is to have new elections.
 
 @new_grand_coalition
 title: A "New Grand Coalition" of all the constitutional parties?
-subtitle: FLP + RPC + [+ lpc_name +] + CPC + Others ([+ neo_weimar_coalition +]%)
+subtitle: FLP + PPS + [+ lps_name +] + CPS + Others ([+ neo_weimar_coalition +]%)
 view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
-choose-if: rpc_relation >= 50 and cpc_relation >= 30
-unavailable-subtitle: FLP + RPC + [+ lpc_name +] + CPC + Others ([+ neo_weimar_coalition +]%) - [? if rpc_relation < 50 : We do not have adequate relations with the RPC Party. ?][? if cpc_relation < 30 : We do not have adequate relations with the CPC. ?]
+choose-if: pps_relation >= 50 and cps_relation >= 30
+unavailable-subtitle: FLP + PPS + [+ lps_name +] + CPS + Others ([+ neo_weimar_coalition +]%) - [? if pps_relation < 50 : We do not have adequate relations with the PPS Party. ?][? if cps_relation < 30 : We do not have adequate relations with the CPS. ?]
 
-How do we convince vehemently anti-socialist parties to allow us to form a majority coalition? Our largely benevolent relations with the RPC and CPC may allow us some leverage.
+How do we convince vehemently anti-socialist parties to allow us to form a majority coalition? Our largely benevolent relations with the PPS and CPS may allow us some leverage.
 
 - @use_resources
 - @toleration_bruning: No. We will tolerate a minority government.
@@ -607,7 +607,7 @@ Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-
 
 Who should be premier?
 
-- @join_bruning: For better or for worse, it must be Heinrich Brüning of the RPC.
+- @join_bruning: For better or for worse, it must be Heinrich Brüning of the PPS.
 - @woodsworth_premier_new: J. S. Woodsworth for Premier?
 
 @woodsworth_premier_new
@@ -620,18 +620,18 @@ We have assembled a new coalition under J. S. Woodsworth.
 
 
 @unity_government
-title: The RPC Party offers a "Government of National Unity" under Premier Joseph Wirth.
-subtitle: FLP + RPC + [+ lpc_name +] + CPC + Others ([+ neo_weimar_coalition +]%)
-view-if: rpc_party_leader == "Joos" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and rpc_relation >= 10
+title: The PPS Party offers a "Government of National Unity" under Premier Joseph Wirth.
+subtitle: FLP + PPS + [+ lps_name +] + CPS + Others ([+ neo_weimar_coalition +]%)
+view-if: pps_party_leader == "Joos" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and pps_relation >= 10
 
-The RPC Party leader, Joseph Joos, clearly sees the threat from the ascension of the anti-democratic extremist parties, and thus tries to negotiate a "Government of National Unity" to save the republic. This coalition would be led by Joseph Wirth, a left-leaning member of the RPC Party and former premier, and would encompass all of the constitutional parties. Our role in this government might be limited, however.
+The PPS Party leader, Joseph Joos, clearly sees the threat from the ascension of the anti-democratic extremist parties, and thus tries to negotiate a "Government of National Unity" to save the republic. This coalition would be led by Joseph Wirth, a left-leaning member of the PPS Party and former premier, and would encompass all of the constitutional parties. Our role in this government might be limited, however.
 
 - @unity_government_2
 - @reject_unity_government: No, we will not accept this offer.
 
 @unity_government_2
 title: Accept the offer!
-on-arrival: premier = "Wirth"; premier_party = "RPC"; flp_in_government = 1; in_grand_coalition = 1; in_unity_government = 1; leverage = 15; rpc_relation += 5; cpc_relation += 4
+on-arrival: premier = "Wirth"; premier_party = "PPS"; flp_in_government = 1; in_grand_coalition = 1; in_unity_government = 1; leverage = 15; pps_relation += 5; cps_relation += 4
 achievement: constitutional_coalition
 go-to: ministries
 
@@ -639,7 +639,7 @@ We have formed a new unity government of all the constitutional parties! We have
 
 
 @reject_unity_government
-on-arrival: rpc_relation -= 8; lpc_relation -= 5; cpc_relation -= 5
+on-arrival: pps_relation -= 8; lps_relation -= 5; cps_relation -= 5
 
 Our rejection of the unity government has hurt our relations with the bourgeois and center-right parties.
 
@@ -650,12 +650,12 @@ Our rejection of the unity government has hurt our relations with the bourgeois 
 
 
 @toleration_wirth
-view-if: rpc_party_leader = "Joos"
+view-if: pps_party_leader = "Joos"
 choose-if: monarch == "J. S. Woodsworth"
 unavailable-subtitle: Monarch George V will not support a minority government led by Joseph Wirth.
-on-arrival: premier = "Wirth"; premier_party = "RPC"; flp_in_government = 0; flp_toleration = 1; rpc_relation += 5; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "I"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "CPC"; agriculture_minister_party = "RPC"; pro_republic -= 2;
+on-arrival: premier = "Wirth"; premier_party = "PPS"; flp_in_government = 0; flp_toleration = 1; pps_relation += 5; foreign_minister_party = "CPS"; interior_minister_party = "PPS"; justice_minister_party = "I"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = lps_name; finance_minister_party = "CPS"; agriculture_minister_party = "PPS"; pro_republic -= 2;
 
-We have supported a minority government led by the RPC Party under Premier Joseph Wirth.
+We have supported a minority government led by the PPS Party under Premier Joseph Wirth.
 
 
 
@@ -791,12 +791,12 @@ We have won the vote of no confidence, and are currently ruling under an FLP min
 
 @weimar_coalition
 title: We can form a Weimar Coalition.
-subtitle: FLP + RPC + [+ lpc_name +] [? if sapd_formed and cp_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
+subtitle: FLP + PPS + [+ lps_name +] [? if sapd_formed and cp_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if rpc_party_leader == "Joos"; in_weimar_coalition = 1; flp_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "RPC"; interior_minister_party = "RPC"; justice_minister_party = lpc_name; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labour_minister = "Stegerwald"; rcmp_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if pps_party_leader == "Joos"; in_weimar_coalition = 1; flp_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "PPS"; interior_minister_party = "PPS"; justice_minister_party = lps_name; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = lps_name; finance_minister_party = "PPS"; agriculture_minister_party = "PPS"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labour_minister = "Stegerwald"; rcmp_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
 
-We have enough votes to form a "Weimar Coalition" government consisting of the FLP, RPC and Democratic ([+ lpc_name +]) parties! This has been our preferred governing coalition since 1919.
+We have enough votes to form a "Weimar Coalition" government consisting of the FLP, PPS and Democratic ([+ lps_name +]) parties! This has been our preferred governing coalition since 1919.
 
 Who should be the premier?
 
@@ -804,8 +804,8 @@ Who should be the premier?
 - @woodsworth
 - @williams_coalition_premier
 - @coldwell
-- @rpc_premier
-- @rpc_premier_wirth
+- @pps_premier
+- @pps_premier_wirth
 
 @williams_coalition_premier
 title: George Hara Williams for Premier
@@ -820,23 +820,23 @@ George Hara Williams has been appointed premier.
 @grand_coalition
 title: We can form a Grand Coalition.
 view-if: grand_coalition >= 50 and grand_coalition_failed == 0
-subtitle: FLP + RPC + [+ lpc_name +] + CPC ([+ grand_coalition +]%)
+subtitle: FLP + PPS + [+ lps_name +] + CPS ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
-go-to: grand_coalition_flp_lead if (n_elections <= 1 and largest_party == "FLP") or (largest_party == "FLP" and flp_r >= 30) or monarch = "J. S. Woodsworth"; grand_coalition_rpc_lead if monarch != "J. S. Woodsworth" and ((n_elections > 1 and flp_r < 30) or (n_elections <= 1 and largest_party != "FLP"))
+go-to: grand_coalition_flp_lead if (n_elections <= 1 and largest_party == "FLP") or (largest_party == "FLP" and flp_r >= 30) or monarch = "J. S. Woodsworth"; grand_coalition_pps_lead if monarch != "J. S. Woodsworth" and ((n_elections > 1 and flp_r < 30) or (n_elections <= 1 and largest_party != "FLP"))
 
-# TODO: if there are enough votes to form a grand coalition, who leads? Does the FLP lead or does Brüning (RPC) lead? In reality this depended on George V's will, basically, which in turn depended on what his camarilla supported.
-# In the first election, FLP always leads. In subsequent elections, if flp_r >= 29 then FLP leads, otherwise RPC leads?
+# TODO: if there are enough votes to form a grand coalition, who leads? Does the FLP lead or does Brüning (PPS) lead? In reality this depended on George V's will, basically, which in turn depended on what his camarilla supported.
+# In the first election, FLP always leads. In subsequent elections, if flp_r >= 29 then FLP leads, otherwise PPS leads?
 
-@grand_coalition_rpc_lead
-go-to: grand_coalition_rpc_lead_2 if cpc_relation >= 30; grand_coalition_fail if cpc_relation < 30
+@grand_coalition_pps_lead
+go-to: grand_coalition_pps_lead_2 if cps_relation >= 30; grand_coalition_fail if cps_relation < 30
 
-There are enough votes to form a majority coalition consisting of the FLP, RPC, Democratic ([+ lpc_name +]), and People's (CPC) parties. Given our rather weak electoral performance, [? if flp_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_flp = 1 : and the vote of no confidence against us, ?] Monarch George V has asked the RPC Party to take the lead role in forming a government.
+There are enough votes to form a majority coalition consisting of the FLP, PPS, Democratic ([+ lps_name +]), and People's (CPS) parties. Given our rather weak electoral performance, [? if flp_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_flp = 1 : and the vote of no confidence against us, ?] Monarch George V has asked the PPS Party to take the lead role in forming a government.
 
 # TODO: if the FLP participated in bringing down the previous government via a vote-of-no-confidence, or if we were essentially removed from government by our coalition partners, we should be more reluctant to participate in a new government.
 
-@grand_coalition_rpc_lead_2
+@grand_coalition_pps_lead_2
 
-The RPC premier is likely to be Heinrich Brüning of the RPC Party [? if premier = "Brüning" : again. ?][? if premier != "Brüning": . ?] He is known for his conservatism and sympathy for monarchism, being on the right wing of the RPC. [? if austerity >= 2 : Due to the government's austerity policies, many of our members are reluctant to participate in this coalition again. Some support a "toleration" arrangement in which we will provide outside support to prevent the far-right from either entering government or calling a successful no-confidence vote. Others support entering into pure opposition, and letting the right do what it wishes. ?]
+The PPS premier is likely to be Heinrich Brüning of the PPS Party [? if premier = "Brüning" : again. ?][? if premier != "Brüning": . ?] He is known for his conservatism and sympathy for monarchism, being on the right wing of the PPS. [? if austerity >= 2 : Due to the government's austerity policies, many of our members are reluctant to participate in this coalition again. Some support a "toleration" arrangement in which we will provide outside support to prevent the far-right from either entering government or calling a successful no-confidence vote. Others support entering into pure opposition, and letting the right do what it wishes. ?]
 
 Brüning is not opposed to a coalition with us. Alternatively, we could enter a "toleration" agreement.
 
@@ -847,15 +847,15 @@ Brüning is not opposed to a coalition with us. Alternatively, we could enter a 
 
 @join_bruning
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50
-on-arrival: flp_in_government = 1; flp_toleration = 0; in_grand_coalition = 1; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "RPC"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "RPC"; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; leverage = 25 if leverage >= 25;
+on-arrival: flp_in_government = 1; flp_toleration = 0; in_grand_coalition = 1; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "PPS"; justice_minister_party = "PPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "PPS"; finance_minister_party = "PPS"; agriculture_minister_party = "PPS"; leverage = 25 if leverage >= 25;
 go-to: ministries
 
 Heinrich Brüning welcomes us into his new cabinet. Now, we have our pick of ministries.
 
 @bruning_oppo
-on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "RPC"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "RPC"; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; grand_coalition_failed = 1
+on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "PPS"; justice_minister_party = "PPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "PPS"; finance_minister_party = "PPS"; agriculture_minister_party = "PPS"; grand_coalition_failed = 1
 
-By refusing to join the grand coalition or tolerating it, we essentially throw the balance of government to the right wing. [? if right_coalition >= 50 : There are enough votes to form a right-wing coalition that includes the SCP. However, the SCP leader, Hugenberg, is opposed to a coalition with the "November criminals" of the RPC Party. And of course, the SCP is not interested in coalition government. This means that there will not be enough votes to form a majority coalition. ?][? if right_coalition < 50 : There are not enough votes to form a right-wing coalition that includes the SCP, and they are not interested in joining in a coalition with the "November criminals" of the RPC Party, anyhow. And of course, the SCP is not interested in coalition government. This means that there is no route to a majority coalition. ?]
+By refusing to join the grand coalition or tolerating it, we essentially throw the balance of government to the right wing. [? if right_coalition >= 50 : There are enough votes to form a right-wing coalition that includes the SCP. However, the SCP leader, Hugenberg, is opposed to a coalition with the "November criminals" of the PPS Party. And of course, the SCP is not interested in coalition government. This means that there will not be enough votes to form a majority coalition. ?][? if right_coalition < 50 : There are not enough votes to form a right-wing coalition that includes the SCP, and they are not interested in joining in a coalition with the "November criminals" of the PPS Party, anyhow. And of course, the SCP is not interested in coalition government. This means that there is no route to a majority coalition. ?]
 
 If we do not at least "tolerate" the government, there will be new elections in a few months. In the meantime, the Monarch and Premier may use the emergency powers granted by Article 48 of the constitution to essentially govern by decree. And it is not at all clear that we will do any better in the next election.
 
@@ -876,8 +876,8 @@ if (Q.next_parl_election_month > 12) {
     Q.next_parl_election_year = Q.year;
 }
 if (Q.premier == "Brüning") {
-    Q.rpc_relation -= 5;
-    Q.cpc_relation -= 5;
+    Q.pps_relation -= 5;
+    Q.cps_relation -= 5;
 }
 Q.pro_republic -= 8;
 Q.workers_flp -= 5;
@@ -885,10 +885,10 @@ Q.new_middle_flp -= 5;
 Q.old_middle_flp -= 5;
 Q.rural_flp -= 5;
 Q.catholics_flp -= 3;
-Q.new_middle_cpc -= 8;
-Q.old_middle_cpc -= 8;
-Q.new_middle_lpc -= 5;
-Q.old_middle_lpc -= 10;
+Q.new_middle_cps -= 8;
+Q.old_middle_cps -= 8;
+Q.new_middle_lps -= 5;
+Q.old_middle_lps -= 10;
 Q.rural_scp -= 5;
 Q.workers_scp += 5;
 Q.old_middle_scp += 6;
@@ -900,9 +900,9 @@ if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
     Q.workers_flp -= 6;
 }
 if (Q.pro_republic < 36) {
-    // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Needham and the RPC.
-    Q.rpc_relation -= 5;
-    Q.cpc_relation -= 5;
+    // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Needham and the PPS.
+    Q.pps_relation -= 5;
+    Q.cps_relation -= 5;
     Q.workers_flp *= 0.85;
     Q.unemployed_flp -= 2;
     Q.new_middle_flp -= 5;
@@ -930,82 +930,82 @@ The people's faith in democracy is shaken by this ordeal. Of course, the SCPs ar
 @toleration_bruning
 choose-if: neo_weimar_coalition >= 50
 unavailable-subtitle: The parties supporting Brüning do not have a majority.
-on-arrival: flp_in_government = 0; flp_toleration = 1; minority_government = 1; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "I"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "CPC"; agriculture_minister_party = "RPC"; pro_republic -= 4; new_middle_cpc -= 5; new_middle_lpc -= 5; old_middle_cpc -= 5; old_middle_lpc -= 5; old_middle_scp += 5; new_middle_scp += 5; rural_scp -= 5;
+on-arrival: flp_in_government = 0; flp_toleration = 1; minority_government = 1; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "PPS"; justice_minister_party = "I"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = lps_name; finance_minister_party = "CPS"; agriculture_minister_party = "PPS"; pro_republic -= 4; new_middle_cps -= 5; new_middle_lps -= 5; old_middle_cps -= 5; old_middle_lps -= 5; old_middle_scp += 5; new_middle_scp += 5; rural_scp -= 5;
 
 We have decided to tolerate Brüning's government. This means that we will vote against no-confidence votes to make sure they fail, but also that we will not be directly participating as ministers in the government. Thus, we can prevent a new election and stop the far right from entering government.
 
 @grand_coalition_fail
 on-arrival: grand_coalition_failed = 1
 
-Unfortunately, the CPC are unwilling to enter into another coalition with the FLP, so the grand coalition is unable to be formed.
+Unfortunately, the CPS are unwilling to enter into another coalition with the FLP, so the grand coalition is unable to be formed.
 
 - @no_majority: Thus, there is no clear majority.
 - @woodsworths_dilemma
 - @right_coalition_2: Perhaps a right-wing coalition may form.
-- @beg_cpc: Perhaps we could ask the CPC to change their minds?
+- @beg_cps: Perhaps we could ask the CPS to change their minds?
 - @unity_government
 - @coalition_menu: What are the other governing arrangements?
 
 
-@beg_cpc
-view-if: cpc_relation >= 15
-go-to: cpc_conservative if stresemann_dead == 1; cpc_majority if stresemann_dead == 0
+@beg_cps
+view-if: cps_relation >= 15
+go-to: cps_conservative if stresemann_dead == 1; cps_majority if stresemann_dead == 0
 
-@cpc_majority
+@cps_majority
 go-to: join_bruning
 
-Under the influence of Gustav Stresemann, the CPC agrees to allow us into the coalition.
+Under the influence of Gustav Stresemann, the CPS agrees to allow us into the coalition.
 
 
-@cpc_conservative
+@cps_conservative
 
-The CPC asks us to adhere to their conservative economic policies (that is, extreme austerity and labour discipline) in exchange for us joining the coalition.
+The CPS asks us to adhere to their conservative economic policies (that is, extreme austerity and labour discipline) in exchange for us joining the coalition.
 
-- @beg_cpc_2: But they would not have a majority without the FLP! The SCP have no interest in participating in government.
+- @beg_cps_2: But they would not have a majority without the FLP! The SCP have no interest in participating in government.
 - @no_majority: There is no chance that we would agree.
 - @woodsworths_dilemma
 - @coalition_menu: What are the other governing arrangements?
 
 
-@beg_cpc_2
-go-to: beg_cpc_succeed; beg_cpc_fail
+@beg_cps_2
+go-to: beg_cps_succeed; beg_cps_fail
 
 We make the case that without the FLP, there is no parliamentary majority, given the SCP hostility to constitutional government.
 
-@beg_cpc_succeed
+@beg_cps_succeed
 go-to: join_bruning
 
 Somehow, we succeed in convincing them! We are now in a coalition.
 
 
-@beg_cpc_fail
+@beg_cps_fail
 go-to: no_majority
 
-As expected, the CPC is too set in their anti-democratic ways.
+As expected, the CPS is too set in their anti-democratic ways.
 
 
 
 @grand_coalition_flp_lead
-on-arrival: leverage -= 15 if cpc_relation < 20
+on-arrival: leverage -= 15 if cps_relation < 20
 
-As expected, the FLP is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the premier. Monarch [+ monarch +] has asked us to form a majority coalition with the RPC, Democratic ([+ lpc_name +]), and People's (CPC) parties.
+As expected, the FLP is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the premier. Monarch [+ monarch +] has asked us to form a majority coalition with the PPS, Democratic ([+ lps_name +]), and People's (CPS) parties.
 
-[? if cpc_relation < 20 : As our relation with the CPC is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
+[? if cps_relation < 20 : As our relation with the CPS is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
 
 Who should be the premier?
 
 - @douglas
 - @woodsworth
 - @coldwell
-- @rpc_premier
-- @rpc_premier_wirth
+- @pps_premier
+- @pps_premier_wirth
 - @no_govt
 
 
 @douglas
 title: Tommy Douglas for Premier
 view-if: douglas_dead = 0
-subtitle: Douglas is popular within the party, and is the preferred candidate of the RPC and other parties.
+subtitle: Douglas is popular within the party, and is the preferred candidate of the PPS and other parties.
 on-arrival: flp_in_government = 1; premier = "Douglas"; premier_party = "FLP"; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
@@ -1025,11 +1025,11 @@ title: J. S. Woodsworth for Premier
 view-if: not historical_mode or not flp_prussia
 subtitle: J. S. Woodsworth is currently the Minister-Monarch of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
-The RPC party has significant qualms about appointing J. S. Woodsworth as premier, given that he is already Minister-Monarch of Prussia. They ask for either more cabinet positions, or for J. S. Woodsworth to resign his state government role. The latter is completely unacceptable.
+The PPS party has significant qualms about appointing J. S. Woodsworth as premier, given that he is already Minister-Monarch of Prussia. They ask for either more cabinet positions, or for J. S. Woodsworth to resign his state government role. The latter is completely unacceptable.
 
 - @douglas
 - @coldwell
-- @woodsworth_2: Let the RPC have their cabinet positions.
+- @woodsworth_2: Let the PPS have their cabinet positions.
 
 @woodsworth_2
 subtitle: J. S. Woodsworth will be Premier.
@@ -1037,25 +1037,25 @@ view-if: not historical_mode
 on-arrival: flp_in_government = 1; premier = "J. S. Woodsworth"; premier_party = "FLP"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0
 go-to: ministries
 
-We have promised to let the RPC have more influence in the government in response to the appointment of J. S. Woodsworth as premier.
+We have promised to let the PPS have more influence in the government in response to the appointment of J. S. Woodsworth as premier.
 
 
-@rpc_premier
-title: Let the RPC Party have their premier.
+@pps_premier
+title: Let the PPS Party have their premier.
 subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; rpc_relation += 10; cpc_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; premier = "Brüning"; premier_party = "RPC"; flp_in_government = 1; leverage += 5
+on-arrival: left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
 
 [? if year == 1932 : Since James Anderson resigned, Heinrich Brüning has been appointed premier. ?]
-[? if year > 1932: Heinrich Brüning of the RPC Party has been appointed premier. ?]
+[? if year > 1932: Heinrich Brüning of the PPS Party has been appointed premier. ?]
 
-@rpc_premier_wirth
-title: Let Joseph Wirth of the RPC Party be premier.
-view-if: rpc_party_leader == "Joos"
-subtitle: Wirth is on the left wing of the RPC Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; rpc_relation += 6; lpc_relation += 3; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; premier = "Wirth"; premier_party = "RPC"; flp_in_government = 1; leverage += 5
+@pps_premier_wirth
+title: Let Joseph Wirth of the PPS Party be premier.
+view-if: pps_party_leader == "Joos"
+subtitle: Wirth is on the left wing of the PPS Party. This may give us a better position in negotiating for other cabinet positions.
+on-arrival: left_dissent += 2; pps_relation += 6; lps_relation += 3; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; premier = "Wirth"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 
@@ -1070,7 +1070,7 @@ Are we sure about not participating in government? This will cause significant i
 
 - @douglas
 - @woodsworth
-- @rpc_premier
+- @pps_premier
 - @no_govt_goals: Yes, we're sure.
 
 @no_govt_goals
@@ -1103,7 +1103,7 @@ go-to: right_coalition_2
 @new_elections_flp
 on-arrival: next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year = year + 1 if next_parl_election_month > 12; next_parl_election_month = next_parl_election_month - 12 if next_parl_election_month > 12; new_middle_flp -= 5; old_middle_flp -= 5; workers_flp -= 3; catholics_flp -= 3; in_election = 1
 
-Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_parl_election_month : month +] [+ next_parl_election_year +]. The previous premier has resigned, and has been replaced by Heinrich Brüning, also of the RPC Party, ruling as part of a monarchial cabinet. 
+Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_parl_election_month : month +] [+ next_parl_election_year +]. The previous premier has resigned, and has been replaced by Heinrich Brüning, also of the PPS Party, ruling as part of a monarchial cabinet. 
 
 We are seen as responsible for the failure to form a government, and many of our middle-class and even some working-class supporters have deserted the party.
 
@@ -1255,49 +1255,49 @@ This coalition arrangement is tolerable to all.
 @drop_labour
 title: Drop the Labour Ministry.
 view-if: labour_minister_party = "FLP"
-on-arrival: labour_minister_party = "RPC"; labour_minister = "Stegerwald"; leverage += 5;
+on-arrival: labour_minister_party = "PPS"; labour_minister = "Stegerwald"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_interior
 title: Drop the Interior Ministry.
 view-if: interior_minister_party = "FLP"
-on-arrival: interior_minister_party = "RPC"; interior_minister = "Wirth"; leverage += 5;
+on-arrival: interior_minister_party = "PPS"; interior_minister = "Wirth"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_finance
 title: Drop the Finance Ministry.
 view-if: finance_minister_party = "FLP"
-on-arrival: finance_minister_party = "CPC"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "RPC" if in_weimar_coalition or in_popular_front; finance_minister = "Köhler" if in_weimar_coalition or in_popular_front
+on-arrival: finance_minister_party = "CPS"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "PPS" if in_weimar_coalition or in_popular_front; finance_minister = "Köhler" if in_weimar_coalition or in_popular_front
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
 view-if: economic_minister_party = "FLP"
-on-arrival: economic_minister_party = "CPC"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = lpc_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
+on-arrival: economic_minister_party = "CPS"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = lps_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_justice
 title: Drop the Justice Ministry.
 view-if: justice_minister_party = "FLP"
-on-arrival: justice_minister_party = lpc_name; justice_minister = "Koch-Weser"; leverage += 10;
+on-arrival: justice_minister_party = lps_name; justice_minister = "Koch-Weser"; leverage += 10;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_foreign
 title: Drop the Foreign Ministry.
 view-if: foreign_minister_party = "FLP"
-on-arrival: foreign_minister_party = "CPC"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "RPC" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
+on-arrival: foreign_minister_party = "CPS"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "PPS" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = "FLP"
-on-arrival: agriculture_minister_party = lpc_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "RPC" if in_weimar_coalition; agriculture_minister = "Hermes" if in_weimar_coalition
+on-arrival: agriculture_minister_party = lps_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "PPS" if in_weimar_coalition; agriculture_minister = "Hermes" if in_weimar_coalition
 tags: drop_mins_1928
 go-to: ministries
 

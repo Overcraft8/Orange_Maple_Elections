@@ -9,7 +9,7 @@ card-image: img/woodsworth.jpg
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Saskatchewan, is governed by our party, in a coalition with the RPC and Democratic parties. It is the most stable and democratic state government in Saskatchewan, led by the able J. S. Woodsworth.
+Prussia, by far the largest and most important state in Saskatchewan, is governed by our party, in a coalition with the PPS and Democratic parties. It is the most stable and democratic state government in Saskatchewan, led by the able J. S. Woodsworth.
 
 We can enact policies in Prussia.
 
@@ -49,7 +49,7 @@ The bureaucracy is deeply reactionary, and many abuse their power to favor the p
 
 @ban_sa
 view-if: scp_urgency >= 3 and sa_banned == 0
-on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned = 1; cpc_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6;
+on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned = 1; cps_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6;
 
 As it turns out, the SCPs SA has many allies in the police and bureaucracy. Our relationship with the police weakens, and the SA can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.7 : Nevertheless, the SA is substantially weakened by our ban. ?] 
 
@@ -60,7 +60,7 @@ on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05
 The SA is no longer banned. They immediately go on a recruiting spree.
 
 @ban_sh
-on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; cpc_relation -= 5; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V"; sh_ban_timer = 6;
+on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; cps_relation -= 5; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V"; sh_ban_timer = 6;
 view-if: sh_banned == 0
 
 [? if monarch == "George V": Banning the Stahlhelm weakens our relationship with Monarch George V, as well as the political right and the police. ?][? if monarch != "George V": Banning the Stahlhelm weakens our relationship with the political right and the police. ?] [? if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V" : It also weakens our coalition due to the influence of George V on the right wing of our coalition. ?] In addition, the Stahlhelm still operates out of public sight. 
@@ -74,7 +74,7 @@ The Stahlhelm is no longer banned.
 
 @ban_wul
 view-if: communist_coalition < 3 and wul_banned = 0
-on-arrival: cp_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; rpc_relation += 5; cpc_relation += 5; prussian_police_loyalty += 0.1
+on-arrival: cp_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; prussian_police_loyalty += 0.1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
 
@@ -86,12 +86,12 @@ The Communist WUL is no longer banned.
 
 @negotiate_concordat
 view-if: prussian_concordat_progress < 1
-on-arrival: prussian_concordat_progress += 1; rpc_relation += 2*(1-dissent);
+on-arrival: prussian_concordat_progress += 1; pps_relation += 2*(1-dissent);
 
 We are making progress towards negotiating a concordat between Prussia and the Catholic church.
 
 @sign_concordat
 view-if: prussian_concordat_progress >= 1 and prussian_concordat = 0
-on-arrival: prussian_concordat = 1; rpc_relation += 5; catholics_flp += 3*(1-dissent)
+on-arrival: prussian_concordat = 1; pps_relation += 5; catholics_flp += 3*(1-dissent)
 
 We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Saskatchewan.

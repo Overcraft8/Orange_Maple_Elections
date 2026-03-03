@@ -7,7 +7,7 @@ const tooltipList = [{
     explanationText: "The Communist Party"
 },
 {
-    searchString: "LPC", 
+    searchString: "LPS", 
     explanationText: "The Liberal Party"
 },
 {
@@ -15,7 +15,7 @@ const tooltipList = [{
     explanationText: "The Reconstruction Party"
 },
 {
-    searchString: "CPC", 
+    searchString: "CPS", 
     explanationText: "The Conservative Party"
 },
 {
@@ -42,7 +42,7 @@ const colourList = [{
         style: "color: #8B0000; font-weight: bold;"
     },
     {
-        word: "LPC", 
+        word: "LPS", 
         style: "color: #BE0028; font-weight: bold;"
     },
     {
@@ -50,7 +50,7 @@ const colourList = [{
         style: "color: #E7DB73; font-weight: bold;"
     },
     {
-        word: "CPC", 
+        word: "CPS", 
         style: "color: #0055A5; font-weight: bold;"
     },
     {

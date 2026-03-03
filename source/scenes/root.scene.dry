@@ -457,10 +457,13 @@ Q.flp_toleration = 0;
 
 // is the current government a monarchial minority government?
 Q.minority_government = 0;
+Q.ruling_government = "Co-operative Government";
 
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
+
+
 
 
 
@@ -715,7 +718,7 @@ Q.williams_advisor = 0; // George Hara Williams
 // Reformist advisors
 Q.brockelbank_advisor = 0; // John Brockelbank
 Q.woodsworth_advisor = 0; // JS_Woodsworth
-Q.juchaczpps_advisor = 0; // Louise Lucas
+Q.lucas_advisor = 0; // Louise Lucas
 Q.wright_advisor = 0; // Percy Wright
 
 // Labour advisors
@@ -785,7 +788,7 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1932
 
-It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Anderson has resorted to a policy of retrenchment. The government had previously attempted relief with deficit financing but this effort has been halted by business interests. As a result, Anderson's Co-operative government has raised taxes on corporations but also levied taxes on gross revenue and oil storage tanks. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
+It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Anderson has resorted to a policy of retrenchment. The government had previously attempted relief with deficit financing but this effort has been halted by business interests. As a result, Anderson's Co-operative government has raised taxes on corporations but also levied taxes on gross revenue and oil storage tanks. Civil Service pay has fallen by 9-14%, loans to farmers have all but halted, and the Highways Budget provides for no constructio. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
 
-The Farmer-Labour Group (FLP) is the only party offering a real alternative to the old order. However, we are a young and inexperienced party, and we face opposition not only from the right-wing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLP's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
+The Farmer-Labour Group (FLP) is the only party offering a real alternative to the old capitalist order. However, we are a young and inexperienced party, and we face opposition not only from opposing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLP's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
 

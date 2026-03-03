@@ -29,6 +29,10 @@ const tooltipList = [{
 {
     searchString: "ILP",
     explanationText: "The Independent Labour Party.\n They have merged into the FLP. "
+},
+{
+    searchString: "Co-operative Government", 
+    explanationText: "A coalition of Conservatives, Progressives, and Independents"
 }
 ];
 
@@ -76,6 +80,10 @@ const colourList = [{
     {
         word: "Reformist", 
         style: "color: #d26e28; font-weight: bold;"
+    },
+    {
+        word: "Co-operative Government", 
+        style: "color: #288ed2; font-weight: bold;"
     }
 ];
 

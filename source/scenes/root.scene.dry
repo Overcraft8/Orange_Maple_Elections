@@ -341,11 +341,11 @@ Q.catholics_other = 6;
 // They did not have a CDU/CSU-style relationship.
 Q.flp_r = 0;
 Q.cp_r = 0;
-Q.pps_r = 1;
-Q.lps_r = 42;
-Q.cps_r = 53;
+Q.pps_r =  8;
+Q.lps_r = 44;
+Q.cps_r = 38;
 Q.scp_r = 0;
-Q.other_r = 4;
+Q.other_r = 10;
 
 // diff from prev
 Q.old_flp_r = 26;

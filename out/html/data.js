@@ -12,7 +12,7 @@ const tooltipList = [{
 },
 {
     searchString: "PPS", 
-    explanationText: "The Reconstruction Party"
+    explanationText: "The Progressive Party"
 },
 {
     searchString: "CPS", 

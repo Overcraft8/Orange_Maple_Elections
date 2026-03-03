@@ -5,7 +5,7 @@ tags: event
 view-if: year = 1932 and month = 2
 max-visits: 1
 
-<div><img src="img/CCF_Convention.jpg" style="width: 30%;display: block;margin: auto;margin-bottom: 5px;"></div>
+<div><img src="img/CCF_Convention.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
 
 = Selection of our President
 

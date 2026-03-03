@@ -1,4 +1,4 @@
-title: UFC(SS)
+title: UFC (SS)
 new-page: true
 is-card: true
 tags: party_affairs
@@ -8,16 +8,16 @@ on-arrival: month_actions += 1; ufc_timer += 6; ufc_militarization_cost = 2 if u
 max-visits: 6
 #subtitle: Paramilitary organizing in defense of the republic.
 
-= UFC(SS)
+= UFC (SS)
 
-The *UFC(SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLP, PPS, and [+ lps_name +], but by far the largest component is with the FLP.
+The *UFC (SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLP, PPS, and [+ lps_name +], but by far the largest component is with the FLP.
 
-[? if workers_flp < 46 or workers_flp < workers_scp or workers_flp < workers_cp : The UFC(SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_flp < 46 or workers_flp < workers_scp or workers_flp < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
 
-- @militant: Fund more military-style training and equipment for the UFC(SS).
-- @militant_2: Use our existing resources to support more training for the UFC(SS).
-- @same: Keep the UFC(SS) as it is.
-- @cut_rb: Cut funding for the UFC(SS).
+- @militant: Fund more military-style training and equipment for the UFC (SS).
+- @militant_2: Use our existing resources to support more training for the UFC (SS).
+- @same: Keep the UFC (SS) as it is.
+- @cut_rb: Cut funding for the UFC (SS).
 - @women_rb
 - @easy_discard
 - @cancel_advisor_action
@@ -30,21 +30,21 @@ unavailable-subtitle: Not enough resources ([+ ufc_militarization_cost +] needed
 subtitle: -[+ ufc_militarization_cost +] resources
 on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; flp_militancy += 0.05; workers_flp += 2*(1-dissent); unemployed_flp += 2*(1-dissent); pps_relation -= 5 if historical_mode 
 
-Some in our party decry the increasing militarization of the UFC(SS). They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
+Some in our party decry the increasing militarization of the UFC (SS). They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
 
-[? if historical_mode : The PPS Party decries the militarization of the UFC(SS), and its members are leaving the republican organization. ?]
+[? if historical_mode : The PPS Party decries the militarization of the UFC (SS), and its members are leaving the republican organization. ?]
 
 
 @militant_2
 view-if: funded_ufc >= 1
 on-arrival: ufc_militancy += 0.02; funded_ufc -= 1
 
-As we have already funded resources towards the UFC(SS), we can invest in building up their militancy.
+As we have already funded resources towards the UFC (SS), we can invest in building up their militancy.
 
 
 @same
 
-The UFC(SS) is already serving the purpose it needs to serve. There is no reason to change what already works.
+The UFC (SS) is already serving the purpose it needs to serve. There is no reason to change what already works.
 
 - @return: Continue...
 
@@ -53,11 +53,11 @@ The UFC(SS) is already serving the purpose it needs to serve. There is no reason
 subtitle: +1 resources
 on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; left_strength -= 2; left_dissent -= 2; flp_militancy -= 0.05; workers_cp += 2; unemployed_cp += 2
 
-Cutting resources to the UFC(SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
+Cutting resources to the UFC (SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
 
 
 @women_rb
-title: Allow women to join the UFC(SS).
+title: Allow women to join the UFC (SS).
 subtitle: -1 resources - This might cause a backlash from existing members.
 choose-if: resources > 0
 view-if: womens_rights >= 4 and jamieson_advisor == 1 and iron_front_formed == 1
@@ -66,7 +66,7 @@ go-to: homosexual if trans_rights or repealed_175 or reformed_183
 max-visits: 1
 achievement: women_ufc
 
-The suggestion to allow women into the UFC(SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
+The suggestion to allow women into the UFC (SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
 
 After allowing women to join, the number of comrades who leave is more than balanced out by the number of radicalized women and others who join. However, many of our departed members were veterans, and many of the new members have no experience with military-style training.
 

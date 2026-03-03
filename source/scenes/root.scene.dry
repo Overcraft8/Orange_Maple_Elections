@@ -194,7 +194,7 @@ Q.city_government = "FLP";
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
-// UFC(SS), stahlhelm, FUL, Workers Unity League
+// UFC (SS), stahlhelm, FUL, Workers Unity League
 Q.ufc_strength = 2000;
 Q.ufc_militancy = 0.30;
 Q.women_in_rb = 0;

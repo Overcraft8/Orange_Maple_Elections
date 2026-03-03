@@ -114,9 +114,9 @@ if (Q.ful_strength) {
 
 = Organizations
 
-{!<span class="tooltip-text" title="The UFC(SS)  is a popular organization for defending democracy, mostly affiliated with the FLP.">UFC(SS)</span>!} Strength: [+ ufc_strength_2 +] thousand
+{!<span class="tooltip-text" title="The UFC (SS)  is a popular organization for defending democracy, mostly affiliated with the FLP.">UFC (SS)</span>!} Strength: [+ ufc_strength_2 +] thousand
 
-UFC(SS) Militarization: [+ ufc_militancy : militancy +]
+UFC (SS) Militarization: [+ ufc_militancy : militancy +]
 
 {!<span class="tooltip-text" title="The WUL (Workers Unity League) is a communist group associated with the CP.">WUL</span>!} Strength: [+ wul_strength_2 +] thousand
 

@@ -62,7 +62,7 @@ const colourList = [{
         style: "color: #50E23D; font-weight: bold;"
     },
     {
-        word: "UFC(SS)",
+        word: "UFC",
         style: "color: #a7d11c; font-weight: bold;"
     },
     {

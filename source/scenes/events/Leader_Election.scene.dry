@@ -26,7 +26,7 @@ face-image: img/portraits/WilliamsHaraGeorge.jpg
 Williams will lead us to victory!
 
 @Coldwell
-on-arrival: flp_workers += 4; labor_strength += 4; flp_president = "Major James Coldwell"; flp_president_img = "ColdwellMajorJames.jpg"
+on-arrival: flp_workers += 4; labour_strength += 4; flp_president = "Major James Coldwell"; flp_president_img = "ColdwellMajorJames.jpg"
 face-image: img/portraits/ColdwellMajorJames.jpg
 
 Coldwell will lead us to victory!

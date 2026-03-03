@@ -41,7 +41,7 @@ unavailable-subtitle: This can only happen with a budget surplus.
 go-to: urge_success if cpc_relation >= 30 and rpc_relation >= 40; urge_failure if cpc_relation < 30 or rpc_relation < 40
 
 @urge_success
-on-arrival: welfare += 1; budget -= 1; workers_flp += 5*(1-dissent); unemployed_flp += 5*(1-dissent); rpc_relation -= 3; cpc_relation -= 3; reformist_dissent -= 5; agrarian_dissent -= 5; labor_dissent -= 5;
+on-arrival: welfare += 1; budget -= 1; workers_flp += 5*(1-dissent); unemployed_flp += 5*(1-dissent); rpc_relation -= 3; cpc_relation -= 3; reformist_dissent -= 5; agrarian_dissent -= 5; labour_dissent -= 5;
 
 We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
 

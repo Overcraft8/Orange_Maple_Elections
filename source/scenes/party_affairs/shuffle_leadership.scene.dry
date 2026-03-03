@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: agrarian_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
+tags: agrarian_advisor, left_advisor, reformist_advisor, labour_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -46,19 +46,19 @@ Nicholson has been removed as an advisor. The Agrarian faction disapproves.
 title: Remove Coldwell
 view-if: coldwell_advisor = 1
 tags: remove_advisor
-on-arrival: coldwell_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: coldwell_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Coldwell has been removed as an advisor. The Labor faction disapproves.
+Coldwell has been removed as an advisor. The Labour faction disapproves.
 
 @remove_douglas
 title: Remove Douglas
 view-if: douglas_advisor = 1
 tags: remove_advisor
-on-arrival: douglas_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: douglas_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Douglas has been removed as an advisor. The Labor faction disapproves.
+Douglas has been removed as an advisor. The Labour faction disapproves.
 
 
 @remove_williams
@@ -110,16 +110,16 @@ go-to: rm_main
 Eliason has been removed as an advisor. The Agrarian faction disapproves.
 
 
-# labor
+# labour
 
 @remove_heaps
 title: Remove Heaps
 view-if: heaps_advisor = 1
 tags: remove_advisor
-on-arrival: heaps_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: heaps_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Heaps has been removed as an advisor. The Labor faction disapproves.
+Heaps has been removed as an advisor. The Labour faction disapproves.
 
 @remove_phelps
 title: Remove Phelps
@@ -134,10 +134,10 @@ Phelps has been removed as an advisor. The Agrarian faction disapproves.
 title: Remove Carlyle
 view-if: carlyle_advisor = 1
 tags: remove_advisor
-on-arrival: carlyle_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: carlyle_advisor = 0; labour_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Carlyle has been removed as an advisor. The Labor faction disapproves.
+Carlyle has been removed as an advisor. The Labour faction disapproves.
 
 
 @remove_forsey
@@ -155,10 +155,10 @@ Forsey has been removed as an advisor.
 title: Remove Fines
 view-if: fines_advisor = 1
 tags: remove_advisor
-on-arrival: fines_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: fines_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Fines has been removed as an advisor. The Labor faction disapproves.
+Fines has been removed as an advisor. The Labour faction disapproves.
 
 @remove_jamieson
 title: Remove Jamieson
@@ -274,14 +274,14 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: agrarian_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
+tags: agrarian_advisor, left_advisor, reformist_advisor, labour_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
 
 - @agrarian: Add Agrarians
 - @left: Add Leftists
 - @reformist: Add Reformists
-- @labor: Add Labor
+- @labour: Add Labour
 - @neorev: Add Neorevisionists
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
@@ -302,10 +302,10 @@ view-if: n_advisors < 3
 
 - #left_advisor
 
-@labor
+@labour
 view-if: n_advisors < 3
 
-- #labor_advisor
+- #labour_advisor
 
 @neorev
 view-if: neorevisionism > 0 and n_advisors < 3
@@ -459,7 +459,7 @@ Dorise Nielsen is now an advisor.
 
 
 
-#                                 labor
+#                                 labour
 
 @add_coldwell
 title: Major James Coldwell
@@ -467,7 +467,7 @@ subtitle: Major James Coldwell is a former school teacher and long-time party or
 is-card: true
 card-image: img/portraits/ColdwellRudolf.jpg
 tags: agrarian_advisor
-view-if: coldwell_advisor = 0 and n_advisors < 3 and labor_resign = 0
+view-if: coldwell_advisor = 0 and n_advisors < 3 and labour_resign = 0
 on-arrival: coldwell_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
@@ -478,10 +478,10 @@ title: Clarence Fines
 subtitle: Clarence Fines is a protege of Coldwell. He is a former ILP member and effective organizer. He is among the right wing of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP ?]
 is-card: true
 card-image: img/portraits/FinesClarence.jpg
-view-if: fines_advisor = 0 and fines_dead = 0 and n_advisors < 3 and labor_split = 0
-on-arrival: fines_advisor = 1; n_advisors += 1; labor_strength += 5
+view-if: fines_advisor = 0 and fines_dead = 0 and n_advisors < 3 and labour_split = 0
+on-arrival: fines_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
-tags: labor_advisor
+tags: labour_advisor
 
 Clarence Fines is now an advisor.
 
@@ -490,9 +490,9 @@ title: Albert Heaps
 subtitle: Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the FLP. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/HeapsAA.jpg
-tags: labor_advisor
+tags: labour_advisor
 view-if: heaps_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: heaps_advisor = 1; n_advisors += 1; labor_strength += 5
+on-arrival: heaps_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
 Albert Heaps is now an advisor.
@@ -502,8 +502,8 @@ title: Tommy Douglas
 subtitle: Tommy Douglas is a minister hailing from Saskatchewan. He is known for his skill in oratory. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
 is-card: true
 card-image: img/portraits/DouglasTommy.jpg
-tags: labor_advisor
-view-if: douglas_advisor = 0 and douglas_dead = 0 and n_advisors < 3 and labor_resign = 0
+tags: labour_advisor
+view-if: douglas_advisor = 0 and douglas_dead = 0 and n_advisors < 3 and labour_resign = 0
 on-arrival: douglas_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
@@ -514,21 +514,21 @@ title: Joe Phelps
 subtitle: Joe Phelps is a radical agrarian and advocate for public ownership of natural resources. (Joined 1938) {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/PhelpsJoe.jpg
-tags: labor_advisor
+tags: labour_advisor
 view-if: phelps_advisor = 0 and n_advisors < 3
-on-arrival: phelps_advisor = 1; n_advisors += 1; labor_strength += 5
+on-arrival: phelps_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
 Joe Phelps is now an advisor.
 
 @add_carlyle
 title: Carlyle King
-subtitle: Carlyle King is a professor at Usask and a principled pacifist.  {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
+subtitle: Carlyle King is a professor at Usask and a principled pacifist.  {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labour Rights ?]
 is-card: true
 card-image: img/portraits/KingCarlyle.jpg
-tags: labor_advisor
+tags: labour_advisor
 view-if: carlyle_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: carlyle_advisor = 1; n_advisors += 1; labor_strength += 3
+on-arrival: carlyle_advisor = 1; n_advisors += 1; labour_strength += 3
 go-to: advisor_menu
 
 Carlyle King is now an advisor.

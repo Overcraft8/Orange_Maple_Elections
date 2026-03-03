@@ -65,9 +65,9 @@ is-special: true
 Strength: [+ agrarian_strength : strength +] 
 Dissent: [+ agrarian_dissent : dissent +]
 
-<span class="tooltip-text" title="A faction of trade unionists and labor activists, representing the urban workers." style="color: #0F52BA;">**Labor**</span> 
-Strength: [+ labor_strength : strength +] 
-Dissent: [+ labor_dissent : dissent +]
+<span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers." style="color: #0F52BA;">**Labour**</span> 
+Strength: [+ labour_strength : strength +] 
+Dissent: [+ labour_dissent : dissent +]
 
 <span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Left**</span> 
 Strength: [+ left_strength : strength +] 

@@ -1,6 +1,6 @@
 title: Carlyle King
 is-pinned-card: true
-tags: advisor, labor
+tags: advisor, labour
 card-image: img/portraits/KingCarlyle.jpg
 view-if: carlyle_advisor = 1
 new-page: true 
@@ -9,17 +9,17 @@ new-page: true
 
 Carlyle King is a professor at Usask and a principled pacifist. 
 
-- @labor_rights_
+- @labour_rights_
 - @union_unity
 - @root: Return to main
 
-@labor_rights_
-title: Labor Rights
-subtitle: As Labor Minister, Carlyle can help set regulations for working conditions.
-choose-if: advisor_action_timer <= 0 and flp_in_government and labor_minister_party = "FLP"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if labor_minister_party != "FLP" : The FLP does not control the Labor Ministry. ?]
-on-arrival: advisor_action_timer = 6; labor_rights_timer -= 10; last_advisor_action = 1
-go-to: labor_rights
+@labour_rights_
+title: Labour Rights
+subtitle: As Labour Minister, Carlyle can help set regulations for working conditions.
+choose-if: advisor_action_timer <= 0 and flp_in_government and labour_minister_party = "FLP"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if labour_minister_party != "FLP" : The FLP does not control the Labour Ministry. ?]
+on-arrival: advisor_action_timer = 6; labour_rights_timer -= 10; last_advisor_action = 1
+go-to: labour_rights
 
 
 @union_unity
@@ -27,7 +27,7 @@ title: Union-party coordination
 subtitle: Reduce dissent among the unions.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; labor_dissent -= 5; labor_strength += 5
+on-arrival: advisor_action_timer = 6; labour_dissent -= 5; labour_strength += 5
 
-We have reduced tensions with the Labor faction, and increased its strength in the party.
+We have reduced tensions with the Labour faction, and increased its strength in the party.
 

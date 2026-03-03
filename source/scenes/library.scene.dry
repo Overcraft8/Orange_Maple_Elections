@@ -94,7 +94,7 @@ go-to: menu
 
 Current cabinet:
 
-Labor: [+ labor_minister_party +]
+Labour: [+ labour_minister_party +]
 
 Interior: [+ interior_minister_party +]
 
@@ -289,13 +289,13 @@ Strength: [+ agrarian_strength : strength +]
 
 Dissent: [+ agrarian_dissent : dissent +]
 
-**Labor**
+**Labour**
 
 Many FLP members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
 
-Strength: [+ labor_strength : strength +]
+Strength: [+ labour_strength : strength +]
 
-Dissent: [+ labor_dissent : dissent +]
+Dissent: [+ labour_dissent : dissent +]
 
 **Reformists**
 

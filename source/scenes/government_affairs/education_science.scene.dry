@@ -69,7 +69,7 @@ subtitle: -1 budget
 choose-if: budget >= 1
 on-arrival: budget -= 1; science += 1; applied_research += 1; economic_growth += 0.5 if economic_growth <= 8 and applied_research <= 1; economic_growth += 3 if applied_research > 1; new_middle_flp += 5*(1-dissent); workers_flp += 3*(1-dissent); lpc_relation += 5*(1-dissent); unemployed -= 0.5 if unemployed >= 4; capital_strike_progress -= 1 if capital_strike_progress > 1; science_funding += 1
 
-Our research program focuses on collaborating with industry to develop useful technologies, creating new research institutions for applied science. This collaboration is focused on economic growth and development.
+Our research program focuses on collabourating with industry to develop useful technologies, creating new research institutions for applied science. This collabouration is focused on economic growth and development.
 
 
 @medical
@@ -166,7 +166,7 @@ What should be the major focus of our new curriculum?
 
 @dem_major
 title: Democratic curriculum
-subtitle: Critical thinking, democratic citizenship, and collaboration
+subtitle: Critical thinking, democratic citizenship, and collabouration
 on-arrival: curriculum_timer = 50; major_curriculum = "democratic"; pro_republic += 5*(1-dissent); workers_flp += 3*(1-dissent); democratization += 1; rpc_relation -= 3; cpc_relation -= 5; coalition_dissent += 1 if in_grand_coalition; pacifism += 1; education_science += 0.3
 go-to: curriculum_minor
 
@@ -218,7 +218,7 @@ And what should be a secondary focus of the curriculum?
 
 @dem_minor
 title: Democratic curriculum
-subtitle: Critical thinking, democratic citizenship, and collaboration
+subtitle: Critical thinking, democratic citizenship, and collabouration
 view-if: major_curriculum != "democratic"
 on-arrival: minor_curriculum = "democratic"; pro_republic += 3*(1-dissent); workers_flp += 2*(1-dissent); democratization += 1; rpc_relation -= 2; cpc_relation -= 3;
 

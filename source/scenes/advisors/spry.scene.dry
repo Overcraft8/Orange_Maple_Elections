@@ -35,7 +35,7 @@ Which faction should we support?
 
 - @support_left: Left
 - @support_center: Agrarian
-- @support_labor: Labor
+- @support_labour: Labour
 - @support_reform: Reformists
 - @support_neorev: Neorevisionists
 
@@ -49,8 +49,8 @@ on-arrival: agrarian_dissent -= 8; agrarian_strength += 8
 
 Vorwärts prints editorials in support of agrarian positions.
 
-@support_labor
-on-arrival: labor_dissent -= 8; labor_strength += 8
+@support_labour
+on-arrival: labour_dissent -= 8; labour_strength += 8
 
 Vorwärts prints editorials in support of the policies of the trade unions.
 

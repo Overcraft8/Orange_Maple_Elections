@@ -132,7 +132,7 @@ Q.telephones_telegraphs_minister_party = 'RPC';
 Q.foreign_minister_party = 'CPC';
 Q.interior_minister_party = 'RPC';
 Q.justice_minister_party = 'I';
-Q.labor_minister_party = 'RPC';
+Q.labour_minister_party = 'RPC';
 Q.rcmp_minister_party = 'I';
 Q.economic_minister_party = Q.lpc_name;
 Q.finance_minister_party = 'CPC';
@@ -145,7 +145,7 @@ Q.welfare_goal = 0;
 Q.agriculture_goal = 0;
 Q.economy_goal = 0;
 Q.finance_goal = 0;
-Q.labor_goal = 0;
+Q.labour_goal = 0;
 Q.foreign_goal = 0;
 Q.interior_goal = 0;
 Q.rcmp_goal = 0;
@@ -154,7 +154,7 @@ Q.welfare_goal_completed = 0;
 Q.agriculture_goal_completed = 0;
 Q.economy_goal_completed = 0;
 Q.finance_goal_completed = 0;
-Q.labor_goal_completed = 0;
+Q.labour_goal_completed = 0;
 Q.foreign_goal_completed = 0;
 Q.interior_goal_completed = 0;
 Q.rcmp_goal_completed = 0;
@@ -368,7 +368,7 @@ achievement: volksfront
 Somehow, surprisingly, the coalition is successfully formed! We still need a premier; the only acceptable choice among the parties was George Hara Williams of the FLP, acceptable to the RPC and CP [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
 
 @popular_front_no_civil_war
-on-arrival: cp_goals_seen = 0; finance_minister_party = "RPC"; interior_minister_party = "RPC"; economic_minister_party = "RPC"; labor_minister_party = "RPC"; foreign_minister_party = "RPC"; agriculture_minister_party = "RPC"; rcmp_minister = "I"; leverage = flp_r + cp_r;
+on-arrival: cp_goals_seen = 0; finance_minister_party = "RPC"; interior_minister_party = "RPC"; economic_minister_party = "RPC"; labour_minister_party = "RPC"; foreign_minister_party = "RPC"; agriculture_minister_party = "RPC"; rcmp_minister = "I"; leverage = flp_r + cp_r;
 achievement: volksfront
 
 In response to the CP's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
@@ -481,7 +481,7 @@ Somehow, surprisingly, the left coalition is successfully formed, without appoin
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
-on-arrival: cp_goals_seen = 0; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labor_minister_party = "FLP"; rcmp_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP"; rcmp_loyalty -= 0.05
+on-arrival: cp_goals_seen = 0; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labour_minister_party = "FLP"; rcmp_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP"; rcmp_loyalty -= 0.05
 
 In response to the CP's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
@@ -515,7 +515,7 @@ However, the SCP and its leader Hugenberg is refusing to partake in a coalition 
 
 @right_coalition_sure
 subtitle: This will be extremely unpopular within our party.
-on-arrival: pro_republic -= 5; agrarian_dissent += 15; left_dissent += 10; labor_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; rpc_relation -= 5; lpc_relation -= 5; cpc_relation -= 5
+on-arrival: pro_republic -= 5; agrarian_dissent += 15; left_dissent += 10; labour_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; rpc_relation -= 5; lpc_relation -= 5; cpc_relation -= 5
 go-to: right_coalition_2
 
 
@@ -523,7 +523,7 @@ go-to: right_coalition_2
 unavailable-subtitle: The SCP is not interested in a coalition with the RPC.
 view-if: right_coalition >= 50
 choose-if: year < 1929
-on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "SCP"; justice_minister_party = "SCP"; labor_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "CPC"; finance_minister_party = "RPC"; agriculture_minister_party = "SCP"; in_right_coalition = 1;
+on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "SCP"; justice_minister_party = "SCP"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "CPC"; finance_minister_party = "RPC"; agriculture_minister_party = "SCP"; in_right_coalition = 1;
 
 Even though the SCP is very reluctant to participate in such a coalition, they still accede to Monarch George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
 
@@ -555,7 +555,7 @@ go-to: no_majority_bruning_toleration if (no_majority_elections <= 3 and anti_de
 
 
 @georgev_appoints_papen
-on-arrival: premier = "Papen"; premier_party = "I"; next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; sa_banned = 0; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; rcmp_minister = "I";
+on-arrival: premier = "Papen"; premier_party = "I"; next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; sa_banned = 0; pro_republic -= 8; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labour_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; rcmp_minister = "I";
 
 There is no path to a majority government. Monarch George V is tired of the chaos, and appoints Franz von Papen as premier instead of Brüning. Papen is a indenpendent formerly from the RPC Party, and is significantly to the right of the majority of the RPC Party.
 
@@ -653,7 +653,7 @@ Our rejection of the unity government has hurt our relations with the bourgeois 
 view-if: rpc_party_leader = "Joos"
 choose-if: monarch == "J. S. Woodsworth"
 unavailable-subtitle: Monarch George V will not support a minority government led by Joseph Wirth.
-on-arrival: premier = "Wirth"; premier_party = "RPC"; flp_in_government = 0; flp_toleration = 1; rpc_relation += 5; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "I"; labor_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "CPC"; agriculture_minister_party = "RPC"; pro_republic -= 2;
+on-arrival: premier = "Wirth"; premier_party = "RPC"; flp_in_government = 0; flp_toleration = 1; rpc_relation += 5; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "I"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "CPC"; agriculture_minister_party = "RPC"; pro_republic -= 2;
 
 We have supported a minority government led by the RPC Party under Premier Joseph Wirth.
 
@@ -668,7 +668,7 @@ New elections have been set for [+ next_parl_election_month : month +] [+ next_p
 
 
 @no_majority_papen_2
-on-arrival: premier = "Schleicher"; pro_republic -= 10; next_election_time = time+5; next_parl_election_month = month + 5; next_parl_election_year = year; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; workers_flp -= 8 if pro_republic < 45; workers_flp *= 0.85 if pro_republic < 40; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; rcmp_minister = "I";
+on-arrival: premier = "Schleicher"; pro_republic -= 10; next_election_time = time+5; next_parl_election_month = month + 5; next_parl_election_year = year; next_parl_election_year += 1 if next_parl_election_month > 12; next_parl_election_month -= 12 if next_parl_election_month > 12; workers_flp -= 8 if pro_republic < 45; workers_flp *= 0.85 if pro_republic < 40; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labour_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; rcmp_minister = "I";
 
 There is no path to a majority government. George V is displeased with Papen, and calls on him to resign. Now, former army general Kurt von Schleicher has been appointed premier, again as part of a monarchial government.
 
@@ -684,7 +684,7 @@ New elections have been set for [+ next_parl_election_month : month +] [+ next_p
 title: FLP majority alone
 subtitle: FLP: [+ flp_r +]%
 view-if: flp_r >= 50
-on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labor_minister_party = "FLP"; labor_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 achievement: majority_party
 
 Finally, the FLP can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
@@ -793,7 +793,7 @@ We have won the vote of no confidence, and are currently ruling under an FLP min
 title: We can form a Weimar Coalition.
 subtitle: FLP + RPC + [+ lpc_name +] [? if sapd_formed and cp_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if rpc_party_leader == "Joos"; in_weimar_coalition = 1; flp_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "RPC"; interior_minister_party = "RPC"; justice_minister_party = lpc_name; labor_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; rcmp_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if rpc_party_leader == "Joos"; in_weimar_coalition = 1; flp_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "RPC"; interior_minister_party = "RPC"; justice_minister_party = lpc_name; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labour_minister = "Stegerwald"; rcmp_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
 
 We have enough votes to form a "Weimar Coalition" government consisting of the FLP, RPC and Democratic ([+ lpc_name +]) parties! This has been our preferred governing coalition since 1919.
@@ -847,13 +847,13 @@ Brüning is not opposed to a coalition with us. Alternatively, we could enter a 
 
 @join_bruning
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50
-on-arrival: flp_in_government = 1; flp_toleration = 0; in_grand_coalition = 1; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "RPC"; labor_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "RPC"; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; leverage = 25 if leverage >= 25;
+on-arrival: flp_in_government = 1; flp_toleration = 0; in_grand_coalition = 1; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "RPC"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "RPC"; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; leverage = 25 if leverage >= 25;
 go-to: ministries
 
 Heinrich Brüning welcomes us into his new cabinet. Now, we have our pick of ministries.
 
 @bruning_oppo
-on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "RPC"; labor_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "RPC"; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; grand_coalition_failed = 1
+on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "RPC"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = "RPC"; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; grand_coalition_failed = 1
 
 By refusing to join the grand coalition or tolerating it, we essentially throw the balance of government to the right wing. [? if right_coalition >= 50 : There are enough votes to form a right-wing coalition that includes the SCP. However, the SCP leader, Hugenberg, is opposed to a coalition with the "November criminals" of the RPC Party. And of course, the SCP is not interested in coalition government. This means that there will not be enough votes to form a majority coalition. ?][? if right_coalition < 50 : There are not enough votes to form a right-wing coalition that includes the SCP, and they are not interested in joining in a coalition with the "November criminals" of the RPC Party, anyhow. And of course, the SCP is not interested in coalition government. This means that there is no route to a majority coalition. ?]
 
@@ -930,7 +930,7 @@ The people's faith in democracy is shaken by this ordeal. Of course, the SCPs ar
 @toleration_bruning
 choose-if: neo_weimar_coalition >= 50
 unavailable-subtitle: The parties supporting Brüning do not have a majority.
-on-arrival: flp_in_government = 0; flp_toleration = 1; minority_government = 1; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "I"; labor_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "CPC"; agriculture_minister_party = "RPC"; pro_republic -= 4; new_middle_cpc -= 5; new_middle_lpc -= 5; old_middle_cpc -= 5; old_middle_lpc -= 5; old_middle_scp += 5; new_middle_scp += 5; rural_scp -= 5;
+on-arrival: flp_in_government = 0; flp_toleration = 1; minority_government = 1; premier = "Brüning"; premier_party = "RPC"; foreign_minister_party = "CPC"; interior_minister_party = "RPC"; justice_minister_party = "I"; labour_minister_party = "RPC"; rcmp_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "CPC"; agriculture_minister_party = "RPC"; pro_republic -= 4; new_middle_cpc -= 5; new_middle_lpc -= 5; old_middle_cpc -= 5; old_middle_lpc -= 5; old_middle_scp += 5; new_middle_scp += 5; rural_scp -= 5;
 
 We have decided to tolerate Brüning's government. This means that we will vote against no-confidence votes to make sure they fail, but also that we will not be directly participating as ministers in the government. Thus, we can prevent a new election and stop the far right from entering government.
 
@@ -959,7 +959,7 @@ Under the influence of Gustav Stresemann, the CPC agrees to allow us into the co
 
 @cpc_conservative
 
-The CPC asks us to adhere to their conservative economic policies (that is, extreme austerity and labor discipline) in exchange for us joining the coalition.
+The CPC asks us to adhere to their conservative economic policies (that is, extreme austerity and labour discipline) in exchange for us joining the coalition.
 
 - @beg_cpc_2: But they would not have a majority without the FLP! The SCP have no interest in participating in government.
 - @no_majority: There is no chance that we would agree.
@@ -1043,7 +1043,7 @@ We have promised to let the RPC have more influence in the government in respons
 @rpc_premier
 title: Let the RPC Party have their premier.
 subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; agrarian_dissent += 5; labor_dissent += 5; rpc_relation += 10; cpc_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; premier = "Brüning"; premier_party = "RPC"; flp_in_government = 1; leverage += 5
+on-arrival: left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; rpc_relation += 10; cpc_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; premier = "Brüning"; premier_party = "RPC"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
@@ -1064,7 +1064,7 @@ go-to: ministries
 @no_govt
 title: We do not form the government.
 subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
-on-arrival: reformist_dissent += 5; agrarian_dissent += 5; labor_dissent += 5; neorevisionist_dissent += 5
+on-arrival: reformist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; neorevisionist_dissent += 5
 
 Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by Monarch [+ monarch +].
 
@@ -1093,7 +1093,7 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: reformist_dissent += 25; agrarian_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "James Anderson"; flp_in_government = 0; grand_coalition_failed = 1
+on-arrival: reformist_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "James Anderson"; flp_in_government = 0; grand_coalition_failed = 1
 go-to: right_coalition_post_flp if right_coalition >= 50 and monarch != "J. S. Woodsworth" and year < 1929; new_elections_flp if (right_coalition < 50 or year >= 1929) and monarch != "J. S. Woodsworth"; woodsworths_dilemma if monarch == "J. S. Woodsworth"
 
 
@@ -1180,17 +1180,17 @@ go-to: ministries
 # Old Ministries
 
 
-@labor
-title: Labor Ministry
-subtitle: Taking the Labor Ministry is expected of us.
+@labour
+title: Labour Ministry
+subtitle: Taking the Labour Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: labor_minister_party != "FLP"
-on-arrival: leverage -= 5; labor_minister_party = "FLP"; labor_minister = "Carlyle"
+view-if: labour_minister_party != "FLP"
+on-arrival: leverage -= 5; labour_minister_party = "FLP"; labour_minister = "Carlyle"
 go-to: ministries
 
-Carlyle King of the FLP has been appointed labor minister.
+Carlyle King of the FLP has been appointed labour minister.
 
 @finance
 title: Finance Ministry
@@ -1252,10 +1252,10 @@ tags: mins_1928
 
 This coalition arrangement is tolerable to all.
 
-@drop_labor
-title: Drop the Labor Ministry.
-view-if: labor_minister_party = "FLP"
-on-arrival: labor_minister_party = "RPC"; labor_minister = "Stegerwald"; leverage += 5;
+@drop_labour
+title: Drop the Labour Ministry.
+view-if: labour_minister_party = "FLP"
+on-arrival: labour_minister_party = "RPC"; labour_minister = "Stegerwald"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 

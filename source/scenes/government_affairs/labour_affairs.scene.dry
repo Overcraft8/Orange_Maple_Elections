@@ -1,0 +1,45 @@
+title: Labour Affairs
+new-page: true
+is-card: true
+tags: govt_affairs, cabinet
+on-arrival: labour_affairs_timer = 6; month_actions += 1; labour_affairs_seen = 1
+view-if: flp_in_government = 1 and labour_minister_party = "FLP" and labour_affairs_timer = 0 and strike_term_seen = 0
+card-image: img/portraits/KingCarlyle.jpg
+#subtitle: Addressing labour unrest and strikes.
+
+= Labour Affairs
+
+The industrial Ruhr region is aflame with labour unrest. The employers have started a major lockout to force the workers to take more cuts to wages and benefits.  There is a need for the Labour Ministry to arbitrate in conflicts between employers and workers.
+
+- @support_labour: Support labour in their demands.
+- @support_employers: Support the employers in their demands.
+- @balance: Try to strike a compromise between the sides.
+- @easy_discard
+#- @cancel_advisor_action
+
+@support_labour
+subtitle: Popular among the workers, this will alienate the bourgeoisie.
+on-arrival: labour_strength += 5; labour_dissent -= 5; left_dissent -= 5; workers_flp += 6*(1-dissent); coalition_dissent += 1; cpc_relation -= 4; capital_strike_progress += 1 if cpc_relation <= 30; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; labour_goal_completed += 1; inflation += 0.1; pro_labour += 1; strike_term_seen += 1; economic_growth -= 0.1;
+
+Supporting labour is always popular in the FLP, although many of our coalition partners represent employers, and they are less enthused.
+
+@support_employers
+subtitle: Popular among the bourgeoisie, much less so among the workers.
+on-arrival: labour_dissent += 8; workers_flp -= 3; coalition_dissent -= 1 if coalition_dissent > 0; cpc_relation += 5; rpc_relation += 5; workers_cp += 3; cp_coalition_dissent += 1; cp_relation -= 8; capital_strike_progress -= 1 if capital_strike_progress > 1; capital_strike_progress -= 1 if capital_strike_progress > 8; pro_labour -= 1; strike_term_seen += 1
+
+The more radical workers despise our suppression of their strikes, recalling the days of Friedrich Ebert.
+
+@balance
+subtitle: Both sides need to share the pain in the current crisis.
+on-arrival: labour_dissent += 4; workers_flp -= 2; cp_coalition_dissent += 1; cp_relation -= 5; strike_term_seen += 1
+
+Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces.
+
+
+
+# options: support the workers in their demands, pushing back against the employers.
+# this is the approach favored by the unions. While they do not get everything they desire, an agreement favorable to the workers is reached. The employer associations and their bourgeois allies accuse us of overstepping our bounds.
+# try to make some compromise between the sides. Both sides need to share the pain in the current crisis.
+# whatever it takes, end the strikes and unrest as soon as possible.
+# this is not our business to intervene.
+# We are the party of labour, and it is not our business to intervene? There is incredulity in the ranks. The workers are less likely to trust us in the future.

@@ -46,14 +46,14 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'agrarian', 'labor', 'reformist', 'neorevisionist'];
+Q.factions = ['left', 'agrarian', 'labour', 'reformist', 'neorevisionist'];
 // should this be normalized to 100%?
 Q.left_strength = 5;
 Q.left_dissent = 20;
 Q.agrarian_strength = 55;
 Q.agrarian_dissent = 0;
-Q.labor_strength = 25;
-Q.labor_dissent = 5;
+Q.labour_strength = 25;
+Q.labour_dissent = 5;
 Q.reformist_strength = 15;
 Q.reformist_dissent = 5;
 Q.neorevisionist_strength = 0;
@@ -122,7 +122,7 @@ Q.flp_board_one_faction = "agrarian";
 Q.flp_board_three = "John Brockelbank";
 Q.flp_board_one_faction = "agrarian";
 Q.flp_board_four = "Clarence Fines";
-Q.flp_board_one_faction = "labor";
+Q.flp_board_one_faction = "labour";
 
 
 Q.cp_leader = "Tim Buck";
@@ -277,7 +277,6 @@ Q.new_middle_qol = 100;
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['flp', 'cp', 'rpc', 'lpc', 'cpc', 'scp', 'other'];
 
-Q.UFC_name = "UFC(SS)";
 
 
 
@@ -439,8 +438,8 @@ Q.interior_minister = 'von Keudell';
 Q.interior_minister_party = 'SCP';
 Q.justice_minister = 'Hergt';
 Q.justice_minister_party = 'SCP';
-Q.labor_minister = 'JS_Woodsworth';
-Q.labor_minister_party = 'RPC';
+Q.labour_minister = 'JS_Woodsworth';
+Q.labour_minister_party = 'RPC';
 Q.rcmp_minister = 'Groener';
 Q.rcmp_minister_party = 'I';
 Q.economic_minister = 'Curtius';
@@ -575,12 +574,12 @@ Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
             'party_disunity',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
-            'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
+            'foreign_policy', 'judiciary', 'labour_affairs', 'military_policy',
             'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
             'homosexual_rights', 'economic_policy', 'coalition_affairs',
             'war_guilt', 'womens_rights', 'economic_democracy',
             'dealing_with_toleration',
-            'constitutional_reform', 'labor_rights',
+            'constitutional_reform', 'labour_rights',
             'education_science', 'curriculum',
             // events
             'emergency_cuts', 'unemployment_insurance',
@@ -629,7 +628,7 @@ Q.economic_policy_timer = 0;
 Q.fiscal_policy_timer = 0;
 Q.foreign_policy_timer = 0;
 Q.judiciary_timer = 0;
-Q.labor_affairs_timer = 0;
+Q.labour_affairs_timer = 0;
 Q.military_policy_timer = 0;
 Q.police_timer = 0;
 Q.prussian_affairs_timer = 0;
@@ -672,7 +671,7 @@ Q.woodsworth_advisor = 0; // JS_Woodsworth
 Q.juchaczrpc_advisor = 0; // Louise Lucas
 Q.wright_advisor = 0; // Percy Wright
 
-// Labor advisors
+// Labour advisors
 Q.heaps_advisor = 0; // Albert Heaps
 Q.phelps_advisor = 0; // Joe Phelps
 Q.forsey_advisor = 0; // Eugene Forsey (post-1930)
@@ -709,7 +708,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 2500; cp_re
 go-to: 1932_main
 
 @1932_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; agrarian_dissent = 25; rpc_relation = 41; cp_relation = 16; cpc_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 1000; reformist_dissent = 25; left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; rpc_relation = 41; cp_relation = 16; cpc_relation = 31; budget = 3;
 go-to: 1932_main
 
 @1932_historical
@@ -722,7 +721,7 @@ Q.dues = 1;
 Q.ufc_strength = 2000;
 Q.reformist_dissent = 25;
 Q.left_dissent = 30;
-Q.labor_dissent = 25;
+Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;
 Q.rpc_relation = 41;
 Q.cp_relation = 16;

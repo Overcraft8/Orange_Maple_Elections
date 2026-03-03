@@ -14,7 +14,7 @@ According to the Constitution, women are equal to men, but this is not followed 
 
 For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if flp_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
 
-- @labor: Institute policies that help women in the workforce.
+- @labour: Institute policies that help women in the workforce.
 - @family: Reform marriage, divorce, and property law.
 - @welfare: Improve welfare for single mothers and children.
 - @liberalize: Attempt to liberalize abortion laws.
@@ -22,7 +22,7 @@ For better or for worse, the Socialists stand virtually alone in supporting incr
 - @easy_discard
 - @cancel_advisor_action
 
-@labor
+@labour
 subtitle: Paid maternal leave policies, equal pay policies, and so on.
 on-arrival: womens_work += 1; womens_rights += 1; workers_flp -= 4 if unemployed > 15; new_middle_flp += 4*(1-dissent); workers_flp += 4*(1 - dissent); economic_growth += 0.1;
 max-visits: 3

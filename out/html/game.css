@@ -717,4 +717,17 @@ table {
     font-family: sans-serif;
 }
 
-
+.seat.agrarian {
+    fill: #8B0000;
+}
+.seat.labour {
+    fill: #D26E28;
+    stroke: var(--border-color);
+    stroke-width: 1.5px;
+}
+.seat.left {
+    fill: #BE0028;
+}
+.seat.reformist {
+    fill: #E7DB73;
+}

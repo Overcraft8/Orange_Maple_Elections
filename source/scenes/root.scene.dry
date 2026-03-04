@@ -67,28 +67,24 @@ const factionData = [
         "legend": "Agrarian",
         "name": "Agrarian",
         "seats": agrarian_strength,
-        color: #a7d11c;
     },
     {
         "id": "labour",
         "legend": "Labour",
         "name": "Labour",
         "seats": labour_strength,
-        color: #0F52BA;
     },
     {
         "id": "left",
         "legend": "left",
         "name": "Left",
         "seats": left_strength,
-        color: #7b1616;
     },
     {
         "id": "reformist",
         "legend": "Reformist",
         "name": "Reformist",
         "seats": reformist_strength,
-        color: #d26e28;
     }
 ];
 

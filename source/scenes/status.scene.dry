@@ -55,7 +55,7 @@ Assembly composition:
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-[? if flp_in_government = 1 : Budget: [+ budget +] ?]
+[? if flp_in_government = 1 : Budget: [+ treasury +] ?]
 
 Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_election_year +]
 

@@ -66,7 +66,7 @@ Parliament composition:
 [? if ucpf_formed = 1 and ucpf_r >= 1: <span class="tooltip-text" title="Up Country Peoples Front">**UCPF**</span>: [+ ucpf_r +] ?]
 [? if slmc_formed = 1 and slmc_r >= 1: <span class="tooltip-text" title="Sri Lanka Muslim Congress">**SLMC**</span>: [+ slmc_r +] ?]
 
-[? if slfp_in_government = 1 : Budget: [+ budget +] ?]
+[? if slfp_in_government = 1 : Budget: [+ treasury +] ?]
 
 Next presidential election: [+ next_pres_election_month : month +] [+ next_pres_election_year +]
 
@@ -526,7 +526,7 @@ Unemployment: [+ unemployed_2 +]%
 
 Economic growth: [+ economic_growth_2 +]%
 
-Government budget: [+ budget +]
+Government budget: [+ treasury +]
 
 Terms of trade: [+ trade +]
 

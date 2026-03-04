@@ -55,9 +55,9 @@ Sectorial works councils can now negotiate wage and price policies for entire ec
 
 @nationalize_1
 title: Begin to socialize key industries.
-subtitle: -1 budget - we should buy out industries and govern them together with workers and consumers.
-on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_flp += 6*(1-dissent); unemployed_flp += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
-choose-if: budget >= 1
+subtitle: -1 treasury - we should buy out industries and govern them together with workers and consumers.
+on-arrival: economic_democracy += 1; capital_strike_progress += 1; treasury -= 1; socializations += 1; workers_flp += 6*(1-dissent); unemployed_flp += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
+choose-if: treasury >= 1
 max-visits: 3
 
 We have begun to socialize key industries by buying out the capitalist owners, and creating coordinated governing boards consisting of worker, consumer, and state representatives. The capitalists are not pleased at our intrusion into the economy.
@@ -65,8 +65,8 @@ We have begun to socialize key industries by buying out the capitalist owners, a
 @cooperatives_1
 title: Support worker and consumer cooperatives.
 subtitle: -1 budget
-on-arrival: economic_democracy += 1; cooperatives += 1; workers_flp += 4*(1-dissent); unemployed_flp += 4*(1-dissent); budget -= 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2
-choose-if: budget >= 1
+on-arrival: economic_democracy += 1; cooperatives += 1; workers_flp += 4*(1-dissent); unemployed_flp += 4*(1-dissent); treasury -= 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2
+choose-if: treasury >= 1
 max-visits: 3
 
 We have enacted legislation that makes it easier to create cooperative enterprises of all sorts, and provide financial support to struggling cooperatives.

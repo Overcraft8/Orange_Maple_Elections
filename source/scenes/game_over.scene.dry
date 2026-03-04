@@ -27,7 +27,7 @@ if (Q.republic_victory) {
 // Verfassungskoalition - form a Constitutional Coalition.
 // Wirtschaftspolitik - enact an economic plan.
 // Wirtschaftswunder - reduce unemployment below 10% and have a non-negative budget by 1933.
-if (Q.year >= 1932  && Q.unemployed < 8.6 && Q.budget > 0 && Q.inflation < 5) {
+if (Q.year >= 1932  && Q.unemployed < 8.6 && Q.treasury > 0 && Q.inflation < 5) {
     this.achieve('wirtschaftswunder');
 }
 // Bollwerk der Demokratie - resist the Urban Coup, and win.

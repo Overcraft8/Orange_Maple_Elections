@@ -58,16 +58,16 @@ Socialism has always stood for science and rationality. Despite the setbacks of 
 @kwg
 title: Fund the Kaiser Wilhelm Society for basic scientific research.
 subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; kwg_research += 1; economic_growth += 0.3 if economic_growth <= 8; new_middle_flp += 5*(1-dissent); lps_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; american_relation += 1; science_funding += 1
+choose-if: treasury >= 1
+on-arrival: treasury -= 1; science += 1; kwg_research += 1; economic_growth += 0.3 if economic_growth <= 8; new_middle_flp += 5*(1-dissent); lps_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; american_relation += 1; science_funding += 1
 
 The Kaiser Wilhelm Society is one of the most respected scientific research institutions in the world, with physicist Albert Einstein as its most famous employee. Our research program is to provide the Society with additional resources to hire and train scientists and conduct fundamental research, based on the scientists' own interests.
 
 @applied
 title: Fund applied research in economically useful technologies.
 subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; applied_research += 1; economic_growth += 0.5 if economic_growth <= 8 and applied_research <= 1; economic_growth += 3 if applied_research > 1; new_middle_flp += 5*(1-dissent); workers_flp += 3*(1-dissent); lps_relation += 5*(1-dissent); unemployed -= 0.5 if unemployed >= 4; capital_strike_progress -= 1 if capital_strike_progress > 1; science_funding += 1
+choose-if: treasury >= 1
+on-arrival: treasury -= 1; science += 1; applied_research += 1; economic_growth += 0.5 if economic_growth <= 8 and applied_research <= 1; economic_growth += 3 if applied_research > 1; new_middle_flp += 5*(1-dissent); workers_flp += 3*(1-dissent); lps_relation += 5*(1-dissent); unemployed -= 0.5 if unemployed >= 4; capital_strike_progress -= 1 if capital_strike_progress > 1; science_funding += 1
 
 Our research program focuses on collabourating with industry to develop useful technologies, creating new research institutions for applied science. This collabouration is focused on economic growth and development.
 
@@ -75,8 +75,8 @@ Our research program focuses on collabourating with industry to develop useful t
 @medical
 title: Fund biomedical research at the hospitals and medical schools.
 subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; medical_research += 1; economic_growth += 0.4 if economic_growth <= 8; new_middle_flp += 5*(1-dissent); workers_flp += 3*(1-dissent); lps_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; science_funding += 1
+choose-if: treasury >= 1
+on-arrival: treasury -= 1; science += 1; medical_research += 1; economic_growth += 0.4 if economic_growth <= 8; new_middle_flp += 5*(1-dissent); workers_flp += 3*(1-dissent); lps_relation += 5*(1-dissent); unemployed -= 0.2 if unemployed >= 4; science_funding += 1
 
 Our research program focuses on medical research to improve the treatment of diseases and public health. [? if change_sex: Some of our medical advancements include new methods for sex change surgery and hormone therapy for transsexual individuals. ?]
 
@@ -85,7 +85,7 @@ title: Cut science funding.
 subtitle: +1 budget
 choose-if: science_funding >= 1
 unavailable-subtitle: We have not funded science.
-on-arrival: budget += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_flp -= 5; workers_flp -= 2; lps_relation -= 5; unemployed += 0.3
+on-arrival: treasury += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_flp -= 5; workers_flp -= 2; lps_relation -= 5; unemployed += 0.3
 
 We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the FLP.
 
@@ -104,8 +104,8 @@ Education in Saskatchewan has traditionally been organized on religious and clas
 @secularize
 title: Support secular schools to end the religious dominance in education.
 subtitle: -1 budget
-unavailable-subtitle: -1 budget - requres a majority of parties to support secular schools.
-choose-if: budget >= 1 and (progressive_coalition + cps_r >= 50)
+unavailable-subtitle: -1 treasury - requres a majority of parties to support secular schools.
+choose-if: treasury >= 1 and (progressive_coalition + cps_r >= 50)
 view-if: secularized = 0
 
 Are you sure about this? The Weimar Coalition had an agreement to not touch religious schools; the Catholic PPS Party will revolt.
@@ -129,8 +129,8 @@ The FLP, [+ lps_name +], CPS, and CP vote in favor of secular education, overcom
 @public_hs
 title: Increase educational opportunities for the working class by funding public high schools.
 subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; public_hs += 1; workers_flp += 6*(1-dissent); unemployed_flp += 3*(1-dissent); city_police_loyalty += 0.04; education_science += 0.5; unemployed -= 0.2; economic_growth += 0.2; pro_republic += 4*(1-dissent);
+choose-if: treasury >= 1
+on-arrival: treasury -= 1; public_hs += 1; workers_flp += 6*(1-dissent); unemployed_flp += 3*(1-dissent); city_police_loyalty += 0.04; education_science += 0.5; unemployed -= 0.2; economic_growth += 0.2; pro_republic += 4*(1-dissent);
 max-visits: 3
 
 # this makes the bureaucracy more proletarian

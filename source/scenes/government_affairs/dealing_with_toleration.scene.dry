@@ -36,12 +36,12 @@ New elections have been set for [+ next_parl_election_month : month +] [+ next_p
 
 @urge_against_austerity
 title: Urge the coalition against austerity politics, and to increase social spending.
-choose-if: budget >= 1
+choose-if: treasury >= 1
 unavailable-subtitle: This can only happen with a budget surplus.
 go-to: urge_success if cps_relation >= 30 and pps_relation >= 40; urge_failure if cps_relation < 30 or pps_relation < 40
 
 @urge_success
-on-arrival: welfare += 1; budget -= 1; workers_flp += 5*(1-dissent); unemployed_flp += 5*(1-dissent); pps_relation -= 3; cps_relation -= 3; reformist_dissent -= 5; agrarian_dissent -= 5; labour_dissent -= 5;
+on-arrival: welfare += 1; treasury -= 1; workers_flp += 5*(1-dissent); unemployed_flp += 5*(1-dissent); pps_relation -= 3; cps_relation -= 3; reformist_dissent -= 5; agrarian_dissent -= 5; labour_dissent -= 5;
 
 We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
 

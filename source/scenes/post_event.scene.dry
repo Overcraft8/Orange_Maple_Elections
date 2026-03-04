@@ -129,16 +129,16 @@ if (Q.month_actions >= 1) {
     // change economic stats...
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
-    if (Q.budget <= 0 && Q.budget > -2 && Q.inflation < 2.5) {
+    if (Q.treasury <= 0 && Q.treasury > -5 && Q.inflation < 2.5) {
         Q.inflation += 0.1;
     }
-    if (Q.budget <= -2 && Q.budget > -5 && Q.inflation < 5) {
+    if (Q.treasury <= -5 && Q.treasury > -10 && Q.inflation < 5) {
         Q.inflation += 0.2;
         if (Q.unemployed >= 12) {
             Q.inflation -= 0.1;
         }
     }
-    if (Q.budget <= -5 && Q.inflation < 10) {
+    if (Q.treasury <= -5 && Q.inflation < 10) {
         Q.inflation += 0.3;
         if (Q.unemployed >= 15) {
             Q.inflation -= 0.1;

@@ -2,7 +2,7 @@ title: Economic Policy
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-on-arrival: economic_policy_timer += 12; month_actions += 1; nationalize_budget = 4; nationalize_budget -= 1 if works_councils >= 2; nationalize_budget -= 1 if works_councils >= 3; nationalize_budget -= 1 if socializations + nationalization_progress >= 2; wtb_budget = 4; wtb_budget -= 1 if works_councils >= 2 or socializations >= 1 or pro_labour >= 2
+on-arrival: economic_policy_timer += 12; month_actions += 1; nationalize_treasury = 4; nationalize_treasury -= 1 if works_councils >= 2; nationalize_treasury -= 1 if works_councils >= 3; nationalize_treasury -= 1 if socializations + nationalization_progress >= 2; wtb_treasury = 4; wtb_treasury -= 1 if works_councils >= 2 or socializations >= 1 or pro_labour >= 2
 view-if: flp_in_government = 1 and (economic_minister_party == "FLP" or finance_minister_party == "FLP") and economic_policy_timer <= 0 and economic_plan > 0
 card-image: img/portraits/SchmidtRobert.jpg
 #subtitle: Policies to address the economic crisis.
@@ -28,20 +28,20 @@ We have already formulated an economic plan. Now we have to implement it.
 title: Continue the implementation of the WTB-Plan.
 subtitle: -3 budget
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
-view-if: wtb_implemented > 2 and budget >= 3 
+view-if: wtb_implemented > 2 and treasury >= 3 
 choose-if: unemployed > 8
-on-arrival: works_program += 1; budget -= 3; workers_flp += 7*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 7*(1-dissent); workers_cp -= 3; workers_scp -= 3; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 2; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
+on-arrival: works_program += 1; treasury -= 3; workers_flp += 7*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 7*(1-dissent); workers_cp -= 3; workers_scp -= 3; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 2; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
 
 [? if works_program == 4 : We have commenced Phase 2 of the WTB-Plan. ?][? if works_program > 4 :  We have continued our implementation of the WTB-Plan. ?] In addition to public works, we are now focusing on rebuilding our industries.
 
 
 @wtb_2_deficit
 title: Continue the implementation of the WTB-Plan.
-subtitle: -3 budget - we will enter a deficit.
+subtitle: -3 treasury - we will enter a deficit.
 unavailable-subtitle: Unemployment is low enough that we should not do deficit spending.
-view-if: wtb_implemented > 2 and budget < 3 and budget >= -3
+view-if: wtb_implemented > 2 and treasury < 3 and treasury >= -3
 choose-if: unemployed > 10
-on-arrival: works_program += 1; budget -= 3; workers_flp += 6*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 6*(1-dissent); workers_cp -= 2; workers_scp -= 2; coalition_dissent += 1; capital_strike_progress += 1; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
+on-arrival: works_program += 1; treasury -= 3; workers_flp += 6*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 6*(1-dissent); workers_cp -= 2; workers_scp -= 2; coalition_dissent += 1; capital_strike_progress += 1; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
 
 We have continued our implementation of the WTB-Plan, despite the continued deficit spending. In addition to public works, we are now focusing on rebuilding our industries.
 
@@ -49,7 +49,7 @@ We have continued our implementation of the WTB-Plan, despite the continued defi
 @wtb_continuation
 title: Look back on our results, and continue our implementation...
 view-if: wtb_implemented >= 1 and wtb_implemented <= 2
-on-arrival: budget += 1 if works_program <= 2; unemployed -= 5 if (works_program <= 2 and unemployed > 15) else unemployed -= 3; unemployed += 3 if unemployed < 5; unemployed += 3 if unemployed < 0; workers += 2 if works_program <= 2 else workers += 1; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); workers_cp -= 3; workers_scp -= 5; works_program += 1; pps_relation += 3; cps_relation += 3; coalition_dissent -= 1 if coalition_dissent >= 1; wtb_implemented += 1; capital_strike_progress -= 1 if capital_strike_progress >= 3; inflation += 1.5; inflation += 1 if unemployed < 10; economic_growth += 1.2; economic_growth -= 0.5 if economic_growth > 5
+on-arrival: treasury += 1 if works_program <= 2; unemployed -= 5 if (works_program <= 2 and unemployed > 15) else unemployed -= 3; unemployed += 3 if unemployed < 5; unemployed += 3 if unemployed < 0; workers += 2 if works_program <= 2 else workers += 1; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); workers_cp -= 3; workers_scp -= 5; works_program += 1; pps_relation += 3; cps_relation += 3; coalition_dissent -= 1 if coalition_dissent >= 1; wtb_implemented += 1; capital_strike_progress -= 1 if capital_strike_progress >= 3; inflation += 1.5; inflation += 1 if unemployed < 10; economic_growth += 1.2; economic_growth -= 0.5 if economic_growth > 5
 
 Our spending on public works has resulted in a lower need for unemployment insurance and welfare, and increased tax receipts through the multiplier effect as the new money courses through the economy, recuperating some of our spending. We continue to invest most of the new revenue into the program.
 
@@ -59,11 +59,11 @@ The economy is doing better, finally. Even the bourgeois parties are beginning t
 
 @implement_wtb_no_deficit
 title: Implement the WTB plan.
-subtitle: -[+ wtb_budget +] budget. [? if wtb_budget == 3 : Our pro-labour policies have reduced the cost of the plan. ?]
+subtitle: -[+ wtb_treasury +] budget. [? if wtb_treasury== 3 : Our pro-labour policies have reduced the cost of the plan. ?]
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
-view-if: budget >= wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
+view-if: treasury >= wtb_treasuryand wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8
-on-arrival: budget -= wtb_budget; works_program += 1; unemployed -= 4; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 2; economic_growth += 2.8; pro_republic += 3*(1-dissent);
+on-arrival: treasury -= wtb_budget; works_program += 1; unemployed -= 4; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 2; economic_growth += 2.8; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 We have started to enact the WTB plan. Money is beginning to flow through the economy via investments in large-scale public works.
@@ -72,11 +72,11 @@ We have started to enact the WTB plan. Money is beginning to flow through the ec
 
 @implement_wtb_deficit
 title: Implement the WTB plan.
-subtitle: -[+ wtb_budget +] budget - we will enter deficit spending. [? if wtb_budget == 3 : Our pro-labour policies have reduced the cost of the plan. ?]
+subtitle: -[+ wtb_treasury +] treasury - we will enter deficit spending. [? if wtb_treasury== 3 : Our pro-labour policies have reduced the cost of the plan. ?]
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
-view-if: budget < wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
+view-if: treasury < wtb_treasuryand wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8
-on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if premier == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 2; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 3; pro_republic += 3*(1-dissent);
+on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if premier == "Brüning"; works_program += 1; treasury -= wtb_budget; unemployed -= 4; workers += 2; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 3; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 We have entered the realm of deficit spending. Our coalition partners are disgusted, but the works plan is enacted anyway. Money is beginning to flow through the economy via investments in large-scale public works.
@@ -88,13 +88,13 @@ We have entered the realm of deficit spending. Our coalition partners are disgus
 
 @nationalize_1
 title: Implement the Left plan for the transformation of the economy.
-subtitle: -[+ nationalize_budget +] budget. [? if works_councils >= 3 : Our works councils have reduced the budget necessary for this program. ?] [? if socializations >= 2: Our existing socialization policies have reduced the budget necessary for this program. ?]
+subtitle: -[+ nationalize_treasury +] budget. [? if works_councils >= 3 : Our works councils have reduced the budget necessary for this program. ?] [? if socializations >= 2: Our existing socialization policies have reduced the budget necessary for this program. ?]
 view-if: nationalization_adopted == 1 and nationalization_progress == 0
-go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_deficit if budget >= nationalize_budget
+go-to: nationalize_deficit if treasury < nationalize_budget; nationalize_no_deficit if treasury >= nationalize_budget
 
 
 @nationalize_no_deficit
-on-arrival: nationalization_progress += 1; capital_strike_progress += 2; unemployed -= 3.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; workers += 2 if nationalization_progress < 2; budget -= nationalize_budget; works_program += 1; workers_flp += 8*(1-dissent); unemployed_flp += 5*(1-dissent); coalition_dissent += 1; cps_relation -= 4; left_dissent -= 5; new_middle_flp -= 2; old_middle_flp -= 3; economy_goal_completed += 1; inflation += 2; economic_growth += 1.7 if economic_growth < 5;
+on-arrival: nationalization_progress += 1; capital_strike_progress += 2; unemployed -= 3.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; workers += 2 if nationalization_progress < 2; treasury -= nationalize_budget; works_program += 1; workers_flp += 8*(1-dissent); unemployed_flp += 5*(1-dissent); coalition_dissent += 1; cps_relation -= 4; left_dissent -= 5; new_middle_flp -= 2; old_middle_flp -= 3; economy_goal_completed += 1; inflation += 2; economic_growth += 1.7 if economic_growth < 5;
 achievement: wirtschaftspolitik
 
 [? if nationalization_progress == 1 : We have begun purchasing idling enterprises from the capitalists[? if works_councils >= 1: , and running them in coordination with empowered works councils ?]. By keeping production going, we can stave off the rising unemployment. ?]
@@ -118,7 +118,7 @@ title: Take a budget deficit to fund the nationalization program.
 choose-if: left_strength > reformist_strength + agrarian_strength or forsey_advisor == 1
 subtitle: [? if forsey_advisor: Forsey can bring us around to supporting a budget deficit. ?]
 unavailable-subtitle: [? if left_strength <= reformist_strength + agrarian_strength: The party does not yet support budget deficits for this purpose. ?] [? if not forsey_advisor : Perhaps bringing on an advisor might help make this action palatable? ?]
-on-arrival: nationalization_progress += 1; capital_strike_progress += 3; unemployed -= 3 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; budget -= nationalize_budget; works_program += 1; workers_flp += 8*(1-dissent); unemployed_flp += 5*(1-dissent); coalition_dissent += 2; cps_relation -= 6; pps_relation -= 4; new_middle_flp -= 3; old_middle_flp -= 3; economy_goal_completed += 1; inflation += 3; economic_growth += 2 if economic_growth < 5;
+on-arrival: nationalization_progress += 1; capital_strike_progress += 3; unemployed -= 3 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; treasury -= nationalize_budget; works_program += 1; workers_flp += 8*(1-dissent); unemployed_flp += 5*(1-dissent); coalition_dissent += 2; cps_relation -= 6; pps_relation -= 4; new_middle_flp -= 3; old_middle_flp -= 3; economy_goal_completed += 1; inflation += 3; economic_growth += 2 if economic_growth < 5;
 achievement: wirtschaftspolitik
 
 [? if forsey_advisor: Most of the party, even on the left, are opposed to budget deficits for any purpose, with the exception of Eugene Forsey. While he did not originally support the left's "transformational" plan, he has come around, and has persuaded the party and the Finance Ministry to support budget deficits in limited cases, for the purpose of exiting from the depression. ?]
@@ -158,9 +158,9 @@ Fascists have been taking increasingly violent actions around the occupied facto
 
 @nationalize_2
 title: Continue the Left plan for the transformation of the economy.
-subtitle: -[+ nationalize_budget +] budget. [? if works_councils >= 3 : Our works councils have reduced the budget necessary for this program. ?] [? if socializations + nationalization_progress >= 2: Our existing socialization policies have reduced the budget necessary for this program. ?]
+subtitle: -[+ nationalize_treasury +] budget. [? if works_councils >= 3 : Our works councils have reduced the budget necessary for this program. ?] [? if socializations + nationalization_progress >= 2: Our existing socialization policies have reduced the budget necessary for this program. ?]
 view-if: nationalization_adopted == 1 and nationalization_progress >= 1
-go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_deficit if budget >= nationalize_budget
+go-to: nationalize_deficit if treasury < nationalize_budget; nationalize_no_deficit if treasury >= nationalize_budget
 
 #######################################
 # Moderate economic plan
@@ -168,10 +168,10 @@ go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_defici
 @moderate_plan
 title: Implement the Reformists' job-creation plan.
 subtitle: -2 budget.
-unavailable-subtitle: -2 budget. [? if budget < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
+unavailable-subtitle: -2 budget. [? if treasury < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
 view-if: moderate_plan_adopted == 1
-choose-if: budget >= 2 and unemployed >= 8
-on-arrival: budget -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_flp += 6*(1-dissent); unemployed_flp += 4*(1-dissent); new_middle_flp += 3*(1-dissent); old_middle_flp += 2*(1-dissent); rural_flp += 2*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_popular_front or in_left_front; economic_growth += 1.6; pro_republic += 3*(1-dissent);
+choose-if: treasury >= 2 and unemployed >= 8
+on-arrival: treasury -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_flp += 6*(1-dissent); unemployed_flp += 4*(1-dissent); new_middle_flp += 3*(1-dissent); old_middle_flp += 2*(1-dissent); rural_flp += 2*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_popular_front or in_left_front; economic_growth += 1.6; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 [? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Saskatchewan, reducing unemployment. ?]
@@ -187,10 +187,10 @@ achievement: wirtschaftspolitik
 @moderate_plan_limited_budget
 title: Partially implement the Reformists' job-creation plan, with a lower cost.
 subtitle: -1 budget.
-unavailable-subtitle: -1 budget. [? if budget < 1 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
+unavailable-subtitle: -1 budget. [? if treasury < 1 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
 view-if: moderate_plan_adopted == 1
-choose-if: budget >= 1 and unemployed >= 8
-on-arrival: budget -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_flp += 4*(1-dissent); unemployed_flp += 2*(1-dissent); new_middle_flp += 2*(1-dissent); old_middle_flp += 1*(1-dissent); rural_flp += 1*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_popular_front or in_left_front; economic_growth += 0.7; pro_republic += 3*(1-dissent);
+choose-if: treasury >= 1 and unemployed >= 8
+on-arrival: treasury -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_flp += 4*(1-dissent); unemployed_flp += 2*(1-dissent); new_middle_flp += 2*(1-dissent); old_middle_flp += 1*(1-dissent); rural_flp += 1*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_popular_front or in_left_front; economic_growth += 0.7; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 [? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Saskatchewan, reducing unemployment. ?]

@@ -258,7 +258,7 @@ Q.cp_banned = 0;
 Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
 
-Q.budget = 4;
+Q.treasury = 10;
 
 
 //District data
@@ -531,7 +531,7 @@ Q.reparations_negotiation = 0;
 Q.nationalization_progress = 0;
 // socializations is part of the economic democracy card.
 Q.socializations = 0;
-Q.nationalize_budget = 4;
+Q.nationalize_treasury = 4;
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
 // progress on the moderate economic plan
@@ -759,11 +759,11 @@ For more information on the politics and government of Saskatchewan, see the "Li
 - @1932_historical: Begin (historical mode)
 
 @1932_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 2500; cp_relation = 29; pps_relation = 54; cps_relation = 49; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 2500; cp_relation = 29; pps_relation = 54; cps_relation = 49; treasury = 15;
 go-to: 1932_main
 
 @1932_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 1000; reformist_dissent = 25; left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_relation = 16; cps_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 1000; reformist_dissent = 25; left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_relation = 16; cps_relation = 31; treasury = 5;
 go-to: 1932_main
 
 @1932_historical
@@ -781,7 +781,7 @@ Q.agrarian_dissent = 25;
 Q.pps_relation = 41;
 Q.cp_relation = 16;
 Q.cps_relation = 31;
-Q.budget = 2;
+Q.treasury = 12;
 this.state.disableSaves = true;
 !}
 go-to: 1932_main

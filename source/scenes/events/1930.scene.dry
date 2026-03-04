@@ -5,8 +5,8 @@ on-arrival: {!
 // increase SCP vote share 
 Q.unemployed += 6.8; 
 Q.inflation -= 4;
-if (Q.budget > 0) {
-    Q.budget -= 1;
+if (Q.treasury) {
+    Q.treasury -= 1;
 }
 // historical: -1.4
 Q.economic_growth -= 1;

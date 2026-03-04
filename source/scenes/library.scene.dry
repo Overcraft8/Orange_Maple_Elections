@@ -327,14 +327,14 @@ data = [
         "id": "cp",
         "legend": "CP",
         "name": "CP",
-        "seats": Q.cp_r / 2,
+        "seats": (60 / Q.cp_r) * 100,
     }];
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
-            "seats": Math.round(Q.sapd_r*5),
+            "seats": (60 / Q.sapd_r) * 100,
             });
 }
 data = data.concat([
@@ -342,37 +342,37 @@ data = data.concat([
         "id": "flp",
         "legend": "FLP",
         "name": "FLP",
-        "seats": Q.flp_r / 2,
+        "seats": (60 / Q.flp_r) * 100 ,
     },
     {
         "id": "lps",
         "legend": "LPS",
         "name": "LPS",
-        "seats": Q.lps_r / 2,
+        "seats": (60 / Q.lps_r) * 100,
     },
     {
         "id": "pps",
         "legend": "PPS",
         "name": "PPS",
-        "seats": Q.pps_r / 2,
+        "seats": (60 / Q.pps_r) * 100,
     },
     {
         "id": "cps",
         "legend": "CPS",
         "name": "CPS",
-        "seats": Q.cps_r / 2,
+        "seats": (60 / Q.cps_r) * 100,
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Q.other_r / 2,
+        "seats": (60 / Q.other_r) * 100,
     },
     {
         "id": "scp",
         "legend": "SCP",
         "name": "SCP",
-        "seats": Q.scp_r / 2,
+        "seats": (60 / Q.scp_r) * 100,
     },
 ]);
 if (d3 && window) {

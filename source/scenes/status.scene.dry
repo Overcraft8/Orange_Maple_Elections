@@ -192,10 +192,11 @@ Inflation: [+ inflation_2 +]%
 
 [? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
 
-Economic growth: [+ economic_growth_2 +]%
+GDP Growth: [+ economic_growth_2 +]%
 
-Saskatchewan GDP: $[+ saskatchewan_gdp +] Million
-Total Saskatchewan Debt: $[+ saskatchewan_debt +] Million
+Saskatchewan GDP: $[+ saskatchewan_gdp +].toFixed(1) Million
+
+Total Saskatchewan Debt: $[+ saskatchewan_debt +].toFixed(1) Million
 
 @livingstandards
 

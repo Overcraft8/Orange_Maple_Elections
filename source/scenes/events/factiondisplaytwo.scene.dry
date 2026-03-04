@@ -1,0 +1,32 @@
+title: Faction Strength Screen
+new-page: true
+subtitle: The strength of the factions
+tags: event
+view-if: 2 = 1
+max-visits: 1
+
+<svg id="factionsSvg" width="600" height="300"></svg>
+
+<script>
+var factionData = [
+  { name: "A", value: 10 },
+  { name: "B", value: 20 },
+  { name: "C", value: 15 }
+];
+
+d3.select("#factionsSvg")
+  .datum(factionData)
+  .call(
+    d3.factions()
+      .width(600)
+      .innerRadiusCoef(0.35)
+  );
+</script>
+
+= Faction Strength
+
+- @Back: Back to main screen
+
+@Back
+
+Working?

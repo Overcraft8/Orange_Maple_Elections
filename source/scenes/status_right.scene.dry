@@ -2,12 +2,6 @@ title: Party Hierarchy
 new-page: true
 is-special: true
 
-on-arrival: {!
-if (1 = 1) {
-    Q.ufc_strength_2 = Q.ufc_strength.toFixed(1);
-}
-!}
-
 = President of the FLP
 
 <div>

@@ -12,16 +12,16 @@ view-if: 2 = 1
 
 <p style="text-align: center; margin-bottom: 0;">[+ flp_president +]</p>
 
-{!
-if (Q.flp_president == "George Hara Williams") {
-    return "George Hara Williams is a populist Agrarian. ";
-}
-if (Q.flp_president == "Major James Coldwell") {
-    return "Major James Coldwell is a labour faction member.";
-}
-!}
+[? if flp_president = "George Hara Williams" : George Hara Williams is a farmer by trade and de facto leader of the Agrarian wing of the party. ?]
+
+[? if flp_president = "Major James Coldwell" : Major James Coldwell is a teacher by profession and de facto leader of the Labour wing of the party. ?]
 
 
+- @Information: Information on our President
 - @Back: Back to Main Screen
 
+@Information
+
 @Back
+
+

@@ -602,12 +602,15 @@ Q.George_Williams_Dead = 0;
 // Saskatchewan Organizations
 
 
+Q.ccym_influence = 25;
 Q.ccym_strength = 0;
-Q.ccym_relations = 0;
+Q.ccym_relations = 60;
+Q.ufcss_influence = 60;
 Q.ufcss_strength = 0;
-Q.ufcss_relations = 0;
+Q.ufcss_relations = 70;
+Q.scsa_strength = 5;
 Q.scsa_strength = 0;
-Q.scsa_relations = 0;
+Q.scsa_relations = 40;
 
 
 

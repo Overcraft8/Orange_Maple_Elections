@@ -257,21 +257,21 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_r +]%** {!</td><td>!} **[+ str_change_flp +]** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_r +]%** {!</td><td>!} **[+ str_change_flp +].toFixed(1)** {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +].toFixed(1) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !} CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +].toFixed(1) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td><td>!} [+ str_change_lps +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td><td>!} [+ str_change_lps +].toFixed(1) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_r +]% {!</td><td>!} [+ str_change_pps +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_r +]% {!</td><td>!} [+ str_change_pps +].toFixed(1) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_r +]% {!</td><td>!} [+ str_change_cps +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_r +]% {!</td><td>!} [+ str_change_cps +].toFixed(1) {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +].toFixed(1) {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCP: {!</td><td>!} [+ scp_r +]% {!</td><td>!} [+ str_change_scp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCP: {!</td><td>!} [+ scp_r +]% {!</td><td>!} [+ str_change_scp +].toFixed(1) {!</td></tr>!}
 
 {!</table>!}
 

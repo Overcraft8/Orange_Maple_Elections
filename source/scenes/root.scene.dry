@@ -300,8 +300,8 @@ Q.inflation = 2.9;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
 Q.economic_growth = 4.4;
-Q.saskatchewan_gdp = 200.toFixed(1)
-Q.saskatchewan_debt = 168.toFixed(1)
+Q.saskatchewan_gdp = 200.toFixed(1);
+Q.saskatchewan_debt = 168.toFixed(1);
 
 // economic expansion timer
 Q.economic_expansion = 0;
@@ -598,7 +598,6 @@ Q.ufcss_influence = 60;
 Q.ufcss_strength = 0;
 Q.ufcss_relations = 70;
 Q.scsa_strength = 5;
-Q.scsa_strength = 0;
 Q.scsa_relations = 40;
 
 

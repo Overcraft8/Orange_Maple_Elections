@@ -30,38 +30,7 @@ data = data.concat([
         "legend": "Reformist",
         "name": "Reformist",
         "seats": reformist_strength,
-    }const factionData = [
-  {
-        "id": "agrarian",
-        "legend": "Agrarian",
-        "name": "Agrarian",
-        "seats": agrarian_strength,
-    },
-    {
-        "id": "labour",
-        "legend": "Labour",
-        "name": "Labour",
-        "seats": labour_strength,
-    },
-    {
-        "id": "left",
-        "legend": "Left",
-        "name": "Left",
-        "seats": left_strength,
-    },
-    {
-        "id": "reformist",
-        "legend": "Reformist",
-        "name": "Reformist",
-        "seats": reformist_strength,
-    },
-    {
-        "id": "neorevisionist",
-        "legend": "Neorevisionist",
-        "name": "Neorevisionist",
-        "seats": neorevisionist_strength,
     }
-];
 ]);
 
 if (window && d3) {
@@ -74,11 +43,11 @@ if (window && d3) {
         document.getElementById("assembly").style.height = screenWidth/2 + "px";
     } 
 
-    var factions = d3.factions();
-    factions.width(width).height(height).innerRadiusCoef(0.4);
-    factions.enter.fromCenter(true).smallToBig(true);
-    factions.exit.toCenter(false).bigToSmall(true);
-    d3.select("#assembly").datum(data).call(factions);
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#assembly").datum(data).call(parliament);
 }
 !}
 

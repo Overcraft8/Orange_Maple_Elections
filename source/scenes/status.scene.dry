@@ -39,6 +39,79 @@ Premier: [+ premier +] ([+ premier_party +])
 
 Assembly composition:
 
+statusdata = [
+    {
+        "id": "cp",
+        "legend": "CP",
+        "name": "CP",
+        "seats": (Math.round(60 / Q.cp_r_prev_elec)) * 100,
+    }
+];
+if (Q.sapd_formed && Q.sapd_r) {
+    statusdata.push({
+            "id": "sapd",
+            "legend": "SAPD",
+            "name": "SAPD",
+            "seats": (Math.round(60 / Q.sapd_r_prev_elec)) * 100,
+            });
+}
+statusdata = statusdata.concat([
+    {
+        "id": "flp",
+        "legend": "FLP",
+        "name": "FLP",
+        "seats": (Math.round(60 / Q.flp_r_prev_elec)) * 100,
+    },
+    {
+        "id": "lps",
+        "legend": "LPS",
+        "name": "LPS",
+        "seats": (Math.round(60 / Q.lps_r_prev_elec)) * 100,
+    },
+    {
+        "id": "pps",
+        "legend": "PPS",
+        "name": "PPS",
+        "seats": (Math.round(60 / Q.pps_r_prev_elec)) * 100,
+    },
+    {
+        "id": "cps",
+        "legend": "CPS",
+        "name": "CPS",
+        "seats": (Math.round(60 / Q.cps_r_prev_elec)) * 100,
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": (Math.round(60 / Q.other_r_prev_elec)) * 100,
+    },
+    {
+        "id": "scp",
+        "legend": "SCP",
+        "name": "SCP",
+        "seats": (Math.round(60 / Q.scp_r_prev_elec)) * 100,
+    },
+]);
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("assembly").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#assembly").datum(statusdata).call(parliament);
+}
+
+
 # 1928: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Farmer-Labour Group">!}[? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]

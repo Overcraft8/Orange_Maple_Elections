@@ -44,7 +44,7 @@ for (var party of Q.parties) {
     Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10;
     if (Q.use_decimals) {
         Q[party+'_votes'] = Q[party+'_votes_dec'];
-        Q[party+'_votes'] = Q[party+'_r_prev_elec];
+        Q[party+'_votes'] = Q[party+'_r_prev_elec'];
         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
     } else {
         //integer mode

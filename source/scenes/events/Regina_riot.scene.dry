@@ -33,7 +33,7 @@ The strikers are enthused that even the known moderate Major James Coldwell is s
 
 @ProvideSupplies
 view-if: resources >= 1
-on-arrival: resources -= 1; trek_support
+on-arrival: resources -= 1; trek_support += 1;
 
 @Rally
 view-if: left_strength > agrarian_strength

@@ -12,7 +12,9 @@ for (var c of Q.classes) {
     }
 }
 
-Q.saskatchewan_gdp = Q.saskatchewan_gdp * (1 + Q.economic_growth / 100);
+Q.saskatchewan_gdp = Number(
+  (Q.saskatchewan_gdp * (1 + Q.monthly_economic_growth / 100)).toFixed(1)
+);
 Q.pro_republic = Math.round(Q.pro_republic);
 Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);

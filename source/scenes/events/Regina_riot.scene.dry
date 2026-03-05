@@ -27,15 +27,19 @@ on-arrival: flp_workers -= 4; labour_strength -= 4;
 Many of the workers and strikers expected us to say *something*. 
 
 @SendSpeakers
-on-arrival: flp_workers += 2; labour_strength += 1; 
+on-arrival: flp_workers += 2; labour_strength += 1; trek_support += 1;
 
 The strikers are enthused that even the known moderate Major James Coldwell is speaking. 
 
 @ProvideSupplies
 view-if: resources >= 1
-on-arrival: resources -= 1; trek_support += 1;
+on-arrival: resources -= 1; trek_support += 2;
+
+We will provide enough water and food to maintain the strikers through the month should they decide to stay.
 
 @Rally
 view-if: left_strength > agrarian_strength
-on-arrival: flp_workers += 4; lps_relation -= 10; cps_relation -= 10; cp_relation += 5;
+on-arrival: flp_workers += 4; lps_relation -= 10; cps_relation -= 10; cp_relation += 5; trek_support += 3;
+
+The CP is delighted that we have chosen to endorse the trek. 
 

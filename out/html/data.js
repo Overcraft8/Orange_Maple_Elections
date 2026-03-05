@@ -40,7 +40,7 @@ const tooltipList = [{
 },
 
 {
-    searchString: "Co-operative Coalition Government", 
+    searchString: "Cooperative Coalition Government", 
     explanationText: "A coalition of Conservatives, Progressives, and Independents"
 }
 ];
@@ -111,7 +111,7 @@ const colourList = [{
         style: "color: #d26e28; font-weight: bold;"
     },
     {
-        word: "Co-operative Coalition Government", 
+        word: "Cooperative Coalition Government", 
         style: "color: #288ed2; font-weight: bold;"
     },
     {

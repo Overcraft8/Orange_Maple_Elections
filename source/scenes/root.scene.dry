@@ -61,6 +61,39 @@ Q.neorevisionist_strength = 0;
 Q.neorevisionist_dissent = 10;
 
 
+const factionData = [
+  {
+        "id": "agrarian",
+        "legend": "Agrarian",
+        "name": "Agrarian",
+        "seats": agrarian_strength,
+    },
+    {
+        "id": "labour",
+        "legend": "Labour",
+        "name": "Labour",
+        "seats": labour_strength,
+    },
+    {
+        "id": "left",
+        "legend": "Left",
+        "name": "Left",
+        "seats": left_strength,
+    },
+    {
+        "id": "reformist",
+        "legend": "Reformist",
+        "name": "Reformist",
+        "seats": reformist_strength,
+    }
+    {
+        "id": "neorevisionist",
+        "legend": "Neorevisionist",
+        "name": "Neorevisionist",
+        "seats": neorevisionist_strength,
+    }
+];
+
 
 // secret events...
 Q.unions_independent = 0;
@@ -267,8 +300,8 @@ Q.inflation = 2.9;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
 Q.economic_growth = 4.4;
-Q.saskatchewan_gdp = 200
-Q.saskatchewan_debt = 168
+Q.saskatchewan_gdp = 200.toFixed(1)
+Q.saskatchewan_debt = 168.toFixed(1)
 
 // economic expansion timer
 Q.economic_expansion = 0;

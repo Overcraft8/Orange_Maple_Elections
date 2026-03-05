@@ -27,9 +27,18 @@ const tooltipList = [{
     explanationText: "The United Farmers of Canada (Saskatchewan Section).\nIt's political apparatus has merged into the FLP. "
 },
 {
+    searchString: "CCYM",
+    explanationText: "The Cooperative Commonwealth Youth Movement."
+},
+{
+    searchString: "Unions",
+    explanationText: "The various unions of Saskatchewan. "
+},
+{
     searchString: "ILP",
     explanationText: "The Independent Labour Party.\n They have merged into the FLP. "
 },
+
 {
     searchString: "Co-operative Coalition Government", 
     explanationText: "A coalition of Conservatives, Progressives, and Independents"
@@ -104,6 +113,14 @@ const colourList = [{
     {
         word: "Co-operative Coalition Government", 
         style: "color: #288ed2; font-weight: bold;"
-    }
+    },
+    {
+        word: "CCYM", 
+        style: "color: #7b1616; font-weight: bold;"
+    },
+    {
+        word: "Union", 
+        style: "color: #0F52BA; font-weight: bold;"
+    },
 ];
 

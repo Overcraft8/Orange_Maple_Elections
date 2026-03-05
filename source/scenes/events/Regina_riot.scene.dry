@@ -1,4 +1,4 @@
-title: FLP President Election
+title: Regina Riot
 new-page: true
 subtitle: Who will lead our party?
 tags: event
@@ -33,7 +33,7 @@ The strikers are enthused that even the known moderate Major James Coldwell is s
 
 @ProvideSupplies
 view-if: resources >= 1
-on-arrival: resources -= 1; trek_support += 2;
+on-arrival: resources -= 1; trek_support += 2; flp_workers += 3;cp_relation += 3; lps_relation -=5; cps_relation -= 6;
 
 We will provide enough water and food to maintain the strikers through the month should they decide to stay.
 
@@ -42,17 +42,3 @@ view-if: left_strength > agrarian_strength
 on-arrival: flp_workers += 4; lps_relation -= 10; cps_relation -= 10; cp_relation += 5; trek_support += 3;
 
 The CP is delighted that we have chosen to endorse the trek. 
-
-go-to: RCMP_ARRIVES
-
-@RCMP_ARRIVES
-
-Squadrons of RCMP are entering the city...
-
-on-arrival: {! 
-if (Q.trek_support == 1) {
-    go-to: SentSpeakers
-}
-
-
-!}

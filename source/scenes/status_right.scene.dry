@@ -57,13 +57,6 @@ is-special: true
 
 = Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
 
-# <div>
-# <img 
-#   src="img/CCF_Caucus_meeting.jpg" 
-#   style="width: 60%; display: block; margin: auto; margin-bottom: 5px; cursor: pointer;"
-#   onclick="goTofactiondisplay()"
-# >
-# </div>
 
 <span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #a7d11c;">**Agrarians**</span> 
 Strength: [+ agrarian_strength : strength +] 

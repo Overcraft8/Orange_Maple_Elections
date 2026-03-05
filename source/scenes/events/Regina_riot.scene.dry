@@ -43,3 +43,16 @@ on-arrival: flp_workers += 4; lps_relation -= 10; cps_relation -= 10; cp_relatio
 
 The CP is delighted that we have chosen to endorse the trek. 
 
+go-to: RCMP_ARRIVES
+
+@RCMP_ARRIVES
+
+Squadrons of RCMP are entering the city...
+
+on-arrival: {! 
+if (Q.trek_support == 1) {
+    go-to: SentSpeakers
+}
+
+
+!}

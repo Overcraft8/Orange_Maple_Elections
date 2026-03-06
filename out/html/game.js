@@ -313,7 +313,7 @@ function applyWholesome(str) {
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
 
-});
+})();
 
 // Western Province
 function Colombo_info() {
@@ -335,7 +335,7 @@ document.addEventListener('mousemove', e => {
         el.style.setProperty('--mouse-x', e.clientX + 'px');
         el.style.setProperty('--mouse-y', e.clientY + 'px');
     });
-})();
+});
 
 
 

@@ -191,7 +191,9 @@ Tariffs: [+ tariffs +]%
 
 Inflation: [+ inflation_2 +]%
 
-[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
+Unemployment: [+ unemployed_2 +]% 
+
+Poverty Incidence: [+ poverty : pop_percentage +]
 
 GDP Growth: [+ economic_growth_2 +]%
 

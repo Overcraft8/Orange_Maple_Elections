@@ -1,5 +1,5 @@
 body {
-  --bg-color: #f3f3e3;
+  --bg-color: #b7b5a9;
   --border-color: #000;
   --content-bg-color: #f3f3f3;
   --text-color: #431;
@@ -7,8 +7,8 @@ body {
   --link-hover-color: rgba(0, 0, 0, 0.05);
   --unavailable-bg-color: rgba(0, 0, 0, 0.1);
   --unavailable-color: #999;
-  --tab-bg-color: #dedede;
-  --tab-color: #ddd;
+  --tab-bg-color: #d6cebb;
+  --tab-color: #d5d6d1;
   --tab-hover-color: #ececec;
   --card-border-color: #ccc; 
   --card-bg-color: #ddd; 

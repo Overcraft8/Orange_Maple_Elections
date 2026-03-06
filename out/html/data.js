@@ -38,7 +38,14 @@ const tooltipList = [{
     searchString: "ILP",
     explanationText: "The Independent Labour Party.\n They have merged into the FLP. "
 },
-
+{
+    searchString: "FUL",
+    explanationText: "The Farmer's Unity League. A radical farmer's organization affiliated with the CP."
+},
+{
+    searchString: "WUL",
+    explanationText: "The Worker's Unity League. A radical farmer's organization affiliated with the CP."
+},
 {
     searchString: "Cooperative Coalition Government", 
     explanationText: "A coalition of Conservatives, Progressives, and Independents"
@@ -121,6 +128,14 @@ const colourList = [{
     {
         word: "Union", 
         style: "color: #0F52BA; font-weight: bold;"
+    },
+    {
+        word: "FUL", 
+        style: "color: #8B0000; font-weight: bold;"
+    },
+    {
+        word: "WUL", 
+        style: "color: #8B0000; font-weight: bold;"
     },
 ];
 

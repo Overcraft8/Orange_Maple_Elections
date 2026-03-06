@@ -195,7 +195,7 @@ Inflation: [+ inflation_2 +]%
 
 GDP Growth: [+ economic_growth_2 +]%
 
-Saskatchewan GDP: $[= saskatchewan_gdp_str =] Million
+SSaskatchewan GDP: $[+ str_saskatchewan_gdp +] Million
 
 Total Saskatchewan Debt: $[+ saskatchewan_debt +] Million
 

@@ -282,10 +282,6 @@ var gdp_sign_img =
             ? '<img src="img/RedNegative.jpg"> '
             : '<img src="img/BlueStatic.jpg"> ';
 
-// Build display string
-Q.saskatchewan_gdp_str =
-    gdp_sign_img + Q.saskatchewan_gdp;
-
 Q.depression = 1;
 
 // economic expansion timer

@@ -282,8 +282,8 @@ var gdp_sign_img =
             : '<img src="img/BlueStatic"> ';
 
 // Build display string
-Q.saskatchewan_gdp_change_str =
-    gdp_sign_img + Math.abs(Q.saskatchewan_gdp - Q.saskatchewan_old_gdp).toFixed(1);
+Q.saskatchewan_gdp_str =
+    gdp_sign_img + Q.saskatchewan_gdp;
 
 Q.depression = 1;
 

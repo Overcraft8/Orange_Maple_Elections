@@ -273,7 +273,7 @@ Q.monthly_economic_growth = 1;
 Q.saskatchewan_debt = Number((160).toFixed(1));
 Q.saskatchewan_gdp = Number((200).toFixed(1)); // new GDP
 // Q.saskatchewan_old_gdp should already exist
-Q.saskatchewan_old_gdp = 1;
+Q.saskatchewan_old_gdp = Q.saskatchewan_old_gdp || 1;
 
 Q.depression = 1;
 
@@ -517,7 +517,6 @@ Q.Curriculum = "Traditional";
 Q.healthcarequality = "Basic";
 Q.housingavailability = "Insufficient";
 Q.poverty = 10;
-Q.unemployment = 10;
 //  
 //                   Rural living standards
 // Rural Access to electricity

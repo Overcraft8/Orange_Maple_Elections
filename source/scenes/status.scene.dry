@@ -102,10 +102,10 @@ if (Q.ful_strength) {
 {!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the SCP.">Stahlhelm</span>!} Strength: [+ sh_strength_2 +] hundred
 Stahlhelm Militancy: [+ sh_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The FUL (Sturmabteilung) is the SCPs paramilitary.">FUL</span>!} Strength: [+ ful_strength_2 +] hundred
+FUL Strength: [+ ful_strength_2 +] hundred
 FUL Militancy: [+ ful_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The WUL (Workers Unity League) is a communist group associated with the CP.">WUL</span>!} Strength: [+ wul_strength_2 +] hundred
+WUL Strength: [+ wul_strength_2 +] hundred
 WUL Militancy: [+ wul_militancy : militancy +]
 
 = Law Enforcement
@@ -214,8 +214,6 @@ Higher Education quality: [+ highereducationquality +]
 Curriculum: [+ Curriculum +]
 
 Healthcare quality: [+ healthcarequality +]
-
-Housing availability: [+ housingavailability +]
 
 = Rural Standards
 

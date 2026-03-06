@@ -515,7 +515,6 @@ Q.educationquality = "Basic";
 Q.highereducationquality = "Basic";
 Q.Curriculum = "Traditional";
 Q.healthcarequality = "Basic";
-Q.housingavailability = "Insufficient";
 Q.poverty = 10;
 //  
 //                   Rural living standards

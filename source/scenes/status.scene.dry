@@ -108,7 +108,7 @@ FUL Militancy: [+ ful_militancy : militancy +]
 WUL Strength: [+ wul_strength_2 +] hundred
 WUL Militancy: [+ wul_militancy : militancy +]
 
-[? if sta_affiliated == 1 :
+[? if sta_affiliated == 0 :
 <span style="color: #d26e28;">**STA**</span><br>
 Influence: [+ sta_influence +]%<br>
 Relations: [+ sta_relations : relationships +]<br>

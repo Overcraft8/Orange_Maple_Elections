@@ -127,8 +127,6 @@ Urban police: [+ city_police_strength : strength +]
 
 Urban police loyalty: [+ city_police_loyalty : loyalty +]
 
-[? if flp_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
-
 Support for Socialism: [+ socialism +]
 
 @polls

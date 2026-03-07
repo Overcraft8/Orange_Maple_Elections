@@ -85,12 +85,13 @@ Relations: [+ ccym_relations : relationships +]
 
 Militancy: [+ ccym_militancy : militancy +]
 
+[? if ufc_affiliated = 1 :
 <span style="color: #86a71b;">**UFC(SS)**</span> 
-Influence: [+ ufcss_influence +]%
-
-Relations: [+ ufcss_relations : relationships +]
-
-Militancy: [+ ufc_militancy : militancy +]
+Influence: [+ ufc_influence +]%<br>
+Relations: [+ ufc_relations : relationships +]<br>
+Militancy: [+ ufc_militancy : militancy +]<br>
+Strength: [+ ufc_strength +]<br>
+?]
 
 [? if sta_affiliated == 1 :
 <span style="color: #d26e28;">**STA**</span><br>

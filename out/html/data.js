@@ -1,4 +1,5 @@
 const tooltipList = [{
+    // for organizations and parties
     searchString: "FLP",
     explanationText: "The Farmer-Labour Group - Our Party"
 }, 
@@ -62,6 +63,7 @@ const tooltipList = [{
 
 
 const colourList = [{
+    // For organizations + parties
         word: "FLP",
         style: "color: #D26E28; font-weight: bold;"
     },
@@ -160,6 +162,27 @@ const colourList = [{
     {
         word: "TLC", 
         style: "color: #b33a3a; font-weight: bold;"
+    },
+    // Below this for states of qdisplays
+    {
+        word: "very low", 
+        style: "color: #54e02a; font-weight: bold;"
+    },
+    {
+        word: "low", 
+        style: "color: #9ae02a; font-weight: bold;"
+    },
+    {
+        word: "medium", 
+        style: "color: #e0d12a; font-weight: bold;"
+    },
+    {
+        word: "high", 
+        style: "color: #e0702a; font-weight: bold;"
+    },
+    {
+        word: "very high", 
+        style: "color: #e0332a; font-weight: bold;"
     },
 ];
 

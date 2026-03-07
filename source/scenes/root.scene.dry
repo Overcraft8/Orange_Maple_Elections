@@ -543,30 +543,37 @@ Q.George_Williams_Dead = 0;
 Q.ccym_influence = 25;
 Q.ccym_strength = 0;
 Q.ccym_relations = 60;
-Q.ufcss_influence = 60;
-Q.ufcss_strength = 0;
-Q.ufcss_relations = 70;
+Q.ccym_militancy = 0.15;
+
+Q.ufc_influence = 60;
+Q.ufc_relations = 70;
+Q.ufc_affiliated = 1;
+Q.ufc_strength = 35.00;
+Q.ufc_militancy = 0.30;
+
 Q.sta_affiliated = 0;
 Q.sta_strength = 5;
 Q.sta_relations = 50;
 Q.sta_militancy = 0.30;
+
 Q.tlc_relations = 40;
 Q.tlc_militancy = 20;
 
-Q.ufc_strength = 20.00;
-Q.ufc_militancy = 0.30;
+
 Q.women_in_rb = 0;
 Q.ufc_banned = 0;
-Q.ccym_militancy = 0.15;
-Q.scful_militancy = 0.03;
+
+
 Q.kkk_strength = 15.00;
 Q.kkk_militancy = 0.5;
 Q.kkk_banned = 0;
 Q.kkk_banned_prussia = 0;
+
 Q.ful_strength = 8.00;
 Q.ful_militancy = 0.5;
 Q.ful_banned = 0;
 Q.ful_banned_prussia = 0;
+
 Q.wul_strength = 13.00;
 Q.wul_militancy = 0.5;
 Q.wul_banned = 0;

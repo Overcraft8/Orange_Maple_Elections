@@ -108,13 +108,16 @@ FUL Militancy: [+ ful_militancy : militancy +]
 WUL Strength: [+ wul_strength_2 +] hundred
 WUL Militancy: [+ wul_militancy : militancy +]
 
-[? if sta_affiliated = 1: <span style="color: #d26e28;">**STA**</span> 
+[? if sta_affiliated = 1 ?]
+
+<span style="color: #d26e28;">**STA**</span> 
 Influence: [+ sta_influence +]%
 
 Relations: [+ sta_relations : relationships +]
 
-Militancy: [+ sta_militancy : militancy +] 
- ?]
+Militancy: [+ sta_militancy : militancy +]
+
+[? ?]
 
 = Law Enforcement
 

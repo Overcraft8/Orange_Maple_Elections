@@ -98,3 +98,8 @@ Influence: [+ sta_influence +]%<br>
 Relations: [+ sta_relations : relationships +]<br>
 Militancy: [+ sta_militancy : militancy +]<br>
 ?]
+
+[? if tlc_affiliated == 1 :
+TLC Relations: [+ tlc_relations : relationships +]<br>
+TLC Militancy: [+ tlc_militancy : militancy +]<br>
+?]

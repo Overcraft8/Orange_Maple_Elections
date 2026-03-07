@@ -99,20 +99,23 @@ if (Q.ful_strength) {
 
 = Saskatchewan Organizations
 
-Ku Klux Klan Strength: [+ kkk_strength_2 +] hundred
+Ku Klux Klan Strength: [+ kkk_strength_2 +] Thousand
 Ku Klux Klan Militancy: [+ kkk_militancy : militancy +]
 
-FUL Strength: [+ ful_strength_2 +] hundred
+FUL Strength: [+ ful_strength_2 +] Thousand
 FUL Militancy: [+ ful_militancy : militancy +]
 
-WUL Strength: [+ wul_strength_2 +] hundred
+WUL Strength: [+ wul_strength_2 +] Thousand
 WUL Militancy: [+ wul_militancy : militancy +]
 
 [? if sta_affiliated == 0 :
-<span style="color: #d26e28;">**STA**</span><br>
-Influence: [+ sta_influence +]%<br>
-Relations: [+ sta_relations : relationships +]<br>
-Militancy: [+ sta_militancy : militancy +]<br>
+STA Relations: [+ sta_relations : relationships +]<br>
+STA Militancy: [+ sta_militancy : militancy +]<br>
+?]
+
+[? if tlc_affiliated == 0 :
+TLC Relations: [+ tlc_relations : relationships +]<br>
+TLC Militancy: [+ tlc_militancy : militancy +]<br>
 ?]
 
 = Law Enforcement

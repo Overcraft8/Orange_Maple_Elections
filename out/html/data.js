@@ -164,6 +164,7 @@ const colourList = [{
         style: "color: #b33a3a; font-weight: bold;"
     },
     // Below this for states of qdisplays
+    //dissents
     {
         word: "very low", 
         style: "color: #54e02a; font-weight: bold;"
@@ -184,5 +185,58 @@ const colourList = [{
         word: "very high", 
         style: "color: #e0332a; font-weight: bold;"
     },
+    //Relationships
+    {
+        word: "very friendly", 
+        style: "color: #54e02a; font-weight: bold;"
+    },
+    {
+        word: "friendly", 
+        style: "color: #9ae02a; font-weight: bold;"
+    },
+    {
+        word: "warm", 
+        style: "color: #c5e02a; font-weight: bold;"
+    },
+    {
+        word: "neutral", 
+        style: "color: #e0d12a; font-weight: bold;"
+    },
+    {
+        word: "cool", 
+        style: "color: #e0a62a; font-weight: bold;"
+    },
+    {
+        word: "cold", 
+        style: "color: rgb(224, 118, 42); font-weight: bold;"
+    },
+    {
+        word: "frigid", 
+        style: "color: rgb(224, 81, 42); font-weight: bold;"
+    },
+    {
+        word: "hostile", 
+        style: "color: rgb(224, 48, 42); font-weight: bold;"
+    },
+    //Population Percentage || Pop
+    {
+        word: "Scarce", 
+        style: "color: #54e02a; font-weight: bold;"
+    },
+    {
+        word: "Scarce", 
+        style: "color: #ace02a; font-weight: bold;"
+    },
+    {
+        word: "Prevalent", 
+        style: "color: #e0b52a; font-weight: bold;"
+    },
+    {
+        word: "Severe", 
+        style: "color: #e0792a; font-weight: bold;"
+    },
+    {
+        word: "Disastrous", 
+        style: "color: #e03c2a; font-weight: bold;"
+    },
 ];
-

@@ -263,10 +263,9 @@ Rural Telephone Access: [+ rural_telephone +]%
 {!
 <div>
   <img 
-  src="img/portraits/Melfort_Market.jpg" 
+  src="img/Melfort_Market.jpg" 
   style="width: 60%; display: block; margin: auto; margin-bottom: 5px; cursor: pointer;"
   onclick="goToDepressionSituation()"
->
 </div>
 !}
 ?]

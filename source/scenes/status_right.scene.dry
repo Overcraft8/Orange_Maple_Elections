@@ -90,7 +90,7 @@ Militancy: [+ ccym_militancy : militancy +]
 Influence: [+ ufc_influence +]%<br>
 Relations: [+ ufc_relations : relationships +]<br>
 Militancy: [+ ufc_militancy : militancy +]<br>
-Strength: [+ ufc_strength +]<br>
+Strength: [+ ufc_strength +] Thousand<br>
 ?]
 
 [? if sta_affiliated == 1 :

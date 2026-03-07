@@ -54,6 +54,10 @@ const tooltipList = [{
     searchString: "STA", 
     explanationText: "The Saskatchewan Teacher's Alliance. "
 },
+{
+    searchString: "TLC", 
+    explanationText: "The Trades and Labour Congress of Canada. "
+},
 ];
 
 
@@ -148,6 +152,14 @@ const colourList = [{
     {
         word: "KKK", 
         style: "color: #626262; font-weight: bold;"
+    },
+    {
+        word: "STA", 
+        style: "color: #b06262; font-weight: bold;"
+    },
+    {
+        word: "TLC", 
+        style: "color: #b33a3a; font-weight: bold;"
     },
 ];
 

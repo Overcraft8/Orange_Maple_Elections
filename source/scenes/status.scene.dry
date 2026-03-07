@@ -117,7 +117,7 @@ Relations: [+ sta_relations : relationships +]
 
 Militancy: [+ sta_militancy : militancy +]
 
-[? ?]
+[? end ?]
 
 = Law Enforcement
 

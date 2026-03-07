@@ -116,7 +116,6 @@ Q.flp_legislative_leader = "None";
 Q.flp_legislative_leader_img = "Question_Mark.jpg";
 Q.flp_president = "None";
 Q.flp_president_img = "Question_Mark.jpg";
-Q.flp_secretary = "Frank Eliason";
 
 Q.flp_board_one = "Alexander Nicholson";
 Q.flp_board_one_faction = "agrarian";

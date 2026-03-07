@@ -261,6 +261,7 @@ Rural Telephone Access: [+ rural_telephone +]%
 
 [? if depression == 1:
 {!
+= The Great Depression
 <div>
   <img 
   src="img/Melfort_Market.jpg" 

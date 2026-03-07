@@ -80,6 +80,9 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</span>!}: [+ scp_relation : relationships +]
 
+
+
+
 {!<div style="max-height:350px; overflow-y:auto; border:1px solid #666; padding:6px;">!}
 
 =                          Polling
@@ -256,8 +259,12 @@ Rural Telephone Access: [+ rural_telephone +]%
 
 = Situations
 
-on-arrival: if (Q.depression) {
-
-
-
-}
+[? if Q.Depression == 1:
+<div>
+  <img 
+  src="img/portraits/Melfort_Market.jpg" 
+  style="width: 60%; display: block; margin: auto; margin-bottom: 5px; cursor: pointer;"
+  onclick="goToDepressionSituation()"
+>
+</div>
+]

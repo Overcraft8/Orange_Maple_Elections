@@ -720,4 +720,27 @@ table {
 .poll-table {
   font-size: 12px;
   line-height: 1.1;
+  max-height: 350px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  border: 1px solid #6d6d6d;
+  border-collapse: collapse;
+}
+
+.poll-table::-webkit-scrollbar {
+  display: none;
+}
+
+.poll-table td:not(:first-child) {
+  text-align: center;
+}
+
+.poll-table tr:first-child td {
+  background-color: #f2d3a8;
+  font-weight: bold;
+}
+
+.poll-table td {
+  border: 1px solid #000000;
+  padding: 4px 6px;
 }

@@ -344,3 +344,7 @@ document.addEventListener('mousemove', e => {
 window.goToFLPPresident = function() {
     window.dendryUI.dendryEngine.goToScene("flp_president");
 };
+
+window.goToDepressionSituation = function() {
+    window.dendryUI.dendryEngine.goToScene("Depression_Situation");
+};

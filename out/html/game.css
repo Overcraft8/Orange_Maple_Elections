@@ -1,23 +1,23 @@
 body {
-  --bg-color: #f3f3e3;
+  --bg-color: #decca5;
   --border-color: #000;
-  --content-bg-color: #f3f3f3;
+  --content-bg-color: #decca5;
   --text-color: #431;
   --link-color: #900;
   --link-hover-color: rgba(0, 0, 0, 0.05);
   --unavailable-bg-color: rgba(0, 0, 0, 0.1);
-  --unavailable-color: #999;
-  --tab-bg-color: #dedede;
-  --tab-color: #ddd;
-  --tab-hover-color: #ececec;
-  --card-border-color: #ccc; 
-  --card-bg-color: #ddd; 
+  --unavailable-color: #9a795f;
+  --tab-bg-color: #dbc591;
+  --tab-color: #ebc7a7;
+  --tab-hover-color: #bca189;
+  --card-border-color: #b8aa93; 
+  --card-bg-color: #bca28e; 
   font-family: "Minion Pro", Georgia, serif;
   background-color: var(--bg-color);
   padding: 0;
   line-height: 155%;
   overflow-y: scroll;
-  --button-bg-color: #f0f0f0;
+  --button-bg-color: #bba993;
   --button-border-color: #876;
   --bgBack-color: rgba(0,0,0,0.2);
   --hover-color: rgba(0,0,0,0.1);
@@ -633,7 +633,7 @@ table {
 
 /* Styles for parties */
 .seat.cp {
-    fill: #8B0000;
+    fill: #920c0c;
 }
 .seat.flp {
     fill: #D26E28;

@@ -59,7 +59,7 @@ const colourList = [{
     },
     {
         word: "CP", 
-        style: "color: #8B0000; font-weight: bold;"
+        style: "color: #920c0c; font-weight: bold;"
     },
     {
         word: "LPS", 
@@ -79,23 +79,23 @@ const colourList = [{
     },
     {
         word: "UFC",
-        style: "color: #a7d11c; font-weight: bold;"
+        style: "color: #86a71b; font-weight: bold;"
     },
     {
         word: "Agrarian",
-        style: "color: #a7d11c; font-weight: bold;"
+        style: "color: #86a71b; font-weight: bold;"
     },
     {
         word: "agrarian",
-        style: "color: #a7d11c; font-weight: bold;"
+        style: "color: #86a71b; font-weight: bold;"
     },
     {
         word: "Farmer",
-        style: "color: #a7d11c; font-weight: bold;"
+        style: "color: #86a71b; font-weight: bold;"
     },
     {
         word: "farmer",
-        style: "color: #a7d11c; font-weight: bold;"
+        style: "color: #86a71b; font-weight: bold;"
     },
     {
         word: "ILP",
@@ -131,11 +131,11 @@ const colourList = [{
     },
     {
         word: "FUL", 
-        style: "color: #8B0000; font-weight: bold;"
+        style: "color: #920c0c; font-weight: bold;"
     },
     {
         word: "WUL", 
-        style: "color: #8B0000; font-weight: bold;"
+        style: "color: #920c0c; font-weight: bold;"
     },
 ];
 

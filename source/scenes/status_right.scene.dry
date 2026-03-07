@@ -58,7 +58,7 @@ is-special: true
 = Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
 
 
-<span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #a7d11c;">**Agrarians**</span> 
+<span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #86a71b;">**Agrarians**</span> 
 Strength: [+ agrarian_strength : strength +] 
 Dissent: [+ agrarian_dissent : dissent +]
 
@@ -85,7 +85,7 @@ Relations: [+ ccym_relations : relationships +]
 
 Militancy: [+ ccym_militancy : militancy +]
 
-<span style="color: #a7d11c;">**UFC(SS)**</span> 
+<span style="color: #86a71b;">**UFC(SS)**</span> 
 Influence: [+ ufcss_influence +]%
 
 Relations: [+ ufcss_relations : relationships +]

@@ -716,3 +716,8 @@ table {
     justify-content: center;
     font-family: sans-serif;
 }
+
+.poll-table {
+  font-size: 12px;
+  line-height: 1.1;
+}

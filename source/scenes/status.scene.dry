@@ -82,14 +82,15 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<div style="max-height:350px; overflow-y:auto; border:1px solid #666; padding:6px;">!}
 
-= Polling
+=                          Polling
 
-{!<table>!} 
-{!<tr><td>Party</td><td>Workers</td><td>Rural</td><td>Unemployed</td><td>New Middle</td><td>Old Middle</td><td>!}
+{!<table class="poll-table">!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ workers_flp +]%** {!</td><td>!} **[+ rural_flp +]%** {!</td><td>!}**[+ unemployed_flp +]**{!</td><td>!} [+ new_middle_flp +]% {!</td><td>!} [+ old_middle_flp +]% {</td><td>!}
+{!<tr><td>Party</td><td>Workers</td><td>Rural</td><td>Unemployed</td><td>New Middle</td><td>Old Middle</td><tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ workers_sapd +]% {!</td><td>!} [+ rural_sapd +]% {!</td><td>!} [+ unemployed_sapd +] {!</td><td>!} [+ new_middle_sapd +]% {!</td><td>!} [+ old_middle_sapd +]% {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ workers_flp +]%** {!</td><td>!} **[+ rural_flp +]%** {!</td><td>!} **[+ unemployed_flp +]%** {!</td><td>!} **[+ new_middle_flp +]%** {!</td><td>!} **[+ old_middle_flp +]%** {!</td><tr>!}
+
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ workers_sapd +]% {!</td><td>!} [+ rural_sapd +]% {!</td><td>!} [+ unemployed_sapd +]% {!</td><td>!} [+ new_middle_sapd +]% {!</td><td>!} [+ old_middle_sapd +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP: {!</td><td>!} [+ workers_cp +]% {!</td><td>!} [+ rural_cp +]% {!</td><td>!} [+ unemployed_cp +]% {!</td><td>!} [+ new_middle_cp +]% {!</td><td>!} [+ old_middle_cp +]% {!</td></tr>!}
 
@@ -101,7 +102,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ workers_other +] % {!</td><td>!} [+ rural_other +]% {!</td><td>!} [+ unemployed_other +]% {!</td><td>!} [+ new_middle_other +]% {!</td><td>!} [+ old_middle_other +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCP: {!</td><td>!} [+ workers_scp +]% {!</td><td>!} [+ rural_scp +]% {!</td><td>!} [+ unemployed_scp +]% {!</td><td>!} [+ unemployed_scp +]% {!</td><td>!} [+ old_middle_scp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCP: {!</td><td>!} [+ workers_scp +]% {!</td><td>!} [+ rural_scp +]% {!</td><td>!} [+ unemployed_scp +]% {!</td><td>!} [+ new_middle_scp +]% {!</td><td>!} [+ old_middle_scp +]% {!</td></tr>!}
 
 {!</table>!}
 

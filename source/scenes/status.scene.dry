@@ -80,6 +80,8 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</span>!}: [+ scp_relation : relationships +]
 
+{!<div style="max-height:350px; overflow-y:auto; border:1px solid #666; padding:6px;">!}
+
 = Polling
 
 {!<table>!} 
@@ -103,6 +105,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!</table>!}
 
+{!</div>!}
 
 
 @organizations

@@ -73,39 +73,58 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 <svg id="status_assembly" style="width:500px;height:250px;"></svg>
 
 <script>
+// Define colors and outlines for parties
+var partyColors = {
+    cp: "#1f77b4",
+    sapd: "#ff7f0e",
+    flp: "#2ca02c",
+    lps: "#d62728",
+    pps: "#9467bd",
+    cps: "#8c564b",
+    other: "#7f7f7f",
+    scp: "#bcbd22"
+};
+
 setTimeout(function () {
+    var data = [
+        { id: "cp", legend: "CP", name: "CP", seats: Math.round(Q.cp_r * 0.6) }
+    ];
 
-var data = [
-    { id: "cp", legend: "CP", name: "CP", seats: Math.round(Q.cp_r * 0.6) }
-];
+    if (Q.sapd_formed && Q.sapd_r) {
+        data.push({
+            id: "sapd",
+            legend: "SAPD",
+            name: "SAPD",
+            seats: Math.round(Q.sapd_r * 0.6)
+        });
+    }
 
-if (Q.sapd_formed && Q.sapd_r) {
-    data.push({
-        id: "sapd",
-        legend: "SAPD",
-        name: "SAPD",
-        seats: Math.round(Q.sapd_r * 0.6)
+    data = data.concat([
+        { id: "flp", legend: "FLP", name: "FLP", seats: Math.round(Q.flp_r * 0.6) },
+        { id: "lps", legend: "LPS", name: "LPS", seats: Math.round(Q.lps_r * 0.6) },
+        { id: "pps", legend: "PPS", name: "PPS", seats: Math.round(Q.pps_r * 0.6) },
+        { id: "cps", legend: "CPS", name: "CPS", seats: Math.round(Q.cps_r * 0.6) },
+        { id: "other", legend: "Other", name: "Other", seats: Math.round(Q.other_r * 0.6) },
+        { id: "scp", legend: "SCP", name: "SCP", seats: Math.round(Q.scp_r * 0.6) }
+    ]);
+
+    // Add color and outline for each party
+    data.forEach(function(p) {
+        p.color = partyColors[p.id] || "#cccccc";
+        p.outline = "#000";
     });
-}
 
-data = data.concat([
-    { id: "flp", legend: "FLP", name: "FLP", seats: Math.round(Q.flp_r * 0.6) },
-    { id: "lps", legend: "LPS", name: "LPS", seats: Math.round(Q.lps_r * 0.6) },
-    { id: "pps", legend: "PPS", name: "PPS", seats: Math.round(Q.pps_r * 0.6) },
-    { id: "cps", legend: "CPS", name: "CPS", seats: Math.round(Q.cps_r * 0.6) },
-    { id: "other", legend: "Other", name: "Other", seats: Math.round(Q.other_r * 0.6) },
-    { id: "scp", legend: "SCP", name: "SCP", seats: Math.round(Q.scp_r * 0.6) }
-]);
+    if (window && window.d3) {
+        var parliament = d3.parliament()
+            .width(500)
+            .height(250)
+            .innerRadiusCoef(0.4);
 
-if (window && window.d3) {
-    var parliament = d3.parliament();
-    parliament.width(500).height(250).innerRadiusCoef(0.4);
-
-    d3.select("#status_assembly")
-        .datum(data)
-        .call(parliament);
-}
-
+        // Bind data to a d3 selection
+        d3.select("#status_assembly")
+            .datum(data)  // datum is correct, parliament uses data.each
+            .call(parliament);
+    }
 }, 50);
 </script>
 !}

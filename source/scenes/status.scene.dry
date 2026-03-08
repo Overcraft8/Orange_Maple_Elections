@@ -67,6 +67,89 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 @politics
 
+on-display: {!
+
+var data = [
+    {
+        "id": "cp",
+        "legend": "CP",
+        "name": "CP",
+        "seats": Math.round(Q.cp_r * 0.6),
+    }
+];
+
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+        "id": "sapd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Math.round(Q.sapd_r * 0.6),
+    });
+}
+
+data = data.concat([
+    {
+        "id": "flp",
+        "legend": "FLP",
+        "name": "FLP",
+        "seats": Math.round(Q.flp_r * 0.6),
+    },
+    {
+        "id": "lps",
+        "legend": "LPS",
+        "name": "LPS",
+        "seats": Math.round(Q.lps_r * 0.6),
+    },
+    {
+        "id": "pps",
+        "legend": "PPS",
+        "name": "PPS",
+        "seats": Math.round(Q.pps_r * 0.6),
+    },
+    {
+        "id": "cps",
+        "legend": "CPS",
+        "name": "CPS",
+        "seats": Math.round(Q.cps_r * 0.6),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r * 0.6),
+    },
+    {
+        "id": "scp",
+        "legend": "SCP",
+        "name": "SCP",
+        "seats": Math.round(Q.scp_r * 0.6),
+    }
+]);
+
+if (window && d3) {
+
+    var width = 500;
+    var height = 500;
+
+    var screenWidth = document.getElementById('content').offsetWidth;
+
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+    }
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+
+    d3.select("#status_assembly")
+        .datum(data)
+        .call(parliament);
+}
+
+!}
+
+{!<svg id="status_assembly" style="width:500px;height:250px;"></svg>!}
+
 
 {!<div style="max-height:350px; overflow-y:auto; padding:6px;">!}
 

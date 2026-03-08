@@ -736,7 +736,7 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 Q.underhill_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
 !}
-set-bg: img/Saskatchewan_grid_map.jpg
+set-bg: img/Saskatchewan_grid_map2.jpg
 new-page: true
 
 > *"Emergency measures, however, are of only temporary value, for the present depression is a sign of the mortal sickness of the whole capitalist system, and this sickness cannot be cured by the application of salves. These leave untouched the cancer which is eating at the heart of our society, namely, the economic system in which our natural resources and our principal means of production and distribution are owned, controlled and operated for the private profit of a small proportion of our population.

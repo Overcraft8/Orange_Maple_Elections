@@ -717,30 +717,50 @@ table {
     font-family: sans-serif;
 }
 
+
+
+
+/* Wrapper handles scrolling and hides scrollbar */
+.poll-wrapper {
+  max-height: 350px;         /* table height limit */
+  overflow-y: auto;          /* scroll if too tall */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.poll-wrapper::-webkit-scrollbar {
+  display: none;             /* Chrome, Edge, Safari */
+}
+
+/* Table styling */
 .poll-table {
-  font-size: 0.85em;
-  line-height: 1.1;
-  max-height: 350px;
-  overflow-y: auto;
-  scrollbar-width: none;
+  font-size: 0.85em;         /* smaller font */
+  line-height: 1.1;          /* tighter rows */
   border: 1px solid #6d6d6d;
   border-collapse: collapse;
+  width: 100%;
 }
 
-.poll-table::-webkit-scrollbar {
-  display: none;
-}
-
-.poll-table td:not(:first-child) {
+/* Cell styling */
+.poll-table td {
+  border: 1px solid #000;
+  padding: 2px 4px;
   text-align: center;
 }
 
+/* First column left-aligned */
+.poll-table td:first-child {
+  text-align: left;
+}
+
+/* Header row styling */
 .poll-table tr:first-child td {
   background-color: #f2d3a8;
   font-weight: bold;
 }
 
-.poll-table td {
-  border: 1px solid #000000;
-  padding: 2px 4px;
+/* Shrink party color boxes */
+.box {
+  height: 0.7em;
+  width: 0.7em;
+  display: inline-block;
 }

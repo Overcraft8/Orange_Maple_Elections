@@ -74,7 +74,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<table class="poll-table">!}
 
-{!<tr><td>!}Party{!<tr><td>!}**Relationships**{!<td><td>!}**Polling**{!<td><tr>!}
+{!<tr><td>!}Party{!<td><td>!}**Relationships**{!<td><td>!}**Polling**{!<td><tr>!}
 
 FLP {!</td><td>!}This is our Party{!</td><td>!} **FLP Poll:** [+ flp_votes +]% {!</td><tr>!}
 

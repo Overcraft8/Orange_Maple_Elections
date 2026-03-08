@@ -67,25 +67,33 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 @politics
 
+
+{!<div style="max-height:350px; overflow-y:auto; padding:6px;">!}
+
 = Inter-party Relations
 
+{!<table class="poll-table">!}
 
-{!<span class="tooltip-text" title="Progressive Party">!}[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_relation : relationships +]{!</span>!}: FLP Poll: [+ flp_votes +]%
+{!<tr><td>**Party Relationships**<td><tr>!}
 
-{!<span class="tooltip-text" title="Liberal Party">!}[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_relation : relationships +]{!</span>!}: LPS Poll: [+ lps_votes +]%
+{!<span class="tooltip-text" title="Progressive Party">!}[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</td><td>!}[+ pps_relation : relationships +]{!</td><td>!} **FLP Poll:** [+ flp_votes +]% {!</td><tr>!}
 
-{!<span class="tooltip-text" title="Conservative Party">!}[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_relation : relationships +]{!</span>!}: CPS Polls: [+ cps_votes +]%
+{!<span class="tooltip-text" title="Liberal Party">!}[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</td><td>!}[+ lps_relation : relationships +]{!</td><td>!} LPS Poll: [+ lps_votes +]% {!</td><tr>!}
 
-{!<span class="tooltip-text" title="Communist Party">!}[? if not cp_name: CP?][? if cp_name != 0 : [+ cp_name +]?]{!</span>!}: [+ cp_relation : relationships +]{!</span>!}: CP Polls: [+ cp_votes +]%
+{!<span class="tooltip-text" title="Conservative Party">!}[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</td><td>!}[+ cps_relation : relationships +]{!</td><td>!} CPS Polls: [+ cps_votes +]% {!</td><tr>!}
 
-{!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</span>!}: [+ scp_relation : relationships +]{!</span>!}: SCP Polls: [+ scp_votes +]%
+{!<span class="tooltip-text" title="Communist Party">!}[? if not cp_name: CP?][? if cp_name != 0 : [+ cp_name +]?]{!</td><td>!}[+ cp_relation : relationships +]{!</span>!}{!</td><td>!}[+ cp_votes +]% {!</td><tr>!}
 
+{!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</td><td>!}[+ scp_relation : relationships +]{!</td><td>!} SCP Polls: [+ scp_votes +]% {!</td><tr>!}
 
+{!</table>!}
+
+{!</div>!}
 
 
 {!<div style="max-height:350px; overflow-y:auto; padding:6px;">!}
 
-=                          Polling
+=                           Class Polling
 
 {!<table class="poll-table">!}
 
@@ -165,32 +173,7 @@ Urban police loyalty: [+ city_police_loyalty : loyalty +]
 
 Support for Socialism: [+ socialism +]
 
-@polls
-on-arrival: {!
-Q.pro_republic_disp = Math.round(Q.pro_republic);
-Q.nationalism_disp = Math.round(Q.nationalism);
-Q.socialism_disp = Math.round(Q.socialism);
-!}
 
-= Projected election results
-
-(if the election were to be held now):
-
-FLP: [+ flp_votes +]%
-
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
-
-PPS: [+ pps_votes +]%
-
-CP: [+ cp_votes +]%
-
-[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ lps_votes +]%
-
-CPS: [+ cps_votes +]%
-
-SCP: [+ scp_votes +]%
-
-Others: [+ other_votes +]%
 
 @interior
 

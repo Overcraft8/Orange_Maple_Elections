@@ -76,7 +76,7 @@ data = [
         "id": "cp",
         "legend": "CP",
         "name": "CP",
-        "seats": Math.round(Q.cp_r * 0.6),
+        "seats": Q.cp_r_seats
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -84,7 +84,7 @@ if (Q.sapd_formed && Q.sapd_r) {
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
-            "seats": Math.round(Q.sapd_r * 0.6),
+            "seats": Q.sapd_r_seats
             });
 }
 data = data.concat([
@@ -92,37 +92,37 @@ data = data.concat([
         "id": "flp",
         "legend": "FLP",
         "name": "FLP",
-        "seats": Math.round(Q.flp_r * 0.6),
+        "seats": Q.flp_r_seats
     },
     {
         "id": "lps",
         "legend": "LPS",
         "name": "LPS",
-        "seats": Math.round(Q.lps_r * 0.6),
+        "seats": Q.lps_r_seats
     },
     {
         "id": "pps",
         "legend": "PPS",
         "name": "PPS",
-        "seats": Math.round(Q.pps_r * 0.6),
+        "seats": Q.pps_r_seats
     },
     {
         "id": "cps",
         "legend": "CPS",
         "name": "CPS",
-        "seats": Math.round(Q.cps_r * 0.6),
+        "seats": Q.cps_r_seats
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_r * 0.6),
+        "seats": Q.other_r_seats
     },
     {
         "id": "scp",
         "legend": "SCP",
         "name": "SCP",
-        "seats": Math.round(Q.scp_r * 0.6),
+        "seats": Q.scp_r_seats
     },
 ]); 
 
@@ -158,10 +158,11 @@ const inputPercentages = {
     flp_r: Q.flp_r, 
     cp_r: Q.cp_r, 
     pps_r: Q.pps_r, 
-    lps_r: Q.pps_r, 
-    cps_r: Q.pps_r, 
+    lps_r: Q.lps_r, 
+    cps_r: Q.cps_r, 
     scp_r: Q.scp_r, 
-    other_r: Q.other_r
+    other_r: Q.other_r,
+    sapd_r: Q.sapd_r
 };
 
 const allocatedSeats = allocateSeats(inputPercentages);
@@ -177,13 +178,13 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("bavaria_landtag").style.height = screenWidth/2 + "px";
+        document.getElementById("status_assembly").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#bavaria_landtag").datum(data).call(parliament);
+    d3.select("#status_assembly").datum(data).call(parliament);
 }
 !}
 

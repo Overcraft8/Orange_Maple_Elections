@@ -551,12 +551,13 @@ Q.ufc_strength = 35.00;
 Q.ufc_militancy = 0.30;
 
 Q.sta_affiliated = 0;
-Q.sta_strength = 5;
+Q.sta_strength = 5.00;
 Q.sta_relations = 50;
 Q.sta_militancy = 0.30;
 
 Q.tlc_relations = 40;
 Q.tlc_militancy = 20;
+Q.tlc_strength = 30.00;
 
 
 Q.women_in_rb = 0;

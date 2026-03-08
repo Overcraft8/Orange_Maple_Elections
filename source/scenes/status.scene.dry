@@ -83,7 +83,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 
 
-{!<div style="max-height:350px; overflow-y:auto; border:1px solid #666; padding:6px;">!}
+{!<div style="max-height:350px; overflow-y:auto; padding:6px;">!}
 
 =                          Polling
 
@@ -265,6 +265,32 @@ Rural Telephone Access: [+ rural_telephone +]%
     The Great Depression
     <img 
       src="img/Melfort_Market.jpg" 
+      style="width: 60%; display: block; margin: auto; cursor: pointer;"
+      onclick="goToDepressionSituation()"
+    >
+  <div>
+!}
+?]
+
+[? if depression == 1:
+{!
+  <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+    The Dirty Thirties
+    <img 
+      src="img/Dirty_Thirties.jpg" 
+      style="width: 60%; display: block; margin: auto; cursor: pointer;"
+      onclick="goToDepressionSituation()"
+    >
+  <div>
+!}
+?]
+
+[? if depression == 1:
+{!
+  <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+    Underdeveloped Countryside
+    <img 
+      src="img/Quil_Lake_1917.jpg" 
       style="width: 60%; display: block; margin: auto; cursor: pointer;"
       onclick="goToDepressionSituation()"
     >

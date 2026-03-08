@@ -77,6 +77,7 @@ Dissent: [+ reformist_dissent : dissent +]
 Influence: [+ ccym_influence +]%<br>
 Relations: [+ ccym_relations : relationships +]<br>
 Militancy: [+ ccym_militancy : militancy +]<br>
+Strength: [+ ccym_strength +] Thousand<br>
 ?]
 
 [? if ufc_affiliated = 1 :
@@ -92,12 +93,12 @@ Strength: [+ ufc_strength +] Thousand<br>
 Influence: [+ sta_influence +]%<br>
 Relations: [+ sta_relations : relationships +]<br>
 Militancy: [+ sta_militancy : militancy +]<br>
-StrengthL [+ sta_strength +]<br>
+StrengthL [+ sta_strength +] Thousand<br>
 ?]
 
 [? if tlc_affiliated == 1 :
 Influence: [+ tlc_influence +]%<br>
 Relations: [+ tlc_relations : relationships +]<br>
 Militancy: [+ tlc_militancy : militancy +]<br>
-Strength: [+ tlc_strength +]<br>
+Strength: [+ tlc_strength +] Thousand<br>
 ?]

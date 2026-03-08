@@ -43,3 +43,7 @@ GreenPlus.jpg https://www.bing.com/images/search?view=detailV2&ccid=2f%2b6kyp4&i
 BlueStatic.jpg https://www.bing.com/images/search?view=detailV2&ccid=RtuNIY5K&id=E15B4FB7E4EF90BF40887CA47E0752058509BEF5&thid=OIP.RtuNIY5KleJphBrFsCnp_QHaHa&mediaurl=https%3a%2f%2fwww.iconsdb.com%2ficons%2fdownload%2fblue%2fequal-sign-2-512.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.46db8d218e4a95e269841ac5b029e9fd%3frik%3d9b4JhQVSB36kfA%26pid%3dImgRaw%26r%3d0&exph=512&expw=512&q=equals+sign+blue&FORM=IRPRST&ck=8DC2CB71E14C1AB49E71F0EC79506A04&selectedIndex=7&itb=0
 
 Dirty_Thirties.jpg https://esask.uregina.ca/entry/history_of_saskatchewan.html
+
+Saskatchewan_Highway_map.jpg https://www.bing.com/images/search?view=detailV2&ccid=1MJgmZfJ&id=CBCA8CF9C432F24925513B846A1A0981A53673E5&thid=OIP.1MJgmZfJOrkr81gvtt3RSAHaHy&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.d4c2609997c93ab92bf3582fb6ddd148%3frik%3d5XM2pYEJGmqEOw%26riu%3dhttp%253a%252f%252fwww.saskgenweb.ca%252fcanmaps%252f1954SGI%252f1954SGI-Map.png%26ehk%3dax7p7qgsxss2VoYTZFFKyv16TNaFFVgRsjzzVSJiN4Q%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=600&expw=570&q=saskatchewan+map+vintage&FORM=IRPRST&ck=2C69F54A4588699CDD70815E8AFF909D&selectedIndex=83&itb=0
+
+Saskatchewan_grid_map.jpg https://archive.org/details/dr_province-of-saskatchewan-canada-3273077

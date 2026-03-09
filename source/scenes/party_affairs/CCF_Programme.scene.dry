@@ -48,6 +48,3 @@ on-arrival: agrarian_strength += 2; use_lease_plat += 1;
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
 
-
-@back
-- @return: Go back

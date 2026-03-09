@@ -51,22 +51,29 @@ is-special: true
 
 = Internal Factions of the <span style="color: #d26e28;">**FLP**</span>
 
+[+  
+<span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #86a71b;">**Agrarians**</span><br>
+Strength: [+ agrarian_strength : strength +] <br>
+Dissent: [+ agrarian_dissent : dissent +]<br>
++]
 
-<span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #86a71b;">**Agrarians**</span> 
-Strength: [+ agrarian_strength : strength +] 
-Dissent: [+ agrarian_dissent : dissent +]
+[+ 
+<span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers." style="color: #0F52BA;">**Labour**</span><br>
+Strength: [+ labour_strength : strength +]<br> 
+Dissent: [+ labour_dissent : dissent +]<br>
++]
 
-<span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers." style="color: #0F52BA;">**Labour**</span> 
-Strength: [+ labour_strength : strength +] 
-Dissent: [+ labour_dissent : dissent +]
+[+ 
+<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Left**</span><br> 
+Strength: [+ left_strength : strength +]<br> 
+Dissent: [+ left_dissent : dissent +]<br>
++]
 
-<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Left**</span> 
-Strength: [+ left_strength : strength +] 
-Dissent: [+ left_dissent : dissent +]
-
-<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span> 
-Strength: [+ reformist_strength : strength +] 
-Dissent: [+ reformist_dissent : dissent +]
+[+ 
+<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span><br> 
+Strength: [+ reformist_strength : strength +]<br> 
+Dissent: [+ reformist_dissent : dissent +]<br>
++]
 
 @partyaffiliates
 

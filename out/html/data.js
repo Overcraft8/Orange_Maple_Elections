@@ -253,7 +253,7 @@ const colourList = [{
         style: "color: #a0e02a; font-weight: bold;"
     },
     {
-        word: "Medium-Low", 
+        word: "Medium-low", 
         style: "color: #bfe02a; font-weight: bold;"
     },
     {

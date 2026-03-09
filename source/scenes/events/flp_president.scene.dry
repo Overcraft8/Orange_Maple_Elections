@@ -23,5 +23,5 @@ view-if: 2 = 1
 @Information
 
 @Back
->backSpecialScene
+go-to: backSpecialScene
 

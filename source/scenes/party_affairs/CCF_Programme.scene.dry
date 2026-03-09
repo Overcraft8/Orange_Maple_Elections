@@ -10,19 +10,24 @@ subtitle: Choosing our party's platform
 Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. We can promise multiple policies within a single group or promise none at all. 
 
 - @path: What path should we take?
+- @return: Go back
+
 
 @path
 
 What path should we take? 
 
 - @rural_policies: What rural policies might we adopt? 
-# - @labour_policies: What labour policies might we adopt?
+- @labour_policies: What labour policies might we adopt?
 # - @infra_policies: What construction or maintenance might we undertake?
 # - @econ_policies: What economic policies might we adopt?
 # - @health_policies: What healthcare policies might we adopt?
 # - @edu_policies: What educational policies might we adopt?
 - @return: Go Back
 
+
+
+#                                             Rural 
 @rural_policies
 subtitle: The farmers are a traditional voting bloc of ours. 
 face-image: img/Williams_picnic.jpg
@@ -34,7 +39,7 @@ face-image: img/Williams_picnic.jpg
 - @wheat_pool: We can create a provincially regulated and operated wheat pool. 
 - @grain_elevators: We can promote the construction of public grain elevators. 
 - @price_guarantee: We can set a floor price for livestock and grain. 
-- @return: Go Back
+- @path: Go Back
 
 
 @use_lease
@@ -89,6 +94,8 @@ title: Yes to the grain elevators!
 
 We have chosen to add a provincial grain elevator policy to our platform. 
 
+#-------------------------------------------------------------
+
 @price_guarantee
 
 Enacting this policy would provincially regulate the sale price of livestock and crop sold within the province, artifically ensuring that farmers receive enough to sustain n adequate lifestyle. 
@@ -100,3 +107,26 @@ This would have major effects on the supply side, however.
 
 @yes_price_guarantee
 title: Yes to the price guarantee!
+
+# _______________________________________________________________________________________
+#                                           Labour 
+
+@labour_policies
+subtitle: Labour is an important part of any democratic socialist movement
+face-image: img/George_Jones_Speech
+
+Labour is an essential part of our movement. The urban seats of Regina and Saskatoon have many workers that would take kindly to a party that advocates their interests. In addition, Saskatchewan has a burgeoning resource exploitation sector full of low wage and poorly regulated jobs that will need protections sooner or later. 
+
+#- @collective_bargaining: Legalization of collective bargaining and mandatory recognition of majority-supported unions. 
+#- @work_protection: Raise the minimum wage, limit working hours, and increase regulation over hazardous workplaces.
+#- @social_insurance: Establish an unemployment benefit and worker's injury compensation
+#- @loan_cooperatives: Hand grants and loans to cooperatives to increase workplace democracy. 
+#- @worker_representation_board: Mandate worker's representation on Corporate Boards. 
+- @path: Go back
+
+
+
+
+# ____________________________________________________________________________________________
+#                                        Infrastructure
+

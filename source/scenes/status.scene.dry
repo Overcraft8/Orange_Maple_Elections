@@ -24,7 +24,7 @@ if (Q.economic_growth) {
 <div style="display:flex; align-items:flex-start;">
 
 <!-- LEFT IMAGE -->
-<div style="width:20%; text-align:center;">
+<div style="width:60%; text-align:center;">
 <img src="img/IMG_5444.jpg" style="max-width:100%;">
 </div>
 
@@ -83,7 +83,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 </div>
 
 <!-- RIGHT IMAGE -->
-<div style="width:20%; text-align:center;">
+<div style="width:60%; text-align:center;">
 <img src="img/IMG_5443.jpg" style="max-width:100%;">
 </div>
 

@@ -24,7 +24,7 @@ subtitle: The farmers are a traditional voting bloc of ours.
 face-image: img/Williams_picnic.jpg
 
 [? if ufc_affiliated == 1 : Our party is traditionally agrarian-oriented, owing to the tremendous backing of the UFC (SS) in financing our operations and promoting membership to our party. ?]
-[? if ufc_affiliated == 0 : As the UFC (SS) is no longer officially affiliated with us, we will have a harder time convincing farmers to vote for us. ?]
+[? if ufc_affiliated == 0 : As the UFC (SS) is no longer officially affiliated with us, we will have a harder time recruiting farmers to our cause. ?]
 
 - @use_lease: We can protect the farmers by illegalizing immediate foreclosure by their creditors. 
 #- @wheat_pool: We can create a provincially regulated and operated wheat pool. 
@@ -44,7 +44,7 @@ We would construct a Farm Land Security Board to oversee this policy and ensure 
 - @return: Let's go back
 
 @Yes_use_lease
-on-arrival: agrarian_strength += 2; use_lease_plat += 1; 
+on-arrival: agrarian_strength += 2; use_lease_plat += 1; flp_rural += 5; 
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
 

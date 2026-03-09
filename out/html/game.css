@@ -409,23 +409,6 @@ ul.decks, ul.hand, ul.pinned-cards {
   padding-left: 0;
 }
 
-a.image_status {
-display: inline-block;
-  width: 120px;
-  height: 150px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  border: 10px solid var(--card-border-color);
-  margin-bottom: 0.5em;
-  position: relative;
-}
-
-.image_status-img {
-  height: 150px;
-  width: 120px;
-  object-fit: cover;
-}
-
-
 a.card {
   display: inline-block;
   width: 120px;

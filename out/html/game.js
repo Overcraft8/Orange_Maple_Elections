@@ -345,13 +345,20 @@ document.addEventListener('mousemove', e => {
 
 // President Button
 
-window.goToFLPPresident = function() {
-    window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
-    window.dendryUI.dendryEngine.goToScene("flp_president");
-};
-
 window.goToDepressionSituation = function() {
     window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
     window.dendryUI.dendryEngine.goToScene("Depression_Situation");
 };
 
+
+
+document.addEventListener("click", function(e) {
+  var card = e.target.closest("[go-to]");
+  if (!card) return;
+
+  var scene = card.getAttribute("go-to");
+  if (!scene) return;
+
+  window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
+  window.dendryUI.dendryEngine.goToScene(scene);
+});

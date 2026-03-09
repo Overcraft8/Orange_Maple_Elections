@@ -5,7 +5,7 @@ tags: party_affairs
 view-if: programme_timer <= 0
 on-arrival: month_actions += 1; programme_timer += 3
 card-image: img/Sask_CCF_Programme.jpg
-#subtitle: Choosing our party's platform
+subtitle: Choosing our party's platform
 
 Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. 
 
@@ -46,6 +46,8 @@ This is a radical rural policy that would potentially destabilize our agricultur
 - @return: Let's go back
 
 @yes_use_lease
+title: Yes to use lease!
+subtitle: Mhm
 on-arrival: agrarian_strength += 5; use_lease_plat += 1; flp_rural += 4;
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
@@ -62,6 +64,7 @@ This would encroach upon many of the existing wheat pools in Saskatchewan though
 - @return: Let's go back
 
 @yes_wheat_pool
+title: Yes to the wheat pool!
 on-arrival: agrarian_strength += 3; wheat_pool_plat += 1; flp_rural += 4
 
 We have chosen to add a provincial wheat pool to our platform. The farmers will surely be enthusiastic. 

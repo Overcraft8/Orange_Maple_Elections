@@ -5,12 +5,10 @@ is-special: true
 = President of the FLP
 
 
-{!
-<a class="card" go-to="flp_president" style="display:flex; flex-direction:column; align-items:center;">
-  <img class="card-img" src="img/portraits/[+ flp_president_img +]">
+<a class="card" go-to="flp_president">
+  <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
   <span class="card-caption">President</span>
 </a>
-!}
 
 = Legislative Party Leader 
 

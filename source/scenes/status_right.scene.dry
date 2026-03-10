@@ -12,8 +12,10 @@ is-special: true
 
 = Legislative Party Leader 
 
-<div><img src="img/portraits/[+ flp_legislative_leader_img  +]" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
-<p style="text-align: center;margin-bottom: 0;"> [+ flp_legislative_leader +] </p>
+<a class="card" go-to="flp_legislative_leader">
+  <img class="card-img" src="img/portraits/[+ flp_legislative_leader_img +]" style="display:block; margin:auto;">
+  <span class="card-caption">President</span>
+</a>
 
 = Board of Directors 
 

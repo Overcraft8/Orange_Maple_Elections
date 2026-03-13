@@ -664,7 +664,6 @@ table {
   position: relative;
   cursor: pointer;
   background-color: transparent;
-  padding: 2px 5px;
 }
 
 .mytooltip:hover { background-color: #f3f3e3; }
@@ -690,8 +689,16 @@ table {
   text-align: center;
 }
 
-.mytooltip:hover .mytooltiptext { opacity: 1; }
-.mytooltip .mytooltiptext img { display: block; margin: 0 auto 4px auto; max-width: 90%; height: auto; }
+.mytooltip:hover .mytooltiptext { 
+  opacity: 1; 
+
+}
+
+.mytooltip .mytooltiptext img { 
+  display: block; 
+  margin: 0 auto 4px auto; 
+  max-width: 90%; 
+  height: auto; }
 
 .mytooltip .mytooltiptext {
   bottom: auto;

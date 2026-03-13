@@ -96,7 +96,7 @@ Q.grand_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r;
 Q.bourgeois_coalition = Q.lps_r + Q.cps_r + Q.other_r;
 Q.conservative_coalition = Q.cps_r + Q.scp_r;
 Q.right_coalition = Q.pps_r + Q.cps_r + Q.other_r + Q.scp_r;
-Q.scp_majority = Q.scp_r 
+Q.scp_majority = Q.scp_r;
 Q.left_coalition = Q.flp_r + Q.cp_r + Q.sapd_r;
 // this is an absurd concept lol
 Q.unity_government_coalition = Q.flp_r + Q.cp_r + Q.pps_r + Q.lps_r + Q.sapd_r;
@@ -104,7 +104,7 @@ Q.anti_democratic_coalition = Q.cp_r + Q.scp_r;
 // aka everyone except scp, cp, scp
 Q.neo_lps_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
 // Needham + Right-wing parties (only comes into effect if you've alienated PPS too badly)
-Q.needham_right_coalition = Q.pps_r + Q.scp_r
+Q.needham_right_coalition = Q.pps_r + Q.scp_r;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
 Q.progressive_coalition = Q.flp_r + Q.cp_r + Q.lps_r + Q.sapd_r;
 

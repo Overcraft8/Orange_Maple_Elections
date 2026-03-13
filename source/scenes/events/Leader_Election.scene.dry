@@ -4,8 +4,8 @@ subtitle: Who will lead our party?
 tags: event
 view-if: year = 1932 and month = 2
 max-visits: 1
+face-image: img/CCF_Convention.jpg
 
-<div><img src="img/CCF_Convention.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
 
 = Selection of our President
 

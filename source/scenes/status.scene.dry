@@ -200,7 +200,7 @@ TLC Strength: [+ tlc_strength +] Thousand<br>
 
 RCMP Suspicion: [+ rcmp_suspicion : suspicion +]
 
-Urban police: [+ city_police_strength : strength +] Thousand
+Urban police: [+ city_police_strength : strength +]
 
 Urban police loyalty: [+ city_police_loyalty : loyalty +]
 
@@ -247,7 +247,7 @@ Rural Telephone Access: [+ rural_telephone +]%<br>
 
 @economy
 
-= Status of the Economy
+= Economy
 
 Inflation: [+ inflation_2 +]%
 
@@ -257,9 +257,9 @@ Rural Poverty Incidence: [+ poverty : pop_percentage +]
 
 GDP Growth: [+ economic_growth_2 +]%
 
-Saskatchewan GDP: [+ str_saskatchewan_gdp +] Million
+Saskatchewan GDP Index (1932 = 100): [+ str_saskatchewan_gdp +] Million
 
-Total Saskatchewan Debt: $[+ saskatchewan_debt +] Million
+Total Saskatchewan Debt Index: $[+ saskatchewan_debt +] Million
 
 @situations 
 

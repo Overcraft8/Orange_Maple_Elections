@@ -13,7 +13,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-The Assembly elections are to be held now.
+The Legislative elections are to be held now.
 
 - @election_algorithm: May we do our best...
 

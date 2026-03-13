@@ -2,19 +2,16 @@ title: Party Hierarchy
 new-page: true
 is-special: true
 
-= President of the FLP
-
+= Party Hierarchy
 
 <a class="card" go-to="flp_president">
   <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
   <span class="card-caption">President</span>
 </a>
 
-= Legislative Party Leader 
-
 <a class="card" go-to="flp_legislative_leader">
   <img class="card-img" src="img/portraits/[+ flp_legislative_leader_img +]" style="display:block; margin:auto;">
-  <span class="card-caption">President</span>
+  <span class="card-caption">Legislative Leader</span>
 </a>
 
 = Board of Directors 

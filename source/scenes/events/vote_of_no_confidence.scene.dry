@@ -56,7 +56,7 @@ view-if: tried_supporting_cp = 0
 on-arrival: tried_supporting_cp = 1
 unavailable-subtitle: [? if communist_coalition < 3 : The CP won't take part in parliamentary government. ?] [? if cp_relation < 50 : The CP is not friendly enough with us. ?] [? if (in_grand_coalition and cp_r < cps_r) or (in_lps_coalition and cp_r < pps_r): The CP does not have enough votes. ?] [? if in_unity_government : We are already in a Popular Front with the CP. ?]
 
-If the Communists abstain, then we essentially can maintain a minority government[? if prime_minister == "Richard Bennett" :, although it would be very difficult to make policy without the support of Monarch Richard Bennett, which we do not have ?]. If this happens, then we will own a massive debt to the CP. This could lead to broader cooperation in the future, for better or for worse.
+If the Communists abstain, then we essentially can maintain a minority government[? if prime_minister == "Richard Bennett" :, although it would be very difficult to make policy without the support of Prime Minister Richard Bennett, which we do not have ?]. If this happens, then we will own a massive debt to the CP. This could lead to broader cooperation in the future, for better or for worse.
 
 - @support_cp_2: Persuade the CP to "tolerate" us?
 - @let_it_happen: Never mind. Let the vote happen.

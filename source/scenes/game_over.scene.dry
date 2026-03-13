@@ -156,7 +156,7 @@ view-if: prime_minister == "JS_Woodsworth"
 tags: endings
 go-to: eg_menu
 
-JS_Woodsworth has been elected as Monarch of Saskatchewan. He had never desired to be the most powerful man in Saskatchewan, but now he is.
+JS_Woodsworth has been elected as Prime Minister of Saskatchewan. He had never desired to be the most powerful man in Saskatchewan, but now he is.
 
 @prime_minister_schumacher
 title: Kurt Schumacher victorious
@@ -164,23 +164,23 @@ view-if: prime_minister == "Schumacher"
 tags: endings
 go-to: eg_menu
 
-Kurt Schumacher has been elected as Monarch of Saskatchewan. As a young and ambitious FLP member, he will be shaping Saskatchewan for years to come.
+Kurt Schumacher has been elected as Prime Minister of Saskatchewan. As a young and ambitious FLP member, he will be shaping Saskatchewan for years to come.
 
 @prime_minister_macphail
-title: Agnes Macphail is Monarch
+title: Agnes Macphail is Prime Minister
 view-if: prime_minister == "Macphail"
 tags: endings
 go-to: eg_menu
 
-Agnes Macphail has been elected as Monarch of Saskatchewan. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Saskatchewan for years to come.
+Agnes Macphail has been elected as Prime Minister of Saskatchewan. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Saskatchewan for years to come.
 
 @prime_minister_einstein
-title: Albert Einstein is Monarch
+title: Albert Einstein is Prime Minister
 view-if: prime_minister == "Einstein"
 tags: endings
 go-to: eg_menu
 
-Albert Einstein, possibly the most famous scientist in the world, has been elected as Monarch of Saskatchewan. As a Saskatchewanian Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Saskatchewanian Republic that has moved beyond its checkered past.
+Albert Einstein, possibly the most famous scientist in the world, has been elected as Prime Minister of Saskatchewan. As a Saskatchewanian Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Saskatchewanian Republic that has moved beyond its checkered past.
 
 
 
@@ -235,7 +235,7 @@ go-to: eg_menu
 Unemployment is still at dangerously high levels. Even though Needham is not in power, the situation is ripe for instability and extremism.
 
 
-The FLP is ruling as part of an emergency minority government, led by Monarch [+ prime_minister +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
+The FLP is ruling as part of an emergency minority government, led by Prime Minister [+ prime_minister +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
 
 @peoples_party_achieved
 title: The FLP is a "People's Party".
@@ -293,7 +293,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Urban Coup and win. ?]
 
-[? if game_achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if game_achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
 [? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
 
@@ -399,7 +399,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Urban Coup and win. ?]
 
-[? if achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
 [? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
 
@@ -502,7 +502,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Urban Coup and win. ?]
 
-[? if not achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if not achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
 [? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
 

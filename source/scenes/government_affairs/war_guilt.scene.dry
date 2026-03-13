@@ -9,7 +9,7 @@ max-visits: 1
 
 = Assembly War Guilt Inquiry
 
-The War Guilt Inquiry has been an intermittent Assembly committee for investigating the causes of the Great War and the Saskatchewanian defeat. So far, it has faced massive resistance from the military establishment up to Monarch Richard Bennett.
+The War Guilt Inquiry has been an intermittent Assembly committee for investigating the causes of the Great War and the Saskatchewanian defeat. So far, it has faced massive resistance from the military establishment up to Prime Minister Richard Bennett.
 
 - @restart: Restart the inquiry.
 - @root: Do nothing.

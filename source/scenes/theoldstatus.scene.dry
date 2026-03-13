@@ -31,7 +31,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-Monarch: [+ prime_minister +]
+Prime Minister: [+ prime_minister +]
 
 Premier: [+ premier +] ([+ premier_party +])
 

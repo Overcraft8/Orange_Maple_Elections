@@ -47,7 +47,7 @@ We have arrested more of the FUL's leaders and confiscated their weapons.
 on-arrival: kkk_strength *= 0.85; kkk_strength *= 0.7 if interior_police_loyalty >= 0.7; kkk_banned = 1; cps_relation -= 5; city_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett"; kkk_ban_timer = 6;
 view-if: kkk_banned == 0
 
-[? if prime_minister == "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with Monarch Richard Bennett, as well as the political right and the police. ?][? if prime_minister != "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with the political right and the police. ?] [? if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett" : It also weakens our coalition due to the influence of Richard Bennett on the right wing of our coalition. ?] In addition, the Ku Klux Klan still operates out of public sight.
+[? if prime_minister == "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with Prime Minister Richard Bennett, as well as the political right and the police. ?][? if prime_minister != "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with the political right and the police. ?] [? if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett" : It also weakens our coalition due to the influence of Richard Bennett on the right wing of our coalition. ?] In addition, the Ku Klux Klan still operates out of public sight.
 
 @unban_kkk
 view-if: kkk_banned = 1

@@ -59,7 +59,7 @@ go-to: cabinet if flp_in_government; menu if not flp_in_government
 
 = Current Government
 
-Monarch: [+ prime_minister +]
+Prime Minister: [+ prime_minister +]
 
 Premier: [+ premier +] ([+ premier_party +])
 

@@ -104,7 +104,7 @@ on-arrival: cps_relation += 5*(1 - dissent)
 
 The liberal party [+ lps_name +] is electorally moribund, so perhaps our efforts are best spent elsewhere.
 
-However, given the influence of the CPS among the other right-leaning parties[? if prime_minister == "Richard Bennett": and with Monarch Richard Bennett ?], it can still be helpful to influence them.
+However, given the influence of the CPS among the other right-leaning parties[? if prime_minister == "Richard Bennett": and with Prime Minister Richard Bennett ?], it can still be helpful to influence them.
 
 @flp_alone
 

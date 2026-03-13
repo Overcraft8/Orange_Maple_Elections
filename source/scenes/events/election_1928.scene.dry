@@ -384,7 +384,7 @@ A far left coalition is impossible.
 
 @left_coalition_possible
 
-The CP is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Tim Buck as premier in exchange for a coalition. [? if monarch == "George V" : There is no chance whatsoever that Monarch George V would approve of the appointment of a die-hard communist as premier. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as premier.
+The CP is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Tim Buck as premier in exchange for a coalition. [? if monarch == "George V" : There is no chance whatsoever that Prime Minister George V would approve of the appointment of a die-hard communist as premier. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as premier.
 
 - @tim_buck_premier: Appoint Tim Buck as premier.
 - @left_coalition_resources
@@ -393,10 +393,10 @@ The CP is still very reluctant to join a coalition, despite grassroots friendlin
 
 @tim_buck_premier
 choose-if: monarch == "J. S. Woodsworth" and reformist_strength + neorevisionist_strength < left_strength
-unavailable-subtitle: [? if monarch != "J. S. Woodsworth": Monarch [+ monarch +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
+unavailable-subtitle: [? if monarch != "J. S. Woodsworth": Prime Minister [+ monarch +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
 on-arrival: premier = "Tim Buck"; premier_party = "CP"; cp_relation = 80; in_left_front = 1; flp_in_government = 1 
 
-With great reluctance, Monarch [+ monarch +] appoints [+ premier +] as premier.
+With great reluctance, Prime Minister [+ monarch +] appoints [+ premier +] as premier.
 
 Immediately, [+ premier +] goes to work building a "Soviet Saskatchewan": consolidating as much power as possible in the CP, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
 
@@ -423,7 +423,7 @@ on-arrival: flp_in_government = 1; in_left_front = 1; premier = "Williams"; prem
 go-to: left_coalition_no_civil_war
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the FLP, CP, and Monarch [+ monarch +], is George Hara Williams, who belongs to the agrarian faction of the FLP, but was acceptable to the left due to his previous membership in the left-wing anti-war UFLP.
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the FLP, CP, and Prime Minister [+ monarch +], is George Hara Williams, who belongs to the agrarian faction of the FLP, but was acceptable to the left due to his previous membership in the left-wing anti-war UFLP.
 
 # just raise the coup limit, don't immediately go to civil war
 
@@ -546,9 +546,9 @@ Major James Coldwell's appointment as premier is approved by our potential allie
 @woodsworth
 title: J. S. Woodsworth for Premier
 view-if: not historical_mode or not flp_prussia
-subtitle: J. S. Woodsworth is currently the Minister-Monarch of City Police, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
+subtitle: J. S. Woodsworth is currently the Minister-Prime Minister of City Police, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
-The PPS party has significant qualms about appointing J. S. Woodsworth as premier, given that he is already Minister-Monarch of City Police. They ask for either more cabinet positions, or for J. S. Woodsworth to resign his state government role. The latter is completely unacceptable.
+The PPS party has significant qualms about appointing J. S. Woodsworth as premier, given that he is already Minister-Prime Minister of City Police. They ask for either more cabinet positions, or for J. S. Woodsworth to resign his state government role. The latter is completely unacceptable.
 
 - @douglas
 - @coldwell
@@ -589,7 +589,7 @@ title: We do not form the government.
 subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
 on-arrival: reformist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; neorevisionist_dissent += 5
 
-Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by Monarch [+ prime_minister +].
+Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by Prime Minister [+ prime_minister +].
 
 - @douglas
 - @woodsworth
@@ -629,7 +629,7 @@ view-if: right_coalition >= 50
 choose-if: year < 1929
 on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCP"; justice_minister_party = "SCP"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCP"; in_right_coalition = 1;
 
-Even though the SCP is very reluctant to participate in such a coalition, they still accede to Monarch George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
+Even though the SCP is very reluctant to participate in such a coalition, they still accede to Prime Minister George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
 
 
 

@@ -130,7 +130,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>Party</td><td>Workers</td><td>Rural</td><td>Unemployed</td><td>New Middle</td><td>Old Middle</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ workers_flp_display +]%** {!</td><td>!} **[+ rural_flp_display +]%** {!</td><td>!} **[+ unemployed_flp_display +]%** {!</td><td>!} **[+ new_middle_flp_display +]%** {!</td><td>!} **[+ old_middle_flp_display +]%** {!</td><tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; width: 250px; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ workers_flp_display +]%** {!</td><td>!} **[+ rural_flp_display +]%** {!</td><td>!} **[+ unemployed_flp_display +]%** {!</td><td>!} **[+ new_middle_flp_display +]%** {!</td><td>!} **[+ old_middle_flp_display +]%** {!</td><tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ workers_sapd_display +]% {!</td><td>!} [+ rural_sapd_display +]% {!</td><td>!} [+ unemployed_sapd_display +]% {!</td><td>!} [+ new_middle_sapd_display +]% {!</td><td>!} [+ old_middle_sapd_display +]% {!</td></tr>!} ?]
 

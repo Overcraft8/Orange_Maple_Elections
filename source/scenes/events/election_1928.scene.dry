@@ -617,7 +617,7 @@ go-to: no_govt_2
 
 @no_govt_2
 on-arrival: reformist_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "James Anderson"; flp_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_flp if right_coalition >= 50 and prime_minister != "J. S. Woodsworth" and year < 1929; new_elections_flp if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"; 
+go-to: right_coalition_post_flp if right_coalition >= 50 and prime_minister != "J. S. Woodsworth" and year < 1929; new_elections_flp if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"
 
 
 @right_coalition_post_flp

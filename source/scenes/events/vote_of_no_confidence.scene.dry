@@ -2,7 +2,7 @@ title: The Right calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
 on-arrival: tried_supporting_cp = 0
-view-if: flp_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_lps_coalition = 1 and coalition_dissent >= 4) and flp_r < 50 and not constructive_vonc
+view-if: flp_in_government = 1 and ((in_grand_coalition = 1 or in_unity_government = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_lps_coalition = 1 and coalition_dissent >= 4) and flp_r < 50 and not constructive_vonc
 tags: event
 go-to: vonc_menu
 
@@ -11,7 +11,7 @@ go-to: vonc_menu
 
 = Vote of No Confidence
 
-[? if in_grand_coalition : The CPS ?][? if in_lps_coalition or in_popular_front or in_minority_government: The PPS Party ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+[? if in_grand_coalition : The CPS ?][? if in_lps_coalition or in_unity_government or in_minority_government: The PPS Party ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
 
 @vonc_menu
 
@@ -37,7 +37,7 @@ Fine. We no longer control the government of City Police. The vote has been call
 
 @austerity
 view-if: welfare >= 0 and not secularized
-on-arrival: coalition_dissent = 0; workers_flp -= 10; unemployed_flp -= 10; workers_cp += 7; workers_scp += 3; unemployed_cp += 5; unemployed_scp += 5; left_dissent += 15; agrarian_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; cp_coalition_dissent += 1; cp_relation -= 10 if in_popular_front
+on-arrival: coalition_dissent = 0; workers_flp -= 10; unemployed_flp -= 10; workers_cp += 7; workers_scp += 3; unemployed_cp += 5; unemployed_scp += 5; left_dissent += 15; agrarian_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; cp_coalition_dissent += 1; cp_relation -= 10 if in_unity_government
 
 Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
 
@@ -54,7 +54,7 @@ By transferring resources to our coalition partners, we can reduce their dissent
 choose-if: (in_grand_coalition and communist_coalition >= 3 and cp_relation >= 50 and cp_r >= cps_r) or (in_lps_coalition and cp_relation >= 50 and cp_r >= pps_r and communist_coalition >= 3)
 view-if: tried_supporting_cp = 0
 on-arrival: tried_supporting_cp = 1
-unavailable-subtitle: [? if communist_coalition < 3 : The CP won't take part in parliamentary government. ?] [? if cp_relation < 50 : The CP is not friendly enough with us. ?] [? if (in_grand_coalition and cp_r < cps_r) or (in_lps_coalition and cp_r < pps_r): The CP does not have enough votes. ?] [? if in_popular_front : We are already in a Popular Front with the CP. ?]
+unavailable-subtitle: [? if communist_coalition < 3 : The CP won't take part in parliamentary government. ?] [? if cp_relation < 50 : The CP is not friendly enough with us. ?] [? if (in_grand_coalition and cp_r < cps_r) or (in_lps_coalition and cp_r < pps_r): The CP does not have enough votes. ?] [? if in_unity_government : We are already in a Popular Front with the CP. ?]
 
 If the Communists abstain, then we essentially can maintain a minority government[? if prime_minister == "Richard Bennett" :, although it would be very difficult to make policy without the support of Monarch Richard Bennett, which we do not have ?]. If this happens, then we will own a massive debt to the CP. This could lead to broader cooperation in the future, for better or for worse.
 
@@ -71,7 +71,7 @@ The CP is not interested in a "toleration" arrangement; they will only support u
 
 @support_cp_grand
 
-- @election_1928.popular_front_coalition: Form a "Popular Front" coalition?
+- @election_1928.unity_government_coalition: Form a "Popular Front" coalition?
 - @election_1928.left_coalition
 - @try_assuage: Never mind. We must deal with this some other way.
 
@@ -83,7 +83,7 @@ The CP is not interested in a "toleration" arrangement; they will only support u
 
 @let_it_happen
 call: set_next_election_time
-on-arrival: time_to_election = 3; flp_in_government = 0; in_grand_coalition = 0; in_lps_coalition = 0; in_popular_front = 0; flp_toleration = 0; foreign_minister_party = "CPS"; interior_minister_party = "PPS"; justice_minister_party = "I"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = lps_name; finance_minister_party = "CPS"; agriculture_minister_party = "PPS"; labour_minister = "Stegerwald"; interior_minister = "Wirth"; finance_minister = "Moldenhauer"; economic_minister = "Curtius"; justice_minister = "Koch-Weser"; foreign_minister = "Stresemann"; agriculture_minister = "Dietrich"; rcmp_minister = "Groener";  coalition_dissent = 0; pro_republic -= 5; old_middle_flp -= 3; new_middle_flp -= 2; workers_flp -= 3 if pro_republic < 50; workers_flp -= 4 if pro_republic < 40; old_middle_scp += 4 if pro_republic < 50; new_middle_scp += 3 if pro_republic < 50
+on-arrival: time_to_election = 3; flp_in_government = 0; in_grand_coalition = 0; in_lps_coalition = 0; in_unity_government = 0; flp_toleration = 0; foreign_minister_party = "CPS"; interior_minister_party = "PPS"; justice_minister_party = "I"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = lps_name; finance_minister_party = "CPS"; agriculture_minister_party = "PPS"; labour_minister = "Stegerwald"; interior_minister = "Wirth"; finance_minister = "Moldenhauer"; economic_minister = "Curtius"; justice_minister = "Koch-Weser"; foreign_minister = "Stresemann"; agriculture_minister = "Dietrich"; rcmp_minister = "Groener";  coalition_dissent = 0; pro_republic -= 5; old_middle_flp -= 3; new_middle_flp -= 2; workers_flp -= 3 if pro_republic < 50; workers_flp -= 4 if pro_republic < 40; old_middle_scp += 4 if pro_republic < 50; new_middle_scp += 3 if pro_republic < 50
 go-to: let_it_happen_bennett if prime_minister != "J. S. Woodsworth"; let_it_happen_woodsworth if prime_minister == "J. S. Woodsworth"
 
 @let_it_happen_bennett

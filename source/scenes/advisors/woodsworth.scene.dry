@@ -19,7 +19,7 @@ J. S. Woodsworth [? if flp_prussia = 1 : is ?][? if flp_prussia = 0 : was ?] the
 @coalition
 title: Negotiating with the Coalition
 subtitle: J.S. Woodsworth can improve our relationships with our centrist and center-right coalition partners in City Police as well as in the Assembly.
-choose-if: advisor_action_timer <= 0 and (flp_prussia or in_lps_coalition or in_grand_coalition or in_popular_front)
+choose-if: advisor_action_timer <= 0 and (flp_prussia or in_lps_coalition or in_grand_coalition or in_unity_government)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not flp_prussia : The FLP does not control the Urban government. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if flp_in_government = 1 and coalition_dissent > 0; pps_relation += 6; lps_relation += 6; cps_relation += 2; cps_relation += 3 if in_grand_coalition
 

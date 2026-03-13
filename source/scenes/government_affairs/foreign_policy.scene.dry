@@ -155,7 +155,7 @@ The Roman Catholic Church is interested in furthering relations with the Saskatc
 @concordat
 title: We can sign a Concordat with the Vatican!
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
-on-arrival: reichskonkordat = 1; pps_relation += 15*(1-dissent); catholics_flp += 8*(1-dissent); catholics_pps += 5 if in_lps_coalition or in_grand_coalition or in_popular_front;
+on-arrival: reichskonkordat = 1; pps_relation += 15*(1-dissent); catholics_flp += 8*(1-dissent); catholics_pps += 5 if in_lps_coalition or in_grand_coalition or in_unity_government;
 achievement: reichskonkordat
 
 We have successfully signed a Concordat between Saskatchewan and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the Saskatchewanian state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Saskatchewan are pleased, as are their representatives in the PPS Party.

@@ -51,9 +51,9 @@ We have kept welfare spending the same.
 
 @spending_same_post_depression
 view-if: unemployed > 15
-on-arrival: workers_flp -= 3; unemployed_flp -= 4; welfare -= 1; reformist_dissent += 5; left_dissent += 5; labour_dissent += 5; agrarian_dissent += 5; neorevisionist_dissent += 5; cp_coalition_dissent += 1; cp_relation -= 8 if in_popular_front or in_left_front
+on-arrival: workers_flp -= 3; unemployed_flp -= 4; welfare -= 1; reformist_dissent += 5; left_dissent += 5; labour_dissent += 5; agrarian_dissent += 5; neorevisionist_dissent += 5; cp_coalition_dissent += 1; cp_relation -= 8 if in_unity_government or in_left_front
 subtitle: The increased levels of unemployment necessitate more spending on aid.
 
 Increasing welfare spending is necessary in light of the rise in unemployment, so we have essentially cut welfare. The workers are justifiably displeased - we are sacrificing their livelihoods to appease bourgeois demands for austerity.
 
-[? if in_popular_front or in_left_front: The CP is turning against us for our welfare policy. ?]
+[? if in_unity_government or in_left_front: The CP is turning against us for our welfare policy. ?]

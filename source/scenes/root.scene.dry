@@ -363,7 +363,7 @@ Q.in_lps_coalition = 0;
 // also includes the "new grand coalition" of FLP + PPS + LPS + CPS + Others
 Q.in_grand_coalition = 0;
 // Popular front = FLP + CP + PPS + LPS
-Q.in_popular_front = 0;
+Q.in_unity_government = 0;
 // left coalition = FLP + CP + left-splinters
 Q.in_left_front = 0;
 // emergency government containing the FLP: only prime minister JS_Woodsworth can do this.
@@ -623,7 +623,7 @@ Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'ful_ban', 'kkk_ban', 'papen_premier',
-            'cp_policy', 'cp_ultimatum', 'popular_front_dispute',
+            'cp_policy', 'cp_ultimatum', 'unity_government_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'schleichers_schemes'];
 Q.advisor_action_timer = 0;

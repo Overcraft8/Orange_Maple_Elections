@@ -133,7 +133,7 @@ Q.flp_caretaker = 0;
 // New Ministries
 Q.cooperatives_minister_party = 'PPS';
 Q.education_minister_party = 'PPS';
-Q.Mineral_resources_minister_party = 'PPS';
+Q.mineral_resources_minister_party = 'PPS';
 Q.Municipal_affairs_minister_party = 'PPS';
 Q.transportation_minister_party = 'PPS';
 Q.telephones_telegraphs_minister_party = 'PPS';
@@ -319,6 +319,7 @@ There are some potential coalition arrangements.
 #- @unity_government_coalition
 - @cooperative_coalition
 #- @right_coalition
+- @no_govt
 
 # TODO: black-brown coalition
 

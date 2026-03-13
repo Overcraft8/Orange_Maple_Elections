@@ -315,7 +315,7 @@ There are some potential coalition arrangements.
 #- @scp_majority
 #- @no_majority
 #- @woodsworths_dilemma
-#- @left_coalition
+- @left_coalition
 #- @unity_government_coalition
 - @cooperative_coalition
 #- @right_coalition
@@ -350,6 +350,99 @@ on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
 
 - @majority_premier: Our legislative leader will become Premier
+
+
+
+
+
+
+
+
+
+
+
+@left_coalition
+title: Is a United Left coalition possible?
+subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
+unavailable-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if cp_relation < 50 : We do not have adequate relations with the CP. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+view-if: left_coalition >= 50
+choose-if: (cp_relation >= 50 or (cp_party_leader == "Conciliators" and cp_relation >= 40)) and communist_coalition >= 3
+
+There are enough votes for a FLP + CP coalition government, if such a thing were actually possible.
+
+The far-right might attempt a coup, if such a coalition were formed.
+
+- @left_coalition_impossible: This is impossible.
+- @left_coalition_possible: This could be possible.
+
+@left_coalition_impossible
+go-to: coalition_menu
+
+A far left coalition is impossible.
+
+
+@left_coalition_possible
+
+The CP is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Tim Buck as premier in exchange for a coalition. [? if monarch == "George V" : There is no chance whatsoever that Monarch George V would approve of the appointment of a die-hard communist as premier. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as premier.
+
+- @tim_buck_premier: Appoint Tim Buck as premier.
+- @left_coalition_resources
+- @left_coalition_relations
+- @coalition_menu: Try a different governing arrangement.
+
+@tim_buck_premier
+choose-if: monarch == "J. S. Woodsworth" and reformist_strength + neorevisionist_strength < left_strength
+unavailable-subtitle: [? if monarch != "J. S. Woodsworth": Monarch [+ monarch +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
+on-arrival: premier = "Tim Buck"; premier_party = "CP"; cp_relation = 80; in_left_front = 1; flp_in_government = 1 
+
+With great reluctance, Monarch [+ monarch +] appoints [+ premier +] as premier.
+
+Immediately, [+ premier +] goes to work building a "Soviet Saskatchewan": consolidating as much power as possible in the CP, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+
+In response to [+ premier +] being appointed Premier, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Ku Klux Klan and SCPs FUL enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the RCMP have taken their troops out of the barracks and joined them with the Ku Klux Klan to stop the CP from taking power. We are forced to be on the same side as the CP, whether we want to or not.
+
+
+@left_coalition_resources
+title: Use our resources to smooth things over.
+unavailable-subtitle: Required: 3 resources
+subtitle: -3 resources
+choose-if: resources >= 3
+on-arrival: resources -= 3
+go-to: left_coalition_success
+
+@left_coalition_relations
+title: Convince the CP to accept democracy.
+unavailable-subtitle: Our relationships with the CP are not good enough.
+choose-if: cp_relation >= 60 or cp_party_leader == "Conciliators"
+go-to: left_coalition_success
+
+
+@left_coalition_success
+on-arrival: flp_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = "FLP"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_relation += 10
+go-to: left_coalition_no_civil_war
+achievement: einheitsfront
+
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the FLP, CP, and Monarch [+ monarch +], is George Hara Williams, who belongs to the agrarian faction of the FLP, but was acceptable to the left due to his previous membership in the left-wing anti-war UFLP.
+
+# just raise the coup limit, don't immediately go to civil war
+
+@left_coalition_no_civil_war
+on-arrival: cp_goals_seen = 0; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labour_minister_party = "FLP"; rcmp_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP"; rcmp_loyalty -= 0.05
+
+In response to the CP's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+
+The CP has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
+
+Whatever their reasoning is, the FLP has control over the ministries of government.
+
+@left_coalition_civil_war
+on-arrival: rcmp_loyalty += 0.1
+
+
+
+
+
+
 
 
 @cooperative_coalition

@@ -1,6 +1,7 @@
 title: Depression
 new-page: true
 tags: event
+max-visits: 1
 view-if: year = 1932 and month = 7
 
 
@@ -9,6 +10,6 @@ view-if: year = 1932 and month = 7
 
 9wda h
 
-- @Back: Go back
+- @continue: This is great news!
 
-@Back
+@continue

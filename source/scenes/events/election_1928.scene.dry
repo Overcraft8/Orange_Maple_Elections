@@ -255,7 +255,6 @@ if (window && d3) {
     d3.select("#assembly").datum(data).call(parliament);
 }
 !}
-
 go-to: coalition_menu
 
 = Election results
@@ -795,7 +794,7 @@ This coalition arrangement is tolerable to all.
 
 @drop_labour
 title: Drop the Labour Ministry.
-view-if: labour_minister_party == "FLP"
+view-if: labour_minister_party = "FLP"
 on-arrival: labour_minister_party = "PPS"; labour_minister = "Stegerwald"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries

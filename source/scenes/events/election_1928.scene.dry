@@ -376,8 +376,7 @@ choose-if: lps_relation >= 50
 
 We have failed to convince the Liberals to coalition with us. 
 
-- @coalition_menu
-
+- @coalition_menu: Let's go back
 
 @grand_coalition
 title: Could we coalition with the Liberals, Conservatives, and Progressives?

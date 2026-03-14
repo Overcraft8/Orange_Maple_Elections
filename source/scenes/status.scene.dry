@@ -269,7 +269,7 @@ Curriculum: [+ Curriculum +]<br>
 
 Healthcare quality: [+ healthcarequality +]
 
-= Farmers Standards
+= Rural Standards
 
 [? if 1 == 1 :
 Farmers Electrification: [+ farmer_electrification +]%<br>
@@ -292,6 +292,10 @@ GDP Growth: [+ economic_growth_2 +]%
 Saskatchewan GDP Index (1932 = 100): [+ saskatchewan_gdp +]%
 
 Total Saskatchewan Debt Index: [+ saskatchewan_debt +]%
+
+Agricultural Production Index: [+ agri_production +]%
+
+Industrial Production Index: [+ indu_production +]%
 
 @situations 
 

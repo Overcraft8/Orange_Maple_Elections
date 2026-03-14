@@ -492,6 +492,8 @@ Q.monthly_economic_growth = Q.economic_growth / 12;
 Q.saskatchewan_old_gdp = Q.saskatchewan_gdp;
 Q.saskatchewan_gdp = Number(
   (Q.saskatchewan_gdp * (Q.monthly_economic_growth / 100 + 1)).toFixed(1));
+Q.agri_production = 100;
+Q.indu_production = 100;
 
 
 //                   Living Standards

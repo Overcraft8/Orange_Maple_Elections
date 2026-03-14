@@ -367,10 +367,9 @@ The LPS has demanded that we keep schools good.
 @lps_coalition_succeed
 title: We have suceeded!
 on-arrival: premier = flp_legislative_leader
+go-to: ministries
 
 Now we must negotiate for ministy positions. 
-
-- @ministries
 
 @lps_coalition_fail
 choose-if: lps_relation >= 50

@@ -39,7 +39,7 @@ for (var c of Q.classes) {
     }
 }
 // calculate support for each of the parties
-var total_support = 0; 
+var urban_support = 0; 
 for (var party of Q.parties) {
     var party_support = 0;
     for (var c of Q.classes) {
@@ -51,11 +51,11 @@ for (var party of Q.parties) {
         } 
     }
     Q[party + '_support'] = party_support;
-    total_support += party_support; 
+    urban_support += party_support; 
 }
 // 2. normalize support (fraction)
 for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/total_support;
+    Q[party+'_normalized'] = Q[party + '_support']/urban_support;
     Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
     Q[party+'_votes'] = Q[party+'_votes_dec'];
     Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);

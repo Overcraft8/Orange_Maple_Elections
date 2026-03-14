@@ -2,7 +2,6 @@ title: Election
 on-arrival: {!
 // calculate normalized class voting amounts (0 to 100)
 for (var c of Q.classes) {
-    if (c === "rural") continue;   // skip rural
     var class_votes = 0;
     for (var party of Q.parties) {
         if (Q[c+'_'+party] < 0) {
@@ -17,7 +16,7 @@ for (var c of Q.classes) {
 }
 
 // 1. calculate support for each of the parties
-var total_support = 0;
+var urban_support = 0;
 for (var party of Q.parties) {
     var party_support = 0;
     for (var c of Q.classes) {
@@ -35,26 +34,55 @@ for (var party of Q.parties) {
         }
     }
     Q[party + '_support'] = party_support;
-    total_support += party_support;
+    urban_support += party_support;
 }
+
+var rural_support = 0;
+for (var party of Q.parties) {
+    var party_support_rural = 0;
+    if (Q.classes.includes("rural")) {
+        var c = "rural";
+        // but this version is somewhat more entertaining and allows for wilder swings in votes.
+        // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
+        if (Q.old_demographics) {
+            // okay i'm pretty sure this is wrong, and the hard version is correct
+            // basically this allows for "spillover" effects in other demographics.
+            // so you can campaign among say the workers and 
+            party_support_rural += Q[c]*Q[c+'_'+party];
+            // However, there should be a cap on how much party support you can get in a certain demo.
+        } else  {
+            party_support_rural += Q[c]*Q[c+'_'+party+'_normalized'];
+        }
+    }
+    Q[party + '_support_rural'] = party_support_rural;
+    rural_support += party_support_rural;
+}
+
 // 2. normalize support (fraction)
 // 3. Round to integers
 // TODO: round to 1 decimal instead of rounding to integers
 // to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
+var total_support = urban_support + rural_support;
+
 for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10;
+    var combined_support = Q[party + '_support_urban'] + Q[party + '_support_rural'];
+
+    Q[party+'_normalized'] = combined_support / total_support;
+
+    Q[party+'_votes_dec'] =
+        Math.round(Q[party+'_normalized'] * 1000) / 10;
+
     if (Q.use_decimals) {
         Q[party+'_votes'] = Q[party+'_votes_dec'];
         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-    } else {
-        //integer mode
-        Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
+    } 
+    else {
+        Q[party+'_votes'] = Math.round(Q[party+'_normalized'] * 100);
+
         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
     }
-    //Q[party+'_votes'] = Q[party+'_votes_dec'];
-    // display
 }
+
 !}
 go-to: jumpScene
 

@@ -96,7 +96,7 @@ Q.pps_coalition = Q.flp_r + Q.pps_r;
 Q.grand_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r;
 Q.bourgeois_coalition = Q.lps_r + Q.cps_r + Q.other_r;
 Q.conservative_coalition = Q.cps_r + Q.scp_r;
-Q.right_coalition = Q.pps_r + Q.cps_r + Q.other_r + Q.scp_r;
+Q.right_coalition = Q.cps_r + Q.other_r + Q.scp_r;
 Q.scp_majority = Q.scp_r;
 Q.left_coalition = Q.flp_r + Q.cp_r;
 Q.cooperative_coalition = Q.cps_r + Q.pps_r + Q.other_r;
@@ -127,7 +127,6 @@ Q.in_left_front = 0;
 Q.in_unity_government = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
-Q.in_unity_government = 0;
 Q.flp_toleration = 0;
 Q.flp_caretaker = 0;
 // New Ministries
@@ -169,8 +168,6 @@ Q.interior_goal_completed = 0;
 Q.rcmp_goal_completed = 0;
 
 Q.strike_term_seen = 0;
-
-Q.pps_r = Q.pps_r;
 
 // understanding the enemy
 if (Q.scp_r >= 15) {
@@ -345,7 +342,6 @@ title: Victory!
 subtitle: FLP ([+ flp_r +]%)
 unavailable-subtitle: FLP ([+ flp_r +]%) We do not have enough support.
 view-if: lps_coalition >= 50
-choose-if: flp_r >= 50
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 go-to: ministries
 
@@ -359,7 +355,6 @@ title: Victory!
 subtitle: FLP ([+ flp_r +]%)
 unavailable-subtitle: FLP ([+ flp_r +]%) We do not have enough support.
 view-if: grand_coalition >= 50
-choose-if: flp_r >= 50
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 go-to: ministries
 
@@ -378,7 +373,7 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 title: Is a United Left coalition possible?
 subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
 unavailable-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if cp_relation < 50 : We do not have adequate relations with the CP. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
- view-if: left_coalition >= 2
+view-if: left_coalition >= 2
 choose-if: (cp_relation >= 50 or (cp_party_leader == "Conciliators" and cp_relation >= 40)) and communist_coalition >= 3
 
 There are enough votes for a FLP + CP coalition government, if such a thing were actually possible.
@@ -688,7 +683,7 @@ subtitle: Saskatchewan has many untapped natural resources that we could use to 
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: mineral_resouces_minister_party != "FLP"
+view-if: mineral_resources_minister_party != "FLP"
 on-arrival: leverage -= 5; mineral_resources_minister_party = "FLP"; mineral_resources_minister = "Carlyle"
 go-to: ministries
 
@@ -800,7 +795,7 @@ This coalition arrangement is tolerable to all.
 
 @drop_labour
 title: Drop the Labour Ministry.
-view-if: labour_minister_party = "FLP"
+view-if: labour_minister_party == "FLP"
 on-arrival: labour_minister_party = "PPS"; labour_minister = "Stegerwald"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries

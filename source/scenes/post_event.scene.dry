@@ -53,13 +53,61 @@ for (var party of Q.parties) {
     Q[party + '_support'] = party_support;
     urban_support += party_support; 
 }
-// 2. normalize support (fraction)
+
+var rural_support = 0;
 for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/urban_support;
-    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
-    Q[party+'_votes'] = Q[party+'_votes_dec'];
-    Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+    var party_support_rural = 0;
+    if (Q.classes.includes("rural")) {
+        var c = "rural";
+        // but this version is somewhat more entertaining and allows for wilder swings in votes.
+        // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
+        if (Q.old_demographics) {
+            // okay i'm pretty sure this is wrong, and the hard version is correct
+            // basically this allows for "spillover" effects in other demographics.
+            // so you can campaign among say the workers and 
+            party_support_rural += Q[c]*Q[c+'_'+party];
+            // However, there should be a cap on how much party support you can get in a certain demo.
+        } else  {
+            party_support_rural += Q[c]*Q[c+'_'+party+'_normalized'];
+        }
+    }
+    Q[party + '_support_rural'] = party_support_rural;
+    rural_support += party_support_rural;
 }
+
+
+var total_support = urban_support + rural_support;
+
+
+
+for (var party of Q.parties) {
+    var combined_support = Q[party + '_support'] + Q[party + '_support_rural'];
+
+    Q[party+'_normalized'] = combined_support / total_support;
+
+    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized'] * 1000) / 10;
+
+    if (Q.use_decimals) {
+        Q[party+'_votes'] = Q[party+'_votes_dec'];
+        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+    } 
+    else {
+        Q[party+'_votes'] = Math.round(Q[party+'_normalized'] * 100);
+
+        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+    }
+}
+
+
+
+
+// 2. normalize support (fraction)
+//for (var party of Q.parties) {
+//    Q[party+'_normalized'] = Q[party + '_support']/total_support;
+//    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
+//    Q[party+'_votes'] = Q[party+'_votes_dec'];
+//    Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+//}
 
 
 // set faction strength/dissent to 0

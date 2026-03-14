@@ -361,11 +361,14 @@ on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_
 
 The LPS has demanded that we keep schools good. 
 
-- @lps_coalition_succeed
-- @lps_coalition_fail
+- @lps_coalition_succeed: We can convince them. 
+- @lps_coalition_fail: We cannot convince them. 
 
 @lps_coalition_succeed
+title: We have suceeded!
 on-arrival: premier = flp_legislative_leader
+
+Now we must negotiate for ministy positions. 
 
 - @ministries
 

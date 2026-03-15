@@ -62,6 +62,7 @@ for (var party of Q.parties) {
 // 3. Round to integers
 // TODO: round to 1 decimal instead of rounding to integers
 // to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
+
 var total_support = urban_support + rural_support;
 
 
@@ -80,9 +81,34 @@ for (var party of Q.parties) {
 
 for (var party of Q.parties) {
 
-    Q[party + '_urban_seats'] = Math.round(Q[party + '_urban_norm'] * Q.urban_seats);
+    var urban_total = 0;
+    for (var party of Q.parties) {
+        Q[party+'_urban_power'] = Math.pow(Q[party+'_urban_norm'],3);
+        urban_total += Q[party+'_urban_power'];
+    }
 
-    Q[party + '_rural_seats'] = Math.round(Q[party + '_rural_norm'] * Q.rural_seats);
+    for (var party of Q.parties) {
+
+        var urban_share = Q[party+'_urban_power'] / urban_total;
+
+        Q[party+'_urban_seats'] =
+            Math.round(urban_share * Q.urban_seats);
+    }
+
+    var rural_total = 0;
+
+    for (var party of Q.parties) {
+        Q[party+'_rural_power'] = Math.pow(Q[party+'_rural_norm'],3);
+        rural_total += Q[party+'_rural_power'];
+    }
+
+    for (var party of Q.parties) {
+
+        var rural_share = Q[party+'_rural_power'] / rural_total;
+
+        Q[party+'_rural_seats'] =
+            Math.round(rural_share * Q.rural_seats);
+    }
 
     Q[party + '_seats'] =
         Q[party + '_urban_seats'] +

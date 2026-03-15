@@ -255,6 +255,8 @@ go-to: coalition_menu
 
 = Election results
 
+(28 seats for a majority)
+
 {!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
@@ -322,7 +324,7 @@ There are some potential coalition arrangements.
 title: We have achieved a majority!
 subtitle: FLP ([+ flp_seats +])
 unavailable-subtitle: FLP ([+ flp_seats +]) We do not have enough support.
-view-if: flp_r >= 50 
+view-if: flp_seats >= 28 
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
@@ -338,7 +340,7 @@ go-to: ministries
 title: Could we rule in a minority?
 subtitle: FLP ([+ flp_seats +])
 unavailable-subtitle: FLP ([+ flp_seats +]) We do not have enough support.
-view-if: flp_r <= 50 and largest_party = 'FLP'
+view-if: flp_seats <= 28 and largest_party = 'FLP'
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
@@ -356,7 +358,7 @@ go-to: ministries
 title: Will the Liberals coalition with us?
 subtitle: LPS + FLP ([+ lps_coalition +])
 unavailable-subtitle: FLP ([+ flp_r +]) We do not have enough support.
-view-if: lps_coalition >= 50
+view-if: lps_coalition >= 28
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The LPS has demanded that we keep schools good. 
@@ -383,7 +385,7 @@ We have failed to convince the Liberals to coalition with us.
 title: Could we coalition with the Liberals, Conservatives, and Progressives?
 subtitle: LPS + CPS + PPS + FLP ([+ grand_coalition +])
 unavailable-subtitle: FLP ([+ flp_r +]) We do not have enough support.
-view-if: grand_coalition >= 50
+view-if: grand_coalition >= 28
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 go-to: ministries
 
@@ -398,7 +400,7 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 title: Is a United Left coalition possible?
 subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
 unavailable-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_relation < 50 : We do not have adequate relations with the CP. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
-view-if: left_coalition >= 2
+view-if: left_coalition >= 28
 choose-if: (cp_relation >= 50 or (cp_party_leader == "Conciliators" and cp_relation >= 40)) and communist_coalition >= 3
 
 There are enough votes for a FLP + CP coalition government, if such a thing were actually possible.

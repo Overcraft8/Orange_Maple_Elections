@@ -76,38 +76,38 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 // The largest party can only be the FLP, LPS, CPS, or SCP.
 Q.largest_party = 'FLP';
 
-if (Q.lps_r >= Q.flp_r && Q.lps_r >= Q.cps_r && Q.lps_r >= Q.scp_r) {
+if (Q.lps_seats >= Q.flp_seats && Q.lps_seats >= Q.cps_seats && Q.lps_seats >= Q.scp_seats) {
     Q.largest_party = 'LPS';
 }
-if (Q.cps_r >= Q.flp_r && Q.cps_r >= Q.lps_r && Q.cps_r >= Q.scp_r) {
+if (Q.cps_seats >= Q.flp_seats && Q.cps_seats >= Q.lps_seats && Q.cps_seats >= Q.scp_seats) {
     Q.largest_party = 'CPS';
 }
-if (Q.scp_r >= Q.flp_r && Q.scp_r >= Q.lps_r && Q.scp_r >= Q.cps_r) {
+if (Q.scp_seats >= Q.flp_seats && Q.scp_seats >= Q.lps_seats && Q.scp_seats >= Q.cps_seats) {
     Q.largest_party = 'SCP';
 }
 
 // coalitions
-Q.lps_coalition = Math.round((Q.flp_r + Q.lps_r) * 10) / 10;
-Q.pps_coalition = Math.round((Q.flp_r + Q.pps_r) * 10) / 10;
-Q.grand_coalition = Math.round((Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r) * 10) / 10;
-Q.bourgeois_coalition = Math.round((Q.lps_r + Q.cps_r + Q.other_r) * 10) / 10;
-Q.conservative_coalition = Math.round((Q.cps_r + Q.scp_r) * 10) / 10;
-Q.right_coalition = Math.round((Q.cps_r + Q.other_r + Q.scp_r) * 10) / 10;
-Q.scp_majority = Math.round(Q.scp_r * 10) / 10;
-Q.left_coalition = Math.round((Q.flp_r + Q.cp_r) * 10) / 10;
-Q.cooperative_coalition = Math.round((Q.cps_r + Q.pps_r + Q.other_r) * 10) / 10;
+Q.lps_coalition = Math.round((Q.flp_seats + Q.lps_seats) * 10) / 10;
+Q.pps_coalition = Math.round((Q.flp_seats + Q.pps_seats) * 10) / 10;
+Q.grand_coalition = Math.round((Q.flp_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats) * 10) / 10;
+Q.bourgeois_coalition = Math.round((Q.lps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
+Q.conservative_coalition = Math.round((Q.cps_seats + Q.scp_seats) * 10) / 10;
+Q.right_coalition = Math.round((Q.cps_seats + Q.other_seats + Q.scp_seats) * 10) / 10;
+Q.scp_majority = Math.round(Q.scp_seats * 10) / 10;
+Q.left_coalition = Math.round((Q.flp_seats + Q.cp_seats) * 10) / 10;
+Q.cooperative_coalition = Math.round((Q.cps_seats + Q.pps_seats + Q.other_seats) * 10) / 10;
 // this is an absurd concept lol
-Q.unity_government_coalition = Math.round((Q.flp_r + Q.cp_r + Q.pps_r + Q.lps_r + Q.sapd_r) * 10) / 10;
-Q.anti_democratic_coalition = Math.round((Q.cp_r + Q.scp_r) * 10) / 10;
+Q.unity_government_coalition = Math.round((Q.flp_seats + Q.cp_seats + Q.pps_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
+Q.anti_democratic_coalition = Math.round((Q.cp_seats + Q.scp_seats) * 10) / 10;
 // aka everyone except scp, cp, scp
-Q.neo_lps_coalition = Math.round((Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r) * 10) / 10;
+Q.neo_lps_coalition = Math.round((Q.flp_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
 // Needham + Right-wing parties (only comes into effect if you've alienated PPS too badly)
-Q.needham_right_coalition = Math.round((Q.scp_r + Q.cps_r + Q.other_r) * 10) / 10;
+Q.needham_right_coalition = Math.round((Q.scp_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = Math.round((Q.flp_r + Q.cp_r + Q.lps_r + Q.sapd_r) * 10) / 10;
+Q.progressive_coalition = Math.round((Q.flp_seats + Q.cp_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
 
 if (Q.cp_relation >= 30) {
-    Q.lps_coalition += Q.sapd_r;
+    Q.lps_coalition += Q.sapd_seats;
 }
 
 Q.leverage = Q.flp_r;
@@ -320,8 +320,8 @@ There are some potential coalition arrangements.
 
 @flp_majority
 title: We have achieved a majority!
-subtitle: FLP ([+ flp_r +]%)
-unavailable-subtitle: FLP ([+ flp_r +]%) We do not have enough support.
+subtitle: FLP ([+ flp_seats +])
+unavailable-subtitle: FLP ([+ flp_seats +]) We do not have enough support.
 view-if: flp_r >= 50 
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
@@ -336,8 +336,8 @@ go-to: ministries
 
 @flp_minority
 title: Could we rule in a minority?
-subtitle: FLP ([+ flp_r +]%)
-unavailable-subtitle: FLP ([+ flp_r +]%) We do not have enough support.
+subtitle: FLP ([+ flp_seats +])
+unavailable-subtitle: FLP ([+ flp_seats +]) We do not have enough support.
 view-if: flp_r <= 50 and largest_party = 'FLP'
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
@@ -354,8 +354,8 @@ go-to: ministries
 
 @lps_coalition
 title: Will the Liberals coalition with us?
-subtitle: LPS + FLP ([+ lps_coalition +]%)
-unavailable-subtitle: FLP ([+ flp_r +]%) We do not have enough support.
+subtitle: LPS + FLP ([+ lps_coalition +])
+unavailable-subtitle: FLP ([+ flp_r +]) We do not have enough support.
 view-if: lps_coalition >= 50
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
@@ -381,8 +381,8 @@ We have failed to convince the Liberals to coalition with us.
 
 @grand_coalition
 title: Could we coalition with the Liberals, Conservatives, and Progressives?
-subtitle: LPS + CPS + PPS + FLP ([+ grand_coalition +]%)
-unavailable-subtitle: FLP ([+ flp_r +]%) We do not have enough support.
+subtitle: LPS + CPS + PPS + FLP ([+ grand_coalition +])
+unavailable-subtitle: FLP ([+ flp_r +]) We do not have enough support.
 view-if: grand_coalition >= 50
 on-arrival: premier = "Empty"; premier_party = "FLP"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "FLP"; foreign_minister = "Williams"; interior_minister_party = "FLP"; interior_minister = "Brockelbank"; justice_minister_party = "FLP"; justice_minister = "Underhill"; labour_minister_party = "FLP"; labour_minister = "Carlyle"; rcmp_minister_party = "FLP"; rcmp_minister = "Leber"; economic_minister_party = "FLP"; economic_minister = "Schmidt"; finance_minister_party = "FLP"; finance_minister = "Nicholson"; agriculture_minister_party = "FLP"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 go-to: ministries
@@ -396,8 +396,8 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
-unavailable-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if cp_relation < 50 : We do not have adequate relations with the CP. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
+unavailable-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_relation < 50 : We do not have adequate relations with the CP. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 2
 choose-if: (cp_relation >= 50 or (cp_party_leader == "Conciliators" and cp_relation >= 40)) and communist_coalition >= 3
 

@@ -214,12 +214,12 @@ Q.workers = 15; // industry and trade
 Q.old_middle = 8; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
 Q.new_middle = 14; // "new mittelstand"
-Q.farmer = 50; // agriculture and forestry employment... but many of those are proletarians so...
-Q.farmhand = 10;
+Q.farmer = 40; // agriculture and forestry employment... but many of those are proletarians so...
+Q.farmhand = 20;
 Q.res_worker = 3;
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
 Q.unemployed = 15;
-Q.catholics = 30;
+Q.catholics = 1;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
@@ -253,7 +253,7 @@ Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhand', 'res_worker', 'unemployed', 'catholics'];
 Q.parties = ['flp', 'cp', 'pps', 'lps', 'cps', 'scp', 'other'];
-Q.urban_seats = 25;
+Q.urban_seats = 24;
 Q.rural_seats = 31;
 
 

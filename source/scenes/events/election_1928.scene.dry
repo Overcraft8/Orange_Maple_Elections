@@ -234,6 +234,11 @@ data = data.concat([
     },
 ]);
 
+console.log("Seat totals:");
+for (var party of Q.parties) {
+    console.log(party, Q[party + "_seats"]);
+}
+
 if (window && d3) {
     var width = 400; 
     var height = 400;

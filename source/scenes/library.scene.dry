@@ -445,7 +445,6 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#E7DB73'> </div></td><td>!} PPS: {!</td><td>!} [+ pps_r +]% {!</td></tr>!}
 
-
 {!<tr><td><div class="box" style='background-color:#0055A5'> </div></td><td>!} CPS: {!</td><td>!} [+ cps_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}

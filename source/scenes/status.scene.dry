@@ -197,6 +197,18 @@ if (Q.kkk_strength) {
 if (Q.ful_strength) {
     Q.ful_strength_2 = Q.ful_strength.toFixed(2);
 }
+if (Q.sta_strength) {
+    Q.sta_strength_2 = Q.sta_strength.toFixed(2);
+}
+if (Q.tlc_strength) {
+    Q.tlc_strength_2 = Q.tlc_strength.toFixed(2);
+}
+if (Q.ccym_strength) {
+    Q.ccym_strength_2 = Q.ccym_strength.toFixed(2);
+}
+if (Q.ufc_strength) {
+    Q.ufc_strength_2 = Q.ufc_strength.toFixed(2);
+}
 !}
 
 = Saskatchewan Organizations

@@ -210,10 +210,10 @@ Q.mannar_d_pop_weight = 0.72;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
-Q.workers = 15; // industry and trade
-Q.old_middle = 8; // "old mittelstand"
+Q.workers = 19; // industry and trade
+Q.old_middle = 5; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 14; // "new mittelstand"
+Q.new_middle = 13; // "new mittelstand"
 Q.farmer = 40; // agriculture and forestry employment... but many of those are proletarians so...
 Q.farmhand = 20;
 Q.res_worker = 3;
@@ -554,7 +554,7 @@ Q.George_Williams_Dead = 0;
 
 
 Q.ccym_influence = 25;
-Q.ccym_strength = 3;
+Q.ccym_strength = 3.00;
 Q.ccym_relations = 60;
 Q.ccym_militancy = 0.15;
 

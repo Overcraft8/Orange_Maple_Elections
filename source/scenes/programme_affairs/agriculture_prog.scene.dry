@@ -1,33 +1,18 @@
-title: Party Programme
+title: Agricultural Policies
 new-page: true
 is-card: true
-tags: party_affairs, programme
+tags: programme
 view-if: programme_timer <= 0
 on-arrival: month_actions += 1; programme_timer = 3
-card-image: img/Sask_CCF_Programme.jpg
+card-image: img/wheat_board_poster.jpg
 subtitle: Choosing our party's platform
 
 Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. We can promise multiple policies within a single group or promise none at all. 
 
-- @path: What path should we take?
-- @return: Go back
+- @farmer_policies: Let us choose a campaign promise for the farmers. 
+- @continue: Return
 
 
-@path
-
-What path should we take? 
-
-- @farmer_policies: What farmer policies might we adopt? 
-- @labour_policies: What labour policies might we adopt?
-- @infra_policies: What construction or maintenance might we undertake?
-# - @econ_policies: What economic policies might we adopt?
-# - @health_policies: What healthcare policies might we adopt?
-# - @edu_policies: What educational policies might we adopt?
-- @return: Go Back
-
-
-
-#                                             Farmers 
 @farmer_policies
 subtitle: The farmers are a traditional voting bloc of ours. 
 face-image: img/Williams_picnic.jpg
@@ -39,7 +24,7 @@ face-image: img/Williams_picnic.jpg
 - @wheat_pool: We can create a provincially regulated and operated wheat pool. 
 - @grain_elevators: We can promote the construction of public grain elevators. 
 - @price_guarantee: We can set a floor price for livestock and grain. 
-- @path: Go Back
+- @back: Go Back
 
 
 @use_lease
@@ -57,7 +42,7 @@ This is a radical farmer policy that would potentially destabilize our agricultu
 
 @yes_use_lease
 title: Yes to use lease!
-on-arrival: agrarian_strength += 5; use_lease_plat += 1; flp_farmer += 4
+on-arrival: agrarian_strength += 5; use_lease_plat += 1; farmer_flp += 4
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
 
@@ -74,7 +59,7 @@ This would encroach upon many of the existing wheat pools in Saskatchewan though
 
 @yes_wheat_pool
 title: Yes to the wheat pool!
-on-arrival: agrarian_strength += 3; wheat_pool_plat += 1; flp_farmer += 4
+on-arrival: agrarian_strength += 3; wheat_pool_plat += 1; farmer_flp += 4
 
 We have chosen to add a provincial wheat pool to our platform. The farmers will surely be enthusiastic. 
 
@@ -108,24 +93,6 @@ This would have major effects on the supply side, however.
 @yes_price_guarantee
 title: Yes to the price guarantee!
 
-# _______________________________________________________________________________________
-#                                           Labour 
-
-@labour_policies
-subtitle: Labour is an important part of any democratic socialist movement
-face-image: img/George_Jones_Speech
-
-Labour is an essential part of our movement. The urban seats of Regina and Saskatoon have many workers that would take kindly to a party that advocates their interests. In addition, Saskatchewan has a burgeoning resource exploitation sector full of low wage and poorly regulated jobs that will need protections sooner or later. 
-
-#- @collective_bargaining: Legalization of collective bargaining and mandatory recognition of majority-supported unions. 
-#- @work_protection: Raise the minimum wage, limit working hours, and increase regulation over hazardous workplaces.
-#- @social_insurance: Establish an unemployment benefit and worker's injury compensation
-#- @loan_cooperatives: Hand grants and loans to cooperatives to increase workplace democracy. 
-#- @worker_representation_board: Mandate worker's representation on Corporate Boards. 
-- @path: Go back
-
-
-
 
 # ____________________________________________________________________________________________
 #                                        Infrastructure
@@ -137,7 +104,7 @@ face-image: img/Williams_picnic.jpg
 - @rural_elec
 # - @rural_sanit
 # - @rural_road
-- @path: Go back
+- @farmer_policies: Go back
 
 
 @rural_elec

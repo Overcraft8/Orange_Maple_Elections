@@ -19,7 +19,7 @@ Major James Coldwell is the moderate former leader of the ILP and founder of the
 - @Coldwell: Coldwell will surely lead the FLP to victory. 
 
 @GeorgeWilliams 
-on-arrival: flp_farmer += 4; agrarian_strength += 4; flp_legislative_leader = "George Hara Williams"; flp_legislative_leader_img = "WilliamsHaraGeorge.jpg"
+on-arrival: farmer_flp += 4; agrarian_strength += 4; flp_legislative_leader = "George Hara Williams"; flp_legislative_leader_img = "WilliamsHaraGeorge.jpg"
 face-image: img/portraits/WilliamsHaraGeorge.jpg
 
 Williams will lead us to victory!

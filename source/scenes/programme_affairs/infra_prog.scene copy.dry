@@ -1,0 +1,35 @@
+title: Infrastructural Policies
+new-page: true
+is-card: true
+tags: programme
+view-if: programme_timer <= 0
+on-arrival: month_actions += 1; programme_timer = 3
+card-image: img/saskatoon_streetcar_construction.jpg
+subtitle: Choosing our party's platform
+
+Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. We can promise multiple policies within a single group or promise none at all. 
+
+- @infra_policies: Let us choose a campaign promise for the farmers. 
+- @continue: Return
+
+# ____________________________________________________________________________________________
+#                                        Infrastructure
+
+@infra_policies
+subtitle: The farmers are a traditional voting bloc of ours. 
+face-image: img/Williams_picnic.jpg
+
+- @rural_elec
+# - @rural_sanit
+# - @rural_road
+- @farmer_policies: Go back
+
+
+@rural_elec
+title: Rural Electrification
+
+- @yes_rural_elec: Yes!
+- @infra_policies: Back
+
+@yes_rural_elec
+title: Yes to rural electrification

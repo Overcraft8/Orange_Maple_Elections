@@ -370,7 +370,7 @@ Industrial Production Index: [+ indu_production +]%
   <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
     Meager Labour Regulation
     <img 
-      src="img/Saskatoon_StreetcarRail_Construction.jpg" 
+      src="img/saskatoon_streetcar_construction.jpg" 
       style="width: 60%; display: block; margin: auto; cursor: pointer;"
       onclick="goToDepressionSituation()"
     >

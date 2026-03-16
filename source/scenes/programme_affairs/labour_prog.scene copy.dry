@@ -1,0 +1,56 @@
+title: Labour Policies
+new-page: true
+is-card: true
+tags: programme
+view-if: programme_timer <= 0
+on-arrival: month_actions += 1; programme_timer = 3
+card-image: img/up_to_you_poster.jpg
+subtitle: Choosing our party's platform
+
+Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. We can promise multiple policies within a single group or promise none at all. 
+
+- @labour_policies: Let us choose a campaign promise for the farmers. 
+- @continue: Return
+
+# _______________________________________________________________________________________
+#                                           Labour 
+
+@labour_policies
+subtitle: Labour is an important part of any democratic socialist movement
+face-image: img/George_Jones_Speech
+
+Labour is an essential part of our movement. The urban seats of Regina and Saskatoon have many workers that would take kindly to a party that advocates their interests. In addition, Saskatchewan has a burgeoning resource exploitation sector full of low wage and poorly regulated jobs that will need protections sooner or later. 
+
+#- @collective_bargaining: Legalization of collective bargaining and mandatory recognition of majority-supported unions. 
+#- @work_protection: Raise the minimum wage, limit working hours, and increase regulation over hazardous workplaces.
+#- @social_insurance: Establish an unemployment benefit and worker's injury compensation
+#- @loan_cooperatives: Hand grants and loans to cooperatives to increase workplace democracy. 
+#- @worker_representation_board: Mandate worker's representation on Corporate Boards. 
+
+- @labour_policies: Go back
+
+
+
+
+# ____________________________________________________________________________________________
+#                                        Infrastructure
+
+@infra_policies
+subtitle: The farmers are a traditional voting bloc of ours. 
+face-image: img/Williams_picnic.jpg
+
+#- @rail_expansion
+- @rural_elec
+# - @rural_sanit
+# - @rural_road
+- @path: Go back
+
+
+@rural_elec
+title: Rural Electrification
+
+- @yes_rural_elec: Yes!
+- @infra_policies: Back
+
+@yes_rural_elec
+title: Yes to rural electrification

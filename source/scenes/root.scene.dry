@@ -801,7 +801,7 @@ this.state.disableSaves = true;
 go-to: 1932_main
 
 @1932_main
-audio: shuffle music/OCanadaColdstreamGuards.mp3 music/courage.mp3 music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 
+audio: shuffle music/courage.mp3 music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 music/OCanadaColdstreamGuards.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 

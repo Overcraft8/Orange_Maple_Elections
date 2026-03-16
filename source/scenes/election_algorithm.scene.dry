@@ -86,12 +86,31 @@ for (var party of Q.parties) {
     urban_total += Q[party+'_urban_power'];
 }
 
+var seat_sum = 0;
+var remainders = [];
+
 for (var party of Q.parties) {
 
-    var urban_share = Q[party+'_urban_power'] / urban_total;
+    var exact = (Q[party+'_urban_power'] / urban_total) * Q.urban_seats;
 
-    Q[party+'_urban_seats'] =
-        Math.round(urban_share * Q.urban_seats);
+    Q[party+'_urban_seats'] = Math.floor(exact);
+    seat_sum += Q[party+'_urban_seats'];
+
+    remainders.push({
+        party: party,
+        remainder: exact - Q[party+'_urban_seats']
+    });
+}
+
+var seats_left = Q.urban_seats - seat_sum;
+
+remainders.sort(function(a,b){
+    return b.remainder - a.remainder;
+});
+
+for (var i = 0; i < seats_left; i++) {
+    var p = remainders[i].party;
+    Q[p+'_urban_seats'] += 1;
 }
 
 
@@ -103,12 +122,31 @@ for (var party of Q.parties) {
 }
 
 
+var seat_sum = 0;
+var remainders = [];
+
 for (var party of Q.parties) {
 
-    var rural_share = Q[party+'_rural_power'] / rural_total;
+    var exact = (Q[party+'_rural_power'] / rural_total) * Q.rural_seats;
 
-    Q[party+'_rural_seats'] =
-        Math.round(rural_share * Q.rural_seats);
+    Q[party+'_rural_seats'] = Math.floor(exact);
+    seat_sum += Q[party+'_rural_seats'];
+
+    remainders.push({
+        party: party,
+        remainder: exact - Q[party+'_rural_seats']
+    });
+}
+
+var seats_left = Q.rural_seats - seat_sum;
+
+remainders.sort(function(a,b){
+    return b.remainder - a.remainder;
+});
+
+for (var i = 0; i < seats_left; i++) {
+    var p = remainders[i].party;
+    Q[p+'_rural_seats'] += 1;
 }
 
 

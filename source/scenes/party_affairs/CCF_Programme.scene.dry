@@ -57,7 +57,7 @@ This is a radical farmer policy that would potentially destabilize our agricultu
 
 @yes_use_lease
 title: Yes to use lease!
-on-arrival: agrarian_strength += 5; use_lease_plat += 1; flp_farmer += 4;
+on-arrival: agrarian_strength += 5; use_lease_plat += 1; flp_farmer += 4
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
 

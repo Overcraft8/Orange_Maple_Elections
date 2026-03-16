@@ -611,8 +611,8 @@ Q.rcmp_suspicion = 50;
 
 
 //                               FLP / CCF Programme
-use_lease_adopted = 0;
-
+Q.use_lease_plat = 0;
+Q.wheat_pool_plat = 0;
 
 
 

@@ -195,8 +195,6 @@ if (Q.sapd_formed && Q.sapd_r) {
             });
 }
 
-data = data.filter(p => p.seats > 0);
-
 data = data.concat([
     {
         "id": "flp",
@@ -237,12 +235,17 @@ data = data.concat([
     },
 ]);
 
+data = data.filter(p => p.seats > 0);
+
 console.log("Seat totals by party:");
 for (var party of Q.parties) {
     console.log(party, Q[party+'_urban_seats'], Q[party+'_rural_seats'], Q[party+'_seats']);
 }
 
 if (window && d3) {
+
+    d3.select("#assembly").selectAll("*").remove();
+
     var width = 400; 
     var height = 400;
     var screenWidth = document.getElementById('content').offsetWidth;

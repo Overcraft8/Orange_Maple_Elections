@@ -1,4 +1,4 @@
-title: Election
+title: Electiontwo
 on-arrival: {!
 // calculate normalized class voting amounts (0 to 100)
 for (var c of Q.classes) {
@@ -65,8 +65,7 @@ for (var party of Q.parties) {
 
 var total_support = urban_support + rural_support;
 
-if (urban_support === 0) urban_support = 1;
-if (rural_support === 0) rural_support = 1;
+
 
 
 
@@ -158,14 +157,7 @@ for (var party of Q.parties) {
         Q[party+'_rural_seats'];
 }
 
-var total = 0;
 
-for (var party of Q.parties) {
-    total += Q[party+'_seats'];
-}
-
-console.log("TOTAL SEATS:", total);
-console.log("EXPECTED:", Q.urban_seats + Q.rural_seats);
 
 for (var party of Q.parties) {
     var combined_support = Q[party + '_support'] + Q[party + '_support_rural'];

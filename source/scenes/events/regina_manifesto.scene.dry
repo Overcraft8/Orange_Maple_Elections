@@ -1,0 +1,40 @@
+title: Regina Riot
+new-page: true
+subtitle: The trekkers come to Saskatchewan...
+tags: event
+view-if: year = 1932 and month = 7
+max-visits: 1
+face-image: img/ccf_convention_1933.jpg
+
+= The Regina Convention
+
+This month, labour and agrarian delegates from across the country while be gathering in Regina to vote on a manifesto written by the LSR, the CCF's unofficial socialist theory nerds. This meeting will decide the general programme of the national CCF. 
+
+What must we do?
+
+- @StaySilent: The situation is too fickle, we cannot get involved. 
+- @SendSpeakers: FLP leaders voicing approval independently may keep us free of persecution
+- @ProvideSupplies: We can support the strikers materially.
+- @Rally: Could we rally our supporters to the aid of the trekkers?
+
+@StaySilent
+on-arrival: workers_flp -= 6; labour_strength -= 4; 
+
+Many of the workers and strikers expected us to say *something*. 
+
+@SendSpeakers
+on-arrival: workers_flp += 4; labour_strength += 1; trek_support += 1;
+
+The strikers are enthusiastic that even the known moderate Major James Coldwell is speaking. 
+
+@ProvideSupplies
+view-if: resources >= 1
+on-arrival: resources -= 1; trek_support += 2; workers_flp += 6;cp_relation += 3; lps_relation -=5; cps_relation -= 6;
+
+We will provide enough water and food to maintain the strikers through the month should they decide to stay.
+
+@Rally
+view-if: 1 = 1 or left_strength > agrarian_strength
+on-arrival: workers_flp += 8; lps_relation -= 10; cps_relation -= 10; cp_relation += 5; trek_support += 3;
+
+The CP is delighted that we have chosen to endorse the trek. 

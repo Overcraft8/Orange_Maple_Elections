@@ -234,9 +234,9 @@ data = data.concat([
     },
 ]);
 
-console.log("Seat totals:");
+console.log("Seat totals by party:");
 for (var party of Q.parties) {
-    console.log(party, Q[party + "_seats"]);
+    console.log(party, Q[party+'_urban_seats'], Q[party+'_rural_seats'], Q[party+'_seats']);
 }
 
 if (window && d3) {

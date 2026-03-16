@@ -194,6 +194,9 @@ if (Q.sapd_formed && Q.sapd_r) {
             "seats": Math.round(Q.sapd_r * 0.6),
             });
 }
+
+data = data.filter(p => p.seats > 0);
+
 data = data.concat([
     {
         "id": "flp",

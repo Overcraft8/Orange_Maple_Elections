@@ -231,16 +231,7 @@ Q.income = 1600;
 Q.inflation = 2.9;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
-Q.economic_growth = 4.4;
-Q.monthly_economic_growth = 1;
 
-Q.saskatchewan_debt = Number((100).toFixed(1));
-Q.saskatchewan_gdp = Number((100).toFixed(1)); // new GDP
-
-Q.depression = 1;
-
-// economic expansion timer
-Q.economic_expansion = 0;
 
 // quality of life (as % of 1932 - currently unused - should be welfare-adjusted.)
 Q.workers_qol = 100;
@@ -488,21 +479,33 @@ Q.eu_progress = 0;
 Q.science = 0;
 Q.education_science = 0;
 
+
 //                     Economy 
+
+
+Q.economic_growth = 4.4;
+Q.monthly_economic_growth = 1;
+
+Q.saskatchewan_debt = (100).toFixed(1);
+Q.saskatchewan_gdp = (100).toFixed(1); // new GDP
+
+Q.depression = 1;
+
+// economic expansion timer
+Q.economic_expansion = 0;
+
 
 Q.monthly_economic_growth = Q.economic_growth / 12;
 Q.saskatchewan_old_gdp = Q.saskatchewan_gdp;
-Q.saskatchewan_gdp = Number(
-  (Q.saskatchewan_gdp * (Q.monthly_economic_growth / 100 + 1)).toFixed(1));
-Q.agri_production = 100;
-Q.indu_production = 100;
+Q.saskatchewan_gdp = Number((Q.saskatchewan_gdp * (Q.monthly_economic_growth / 100 + 1)).toFixed(1));
+Q.agri_production = (100).toFixed(1);
+Q.indu_production = (100).toFixed(1);
 
 
 //                   Living Standards
 // level of welfare relative to 1932 (can go negative)
 Q.welfare = 0;
 Q.educationquality = "Basic";
-Q.highereducationquality = "Basic";
 Q.Curriculum = "Traditional";
 Q.healthcarequality = "Basic";
 Q.poverty = 10;

@@ -275,7 +275,6 @@ Welfare: [+ welfare +]
 
 [? if 1 == 1 :
 Basic Education quality: [+ educationquality +]<br>
-Higher Education quality: [+ highereducationquality +]<br>
 Curriculum: [+ Curriculum +]<br>
 ?]
 

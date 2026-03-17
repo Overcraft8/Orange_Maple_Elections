@@ -69,11 +69,13 @@ Premier: [+ premier +] ([+ premier_party +])
 
 Assembly composition:
 
+<div id="assembly"></div>
+
 {!
 function renderParliament() {
 
     if (!window.d3 || !window.data) {
-        setTimeout(renderParliament, 100); // try again in 100ms
+        setTimeout(renderParliament, 100);
         return;
     }
 

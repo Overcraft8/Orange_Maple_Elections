@@ -63,7 +63,6 @@ is-deck: true
 
 @programme 
 title: Party Programme
-view-if: 1 == 1
 card-image: img/Sask_CCF_Programme.jpg
 is-deck: true
 

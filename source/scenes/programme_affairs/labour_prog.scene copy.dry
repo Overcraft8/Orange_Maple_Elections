@@ -2,8 +2,8 @@ title: Labour Policies
 new-page: true
 is-card: true
 tags: programme
-view-if: programme_timer <= 0
-on-arrival: month_actions += 1; programme_timer = 3
+view-if: agri_prog_timer <= 0
+on-arrival: month_actions += 1; labour_prog_timer = 3
 card-image: img/up_to_you_poster.jpg
 subtitle: Choosing our party's platform
 
@@ -21,10 +21,52 @@ face-image: img/George_Jones_Speech
 
 Labour is an essential part of our movement. The urban seats of Regina and Saskatoon have many workers that would take kindly to a party that advocates their interests. In addition, Saskatchewan has a burgeoning resource exploitation sector full of low wage and poorly regulated jobs that will need protections sooner or later. 
 
-#- @collective_bargaining: Legalization of collective bargaining and mandatory recognition of majority-supported unions. 
-#- @work_protection: Raise the minimum wage, limit working hours, and increase regulation over hazardous workplaces.
-#- @social_insurance: Establish an unemployment benefit and worker's injury compensation
+- @collective_bargaining: Legalization of collective bargaining and mandatory recognition of majority-supported unions. 
+- @safety_standards: Limit working hours and increase regulation over hazardous workplaces. Establish an unemployment benefit and worker's injury compensation
+- @minimum_wage: Raise the minimum wage. 
 #- @loan_cooperatives: Hand grants and loans to cooperatives to increase workplace democracy. 
 #- @worker_representation_board: Mandate worker's representation on Corporate Boards. 
 
 - @labour_policies: Go back
+
+@collective_bargaining
+face-image: img/ColdwellMajorJames.jpg
+new-page: true
+
+We can grant workers of all kinds the right to collective bargaining, to unionize. This would reduce the authority of employers and empower workers to strike. 
+
+This policy will turn many both large farmers and the shop owners away from our party. 
+
+- @yes_collective_bargaining: Yes, we will promise this policy. 
+- @labour_policies: Let's not do this. 
+
+@yes_collective_bargaining
+
+We have chosen to legalize collective bargaining. 
+
+@safety_standards
+face-image: img/saskatoon_streetcar_construction.jpg
+new-page: true
+
+We can promise new safety regulation. Saskatchewan has a history of unsafe labor, particularly during the construction of the CPR when workers were made to work for hours long. 
+
+- @yes_safety_standards: Yes, we will promise this policy. 
+- @labour_policies: Let's not do this. 
+
+@yes_safety_standards
+
+We have chosen to legalize collective bargaining. 
+
+@minimum_wage
+face-image: img/saskatoon_streetcar_construction.jpg
+new-page: true
+
+We can promise new safety regulation. Saskatchewan has a history of unsafe labor, particularly during the construction of the CPR when workers were made to work for hours long. 
+
+- @yes_minimum_wage: Yes, we will promise this policy. 
+- @labour_policies: Let's not do this. 
+
+@yes_minimum_wage
+
+We have chosen to promise raising the minimum wage. 
+

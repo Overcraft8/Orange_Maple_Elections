@@ -69,7 +69,7 @@ Premier: [+ premier +] ([+ premier_party +])
 
 Assembly composition:
 
-<div id="assembly"></div>
+{!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!
 function renderParliament() {

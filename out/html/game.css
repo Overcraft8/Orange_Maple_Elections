@@ -435,7 +435,7 @@ div.blank-card {
 .card-in-hand, .pinned-card, .deck {
   display: inline-block;
   position: relative;
-  max-width: 150px;
+  max-width: 110px;
   margin-right: 1em;
   vertical-align: top;
 }
@@ -450,7 +450,7 @@ div.blank-card {
 .card-caption {
   text-align: center;
   display: block;
-  font-size: 1em;
+  font-size: 0.95em;
   
 }
 

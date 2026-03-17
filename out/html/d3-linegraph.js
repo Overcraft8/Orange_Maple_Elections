@@ -19,10 +19,10 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
         parties = ['flp', 'cp', 'lps', 'pps', 'cps', 'scp', 'other'];
     }
     if (!partyColors) {
-        partyColors = {'flp': '#D26E28', 'cp': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scp': '#50E23D', 'nsdap': '#954B00', 'other': '#a0a0a0'};
+        partyColors = {'flp': '#D26E28', 'cp': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0'};
     }
     if (!partyNames) {
-        partyNames = {'flp': 'FLP', 'cp': 'CP', 'lps': 'LPS', 'pps': 'PPS', 'cps': 'CPS', 'scp': 'SCP', 'nsdap': 'NSDAP', 'other': 'Others'};
+        partyNames = {'flp': 'FLP', 'cp': 'CP', 'lps': 'LPS', 'pps': 'PPS', 'cps': 'CPS', 'scp': 'SCP', 'other': 'Others'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;
@@ -60,8 +60,8 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
       // Declare the y (vertical position) scale.
       if (!dataMax) {
           const maxFLP = d3.max(data, d => d.flp);
-          const maxNSDAP = d3.max(data, d => d.nsdap);
-          dataMax = maxFLP >= maxNSDAP ? maxFLP + 10 : maxNSDAP + 10;
+          const maxLPC = d3.max(data, d => d.lpc);
+          dataMax = maxFLP >= maxLPC ? maxFLP + 10 : maxLPC + 10;
           dataMin = 0;
       }
       const yScale = d3.scaleLinear([dataMin, dataMax], [height - marginBottom, marginTop]);

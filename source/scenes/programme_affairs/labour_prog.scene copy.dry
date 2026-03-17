@@ -28,29 +28,3 @@ Labour is an essential part of our movement. The urban seats of Regina and Saska
 #- @worker_representation_board: Mandate worker's representation on Corporate Boards. 
 
 - @labour_policies: Go back
-
-
-
-
-# ____________________________________________________________________________________________
-#                                        Infrastructure
-
-@infra_policies
-subtitle: The farmers are a traditional voting bloc of ours. 
-face-image: img/Williams_picnic.jpg
-
-#- @rail_expansion
-- @rural_elec
-# - @rural_sanit
-# - @rural_road
-- @path: Go back
-
-
-@rural_elec
-title: Rural Electrification
-
-- @yes_rural_elec: Yes!
-- @infra_policies: Back
-
-@yes_rural_elec
-title: Yes to rural electrification

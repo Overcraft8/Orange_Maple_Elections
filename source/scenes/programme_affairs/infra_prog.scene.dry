@@ -33,3 +33,4 @@ title: Rural Electrification
 
 @yes_rural_elec
 title: Yes to rural electrification
+on-arrival: agrarian_strength += 3; labour_strength += 2; rural_elec_plat += 1; farmer_flp += 3;

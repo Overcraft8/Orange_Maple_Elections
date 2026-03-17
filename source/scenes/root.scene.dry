@@ -616,8 +616,15 @@ Q.rcmp_suspicion = 50;
 //                               FLP / CCF Programme
 Q.use_lease_plat = 0;
 Q.wheat_pool_plat = 0;
+Q.grain_elevator_plat = 0;
+Q.price_guarantee_plat = 0;
 
+Q.rural_elec_plat = 0;
+Q.rural_sanit_plat = 0;
 
+Q.coll_bargain_plat = 0;
+Q.safety_standard_plat = 0;
+Q.min_wage_plat = 0;
 
 
 

@@ -48,7 +48,7 @@ max-cards: 4
 
 @party
 title: Party Affairs
-card-image: img/CCF_logo.jpg
+card-image: img/all_join_ccf.jpg
 is-deck: true
 
 - #party_affairs

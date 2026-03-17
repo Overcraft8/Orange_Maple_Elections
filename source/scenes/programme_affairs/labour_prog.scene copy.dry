@@ -10,7 +10,7 @@ subtitle: Choosing our party's platform
 Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. We can promise multiple policies within a single group or promise none at all. 
 
 - @labour_policies: Let us choose a campaign promise for the farmers. 
-- @continue: Return
+- @backSpecialScene: Return
 
 # _______________________________________________________________________________________
 #                                           Labour 

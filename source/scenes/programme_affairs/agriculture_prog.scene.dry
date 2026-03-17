@@ -24,7 +24,7 @@ face-image: img/Williams_picnic.jpg
 - @wheat_pool: We can create a provincially regulated and operated wheat pool. 
 - @grain_elevators: We can promote the construction of public grain elevators. 
 - @price_guarantee: We can set a floor price for livestock and grain. 
-- @back: Go Back
+- @backSpecialScene: Go Back
 
 
 @use_lease

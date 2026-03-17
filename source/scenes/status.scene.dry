@@ -13,6 +13,7 @@ if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
 
+
 !}
 
 {!</div>!}

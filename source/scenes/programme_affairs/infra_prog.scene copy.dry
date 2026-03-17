@@ -2,7 +2,7 @@ title: Infrastructural Policies
 new-page: true
 is-card: true
 tags: programme
-view-if: agri_prog_timer <= 0
+view-if: infra_prog_timer <= 0
 on-arrival: month_actions += 1; infra_prog_timer = 3
 card-image: img/saskatoon_streetcar_construction.jpg
 subtitle: Choosing our party's platform

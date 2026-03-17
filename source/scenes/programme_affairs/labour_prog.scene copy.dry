@@ -2,7 +2,7 @@ title: Labour Policies
 new-page: true
 is-card: true
 tags: programme
-view-if: agri_prog_timer <= 0
+view-if: labour_prog_timer <= 0
 on-arrival: month_actions += 1; labour_prog_timer = 3
 card-image: img/up_to_you_poster.jpg
 subtitle: Choosing our party's platform

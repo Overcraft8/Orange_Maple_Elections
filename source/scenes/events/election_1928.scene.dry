@@ -437,8 +437,8 @@ The CP is still very reluctant to join a coalition, despite grassroots friendlin
 - @coalition_menu: Try a different governing arrangement.
 
 @tim_buck_premier
-choose-if: prime_minister == "JS Woodsworth" and reformist_strength + neorevisionist_strength < left_strength
-unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
+choose-if: prime_minister == "JS Woodsworth" and reformist_strength + neorevisionist_strength < far_left_strength
+unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if reformist_strength >= far_left_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
 on-arrival: premier = "Tim Buck"; premier_party = "CP"; cp_relation = 80; in_left_front = 1; flp_in_government = 1 
 
 With great reluctance, Prime Minister [+ prime_minister +] appoints [+ premier +] as premier.

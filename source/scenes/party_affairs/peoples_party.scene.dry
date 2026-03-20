@@ -23,14 +23,14 @@ In order to build a socialist majority, many reformists and neorevisionists are 
 - @cancel_advisor_action
 
 @build_support
-view-if: (neorevisionist_strength + reformist_strength < left_strength + agrarian_strength) or peoples_party_support < 5
-on-arrival: peoples_party_support += 1; neorevisionist_strength += 5; left_strength -= 5; far_left_dissent += 5
+view-if: (neorevisionist_strength + reformist_strength < far_left_strength + agrarian_strength) or peoples_party_support < 5
+on-arrival: peoples_party_support += 1; neorevisionist_strength += 5; far_left_strength -= 5; far_left_dissent += 5
 
 Within our party, we are pushing forward proposals for a people's party against the Left and Agrarians.
 
 
 @support_peoples_party
-choose-if: (neorevisionist_strength + reformist_strength >= left_strength + agrarian_strength) and peoples_party_support >= 4
+choose-if: (neorevisionist_strength + reformist_strength >= far_left_strength + agrarian_strength) and peoples_party_support >= 4
 unavailable-subtitle: The opposition is too strong.
 on-arrival: neorevisionist_strength += 15; reformist_strength += 15; neorevisionist_dissent -= 10; reformist_dissent -= 10; peoples_party = 1; workers_flp -= 12; farmer_flp += 10; new_middle_flp += 10; old_middle_flp += 8; catholics_flp += 8; far_left_dissent += 25; agrarian_dissent += 20; cp_relation -= 10; cp_coalition_dissent += 1; coalition_dissent -= 1; pps_relation += 5*(1-dissent); cps_relation += 5*(1-dissent)
 achievement: volkspartei
@@ -49,7 +49,7 @@ Should we run a new campaign to publicize our new platform?
 
 @support_peoples_party_hard
 subtitle: This will increase dissent.
-view-if: (neorevisionist_strength + reformist_strength < left_strength + agrarian_strength) or (peoples_party_support < 4)
+view-if: (neorevisionist_strength + reformist_strength < far_left_strength + agrarian_strength) or (peoples_party_support < 4)
 on-arrival: neorevisionist_strength += 10; reformist_strength += 8; peoples_party = 1; workers_flp -= 15; farmer_flp += 10; new_middle_flp += 10; old_middle_flp += 8; catholics_flp += 8; far_left_dissent += 40; agrarian_dissent += 40; cp_relation -= 10; cp_coalition_dissent += 1; coalition_dissent -= 1
 achievement: volkspartei
 
@@ -104,7 +104,7 @@ Catholics have historically been tied to the Agrarians Party, but there is no re
 
 
 @no_new_ideas
-on-arrival: neorevisionist_strength -= 6; neorevisionist_dissent += 5; agrarian_strength += 8; left_strength += 3; peoples_party = 0; peoples_party_support -= 3
+on-arrival: neorevisionist_strength -= 6; neorevisionist_dissent += 5; agrarian_strength += 8; far_left_strength += 3; peoples_party = 0; peoples_party_support -= 3
 
 The Social Democrats have been and will always be a party of the working class.
 

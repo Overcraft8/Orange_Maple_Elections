@@ -40,7 +40,7 @@ on-arrival: resources -= 1; trek_support += 2; workers_flp += 6;cp_relation += 3
 We will provide enough water and food to maintain the strikers through the month should they decide to stay.
 
 @Rally
-view-if: 1 = 1 or left_strength > agrarian_strength
+view-if: 1 = 1 or far_left_strength > agrarian_strength
 on-arrival: workers_flp += 8*(1-dissent); lps_relation -= 10; cps_relation -= 10; cp_relation += 5; trek_support += 3;
 
 The CP is delighted that we have chosen to endorse the trek. 

@@ -60,7 +60,7 @@ We have increased recruiting to the UFC (SS).
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; ufc_strength += 50; ufc_militancy += 0.02; young_socialists += 1; left_strength += 5; neorevisionist_strength += 5; radicalization += 1;
+on-arrival: resources -= 1; ufc_strength += 50; ufc_militancy += 0.02; young_socialists += 1; far_left_strength += 5; neorevisionist_strength += 5; radicalization += 1;
 
 Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the UFC (SS).
 

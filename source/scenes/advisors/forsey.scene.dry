@@ -17,9 +17,9 @@ Eugene Forsey is lecterur on economics and political science. He is a convert fr
 @plan
 title: Adopt the WTB-plan!
 subtitle: Convincing the rest of the party to support the WTB-plan.
-choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_support >= 3 and black_thursday_seen and (not historical_mode or ((labour_strength >= agrarian_strength) and (labour_strength >= left_strength) and (labour_strength >= reformist_strength)))
+choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_support >= 3 and black_thursday_seen and (not historical_mode or ((labour_strength >= agrarian_strength) and (labour_strength >= far_left_strength) and (labour_strength >= reformist_strength)))
 on-arrival: advisor_action_timer = 6;
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?][? if wtb_support < 3 : There is not enough support for the WTB-Plan. ?][? if (labour_strength < agrarian_strength or labour_strength < left_strength or labour_strength < reformist_strength) and historical_mode : The labour faction is not strong enough. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?][? if wtb_support < 3 : There is not enough support for the WTB-Plan. ?][? if (labour_strength < agrarian_strength or labour_strength < far_left_strength or labour_strength < reformist_strength) and historical_mode : The labour faction is not strong enough. ?]
 go-to: crisis_program.plan_adopted
 
 @carry_out_policy

@@ -40,7 +40,7 @@ Which faction should we support?
 - @support_neorev: Neorevisionists
 
 @support_left
-on-arrival: far_left_dissent -= 8; left_strength += 8
+on-arrival: far_left_dissent -= 8; far_left_strength += 8
 
 Vorwärts prints editorials in support of Left positions.
 
@@ -70,6 +70,6 @@ title: Cooperation with the CP
 subtitle: Could we build closer ties with the CP?
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 2; cp_relation += 4*(1-dissent); reformist_dissent += 2
+on-arrival: advisor_action_timer = 6; far_left_strength += 2; cp_relation += 4*(1-dissent); reformist_dissent += 2
 
 Spry works towards closer ties with the CP through our media.

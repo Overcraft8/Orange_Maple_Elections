@@ -280,17 +280,17 @@ go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
 
 Overall dissent: [+ dissent_percent : dissent +]
 
-**Left**
+**Far Left**
 
-Many leftists are former members of the UFLP (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the CP, and some support extraparliamentary action.
+Many far leftists are young radicals. Many are interested in closer cooperation with the CP, and some support extraparliamentary action.
 
-Strength: [+ left_strength : strength +]
+Strength: [+ far_left_strength : strength +]
 
 Dissent: [+ far_left_dissent : dissent +]
 
-**Agrarians**
+**Left Agrarians**
 
-Agrarians in the FLP are followers of the doctrine of orthodox Marxism as expounded by Karl Kautsky and later Alexander Nicholson. They seek a middle course between reform and revolution, while defending the democratic state.
+Left agrarians are the more radical wing of the agrarian base, seeking strong government intervention to protect the traditional small family farms of the province. 
 
 Strength: [+ agrarian_strength : strength +]
 

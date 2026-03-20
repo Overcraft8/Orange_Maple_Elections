@@ -427,7 +427,7 @@ subtitle: Laura Jamieson is an anti-war, women's rights, and public education ac
 is-card: true
 card-image: img/portraits/JamiesonLaura.jpeg
 view-if: jamieson_advisor = 0 and n_advisors < 3
-on-arrival: jamieson_advisor = 1; n_advisors += 1; left_strength += 5
+on-arrival: jamieson_advisor = 1; n_advisors += 1; far_left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
@@ -439,7 +439,7 @@ subtitle: Ernest Winch is a left FLP who has supported other Leftist parties in 
 is-card: true
 card-image: img/portraits/WinchErnest.jpg
 view-if: winch_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: winch_advisor = 1; n_advisors += 1; left_strength += 5
+on-arrival: winch_advisor = 1; n_advisors += 1; far_left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
@@ -451,7 +451,7 @@ subtitle: Dorise Nielsen is a left FLP and campaign manager. (Joined 1934) {!<br
 is-card: true
 card-image: img/portraits/NielsenDorise.png
 view-if: nielsen_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: nielsen_advisor = 1; n_advisors += 1; left_strength += 5
+on-arrival: nielsen_advisor = 1; n_advisors += 1; far_left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 

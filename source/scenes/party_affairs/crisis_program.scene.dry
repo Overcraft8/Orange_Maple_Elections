@@ -37,7 +37,7 @@ Our policy course is currently that nothing can be done to alfinesate the depres
 @support_labour
 subtitle: Call for increased public works and fiscal stimulus.
 unavailable-subtitle: The Labour faction is not strong enough.
-choose-if: historical_mode == 0 or (labour_strength >= left_strength and labour_strength >= agrarian_strength and labour_strength >= reformist_strength)
+choose-if: historical_mode == 0 or (labour_strength >= far_left_strength and labour_strength >= agrarian_strength and labour_strength >= reformist_strength)
 on-arrival: agrarian_dissent += 10; far_left_dissent += 5; labour_strength += 5; wtb_support += 1;
 go-to: plan_adopted if wtb_support >= 3; plan_support if wtb_support < 3
 
@@ -55,8 +55,8 @@ With our hard work, we have finally convinced the majority of the party to adopt
 @support_left
 subtitle: Call for mass nationalizations and the transformation of the economy.
 unavailable-subtitle: The Left faction is not strong enough.
-choose-if: historical_mode == 0 or (left_strength >= labour_strength and left_strength >= agrarian_strength and left_strength >= reformist_strength)
-on-arrival: left_strength += 10; reformist_dissent += 5; labour_dissent += 5; nationalization_support += 2
+choose-if: historical_mode == 0 or (far_left_strength >= labour_strength and far_left_strength >= agrarian_strength and far_left_strength >= reformist_strength)
+on-arrival: far_left_strength += 10; reformist_dissent += 5; labour_dissent += 5; nationalization_support += 2
 go-to: support_left_progress if nationalization_support < 3; adopt_left if nationalization_support >= 3
 
 @support_left_progress
@@ -66,14 +66,14 @@ We attempt to convince the party to support a program of mass nationalizations i
 We have not yet formally adopted the plan. More work needs to be done.
 
 @adopt_left
-on-arrival: left_strength += 15; far_left_dissent -= 10; reformist_dissent += 10; neorevisionist_dissent += 8; labour_dissent += 6; nationalization_adopted = 1; coup_progress += 1; economic_plan = 3; cp_relation += 5*(1-dissent)
+on-arrival: far_left_strength += 15; far_left_dissent -= 10; reformist_dissent += 10; neorevisionist_dissent += 8; labour_dissent += 6; nationalization_adopted = 1; coup_progress += 1; economic_plan = 3; cp_relation += 5*(1-dissent)
 
 With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! [? if flp_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?] Bourgeois opposition is likely to be fierce. [? if flp_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
 
 @support_moderate
 subtitle: Call for a limited program of job creation without deficit spending.
 unavailable-subtitle: The Reformist faction is not strong enough.
-choose-if: historical_mode == 0 or (reformist_strength >= left_strength and reformist_strength >= agrarian_strength and reformist_strength >= labour_strength)
+choose-if: historical_mode == 0 or (reformist_strength >= far_left_strength and reformist_strength >= agrarian_strength and reformist_strength >= labour_strength)
 on-arrival: moderate_plan_support += 1; reformist_strength += 8; reformist_dissent -= 5; far_left_dissent += 6; labour_dissent += 5
 go-to: adopt_moderate if moderate_plan_support >= 2; support_moderate_progress if moderate_plan_support < 2
 

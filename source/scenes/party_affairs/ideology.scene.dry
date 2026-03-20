@@ -27,7 +27,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; far_left_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_relation += 3
+on-departure: ideology = "left"; far_left_strength += 10; communist_coalition += 1; far_left_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_relation += 3
 
 The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
 

@@ -41,7 +41,7 @@ For further improvements in CP relations, it might be necessary to expel Noske, 
 - @no_history: No, we have no need to apologize.
 
 @yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; far_left_dissent -= 6; left_strength += 5; cp_rectified_history = 1; pps_relation -= 6; cps_relation -= 6; lps_relation -= 4; cp_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; far_left_dissent -= 6; far_left_strength += 5; cp_rectified_history = 1; pps_relation -= 6; cps_relation -= 6; lps_relation -= 4; cp_relation += 8*(1-dissent); coalition_dissent += 1
 
 As part of normalizing relations with the CP, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 

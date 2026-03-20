@@ -26,7 +26,7 @@ on-arrival: enemies = "anti-democratic parties"; agrarian_strength += 5; reformi
 Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the CP in the future.
 
 @far_right
-on-arrival: enemies = "far right"; left_strength += 5; far_left_dissent -= 5; workers_scp -= 3; workers_scp -= 3;
+on-arrival: enemies = "far right"; far_left_strength += 5; far_left_dissent -= 5; workers_scp -= 3; workers_scp -= 3;
 
 Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while the right is critical of our lack of response to the CP. Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism.
 
@@ -41,6 +41,6 @@ on-arrival: enemies = "CP"; reformist_strength += 5; far_left_dissent += 8; refo
 Attacking the CP is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the CP, this may not be the best choice.
 
 @bourgeois
-on-arrival: enemies = "bourgeois parties"; left_strength += 8; far_left_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_relation += 5; reformist_dissent += 8; workers_pps -= 3; coalition_dissent += 1
+on-arrival: enemies = "bourgeois parties"; far_left_strength += 8; far_left_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_relation += 5; reformist_dissent += 8; workers_pps -= 3; coalition_dissent += 1
 
 Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.

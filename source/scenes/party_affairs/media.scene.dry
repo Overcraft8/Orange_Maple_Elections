@@ -38,7 +38,7 @@ We have successfully bought out a small publisher in the largest city of Saskato
 title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
 subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
 view-if: media_established = 1
-on-arrival: resources += 1; commercialized_media += 1; new_middle_flp += 4*(1 - dissent); old_middle_flp += 3*(1-dissent); left_dissent += 10; labour_dissent += 10
+on-arrival: resources += 1; commercialized_media += 1; new_middle_flp += 4*(1 - dissent); old_middle_flp += 3*(1-dissent); far_left_dissent += 10; labour_dissent += 10
 
 Our commercialized newspapers are able to bring in more funds. However, the left and labour factions express their displeasure.
 
@@ -54,7 +54,7 @@ Our campaign media is mostly reaching the workers who are already saturated with
 title: We will have vibrant ideological debate within our newspapers.
 subtitle: There will be space for all factions to air their views.
 view-if: media_established = 1
-on-arrival: left_dissent -= 6; labour_dissent -= 6; agrarian_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+on-arrival: far_left_dissent -= 6; labour_dissent -= 6; agrarian_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
 
 This has been our media course historically, and it has successfully paved over the many tensions in our party.
 

@@ -30,7 +30,7 @@ title: Defending Toleration
 subtitle: Nicholson supports cooperation with the bourgeois parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flp_toleration: The FLP is not in toleration. ?]
 choose-if: flp_in_government = 0 and flp_toleration = 1 and advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent -= 8; agrarian_dissent -= 5
+on-arrival: advisor_action_timer = 6; far_left_dissent -= 10; neorevisionist_dissent -= 8; agrarian_dissent -= 5
 
 We have reduced dissent among the anti-toleration factions.
 

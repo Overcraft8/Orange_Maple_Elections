@@ -28,7 +28,7 @@ The *UFC (SS) * is a mass organization for the defense of the Republic against t
 choose-if: resources >= ufc_militarization_cost
 unavailable-subtitle: Not enough resources ([+ ufc_militarization_cost +] needed).
 subtitle: -[+ ufc_militarization_cost +] resources
-on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; flp_militancy += 0.05; workers_flp += 2*(1-dissent); unemployed_flp += 2*(1-dissent); pps_relation -= 5 if historical_mode 
+on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; left_strength += 2; far_left_dissent -= 2; reformist_dissent += 5; flp_militancy += 0.05; workers_flp += 2*(1-dissent); unemployed_flp += 2*(1-dissent); pps_relation -= 5 if historical_mode 
 
 Some in our party decry the increasing militarization of the UFC (SS). They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
 
@@ -51,7 +51,7 @@ The UFC (SS) is already serving the purpose it needs to serve. There is no reaso
 
 @cut_rb
 subtitle: +1 resources
-on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; left_strength -= 2; left_dissent -= 2; flp_militancy -= 0.05; workers_cp += 2; unemployed_cp += 2
+on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; left_strength -= 2; far_left_dissent -= 2; flp_militancy -= 0.05; workers_cp += 2; unemployed_cp += 2
 
 Cutting resources to the UFC (SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
 

@@ -11,16 +11,17 @@ tags: party_affairs
 
 Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
 
-- @workers: The urban working class, our traditional support base.
+- @urban_workers: The urban working class, our traditional support base.
 - @new_middle: The "new middle class" of government employees and white-collar workers.
 - @old_middle: The "old middle class" of small independent businessmen and artisans.
-- @farmer: Farmers workers and small farmers, who have felt neglected by us in the past.
+- @farmer: Farmers, our traditional support base.   
+- @farm_hands: 
 - @unemployed: The unemployed.
-- @catholics: Catholics, who typically support the PPS Party.
+- @catholics: Catholics, who typically support the LPS Party.
 - @root: We either don't want to or cannot campaign right now.
 - @easy_discard
 
-@workers
+@urban_workers
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
@@ -48,9 +49,15 @@ We have increased our campaigning among the old middle class. [? if nationalism 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: farmer_flp += 5*(1-dissent); resources -= 1; farmer_flp += 3*(1-dissent) if farmer_policy >= 2
+on-arrival: farmer_flp += 3*(1-dissent); resources -= 1; farmer_flp += 3*(1-dissent) if farmer_policy >= 2
 
 We have increased our campaigning among farmers. The farmers are a traditional voting bloc of ours[? if farmer_policy >= 2 : Our farmer policies have made it easier for us to build support among farmers. ?]
+
+@farm_hands
+subtitle: -1 resources
+choose-if resources >= 1
+unavailable-subtitle: Not enough resources
+on-arrival: farm_hand_flp += 5*(1-dissent); resources -= 1; 
 
 @unemployed
 subtitle: -1 resources

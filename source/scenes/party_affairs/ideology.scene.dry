@@ -27,7 +27,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; left_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_relation += 3
+on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; far_left_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_relation += 3
 
 The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
 
@@ -38,7 +38,7 @@ if (Q.ideology && Q.ideology != "agrarian") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "agrarian"; agrarian_strength += 10; agrarian_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
+on-departure: ideology = "agrarian"; agrarian_strength += 10; agrarian_dissent -= 10; far_left_dissent -= 5; reformist_dissent -= 5
 
 The Agrarian wing of the party seeks to work with the farmers' movement to improve the lives of small farmers. 
 
@@ -65,6 +65,6 @@ on-departure: ideology = "reformist"; reformist_strength += 10; democratization 
 The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
 
 @changed
-on-arrival: left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; reformist_dissent += 5
+on-arrival: far_left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; reformist_dissent += 5
 
 We have changed ideologies. Many in the party feel unmoored.

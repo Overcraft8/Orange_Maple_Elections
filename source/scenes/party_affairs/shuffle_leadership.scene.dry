@@ -164,7 +164,7 @@ Fines has been removed as an advisor. The Labour faction disapproves.
 title: Remove Jamieson
 view-if: jamieson_advisor = 1
 tags: remove_advisor
-on-arrival: jamieson_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: jamieson_advisor = 0; far_left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
 Jamieson has been removed as an advisor. The Leftist faction disapproves.
@@ -173,7 +173,7 @@ Jamieson has been removed as an advisor. The Leftist faction disapproves.
 title: Remove Winch
 view-if: winch_advisor = 1
 tags: remove_advisor
-on-arrival: winch_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: winch_advisor = 0; far_left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
 Winch has been removed as an advisor. The Leftist faction disapproves.
@@ -191,7 +191,7 @@ Irvine has been removed as an advisor. The Agrarian faction disapproves.
 title: Remove Nielsen
 view-if: nielsen_advisor = 1
 tags: remove_advisor
-on-arrival: nielsen_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: nielsen_advisor = 0; far_left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
 Nielsen has been removed as an advisor. The Leftist faction disapproves.

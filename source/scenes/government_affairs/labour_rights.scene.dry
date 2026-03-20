@@ -29,7 +29,7 @@ With control of the Labour Ministry, we can set national standards for labour. O
 
 @working_hours
 view-if: working_hours < 2
-on-arrival: working_hours += 1; labour_dissent -= 8; left_dissent -= 5; labour_strength += 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1 if cps_relation <= 30; labour_goal_completed = 1; inflation += 0.1; economic_growth -= 0.1
+on-arrival: working_hours += 1; labour_dissent -= 8; far_left_dissent -= 5; labour_strength += 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1 if cps_relation <= 30; labour_goal_completed = 1; inflation += 0.1; economic_growth -= 0.1
 
 While a 40-hour work week was declared during the Saskatchewanian Revolution in 1918, enforcement has become increasingly porous over the years. The capitalists have successfully added numerous exceptions and loopholes, returning to the old regime of forced overtime for workers.
 
@@ -38,7 +38,7 @@ Now, with the force of the Labour Ministry, we are finally enforcing the rights 
 @shorten_hours
 view-if: working_hours >= 2 and black_thursday_seen = 1
 subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
-on-arrival: working_hours += 1; labour_dissent -= 8; left_dissent -= 5; labour_strength += 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; labour_goal_completed = 1; unemployed -= 0.3; economic_growth -= 0.2;
+on-arrival: working_hours += 1; labour_dissent -= 8; far_left_dissent -= 5; labour_strength += 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; labour_goal_completed = 1; unemployed -= 0.3; economic_growth -= 0.2;
 
 Some in the labour movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
 
@@ -61,7 +61,7 @@ With the onset of the Depression and its throngs of unemployed, our unemployment
 
 @cut_benefits
 subtitle: The workers will regard this as a betrayal.
-on-arrival: workers_flp -= 0.12*workers_flp; unemployed_flp -= 0.2*unemployed_flp; workers_cp += 6; workers_scp += 6; unemployed_cp += 5; unemployed_scp += 5; left_dissent += 15; agrarian_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; pro_republic -= 4; cp_relation -= 8; inflation -= 2; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
+on-arrival: workers_flp -= 0.12*workers_flp; unemployed_flp -= 0.2*unemployed_flp; workers_cp += 6; workers_scp += 6; unemployed_cp += 5; unemployed_scp += 5; far_left_dissent += 15; agrarian_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; pro_republic -= 4; cp_relation -= 8; inflation -= 2; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
 
 For budgetary reasons, we have cut unemployment insurance benefits. Unfortunately, our reasons for fiscal discipline are alien to the workers. They are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the CP's gain, and even the SCP, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
 
@@ -75,6 +75,6 @@ We have increased employer contributions to the unemployment insurance fund, all
 
 @balance
 subtitle: Neither workers nor employers will be entirely satisfied or dissatisfied. [? if in_grand_coalition and cps_relation < 30: The CPS will likely consider the compromise unacceptable. ?][? if in_grand_coalition and cps_relation >= 30: The CPS might grudgingly accept the compromise for now. ?]
-on-arrival: workers_flp -= 4; unemployed_flp -= 5; workers_cp += 4; unemployed_cp += 3; unemployed_scp += 3; left_dissent += 10; labour_dissent += 8; agrarian_dissent += 5; welfare -= 1; treasury += 1; month += 1; cp_relation -= 4; inflation -= 1; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; coalition_dissent = 2 if in_grand_coalition and cps_relation < 30; coalition_dissent += 1 if in_grand_coalition; economic_growth -= 0.1;
+on-arrival: workers_flp -= 4; unemployed_flp -= 5; workers_cp += 4; unemployed_cp += 3; unemployed_scp += 3; far_left_dissent += 10; labour_dissent += 8; agrarian_dissent += 5; welfare -= 1; treasury += 1; month += 1; cp_relation -= 4; inflation -= 1; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; coalition_dissent = 2 if in_grand_coalition and cps_relation < 30; coalition_dissent += 1 if in_grand_coalition; economic_growth -= 0.1;
 
 Neither side is entirely satisfied by our compromise solution. Many of the workers and unemployed see this as a betrayal, although we present it as the successful aversion of a much worse alternative. [? if in_grand_coalition: Meanwhile, the CPS is aghast at the prospect of raising any taxes on businesses at all. ?]

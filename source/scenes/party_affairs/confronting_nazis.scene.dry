@@ -19,7 +19,7 @@ Many in our party are calling for urgent action. The "neorevisionist" faction, l
 
 
 @not_a_big_deal
-on-arrival: scp_urgency -= 1; left_dissent += 5; neorevisionist_dissent += 15
+on-arrival: scp_urgency -= 1; far_left_dissent += 5; neorevisionist_dissent += 15
 view-if: mierendorff_advisor = 0 and leber_advisor = 0 and schumacher_advisor = 0
 
 The SCPs are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
@@ -39,7 +39,7 @@ The SCPs are one of the foremost threats to the Saskatchewanian republic. Howeve
 title: Form the Iron Front!
 subtitle: The Iron Front consists of the FLP, the trade unions, and the UFC (SS).
 view-if: scp_urgency >= 3 and iron_front_formed == 0
-on-arrival: iron_front_formed = 1; radicalization += 1; scp_urgency += 1; workers_flp += 5*(1-dissent); pro_republic += 5*(1-dissent); left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
+on-arrival: iron_front_formed = 1; radicalization += 1; scp_urgency += 1; workers_flp += 5*(1-dissent); pro_republic += 5*(1-dissent); far_left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
 achievement: eiserne_front
 
 The SCPs threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the FLP, the ADGB trade union federation, and the *UFC (SS) *. We have a new symbol - the Three Arrows, pointing down towards the left.

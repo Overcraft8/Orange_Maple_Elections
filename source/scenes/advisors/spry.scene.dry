@@ -40,7 +40,7 @@ Which faction should we support?
 - @support_neorev: Neorevisionists
 
 @support_left
-on-arrival: left_dissent -= 8; left_strength += 8
+on-arrival: far_left_dissent -= 8; left_strength += 8
 
 Vorwärts prints editorials in support of Left positions.
 

@@ -19,7 +19,7 @@ The industrial Ruhr region is aflame with labour unrest. The employers have star
 
 @support_labour
 subtitle: Popular among the workers, this will alienate the bourgeoisie.
-on-arrival: labour_strength += 5; labour_dissent -= 5; left_dissent -= 5; workers_flp += 6*(1-dissent); coalition_dissent += 1; cps_relation -= 4; capital_strike_progress += 1 if cps_relation <= 30; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; labour_goal_completed += 1; inflation += 0.1; pro_labour += 1; strike_term_seen += 1; economic_growth -= 0.1;
+on-arrival: labour_strength += 5; labour_dissent -= 5; far_left_dissent -= 5; workers_flp += 6*(1-dissent); coalition_dissent += 1; cps_relation -= 4; capital_strike_progress += 1 if cps_relation <= 30; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; labour_goal_completed += 1; inflation += 0.1; pro_labour += 1; strike_term_seen += 1; economic_growth -= 0.1;
 
 Supporting labour is always popular in the FLP, although many of our coalition partners represent employers, and they are less enthused.
 

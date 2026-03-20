@@ -21,7 +21,7 @@ How do we reduce tensions with the coalition?
 
 
 @promise_cuts
-on-arrival: workers_flp -= 5; unemployed_flp -= 6; workers_cp += 5; unemployed_cp += 3; unemployed_scp += 3; left_dissent += 10; labour_dissent += 5; welfare -= 1; treasury += 1; coalition_dissent = 0
+on-arrival: workers_flp -= 5; unemployed_flp -= 6; workers_cp += 5; unemployed_cp += 3; unemployed_scp += 3; far_left_dissent += 10; labour_dissent += 5; welfare -= 1; treasury += 1; coalition_dissent = 0
 
 Fine. By cutting welfare, we have reduced dissent within the coalition.
 

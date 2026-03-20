@@ -51,7 +51,7 @@ Q.dissent_percent = 5;
 Q.factions = ['left', 'agrarian', 'labour', 'reformist', 'neorevisionist'];
 // should this be normalized to 100%?
 Q.left_strength = 5;
-Q.left_dissent = 20;
+Q.far_left_dissent = 20;
 Q.agrarian_strength = 55;
 Q.agrarian_dissent = 0;
 Q.labour_strength = 25;
@@ -789,7 +789,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 35.00; cp_r
 go-to: 1932_main
 
 @1932_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 25.00; reformist_dissent = 25; left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_relation = 16; cps_relation = 31; treasury = 5;
+on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 25.00; reformist_dissent = 25; far_left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_relation = 16; cps_relation = 31; treasury = 5;
 go-to: 1932_main
 
 @1932_historical
@@ -801,7 +801,7 @@ Q.resources = 2;
 Q.dues = 1;
 Q.ufc_strength = 15.00;
 Q.reformist_dissent = 25;
-Q.left_dissent = 30;
+Q.far_left_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;
 Q.pps_relation = 41;

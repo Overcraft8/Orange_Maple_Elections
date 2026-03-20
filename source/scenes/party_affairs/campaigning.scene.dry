@@ -55,7 +55,7 @@ We have increased our campaigning among farmers. The farmers are a traditional v
 
 @farm_hands
 subtitle: -1 resources
-choose-if resources >= 1
+choose-if: resources >= 1
 unavailable-subtitle: Not enough resources
 on-arrival: farm_hand_flp += 5*(1-dissent); resources -= 1; 
 

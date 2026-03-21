@@ -170,7 +170,19 @@ function escapeRegex(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function ideologies(party, Q) {
+function getRelationshipText(value) {
+        if (value === undefined || value === null) return '';
+        if (value <= 5) return '<span style="color: #FF0000;">Hostile</span>';
+        if (value <= 14.9) return '<span style="color: #FF4500;">Frigid</span>';
+        if (value <= 29.9) return '<span style="color: #FF8C00;">Cold</span>';
+        if (value <= 39.9) return '<span style="color: #FFA500;">Cool</span>';
+        if (value <= 54.9) return '<span style="color: #FFD700;">Neutral</span>';
+        if (value <= 64.9) return '<span style="color: #9ACD32;">Warm</span>';
+        if (value <= 74.9) return '<span style="color: #32CD32;">Friendly</span>';
+        return '<span style="color: #008000;">Very friendly</span>';
+    }
+
+function getPartyIdeology(party, Q) {
     if (!Q) return 'Unknown';
     3
 
@@ -181,7 +193,7 @@ function ideologies(party, Q) {
             if (Q.flp_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'PPS': 
-            if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #C42424;">Centre Left</span> (Progressivism)';
+            if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Progressivism)';
             return 'Unknown';
         default: 
             return 'Unknown';
@@ -206,53 +218,6 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
             var ideology = getPartyIdeology(searchString, Q);
             var relationText = getRelationshipText(Q['pps_relation']);
             return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'CGP' && Q['CGP_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['CGP_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'AP' && Q['z_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['z_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'MSP' && Q['MSP_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['MSP_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'MHP' && Q['MHP_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['MHP_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'CHP' !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology;
-        }
-        if (searchString === 'paramilitary-name' && Q['paramilitary-name_strength'] !== undefined) {
-            var strength = Q['paramilitary-name_strength'] ? Q['paramilitary-name_strength'].toFixed(1) : '0';
-            var militancy = getMilitancyText(Q['paramilitary-name_militancy']);
-            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Militarization: ' + militancy;
-        }
-        
-        if (searchString === 'Sri Lanka Armed Forces' && Q.slaf_strength !== undefined) {
-            var strength = Q.slaf_strength ? Q.slaf_strength : '0';
-            var morale = getLoyaltyText(Q.slaf_morale);
-            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Morale: ' + morale;
-        }
-      
-        if (searchString === 'THKP-C' && Q.thkpc_strength !== undefined) {
-            var strength = Q.thkpc_strength ? Q.thkpc_strength : '0';
-            var morale = getLoyaltyText(Q.thkpc_morale);
-            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Morale: ' + morale;
-        }
-       
-        if (searchString === 'TKP/ML' && Q.tkpml_strength !== undefined) {
-            var strength = Q.tkpml_strength ? Q.tkpml_strength : '0';
-            var morale = getLoyaltyText(Q.tkpml_morale);
-            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Morale: ' + morale;
         }
         return baseTooltip.explanationText;
     }

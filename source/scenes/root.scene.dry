@@ -51,24 +51,19 @@ Q.dissent_percent = 5;
 Q.factions = ['far_left', 'agrarian', 'labour', 'reformist', 'neorevisionist'];
 // should this be normalized to 100%?
 
-Q.radicalism = 1.15;
-Q.moderatism = 1;
 
 Q.far_left_strength = 5;
 Q.far_left_dissent = 20;
 
 Q.agrarian_dissent = 0;
 Q.agrarian_support = 55;
-
-Q.left_agrarian_strength = Q.agrarian_support * Q.radicalism;
-Q.right_agrarian_strength = Q.agrarian_support * Q.moderatism;
-
+Q.agrarian_strength = 55;
+Q.agrarian_radicalism = 8;
 
 Q.labour_support = 30;
-
-Q.left_labour_strength = Q.labour_support * Q.radicalism;
-Q.right_labour_strength = Q.labour_support * Q.moderatism;
+Q.labour_strength = 40;
 Q.labour_dissent = 5;
+Q.labour_radicalism = 6;
 
 
 Q.reformist_strength = 15;

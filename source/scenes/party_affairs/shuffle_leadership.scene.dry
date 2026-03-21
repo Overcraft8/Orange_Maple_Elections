@@ -36,7 +36,7 @@ tags: remove_advisor
 @remove_nicholson
 title: Remove Nicholson
 view-if: nicholson_advisor = 1
-on-arrival: nicholson_advisor = 0; left_agrarian_dissent += 5; n_advisors -= 1
+on-arrival: nicholson_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
@@ -65,7 +65,7 @@ Douglas has been removed as an advisor. The Labour faction disapproves.
 title: Remove Williams
 view-if: williams_advisor = 1
 tags: remove_advisor
-on-arrival: williams_advisor = 0; left_agrarian_dissent += 5; n_advisors -= 1
+on-arrival: williams_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Williams has been removed as an advisor. The Agrarian faction disapproves.
@@ -77,7 +77,7 @@ Williams has been removed as an advisor. The Agrarian faction disapproves.
 title: Remove Brockelbank
 view-if: brockelbank_advisor = 1
 tags: remove_advisor
-on-arrival: brockelbank_advisor = 0; left_agrarian_dissent += 5; n_advisors -= 1
+on-arrival: brockelbank_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Brockelbank has been removed as an advisor. The Agrarian faction disapproves.
@@ -104,7 +104,7 @@ Lucas has been removed as an advisor. The Reformist faction disapproves.
 title: Remove Eliason
 view-if: eliason_advisor = 1
 tags: remove_advisor
-on-arrival: eliason_advisor = 0; left_agrarian_dissent += 5; n_advisors -= 1
+on-arrival: eliason_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Eliason has been removed as an advisor. The Agrarian faction disapproves.
@@ -125,7 +125,7 @@ Heaps has been removed as an advisor. The Labour faction disapproves.
 title: Remove Phelps
 view-if: phelps_advisor = 1
 tags: remove_advisor
-on-arrival: phelps_advisor = 0; left_agrarian_dissent += 5; n_advisors -= 1
+on-arrival: phelps_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Phelps has been removed as an advisor. The Agrarian faction disapproves.
@@ -182,7 +182,7 @@ Winch has been removed as an advisor. The Leftist faction disapproves.
 title: Remove Irvine
 view-if: irvine_advisor = 1
 tags: remove_advisor
-on-arrival: irvine_advisor = 0; left_agrarian_dissent += 3; n_advisors -= 1
+on-arrival: irvine_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
 Irvine has been removed as an advisor. The Agrarian faction disapproves.
@@ -237,7 +237,7 @@ Schumacher has been removed as an advisor. The Neorevisionist faction disapprove
 title: Remove Wright
 view-if: wright_advisor = 1
 tags: remove_advisor
-on-arrival: wright_advisor = 0; left_agrarian_dissent += 3; n_advisors -= 1
+on-arrival: wright_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
 Wright has been removed as an advisor. The Agrarian faction disapproves.

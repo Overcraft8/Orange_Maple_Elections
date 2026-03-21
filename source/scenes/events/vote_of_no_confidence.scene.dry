@@ -37,7 +37,7 @@ Fine. We no longer control the government of City Police. The vote has been call
 
 @austerity
 view-if: welfare >= 0 and not secularized
-on-arrival: coalition_dissent = 0; workers_flp -= 10; unemployed_flp -= 10; workers_cp += 7; workers_scp += 3; unemployed_cp += 5; unemployed_scp += 5; far_left_dissent += 15; left_agrarian_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; cp_coalition_dissent += 1; cp_relation -= 10 if in_unity_government
+on-arrival: coalition_dissent = 0; workers_flp -= 10; unemployed_flp -= 10; workers_cp += 7; workers_scp += 3; unemployed_cp += 5; unemployed_scp += 5; far_left_dissent += 15; agrarian_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; cp_coalition_dissent += 1; cp_relation -= 10 if in_unity_government
 
 Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
 

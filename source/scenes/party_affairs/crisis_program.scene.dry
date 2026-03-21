@@ -27,7 +27,7 @@ Meanwhile, moderates and reformists draw up proposals for a limited plan of job 
 
 @support_centrist
 subtitle: Let the depression play itself out.
-on-arrival: agrarian_support += 5; left_agrarian_dissent -= 5; labour_dissent += 10; wtb_support -= 1; far_left_dissent += 10;
+on-arrival: agrarian_support += 5; agrarian_dissent -= 5; labour_dissent += 10; wtb_support -= 1; far_left_dissent += 10;
 
 Forsey and the trade unions vehemently criticize the centrists for their policy. The workers are starving; are we going to callously abandon them and side with bourgeois austerity? On the other hand, the centrists criticize Forsey for promising the workers false hope; their position is that nothing can be done to alfinesate the depression. They also speak of the fear of another round of hyperinflation that may result from deficit spending.
 
@@ -37,8 +37,8 @@ Our policy course is currently that nothing can be done to alfinesate the depres
 @support_labour
 subtitle: Call for increased public works and fiscal stimulus.
 unavailable-subtitle: The Labour faction is not strong enough.
-choose-if: historical_mode == 0 or (left_labour_strength >= far_left_strength and left_labour_strength >= left_agrarian_strength and left_labour_strength >= reformist_strength)
-on-arrival: left_agrarian_dissent += 10; far_left_dissent += 5; labour_support += 5; wtb_support += 1;
+choose-if: historical_mode == 0 or (labour_strength >= far_left_strength and labour_strength >= agrarian_strength and labour_strength >= reformist_strength)
+on-arrival: agrarian_dissent += 10; far_left_dissent += 5; labour_support += 5; wtb_support += 1;
 go-to: plan_adopted if wtb_support >= 3; plan_support if wtb_support < 3
 
 @plan_support
@@ -48,14 +48,14 @@ Our support of the WTB plan alienates the orthodox Marxists of the Agrarian fact
 We have not yet convinced the party to formally adopt the plan. More work needs to be done.
 
 @plan_adopted
-on-arrival: wtb_adopted = 1; labour_dissent -= 15; reformist_dissent -= 10; labour_support += 10; agrarian_support -= 10; left_agrarian_dissent += 20; far_left_dissent += 5; economic_plan = 1
+on-arrival: wtb_adopted = 1; labour_dissent -= 15; reformist_dissent -= 10; labour_support += 10; agrarian_support -= 10; agrarian_dissent += 20; far_left_dissent += 5; economic_plan = 1
 
 With our hard work, we have finally convinced the majority of the party to adopt the WTB plan! [? if flp_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?][? if flp_in_government = 0 : We should emphasize the plan in our electoral propaganda. ?]
 
 @support_left
 subtitle: Call for mass nationalizations and the transformation of the economy.
 unavailable-subtitle: The Left faction is not strong enough.
-choose-if: historical_mode == 0 or (far_left_strength >= left_labour_strength and far_left_strength >= left_agrarian_strength and far_left_strength >= reformist_strength)
+choose-if: historical_mode == 0 or (far_left_strength >= labour_strength and far_left_strength >= agrarian_strength and far_left_strength >= reformist_strength)
 on-arrival: far_left_strength += 10; reformist_dissent += 5; labour_dissent += 5; nationalization_support += 2
 go-to: support_left_progress if nationalization_support < 3; adopt_left if nationalization_support >= 3
 
@@ -73,7 +73,7 @@ With our hard work, we have convinced the majority of the party to adopt the soc
 @support_moderate
 subtitle: Call for a limited program of job creation without deficit spending.
 unavailable-subtitle: The Reformist faction is not strong enough.
-choose-if: historical_mode == 0 or (reformist_strength >= far_left_strength and reformist_strength >= left_agrarian_strength and reformist_strength >= left_labour_strength)
+choose-if: historical_mode == 0 or (reformist_strength >= far_left_strength and reformist_strength >= agrarian_strength and reformist_strength >= labour_strength)
 on-arrival: moderate_plan_support += 1; reformist_strength += 8; reformist_dissent -= 5; far_left_dissent += 6; labour_dissent += 5
 go-to: adopt_moderate if moderate_plan_support >= 2; support_moderate_progress if moderate_plan_support < 2
 

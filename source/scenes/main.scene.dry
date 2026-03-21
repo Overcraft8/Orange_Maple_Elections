@@ -10,11 +10,13 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-max-cards: 4
+max-cards: 6
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1932 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1932 and month = 2 : The Anderson government buckles down on it's policy of retrenchment.?]
+
+[? if year = 1932 and month = 4 : The Alberta Social Credit Party wins a majority in the provincial legislature. Our family in the Alberta CCF are deeply disturbed by the usurpation of what could've been a CCF stronghold. Aberhart's SCP has already won over the the farmers of Albert. Is it possible the party could become just as infectious in Saskatchewan? ?]
 
 - @party
 - @govt
@@ -33,11 +35,13 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-max-cards: 4
+max-cards: 6
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1932 and month = 2 : The Anderson government continues to mismanage the crisis ?]
+[? if year = 1932 and month = 2 : The Anderson government buckles down on it's policy of retrenchment.?]
+
+[? if year = 1932 and month = 4 : The Alberta Social Credit Party wins a majority in the provincial legislature. Our family in the Alberta CCF are deeply disturbed by the usurpation of what could've been a CCF stronghold. Aberhart's SCP has already won over the the farmers of Albert. Is it possible the party could become just as infectious in Saskatchewan? ?]
 
 - @party
 - @govt

@@ -139,14 +139,13 @@ Q.flp_board_four = "Clarence Fines";
 Q.flp_board_one_faction = "labour";
 
 
-Q.cp_leader = "Tim Buck";
-Q.cp_party_leader = "Tim Buck";
+Q.cp_leader = "None";
+Q.cp_party_leader = "None";
 Q.cps_leader = "James Anderson";
 Q.lps_leader = "James Gardiner";
 Q.scp_leader = "Joseph Needham"; 
-Q.pps_leader = "Henry Stevens";
-// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the FLP.
-Q.pps_party_leader = "Henry Stevens";
+Q.pps_leader = "None";
+Q.pps_party_leader = "None";
 
 // hmm... maybe we can play nice with Richard Bennett???
 Q.bennett_relation = 25;

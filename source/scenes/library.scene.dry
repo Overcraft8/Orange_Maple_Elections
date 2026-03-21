@@ -207,11 +207,11 @@ Current relations: [+ pps_relation : relationships +]
 
 Current relations: [+ lps_relation : relationships +]
 
-**CPS** - *Conservative Party* (The Tories) - a centre-right conservative party, supported by the middle classes and bourgeoisie. They are more isolationist and prefer to keep close economic ties with Britain. . They are the other dominant party of the Saskatchewan Legistlative Assembly. 
+**CPS** - *Conservative Party* (The Tories) - a centre-right big tent conservative party, supported by the middle classes and bourgeoisie. They are more isolationist and prefer to keep close economic ties with Britain. . They are the other dominant party of the Saskatchewan Legistlative Assembly. 
 
 Current relations: [+ cps_relation : relationships +]
 
-**SCP** - *Social Credit Party* - a recently emerged right-wing populist party advocating for social credit reforms of the monetary system. They see much support in the province of Alberta. 
+**SCP** - *Social Credit Party* - a recently emerged right-wing populist party advocating for social credit reforms of the monetary system. 
 
 Current relations: [+ scp_relation : relationships +]
 
@@ -245,13 +245,13 @@ Strength: [+ wul_strength +] Thousand
 
 Militarization: [+ wul_militancy : militancy +]
 
-**Ku Klux Klan (KKK)**: A racist, anti-Catholic terror organization. They are a recent import from the United States. [? if ruling_government == "Cooperative Coalition" : There are rumours brewing about their connection to Anderson's CPS. ?]
+**Ku Klux Klan (KKK)**: A pro-British, anti-Catholic terror organization. They are a recent import from the United States. [? if ruling_government == "Cooperative Coalition" : There are rumours brewing about their connection to Anderson's CPS. ?]
 
 Strength: [+ kkk_strength +] Thousand
 
 Militarization: [+ kkk_militancy : militancy +]
 
-**Farmers Unity League (FUL)**: This is the farmer's organization of the CP, more militant and radical than the UFC (SS)
+**Farmers Unity League (FUL)**: This is the farmer's organization of the CP, more militant and radical than the UFC (SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
 
 Strength: [+ ful_strength +] Thousand
 
@@ -259,7 +259,7 @@ Militarization: [+ ful_militancy : militancy +]
 
 **Official military/paramilitary groups:**
 
-**The Royal Canadian Mounted Police (RCMP)**: The main law enforcement agency of the province. Traditionally under control of the Saskatchewan Premier.
+**The Royal Canadian Mounted Police (RCMP)**: The main law enforcement agency of the province. Traditionally under control of the Saskatchewan Premier but can be nationalized under the Prime Minister.
 
  [+ rcmp_strength +] Thousand 
 
@@ -280,29 +280,31 @@ go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
 
 Overall dissent: [+ dissent_percent : dissent +]
 
-**Far Left**
+[? if 1 == 1 :
+<span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #86a71b;">**Agrarians**</span><br>
+Strength: [+ agrarian_strength : strength +] <br>
+Dissent: [+ agrarian_dissent : dissent +]<br>
+Radicalism: [+ agrarian_radicalism : radicalism +]
+?]
 
-Many far leftists are young radicals. Many are interested in closer cooperation with the CP, and some support extraparliamentary action.
+[? if 1 == 1 :
+<span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers." style="color: #0F52BA;">**Labour**</span><br>
+Strength: [+ labour_strength : strength +]<br> 
+Dissent: [+ labour_dissent : dissent +]<br>
+Radicalism: [+ labour_radicalism : radicalism +]
+?]
 
-Strength: [+ far_left_strength : strength +]
+[? if 1 == 1 :
+<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Far Left**</span><br> 
+Strength: [+ far_left_strength : strength +]<br> 
+Dissent: [+ far_left_dissent : dissent +]<br>
+?]
 
-Dissent: [+ far_left_dissent : dissent +]
-
-**Left Agrarians**
-
-Left agrarians are the more radical wing of the agrarian base, seeking strong government intervention to protect the traditional small family farms of the province. 
-
-Strength: [+ agrarian_strength : strength +]
-
-Dissent: [+ agrarian_dissent : dissent +]
-
-**Left Labour**
-
-Many FLP members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
-
-Strength: [+ labour_strength : strength +]
-
-Dissent: [+ labour_dissent : dissent +]
+[? if 1 == 1 : 
+<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span><br> 
+Strength: [+ reformist_strength : strength +]<br> 
+Dissent: [+ reformist_dissent : dissent +]<br>
+?]
 
 **Reformists**
 

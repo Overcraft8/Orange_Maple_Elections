@@ -210,14 +210,14 @@ function getPartyIdeology(party, Q) {
             if (Q.cps_ideology === "Conservative Populist") return '<span style="color: #b97a7a;">Right Wing</span> (Populist conservatism))';
             return 'Unknown';
         case 'SCP': 
-            if (Q.cps_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
-            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Paternalistic Conservatism)';
-            if (Q.cps_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
-            if (Q.cps_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
+            if (Q.scp_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
+            if (Q.scp_ideology === "Paternalistic Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Paternalistic Conservatism)';
+            if (Q.scp_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
+            if (Q.scp_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
             return 'Unknown';
         // Organizations below
         default: 
-            return 'Unknown';
+            return;
     }
 
 
@@ -236,6 +236,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         'CPS': 'cps_relation',
         'SCP': 'scp_relation'
     };
+
 
     const ideology = getPartyIdeology(searchString, Q);
     let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;

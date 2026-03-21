@@ -9,7 +9,7 @@ body {
   --unavailable-color: #9a795f;
   --tab-bg-color: #e5d7b4;
   --tab-color: #e5d7b4;
-  --tab-hover-color: #dfd1ae;
+  --tab-hover-color: #8d7027;
   --card-border-color: #dfd1ba; 
   --card-bg-color: #ede1c2; 
   font-family: "Minion Pro", Georgia, serif;
@@ -566,8 +566,8 @@ img {
   }
   #content {
       position: static;
-      font-size: 1em;
-      line-height: 160%;
+      font-size: 0.9em;
+      line-height: 130%;
       padding: 1em 1em 1.5em 1em;
   }
   #qualities {

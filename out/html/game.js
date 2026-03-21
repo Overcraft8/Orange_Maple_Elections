@@ -170,6 +170,94 @@ function escapeRegex(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+function ideologies(party, Q) {
+    if (!Q) return 'Unknown';
+    3
+
+    switch(party){
+        case 'FLP' || 'CCF(SS)':
+            if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #C42424;">Left Wing</span> (Democratic Socialism)';
+            if (Q.flp_ideology === "Social Democracy") return '<span style="color: #607808;">Centre Left</span>  (Social Democracy)';
+            if (Q.flp_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
+            return 'Unknown';
+        case 'PPS': 
+            if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #C42424;">Centre Left</span> (Progressivism)';
+            return 'Unknown';
+        default: 
+            return 'Unknown';
+    }
+
+
+
+}
+
+function getDynamicTooltipContent(searchString, baseTooltip) {
+        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state ? 
+                window.dendryUI.dendryEngine.state.qualities : null;
+        
+        if (!Q) return baseTooltip.explanationText;
+        
+        if (searchString === 'FLP' || 'CCF(SS)' !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['flp_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'PPS' && Q['pps_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['pps_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'CGP' && Q['CGP_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['CGP_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'AP' && Q['z_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['z_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'MSP' && Q['MSP_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['MSP_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'MHP' && Q['MHP_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['MHP_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'CHP' !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology;
+        }
+        if (searchString === 'paramilitary-name' && Q['paramilitary-name_strength'] !== undefined) {
+            var strength = Q['paramilitary-name_strength'] ? Q['paramilitary-name_strength'].toFixed(1) : '0';
+            var militancy = getMilitancyText(Q['paramilitary-name_militancy']);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Militarization: ' + militancy;
+        }
+        
+        if (searchString === 'Sri Lanka Armed Forces' && Q.slaf_strength !== undefined) {
+            var strength = Q.slaf_strength ? Q.slaf_strength : '0';
+            var morale = getLoyaltyText(Q.slaf_morale);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Morale: ' + morale;
+        }
+      
+        if (searchString === 'THKP-C' && Q.thkpc_strength !== undefined) {
+            var strength = Q.thkpc_strength ? Q.thkpc_strength : '0';
+            var morale = getLoyaltyText(Q.thkpc_morale);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Morale: ' + morale;
+        }
+       
+        if (searchString === 'TKP/ML' && Q.tkpml_strength !== undefined) {
+            var strength = Q.tkpml_strength ? Q.tkpml_strength : '0';
+            var morale = getLoyaltyText(Q.tkpml_morale);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Morale: ' + morale;
+        }
+        return baseTooltip.explanationText;
+    }
+
+
 function applyWholesome(str) {
     const allWords = new Set([
         ...tooltipList.map(t => t.searchString),
@@ -194,6 +282,7 @@ function applyWholesome(str) {
             }
 
             if (tooltip) {
+                var tooltipContent = getDynamicTooltipContent(match, tooltip);
                 return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltip.explanationText}</span></span>`;
             } else if (colour) {
                 return `<span style='${style}'>${innerText}</span>`;

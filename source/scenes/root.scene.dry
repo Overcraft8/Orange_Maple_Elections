@@ -259,6 +259,19 @@ Q.parties = ['flp', 'cp', 'pps', 'lps', 'cps', 'scp', 'other'];
 Q.urban_seats = 24;
 Q.rural_seats = 31;
 
+//                           Party Ideologies
+Q.cp_ideology = "Marxism-Leninism";
+Q.cp_politlean = 3;
+Q.flp_ideology = "Democratic Socialism";
+Q.flp_politlean = 7;
+Q.pps_ideology = "Even they don't know...";
+Q.pps_politlean = 8;
+Q.lps_ideology = "Liberalism";
+Q.lps_politlean = 10;
+Q.cps_ideology = "Conservatism";
+Q.cps_politlean = 13;
+Q.scp_ideology = "Social Credit / Conservatism";
+Q.scp_politlean = 16;
 
 
 

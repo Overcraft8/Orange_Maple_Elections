@@ -230,7 +230,11 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         
         if (!Q) return baseTooltip.explanationText;
         
-        if (searchString === 'FLP' || 'CCF(SS)' !== undefined) {
+        if (searchString === 'FLP' !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology;
+        }
+        if (searchString === 'CCF(SS)' !== undefined) {
             var ideology = getPartyIdeology(searchString, Q);
             return baseTooltip.explanationText + '<br>Politics: ' + ideology;
         }

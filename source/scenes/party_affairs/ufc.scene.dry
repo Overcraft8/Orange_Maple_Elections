@@ -6,18 +6,18 @@ view-if: ufc_timer <= 0 and ufc_affiliated = 1
 card-image: img/Farmers1914.jpg
 on-arrival: month_actions += 1; ufc_timer += 6; ufc_militarization_cost = 2 if ufc_militancy > 0.1 else ufc_militarization_cost = 1; ufc_militarization_cost = 3 if ufc_militancy > 0.25
 max-visits: 6
-#subtitle: Paramilitary organizing in defense of the republic.
+subtitle: The largest agrarian organization around.
 
 = UFC (SS)
 
-The UFC(SS) is the largest farmer organization in Saskatchewan, devoted to the defense of the small farm compact. It has many factions vying for power and is currently [+ ufc_relationship: relationships +] towards us. 
+The UFC(SS) is the largest farmer organization in Saskatchewan, devoted to the defense of the small farm compact. It has many factions vying for power and is currently [+ ufc_relationship: relationships +] towards us. Depending on the mood of the UFC(SS), the organization can be militant to passive.
 
 [? if workers_flp < 46 or workers_flp < workers_scp or workers_flp < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
 
-- @militant: Fund more military-style training and equipment for the UFC (SS).
-- @militant_2: Use our existing resources to support more training for the UFC (SS).
+- @militant: Make the UFC(SS) more militant
+- @militant_2: Use our existing resources to make the UFC(SS) more militant. 
 - @same: Keep the UFC (SS) as it is.
-- @cut_rb: Cut funding for the UFC (SS).
+- @cut_rb: Make the UFC(SS) less militant. 
 - @women_rb
 - @easy_discard
 - @cancel_advisor_action

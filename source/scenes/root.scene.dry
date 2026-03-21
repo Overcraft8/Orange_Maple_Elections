@@ -119,7 +119,6 @@ Q.nationalization_adopted = 0;
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
 
-// organizations
 
 // inter-party relations
 Q.pps_relation = 50;
@@ -593,6 +592,10 @@ Q.sta_militancy = 0.30;
 Q.tlc_relations = 40;
 Q.tlc_militancy = 0.20;
 Q.tlc_strength = 30.00;
+
+Q.ccl_relations = 0;
+Q.ccl_militancy = 0.20;
+Q.ccl_strength = 20.00;
 
 
 Q.women_in_rb = 0;

@@ -204,6 +204,9 @@ if (Q.sta_strength) {
 if (Q.tlc_strength) {
     Q.tlc_strength_2 = Q.tlc_strength.toFixed(2);
 }
+if (Q.ccl_strength) {
+    Q.ccl_strength_2 = Q.ccl_strength.toFixed(2);
+}
 if (Q.ccym_strength) {
     Q.ccym_strength_2 = Q.ccym_strength.toFixed(2);
 }
@@ -241,6 +244,13 @@ TLC Militancy: [+ tlc_militancy : militancy +]<br>
 TLC Strength: [+ tlc_strength +] Thousand<br>
 ?]
 
+[? if ccl_affiliated == 0 and year = 1935:
+TLC Relations: [+ ccl_relations : relationships +]<br>
+TLC Militancy: [+ ccl_militancy : militancy +]<br>
+TLC Strength: [+ ccl_strength +] Thousand<br>
+?]
+
+
 = Law Enforcement
 
 RCMP Suspicion: [+ rcmp_suspicion : suspicion +]
@@ -249,7 +259,7 @@ Urban police: [+ city_police_strength : strength +]
 
 Urban police loyalty: [+ city_police_loyalty : loyalty +]
 
-Support for Socialism: [+ socialism +]
+Support for Socialism: [+ socialism +]%
 
 
 
@@ -297,7 +307,7 @@ Inflation: [+ inflation_2 +]%
 
 Unemployment: [+ unemployed_2 +]%
 
-Farmers Poverty Incidence: [+ poverty +]%
+Rural Poverty Incidence: [+ poverty +]%
 
 GDP Growth: [+ economic_growth_2 +]%
 

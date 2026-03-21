@@ -270,7 +270,7 @@ Q.lps_ideology = "Liberalism";
 Q.lps_politlean = 10;
 Q.cps_ideology = "Conservatism";
 Q.cps_politlean = 13;
-Q.scp_ideology = "Social Credit / Conservatism";
+Q.scp_ideology = "Social Credit";
 Q.scp_politlean = 16;
 
 

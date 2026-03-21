@@ -185,6 +185,10 @@ function getRelationshipText(value) {
 function getPartyIdeology(party, Q) {
     if (!Q) return 'Unknown';
     switch(party){
+        case 'CP': 
+            if (Q.cp_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Revolutionary Communism)';
+            if (Q.cp_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
+            return 'Unknown';
         case 'FLP':
         case 'CCF':
             if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #C42424;">Left Wing</span> (Democratic Socialism)';
@@ -202,8 +206,14 @@ function getPartyIdeology(party, Q) {
         case 'CPS': 
             if (Q.cps_ideology === "Conservatism") return '<span style="color: #2464c4;">Centre - Centre Right</span> (Conservatism)';
             if (Q.cps_ideology === "Social Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Social Conservatism)';
-            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #b97a7a;"></span> (Paternalistic Conservatism)';
-            if (Q.cps_ideology === "Conservative Populist") return '<span style="color: #b97a7a;"></span> (Populist conservatism))';
+            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #b97a7a;">Centre Right</span> (Paternalistic Conservatism)';
+            if (Q.cps_ideology === "Conservative Populist") return '<span style="color: #b97a7a;">Right Wing</span> (Populist conservatism))';
+            return 'Unknown';
+        case 'SCP': 
+            if (Q.cps_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
+            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Paternalistic Conservatism)';
+            if (Q.cps_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
+            if (Q.cps_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
             return 'Unknown';
         default: 
             return 'Unknown';
@@ -224,9 +234,29 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
             var relationText = getRelationshipText(Q['flp_relation']);
             return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
         }
+        if (searchString === 'CP' && Q['cp_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['cp_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
         if (searchString === 'PPS' && Q['pps_relation'] !== undefined) {
             var ideology = getPartyIdeology(searchString, Q);
             var relationText = getRelationshipText(Q['pps_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'LPS' && Q['lps_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['lps_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'CPS' && Q['cps_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['cps_relation']);
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+        }
+        if (searchString === 'SCP' && Q['scp_relation'] !== undefined) {
+            var ideology = getPartyIdeology(searchString, Q);
+            var relationText = getRelationshipText(Q['scp_relation']);
             return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
         }
         return baseTooltip.explanationText;
@@ -258,7 +288,7 @@ function applyWholesome(str) {
 
             if (tooltip) {
                 var tooltipContent = getDynamicTooltipContent(match, tooltip);
-                return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltip.explanationText}</span></span>`;
+                return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
             } else if (colour) {
                 return `<span style='${style}'>${innerText}</span>`;
             }

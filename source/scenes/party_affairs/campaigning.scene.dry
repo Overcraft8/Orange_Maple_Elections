@@ -16,6 +16,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @old_middle: The "old middle class" of small independent businessmen and artisans.
 - @farmer: Farmers, our traditional support base.   
 - @farm_hands: The farm hands, the aides of the farms
+- @res_workers: The workers employed in the resource exploitation sector. 
 - @unemployed: The unemployed.
 - @catholics: Catholics, who typically support the LPS Party.
 - @root: We either don't want to or cannot campaign right now.
@@ -57,7 +58,15 @@ We have increased our campaigning among farmers. The farmers are a traditional v
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources
-on-arrival: farm_hand_flp += 5*(1-dissent); resources -= 1; 
+on-arrival: farmhand_flp += 5*(1-dissent); resources -= 1; 
+
+We have increased our campaigning among the farm hands. The farmhands are traditional rivals of their employers, the farmers, who seek to keep them paid low wages with little oversight. 
+
+@res_workers
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources
+on-arrival: res_worker_flp += 5*(1-dissent); resources -= 1;
 
 @unemployed
 subtitle: -1 resources

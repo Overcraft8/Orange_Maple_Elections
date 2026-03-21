@@ -40,7 +40,7 @@ This policy will turn many both large farmers and the shop owners away from our 
 - @labour_policies: Let's not do this. 
 
 @yes_collective_bargaining
-on-arrival: labour_strength += 3; coll_bargain_plat += 1; worker_flp += 5;
+on-arrival: labour_support += 3; coll_bargain_plat += 1; worker_flp += 5;
 
 We have chosen to legalize collective bargaining. 
 
@@ -54,7 +54,7 @@ We can promise new safety regulation. Saskatchewan has a history of unsafe labor
 - @labour_policies: Let's not do this. 
 
 @yes_safety_standards
-on-arrival: labour_strength += 3; safety_standard_plat += 1; worker_flp += 4;
+on-arrival: labour_support += 3; safety_standard_plat += 1; worker_flp += 4;
 
 We have chosen to legalize collective bargaining. 
 
@@ -68,7 +68,7 @@ We can promise new safety regulation. Saskatchewan has a history of unsafe labor
 - @labour_policies: Let's not do this. 
 
 @yes_minimum_wage
-on-arrival: labour_strength += 3; min_wage_plat += 1; worker_flp += 4;
+on-arrival: labour_support += 3; min_wage_plat += 1; worker_flp += 4;
 
 We have chosen to promise raising the minimum wage. 
 

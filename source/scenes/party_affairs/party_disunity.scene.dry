@@ -32,7 +32,7 @@ Something must be done to reinforce party unity.
 
 @enforce_unity
 title: Enforce party discipline.
-on-arrival: reformist_dissent -= 5; agrarian_dissent -= 5; labour_dissent -= 5; far_left_dissent -= 5; neorevisionist_dissent -= 5; workers_flp -= 4; new_middle_flp -= 2; unemployed_flp -= 2
+on-arrival: reformist_dissent -= 5; left_agrarian_dissent -= 5; labour_dissent -= 5; far_left_dissent -= 5; neorevisionist_dissent -= 5; workers_flp -= 4; new_middle_flp -= 2; unemployed_flp -= 2
 
 Enforcing party discipline reduces dissent, but it could lead to an exit of dissenting members.
 
@@ -50,7 +50,7 @@ We have promised to adopt a more reformist posture. This may alienate the left, 
 @concessions_center
 title: Give concessions to the centrists.
 view-if: agrarian_dissent > 30
-on-arrival: agrarian_dissent -= 7; reformist_dissent += 2; far_left_dissent += 2; neorevisionist_dissent += 2
+on-arrival: left_agrarian_dissent -= 7; reformist_dissent += 2; far_left_dissent += 2; neorevisionist_dissent += 2
 
 We have promised to take more policy suggestions from the centrists. Both the left and reformist wings of the party might be displeased.
 
@@ -64,21 +64,21 @@ We have promised that we will listen to the left wing of the party. Of course, t
 @concessions_labour
 title: Give concessions to labour.
 view-if: labour_dissent > 30
-on-arrival: labour_dissent -= 7; agrarian_dissent += 5
+on-arrival: labour_dissent -= 7; left_agrarian_dissent += 5
 
 The trade unions will be granted more influence in party decision making. This upsets the centrists, who would prefer to centralize political decision making within the party.
 
 @concessions_neorevisionists
 title: Give concessions to the neorevisionists.
 view-if: neorevisionist_dissent > 30 and neorevisionism = 1
-on-arrival: neorevisionist_dissent -= 7; agrarian_dissent += 5;
+on-arrival: neorevisionist_dissent -= 7; left_agrarian_dissent += 5;
 
 Giving the neorevisionists more influence will cause increased dissent from the centrists.
 
 
 @do_nothing
 title: Let the factions argue with themselves.
-on-arrival: labour_dissent += 1; far_left_dissent += 1; agrarian_dissent += 1; reformist_dissent += 1
+on-arrival: labour_dissent += 1; far_left_dissent += 1; left_agrarian_dissent += 1; reformist_dissent += 1
 
 Let the factions bicker; perhaps dissent is healthy for the party.
 

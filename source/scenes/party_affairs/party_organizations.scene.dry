@@ -42,7 +42,7 @@ We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : I
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; cultural_organizations += 1; far_left_dissent -= 6; agrarian_dissent -= 6; labour_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+on-arrival: resources -= 1; cultural_organizations += 1; far_left_dissent -= 6; left_agrarian_dissent -= 6; labour_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
 
 It is not enough for the FLP to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
 

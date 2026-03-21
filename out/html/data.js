@@ -108,7 +108,7 @@ const colourList = [{
         style: "color: #b06262; font-weight: bold;"
     },
     {
-        word: "Left", 
+        word: "Far Left", 
         style: "color: #7b1616; font-weight: bold;"
     },
     {

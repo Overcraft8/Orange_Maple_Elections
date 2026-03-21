@@ -611,7 +611,7 @@ We have promised to let the PPS have more influence in the government in respons
 @pps_premier
 title: Let the PPS Party have their premier.
 subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: far_left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
+on-arrival: far_left_dissent += 5; left_agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
@@ -632,7 +632,7 @@ go-to: ministries
 @no_govt
 title: We do not form the government.
 subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
-on-arrival: reformist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; neorevisionist_dissent += 5
+on-arrival: reformist_dissent += 5; left_agrarian_dissent += 5; labour_dissent += 5; neorevisionist_dissent += 5
 
 Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by Prime Minister [+ prime_minister +].
 
@@ -661,7 +661,7 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: reformist_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "James Anderson"; flp_in_government = 0; grand_coalition_failed = 1
+on-arrival: reformist_dissent += 25; left_agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "James Anderson"; flp_in_government = 0; grand_coalition_failed = 1
 go-to: right_coalition_post_flp if right_coalition >= 50 and prime_minister != "JS Woodsworth" and year < 1929; new_elections_flp if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"
 
 

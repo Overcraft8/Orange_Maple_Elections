@@ -292,15 +292,15 @@ Dissent: [+ far_left_dissent : dissent +]
 
 Left agrarians are the more radical wing of the agrarian base, seeking strong government intervention to protect the traditional small family farms of the province. 
 
-Strength: [+ agrarian_strength : strength +]
+Strength: [+ left_agrarian_strength : strength +]
 
 Dissent: [+ agrarian_dissent : dissent +]
 
-**Labour**
+**Left Labour**
 
 Many FLP members are also part of the ADGB, the federation of free trade unions. Their goal is economic reform and benefits for organized workers.
 
-Strength: [+ labour_strength : strength +]
+Strength: [+ left_labour_strength : strength +]
 
 Dissent: [+ labour_dissent : dissent +]
 

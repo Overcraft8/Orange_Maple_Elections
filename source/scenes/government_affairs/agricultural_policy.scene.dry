@@ -34,7 +34,7 @@ With our policy of land reform, we are acquiring farmland from large estates, an
 title: Agricultural Financing
 subtitle: -1 treasury - Increase financing for agricultural credit and insurance.
 choose-if: treasury >= 1
-on-arrival: treasury -= 1; agricultural_finance += 1; farmer_flp += 5*(1-dissent); farmer_scp -= 3*(1-dissent); peoples_party_support += 1; agrarian_dissent += 5; far_left_dissent += 4; farmer_sol += 4; farmer_policy += 1; economic_growth += 0.2;
+on-arrival: treasury -= 1; agricultural_finance += 1; farmer_flp += 5*(1-dissent); farmer_scp -= 3*(1-dissent); peoples_party_support += 1; left_agrarian_dissent += 5; far_left_dissent += 4; farmer_sol += 4; farmer_policy += 1; economic_growth += 0.2;
 
 We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and agrarian of our party are opposed to our farmer policy, seeing these policies as giveaways to petit-bourgeois farmers.
 

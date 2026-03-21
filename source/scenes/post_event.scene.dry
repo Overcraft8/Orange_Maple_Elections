@@ -130,16 +130,18 @@ if (Q.unemployed <= 1) {
 }
 
 // re-calculate dissent.
-var total_strength = Q.far_left_strength + Q.agrarian_strength + Q.labour_strength + Q.reformist_strength + Q.neorevisionist_strength;
+var total_strength = Q.far_left_strength + Q.left_agrarian_strength + Q.right_agrarian_strength + Q.left_labour_strength + Q.right_labour_strength + Q.reformist_strength + Q.neorevisionist_strength;
 
 // normalize strength for the different factions
 Q.far_left_strength = 100*Q.far_left_strength/total_strength;
-Q.agrarian_strength = 100*Q.agrarian_strength/total_strength;
-Q.labour_strength = 100*Q.labour_strength/total_strength;
+Q.left_agrarian_strength = 100*Q.left_agrarian_strength/total_strength;
+Q.right_agrarian_strength = 100*Q.right_agrarian_strength/total_strength;
+Q.left_labour_strength = 100*Q.left_labour_strength/total_strength;
+Q.right_labour_strength = 100*Q.right_labour_strength/total_strength;
 Q.reformist_strength = 100*Q.reformist_strength/total_strength;
 Q.neorevisionist_strength = 100*Q.neorevisionist_strength/total_strength;
 
-var total_dissent = Q.far_left_strength*Q.far_left_dissent + Q.agrarian_strength*Q.agrarian_dissent + Q.labour_strength*Q.labour_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent;
+var total_dissent = Q.far_left_strength*Q.far_left_dissent + Q.left_agrarian_strength*Q.agrarian_dissent + Q.right_agrarian_strength*Q.agrarian_dissent + Q.left_labour_strength*Q.labour_dissent + Q.right_Labour_strength*Q.labour_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent;
 
 
 Q.dissent = 0.01*total_dissent/total_strength;

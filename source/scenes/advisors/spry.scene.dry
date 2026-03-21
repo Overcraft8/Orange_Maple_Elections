@@ -45,12 +45,12 @@ on-arrival: far_left_dissent -= 8; far_left_strength += 8
 Vorwärts prints editorials in support of Left positions.
 
 @support_center
-on-arrival: agrarian_dissent -= 8; agrarian_strength += 8
+on-arrival: left_agrarian_dissent -= 8; agrarian_support += 8
 
 Vorwärts prints editorials in support of agrarian positions.
 
 @support_labour
-on-arrival: labour_dissent -= 8; labour_strength += 8
+on-arrival: labour_dissent -= 8; labour_support += 8
 
 Vorwärts prints editorials in support of the policies of the trade unions.
 

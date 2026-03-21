@@ -21,7 +21,7 @@ In our media and campaign materials, who should we consider as our main opponent
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; agrarian_strength += 5; reformist_strength += 5; far_left_dissent += 5; workers_cp -= 2; workers_scp -= 2; workers_scp -= 2; cp_relation -= 10
+on-arrival: enemies = "anti-democratic parties"; agrarian_support += 5; reformist_strength += 5; far_left_dissent += 5; workers_cp -= 2; workers_scp -= 2; workers_scp -= 2; cp_relation -= 10
 
 Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the CP in the future.
 

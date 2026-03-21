@@ -27,6 +27,6 @@ We support the new leaders, and start using new-style propaganda techniques in o
 
 
 @no_new_ideas
-on-arrival: neorevisionist_strength -= 5; agrarian_strength += 5; neorevisionism = -1
+on-arrival: neorevisionist_strength -= 5; agrarian_support += 5; neorevisionism = -1
 
 We do not need these new ideas; they seem to imitate too closely those of the SCPs and Communists.

@@ -245,11 +245,15 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         'SCP': 'scp_ideology'
     };
 
+    // ✅ ALWAYS initialize
+    let result = baseTooltip.explanationText;
+
     const ideologyKey = ideologyMap[searchString];
 
     if (ideologyKey && Q[ideologyKey] !== undefined) {
-        const ideologyText = getPartyIdeology(Q[ideologyKey]);
-        result = baseTooltip.explanationText + '<br>Politics: ' + ideologyText;
+        // ✅ FIXED ARGUMENTS
+        const ideologyText = getPartyIdeology(searchString, Q);
+        result += '<br>Politics: ' + ideologyText;
     }
 
     // Special case
@@ -257,7 +261,6 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         return result;
     }
 
-    // Handle relations dynamically
     const relationKey = relationMap[searchString];
 
     if (relationKey && Q[relationKey] !== undefined) {

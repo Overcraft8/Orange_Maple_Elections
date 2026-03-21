@@ -148,7 +148,7 @@ const colourList = [{
         style: "color: #b33a3a; font-weight: bold;"
     },
     // Below this for states of qdisplays
-    //dissents
+    /*
     {
         word: "very low", 
         style: "color: #54e02a; font-weight: bold;"
@@ -222,7 +222,7 @@ const colourList = [{
     {
         word: "Disastrous", 
         style: "color: #e03c2a; font-weight: bold;"
-    },
+    },*/
     // Militancy
     {
         word: "Nonexistent", 

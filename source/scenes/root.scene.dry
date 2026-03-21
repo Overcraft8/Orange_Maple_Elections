@@ -66,8 +66,8 @@ Q.right_agrarian_strength = Q.agrarian_support * Q.moderatism;
 
 Q.labour_support = 30;
 
-Q.left_labour_strength = Q.agrarian_support * Q.radicalism;
-Q.right_labour_strength = Q.agrarian_support * Q.moderatism;
+Q.left_labour_strength = Q.labour_support * Q.radicalism;
+Q.right_labour_strength = Q.labour_support * Q.moderatism;
 Q.labour_dissent = 5;
 
 

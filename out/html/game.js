@@ -184,16 +184,26 @@ function getRelationshipText(value) {
 
 function getPartyIdeology(party, Q) {
     if (!Q) return 'Unknown';
-    3
-
     switch(party){
-        case 'FLP' || 'CCF(SS)':
+        case 'FLP':
+        case 'CCF':
             if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #C42424;">Left Wing</span> (Democratic Socialism)';
             if (Q.flp_ideology === "Social Democracy") return '<span style="color: #607808;">Centre Left</span>  (Social Democracy)';
             if (Q.flp_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'PPS': 
             if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Progressivism)';
+            return 'Unknown';
+        case 'LPS': 
+            if (Q.lps_ideology === "Liberalism") return '<span style="color: #C42424;">Centre - Centre Left</span> (Liberalism)';
+            if (Q.lps_ideology === "Social Liberalism") return '<span style="color: #c45724;">Centre Left</span> (Social Liberalism)';
+            if (Q.lps_ideology === "Centrism") return '<span style="color: #b97a7a;">Centrist</span> (Centrism)';
+            return 'Unknown';
+        case 'CPS': 
+            if (Q.cps_ideology === "Conservatism") return '<span style="color: #2464c4;">Centre - Centre Right</span> (Conservatism)';
+            if (Q.cps_ideology === "Social Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Social Conservatism)';
+            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #b97a7a;"></span> (Paternalistic Conservatism)';
+            if (Q.cps_ideology === "Conservative Populist") return '<span style="color: #b97a7a;"></span> (Populist conservatism))';
             return 'Unknown';
         default: 
             return 'Unknown';

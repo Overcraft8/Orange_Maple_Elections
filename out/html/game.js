@@ -215,6 +215,7 @@ function getPartyIdeology(party, Q) {
             if (Q.cps_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
             if (Q.cps_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
             return 'Unknown';
+        // Organizations below
         default: 
             return 'Unknown';
     }
@@ -231,8 +232,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         
         if (searchString === 'FLP' || 'CCF(SS)' !== undefined) {
             var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['flp_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
+            return baseTooltip.explanationText + '<br>Politics: ' + ideology;
         }
         if (searchString === 'CP' && Q['cp_relation'] !== undefined) {
             var ideology = getPartyIdeology(searchString, Q);

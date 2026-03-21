@@ -15,7 +15,7 @@ body {
   font-family: "Minion Pro", Georgia, serif;
   background-color: var(--bg-color);
   padding: 0;
-  line-height: 155%;
+  line-height: 130%;
   overflow-y: scroll;
   --button-bg-color: #bba993;
   --button-border-color: #876;
@@ -55,7 +55,7 @@ header, #content, footer {
 #content {
   position: relative;
   background-color: var(--content-bg-color);
-  font-size: 1.1em;
+  font-size: 1em;
   padding: 1em 1.5em 1.5em 1.5em;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
@@ -411,10 +411,10 @@ ul.decks, ul.hand, ul.pinned-cards {
 
 a.card {
   display: inline-block;
-  width: 100px;
-  height: 125px;
+  width: 90px;
+  height: 112.5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  border: 10px solid var(--card-border-color);
+  border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
   position: relative;
 }
@@ -425,17 +425,17 @@ a.card:hover {
 }
 div.blank-card {
   display: inline-block;
-  width: 100px;
-  height: 125px;
+  width: 90px;
+  height: 112.5px;
   background-color: var(--card-bg-color);
-  border: 10px solid var(--card-border-color);
+  border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
 }
 
 .card-in-hand, .pinned-card, .deck {
   display: inline-block;
   position: relative;
-  max-width: 110px;
+  max-width: 95px;
   margin-right: 1em;
   vertical-align: top;
 }
@@ -681,8 +681,8 @@ table {
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
   border: 1px solid #b22222;
   pointer-events: none;
-  font-size: 14px !important;
-  line-height: 1.5em !important;
+  font-size: 13px !important;
+  line-height: 1.2em !important;
   font-weight: 500 !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   transform: translateY(5px);

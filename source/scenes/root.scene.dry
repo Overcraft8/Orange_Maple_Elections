@@ -280,58 +280,58 @@ Q.sapd_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_flp = 10;
+Q.workers_flp = 4;
 Q.workers_cp = 3;
 Q.workers_pps = 3;
-Q.workers_lps = 38;
-Q.workers_cps = 34;
+Q.workers_lps = 43;
+Q.workers_cps = 35;
 Q.workers_scp = 0;
 Q.workers_other = 12;
 
-Q.old_middle_flp = 2;
+Q.old_middle_flp = 0;
 Q.old_middle_cp = 0;
 Q.old_middle_pps = 10;
-Q.old_middle_lps= 40;
-Q.old_middle_cps = 45;
+Q.old_middle_lps= 38;
+Q.old_middle_cps = 49;
 Q.old_middle_scp = 0;
 Q.old_middle_other = 3;
 
-Q.new_middle_flp = 5;
+Q.new_middle_flp = 4;
 Q.new_middle_cp = 0;
 Q.new_middle_pps = 12;
-Q.new_middle_lps= 43;
+Q.new_middle_lps= 44;
 Q.new_middle_cps = 38;
 Q.new_middle_scp = 0;
 Q.new_middle_other = 2;
 
-Q.farmer_flp = 13;
-Q.farmer_cp = 0;
+Q.farmer_flp = 7;
+Q.farmer_cp = 3;
 Q.farmer_pps = 6;
-Q.farmer_lps= 41;
+Q.farmer_lps= 44;
 Q.farmer_cps = 37;
 Q.farmer_scp = 0;
 Q.farmer_other = 3;
 
-Q.farmhand_flp = 40;
-Q.farmhand_cp = 10;
-Q.farmhand_lps = 10;
-Q.farmhand_pps = 10;
-Q.farmhand_cps = 10;
-Q.farmhand_scp = 10;
-Q.farmhand_other = 10;
+Q.farmhand_flp = 4;
+Q.farmhand_cp = 3;
+Q.farmhand_lps = 39;
+Q.farmhand_pps = 5;
+Q.farmhand_cps = 34;
+Q.farmhand_scp = 0;
+Q.farmhand_other = 5;
 
-Q.res_worker_flp = 40;
+Q.res_worker_flp = 8;
 Q.res_worker_cp = 10;
-Q.res_worker_lps = 10;
-Q.res_worker_pps = 10;
-Q.res_worker_cps = 10;
-Q.res_worker_scp = 10;
-Q.res_worker_other = 10;
+Q.res_worker_lps = 42;
+Q.res_worker_pps = 7;
+Q.res_worker_cps = 28;
+Q.res_worker_scp = 0;
+Q.res_worker_other = 5;
 
-Q.unemployed_flp = 9;
+Q.unemployed_flp = 6;
 Q.unemployed_cp = 5;
 Q.unemployed_pps = 7;
-Q.unemployed_lps = 40;
+Q.unemployed_lps = 43;
 Q.unemployed_cps = 32;
 Q.unemployed_scp = 0;
 Q.unemployed_other = 5;

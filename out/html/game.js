@@ -229,31 +229,31 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     if (!Q) return baseTooltip.explanationText;
 
-    // Only trigger for valid party display names
-    if (Q.parties_disp_names && Q.parties_disp_names.includes(searchString)) {
-        var ideology = getPartyIdeology(searchString, Q);
+    const relationMap = {
+        'CP': 'cp_relation',
+        'PPS': 'pps_relation',
+        'LPS': 'lps_relation',
+        'CPS': 'cps_relation',
+        'SCP': 'scp_relation'
+    };
 
-        const relationMap = {
-            'CP': 'cp_relation',
-            'PPS': 'pps_relation',
-            'LPS': 'lps_relation',
-            'CPS': 'cps_relation',
-            'SCP': 'scp_relation'
-        };
+    const ideology = getPartyIdeology(searchString, Q);
+    let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;
 
-        let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;
-
-        const relationKey = relationMap[searchString];
-
-        if (relationKey && Q[relationKey] !== undefined) {
-            const relationText = getRelationshipText(Q[relationKey]);
-            result += '<br>Relation: ' + relationText;
-        }
-
+    // Special case
+    if (searchString === 'FLP' || searchString === 'CCF(SS)') {
         return result;
     }
 
-    return baseTooltip.explanationText;
+    // Handle relations dynamically
+    const relationKey = relationMap[searchString];
+
+    if (relationKey && Q[relationKey] !== undefined) {
+        const relationText = getRelationshipText(Q[relationKey]);
+        result += '<br>Relation: ' + relationText;
+    }
+
+    return result;
 }
 
 

@@ -225,46 +225,36 @@ function getPartyIdeology(party, Q) {
 }
 
 function getDynamicTooltipContent(searchString, baseTooltip) {
-        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state ? 
-                window.dendryUI.dendryEngine.state.qualities : null;
-        
-        if (!Q) return baseTooltip.explanationText;
-        
-        if (searchString === 'FLP' !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology;
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+
+    if (!Q) return baseTooltip.explanationText;
+
+    // Only trigger for valid party display names
+    if (Q.parties_disp_names && Q.parties_disp_names.includes(searchString)) {
+        var ideology = getPartyIdeology(searchString, Q);
+
+        const relationMap = {
+            'CP': 'cp_relation',
+            'PPS': 'pps_relation',
+            'LPS': 'lps_relation',
+            'CPS': 'cps_relation',
+            'SCP': 'scp_relation'
+        };
+
+        let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;
+
+        const relationKey = relationMap[searchString];
+
+        if (relationKey && Q[relationKey] !== undefined) {
+            const relationText = getRelationshipText(Q[relationKey]);
+            result += '<br>Relation: ' + relationText;
         }
-        if (searchString === 'CCF(SS)' !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology;
-        }
-        if (searchString === 'CP' && Q['cp_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['cp_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'PPS' && Q['pps_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['pps_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'LPS' && Q['lps_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['lps_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'CPS' && Q['cps_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['cps_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        if (searchString === 'SCP' && Q['scp_relation'] !== undefined) {
-            var ideology = getPartyIdeology(searchString, Q);
-            var relationText = getRelationshipText(Q['scp_relation']);
-            return baseTooltip.explanationText + '<br>Politics: ' + ideology + '<br>Relation: ' + relationText;
-        }
-        return baseTooltip.explanationText;
+
+        return result;
     }
+
+    return baseTooltip.explanationText;
+}
 
 
 function applyWholesome(str) {

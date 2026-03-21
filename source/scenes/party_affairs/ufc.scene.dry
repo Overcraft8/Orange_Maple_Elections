@@ -18,6 +18,7 @@ The UFC(SS) is the largest farmer organization in Saskatchewan, devoted to the d
 - @militant_2: Use our existing resources to make the UFC(SS) more militant. 
 - @same: Keep the UFC (SS) as it is.
 - @cut_rb: Make the UFC(SS) less militant. 
+- @farmer_protest: Conduct protests with the UFC(SS)
 - @women_rb
 - @easy_discard
 - @cancel_advisor_action
@@ -51,9 +52,17 @@ The UFC (SS) is already serving the purpose it needs to serve. There is no reaso
 
 @cut_rb
 subtitle: +1 resources
-on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; far_left_strength -= 2; far_left_dissent -= 2; flp_militancy -= 0.05; workers_cp += 2; unemployed_cp += 2
+on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; far_left_strength -= 2; far_left_dissent -= 2; workers_cp += 2; unemployed_cp += 2
 
 Cutting resources to the UFC (SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
+
+
+@farmer_protest
+subtitle: -= resources
+on-arrival: resources += 1; ufc_militancy += 0.03; agrarian_strength += 2; moderatism -= 0.03; radicalism += 0.03; lps_relation -= 3; cps_relation -= 5;
+
+We organize various protests across the province. The Liberal and Conservative Parties are angered by our derision. 
+
 
 
 @women_rb

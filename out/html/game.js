@@ -217,7 +217,7 @@ function getPartyIdeology(party, Q) {
             return 'Unknown';
         // Organizations below
         default: 
-            return;
+            return "Unknown";
     }
 
 
@@ -237,9 +237,20 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         'SCP': 'scp_relation'
     };
 
+    const ideologyMap = {
+        'FLP': 'flp_ideology', 
+        'PPS': 'pps_ideology', 
+        'LPS': 'lps_ideology', 
+        'CPS': 'cps_ideology', 
+        'SCP': 'scp_ideology'
+    };
 
-    const ideology = getPartyIdeology(searchString, Q);
-    let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;
+    const ideologyKey = ideologyMap[searchString];
+
+    if (ideologyKey && Q[ideologyKey] !== undefined) {
+        const ideology = getPartyIdeology(searchString, Q);
+        let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;
+    }
 
     // Special case
     if (searchString === 'FLP' || searchString === 'CCF(SS)') {

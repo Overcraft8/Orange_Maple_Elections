@@ -334,6 +334,21 @@ Agricultural Production Index: [+ agri_production +]%
 
 Industrial Production Index: [+ indu_production +]%
 
+= Nationalization 
+
+[? if year = 1940: Potash: [+ potash_nationalized : nationalization +] ?]
+
+Power: [+ power_nationalized : nationalization +]
+
+Grain Marketing: [+ grocery_nationalized : nationalization +]
+
+Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
+
+Groceries: [+ grocery_nationalized : nationalization +]
+
+
+
+
 @situations 
 
 = Situations

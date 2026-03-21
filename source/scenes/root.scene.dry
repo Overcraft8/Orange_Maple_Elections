@@ -14,6 +14,7 @@ go-to: start_menu_2
 - @election_simulation: Election simulation
 - @credits: Credits
 - @game_over.achievements
+- @intro_to_sask: Saskatchewan: Past and Present
 - @Preface: Preface
 
 
@@ -527,6 +528,25 @@ Q.agri_production = (100).toFixed(1);
 Q.indu_production = (100).toFixed(1);
 
 
+//                         Nationalization
+Q.potash_nationalized = -6;
+Q.grocery_nationalized = -3;
+Q.grain_marketing_nationalized = 0;
+Q.power_nationalized = -6;
+Q.auto_insurance_nationalized = -6;
+
+
+
+
+
+
+
+
+
+
+
+
+
 //                   Living Standards
 // level of welfare relative to 1932 (can go negative)
 Q.welfare = 0;
@@ -853,6 +873,26 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Anderson has resorted to a policy of retrenchment. The government had previously attempted relief with deficit financing but this effort has been halted by business interests. As a result, Anderson's Cooperative Coalition Government has raised taxes on corporations but also levied taxes on gross revenue and oil storage tanks. Civil Service pay has fallen by 9-14%, loans to farmers have all but halted, and the Highways Budget provides for no construction. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
 
 The Farmer-Labour Group (FLP) is the only party offering a real alternative to the old capitalist order. However, we are a young and inexperienced party, and we face opposition not only from opposing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLP's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
+
+@intro_to_sask
+
+Saskatchewan seems to be one of the most schizophrenic provinces in Canada. In the last one hundred years, it has alternated between the staunchly conservative right-wing economics of the Conservative, Liberal, and Saskatchewan Party. Most dominant however, was the CCF/NDP, a Social Democratic Party in a sea of rural voters. It elected the government of Tommy Douglas who Canadians know is famous for introducing Universal Healthcare. It elected Allan Blakeney who sought direct government participation in the province's prestigious potash reserves. Yet it also elected the government of Grant Devine, a follower of Reaganomics who sent much of the provincial welfare state and crown corporations into deep depths underground. 
+
+This picture becomes clearer when we paint the windows perse. 
+
+At it's inauguration as a province, Saskatchewan was dominated by the agricultural sector. Everything revovled around wheat, from the land, the people, and what little industry made home in the province. Farmer's organizations such as the SGGA, the FUC, and later the UFC(SS) becmae important lobbying groups. Accordingly, the provincial Liberals, who were proponents of Free Trade and popular among the immigrant farmers, were the dominant political force up until the Great Depression. The Great Depression hit Saskatchewan the hardest of all the provinces, especially the farmers who saw 90% decreases in income per capita. Thousands filed into the cities looking for work only to be turned away by what little non-agricultural industry and retail existed. 
+
+All of this struggle brewed a more immediately-focused socialism than in other provinces. This all coalesced with the formation of the FLP in 1932, a merger of the UFPA, the UFC(SS)'s political arm, and the ILP, a small urban labour party. The party would soon affiliate itself with the national CCF, a democratic socialist party and rebrand into the Saskatchewan CCF. Over the next decade, the party would grow it's voteshare until Tommy Douglas won a majority in 1944. Over the years, the party had watered down it's programme yet it remained staunchly social democratic and even democratic socialist. Under Tommy, the provincial government established a strong welfare state and empowered Crown Corporations such as SaskPower and SGI, providing direct government intervention in the economy. Their most notable achievement was the implementation of a universal healthcare plan, although not without a troubling confrontation with Saskatchewan doctors. 
+
+Through the 1940s up until today, agriculture in Saskatchewan became increasingly centralized under large corporations and large family farms. Throughout these decades, rural support for the CCF/NDP gradually waned as it's base of small family compacts were driven out of business until rural Saskatchewan became a foundational stone upon which the right-wing Saskatchewan Party stands. 
+
+Tommy left to head the National CCF in 1961. His successor, Woodrow Lloyd, was defeated by the Liberals under Ross Thatcher. Thatcher, despite the fears of the CCF, did not dismantle the welfare state. In 1971, the newly branded NDP, the CCF's successor, was reelected under Allan Blakeney. Blakeney continued Tommy's policy of state integration into the economy with the state-run Potash Corporation, among others. Yet these summer years would not last. A recession in the early 80s paved the way for Grant Devine's Conservatives to retake control after nearly 50 years locked out of power. Devine immediately began privatizing much of the NDP's work and wracked up a huge debt while doing so. Devine's government was eventually defeated in 1993 after several corruption scandals and arrests. 
+
+The newly reelected NDP government of Roy Romanow however, had a conflicting situation. Devine had left the province so debt-ridden that the NDP government pursued a policy of low expenditures and did not ever reclaim it's role in the economy as it had in the preceding decades. Yet the NDP remained in power until 2007 when a newly established Saskatchewan Party, a union of Liberal and Conservative officials, won a landslide victory under Brad Wall. From then on, the Saskatchewan Party has dominated provincial politics and the floundering NDP has seen it's traditional base in rural Saskatchewan withered away. 
+
+
+
+
 
 @Preface 
 

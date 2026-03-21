@@ -267,37 +267,44 @@ Support for Socialism: [+ socialism +]%
 
 = Infrastructure
 
-[? if 1 == 1 :
-Railway length: [+ railway_length +] km<br>
-Road length: [+ road_length +] km<br>
-?]
+
+Railway length: [+ railway_length +] km
+
+Road length: [+ road_length +] km
+
 
 = Tax Rates 
 
-[? if 1 == 1 :
-Lower income tax: [+ lower_tax_rates +]%<br>
-Upper income tax: [+ Upper_tax_rates +]%<br>
+Lower income tax: [+ lower_tax_rates: tax +]%
+
+Middle income tax: [+ middle_tax_rates: tax +]%
+
+Upper income tax: [+ Upper_tax_rates: tax +]%<
+
 Tariffs: [+ tariffs +]%
-?]
+
 
 = Living Standards
 
 Welfare: [+ welfare +]
 
-[? if 1 == 1 :
-Basic Education quality: [+ educationquality +]<br>
-Curriculum: [+ Curriculum +]<br>
-?]
+
+Basic Education quality: [+ educationquality +]
+
+Curriculum: [+ Curriculum +]
+
 
 Healthcare quality: [+ healthcarequality +]
 
 = Rural Standards
 
-[? if 1 == 1 :
-Farmers Electrification: [+ farmer_electrification +]%<br>
-Farmers Sanitation Access: [+ farmer_sanitation +]%<br>
-Farmers Telephone Access: [+ farmer_telephone +]%<br>
-?]
+
+Farmers Electrification: [+ farmer_electrification +]%
+
+Farmers Sanitation Access: [+ farmer_sanitation +]%
+
+Farmers Telephone Access: [+ farmer_telephone +]%
+
 
 @economy
 

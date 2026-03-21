@@ -553,6 +553,7 @@ Q.road_length = 20000; // in km
 
 // Tax rates relative to 1928 baseline
 Q.lower_tax_rates = 0;
+Q.middle_tax_rates = 0;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 

@@ -248,8 +248,8 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     const ideologyKey = ideologyMap[searchString];
 
     if (ideologyKey && Q[ideologyKey] !== undefined) {
-        const ideology = getPartyIdeology(searchString, Q);
-        let result = baseTooltip.explanationText + '<br>Politics: ' + ideology;
+        const ideologyText = getPartyIdeology(Q[ideologyKey]);
+        result = baseTooltip.explanationText + '<br>Politics: ' + ideologyText;
     }
 
     // Special case

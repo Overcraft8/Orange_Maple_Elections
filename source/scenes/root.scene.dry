@@ -256,7 +256,7 @@ Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhand', 'res_worker', 'unemployed', 'catholics'];
 Q.parties = ['flp', 'cp', 'pps', 'lps', 'cps', 'scp', 'other'];
-Q.parties_disp_name = ['FLP', 'CP', 'PPS', 'LPS', 'CPS', 'SCP', 'Other']
+Q.parties_disp_names = ['FLP', 'CP', 'PPS', 'LPS', 'CPS', 'SCP', 'Other']
 Q.urban_seats = 24;
 Q.rural_seats = 31;
 

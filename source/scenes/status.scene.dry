@@ -117,11 +117,8 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>!} SCP {!</td><td>!}[+ scp_relation : relationships +]{!</td><td>!} [+ scp_votes +]% {!</td><tr>!}
 
-
 {!</table>!}
-
 {!</div>!}
-
 
 {!<div style="max-width: 400px; overflow-y:auto; padding: 2px;">!}
 
@@ -151,14 +148,25 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!</div>!}
 
-
 # Rural Polling below
 
-
 {!</div>!}
-
-
 {!<div style="overflow-y:auto; padding: 2px;">!}
+
+= Ideologies
+
+CP: [+ cp_ideology +]
+
+FLP: [+ flp_ideology +]
+
+PPS: [+ pps_ideology +]
+
+LPS: [+ lps_ideology +]
+
+CPS: [+ cps_ideology +]
+
+SCP: [+ scp_ideology +]
+
 
 =                          Rural Polling
 

@@ -553,7 +553,7 @@ Q.welfare = 0;
 Q.educationquality = "Basic";
 Q.Curriculum = "Traditional";
 Q.healthcarequality = "Basic";
-Q.poverty = 10;
+Q.rural_poverty = (10).toFixed(1);
 //  
 //                   Farmers living standards
 // Farmers Access to electricity

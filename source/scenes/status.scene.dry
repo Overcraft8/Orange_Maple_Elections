@@ -322,17 +322,17 @@ Inflation: [+ inflation_2 +]%
 
 Unemployment: [+ unemployed_2 +]%
 
-Rural Poverty Incidence: [+ poverty +]%
+Rural Poverty Incidence: [+ rural_poverty +]%
 
 GDP Growth: [+ economic_growth_2 +]%
 
-Saskatchewan GDP Index (1932 = 100): [+ saskatchewan_gdp +]%
+Saskatchewan GDP Index (1932 = 100): [+ saskatchewan_gdp +]
 
-Total Saskatchewan Debt Index: [+ saskatchewan_debt +]%
+Total Saskatchewan Debt Index: [+ saskatchewan_debt +]
 
-Agricultural Production Index: [+ agri_production +]%
+Agricultural Production Index: [+ agri_production +]
 
-Industrial Production Index: [+ indu_production +]%
+Industrial Production Index: [+ indu_production +]
 
 = Nationalization 
 

@@ -21,6 +21,7 @@ max-cards: 4
 - @party
 - @govt
 - @programme
+- @organizations_cards
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -72,3 +73,10 @@ card-image: img/Sask_CCF_Programme.jpg
 is-deck: true
 
 - #programme
+
+@organizations_cards
+title: Party Affiliates
+card-image: img/canada_west.jpg
+is-deck: True
+
+- #organization_affairs

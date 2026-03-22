@@ -1,0 +1,59 @@
+title: CCYM
+new-page: true
+is-card: true
+tags: organization_affairs
+view-if: ccym_timer <= 0 
+card-image: img/ccym_handbook.jpg
+on-arrival: month_actions += 1; ccym_timer += 6; 
+max-visits: 6
+subtitle: The CCF's youth wing
+
+= The CCYM
+
+The CCYM is the the youth corps of the CCF. It is populated by young radicals, many of whom intersperse freely with their cousins in the Communist youth organization. 
+
+- @songs: Let us sing songs in rich, urban, neighbourhoods. 
+- @same: The CCYM is doing fine right now. 
+- @pamphlets: Spread informational pamphlets. 
+- @women_rb
+- @easy_discard
+- @cancel_advisor_action
+
+@songs
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources, 1 resource needed).
+subtitle: -1 resources
+on-arrival: resources -= 1; ccym_strength += 0.5; labour_dissent -= 3; new_middle_flp += 3; old_middle_flp += 3
+
+Spreading happiness always gives the urban middle class a better view of our party. 
+
+@same
+
+The CCYM is doing just fine on it's own. 
+
+- @return: Continue...
+
+
+@pamphlets
+subtitle: -2 resources
+on-arrival: resources -= 2; socialism += 2; farmer_flp += 1; worker_flp += 1; unemployed_flp += 1; new_middle_flp += 1; moderatism += 2;
+
+Spreading pamphlets increases awareness of the benefits of socialism and helps everyone get a better grasp of what we stand for. 
+
+
+@women_rb
+title: Allow women to join the UFC (SS).
+subtitle: -1 resources - This might cause a backlash from existing members.
+choose-if: resources > 0
+view-if: womens_rights >= 4 and jamieson_advisor == 1 and iron_front_formed == 1
+on-arrival: resources -= 1; ufc_militancy *= 0.85; ufc_strength += 400; women_in_rb = 1; ufc_militancy += 0.05 if repealed_175; ufc_militancy += 0.04 if trans_rights; ufc_militancy += 0.02 if reformed_183;
+go-to: homosexual if trans_rights or repealed_175 or reformed_183
+max-visits: 1
+achievement: women_ufc
+
+The suggestion to allow women into the UFC (SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
+
+After allowing women to join, the number of comrades who leave is more than balanced out by the number of radicalized women and others who join. However, many of our departed members were veterans, and many of the new members have no experience with military-style training.
+
+@homosexual
+achievement: anders_als_die_andern

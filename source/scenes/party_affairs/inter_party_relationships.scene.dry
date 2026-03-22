@@ -14,52 +14,52 @@ The FLP cannot govern by itself yet. Because we do not have an electoral majorit
 
 - @liberals: Strengthen our bonds with the Liberal Party.
 - @social_credit: Strengthen our bonds with the Social Credit Party.
-- @cp: Work towards repairing relationships with the Communist Party.
+- @cp_s: Work towards repairing relationships with the Communist Party.
 - @flp_alone: The FLP can stand alone for now.
 - @easy_discard
 
 
-@cp
+@cp_s
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; cp_inter_party_seen += 1
-go-to: cp_blutmai if blutmai = 1; cp_1 if blutmai = 0 and cp_coalition_success = 0 and (cp_relation < 40 or cp_rectified_history = 1); cp_rectification_of_history if cp_relation >= 40 and cp_rectified_history = 0; cp_2 if cp_coalition_success = 1 and cp_rectified_history = 1
+on-arrival: resources -= 1; cp_s_inter_party_seen += 1
+go-to: cp_s_blutmai if blutmai = 1; cp_s_1 if blutmai = 0 and cp_s_coalition_success = 0 and (cp_s_relation < 40 or cp_s_rectified_history = 1); cp_s_rectification_of_history if cp_s_relation >= 40 and cp_s_rectified_history = 0; cp_s_2 if cp_s_coalition_success = 1 and cp_s_rectified_history = 1
 
-@cp_1
-on-arrival: cp_relation += 6*(1 - dissent); communist_coalition += 1 if cp_inter_party_seen <= 1; reformist_dissent += 2; pps_relation -= 2; cps_relation -= 3
+@cp_s_1
+on-arrival: cp_s_relation += 6*(1 - dissent); communist_coalition += 1 if cp_s_inter_party_seen <= 1; reformist_dissent += 2; pps_relation -= 2; cps_relation -= 3
 
 The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
 
-@cp_rectification_of_history
+@cp_s_rectification_of_history
 
-One stumbling block for our relations with the CP is our history of conflict, dating back to 1918 and 1919. The CP is especially contemptuous of Gustav Noske, the FLP "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two FLP-turned-CP leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the CP(S) is our history of conflict, dating back to 1918 and 1919. The CP(S) is especially contemptuous of Gustav Noske, the FLP "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP(S) revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two FLP-turned-CP(S) leaders who were killed during the suppression of the uprising.
 
-For further improvements in CP relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
+For further improvements in CP(S) relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
 - @yes_history: Yes, we must apologize for our past actions.
 - @no_history: No, we have no need to apologize.
 
 @yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; far_left_dissent -= 6; far_left_strength += 5; cp_rectified_history = 1; pps_relation -= 6; cps_relation -= 6; lps_relation -= 4; cp_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; far_left_dissent -= 6; far_left_strength += 5; cp_s_rectified_history = 1; pps_relation -= 6; cps_relation -= 6; lps_relation -= 4; cp_s_relation += 8*(1-dissent); coalition_dissent += 1
 
-As part of normalizing relations with the CP, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
+As part of normalizing relations with the CP(S), we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 
 This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
 
 @no_history
-on-arrival: cp_relation -= 3
+on-arrival: cp_s_relation -= 3
 
 We have no need to apologize for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
 
 
-@cp_2
-on-arrival: cp_relation += 8*(1 - dissent); communist_coalition += 1 if cp_inter_party_seen <= 1; reformist_dissent += 2; pps_relation -= 3; cps_relation -= 3
+@cp_s_2
+on-arrival: cp_s_relation += 8*(1 - dissent); communist_coalition += 1 if cp_s_inter_party_seen <= 1; reformist_dissent += 2; pps_relation -= 3; cps_relation -= 3
 
-After the success of the coalition government with the CP, they are much more amenable to us.
+After the success of the coalition government with the CP(S), they are much more amenable to us.
 
-@cp_blutmai
-on-arrival: cp_relation += 3*(1 - dissent); reformist_dissent += 1
+@cp_s_blutmai
+on-arrival: cp_s_relation += 3*(1 - dissent); reformist_dissent += 1
 
 After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
 
@@ -67,23 +67,23 @@ After the events of Blütmai, reconciling with the Communists is difficult, if n
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; scp_relation += 2 if scp_party_leader == "Joos"
-go-to: social_credit_op if scp_in_government = 1 and flp_in_government = 0 and premier != "Needham"; social_credit_coalition if flp_in_government = 1 and scp_in_government = 1; social_credit_needham if premier = "Needham"
+on-arrival: resources -= 1; scps_relation += 2 if scps_party_leader == "Joos"
+go-to: social_credit_op if scps_in_government = 1 and flp_in_government = 0 and premier != "Needham"; social_credit_coalition if flp_in_government = 1 and scps_in_government = 1; social_credit_needham if premier = "Needham"
 
 @social_credit_op
-on-arrival: scp_relation += 5*(1 - dissent)
+on-arrival: scps_relation += 5*(1 - dissent)
 
-We are currently in opposition to the SCP-led government, but that does not preclude the general building of feelings of good will.
+We are currently in opposition to the SCPS-led government, but that does not preclude the general building of feelings of good will.
 
 @social_credit_coalition
-on-arrival: scp_relation += 8*(1 - dissent)
+on-arrival: scps_relation += 8*(1 - dissent)
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
 @social_credit_needham
-on-arrival: scp_relation += 5*(1 - dissent)
+on-arrival: scps_relation += 5*(1 - dissent)
 
-Needham's Social Credit Party is closely aligned with the ASCP, and is hesitant to align with us.
+Needham's Social Credit Party is closely aligned with the ASCPS, and is hesitant to align with us.
 
 @liberals
 subtitle: -1 resources

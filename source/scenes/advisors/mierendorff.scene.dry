@@ -8,11 +8,11 @@ new-page: true
 
 = Carlo Mierendorff
 
-Carlo Mierendorff is the founder of the neo-revisionist ideological tendency, and supports both democratic reforms and extra-parliamentary action to combat the SCPs and authoritarian parties. He is from a middle-class, academic background, and is one of our youngest leaders.
+Carlo Mierendorff is the founder of the neo-revisionist ideological tendency, and supports both democratic reforms and extra-parliamentary action to combat the SCPSs and aucpsitarian parties. He is from a middle-class, academic background, and is one of our youngest leaders.
 
 - @iron_front_buildup
 - @form_iron_front
-- @scp_urgency
+- @scps_urgency
 - @root: Return to main
 
 @iron_front_buildup
@@ -20,23 +20,23 @@ title: Build up the Iron Front
 subtitle: Increase our propaganda measures to recruit more members into the UFC (SS). 
 choose-if: advisor_action_timer == 0 and iron_front_formed
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if iron_front_formed == 0 : The Iron Front has not yet been formed. ?]
-on-arrival: advisor_action_timer = 6; ufc_strength += 200*workers_flp/(workers_flp+workers_cp+workers_pps+workers_scp+workers_other);
+on-arrival: advisor_action_timer = 6; ufc_strength += 200*workers_flp/(workers_flp+workers_cp_s+workers_pps+workers_scps+workers_other);
 
 We have recruited more members into the UFC (SS).
 
 
 @form_iron_front
 title: Forming the Iron Front
-choose-if: advisor_action_timer == 0 and iron_front_formed == 0 and scp_urgency >= 2
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if iron_front_formed : The Iron Front has already been formed. ?][? if scp_urgency < 2 : The party does not yet see the danger of the SCPs. ?]
-on-arrival: advisor_action_timer = 6; ufc_strength += 50; scp_urgency += 1
+choose-if: advisor_action_timer == 0 and iron_front_formed == 0 and scps_urgency >= 2
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if iron_front_formed : The Iron Front has already been formed. ?][? if scps_urgency < 2 : The party does not yet see the danger of the SCPSs. ?]
+on-arrival: advisor_action_timer = 6; ufc_strength += 50; scps_urgency += 1
 
 
-@scp_urgency
-title: Warning about the SCPs
-subtitle: By warning the party about the SCPs, we can spur our members to action.
+@scps_urgency
+title: Warning about the SCPSs
+subtitle: By warning the party about the SCPSs, we can spur our members to action.
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; scp_urgency += 1; ufc_militancy += 0.01;
+on-arrival: advisor_action_timer = 6; scps_urgency += 1; ufc_militancy += 0.01;
 
-We have begun a propaganda campaign to warn our members away from the SCPs.
+We have begun a propaganda campaign to warn our members away from the SCPSs.

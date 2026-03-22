@@ -30,7 +30,7 @@ subtitle: -3 budget
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
 view-if: wtb_implemented > 2 and treasury >= 3 
 choose-if: unemployed > 8
-on-arrival: works_program += 1; treasury -= 3; workers_flp += 7*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 7*(1-dissent); workers_cp -= 3; workers_scp -= 3; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_unity_government or in_left_front; inflation += 2; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
+on-arrival: works_program += 1; treasury -= 3; workers_flp += 7*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 7*(1-dissent); workers_cp_s -= 3; workers_scps -= 3; wtb_implemented += 1; cp_s_coalition_dissent += 1; cp_s_relation -= 5 if in_unity_government or in_left_front; inflation += 2; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
 
 [? if works_program == 4 : We have commenced Phase 2 of the WTB-Plan. ?][? if works_program > 4 :  We have continued our implementation of the WTB-Plan. ?] In addition to public works, we are now focusing on rebuilding our industries.
 
@@ -41,7 +41,7 @@ subtitle: -3 treasury - we will enter a deficit.
 unavailable-subtitle: Unemployment is low enough that we should not do deficit spending.
 view-if: wtb_implemented > 2 and treasury < 3 and treasury >= -3
 choose-if: unemployed > 10
-on-arrival: works_program += 1; treasury -= 3; workers_flp += 6*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 6*(1-dissent); workers_cp -= 2; workers_scp -= 2; coalition_dissent += 1; capital_strike_progress += 1; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_unity_government or in_left_front; inflation += 3; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
+on-arrival: works_program += 1; treasury -= 3; workers_flp += 6*(1-dissent); workers += 1 if works_program <= 4; unemployed -= 3 if unemployed > 8; unemployed_flp += 6*(1-dissent); workers_cp_s -= 2; workers_scps -= 2; coalition_dissent += 1; capital_strike_progress += 1; wtb_implemented += 1; cp_s_coalition_dissent += 1; cp_s_relation -= 5 if in_unity_government or in_left_front; inflation += 3; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5
 
 We have continued our implementation of the WTB-Plan, despite the continued deficit spending. In addition to public works, we are now focusing on rebuilding our industries.
 
@@ -49,13 +49,13 @@ We have continued our implementation of the WTB-Plan, despite the continued defi
 @wtb_continuation
 title: Look back on our results, and continue our implementation...
 view-if: wtb_implemented >= 1 and wtb_implemented <= 2
-on-arrival: treasury += 1 if works_program <= 2; unemployed -= 5 if (works_program <= 2 and unemployed > 15) else unemployed -= 3; unemployed += 3 if unemployed < 5; unemployed += 3 if unemployed < 0; workers += 2 if works_program <= 2 else workers += 1; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); workers_cp -= 3; workers_scp -= 5; works_program += 1; pps_relation += 3; cps_relation += 3; coalition_dissent -= 1 if coalition_dissent >= 1; wtb_implemented += 1; capital_strike_progress -= 1 if capital_strike_progress >= 3; inflation += 1.5; inflation += 1 if unemployed < 10; economic_growth += 1.2; economic_growth -= 0.5 if economic_growth > 5
+on-arrival: treasury += 1 if works_program <= 2; unemployed -= 5 if (works_program <= 2 and unemployed > 15) else unemployed -= 3; unemployed += 3 if unemployed < 5; unemployed += 3 if unemployed < 0; workers += 2 if works_program <= 2 else workers += 1; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); workers_cp_s -= 3; workers_scps -= 5; works_program += 1; pps_relation += 3; cps_relation += 3; coalition_dissent -= 1 if coalition_dissent >= 1; wtb_implemented += 1; capital_strike_progress -= 1 if capital_strike_progress >= 3; inflation += 1.5; inflation += 1 if unemployed < 10; economic_growth += 1.2; economic_growth -= 0.5 if economic_growth > 5
 
 Our spending on public works has resulted in a lower need for unemployment insurance and welfare, and increased tax receipts through the multiplier effect as the new money courses through the economy, recuperating some of our spending. We continue to invest most of the new revenue into the program.
 
 The economy is doing better, finally. Even the bourgeois parties are beginning to see the light.
 
-[? if in_unity_government or in_left_front: The CP, however, still opposes our policy of "rescuing" capitalism. ?]
+[? if in_unity_government or in_left_front: The CP(S), however, still opposes our policy of "rescuing" capitalism. ?]
 
 @implement_wtb_no_deficit
 title: Implement the WTB plan.
@@ -63,12 +63,12 @@ subtitle: -[+ wtb_treasury +] budget. [? if wtb_treasury== 3 : Our pro-labour po
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
 view-if: treasury >= wtb_treasury and wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8
-on-arrival: treasury -= wtb_budget; works_program += 1; unemployed -= 4; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_unity_government or in_left_front; inflation += 2; economic_growth += 2.8; pro_republic += 3*(1-dissent);
+on-arrival: treasury -= wtb_budget; works_program += 1; unemployed -= 4; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); wtb_implemented += 1; cp_s_coalition_dissent += 1; cp_s_relation -= 5 if in_unity_government or in_left_front; inflation += 2; economic_growth += 2.8; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 We have started to enact the WTB plan. Money is beginning to flow through the economy via investments in large-scale public works.
 
-[? if in_unity_government or in_left_front: The CP opposes the WTB plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
+[? if in_unity_government or in_left_front: The CP(S) opposes the WTB plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
 
 @implement_wtb_deficit
 title: Implement the WTB plan.
@@ -76,12 +76,12 @@ subtitle: -[+ wtb_treasury +] treasury - we will enter deficit spending. [? if w
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
 view-if: treasury < wtb_treasury and wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8
-on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if premier == "Brüning"; works_program += 1; treasury -= wtb_budget; unemployed -= 4; workers += 2; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; cp_coalition_dissent += 1; cp_relation -= 5 if in_unity_government or in_left_front; inflation += 3; economic_growth += 3; pro_republic += 3*(1-dissent);
+on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if premier == "Brüning"; works_program += 1; treasury -= wtb_budget; unemployed -= 4; workers += 2; workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; cp_s_coalition_dissent += 1; cp_s_relation -= 5 if in_unity_government or in_left_front; inflation += 3; economic_growth += 3; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 We have entered the realm of deficit spending. Our coalition partners are disgusted, but the works plan is enacted anyway. Money is beginning to flow through the economy via investments in large-scale public works.
 
-[? if in_unity_government or in_left_front: The CP opposes the WTB plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
+[? if in_unity_government or in_left_front: The CP(S) opposes the WTB plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
 
 
 ####################### left economic policies (socializations)
@@ -134,7 +134,7 @@ title: Nationalize without compensation.
 subtitle: There is no reason why we should not simply take over idle factories. This is likely to provoke a confrontation with the capitalists.
 unavailable-subtitle: [? if far_left_strength <= reformist_strength + agrarian_strength: The bulk of the party does not support this quasi-legal action. ?] [? if judicial_reform < 3 : The judiciary would oppose this action. ?]
 choose-if: far_left_strength > reformist_strength + agrarian_strength and judicial_reform >= 3
-on-arrival: nationalization_progress += 1; capital_strike_progress += 7; coup_progress += 3; unemployed -= 2.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3 and unemployed >= 3; works_program += 1; workers_flp += 8*(1-dissent); unemployed_flp += 6*(1-dissent); coalition_dissent += 2; cps_relation -= 10; pps_relation -= 8; lps_relation -= 8; far_left_strength += 15; reformist_dissent += 10; far_left_dissent -= 10; new_middle_flp -= 5; old_middle_flp -= 8; economy_goal_completed += 1; cp_relation += 5*(1-dissent); inflation += 4; economic_growth += 1 if economic_growth < 4;
+on-arrival: nationalization_progress += 1; capital_strike_progress += 7; coup_progress += 3; unemployed -= 2.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3 and unemployed >= 3; works_program += 1; workers_flp += 8*(1-dissent); unemployed_flp += 6*(1-dissent); coalition_dissent += 2; cps_relation -= 10; pps_relation -= 8; lps_relation -= 8; far_left_strength += 15; reformist_dissent += 10; far_left_dissent -= 10; new_middle_flp -= 5; old_middle_flp -= 8; economy_goal_completed += 1; cp_s_relation += 5*(1-dissent); inflation += 4; economic_growth += 1 if economic_growth < 4;
 achievement: wirtschaftspolitik
 
 The capitalists are, predictably, up in arms about our policy of nationalization without compensation. They call it illegal expropriation, and it is. Nevertheless, it is clear that they have failed by keeping their factories idle, and we must take radical action.
@@ -148,7 +148,7 @@ title: Empower workers to take over factories.
 subtitle: We can promise to legalize factory occupations, giving the factories over to worker unions. This is highly confrontational, and would likely provoke a reaction from right-wing militants as well as capitalists.
 unavailable-subtitle: [? if far_left_strength <= reformist_strength + neorevisionist_strength : The bulk of the party does not support this radical action. ?] [? if judicial_reform < 3 : The judiciary would oppose this action. ?] [? if ufc_militancy < 0.25 : If we increased the strength of our paramilitary forces, perhaps we could do this. ?] [? if works_councils < 1 : We need the support of the works councils first. ?]
 choose-if: far_left_strength > reformist_strength + neorevisionist_strength and (judicial_reform >= 3 or ufc_militancy >= 0.25) and works_councils >= 1
-on-arrival: nationalization_progress += 1; capital_strike_progress += 6; coup_progress += 5; unemployed -= 3 if unemployed >= 6; unemployed -= 1.5 if works_councils >= 3 and unemployed > 4; works_program += 1; workers_flp += 10*(1-dissent); unemployed_flp += 10*(1-dissent); coalition_dissent += 2; cps_relation -= 10; pps_relation -= 8; lps_relation -= 8; workers_scp -= 5*(1-dissent); unemployed_scp -= 5*(1-dissent); far_left_strength += 15; reformist_dissent += 10; far_left_dissent -= 10; new_middle_flp -= 5; old_middle_flp -= 10; factory_takeovers += 1; economy_goal_completed += 1; cp_relation += 5*(1-dissent); inflation += 3; economic_growth += 1 if economic_growth < 3;
+on-arrival: nationalization_progress += 1; capital_strike_progress += 6; coup_progress += 5; unemployed -= 3 if unemployed >= 6; unemployed -= 1.5 if works_councils >= 3 and unemployed > 4; works_program += 1; workers_flp += 10*(1-dissent); unemployed_flp += 10*(1-dissent); coalition_dissent += 2; cps_relation -= 10; pps_relation -= 8; lps_relation -= 8; workers_scps -= 5*(1-dissent); unemployed_scps -= 5*(1-dissent); far_left_strength += 15; reformist_dissent += 10; far_left_dissent -= 10; new_middle_flp -= 5; old_middle_flp -= 10; factory_takeovers += 1; economy_goal_completed += 1; cp_s_relation += 5*(1-dissent); inflation += 3; economic_growth += 1 if economic_growth < 3;
 achievement: wirtschaftspolitik
 
 The capitalists are, predictably, up in arms about our policy of legalizing factory occupations. They call it illegal expropriation, and it is. Nevertheless, it is clear that they have failed, and we must take radical action.
@@ -171,7 +171,7 @@ subtitle: -2 budget.
 unavailable-subtitle: -2 budget. [? if treasury < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
 view-if: moderate_plan_adopted == 1
 choose-if: treasury >= 2 and unemployed >= 8
-on-arrival: treasury -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_flp += 6*(1-dissent); unemployed_flp += 4*(1-dissent); new_middle_flp += 3*(1-dissent); old_middle_flp += 2*(1-dissent); farmer_flp += 2*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_unity_government or in_left_front; economic_growth += 1.6; pro_republic += 3*(1-dissent);
+on-arrival: treasury -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_flp += 6*(1-dissent); unemployed_flp += 4*(1-dissent); new_middle_flp += 3*(1-dissent); old_middle_flp += 2*(1-dissent); farmer_flp += 2*(1-dissent); moderate_plan_progress += 1; cp_s_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_s_relation -= 5 if in_unity_government or in_left_front; economic_growth += 1.6; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 [? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Saskatchewan, reducing unemployment. ?]
@@ -182,7 +182,7 @@ achievement: wirtschaftspolitik
 
 [? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
 
-[? if in_unity_government or in_left_front: The CP opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
+[? if in_unity_government or in_left_front: The CP(S) opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
 
 @moderate_plan_limited_budget
 title: Partially implement the Reformists' job-creation plan, with a lower cost.
@@ -190,7 +190,7 @@ subtitle: -1 budget.
 unavailable-subtitle: -1 budget. [? if treasury < 1 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
 view-if: moderate_plan_adopted == 1
 choose-if: treasury >= 1 and unemployed >= 8
-on-arrival: treasury -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_flp += 4*(1-dissent); unemployed_flp += 2*(1-dissent); new_middle_flp += 2*(1-dissent); old_middle_flp += 1*(1-dissent); farmer_flp += 1*(1-dissent); moderate_plan_progress += 1; cp_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_relation -= 5 if in_unity_government or in_left_front; economic_growth += 0.7; pro_republic += 3*(1-dissent);
+on-arrival: treasury -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_flp += 4*(1-dissent); unemployed_flp += 2*(1-dissent); new_middle_flp += 2*(1-dissent); old_middle_flp += 1*(1-dissent); farmer_flp += 1*(1-dissent); moderate_plan_progress += 1; cp_s_coalition_dissent += 1; inflation += 1 if unemployed < 10; cp_s_relation -= 5 if in_unity_government or in_left_front; economic_growth += 0.7; pro_republic += 3*(1-dissent);
 achievement: wirtschaftspolitik
 
 [? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Saskatchewan, reducing unemployment. ?]
@@ -201,4 +201,4 @@ achievement: wirtschaftspolitik
 
 [? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
 
-[? if in_unity_government or in_left_front: The CP opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]
+[? if in_unity_government or in_left_front: The CP(S) opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real socialism. ?]

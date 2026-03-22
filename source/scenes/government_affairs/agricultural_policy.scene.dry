@@ -24,7 +24,7 @@ title: Land Reform
 subtitle: -1 treasury - Break up the large aristocratic estates and give land to landless workers.
 unavailable-subtitle: [? if treasury <= 0 : Requires 1 budget. ?] [? if judicial_reform < 2 : The judiciary would never allow this. ?]
 choose-if: judicial_reform >= 2 and treasury > 0
-on-arrival: treasury -= 1; land_reform += 1; coalition_dissent += 1; farmer_flp += 5*(1-dissent); farmer_scp -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; cps_relation -= 5; pps_relation -= 4; far_left_strength += 8; far_left_dissent -= 5; farmer_sol += 3; farmer_policy += 1; coup_progress += 1; agriculture_goal_completed += 1;
+on-arrival: treasury -= 1; land_reform += 1; coalition_dissent += 1; farmer_flp += 5*(1-dissent); farmer_scps -= 4*(1-dissent); unemployed -= 1 if unemployed >= 5; cps_relation -= 5; pps_relation -= 4; far_left_strength += 8; far_left_dissent -= 5; farmer_sol += 3; farmer_policy += 1; coup_progress += 1; agriculture_goal_completed += 1;
 max-visits: 4
 
 With our policy of land reform, we are acquiring farmland from large estates, and giving the land to farmworkers' associations and small peasants. In essence, this brings class struggle to the countryside, breaking the semi-feudal property relations present in East City Police and other areas with large estates. The bourgeois parties and large farmers despise our intrusion into the sacredness of private property, while leftists are cautiously optimistic.
@@ -34,7 +34,7 @@ With our policy of land reform, we are acquiring farmland from large estates, an
 title: Agricultural Financing
 subtitle: -1 treasury - Increase financing for agricultural credit and insurance.
 choose-if: treasury >= 1
-on-arrival: treasury -= 1; agricultural_finance += 1; farmer_flp += 5*(1-dissent); farmer_scp -= 3*(1-dissent); peoples_party_support += 1; agrarian_dissent += 5; far_left_dissent += 4; farmer_sol += 4; farmer_policy += 1; economic_growth += 0.2;
+on-arrival: treasury -= 1; agricultural_finance += 1; farmer_flp += 5*(1-dissent); farmer_scps -= 3*(1-dissent); peoples_party_support += 1; agrarian_dissent += 5; far_left_dissent += 4; farmer_sol += 4; farmer_policy += 1; economic_growth += 0.2;
 
 We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and agrarian of our party are opposed to our farmer policy, seeing these policies as giveaways to petit-bourgeois farmers.
 
@@ -51,7 +51,7 @@ We have increased state purchasing of food staples to provide to urban workers a
 title: State Buyer
 subtitle: -2 treasury - Create a state monopoly for grain purchases, guaranteeing prices for farmers and stable prices for consumers. [? if judicial_reform < 2 : The judiciary would never allow this. ?]
 choose-if: treasury >= 2 and judicial_reform >= 2
-on-arrival: treasury -= 2; state_buyer = 1; farmer_flp += 5*(1-dissent); farmer_scp -= 3*(1-dissent); workers_flp += 4*(1-dissent); unemployed_flp += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_lps_coalition); cps_relation -= 5; pps_relation -= 3; peoples_party_support += 1; farmer_policy += 2; capital_strike_progress += 1; economic_growth += 0.4;
+on-arrival: treasury -= 2; state_buyer = 1; farmer_flp += 5*(1-dissent); farmer_scps -= 3*(1-dissent); workers_flp += 4*(1-dissent); unemployed_flp += 5*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_lps_coalition); cps_relation -= 5; pps_relation -= 3; peoples_party_support += 1; farmer_policy += 2; capital_strike_progress += 1; economic_growth += 0.4;
 max-visits: 1
 
 Our new purchasing agency guarantees fair prices for farmers, while also providing lower food prices for workers and the urban poor. This policy necessitates heavy spending and an unprecedented level of state intervention in the economy, raising the ire of conservative economists.

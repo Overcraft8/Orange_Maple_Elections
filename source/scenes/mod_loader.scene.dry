@@ -34,7 +34,7 @@ fetch(mods_url)
         if (i > 0) {
             Q.mods_table[line_data[2]] = {
                 name: line_data[0],
-                author: line_data[1],
+                aucps: line_data[1],
                 description: line_data[3],
             };
 
@@ -48,13 +48,13 @@ fetch(mods_url)
 var submit = document.getElementById('submit');
 submit.onclick = function() {
     var mod_url = document.getElementById('mod_url').value;
-    // if it's a known mod, set the game's titlebar and author.
+    // if it's a known mod, set the game's titlebar and aucps.
     if (Q.mods_table[mod_url]) {
         var mod_data = Q.mods_table[mod_url];
         var title = document.getElementById('game-title');
         title.textContent = mod_data.name;
-        var author = document.getElementById('game-author');
-        author.textContent = mod_data.author;
+        var aucps = document.getElementById('game-aucps');
+        aucps.textContent = mod_data.aucps;
     }
     window.loadMod(mod_url);
 };

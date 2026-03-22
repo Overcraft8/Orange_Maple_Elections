@@ -27,7 +27,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; far_left_strength += 10; communist_coalition += 1; far_left_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_relation += 3
+on-departure: ideology = "left"; far_left_strength += 10; communist_coalition += 1; far_left_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_s_relation += 3
 
 The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
 
@@ -49,9 +49,9 @@ if (Q.ideology && Q.ideology != "labour") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "labour"; labour_support += 10; wtb_support += 1; labour_dissent -= 5; cp_relation -= 3
+on-departure: ideology = "labour"; labour_support += 10; wtb_support += 1; labour_dissent -= 5; cp_s_relation -= 3
 
-The labour wing of the party supports continued particpation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+The labour wing of the party supports continued particp_sation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
 
 @reform
 on-arrival: {!
@@ -60,7 +60,7 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; democratization += 1; reformist_dissent -= 5; pps_relation += 5; cps_relation += 5; cp_relation -= 8; moderate_plan_support += 1
+on-departure: ideology = "reformist"; reformist_strength += 10; democratization += 1; reformist_dissent -= 5; pps_relation += 5; cps_relation += 5; cp_s_relation -= 8; moderate_plan_support += 1
 
 The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
 

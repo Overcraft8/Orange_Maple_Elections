@@ -87,8 +87,8 @@ Q.neorevisionism = 0;
 
 // crisis_urgency indicates how seriously the FLP is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
-// scp_urgency indicates how seriously the FLP takes the scp - scale from 0 to 10.
-Q.scp_urgency = 0;
+// scps_urgency indicates how seriously the FLP takes the scps - scale from 0 to 10.
+Q.scps_urgency = 0;
 // radicalization indicates how radical the FLP's rhetoric is - scale from 0 to 10.
 Q.radicalization = 0;
 // Support for the WTB plan and proto-Keynesian works creation plans in general
@@ -118,11 +118,11 @@ Q.moderate_plan_adopted = 0;
 
 // inter-party relations
 Q.pps_relation = 50;
-Q.cp_relation = 25;
+Q.cp_s_relation = 25;
 Q.lps_relation = 60;
 Q.cps_relation = 35;
-// SCP are invariably hostile
-Q.SCP_relation = 10;
+// SCPS are invariably hostile
+Q.SCPS_relation = 10;
 
 
 Q.flp_legislative_leader = "None";
@@ -140,11 +140,11 @@ Q.flp_board_four = "Clarence Fines";
 Q.flp_board_one_faction = "labour";
 
 
-Q.cp_leader = "None";
-Q.cp_party_leader = "None";
+Q.cp_s_leader = "None";
+Q.cp_s_party_leader = "None";
 Q.cps_leader = "James Anderson";
 Q.lps_leader = "James Gardiner";
-Q.scp_leader = "Joseph Needham"; 
+Q.scps_leader = "Joseph Needham"; 
 Q.pps_leader = "None";
 Q.pps_party_leader = "None";
 
@@ -156,7 +156,7 @@ Q.bennett_enabled = 0;
 
 // Does the FLP lead in City Police?
 Q.flp_prussia = 1;
-// Options: flp, lps, cps, scp
+// Options: flp, lps, cps, scps
 Q.city_government = "FLP";
 
 // The state of the country
@@ -182,7 +182,7 @@ Q.constructive_vonc = 0;
 Q.prime_ministerial_powers = 0;
 // allows banning of non-constitutional parties
 Q.constitutional_protection = 0;
-Q.cp_banned = 0;
+Q.cp_s_banned = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
@@ -255,14 +255,14 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhand', 'res_worker', 'unemployed', 'catholics'];
-Q.parties = ['flp', 'cp', 'pps', 'lps', 'cps', 'scp', 'other'];
-Q.parties_disp_names = ['FLP', 'CP', 'PPS', 'LPS', 'CPS', 'SCP', 'Other']
+Q.parties = ['flp', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
+Q.parties_disp_names = ['FLP', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other']
 Q.urban_seats = 24;
 Q.rural_seats = 31;
 
 //                           Party Ideologies
-Q.cp_ideology = "Marxism-Leninism";
-Q.cp_politlean = 3;
+Q.cp_s_ideology = "Marxism-Leninism";
+Q.cp_s_politlean = 3;
 Q.flp_ideology = "Democratic Socialism";
 Q.flp_politlean = 7;
 Q.pps_ideology = "Even they don't know...";
@@ -271,8 +271,8 @@ Q.lps_ideology = "Liberalism";
 Q.lps_politlean = 10;
 Q.cps_ideology = "Conservatism";
 Q.cps_politlean = 13;
-Q.scp_ideology = "Social Credit";
-Q.scp_politlean = 16;
+Q.scps_ideology = "Social Credit";
+Q.scps_politlean = 16;
 
 
 
@@ -282,67 +282,67 @@ Q.sapd_formed = 0;
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_flp = 4;
-Q.workers_cp = 3;
+Q.workers_cp_s = 3;
 Q.workers_pps = 3;
 Q.workers_lps = 43;
 Q.workers_cps = 35;
-Q.workers_scp = 0;
+Q.workers_scps = 0;
 Q.workers_other = 12;
 
 Q.old_middle_flp = 0;
-Q.old_middle_cp = 0;
+Q.old_middle_cp_s = 0;
 Q.old_middle_pps = 10;
 Q.old_middle_lps= 38;
 Q.old_middle_cps = 49;
-Q.old_middle_scp = 0;
+Q.old_middle_scps = 0;
 Q.old_middle_other = 3;
 
 Q.new_middle_flp = 4;
-Q.new_middle_cp = 0;
+Q.new_middle_cp_s = 0;
 Q.new_middle_pps = 12;
 Q.new_middle_lps= 44;
 Q.new_middle_cps = 38;
-Q.new_middle_scp = 0;
+Q.new_middle_scps = 0;
 Q.new_middle_other = 2;
 
 Q.farmer_flp = 7;
-Q.farmer_cp = 3;
+Q.farmer_cp_s = 3;
 Q.farmer_pps = 6;
 Q.farmer_lps= 44;
 Q.farmer_cps = 37;
-Q.farmer_scp = 0;
+Q.farmer_scps = 0;
 Q.farmer_other = 3;
 
 Q.farmhand_flp = 4;
-Q.farmhand_cp = 3;
+Q.farmhand_cp_s = 3;
 Q.farmhand_lps = 39;
 Q.farmhand_pps = 5;
 Q.farmhand_cps = 34;
-Q.farmhand_scp = 0;
+Q.farmhand_scps = 0;
 Q.farmhand_other = 5;
 
 Q.res_worker_flp = 8;
-Q.res_worker_cp = 10;
+Q.res_worker_cp_s = 10;
 Q.res_worker_lps = 42;
 Q.res_worker_pps = 7;
 Q.res_worker_cps = 28;
-Q.res_worker_scp = 0;
+Q.res_worker_scps = 0;
 Q.res_worker_other = 5;
 
 Q.unemployed_flp = 6;
-Q.unemployed_cp = 5;
+Q.unemployed_cp_s = 5;
 Q.unemployed_pps = 7;
 Q.unemployed_lps = 43;
 Q.unemployed_cps = 32;
-Q.unemployed_scp = 0;
+Q.unemployed_scps = 0;
 Q.unemployed_other = 5;
 
 Q.catholics_flp = 7;
-Q.catholics_cp = 2;
+Q.catholics_cp_s = 2;
 Q.catholics_pps = 10;
 Q.catholics_lps = 45;
 Q.catholics_cps = 30;
-Q.catholics_scp = 0;
+Q.catholics_scps = 0;
 Q.catholics_other = 6;
 
 
@@ -352,20 +352,20 @@ Q.catholics_other = 6;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.flp_r = 0;
-Q.cp_r = 0;
+Q.cp_s_r = 0;
 Q.pps_r =  8;
 Q.lps_r = 44;
 Q.cps_r = 38;
-Q.scp_r = 0;
+Q.scps_r = 0;
 Q.other_r = 10;
 
 // diff from prev
 Q.old_flp_r = 26;
-Q.old_cp_r = 9;
+Q.old_cp_s_r = 9;
 Q.old_pps_r = 17;
 Q.old_lps_r = 6;
 Q.old_cps_r = 10;
-Q.old_scp_r = 20;
+Q.old_scps_r = 20;
 Q.old_other_r = 9;
 
 // sapd isn't formed yet, but it may be formed
@@ -375,7 +375,7 @@ Q.old_sapd_r = 0;
 // for changing the LPS's name to the DStP
 Q.lps_name = "LPS";
 
-// array of objects of the form {date: Date(), flp: 10, cp: 12, ...} for each election
+// array of objects of the form {date: Date(), flp: 10, cp_s: 12, ...} for each election
 Q.election_records = [];
 // party support records for every month
 Q.party_support_records = [];
@@ -392,8 +392,8 @@ Q.flp_in_government = 0;
 Q.pps_in_government = 0;
 Q.lps_in_government = 0;
 Q.cps_in_government = 1;
-Q.scp_in_government = 0;
-Q.cp_in_government = 0;
+Q.scps_in_government = 0;
+Q.cp_s_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = FLP + PPS + LPS
@@ -401,9 +401,9 @@ Q.in_lps_coalition = 0;
 // Grand coalition = FLP + PPS + LPS + CPS
 // also includes the "new grand coalition" of FLP + PPS + LPS + CPS + Others
 Q.in_grand_coalition = 0;
-// Popular front = FLP + CP + PPS + LPS
+// Popular front = FLP + CP(S) + PPS + LPS
 Q.in_unity_government = 0;
-// left coalition = FLP + CP + left-splinters
+// left coalition = FLP + CP(S) + left-splinters
 Q.in_left_front = 0;
 // emergency government containing the FLP: only prime minister JS_Woodsworth can do this.
 Q.in_emergency_government = 0;
@@ -415,8 +415,8 @@ Q.in_minority_government = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
-// dissent from the CP, in a popular front or left front government
-Q.cp_coalition_dissent = 0;
+// dissent from the CP(S), in a popular front or left front government
+Q.cp_s_coalition_dissent = 0;
 
 // does the FLP tolerate the government even if it is not a participant?
 Q.flp_toleration = 0;
@@ -450,9 +450,9 @@ Q.telephones_telegraphs_minister_party = "CPS";
 Q.foreign_minister = 'Streseman';
 Q.foreign_minister_party = 'CPS';
 Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'SCP';
+Q.interior_minister_party = 'SCPS';
 Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'SCP';
+Q.justice_minister_party = 'SCPS';
 Q.labour_minister = 'JS_Woodsworth';
 Q.labour_minister_party = 'PPS';
 Q.rcmp_minister = 'Groener';
@@ -462,7 +462,7 @@ Q.economic_minister_party = 'CPS';
 Q.finance_minister = 'Köhler';
 Q.finance_minister_party = 'PPS';
 Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'SCP';
+Q.agriculture_minister_party = 'SCPS';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
@@ -688,13 +688,13 @@ Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
+Q.timers = ['advisor_action', 'confronting_scps', 'crisis_program',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
             'party_organizations', 'rally', 'ufc',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
-            'party_disunity',
+            'party_disunity', 'labour_prog', 'infra_prog', 'agri_prog',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labour_affairs', 'military_policy',
@@ -707,12 +707,12 @@ Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'ful_ban', 'kkk_ban', 'papen_premier',
-            'cp_policy', 'cp_ultimatum', 'unity_government_dispute',
+            'cp_s_policy', 'cp_s_ultimatum', 'unity_government_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'schleichers_schemes'];
 Q.advisor_action_timer = 0;
 // party affairs timers
-Q.confronting_scp_timer = 0;
+Q.confronting_scps_timer = 0;
 Q.crisis_program_timer = 0;
 Q.fundraising_timer = 0;
 Q.ideology_timer = 0;
@@ -773,7 +773,7 @@ Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
 Q.ful_ban_timer = 0;
 Q.kkk_ban_timer = 0;
-Q.cp_ultimatum_timer = 0;
+Q.cp_s_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 
@@ -825,7 +825,7 @@ new-page: true
 
  - Regina Manifesto, 1933
 
-This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
+This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the aucps know if there are any glaring mistakes.
 
 For more information on the politics and government of Saskatchewan, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
@@ -835,11 +835,11 @@ For more information on the politics and government of Saskatchewan, see the "Li
 - @1932_historical: Begin (historical mode)
 
 @1932_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 35.00; cp_relation = 29; pps_relation = 54; cps_relation = 49; treasury = 15;
+on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 35.00; cp_s_relation = 29; pps_relation = 54; cps_relation = 49; treasury = 15;
 go-to: 1932_main
 
 @1932_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 25.00; reformist_dissent = 25; far_left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_relation = 16; cps_relation = 31; treasury = 5;
+on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 25.00; reformist_dissent = 25; far_left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_s_relation = 16; cps_relation = 31; treasury = 5;
 go-to: 1932_main
 
 @1932_historical
@@ -855,7 +855,7 @@ Q.far_left_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;
 Q.pps_relation = 41;
-Q.cp_relation = 16;
+Q.cp_s_relation = 16;
 Q.cps_relation = 31;
 Q.treasury = 12;
 this.state.disableSaves = true;
@@ -904,7 +904,7 @@ The newly reelected NDP government of Roy Romanow however, had a conflicting sit
 
 # So who was this "George Hara Williams" and what did good old Tommy do to him? I bought the book and devoured it for the next week or so. Turns out, George Williams had been the decisive role in rallying Saskatchewan farmers to the FLP and later, the CCF/NDP. This was quite shocking considering how forgotten Williams is nowadays. 
 
-# And that made me think about all the other stories that have been lost to time. How much of my province's history has been wiped clean off the slate in popular consciousness, only remaining alive in tedious though thorough academic papers and old books? That thought stayed with me for quite a while. 
+# And that made me think about all the other stories that have been lost to time. How much of my province's history has been wiped clean off the slate in popular consciousness, only remaining alive in tedious though cpsough academic papers and old books? That thought stayed with me for quite a while. 
 
 # In the end, I decided that I might make my own dedication to my province in the form of a mod for Autumn's SDAAH. Though I did try my best, much of the mod is rather shoddily built, both functionality-wise and software-wise. My only experience with coding prior was with simple C++ Arduinos and rudimentary Python from a 10-level Computer Science Course way back when. In spite of this, this mod makes me quite proud. Really, this is a loveletter to my home province and I hope that this mod helps keep Saskatchewan's rich political history alive and accessible. 
 

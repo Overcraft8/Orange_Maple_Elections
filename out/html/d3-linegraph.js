@@ -16,13 +16,13 @@ function addMonths(date, months) {
 d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataMax, dataMin, additionalMonths) {
     /* params */
     if (!parties) {
-        parties = ['flp', 'cp', 'lps', 'pps', 'cps', 'scp', 'other'];
+        parties = ['flp', 'cp_s', 'lps', 'pps', 'cps', 'scps', 'other'];
     }
     if (!partyColors) {
-        partyColors = {'flp': '#D26E28', 'cp': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0'};
+        partyColors = {'flp': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scps': '#50E23D', 'other': '#a0a0a0'};
     }
     if (!partyNames) {
-        partyNames = {'flp': 'FLP', 'cp': 'CP', 'lps': 'LPS', 'pps': 'PPS', 'cps': 'CPS', 'scp': 'SCP', 'other': 'Others'};
+        partyNames = {'flp': 'FLP', 'cp_s': 'CP(S)', 'lps': 'LPS', 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;

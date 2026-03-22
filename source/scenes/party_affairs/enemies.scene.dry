@@ -13,34 +13,34 @@ In our media and campaign materials, who should we consider as our main opponent
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @anti_dem: The anti-democratic parties of the far right and left - the CP, SCP, and SCP.
-- @far_right: The far right - the SCP 
-- @scp: The SCP alone.
-- @cp: The CP.
+- @anti_dem: The anti-democratic parties of the far right and left - the CP(S), SCPS, and SCPS.
+- @far_right: The far right - the SCPS 
+- @scps: The SCPS alone.
+- @cp_s: The CP(S).
 - @bourgeois: The bourgeois parties - the PPS and CPS.
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; agrarian_support += 5; reformist_strength += 5; far_left_dissent += 5; workers_cp -= 2; workers_scp -= 2; workers_scp -= 2; cp_relation -= 10
+on-arrival: enemies = "anti-democratic parties"; agrarian_support += 5; reformist_strength += 5; far_left_dissent += 5; workers_cp_s -= 2; workers_scps -= 2; workers_scps -= 2; cp_s_relation -= 10
 
-Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the CP in the future.
+Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the CP(S) in the future.
 
 @far_right
-on-arrival: enemies = "far right"; far_left_strength += 5; far_left_dissent -= 5; workers_scp -= 3; workers_scp -= 3;
+on-arrival: enemies = "far right"; far_left_strength += 5; far_left_dissent -= 5; workers_scps -= 3; workers_scps -= 3;
 
-Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while the right is critical of our lack of response to the CP. Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism.
+Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while the right is critical of our lack of response to the CP(S). Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism.
 
-@scp
-on-arrival: enemies = "SCP"; neorevisionist_strength += 5; scp_urgency += 1; workers_scp -= 4;
+@scps
+on-arrival: enemies = "SCPS"; neorevisionist_strength += 5; scps_urgency += 1; workers_scps -= 4;
 
-[? if scp_urgency == 0 or scp_r < 10 : The SCP is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scp_urgency > 0 and scp_r >= 10 : The SCPs are the most urgent problem for us to deal with. ?]
+[? if scps_urgency == 0 or scps_r < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_r >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]
 
-@cp
-on-arrival: enemies = "CP"; reformist_strength += 5; far_left_dissent += 8; reformist_dissent -= 5; cp_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cp -= 4;
+@cp_s
+on-arrival: enemies = "CP(S)"; reformist_strength += 5; far_left_dissent += 8; reformist_dissent -= 5; cp_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cp_s -= 4;
 
-Attacking the CP is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the CP, this may not be the best choice.
+Attacking the CP(S) is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the CP(S), this may not be the best choice.
 
 @bourgeois
-on-arrival: enemies = "bourgeois parties"; far_left_strength += 8; far_left_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_relation += 5; reformist_dissent += 8; workers_pps -= 3; coalition_dissent += 1
+on-arrival: enemies = "bourgeois parties"; far_left_strength += 8; far_left_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_s_relation += 5; reformist_dissent += 8; workers_pps -= 3; coalition_dissent += 1
 
 Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.

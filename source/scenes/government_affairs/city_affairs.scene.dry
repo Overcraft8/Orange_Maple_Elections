@@ -16,7 +16,7 @@ We can enact policies in City Police.
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
-- @ban_ful: Ban the FUL, the SCPs paramilitary group.
+- @ban_ful: Ban the FUL, the SCPSs paramilitary group.
 - @unban_ful: Reverse the FUL ban.
 - @ban_wul: Ban the WUL, the Communist paramilitary.
 - @unban_wul: Reverse the WUL ban.
@@ -48,10 +48,10 @@ on-arrival: city_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democr
 The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-prime ministery and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
 @ban_ful
-view-if: scp_urgency >= 3 and ful_banned == 0
+view-if: scps_urgency >= 3 and ful_banned == 0
 on-arrival: ful_strength *= 0.9; ful_strength *= 0.75 if city_police_loyalty >= 0.75; ful_banned = 1; cps_relation -= 3; city_police_loyalty -= 0.05; ful_militancy -= 0.05; ful_ban_timer = 6;
 
-As it turns out, the SCPs FUL has many allies in the police and bureaucracy. Our relationship with the police weakens, and the FUL can still organize illegally, right under the police's noses. [? if city_police_loyalty >= 0.7 : Nevertheless, the FUL is substantially weakened by our ban. ?] 
+As it turns out, the SCPSs FUL has many allies in the police and bureaucracy. Our relationship with the police weakens, and the FUL can still organize illegally, right under the police's noses. [? if city_police_loyalty >= 0.7 : Nevertheless, the FUL is substantially weakened by our ban. ?] 
 
 @unban_ful
 view-if: ful_banned = 1
@@ -74,7 +74,7 @@ The Ku Klux Klan is no longer banned.
 
 @ban_wul
 view-if: communist_coalition < 3 and wul_banned = 0
-on-arrival: cp_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1
+on-arrival: cp_s_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
 

@@ -537,7 +537,7 @@ table {
 }
 
 /* Styles for parties */
-.seat.cp {
+.seat.cp_s {
     fill: #920c0c;
 }
 .seat.flp {
@@ -551,13 +551,13 @@ table {
 .seat.pps {
     fill: #E7DB73;
 }
-.seat.cpc {
+.seat.cp_sc {
     fill: #0055A5;
 }
 .seat.other {
     fill: #909090;
 }
-.seat.scp {
+.seat.scps {
     fill: #50E23D;
 }
 .seat.sapd {

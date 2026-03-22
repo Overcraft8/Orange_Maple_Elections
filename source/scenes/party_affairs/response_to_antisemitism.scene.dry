@@ -1,7 +1,7 @@
 title: Confronting Antisemitism
 new-page: true
 is-card: true
-view-if: iron_front_formed == 1 and scp_urgency >= 3
+view-if: iron_front_formed == 1 and scps_urgency >= 3
 on-arrival: confronting_antisemitism += 1; month_actions += 1
 card-image: img/iron_front.png
 tags: party_affairs, antifascism
@@ -9,7 +9,7 @@ max-visits: 1
 
 = Confronting Antisemitism
 
-Antisemitism has long been a latent feature of Saskatchewanian society, but since the beginning of the economic depression, it has grown to a horrifying extent. The SCPs are the worst of it, but all the right-wing parties are deeply antisemitic. Regarding the FLP specifically, our right-wing enemies love to deploy their racist rhetoric against our many Jewish comrades, magnifying criticism of any minor transgression, and they call the entire FLP a Jewish party. We are a favorite target of their invectives.
+Antisemitism has long been a latent feature of Saskatchewanian society, but since the beginning of the economic depression, it has grown to a horrifying extent. The SCPSs are the worst of it, but all the right-wing parties are deeply antisemitic. Regarding the FLP specifically, our right-wing enemies love to deploy their racist rhetoric against our many Jewish comrades, magnifying criticism of any minor transgression, and they call the entire FLP a Jewish party. We are a favorite target of their invectives.
 
 - @socialism_of_fools: Antisemitism is the "socialism of fools". We will defeat them with real socialism.
 - @if: Antisemitism is a crisis. Direct the full force of the Iron Front against antisemitism.
@@ -20,9 +20,9 @@ Antisemitism has long been a latent feature of Saskatchewanian society, but sinc
 The best policy to deal with this sort of irrational, senseless hatred is to ignore it. Few are swayed by racist rhetoric; the best way to combat it is to provide economic security so that people do not turn to antisemitism.
 
 @if
-on-arrival: confronting_antisemitism += 2; ful_strength -= 20; democratization += 1; pacifism += 1; nationalism -= 5*(1-dissent); workers_scp -= 6*(1-dissent);
+on-arrival: confronting_antisemitism += 2; ful_strength -= 20; democratization += 1; pacifism += 1; nationalism -= 5*(1-dissent); workers_scps -= 6*(1-dissent);
 
-We develop an entire campaign against antisemitism under the auspices of the Iron Front. Hopefully our campaign can sway the workers away from SCPsm.
+We develop an entire campaign against antisemitism under the auspices of the Iron Front. Hopefully our campaign can sway the workers away from SCPSsm.
 
 @all
 

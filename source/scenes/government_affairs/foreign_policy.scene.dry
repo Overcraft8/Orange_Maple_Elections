@@ -43,7 +43,7 @@ We also aim to improve relations with our eastern neighbors, Poland and Czechosl
 
 @improve_soviet
 title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the CP...
+subtitle: We could also broach the question of the CP(S)...
 
 The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
 
@@ -67,24 +67,24 @@ on-arrival: treasury -= 1; soviet_relation += 2; coalition_dissent += 1; foreign
 
 The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
 
-- @cp: Ask if Moscow could help repair our relations with the CP.
+- @cp_s: Ask if Moscow could help repair our relations with the CP(S).
 - @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the CP.
+- @root: Do not mention the CP(S).
 
 @soviet_economic_aid_no
 
 The Soviets are slightly upset, but they seemed to expect this answer.
 
 
-@cp
-on-arrival: cp_relation += 8*(1-dissent); communist_coalition += 1 if cp_foreign_seen == 0; cp_foreign_seen = 1
+@cp_s
+on-arrival: cp_s_relation += 8*(1-dissent); communist_coalition += 1 if cp_s_foreign_seen == 0; cp_s_foreign_seen = 1
 
-We also mention the CP in our conversations with the Soviet ambassador. They claim that the CP is entirely independent of the Soviet government, and that the conflict is Tim Buck's doing. But, soon after our conversation we notice a slight improvement in attitudes from the CP.
+We also mention the CP(S) in our conversations with the Soviet ambassador. They claim that the CP(S) is entirely independent of the Soviet government, and that the conflict is Tim Buck's doing. But, soon after our conversation we notice a slight improvement in attitudes from the CP(S).
 
 @wittorf
 view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1932) and wittorf_soviet_union = 0
 unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
-on-arrival: wittorf_soviet_union = 1; cp_relation += 6*(1-dissent); cp_foreign_seen = 1
+on-arrival: wittorf_soviet_union = 1; cp_s_relation += 6*(1-dissent); cp_s_foreign_seen = 1
 max-visits: 1
 
 Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Tim Buck, but perhaps now they will be less inclined to defend him.

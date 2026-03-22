@@ -74,13 +74,13 @@ FLP: [+ flp_r +]%
 # 1928: 15, 1930: 15, 1932: 
 PPS: [+ pps_r +]%
 # 1928: 10, 1930: 13
-CP: [+ cp_r +]%
+CP(S): [+ cp_s_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 [+ lps_name +]: [+ lps_r +]%
 # 1928: 9, 1930: 5
 CPS: [+ cps_r +]%
 # 1928: 14, 1930: 7
-SCP: [+ scp_r +]%
+SCPS: [+ scps_r +]%
 # 1928: 3, 1930: 18
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
@@ -90,7 +90,7 @@ FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in g
 
 [? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if flp_in_government and (in_left_front or in_unity_government): CP coalition dissent: [+ cp_coalition_dissent : coalition_dissent +] ?]
+[? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -119,7 +119,7 @@ go-to: menu
 
 **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Many are socialist, supporting either the FLP or CP. They make up 40-50% of the population.
+**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Many are socialist, supporting either the FLP or CP(S). They make up 40-50% of the population.
 
 **Old Middle**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
 
@@ -129,7 +129,7 @@ go-to: menu
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the PPS Party (or the Bavarian People's Party in Bavaria).
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPS, although substantial numbers support the FLP or CP.
+**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPS, although substantial numbers support the FLP or CP(S).
 
 
 @public_opinion
@@ -165,7 +165,7 @@ FLP: [+ flp_votes +]%
 PPS: [+ pps_votes +]%
 
 # 1928: 10, 1930: 13
-CP: [+ cp_votes +]%
+CP(S): [+ cp_s_votes +]%
 
 # 1928: 5, 1930: 4 (as DstP)
 [+ lps_name +]: [+ lps_votes +]%
@@ -174,24 +174,24 @@ CP: [+ cp_votes +]%
 CPS: [+ cps_votes +]%
 
 # 1928: 14, 1930: 7
-SCP: [+ scp_votes +]%
+SCPS: [+ scps_votes +]%
 
 # 1928: 9, 1930: 10
 Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: FLP: [+ workers_flp_display +]%, PPS: [+ workers_pps_display +]%, CP: [+ workers_cp_display +]%, [+ lps_name +]: [+ workers_lps_display +]%, CPS: [+ workers_cps_display +]%; SCP: [+ workers_scp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: FLP: [+ workers_flp_display +]%, PPS: [+ workers_pps_display +]%, CP(S): [+ workers_cp_s_display +]%, [+ lps_name +]: [+ workers_lps_display +]%, CPS: [+ workers_cps_display +]%; SCPS: [+ workers_scps_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: FLP: [+ new_middle_flp_display +]%, PPS: [+ new_middle_pps_display +]%, CP: [+ new_middle_cp_display +]%, [+ lps_name +]: [+ new_middle_lps_display +]%, CPS: [+ new_middle_cps_display +]%; SCP: [+ new_middle_scp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: FLP: [+ new_middle_flp_display +]%, PPS: [+ new_middle_pps_display +]%, CP(S): [+ new_middle_cp_s_display +]%, [+ lps_name +]: [+ new_middle_lps_display +]%, CPS: [+ new_middle_cps_display +]%; SCPS: [+ new_middle_scps_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: FLP: [+ old_middle_flp_display +]%, PPS: [+ old_middle_pps_display +]%, CP: [+ old_middle_cp_display +]%, [+ lps_name +]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCP: [+ old_middle_scp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: FLP: [+ old_middle_flp_display +]%, PPS: [+ old_middle_pps_display +]%, CP(S): [+ old_middle_cp_s_display +]%, [+ lps_name +]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCPS: [+ old_middle_scps_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Farmers: FLP: [+ farmer_flp_display +]%, PPS: [+ farmer_pps_display +]%, CP: [+ farmer_cp_display +]%, [+ lps_name +]: [+ farmer_lps_display +]%, CPS: [+ farmer_cps_display +]%; SCP: [+ farmer_scp_display +]%, Others: [+ farmer_other_display +]% [? if sapd_formed: SAPD: [+ farmer_sapd_display +]% ?]
+Farmers: FLP: [+ farmer_flp_display +]%, PPS: [+ farmer_pps_display +]%, CP(S): [+ farmer_cp_s_display +]%, [+ lps_name +]: [+ farmer_lps_display +]%, CPS: [+ farmer_cps_display +]%; SCPS: [+ farmer_scps_display +]%, Others: [+ farmer_other_display +]% [? if sapd_formed: SAPD: [+ farmer_sapd_display +]% ?]
 
-Unemployed: FLP: [+ unemployed_flp_display +]%, PPS: [+ unemployed_pps_display +]%, CP: [+ unemployed_cp_display +]%, [+ lps_name +]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCP: [+ unemployed_scp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: FLP: [+ unemployed_flp_display +]%, PPS: [+ unemployed_pps_display +]%, CP(S): [+ unemployed_cp_s_display +]%, [+ lps_name +]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCPS: [+ unemployed_scps_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: FLP: [+ catholics_flp_display +]%, PPS: [+ catholics_pps_display +]%, CP: [+ catholics_cp_display +]%, [+ lps_name +]: [+ catholics_lps_display +]%, CPS: [+ catholics_cps_display +]%; SCP: [+ catholics_scp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: FLP: [+ catholics_flp_display +]%, PPS: [+ catholics_pps_display +]%, CP(S): [+ catholics_cp_s_display +]%, [+ lps_name +]: [+ catholics_lps_display +]%, CPS: [+ catholics_cps_display +]%; SCPS: [+ catholics_scps_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @parties
 go-to: menu
@@ -211,15 +211,15 @@ Current relations: [+ lps_relation : relationships +]
 
 Current relations: [+ cps_relation : relationships +]
 
-**SCP** - *Social Credit Party* - a recently emerged right-wing populist party advocating for social credit reforms of the monetary system. 
+**SCPS** - *Social Credit Party* - a recently emerged right-wing populist party advocating for social credit reforms of the monetary system. 
 
-Current relations: [+ scp_relation : relationships +]
+Current relations: [+ scps_relation : relationships +]
 
-**CP** - *Communist Party* - A far-Left revolutionary party aiming to overthrow capitalism and establish a dictatorship of the proletariat. They are supported by a minority of the working class, and are heavily repressed by the government. They have alleged links to Moscow
+**CP(S)** - *Communist Party* - A far-Left revolutionary party aiming to overthrow capitalism and establish a dictatorship of the proletariat. They are supported by a minority of the working class, and are heavily repressed by the government. They have alleged links to Moscow
 
-Current relations: [+ cp_relation : relationships +]
+Current relations: [+ cp_s_relation : relationships +]
 
-[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Saskatchewan) - a party recently formed in a split from the FLP, the SAPD is essentially an agglomeration of various left-wing splinter groups between the FLP and CP. ?]
+[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Saskatchewan) - a party recently formed in a split from the FLP, the SAPD is essentially an agglomeration of various left-wing splinter groups between the FLP and CP(S). ?]
 
 **Other parties** - there is a multitude of small parties, including the miniscule Labour party and Economic Group. There are many candidates nominated by the LPS, CPS, or PPS that run as independents and also fusion candidates such as Liberal-Labour candidates. 
 
@@ -251,7 +251,7 @@ Strength: [+ kkk_strength +] Thousand
 
 Militarization: [+ kkk_militancy : militancy +]
 
-**Farmers Unity League (FUL)**: This is the farmer's organization of the CP, more militant and radical than the UFC (SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
+**Farmers Unity League (FUL)**: This is the farmer's organization of the CP(S), more militant and radical than the UFC (SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
 
 Strength: [+ ful_strength +] Thousand
 
@@ -295,7 +295,7 @@ Radicalism: [+ labour_radicalism : radicalism +]
 ?]
 
 [? if 1 == 1 :
-<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP." style="color: #7b1616;">**Far Left**</span><br> 
+<span class="tooltip-text" title="A faction of radical FLPers. Most of them have ties to the CP(S)." style="color: #7b1616;">**Far Left**</span><br> 
 Strength: [+ far_left_strength : strength +]<br> 
 Dissent: [+ far_left_dissent : dissent +]<br>
 ?]
@@ -333,10 +333,10 @@ on-arrival: pps_r = pps_r;
 on-display: {!
 data = [
     {
-        "id": "cp",
-        "legend": "CP",
-        "name": "CP",
-        "seats": (60 / Q.cp_r) * 100,
+        "id": "cp_s",
+        "legend": "CP(S)",
+        "name": "CP(S)",
+        "seats": (60 / Q.cp_s_r) * 100,
     }];
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
@@ -378,10 +378,10 @@ data = data.concat([
         "seats": (60 / Q.other_r) * 100,
     },
     {
-        "id": "scp",
-        "legend": "SCP",
-        "name": "SCP",
-        "seats": (60 / Q.scp_r) * 100,
+        "id": "scps",
+        "legend": "SCPS",
+        "name": "SCPS",
+        "seats": (60 / Q.scps_r) * 100,
     },
 ]);
 if (d3 && window) {
@@ -402,8 +402,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'flp': '#D26E28', 'cp': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'flp': 'FLP', 'cp': 'CP', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scp': 'SCP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'flp': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scps': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'flp': 'FLP', 'cp_s': 'CP(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -415,8 +415,8 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'flp': '#D26E28', 'cp': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scp': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'flp': 'FLP', 'cp': 'CP', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scp': 'SCP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'flp': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#E7DB73', 'cps': '#0055A5', 'scps': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'flp': 'FLP', 'cp_s': 'CP(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -442,7 +442,7 @@ if (d3 && window) {
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div></td> <td>!} CP: {!</td><td>!} [+ cp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div></td> <td>!} CP(S): {!</td><td>!} [+ cp_s_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td></tr>!}
 
@@ -452,7 +452,7 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div></td><td>!} SCP: {!</td><td>!} [+ scp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div></td><td>!} SCPS: {!</td><td>!} [+ scps_r +]% {!</td></tr>!}
 
 = Election history
 

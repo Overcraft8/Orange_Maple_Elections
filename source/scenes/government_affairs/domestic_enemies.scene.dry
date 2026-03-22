@@ -23,10 +23,10 @@ As we have control over the Interior Ministry, we can direct police and intellig
 - @root: Take no action for now.
 
 @ban_ful
-view-if: scp_urgency >= 3 and ful_banned == 0
+view-if: scps_urgency >= 3 and ful_banned == 0
 on-arrival: ful_strength *= 0.85; ful_strength *= 0.7 if interior_police_loyalty >= 0.7; ful_banned = 1; cps_relation -= 3; city_police_loyalty -= 0.05; interior_police_loyalty -= 0.05; ful_militancy -= 0.05; ful_ban_timer = 6;
 
-As it turns out, the SCPs FUL has many allies in the police and bureaucracy. Our relationship with the police weakens, and the FUL can still organize illegally, right under the police's noses. [? if interior_police_loyalty >= 0.7 : Nevertheless, the FUL is substantially weakened by our ban. ?]
+As it turns out, the SCPSs FUL has many allies in the police and bureaucracy. Our relationship with the police weakens, and the FUL can still organize illegally, right under the police's noses. [? if interior_police_loyalty >= 0.7 : Nevertheless, the FUL is substantially weakened by our ban. ?]
 
 @unban_ful
 view-if: ful_banned = 1
@@ -67,19 +67,19 @@ We have arrested more of the Ku Klux Klan's leaders and confiscated their weapon
 
 @ban_wul
 view-if: communist_coalition < 3 and wul_banned = 0
-on-arrival: cp_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; cp_coalition_dissent += 2; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_banned = 0; n_wul_banned += 1
+on-arrival: cp_s_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; cp_s_coalition_dissent += 2; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_banned = 0; n_wul_banned += 1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
 
 @unban_wul
 view-if: wul_banned = 1
-on-arrival: wul_banned = 0; cp_relation += 5; wul_strength += 50; city_police_loyalty -= 0.05; interior_police_loyalty -= 0.05
+on-arrival: wul_banned = 0; cp_s_relation += 5; wul_strength += 50; city_police_loyalty -= 0.05; interior_police_loyalty -= 0.05
 
 The Communist WUL is no longer banned.
 
 @persecute_wul
 title: Further persecute the WUL.
 view-if: wul_banned = 1
-on-arrival: wul_strength *= 0.7; wul_militancy -= 0.05; cp_relation -= 10; cp_coalition_dissent += 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_persecuted = 0; n_wul_persecuted += 1
+on-arrival: wul_strength *= 0.7; wul_militancy -= 0.05; cp_s_relation -= 10; cp_s_coalition_dissent += 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_persecuted = 0; n_wul_persecuted += 1
 
 We have arrested more of the WUL's leaders and confiscated their weapons.

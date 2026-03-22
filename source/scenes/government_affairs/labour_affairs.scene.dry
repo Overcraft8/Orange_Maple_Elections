@@ -25,13 +25,13 @@ Supporting labour is always popular in the FLP, although many of our coalition p
 
 @support_employers
 subtitle: Popular among the bourgeoisie, much less so among the workers.
-on-arrival: labour_dissent += 8; workers_flp -= 3; coalition_dissent -= 1 if coalition_dissent > 0; cps_relation += 5; pps_relation += 5; workers_cp += 3; cp_coalition_dissent += 1; cp_relation -= 8; capital_strike_progress -= 1 if capital_strike_progress > 1; capital_strike_progress -= 1 if capital_strike_progress > 8; pro_labour -= 1; strike_term_seen += 1
+on-arrival: labour_dissent += 8; workers_flp -= 3; coalition_dissent -= 1 if coalition_dissent > 0; cps_relation += 5; pps_relation += 5; workers_cp_s += 3; cp_s_coalition_dissent += 1; cp_s_relation -= 8; capital_strike_progress -= 1 if capital_strike_progress > 1; capital_strike_progress -= 1 if capital_strike_progress > 8; pro_labour -= 1; strike_term_seen += 1
 
 The more radical workers despise our suppression of their strikes, recalling the days of Friedrich Ebert.
 
 @balance
 subtitle: Both sides need to share the pain in the current crisis.
-on-arrival: labour_dissent += 4; workers_flp -= 2; cp_coalition_dissent += 1; cp_relation -= 5; strike_term_seen += 1
+on-arrival: labour_dissent += 4; workers_flp -= 2; cp_s_coalition_dissent += 1; cp_s_relation -= 5; strike_term_seen += 1
 
 Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces.
 

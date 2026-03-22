@@ -8,11 +8,11 @@ face-image: img/Regina_Riot.jpg
 
 = The Trek reaches Regina
 
-The On-to-Ottawa trek has finally touched ground in Regina. Prime Minister Bennett has ordered CPR to refuse the trekkers when they attempt to board the trains headed to Winnipeg.
+The On-to-Ottawa trek has finally touched ground in Regina. Prime Minister Bennett has ordered CP(S)R to refuse the trekkers when they attempt to board the trains headed to Winnipeg.
 
 As a result, the ~2000 striking workers have been left stranded in the city. Eight trekkers have been dispatched to Ottawa for negotiations. In the meantime, [+ premier +] is begrudgingly supplying the trekkers with food and water. 
 
-This situation has left the FLP leadership divided. Some radical party members hope to rally the FLP in support of the strike, or at least, voice approval. However, many moderates advise caution in affiliating so closely with an event organized by the CP's WUL. 
+This situation has left the FLP leadership divided. Some radical party members hope to rally the FLP in support of the strike, or at least, voice approval. However, many moderates advise caution in affiliating so closely with an event organized by the CP(S)'s WUL. 
 
 There are also concerns that Bennett's government will violently suppress the strike. 2 people were killed when Borden's conservative Federal government violently suppressed the 1919 Winnipeg General Strike. In the Bienfait Coal Strike, 3 miners were killed under James Anderson's provincial government. 
 
@@ -35,12 +35,12 @@ The strikers are enthusiastic that even the known moderate Major James Coldwell 
 
 @ProvideSupplies
 view-if: resources >= 1
-on-arrival: resources -= 1; trek_support += 2; workers_flp += 6;cp_relation += 3; lps_relation -=5; cps_relation -= 6;
+on-arrival: resources -= 1; trek_support += 2; workers_flp += 6;cp_s_relation += 3; lps_relation -=5; cps_relation -= 6;
 
 We will provide enough water and food to maintain the strikers through the month should they decide to stay.
 
 @Rally
 view-if: 1 = 1 or far_left_strength > agrarian_strength
-on-arrival: workers_flp += 8*(1-dissent); lps_relation -= 10; cps_relation -= 10; cp_relation += 5; trek_support += 3;
+on-arrival: workers_flp += 8*(1-dissent); lps_relation -= 10; cps_relation -= 10; cp_s_relation += 5; trek_support += 3;
 
-The CP is delighted that we have chosen to endorse the trek. 
+The CP(S) is delighted that we have chosen to endorse the trek. 

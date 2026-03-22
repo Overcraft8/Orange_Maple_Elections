@@ -73,17 +73,17 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 // get change arrows and signs
 
 
-// The largest party can only be the FLP, LPS, CPS, or SCP.
+// The largest party can only be the FLP, LPS, CPS, or SCPS.
 Q.largest_party = 'FLP';
 
-if (Q.lps_seats >= Q.flp_seats && Q.lps_seats >= Q.cps_seats && Q.lps_seats >= Q.scp_seats) {
+if (Q.lps_seats >= Q.flp_seats && Q.lps_seats >= Q.cps_seats && Q.lps_seats >= Q.scps_seats) {
     Q.largest_party = 'LPS';
 }
-if (Q.cps_seats >= Q.flp_seats && Q.cps_seats >= Q.lps_seats && Q.cps_seats >= Q.scp_seats) {
+if (Q.cps_seats >= Q.flp_seats && Q.cps_seats >= Q.lps_seats && Q.cps_seats >= Q.scps_seats) {
     Q.largest_party = 'CPS';
 }
-if (Q.scp_seats >= Q.flp_seats && Q.scp_seats >= Q.lps_seats && Q.scp_seats >= Q.cps_seats) {
-    Q.largest_party = 'SCP';
+if (Q.scps_seats >= Q.flp_seats && Q.scps_seats >= Q.lps_seats && Q.scps_seats >= Q.cps_seats) {
+    Q.largest_party = 'SCPS';
 }
 
 // coalitions
@@ -91,22 +91,22 @@ Q.lps_coalition = Math.round((Q.flp_seats + Q.lps_seats) * 10) / 10;
 Q.pps_coalition = Math.round((Q.flp_seats + Q.pps_seats) * 10) / 10;
 Q.grand_coalition = Math.round((Q.flp_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats) * 10) / 10;
 Q.bourgeois_coalition = Math.round((Q.lps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
-Q.conservative_coalition = Math.round((Q.cps_seats + Q.scp_seats) * 10) / 10;
-Q.right_coalition = Math.round((Q.cps_seats + Q.other_seats + Q.scp_seats) * 10) / 10;
-Q.scp_majority = Math.round(Q.scp_seats * 10) / 10;
-Q.left_coalition = Math.round((Q.flp_seats + Q.cp_seats) * 10) / 10;
+Q.conservative_coalition = Math.round((Q.cps_seats + Q.scps_seats) * 10) / 10;
+Q.right_coalition = Math.round((Q.cps_seats + Q.other_seats + Q.scps_seats) * 10) / 10;
+Q.scps_majority = Math.round(Q.scps_seats * 10) / 10;
+Q.left_coalition = Math.round((Q.flp_seats + Q.cp_s_seats) * 10) / 10;
 Q.cooperative_coalition = Math.round((Q.cps_seats + Q.pps_seats + Q.other_seats) * 10) / 10;
 // this is an absurd concept lol
-Q.unity_government_coalition = Math.round((Q.flp_seats + Q.cp_seats + Q.pps_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
-Q.anti_democratic_coalition = Math.round((Q.cp_seats + Q.scp_seats) * 10) / 10;
-// aka everyone except scp, cp, scp
+Q.unity_government_coalition = Math.round((Q.flp_seats + Q.cp_s_seats + Q.pps_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
+Q.anti_democratic_coalition = Math.round((Q.cp_s_seats + Q.scps_seats) * 10) / 10;
+// aka everyone except scps, cp_s, scps
 Q.neo_lps_coalition = Math.round((Q.flp_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
 // Needham + Right-wing parties (only comes into effect if you've alienated PPS too badly)
-Q.needham_right_coalition = Math.round((Q.scp_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
+Q.needham_right_coalition = Math.round((Q.scps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = Math.round((Q.flp_seats + Q.cp_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
+Q.progressive_coalition = Math.round((Q.flp_seats + Q.cp_s_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
 
-if (Q.cp_relation >= 30) {
+if (Q.cp_s_relation >= 30) {
     Q.lps_coalition += Q.sapd_seats;
 }
 
@@ -115,7 +115,7 @@ Q.leverage = Q.flp_r;
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
-Q.cp_coalition_dissent = 0;
+Q.cp_s_coalition_dissent = 0;
 Q.flp_in_government = 0;
 Q.in_lps_coalition = 0;
 Q.in_grand_coalition = 0;
@@ -142,9 +142,9 @@ Q.economic_minister_party = Q.lps_name;
 Q.finance_minister_party = 'CPS';
 Q.agriculture_minister_party = 'PPS';
 
-// reset CP goals
-Q.cp_goals_seen = 0;
-Q.cp_ultimatum_seen = 0;
+// reset CP(S) goals
+Q.cp_s_goals_seen = 0;
+Q.cp_s_ultimatum_seen = 0;
 Q.welfare_goal = 0;
 Q.agriculture_goal = 0;
 Q.economy_goal = 0;
@@ -166,7 +166,7 @@ Q.rcmp_goal_completed = 0;
 Q.strike_term_seen = 0;
 
 // understanding the enemy
-if (Q.scp_r >= 15) {
+if (Q.scps_r >= 15) {
     Q.understanding_enemy_timer = 2;
 }
 
@@ -176,14 +176,14 @@ for (var party of Q.parties) {
 }
 Q.election_records.push(election_result);
 !}
-on-departure: scp_urgency = 1 if (scp_urgency == 0 and scp_r >= 15)
+on-departure: scps_urgency = 1 if (scps_urgency == 0 and scps_r >= 15)
 on-display: {!
 data = [
     {
-        "id": "cp",
-        "legend": "CP",
-        "name": "CP",
-        "seats": Q.cp_seats
+        "id": "cp_s",
+        "legend": "CP(S)",
+        "name": "CP(S)",
+        "seats": Q.cp_s_seats
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -227,11 +227,11 @@ data = data.concat([
         "seats": Q.other_seats
     },
     {
-        "id": "scp",
-        "legend": "SCP",
-        "name": "SCP",
-        "seats": Q.scp_seats
-        /* "seats": Math.round(Q.scp_r * 0.6), */
+        "id": "scps",
+        "legend": "SCPS",
+        "name": "SCPS",
+        "seats": Q.scps_seats
+        /* "seats": Math.round(Q.scps_r * 0.6), */
     },
 ]);
 
@@ -277,7 +277,7 @@ go-to: coalition_menu
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +] {!</td><td>!} [+ cp_rural_seats +] {!</td><td>!} [+ cp_urban_seats +] {!</td><td>!} [+ cp_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_r +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!} [+ cp_s_rural_seats +] {!</td><td>!} [+ cp_s_urban_seats +] {!</td><td>!} [+ cp_s_seats +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_rural_seats +] {!</td><td>!} [+ lps_urban_seats +] {!</td><td>!} [+ lps_seats +] {!</td></tr>!}
 
@@ -287,7 +287,7 @@ go-to: coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_rural_seats +] {!</td><td>!} [+ other_urban_seats +] {!</td><td>!} [+ other_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCP: {!</td><td>!} [+ scp_r +]% {!</td><td>!} [+ str_change_scp +] {!</td><td>!} [+ scp_rural_seats +] {!</td><td>!} [+ scp_urban_seats +] {!</td><td>!} [+ scp_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_r +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_rural_seats +] {!</td><td>!} [+ scps_urban_seats +] {!</td><td>!} [+ scps_seats +] {!</td></tr>!}
 
 {!</table>!}
 
@@ -301,13 +301,13 @@ Grand Coalition (FLP + PPS + LPS + CPS): [+ grand_coalition +]%
 
 Bourgeois Coalition (PPS + LPS + CPS + Others): [+ bourgeois_coalition +]%
 
-Right-wing Coalition (CPS + Others + SCP): [+ right_coalition +]%
+Right-wing Coalition (CPS + Others + SCPS): [+ right_coalition +]%
 
 Cooperative Coalition (PPS + CPS + Others): [+ cooperative_coalition +]%
 
-[? if scp_urgency <= 1 and scp_r >= 15 : The rapid rise in SCP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Saskatchewan. ?]
+[? if scps_urgency <= 1 and scps_r >= 15 : The rapid rise in SCPS votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Saskatchewan. ?]
 
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic CP, SCP, and SCP have a majority in the Assembly. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 : Together, the anti-democratic CP(S), SCPS, and SCPS have a majority in the Assembly. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
@@ -318,7 +318,7 @@ There are some potential coalition arrangements.
 - @lps_coalition
 - @grand_coalition
 #- @new_grand_coalition
-#- @scp_majority
+#- @scps_majority
 #- @no_majority
 #- @woodsworths_dilemma
 - @left_coalition
@@ -409,12 +409,12 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
-unavailable-subtitle: FLP + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_relation < 50 : We do not have adequate relations with the CP. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+subtitle: FLP + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
+unavailable-subtitle: FLP + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_s_relation < 50 : We do not have adequate relations with the CP(S). ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 28
-choose-if: (cp_relation >= 50 or (cp_party_leader == "Conciliators" and cp_relation >= 40)) and communist_coalition >= 3
+choose-if: (cp_s_relation >= 50 or (cp_s_party_leader == "Conciliators" and cp_s_relation >= 40)) and communist_coalition >= 3
 
-There are enough votes for a FLP + CP coalition government, if such a thing were actually possible.
+There are enough votes for a FLP + CP(S) coalition government, if such a thing were actually possible.
 
 The far-right might attempt a coup, if such a coalition were formed.
 
@@ -429,7 +429,7 @@ A far left coalition is impossible.
 
 @left_coalition_possible
 
-The CP is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Tim Buck as premier in exchange for a coalition. [? if prime_minister == "George V" : There is no chance whatsoever that Prime Minister George V would approve of the appointment of a die-hard communist as premier. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as premier.
+The CP(S) is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Tim Buck as premier in exchange for a coalition. [? if prime_minister == "George V" : There is no chance whatsoever that Prime Minister George V would approve of the appointment of a die-hard communist as premier. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as premier.
 
 - @tim_buck_premier: Appoint Tim Buck as premier.
 - @left_coalition_resources
@@ -439,13 +439,13 @@ The CP is still very reluctant to join a coalition, despite grassroots friendlin
 @tim_buck_premier
 choose-if: prime_minister == "JS Woodsworth" and reformist_strength + neorevisionist_strength < far_left_strength
 unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if reformist_strength >= far_left_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
-on-arrival: premier = "Tim Buck"; premier_party = "CP"; cp_relation = 80; in_left_front = 1; flp_in_government = 1 
+on-arrival: premier = "Tim Buck"; premier_party = "CP(S)"; cp_s_relation = 80; in_left_front = 1; flp_in_government = 1 
 
 With great reluctance, Prime Minister [+ prime_minister +] appoints [+ premier +] as premier.
 
-Immediately, [+ premier +] goes to work building a "Soviet Saskatchewan": consolidating as much power as possible in the CP, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+Immediately, [+ premier +] goes to work building a "Soviet Saskatchewan": consolidating as much power as possible in the CP(S), purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
 
-In response to [+ premier +] being appointed Premier, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Ku Klux Klan and SCPs FUL enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the RCMP have taken their troops out of the barracks and joined them with the Ku Klux Klan to stop the CP from taking power. We are forced to be on the same side as the CP, whether we want to or not.
+In response to [+ premier +] being appointed Premier, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Ku Klux Klan and SCPSs FUL enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the RCMP have taken their troops out of the barracks and joined them with the Ku Klux Klan to stop the CP(S) from taking power. We are forced to be on the same side as the CP(S), whether we want to or not.
 
 
 @left_coalition_resources
@@ -457,27 +457,27 @@ on-arrival: resources -= 3
 go-to: left_coalition_success
 
 @left_coalition_relations
-title: Convince the CP to accept democracy.
-unavailable-subtitle: Our relationships with the CP are not good enough.
-choose-if: cp_relation >= 60 or cp_party_leader == "Conciliators"
+title: Convince the CP(S) to accept democracy.
+unavailable-subtitle: Our relationships with the CP(S) are not good enough.
+choose-if: cp_s_relation >= 60 or cp_s_party_leader == "Conciliators"
 go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: flp_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = "FLP"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_relation += 10
+on-arrival: flp_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = "FLP"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_s_relation += 10
 go-to: left_coalition_no_civil_war
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the FLP, CP, and Prime Minister [+ prime_minister +], is George Hara Williams, who belongs to the agrarian faction of the FLP, but was acceptable to the left due to his previous membership in the left-wing anti-war UFLP.
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the FLP, CP(S), and Prime Minister [+ prime_minister +], is George Hara Williams, who belongs to the agrarian faction of the FLP, but was acceptable to the left due to his previous membership in the left-wing anti-war UFLP.
 
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
-on-arrival: cp_goals_seen = 0; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labour_minister_party = "FLP"; rcmp_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP"; rcmp_loyalty -= 0.05
+on-arrival: cp_s_goals_seen = 0; foreign_minister_party = "FLP"; interior_minister_party = "FLP"; justice_minister_party = "FLP"; labour_minister_party = "FLP"; rcmp_minister_party = "FLP"; economic_minister_party = "FLP"; finance_minister_party = "FLP"; agriculture_minister_party = "FLP"; rcmp_loyalty -= 0.05
 
-In response to the CP's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+In response to the CP(S)'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
-The CP has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
+The CP(S) has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
 
 Whatever their reasoning is, the FLP has control over the ministries of government.
 
@@ -532,12 +532,12 @@ Q.new_middle_cps -= 8;
 Q.old_middle_cps -= 8;
 Q.new_middle_lps -= 5;
 Q.old_middle_lps -= 10;
-Q.farmer_scp -= 5;
-Q.workers_scp += 5;
-Q.old_middle_scp += 6;
-Q.new_middle_scp += 6;
-Q.farmer_scp += 6;
-Q.unemployed_scp += 5;
+Q.farmer_scps -= 5;
+Q.workers_scps += 5;
+Q.old_middle_scps += 6;
+Q.new_middle_scps += 6;
+Q.farmer_scps += 6;
+Q.unemployed_scps += 5;
 // Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
 if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
     Q.workers_flp -= 6;
@@ -552,13 +552,13 @@ if (Q.pro_republic < 36) {
     Q.old_middle_flp -= 5;
     Q.farmer_flp -= 5;
     Q.catholics_flp -= 3;
-    Q.workers_scp += 8;
-    Q.old_middle_scp += 8;
-    Q.new_middle_scp += 8;
-    Q.farmer_scp += 8;
-    Q.unemployed_scp += 8;   
+    Q.workers_scps += 8;
+    Q.old_middle_scps += 8;
+    Q.new_middle_scps += 8;
+    Q.farmer_scps += 8;
+    Q.unemployed_scps += 8;   
 }
-if (Q.scp_majority >= 50) {
+if (Q.scps_majority >= 50) {
     Q.ful_strength += 100;
     Q.kkk_strength += 100;
     Q.coup_progress += 3;
@@ -567,7 +567,7 @@ if (Q.scp_majority >= 50) {
 
 There is no path to a workable Assembly majority or minority government. The next elections are set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
-The people's faith in democracy is shaken by this ordeal. Of course, the SCPs are exploiting the instability to claim that democracy is unworkable, and that Saskatchewan needs a strong leader.
+The people's faith in democracy is shaken by this ordeal. Of course, the SCPSs are exploiting the instability to claim that democracy is unworkable, and that Saskatchewan needs a strong leader.
 
 
 @douglas
@@ -611,7 +611,7 @@ We have promised to let the PPS have more influence in the government in respons
 @pps_premier
 title: Let the PPS Party have their premier.
 subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: far_left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
+on-arrival: far_left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
@@ -623,7 +623,7 @@ This is highly unexpected, and many in the left and agrarian of our party are cr
 title: Let Joseph Wirth of the PPS Party be premier.
 view-if: pps_party_leader == "Joos"
 subtitle: Wirth is on the left wing of the PPS Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: far_left_dissent += 2; pps_relation += 6; lps_relation += 3; cp_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
+on-arrival: far_left_dissent += 2; pps_relation += 6; lps_relation += 3; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 
@@ -669,12 +669,12 @@ go-to: right_coalition_post_flp if right_coalition >= 50 and prime_minister != "
 go-to: right_coalition_2
 
 @right_coalition_2
-unavailable-subtitle: The SCP is not interested in a coalition with the PPS.
+unavailable-subtitle: The SCPS is not interested in a coalition with the PPS.
 view-if: right_coalition >= 50
 choose-if: year < 1929
-on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCP"; justice_minister_party = "SCP"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCP"; in_right_coalition = 1;
+on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCPS"; justice_minister_party = "SCPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCPS"; in_right_coalition = 1;
 
-Even though the SCP is very reluctant to participate in such a coalition, they still accede to Prime Minister George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
+Even though the SCPS is very reluctant to participate in such a coalition, they still accede to Prime Minister George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
 
 
 
@@ -689,7 +689,7 @@ We are seen as responsible for the failure to form a government, and many of our
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the CP. ?] [? if in_left_front and rcmp_minister_party == "CP" : If the CP controls the RCMP Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the CP(S). ?] [? if in_left_front and rcmp_minister_party == "CP(S)" : If the CP(S) controls the RCMP Ministry, the army will most likely revolt. ?]
 
 - #mins_1928
 - #drop_mins_1928

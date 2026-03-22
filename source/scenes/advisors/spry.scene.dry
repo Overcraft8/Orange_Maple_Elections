@@ -11,7 +11,7 @@ Graham Spry is a cofounder of the LSR. He also owns the New Commonwealth and Sas
 
 - @media_
 - @faction_support_
-- @cp_cooperation
+- @cp_s_cooperation
 - @root: Return to main
 
 
@@ -65,11 +65,11 @@ on-arrival: neorevisionist_dissent -= 8; neorevisionist_strength += 8
 
 Vorwärts prints editorials in support of neorevisionist ideas.
 
-@cp_cooperation
-title: Cooperation with the CP
-subtitle: Could we build closer ties with the CP?
+@cp_s_cooperation
+title: Cooperation with the CP(S)
+subtitle: Could we build closer ties with the CP(S)?
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; far_left_strength += 2; cp_relation += 4*(1-dissent); reformist_dissent += 2
+on-arrival: advisor_action_timer = 6; far_left_strength += 2; cp_s_relation += 4*(1-dissent); reformist_dissent += 2
 
-Spry works towards closer ties with the CP through our media.
+Spry works towards closer ties with the CP(S) through our media.

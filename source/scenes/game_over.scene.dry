@@ -20,7 +20,7 @@ if (Q.republic_victory) {
 // Einigkeit und Recht - survive on medium without a civil war.
 // Einigkeit und Recht und Freiheit - survive on hard without a civil war.
 
-// Einheitsfront - form a united front with the CP, and win the civil war.
+// Einheitsfront - form a united front with the CP(S), and win the civil war.
 
 // Volksfront - form a popular front government, and win the civil war.
 
@@ -65,7 +65,7 @@ for (var c of Q.classes) {
     }
 }
 
-// Die Rote Fahne - join the CP in the May Day march.
+// Die Rote Fahne - join the CP(S) in the May Day march.
 // Mehrheitspartei - form an FLP majority government in the Assembly.
 // Panik im Mittelstand - have over 50% of New Middle Class support.
 if (Q.new_middle_flp_normalized && Q.new_middle_flp_normalized >= 50) {
@@ -136,7 +136,7 @@ go-to: eg_menu
 Needham has taken power in Saskatchewan. However, we have rallied the democratic forces of the country against him, and are fighting back. The outcome of this war is uncertain.
 
 
-Needham does not yet control Canada. [? if prime_minister == "Papen" : However, Prime Minister Papen's authoritarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if prime_minister == "Schleicher" : However, Prime Minister Schleicher's authoritarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if prime_minister == "Brüning" : However, Prime Minister Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
+Needham does not yet control Canada. [? if prime_minister == "Papen" : However, Prime Minister Papen's aucpsitarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if prime_minister == "Schleicher" : However, Prime Minister Schleicher's aucpsitarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if prime_minister == "Brüning" : However, Prime Minister Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
 
 
 @long_war
@@ -166,13 +166,13 @@ go-to: eg_menu
 
 Kurt Schumacher has been elected as Prime Minister of Saskatchewan. As a young and ambitious FLP member, he will be shaping Saskatchewan for years to come.
 
-@prime_minister_macphail
-title: Agnes Macphail is Prime Minister
-view-if: prime_minister == "Macphail"
+@prime_minister_macp_shail
+title: Agnes Macp_shail is Prime Minister
+view-if: prime_minister == "Macp_shail"
 tags: endings
 go-to: eg_menu
 
-Agnes Macphail has been elected as Prime Minister of Saskatchewan. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Saskatchewan for years to come.
+Agnes Macp_shail has been elected as Prime Minister of Saskatchewan. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Saskatchewan for years to come.
 
 @prime_minister_einstein
 title: Albert Einstein is Prime Minister
@@ -180,7 +180,7 @@ view-if: prime_minister == "Einstein"
 tags: endings
 go-to: eg_menu
 
-Albert Einstein, possibly the most famous scientist in the world, has been elected as Prime Minister of Saskatchewan. As a Saskatchewanian Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Saskatchewanian Republic that has moved beyond its checkered past.
+Albert Einstein, possibly the most famous scientist in the world, has been elected as Prime Minister of Saskatchewan. As a Saskatchewanian Jew and a pacifist, he is the repudiation of everything the SCPSs stood for, and a symbol of a new Saskatchewanian Republic that has moved beyond its checkered past.
 
 
 
@@ -194,11 +194,11 @@ The FLP is still in government, under Premier [+ premier +]. Given the circumsta
 
 @communist_victory
 title: Communist victory
-view-if: premier_party == "CP" or prime_minister == "Tim Buck" and total_defeat == 0 and long_war == 0
+view-if: premier_party == "CP(S)" or prime_minister == "Tim Buck" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The CP has won power in Saskatchewan, with our assistance. They will try to remake Saskatchewan in the Soviet image. How much they succeed is yet to be determined.
+The CP(S) has won power in Saskatchewan, with our assistance. They will try to remake Saskatchewan in the Soviet image. How much they succeed is yet to be determined.
 
 @works_program
 title: Works program enacted!
@@ -235,7 +235,7 @@ go-to: eg_menu
 Unemployment is still at dangerously high levels. Even though Needham is not in power, the situation is ripe for instability and extremism.
 
 
-The FLP is ruling as part of an emergency minority government, led by Prime Minister [+ prime_minister +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
+The FLP is ruling as part of an emergency minority government, led by Prime Minister [+ prime_minister +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further aucpsitarianism.
 
 @peoples_party_achieved
 title: The FLP is a "People's Party".
@@ -295,15 +295,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
-[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
+[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP(S). ?]
 
-[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
+[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP(S) demands. ?]
 
-[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP(S), form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
+[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP(S) demands. ?]
 
 [? if game_achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -319,7 +319,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is prime minister. ?]
 
-[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
+[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the CP(S). ?]
 
 [? if game_achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -339,7 +339,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP prime minister, and deport Needham in one playthrough on at least normal difficulty. ?]
 
-[? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
+[? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the CP(S) in their May Day march. ?]
 
 [? if game_achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
@@ -369,7 +369,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected prime minister. ?]
 
-[? if game_achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected prime minister. ?]
+[? if game_achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macp_shail has been elected prime minister. ?]
 
 [? if game_achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected prime minister, and constitutional reforms have reduced prime ministerial power. ?]
 
@@ -401,15 +401,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
-[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
+[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP(S). ?]
 
-[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
+[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP(S) demands. ?]
 
-[? if achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP(S), form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
+[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP(S) demands. ?]
 
 [? if achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -425,7 +425,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is prime minister. ?]
 
-[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
+[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the CP(S). ?]
 
 [? if achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -445,7 +445,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP prime minister, and deport Needham in one playthrough on at least normal difficulty. ?]
 
-[? if achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
+[? if achievement_die_rote_fahne: **Die Rote Fahne** - join the CP(S) in their May Day march. ?]
 
 [? if achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
@@ -475,7 +475,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected prime minister. ?]
 
-[? if achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected prime minister. ?]
+[? if achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macp_shail has been elected prime minister. ?]
 
 [? if achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected prime minister, and constitutional reforms have reduced prime ministerial power. ?]
 
@@ -504,15 +504,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
-[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
+[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP(S). ?]
 
-[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
+[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP(S) demands. ?]
 
-[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if not achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if not achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP(S), form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
+[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP(S) demands. ?]
 
 [? if not achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -528,7 +528,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is prime minister. ?]
 
-[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
+[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the CP(S). ?]
 
 [? if not achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -548,7 +548,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP prime minister, and deport Needham in one playthrough on at least normal difficulty. ?]
 
-[? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
+[? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the CP(S) in their May Day march. ?]
 
 [? if not achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
@@ -578,7 +578,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected prime minister. ?]
 
-[? if not achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected prime minister. ?]
+[? if not achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macp_shail has been elected prime minister. ?]
 
 [? if not achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected prime minister, and constitutional reforms have reduced prime ministerial power. ?]
 

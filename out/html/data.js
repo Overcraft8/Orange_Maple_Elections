@@ -4,7 +4,7 @@ const tooltipList = [{
     explanationText: "The Farmer-Labour Group - Our Party"
 }, 
 {
-    searchString: "CP", 
+    searchString: "CP(S)", 
     explanationText: "The Communist Party"
 },
 {
@@ -20,7 +20,7 @@ const tooltipList = [{
     explanationText: "The Conservative Party"
 },
 {
-    searchString: "SCP", 
+    searchString: "SCPS", 
     explanationText: "The Social Credit Party"
 }, 
 {
@@ -76,7 +76,7 @@ const colourList = [{
         style: "color: #D26E28; font-weight: bold;"
     },
     {
-        word: "CP", 
+        word: "CP(S)", 
         style: "color: #920c0c; font-weight: bold;"
     },
     {
@@ -92,7 +92,7 @@ const colourList = [{
         style: "color: #0055A5; font-weight: bold;"
     },
     {
-        word: "SCP", 
+        word: "SCPS", 
         style: "color: #50E23D; font-weight: bold;"
     },
     {

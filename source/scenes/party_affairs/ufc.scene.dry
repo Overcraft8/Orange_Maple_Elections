@@ -12,7 +12,7 @@ subtitle: The largest agrarian organization around.
 
 The UFC(SS) is the largest farmer organization in Saskatchewan, devoted to the defense of the small farm compact. It has many factions vying for power and is currently [+ ufc_relationship: relationships +] towards us. Depending on the mood of the UFC(SS), the organization can be militant to passive.
 
-[? if workers_flp < 46 or workers_flp < workers_scp or workers_flp < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_flp < 46 or workers_flp < workers_scps or workers_flp < workers_cp_s : The UFC (SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
 
 - @militant: Make the UFC(SS) more militant
 - @militant_2: Use our existing resources to make the UFC(SS) more militant. 
@@ -52,7 +52,7 @@ The UFC (SS) is already serving the purpose it needs to serve. There is no reaso
 
 @cut_rb
 subtitle: +1 resources
-on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; far_left_strength -= 2; far_left_dissent -= 2; workers_cp += 2; unemployed_cp += 2;
+on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; far_left_strength -= 2; far_left_dissent -= 2; workers_cp_s += 2; unemployed_cp_s += 2;
 
 Cutting resources to the UFC (SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
 

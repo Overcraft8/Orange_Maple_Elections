@@ -10,7 +10,7 @@ new-page: true
 Clarence Fines is a protege of Coldwell. He is a former ILP member and effective organizer. He is among the right wing of the party. 
 
 - @building_the_left
-- @cp_cooperation
+- @cp_s_cooperation
 - @root: Return to main
 
 @building_the_left
@@ -22,11 +22,11 @@ on-arrival: advisor_action_timer = 6; far_left_strength += 10; far_left_dissent 
 
 We have increased the strength of the left faction with the FLP. This raised concern among the moderate reformists in the party.
 
-@cp_cooperation
-title: Cooperation with the CP
-subtitle: Any cooperation between the parties requires compromise from the CP as well as the FLP.
+@cp_s_cooperation
+title: Cooperation with the CP(S)
+subtitle: Any cooperation between the parties requires compromise from the CP(S) as well as the FLP.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; far_left_strength += 5; cp_relation += 6*(1-dissent); reformist_dissent += 3; communist_coalition += 1 if cp_cooperation_seen <= 1; cp_cooperation_seen += 1
+on-arrival: advisor_action_timer = 6; far_left_strength += 5; cp_s_relation += 6*(1-dissent); reformist_dissent += 3; communist_coalition += 1 if cp_s_cooperation_seen <= 1; cp_s_cooperation_seen += 1
 
-Fines attempts to reach out to his former colleagues to dissuade the CP from their current extreme Stalinist path. Some concessions are extracted.
+Fines attempts to reach out to his former colleagues to dissuade the CP(S) from their current extreme Stalinist path. Some concessions are extracted.

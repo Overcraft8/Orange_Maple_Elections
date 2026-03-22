@@ -7,10 +7,10 @@ new-page: true
 
 = Ernest Winch
 
-Ernest Winch is a left FLP who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. He is open to collabouration with the CP. 
+Ernest Winch is a left FLP who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. He is open to collabouration with the CP(S). 
 
 - @building_the_left
-- @cp_cooperation
+- @cp_s_cooperation
 - @against_toleration
 - @root: Return to main
 
@@ -23,14 +23,14 @@ on-arrival: advisor_action_timer = 6; far_left_strength += 6; far_left_dissent -
 
 We have increased the strength of the left faction with the FLP.
 
-@cp_cooperation
-title: Cooperation with the CP
-subtitle: Push the party to be more friendly towards the CP.
+@cp_s_cooperation
+title: Cooperation with the CP(S)
+subtitle: Push the party to be more friendly towards the CP(S).
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; far_left_strength += 5; cp_relation += 4*(1-dissent); reformist_dissent += 2; communist_coalition += 1 if cp_cooperation_seen <= 1; cp_cooperation_seen += 1
+on-arrival: advisor_action_timer = 6; far_left_strength += 5; cp_s_relation += 4*(1-dissent); reformist_dissent += 2; communist_coalition += 1 if cp_s_cooperation_seen <= 1; cp_s_cooperation_seen += 1
 
-Through his work, Winch has defended individual CP members; this should make some connections possible.
+Through his work, Winch has defended individual CP(S) members; this should make some connections possible.
 
 @against_toleration
 title: Against toleration

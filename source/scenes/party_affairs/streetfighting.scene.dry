@@ -8,7 +8,7 @@ tags: party_affairs; antifascism
 
 = Streetfighting
 
-Battles rage on the streets between the SCPs FUL, nationalist Ku Klux Klan, communist Workers Unity League (WUL), and our own UFC (SS). In some parts of the country, conditions are nearing civil war levels, as dozens of people are killed each month.
+Battles rage on the streets between the SCPSs FUL, nationalist Ku Klux Klan, communist Workers Unity League (WUL), and our own UFC (SS). In some parts of the country, conditions are nearing civil war levels, as dozens of people are killed each month.
 
 We must do something to protect the workers against these predations.
 
@@ -25,7 +25,7 @@ view-if: ufc_militancy > 0.1 and ufc_militancy < 0.5
 on-arrival: ufc_militancy += 0.1; ful_strength += 40; ufc_strength -= 100; 
 max-visits: 1
 
-Many UFC (SS) members are not ready for actual fighting, and thus quit. However, the remainder are toughened as a result. Our confrontations also provide ample recruiting material for the SCPs FUL.
+Many UFC (SS) members are not ready for actual fighting, and thus quit. However, the remainder are toughened as a result. Our confrontations also provide ample recruiting material for the SCPSs FUL.
 
 @arm_rb
 subtitle: -[+ ufc_militarization_cost +] resource
@@ -57,9 +57,9 @@ on-arrival: ufc_militancy -= 0.02; ufc_strength -= 50; pacifism += 1
 By not fighting, the strength of the UFC (SS) atrophies. Pacifists in the party are gaining the upper hand.
 
 @truce_wul
-choose-if: cp_relation >= 45
-view-if: cp_truce == 0
-unavailable-subtitle: The CP is not interested.
-on-arrival: cp_truce = 1; cp_relation += 5; wul_strength += 50; ufc_strength += 50; ful_strength += 50;
+choose-if: cp_s_relation >= 45
+view-if: cp_s_truce == 0
+unavailable-subtitle: The CP(S) is not interested.
+on-arrival: cp_s_truce = 1; cp_s_relation += 5; wul_strength += 50; ufc_strength += 50; ful_strength += 50;
 
-We have made at least a temporary truce with the CP, so that our respective organizations will stop fighting.
+We have made at least a temporary truce with the CP(S), so that our respective organizations will stop fighting.

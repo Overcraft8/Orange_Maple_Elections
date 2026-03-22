@@ -435,7 +435,7 @@ Laura Jamieson is now an advisor.
 
 @add_winch
 title: Ernest Winch
-subtitle: Ernest Winch is a left FLP who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP, Against Toleration ?]
+subtitle: Ernest Winch is a left FLP who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP(S), Against Toleration ?]
 is-card: true
 card-image: img/portraits/WinchErnest.jpg
 view-if: winch_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -475,7 +475,7 @@ Major James Coldwell is now an advisor.
 
 @add_fines
 title: Clarence Fines
-subtitle: Clarence Fines is a protege of Coldwell. He is a former ILP member and effective organizer. He is among the right wing of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP ?]
+subtitle: Clarence Fines is a protege of Coldwell. He is a former ILP member and effective organizer. He is among the right wing of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP(S) ?]
 is-card: true
 card-image: img/portraits/FinesClarence.jpg
 view-if: fines_advisor = 0 and fines_dead = 0 and n_advisors < 3 and labour_split = 0
@@ -563,7 +563,7 @@ Frank Underhill is now an advisor.
 
 @add_spry
 title: Graham Spry
-subtitle: Graham Spry is a cofounder of the LSR. He also owns the New Commonwealth and Saskatchewanian Forum papers. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the CP ?]
+subtitle: Graham Spry is a cofounder of the LSR. He also owns the New Commonwealth and Saskatchewanian Forum papers. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the CP(S) ?]
 is-card: true
 card-image: img/portraits/SpryGraham.jpg
 view-if: spry_advisor = 0 and n_advisors < 3

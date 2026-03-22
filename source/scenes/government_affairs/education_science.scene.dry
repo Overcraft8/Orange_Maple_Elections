@@ -10,7 +10,7 @@ tags: govt_affairs, cabinet
 # options:
 # - fund research (basic science research at the KWI, medical research, applied and industrial research to benefit Saskatchewan's economy)
 # - change the educational curriculum (only once per 3 years) - will have a "major" and "minor" option:
-# - democratic education - focus on critical thinking and democratic values rather than authoritarian teaching. (+ democratization, pro_republic)
+# - democratic education - focus on critical thinking and democratic values rather than aucpsitarian teaching. (+ democratization, pro_republic)
 # - scientific education - focus on the sciences, mathematics, and technical skills (+ NMC, science)
 # - humanistic education - focus on literature, history, and philosophy. (+ NMC, pro_republic if democratization is high)
 # - traditional education (reduces relations with LPS)
@@ -115,12 +115,12 @@ Are you sure about this? The Liberal-CCF Coalition had an agreement to not touch
 - @cancel_advisor_action
 
 @secularize_2
-on-arrival: secularized = 1; catholics_flp -= 15; pps_relation -= 15; cps_relation += 6*(1-dissent); lps_relation += 6*(1-dissent); cp_relation += 6*(1-dissent); new_middle_flp += 3*(1-dissent); workers_flp += 3*(1-dissent); education_science += 0.5; new_middle_lps += 4; new_middle_cps += 4
+on-arrival: secularized = 1; catholics_flp -= 15; pps_relation -= 15; cps_relation += 6*(1-dissent); lps_relation += 6*(1-dissent); cp_s_relation += 6*(1-dissent); new_middle_flp += 3*(1-dissent); workers_flp += 3*(1-dissent); education_science += 0.5; new_middle_lps += 4; new_middle_cps += 4
 go-to: vote_of_no_confidence.vonc_menu if in_lps_coalition or in_grand_coalition or in_unity_government
 
 # instant VONC from zentrum
 
-The FLP, [+ lps_name +], CPS, and CP vote in favor of secular education, overcoming the opposition of the religiously-oriented PPS Party and SCP. We have funded secular community schools to replace some previous denominational schools.
+The FLP, [+ lps_name +], CPS, and CP(S) vote in favor of secular education, overcoming the opposition of the religiously-oriented PPS Party and SCPS. We have funded secular community schools to replace some previous denominational schools.
 
 [? if in_lps_coalition or in_grand_coalition or in_unity_government: Of course, the PPS Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
 
@@ -175,7 +175,7 @@ We should teach students how to be citizens of a democratic republic, by teachin
 @science_major
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
-on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_lps_coalition; pps_relation -= 5; lps_relation += 4*(1-dissent); cp_relation += 3*(1-dissent); new_middle_flp += 3*(1-dissent); workers_flp += 2*(1-dissent)
+on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_lps_coalition; pps_relation -= 5; lps_relation += 4*(1-dissent); cp_s_relation += 3*(1-dissent); new_middle_flp += 3*(1-dissent); workers_flp += 2*(1-dissent)
 go-to: curriculum_minor
 
 Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
@@ -228,7 +228,7 @@ We should teach students how to be citizens of a democratic republic, by teachin
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
 view-if: major_curriculum != "scientific"
-on-arrival: minor_curriculum = "scientific"; education_science += 0.5; pps_relation -= 3; lps_relation += 3*(1-dissent); cp_relation += 2*(1-dissent); new_middle_flp += 2*(1-dissent); workers_flp += 2*(1-dissent)
+on-arrival: minor_curriculum = "scientific"; education_science += 0.5; pps_relation -= 3; lps_relation += 3*(1-dissent); cp_s_relation += 2*(1-dissent); new_middle_flp += 2*(1-dissent); workers_flp += 2*(1-dissent)
 
 Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
 

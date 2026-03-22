@@ -9,7 +9,7 @@ body {
   --unavailable-color: #9a795f;
   --tab-bg-color: #e5d7b4;
   --tab-color: #e5d7b4;
-  --tab-hover-color: #8d7027;
+  --tab-hover-color: #b59031;
   --card-border-color: #dfd1ba; 
   --card-bg-color: #ede1c2; 
   font-family: "Minion Pro", Georgia, serif;
@@ -307,7 +307,7 @@ img.inline-img.icon {
     padding: 10px;
 }
 .tab_button.active {
-    background-color: var(--content-bg-color);
+    background-color: var(--tab-hover-color);
 }
 .tab_button:hover {
     background-color: var(--tab-hover-color);
@@ -633,7 +633,7 @@ table {
 }
 
 /* Styles for parties */
-.seat.cp {
+.seat.cp_s {
     fill: #920c0c;
 }
 .seat.flp {
@@ -653,7 +653,7 @@ table {
 .seat.other {
     fill: #909090;
 }
-.seat.scp {
+.seat.scps {
     fill: #50E23D;
 }
 .seat.sapd {

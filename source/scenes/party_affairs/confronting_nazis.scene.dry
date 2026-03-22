@@ -1,28 +1,28 @@
-title: Confronting the SCPs
+title: Confronting the SCPSs
 new-page: true
 is-card: true
-view-if: (scp_r >= 10 and scp_urgency > 1) and confronting_scp_timer == 0 and iron_front_formed == 0
-on-arrival: confronting_scp_seen += 1; confronting_scp_timer = 5; month_actions += 1
+view-if: (scps_r >= 10 and scps_urgency > 1) and confronting_scps_timer == 0 and iron_front_formed == 0
+on-arrival: confronting_scps_seen += 1; confronting_scps_timer = 5; month_actions += 1
 card-image: img/iron_front.png
 tags: party_affairs; antifascism
 
 # Forming the Iron Front
 
-The SCPs' strength is gaining, as shown by their recent election results and their violent presence in the streets. Their fascism threatens to plunge Saskatchewan once again into the abyss.
+The SCPSs' strength is gaining, as shown by their recent election results and their violent presence in the streets. Their fascism threatens to plunge Saskatchewan once again into the abyss.
 
 Many in our party are calling for urgent action. The "neorevisionist" faction, led by young socialists like Carlo Mierendorff and Julius Leber, have formed specifically around this cause. But many in all factions of the party are calling for action.
 
-- @not_a_big_deal: The SCPs' moment will pass. Let's not get too hasty.
+- @not_a_big_deal: The SCPSs' moment will pass. Let's not get too hasty.
 - @economic_crisis
-- @major_crisis: We must do something to confront the SCPs.
+- @major_crisis: We must do something to confront the SCPSs.
 - @iron_front
 
 
 @not_a_big_deal
-on-arrival: scp_urgency -= 1; far_left_dissent += 5; neorevisionist_dissent += 15
+on-arrival: scps_urgency -= 1; far_left_dissent += 5; neorevisionist_dissent += 15
 view-if: mierendorff_advisor = 0 and leber_advisor = 0 and schumacher_advisor = 0
 
-The SCPs are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
+The SCPSs are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
 
 @economic_crisis
 title: We must address the economic crisis first.
@@ -30,19 +30,19 @@ view-if: economic_plan == 0 and black_thursday_seen == 1
 go-to: crisis_program
 
 @major_crisis
-view-if: scp_urgency < 5
-on-arrival: scp_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_strength += 5
+view-if: scps_urgency < 5
+on-arrival: scps_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_strength += 5
 
-The SCPs are one of the foremost threats to the Saskatchewanian republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
+The SCPSs are one of the foremost threats to the Saskatchewanian republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
 
 @iron_front
 title: Form the Iron Front!
 subtitle: The Iron Front consists of the FLP, the trade unions, and the UFC (SS).
-view-if: scp_urgency >= 3 and iron_front_formed == 0
-on-arrival: iron_front_formed = 1; radicalization += 1; scp_urgency += 1; workers_flp += 5*(1-dissent); pro_republic += 5*(1-dissent); far_left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
+view-if: scps_urgency >= 3 and iron_front_formed == 0
+on-arrival: iron_front_formed = 1; radicalization += 1; scps_urgency += 1; workers_flp += 5*(1-dissent); pro_republic += 5*(1-dissent); far_left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
 achievement: eiserne_front
 
-The SCPs threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the FLP, the ADGB trade union federation, and the *UFC (SS) *. We have a new symbol - the Three Arrows, pointing down towards the left.
+The SCPSs threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the FLP, the ADGB trade union federation, and the *UFC (SS) *. We have a new symbol - the Three Arrows, pointing down towards the left.
 
 What do the three arrows stand for?
 

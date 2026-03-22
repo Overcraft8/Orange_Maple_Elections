@@ -185,9 +185,9 @@ function getRelationshipText(value) {
 function getPartyIdeology(party, Q) {
     if (!Q) return 'Unknown';
     switch(party){
-        case 'CP': 
-            if (Q.cp_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Revolutionary Communism)';
-            if (Q.cp_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
+        case 'CP(S)': 
+            if (Q.cp_s_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Revolutionary Communism)';
+            if (Q.cp_s_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'FLP':
         case 'CCF':
@@ -209,11 +209,11 @@ function getPartyIdeology(party, Q) {
             if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #b97a7a;">Centre Right</span> (Paternalistic Conservatism)';
             if (Q.cps_ideology === "Conservative Populist") return '<span style="color: #b97a7a;">Right Wing</span> (Populist conservatism))';
             return 'Unknown';
-        case 'SCP': 
-            if (Q.scp_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
-            if (Q.scp_ideology === "Paternalistic Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Paternalistic Conservatism)';
-            if (Q.scp_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
-            if (Q.scp_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
+        case 'SCPS': 
+            if (Q.scps_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
+            if (Q.scps_ideology === "Paternalistic Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Paternalistic Conservatism)';
+            if (Q.scps_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
+            if (Q.scps_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
             return 'Unknown';
         // Organizations below
         default: 
@@ -230,19 +230,20 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     if (!Q) return baseTooltip.explanationText;
 
     const relationMap = {
-        'CP': 'cp_relation',
+        'CP(S)': 'cp_s_relation',
         'PPS': 'pps_relation',
         'LPS': 'lps_relation',
         'CPS': 'cps_relation',
-        'SCP': 'scp_relation'
+        'SCPS': 'scps_relation'
     };
 
     const ideologyMap = {
+        'CP(S)': 'cp_s_ideology',
         'FLP': 'flp_ideology', 
         'PPS': 'pps_ideology', 
         'LPS': 'lps_ideology', 
         'CPS': 'cps_ideology', 
-        'SCP': 'scp_ideology'
+        'SCPS': 'scps_ideology'
     };
 
     const ideologyKey = ideologyMap[searchString];

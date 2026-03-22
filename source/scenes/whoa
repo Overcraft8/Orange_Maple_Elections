@@ -63,7 +63,7 @@ Parliament composition:
 [? if nssp_r >=1 : <span class="tooltip-text" title="Nava Sama Samaja Party">**NSSP**</span>: [+ nssp_r +] ?]
 [? if mep_formed = 1 and mep_r >= 1: <span class="tooltip-text" title="Mahajana Eksath Peramuna">**MEP**</span>: [+ mep_r +] ?]
 [? if cwc_r >= 1 : <span class="tooltip-text" title="Ceylon Workers Congress" style="color: #E52B50;">**CWC**</span>: [+ cwc_r +] ?]
-[? if ucpf_formed = 1 and ucpf_r >= 1: <span class="tooltip-text" title="Up Country Peoples Front">**UCPF**</span>: [+ ucpf_r +] ?]
+[? if ucp_sf_formed = 1 and ucp_sf_r >= 1: <span class="tooltip-text" title="Up Country Peoples Front">**UCP(S)F**</span>: [+ ucp_sf_r +] ?]
 [? if slmc_formed = 1 and slmc_r >= 1: <span class="tooltip-text" title="Sri Lanka Muslim Congress">**SLMC**</span>: [+ slmc_r +] ?]
 
 [? if slfp_in_government = 1 : Budget: [+ treasury +] ?]
@@ -144,7 +144,7 @@ for (var i = 0; i < 8; i++) {
 
 <span class="tooltip-text" title="Ceylon Workers Congress" style="color: #E52B50;">**CWC**</span>: [+ cwc_relation : relationships +]
 
-[? if ucpf_formed = 1 : <span class="tooltip-text" title="Up Country Peoples Front" style="color: #2DCF3E;">**UCPF**</span>: [+ ucpf_relation : relationships +] ?]
+[? if ucp_sf_formed = 1 : <span class="tooltip-text" title="Up Country Peoples Front" style="color: #2DCF3E;">**UCP(S)F**</span>: [+ ucp_sf_relation : relationships +] ?]
 
 [? if slmc_formed = 1 : <span class="tooltip-text" title="Sri Lanka Muslim Congress" style="color: #2DCF3E;">**SLMC**</span>: [+ slmc_relation : relationships +] ?]
 
@@ -190,11 +190,11 @@ ACTC: [+ actc_ideology : ideology +]
 
 [? if dplf_formed = 1 : DPLF: [+ dplf_ideology : ideology +] ?]
 
-[? if eprlf_formed = 1 : UCPF: [+ eprlf_ideology : ideology +] ?]
+[? if eprlf_formed = 1 : UCP(S)F: [+ eprlf_ideology : ideology +] ?]
 
-[? if telo_formed = 1 : UCPF: [+ telo_ideology : ideology +] ?]
+[? if telo_formed = 1 : UCP(S)F: [+ telo_ideology : ideology +] ?]
 
-[? if endlf_formed = 1 : UCPF: [+ endlf_ideology : ideology +] ?]
+[? if endlf_formed = 1 : UCP(S)F: [+ endlf_ideology : ideology +] ?]
 
 CPSL: [+ cpsl_ideology : ideology +]
 
@@ -206,7 +206,7 @@ NSSP: [+ nssp_ideology : ideology +]
 
 CWC: [+ cwc_ideology : ideology +]
 
-[? if ucpf_formed = 1 : UCPF: [+ ucpf_ideology : ideology +] ?]
+[? if ucp_sf_formed = 1 : UCP(S)F: [+ ucp_sf_ideology : ideology +] ?]
 
 [? if slmc_formed = 1 : SLMC: [+ slmc_ideology : ideology +] ?]
 
@@ -324,25 +324,25 @@ Q.gov_support_disp = Math.round(Q.gov_support);
 
 This whole thing needs to be revamped at some point
 
-Sinhalese: None: [+ sinhala_nonvoter +]%, SLFP: [+ sinhala_slfp +]%, JVP: [+ sinhala_jvp +]%, CPSL: [+ sinhala_cpsl +]%, LSSP: [+ sinhala_lssp +]%, NSSP: [+ sinhala_nssp +]%, TULF: [+ sinhala_tulf +]%, CWC: [+ sinhala_cwc +]%, UNP: [+ sinhala_unp +]%, ACTC: [+ sinhala_actc +]%, [? if slpp_formed: SLPP: [+ sinhala_slpp +] % ?][? if slmp_formed: SLMP: [+ sinhala_slmp +]% ?][? if slmc_formed: SLMC: [+ sinhala_slmc +]% ?][? if npp_formed: NPP: [+ sinhala_npp +]% ?][? if mep_formed: MEP: [+ sinhala_mep +]% ?][? if eros_formed: EROS: [+ sinhala_eros +]% ?][? if dplf_formed: DPLF: [+ sinhala_dplf +]% ?][? if pflt_formed: PFLT: [+ sinhala_pflt +]% ?][? if ucpf_formed: UCPF: [+ sinhala_ucpf +]% ?]
+Sinhalese: None: [+ sinhala_nonvoter +]%, SLFP: [+ sinhala_slfp +]%, JVP: [+ sinhala_jvp +]%, CPSL: [+ sinhala_cpsl +]%, LSSP: [+ sinhala_lssp +]%, NSSP: [+ sinhala_nssp +]%, TULF: [+ sinhala_tulf +]%, CWC: [+ sinhala_cwc +]%, UNP: [+ sinhala_unp +]%, ACTC: [+ sinhala_actc +]%, [? if slpp_formed: SLPP: [+ sinhala_slpp +] % ?][? if slmp_formed: SLMP: [+ sinhala_slmp +]% ?][? if slmc_formed: SLMC: [+ sinhala_slmc +]% ?][? if npp_formed: NPP: [+ sinhala_npp +]% ?][? if mep_formed: MEP: [+ sinhala_mep +]% ?][? if eros_formed: EROS: [+ sinhala_eros +]% ?][? if dplf_formed: DPLF: [+ sinhala_dplf +]% ?][? if pflt_formed: PFLT: [+ sinhala_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ sinhala_ucp_sf +]% ?]
 
-Sri Lankan Tamil: None: [+ sltamil_nonvoter +]%, SLFP: [+ sltamil_slfp +]%, JVP: [+ sltamil_jvp +]%, CPSL: [+ sltamil_cpsl +]%, LSSP: [+ sltamil_lssp +]%, NSSP: [+ sltamil_nssp +]%, TULF: [+ sltamil_tulf +]%, CWC: [+ sltamil_cwc +]%, UNP: [+ sltamil_unp +]%, ACTC: [+ sltamil_actc +]%, [? if slpp_formed: SLPP: [+ sltamil_slpp +]% ?][? if slmp_formed: SLMP: [+ sltamil_slmp +]% ?][? if slmc_formed: SLMC: [+ sltamil_slmc +]% ?][? if npp_formed: NPP: [+ sltamil_npp +]% ?][? if mep_formed: MEP: [+ sltamil_mep +]% ?][? if eros_formed: EROS: [+ sltamil_eros +]% ?][? if dplf_formed: DPLF: [+ sltamil_dplf +]% ?][? if pflt_formed: PFLT: [+ sltamil_pflt +]% ?][? if ucpf_formed: UCPF: [+ sltamil_ucpf +]% ?]
+Sri Lankan Tamil: None: [+ sltamil_nonvoter +]%, SLFP: [+ sltamil_slfp +]%, JVP: [+ sltamil_jvp +]%, CPSL: [+ sltamil_cpsl +]%, LSSP: [+ sltamil_lssp +]%, NSSP: [+ sltamil_nssp +]%, TULF: [+ sltamil_tulf +]%, CWC: [+ sltamil_cwc +]%, UNP: [+ sltamil_unp +]%, ACTC: [+ sltamil_actc +]%, [? if slpp_formed: SLPP: [+ sltamil_slpp +]% ?][? if slmp_formed: SLMP: [+ sltamil_slmp +]% ?][? if slmc_formed: SLMC: [+ sltamil_slmc +]% ?][? if npp_formed: NPP: [+ sltamil_npp +]% ?][? if mep_formed: MEP: [+ sltamil_mep +]% ?][? if eros_formed: EROS: [+ sltamil_eros +]% ?][? if dplf_formed: DPLF: [+ sltamil_dplf +]% ?][? if pflt_formed: PFLT: [+ sltamil_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ sltamil_ucp_sf +]% ?]
 
-Muslim: None: [+ muslim_nonvoter +]%, SLFP: [+ muslim_slfp +]%, JVP: [+ muslim_jvp +]%, CPSL: [+ muslim_cpsl +]%, LSSP: [+ muslim_lssp +]%, NSSP: [+ muslim_nssp +]%, TULF: [+ muslim_tulf +]%, CWC: [+ muslim_cwc +]%, UNP: [+ muslim_unp +]%, ACTC: [+ muslim_actc +]%, [? if slpp_formed: SLPP: [+ muslim_slpp +]% ?][? if slmp_formed: SLMP: [+ muslim_slmp +]% ?][? if slmc_formed: SLMC: [+ muslim_slmc +]% ?][? if npp_formed: NPP: [+ muslim_npp +]% ?][? if mep_formed: MEP: [+ muslim_mep +]% ?][? if eros_formed: EROS: [+ muslim_eros +]% ?][? if dplf_formed: DPLF: [+ muslim_dplf +]% ?][? if pflt_formed: PFLT: [+ muslim_pflt +]% ?][? if ucpf_formed: UCPF: [+ muslim_ucpf +]% ?]
+Muslim: None: [+ muslim_nonvoter +]%, SLFP: [+ muslim_slfp +]%, JVP: [+ muslim_jvp +]%, CPSL: [+ muslim_cpsl +]%, LSSP: [+ muslim_lssp +]%, NSSP: [+ muslim_nssp +]%, TULF: [+ muslim_tulf +]%, CWC: [+ muslim_cwc +]%, UNP: [+ muslim_unp +]%, ACTC: [+ muslim_actc +]%, [? if slpp_formed: SLPP: [+ muslim_slpp +]% ?][? if slmp_formed: SLMP: [+ muslim_slmp +]% ?][? if slmc_formed: SLMC: [+ muslim_slmc +]% ?][? if npp_formed: NPP: [+ muslim_npp +]% ?][? if mep_formed: MEP: [+ muslim_mep +]% ?][? if eros_formed: EROS: [+ muslim_eros +]% ?][? if dplf_formed: DPLF: [+ muslim_dplf +]% ?][? if pflt_formed: PFLT: [+ muslim_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ muslim_ucp_sf +]% ?]
 
-Indian Tamil: None: [+ itamil_nonvoter +]%, SLFP: [+ itamil_slfp +]%, JVP: [+ itamil_jvp +]%, CPSL: [+ itamil_cpsl +]%, LSSP: [+ itamil_lssp +]%, NSSP: [+ itamil_nssp +]%, TULF: [+ itamil_tulf +]%, CWC: [+ itamil_cwc +]%, UNP: [+ itamil_unp +]%, ACTC: [+ itamil_actc +]%, [? if slpp_formed: SLPP: [+ itamil_slpp +]% ?][? if slmp_formed: SLMP: [+ itamil_slmp +]% ?][? if slmc_formed: SLMC: [+ itamil_slmc +]% ?][? if npp_formed: NPP: [+ itamil_npp +]% ?][? if mep_formed: MEP: [+ itamil_mep +]% ?][? if eros_formed: EROS: [+ itamil_eros +]% ?][? if dplf_formed: DPLF: [+ itamil_dplf +]% ?][? if pflt_formed: PFLT: [+ itamil_pflt +]% ?][? if ucpf_formed: UCPF: [+ itamil_ucpf +]% ?]
+Indian Tamil: None: [+ itamil_nonvoter +]%, SLFP: [+ itamil_slfp +]%, JVP: [+ itamil_jvp +]%, CPSL: [+ itamil_cpsl +]%, LSSP: [+ itamil_lssp +]%, NSSP: [+ itamil_nssp +]%, TULF: [+ itamil_tulf +]%, CWC: [+ itamil_cwc +]%, UNP: [+ itamil_unp +]%, ACTC: [+ itamil_actc +]%, [? if slpp_formed: SLPP: [+ itamil_slpp +]% ?][? if slmp_formed: SLMP: [+ itamil_slmp +]% ?][? if slmc_formed: SLMC: [+ itamil_slmc +]% ?][? if npp_formed: NPP: [+ itamil_npp +]% ?][? if mep_formed: MEP: [+ itamil_mep +]% ?][? if eros_formed: EROS: [+ itamil_eros +]% ?][? if dplf_formed: DPLF: [+ itamil_dplf +]% ?][? if pflt_formed: PFLT: [+ itamil_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ itamil_ucp_sf +]% ?]
 
-Others: None: [+ other_nonvoter +]%, SLFP: [+ other_slfp +]%, JVP: [+ other_jvp +]%, CPSL: [+ other_cpsl +]%, LSSP: [+ other_lssp +]%, NSSP: [+ other_nssp +]%, TULF: [+ other_tulf +]%, CWC: [+ other_cwc +]%, UNP: [+ other_unp +]%, ACTC: [+ other_actc +]%, [? if slpp_formed: SLPP: [+ other_slpp +]% ?][? if slmp_formed: SLMP: [+ other_slmp +]% ?][? if slmc_formed: SLMC: [+ other_slmc +]% ?][? if npp_formed: NPP: [+ other_npp +]% ?][? if mep_formed: MEP: [+ other_mep +]% ?][? if eros_formed: EROS: [+ other_eros +]% ?][? if dplf_formed: DPLF: [+ other_dplf +]% ?][? if pflt_formed: PFLT: [+ other_pflt +]% ?][? if ucpf_formed: UCPF: [+ other_ucpf +]% ?]
+Others: None: [+ other_nonvoter +]%, SLFP: [+ other_slfp +]%, JVP: [+ other_jvp +]%, CPSL: [+ other_cpsl +]%, LSSP: [+ other_lssp +]%, NSSP: [+ other_nssp +]%, TULF: [+ other_tulf +]%, CWC: [+ other_cwc +]%, UNP: [+ other_unp +]%, ACTC: [+ other_actc +]%, [? if slpp_formed: SLPP: [+ other_slpp +]% ?][? if slmp_formed: SLMP: [+ other_slmp +]% ?][? if slmc_formed: SLMC: [+ other_slmc +]% ?][? if npp_formed: NPP: [+ other_npp +]% ?][? if mep_formed: MEP: [+ other_mep +]% ?][? if eros_formed: EROS: [+ other_eros +]% ?][? if dplf_formed: DPLF: [+ other_dplf +]% ?][? if pflt_formed: PFLT: [+ other_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ other_ucp_sf +]% ?]
 
 = Classes:
 
-Working Class: None: [+ workers_nonvoter +]%, SLFP: [+ workers_slfp +]%, JVP: [+ workers_jvp +]%, CPSL: [+ workers_cpsl +]%, LSSP: [+ workers_lssp +]%, NSSP: [+ workers_nssp +]%, TULF: [+ workers_tulf +]%, CWC: [+ workers_cwc +]%, UNP: [+ workers_unp +]%, ACTC: [+ workers_actc +]%, [? if slpp_formed: SLPP: [+ workers_slpp +]% ?][? if slmp_formed: SLMP: [+ workers_slmp +]% ?][? if slmc_formed: SLMC: [+ workers_slmc +]% ?][? if npp_formed: NPP: [+ workers_npp +]% ?][? if mep_formed: MEP: [+ workers_mep +]% ?][? if eros_formed: EROS: [+ workers_eros +]% ?][? if dplf_formed: DPLF: [+ workers_dplf +]% ?][? if pflt_formed: PFLT: [+ workers_pflt +]% ?] [? if ucpf_formed: UCPF: [+ workers_ucpf +]% ?]
+Working Class: None: [+ workers_nonvoter +]%, SLFP: [+ workers_slfp +]%, JVP: [+ workers_jvp +]%, CPSL: [+ workers_cpsl +]%, LSSP: [+ workers_lssp +]%, NSSP: [+ workers_nssp +]%, TULF: [+ workers_tulf +]%, CWC: [+ workers_cwc +]%, UNP: [+ workers_unp +]%, ACTC: [+ workers_actc +]%, [? if slpp_formed: SLPP: [+ workers_slpp +]% ?][? if slmp_formed: SLMP: [+ workers_slmp +]% ?][? if slmc_formed: SLMC: [+ workers_slmc +]% ?][? if npp_formed: NPP: [+ workers_npp +]% ?][? if mep_formed: MEP: [+ workers_mep +]% ?][? if eros_formed: EROS: [+ workers_eros +]% ?][? if dplf_formed: DPLF: [+ workers_dplf +]% ?][? if pflt_formed: PFLT: [+ workers_pflt +]% ?] [? if ucp_sf_formed: UCP(S)F: [+ workers_ucp_sf +]% ?]
 
-Middle Class: None: [+ middle_nonvoter +]%, SLFP: [+ middle_slfp +]%, JVP: [+ middle_jvp +]%, CPSL: [+ middle_cpsl +]%, LSSP: [+ middle_lssp +]%, NSSP: [+ middle_nssp +]%, TULF: [+ middle_tulf +]%, CWC: [+ middle_cwc +]%, UNP: [+ middle_unp +]%, ACTC: [+ middle_actc +]%, [? if slpp_formed: SLPP: [+ middle_slpp +]% ?][? if slmp_formed: SLMP: [+ middle_slmp +]% ?][? if slmc_formed: SLMC: [+ middle_slmc +]% ?][? if npp_formed: NPP: [+ middle_npp +]% ?][? if mep_formed: MEP: [+ middle_mep +]% ?][? if eros_formed: EROS: [+ middle_eros +]% ?][? if dplf_formed: DPLF: [+ middle_dplf +]% ?][? if pflt_formed: PFLT: [+ middle_pflt +]% ?][? if ucpf_formed: UCPF: [+ middle_ucpf +]% ?]
+Middle Class: None: [+ middle_nonvoter +]%, SLFP: [+ middle_slfp +]%, JVP: [+ middle_jvp +]%, CPSL: [+ middle_cpsl +]%, LSSP: [+ middle_lssp +]%, NSSP: [+ middle_nssp +]%, TULF: [+ middle_tulf +]%, CWC: [+ middle_cwc +]%, UNP: [+ middle_unp +]%, ACTC: [+ middle_actc +]%, [? if slpp_formed: SLPP: [+ middle_slpp +]% ?][? if slmp_formed: SLMP: [+ middle_slmp +]% ?][? if slmc_formed: SLMC: [+ middle_slmc +]% ?][? if npp_formed: NPP: [+ middle_npp +]% ?][? if mep_formed: MEP: [+ middle_mep +]% ?][? if eros_formed: EROS: [+ middle_eros +]% ?][? if dplf_formed: DPLF: [+ middle_dplf +]% ?][? if pflt_formed: PFLT: [+ middle_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ middle_ucp_sf +]% ?]
 
-Farmers: None: [+ farmer_nonvoter +]%, SLFP: [+ farmer_slfp +]%, JVP: [+ farmer_jvp +]%, CPSL: [+ farmer_cpsl +]%, LSSP: [+ farmer_lssp +]%, NSSP: [+ farmer_nssp +]%, TULF: [+ farmer_tulf +]%, CWC: [+ farmer_cwc +]%, UNP: [+ farmer_unp +]%, ACTC: [+ farmer_actc +]%, [? if slpp_formed: SLPP: [+ farmer_slpp +]% ?][? if slmp_formed: SLMP: [+ farmer_slmp +]% ?][? if slmc_formed: SLMC: [+ farmer_slmc +]% ?][? if npp_formed: NPP: [+ farmer_npp +]% ?][? if mep_formed: MEP: [+ farmer_mep +]% ?][? if eros_formed: EROS: [+ farmer_eros +]% ?][? if dplf_formed: DPLF: [+ farmer_dplf +]% ?][? if pflt_formed: PFLT: [+ farmer_pflt +]% ?][? if ucpf_formed: UCPF: [+ farmer_ucpf +]% ?]
+Farmers: None: [+ farmer_nonvoter +]%, SLFP: [+ farmer_slfp +]%, JVP: [+ farmer_jvp +]%, CPSL: [+ farmer_cpsl +]%, LSSP: [+ farmer_lssp +]%, NSSP: [+ farmer_nssp +]%, TULF: [+ farmer_tulf +]%, CWC: [+ farmer_cwc +]%, UNP: [+ farmer_unp +]%, ACTC: [+ farmer_actc +]%, [? if slpp_formed: SLPP: [+ farmer_slpp +]% ?][? if slmp_formed: SLMP: [+ farmer_slmp +]% ?][? if slmc_formed: SLMC: [+ farmer_slmc +]% ?][? if npp_formed: NPP: [+ farmer_npp +]% ?][? if mep_formed: MEP: [+ farmer_mep +]% ?][? if eros_formed: EROS: [+ farmer_eros +]% ?][? if dplf_formed: DPLF: [+ farmer_dplf +]% ?][? if pflt_formed: PFLT: [+ farmer_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ farmer_ucp_sf +]% ?]
 
-Upper Class: None: [+ upper_nonvoter +]%, SLFP: [+ upper_slfp +]%, JVP: [+ upper_jvp +]%, CPSL: [+ upper_cpsl +]%, LSSP: [+ upper_lssp +]%, NSSP: [+ upper_nssp +]%, TULF: [+ upper_tulf +]%, CWC: [+ upper_cwc +]%, UNP: [+ upper_unp +]%, ACTC: [+ upper_actc +]%, [? if slpp_formed: SLPP: [+ upper_slpp +]% ?][? if slmp_formed: SLMP: [+ upper_slmp +]% ?][? if slmc_formed: SLMC: [+ upper_slmc +]% ?][? if npp_formed: NPP: [+ upper_npp +]% ?][? if mep_formed: MEP: [+ upper_mep +]% ?][? if eros_formed: EROS: [+ upper_eros +]% ?][? if dplf_formed: DPLF: [+ upper_dplf +]% ?][? if pflt_formed: PFLT: [+ upper_pflt +]% ?][? if ucpf_formed: UCPF: [+ upper_ucpf +]% ?]
+Upper Class: None: [+ upper_nonvoter +]%, SLFP: [+ upper_slfp +]%, JVP: [+ upper_jvp +]%, CPSL: [+ upper_cpsl +]%, LSSP: [+ upper_lssp +]%, NSSP: [+ upper_nssp +]%, TULF: [+ upper_tulf +]%, CWC: [+ upper_cwc +]%, UNP: [+ upper_unp +]%, ACTC: [+ upper_actc +]%, [? if slpp_formed: SLPP: [+ upper_slpp +]% ?][? if slmp_formed: SLMP: [+ upper_slmp +]% ?][? if slmc_formed: SLMC: [+ upper_slmc +]% ?][? if npp_formed: NPP: [+ upper_npp +]% ?][? if mep_formed: MEP: [+ upper_mep +]% ?][? if eros_formed: EROS: [+ upper_eros +]% ?][? if dplf_formed: DPLF: [+ upper_dplf +]% ?][? if pflt_formed: PFLT: [+ upper_pflt +]% ?][? if ucp_sf_formed: UCP(S)F: [+ upper_ucp_sf +]% ?]
 
 Support for Tamil nationalism: [+ tamil_nationalism_disp +]%
 

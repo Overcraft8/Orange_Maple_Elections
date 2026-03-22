@@ -56,7 +56,7 @@ FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in g
 
 [? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if flp_in_government and (in_left_front or in_unity_government): CP coalition dissent: [+ cp_coalition_dissent : coalition_dissent +] ?]
+[? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
@@ -76,13 +76,13 @@ Assembly composition:
 # 1928: 15, 1930: 15, 1932: 
 {!<span class="tooltip-text" title="Progressive Party">!}[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_r +]%
 # 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="Communist Party of Saskatchewan">!}[? if not cp_name: CP?][? if cp_name != 0 : [+ cp_name +]?]{!</span>!}: [+ cp_r +]%
+{!<span class="tooltip-text" title="Communist Party of Saskatchewan">!}[? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 {!<span class="tooltip-text" title="Liberal Party">!}[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_r +]%
 # 1928: 9, 1930: 5
 {!<span class="tooltip-text" title="Conservative Party">!}[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_r +]%
 # 1928: 14, 1930: 7
-{!<span class="tooltip-text" title="Social Credit Party">!}[? if not scp_name: SCP?][? if scp_name != 0 : [+ scp_name +]?]{!</span>!}: [+ scp_r +]%
+{!<span class="tooltip-text" title="Social Credit Party">!}[? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
@@ -111,11 +111,11 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>!} CPS {!</td><td>!}[+ cps_relation : relationships +]{!</td><td>!} [+ cps_votes +]% {!</td><tr>!}
 
-{!<tr><td>!} CP {!</td><td>!}[+ cp_relation : relationships +]{!</td><td>!} [+ cp_votes +]% {!</td><tr>!}
+{!<tr><td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +]{!</td><td>!} [+ cp_s_votes +]% {!</td><tr>!}
 
 {!<tr><td>!} Others {!</td><td>!} Varied {!</td><td>!} [+ other_votes +]% {!</td><tr>!}
 
-{!<tr><td>!} SCP {!</td><td>!}[+ scp_relation : relationships +]{!</td><td>!} [+ scp_votes +]% {!</td><tr>!}
+{!<tr><td>!} SCPS {!</td><td>!}[+ scps_relation : relationships +]{!</td><td>!} [+ scps_votes +]% {!</td><tr>!}
 
 {!</table>!}
 {!</div>!}
@@ -132,7 +132,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ workers_sapd_display +]%  {!</td><td>!} [+ unemployed_sapd_display +]% {!</td><td>!} [+ new_middle_sapd_display +]% {!</td><td>!} [+ old_middle_sapd_display +]% {!</td></tr>!} ?]
 
-{!<tr><td>!} CP: {!</td><td>!} [+ workers_cp_display +]% {!</td><td>!} [+ unemployed_cp_display +]% {!</td><td>!} [+ new_middle_cp_display +]% {!</td><td>!} [+ old_middle_cp_display +]% {!</td></tr>!}
+{!<tr><td>!} CP(S): {!</td><td>!} [+ workers_cp_s_display +]% {!</td><td>!} [+ unemployed_cp_s_display +]% {!</td><td>!} [+ new_middle_cp_s_display +]% {!</td><td>!} [+ old_middle_cp_s_display +]% {!</td></tr>!}
 
 {!<tr><td>!} [+ lps_name +]: {!</td><td>!} [+ workers_lps_display +]% {!</td><td>!} [+ unemployed_lps_display +]% {!</td><td>!} [+ new_middle_lps_display +]% {!</td><td>!} [+ old_middle_lps_display +]% {!</td></tr>!}
 
@@ -142,7 +142,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
  
 {!<tr><td>!} Others: {!</td><td>!} [+ workers_other_display +]% {!</td><td>!} [+ unemployed_other_display +]% {!</td><td>!} [+ new_middle_other_display +]% {!</td><td>!} [+ old_middle_other_display +]% {!</td></tr>!}
 
-{!<tr><td>!} SCP: {!</td><td>!} [+ workers_scp_display +]% {!</td><td>!} [+ unemployed_scp_display +]% {!</td><td>!} [+ new_middle_scp_display +]% {!</td><td>!} [+ old_middle_scp_display +]% {!</td></tr>!}
+{!<tr><td>!} SCPS: {!</td><td>!} [+ workers_scps_display +]% {!</td><td>!} [+ unemployed_scps_display +]% {!</td><td>!} [+ new_middle_scps_display +]% {!</td><td>!} [+ old_middle_scps_display +]% {!</td></tr>!}
 
 {!</table>!}
 
@@ -162,7 +162,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>!} **FLP:** {!</td><td>!} **[+ farmer_flp_display +]%** {!</td><td>!} **[+ farmhand_flp_display +]%** {!</td><td>!} **[+ res_worker_flp_display +]%** {!</td></tr>!}
 
-{!<tr><td>!} CP: {!</td><td>!} [+ farmer_cp_display +]% {!</td><td>!} [+ farmhand_cp_display +]% {!</td><td>!} [+ res_worker_cp_display +]%{!</td></tr>!}
+{!<tr><td>!} CP(S): {!</td><td>!} [+ farmer_cp_s_display +]% {!</td><td>!} [+ farmhand_cp_s_display +]% {!</td><td>!} [+ res_worker_cp_s_display +]%{!</td></tr>!}
 
 {!<tr><td>!} [+ lps_name +]: {!</td><td>!} [+ farmer_lps_display +]% {!</td><td>!} [+ farmhand_lps_display +]% {!</td><td>!} [+ res_worker_lps_display +]%{!</td></tr>!}
 
@@ -172,7 +172,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>!} Others: {!</td><td>!} [+ farmer_other_display +]% {!</td><td>!} [+ farmhand_other_display +]% {!</td><td>!} [+ res_worker_other_display +]%{!</td></tr>!}
 
-{!<tr><td>!} SCP: {!</td><td>!} [+ farmer_scp_display +]% {!</td><td>!} [+ farmhand_scp_display +]% {!</td><td>!} [+ res_worker_scp_display +]%{!</td></tr>!}
+{!<tr><td>!} SCPS: {!</td><td>!} [+ farmer_scps_display +]% {!</td><td>!} [+ farmhand_scps_display +]% {!</td><td>!} [+ res_worker_scps_display +]%{!</td></tr>!}
 
 {!</table>!}
 
@@ -180,7 +180,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 = Ideologies
 
-CP: [+ cp_ideology +] ([+cp_leader +])
+CP(S): [+ cp_s_ideology +] ([+cp_s_leader +])
 
 FLP: [+ flp_ideology +] ([+ flp_president +])
 
@@ -190,7 +190,7 @@ LPS: [+ lps_ideology +] ([+ lps_leader +])
 
 CPS: [+ cps_ideology +] ([+ cps_leader +])
 
-SCP: [+ scp_ideology +] ([+ scp_leader +])
+SCPS: [+ scps_ideology +] ([+ scps_leader +])
 
 @organizations
 on-arrival: {!

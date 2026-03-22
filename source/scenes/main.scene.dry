@@ -50,6 +50,7 @@ max-cards: 4
 - @programme
 - #advisor
 - @shuffle_leadership_pinned
+- @organizations_cards
 
 
 @party

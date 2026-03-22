@@ -246,13 +246,13 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         'SCPS': 'scps_ideology'
     };
 
-    // ✅ ALWAYS initialize
+    //  Always initialize
     let result = baseTooltip.explanationText;
 
     const ideologyKey = ideologyMap[searchString];
 
     if (ideologyKey && Q[ideologyKey] !== undefined) {
-        // ✅ FIXED ARGUMENTS
+        // Fixed argument
         const ideologyText = getPartyIdeology(searchString, Q);
         result += '<br>Politics: ' + ideologyText;
     }

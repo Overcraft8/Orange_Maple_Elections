@@ -93,7 +93,7 @@ The reformist message appeals to the organized workers, whose benefits are the a
 @democracy
 on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_flp += 4*(1-dissent) if democratization >= 3; unemployed_flp += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_flp += 4*(1-dissent) if democratization >= 3 
 
-Our speakers defend the republican system and rail against the prime ministerists and aucpsitarians who threaten it.
+Our speakers defend the republican system and rail against the prime ministerists and authoritarians who threaten it.
 
 [? if democratization < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
 [? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]

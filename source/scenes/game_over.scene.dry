@@ -136,7 +136,7 @@ go-to: eg_menu
 Needham has taken power in Saskatchewan. However, we have rallied the democratic forces of the country against him, and are fighting back. The outcome of this war is uncertain.
 
 
-Needham does not yet control Canada. [? if prime_minister == "Papen" : However, Prime Minister Papen's aucpsitarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if prime_minister == "Schleicher" : However, Prime Minister Schleicher's aucpsitarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if prime_minister == "Brüning" : However, Prime Minister Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
+Needham does not yet control Canada. [? if prime_minister == "Papen" : However, Prime Minister Papen's authoritarianism and far-right politics are paving the way for Needham, or someone like him, to take power. ?] [? if prime_minister == "Schleicher" : However, Prime Minister Schleicher's authoritarianism and scheming is paving the way for Needham, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the far-right appears to be ascendant. ?][? if prime_minister == "Brüning" : However, Prime Minister Brüning's austerity policies and the continuation of the depression are paving the way for Needham, or someone like him, to take power. ?]
 
 
 @long_war
@@ -235,7 +235,7 @@ go-to: eg_menu
 Unemployment is still at dangerously high levels. Even though Needham is not in power, the situation is ripe for instability and extremism.
 
 
-The FLP is ruling as part of an emergency minority government, led by Prime Minister [+ prime_minister +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further aucpsitarianism.
+The FLP is ruling as part of an emergency minority government, led by Prime Minister [+ prime_minister +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
 
 @peoples_party_achieved
 title: The FLP is a "People's Party".

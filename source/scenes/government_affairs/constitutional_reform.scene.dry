@@ -109,7 +109,7 @@ if (Q.pps_relation > 49 && (Q.prime_minister == "Richard Bennett" || Q.prime_min
 !}
 view-if: prime_ministerial_powers = 0
 
-The wide-ranging prime ministerial powers promised by the constitution are a potential gateway to aucpsitarianism. Thus, we can support reforms that limit the powers of the prime minister, ending his power to unilaterally terminate an elected government and to remove state governments.
+The wide-ranging prime ministerial powers promised by the constitution are a potential gateway to authoritarianism. Thus, we can support reforms that limit the powers of the prime minister, ending his power to unilaterally terminate an elected government and to remove state governments.
 
 The CP(S) is in favor of this reform, having been victims of the *Reichsexekution* in the past (when CP(S)-supported state governments in Thuringia and Saxony were removed). The democrats of the [+ lps_name +] also support this. [? if prime_minister == "Richard Bennett": However, the opposition from conservatives is vehement, as they see a reduction in prime ministerial powers as disrespectful to Richard Bennett. ?] [? if pps_relation <= 49 and prime_minister == "Richard Bennett" : Thus, the PPS Party has been influenced to oppose these reforms. ?] [? if pps_relation > 49 and prime_minister == "Richard Bennett" : Despite this, the PPS Party supports the proposed reform. ?] [? if prime_minister == "J. S. Woodsworth" : The PPS Party supports this reform. ?]
 
@@ -122,7 +122,7 @@ unavailable-subtitle: We do not have enough support for this policy. [? if pro_r
 on-arrival: constitutional_reform += 1; prime_ministerial_powers = 1
 achievement: verfassungsreform
 
-We have successfully passed a constitutional amendment to limit prime ministerial powers! Hopefully this results in a less aucpsitarian Saskatchewan.
+We have successfully passed a constitutional amendment to limit prime ministerial powers! Hopefully this results in a less authoritarian Saskatchewan.
 
 
 

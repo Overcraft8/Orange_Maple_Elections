@@ -1,12 +1,12 @@
 title: UFC (SS)
 new-page: true
 is-card: true
-tags: organization_affairs
+tags: party_affairs
 view-if: ufc_timer <= 0 and ufc_affiliated = 1
 card-image: img/Farmers1914.jpg
 on-arrival: month_actions += 1; ufc_timer += 6; ufc_militarization_cost = 2 if ufc_militancy > 0.1 else ufc_militarization_cost = 1; ufc_militarization_cost = 3 if ufc_militancy > 0.25
-max-visits: 6
 subtitle: The largest agrarian organization around.
+
 
 = UFC (SS)
 

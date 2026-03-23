@@ -1,24 +1,24 @@
-title: Organization Relations
+title: Party Organizations
 new-page: true
 is-card: true
 tags: party_affairs
 view-if: party_organizations_timer <= 0
-on-arrival: month_actions += 1; party_organizations_timer = 6;
-card-image: img/ccym_handbook.jpg
+on-arrival: month_actions += 1; organizations_relations_timer = 6;
+card-image: img/CCYM_Sings.jpg
 subtitle: Outside of electoral politics, the FLP runs a social world onto itself.
 
 = Party Organizations
 
 In addition to being a political party, the FLP is a social world onto itself, with a vast array of associated organizations which serve the social needs of their members from cradle to grave.
 
-- @ufc_rel: Improve relations with the UFC(SS)
-- @sta_rel: Improve relations with the Teacher's union
-- @tlc_rel: Improve relations with the Trades and Labour Congress
-- @ccl_rel: Improve relations with the Canadian Congress of Labour. 
+- @ufc: Improve relations with the UFC(SS)
+- @sta: Improve relations with the Teacher's union
+- @tlc: Improve relations with the Trades and Labour Congress
+- @ccl: Improve relations with the Canadian Congress of Labour. 
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
-@ufc_rel
+@ufc
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
@@ -27,7 +27,8 @@ on-arrival: resources -= 1; farmer_flp += 1; agrarian_strength += 4; ufc_aff_pro
 The UFC(SS) has a strong presence in Saskatchewan. 
 
 
-@sta_rel
+
+@sta
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
@@ -35,7 +36,7 @@ on-arrival: resources -= 1; sta_aff_prog += 1; new_middle_flp += 1; labour_radic
 
 Teachers are the most friendly of the new middle class towards us. It would be good to ensure they have our backs. 
 
-@tlc_rel
+@tlc
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
@@ -45,7 +46,7 @@ The TLC has a strong presence in Saskatchewan.
 
 We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
 
-@ccl_rel
+@ccl
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources

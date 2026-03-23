@@ -1,7 +1,7 @@
 title: CCYM
 new-page: true
 is-card: true
-tags: organization_affairs
+tags: party_affairs
 view-if: ccym_timer <= 0 
 card-image: img/ccym_handbook.jpg
 on-arrival: month_actions += 1; ccym_timer += 6; 

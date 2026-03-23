@@ -70,6 +70,10 @@ const tooltipList = [{
     explanationText: "The Trades and Labour Congress of Canada. "
 },
 {
+    searchString: "CCL", 
+    explanationText: "The Canadian Congress of Labour. "
+},
+{
     searchString: "Res. Workers", 
     explanationText: "Resource workers (lumber, mining, etc.)"
 },
@@ -156,6 +160,10 @@ const colourList = [{
     },
     {
         word: "TLC", 
+        style: "color: #b33a3a; font-weight: bold;"
+    },
+    {
+        word: "CCL", 
         style: "color: #b33a3a; font-weight: bold;"
     },
     // Below this for states of qdisplays

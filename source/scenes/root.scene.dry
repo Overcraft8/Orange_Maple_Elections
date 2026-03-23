@@ -713,7 +713,8 @@ Q.timers = ['advisor_action', 'confronting_scps', 'crisis_program',
             'iron_front', 'media', 'enemies',
             'party_organizations', 'rally', 'ufc',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
-            'party_disunity', 'labour_prog', 'infra_prog', 'agri_prog',
+            'party_disunity', 'organizations_relations', 
+            'labour_prog', 'infra_prog', 'agri_prog',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labour_affairs', 'military_policy',
@@ -747,6 +748,7 @@ Q.infra_prog_timer = 0;
 Q.labour_prog_timer = 0;
 Q.enemies_timer = 0;
 Q.party_organizations_timer =  0;
+Q.organizations_relations_timer = 0;
 Q.rally_timer = 0;
 Q.ufc_timer = 0;
 Q.shuffle_leadership_timer = 0;

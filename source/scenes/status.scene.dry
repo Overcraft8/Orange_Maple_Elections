@@ -275,7 +275,7 @@ Support for Socialism: [+ socialism +]%
 
 
 
-@interior
+@infrastructure
 
 = Infrastructure
 
@@ -284,6 +284,17 @@ Railway length: [+ railway_length +] km
 
 Road length: [+ road_length +] km
 
+= Rural Standards
+
+
+Farmers Electrification: [+ farmer_electrification +]%
+
+Farmers Sanitation Access: [+ farmer_sanitation +]%
+
+Farmers Telephone Access: [+ farmer_telephone +]%
+
+
+@social
 
 = Tax Rates 
 
@@ -307,16 +318,6 @@ Curriculum: [+ Curriculum +]
 
 
 Healthcare quality: [+ healthcarequality +]
-
-= Rural Standards
-
-
-Farmers Electrification: [+ farmer_electrification +]%
-
-Farmers Sanitation Access: [+ farmer_sanitation +]%
-
-Farmers Telephone Access: [+ farmer_telephone +]%
-
 
 @economy
 

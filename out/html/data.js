@@ -5,23 +5,23 @@ const tooltipList = [{
 }, 
 {
     searchString: "CP(S)", 
-    explanationText: "The Communist Party"
+    explanationText: "The Communist Party (Saskatchewan)"
 },
 {
     searchString: "LPS", 
-    explanationText: "The Liberal Party"
+    explanationText: "The Liberal Party of Saskatchewan"
 },
 {
     searchString: "PPS", 
-    explanationText: "The Progressive Party"
+    explanationText: "The Progressive Party of Saskatchewan"
 },
 {
     searchString: "CPS", 
-    explanationText: "The Conservative Party"
+    explanationText: "The Conservative Party of Saskatchewan"
 },
 {
     searchString: "SCPS", 
-    explanationText: "The Social Credit Party"
+    explanationText: "The Social Credit Party of Saskatchewan"
 }, 
 {
     searchString: "UFC",
@@ -51,6 +51,12 @@ const tooltipList = [{
     searchString: "Cooperative Coalition", 
     explanationText: "A coalition of Conservatives, Progressives, and Independents"
 },
+//Federal parties
+{
+    searchString: "CPC", 
+    explanationText: "The Conservative Party of Canada"
+},
+// Below organizations
 {
     searchString: "KKK", 
     explanationText: "The Ku Klux Klan."
@@ -94,6 +100,11 @@ const colourList = [{
     {
         word: "SCPS", 
         style: "color: #50E23D; font-weight: bold;"
+    },
+    // Federal Parties
+    {
+        word: "CPC", 
+        style: "color: #0055A5; font-weight: bold;"
     },
     {
         word: "UFC",

@@ -186,7 +186,7 @@ function getPartyIdeology(party, Q) {
     if (!Q) return 'Unknown';
     switch(party){
         case 'CP(S)': 
-            if (Q.cp_s_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Revolutionary Communism)';
+            if (Q.cp_s_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Marxist-Leninist)';
             if (Q.cp_s_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'FLP':

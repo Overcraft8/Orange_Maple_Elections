@@ -180,17 +180,17 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 = Ideologies
 
-CP(S): [+ cp_s_ideology +] ([+cp_s_leader +])
+CP(S): [+ cp_s_ideology +] ([+cp_s_ableader +])
 
 FLP: [+ flp_ideology +] ([+ flp_president +])
 
-PPS: [+ pps_ideology +] ([+ pps_leader +])
+PPS: [+ pps_ideology +] ([+ pps_ableader +])
 
-LPS: [+ lps_ideology +] ([+ lps_leader +])
+LPS: [+ lps_ideology +] ([+ lps_ableader +])
 
-CPS: [+ cps_ideology +] ([+ cps_leader +])
+CPS: [+ cps_ideology +] ([+ cps_ableader +])
 
-SCPS: [+ scps_ideology +] ([+ scps_leader +])
+SCPS: [+ scps_ideology +] ([+ scps_ableader +])
 
 @organizations
 on-arrival: {!
@@ -291,7 +291,7 @@ Lower income tax: [+ lower_tax_rates: tax +]%
 
 Middle income tax: [+ middle_tax_rates: tax +]%
 
-Upper income tax: [+ Upper_tax_rates: tax +]%<
+Upper income tax: [+ Upper_tax_rates: tax +]%
 
 Tariffs: [+ tariffs +]%
 
@@ -338,17 +338,21 @@ Agricultural Production Index: [+ agri_production +]
 
 Industrial Production Index: [+ indu_production +]
 
-= Nationalization 
+= State Intervention
 
-[? if year = 1940: Potash: [+ potash_nationalized : nationalization +] ?]
+[? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]
+
+Healthcare: [+ universal_healthcare : nationalization +]
 
 Power: [+ power_nationalized : nationalization +]
 
-Grain Marketing: [+ grocery_nationalized : nationalization +]
+Oil: [+ oil_nationalized : nationalization +]
+
+Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
 
 Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
 
-Groceries: [+ grocery_nationalized : nationalization +]
+
 
 
 

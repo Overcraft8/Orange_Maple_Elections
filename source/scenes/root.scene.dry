@@ -148,6 +148,16 @@ Q.scps_leader = "Joseph Needham";
 Q.pps_leader = "None";
 Q.pps_party_leader = "None";
 
+Q.flp_legislative_ableader = "Williams";
+Q.flp_abpresident = "Williams";
+Q.cp_s_ableader = "None";
+Q.cps_ableader = "Anderson";
+Q.lps_ableader = "Gardiner";
+Q.scps_ableader = "Needham"; 
+Q.pps_ableader = "None";
+
+
+
 // hmm... maybe we can play nice with Richard Bennett???
 Q.bennett_relation = 25;
 // whether or not bennett can dismiss the government.
@@ -384,7 +394,7 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.prime_minister = "Richard Bennett";
+Q.prime_minister = "Richard Bennett (CPC)";
 // starting premier: James Anderson
 Q.premier = "James Anderson";
 Q.premier_party = 'CPS';
@@ -528,10 +538,11 @@ Q.agri_production = (100).toFixed(1);
 Q.indu_production = (100).toFixed(1);
 
 
-//                         Nationalization
+//                         Nationalization and Intervention
 Q.potash_nationalized = -6;
-Q.grocery_nationalized = -3;
-Q.grain_marketing_nationalized = 0;
+Q.housing_intervention = -6; 
+Q.oil_nationalized
+Q.agri_marketing_nationalized = 0;
 Q.power_nationalized = -6;
 Q.auto_insurance_nationalized = -6;
 
@@ -557,10 +568,10 @@ Q.rural_poverty = (10).toFixed(1);
 //  
 //                   Farmers living standards
 // Farmers Access to electricity
-Q.farmer_electrification = 0;
+Q.farmer_electrification = 5;
 // Farmers Access to sanitation
-Q.farmer_sanitation = 0;
-Q.farmer_telephone = 0;
+Q.farmer_sanitation = 3;
+Q.farmer_telephone = 20;
 
 //                 Foreign Relations
 // Relations with the UFUL
@@ -576,8 +587,8 @@ Q.public_transit = 0;
 // Have we nationalized the provinces' resources?
 Q.resource_nationalization = 0;
 // Railway Length
-Q.railway_length = 6500; // in km
-Q.road_length = 20000; // in km
+Q.railway_length = 6551; // in km
+Q.road_length = 20127; // in km
 
 // Tax rates relative to 1928 baseline
 Q.lower_tax_rates = 0;

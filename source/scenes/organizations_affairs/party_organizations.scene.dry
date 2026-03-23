@@ -1,0 +1,53 @@
+title: Party Organizations
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: party_organizations_timer <= 0
+on-arrival: month_actions += 1; party_organizations_timer = 6;
+card-image: img/CCYM_Sings.jpg
+max-visits: 6
+subtitle: Outside of electoral politics, the FLP runs a social world onto itself.
+
+= Party Organizations
+
+In addition to being a political party, the FLP is a social world onto itself, with a vast array of associated organizations which serve the social needs of their members from cradle to grave.
+
+- @sta: Improve relations with the Teacher's union
+- @tlc: Improve relations with the Trades and Labour Congress
+- @ccl: Improve relations with the Canadian Congress of Labour. 
+- @nothing: Do not increase funding for any program.
+- @easy_discard
+
+@sta
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+subtitle: -1 resources
+on-arrival: resources -= 1; sta_aff_prog += 1; new_middle_flp += 1; labour_radicalism -= 2; labour_strength += 3;
+
+Teachers are the most friendly of the new middle class towards us. It would be good to ensure they have our backs. 
+
+@tlc
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+subtitle: -1 resources
+on-arrival: resources -= 1; worker_flp += 1; labour_strength += 4; tlc_aff_prog += 1;
+
+The TLC has a strong presence in Saskatchewan. 
+
+We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+
+@ccl
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources.
+subtitle: -1 resources
+on-arrival: resources -= 1; worker_flp += 1; labour_strength += 3; ccl_aff_prog += 1
+
+It is not enough for the FLP to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
+
+[? if ful_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
+
+@nothing
+
+We do not fund any party organizations.
+
+- @return: Continue...

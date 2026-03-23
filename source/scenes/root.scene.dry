@@ -59,12 +59,12 @@ Q.far_left_dissent = 20;
 Q.agrarian_dissent = 0;
 Q.agrarian_support = 55;
 Q.agrarian_strength = 55;
-Q.agrarian_radicalism = 8;
+Q.agrarian_radicalism = 21;
 
 Q.labour_support = 30;
 Q.labour_strength = 40;
 Q.labour_dissent = 5;
-Q.labour_radicalism = 6;
+Q.labour_radicalism = 16;
 
 
 Q.reformist_strength = 15;
@@ -600,6 +600,14 @@ Q.George_Williams_Dead = 0;
 
 
 // Saskatchewan Organizations
+
+Q.ufc_aff_prog = 5;
+Q.tlc_aff_prog = 0;
+Q.ccl_aff_prog = 0; 
+Q.sta_aff_prog = 0;
+
+
+
 
 
 Q.ccym_influence = 25;

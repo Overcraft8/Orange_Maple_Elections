@@ -36,13 +36,13 @@ The CCYM is doing just fine on it's own.
 
 @pamphlets
 subtitle: -2 resources
-on-arrival: resources -= 2; socialism += 2; farmer_flp += 1; worker_flp += 1; unemployed_flp += 1; new_middle_flp += 1; moderatism += 2;
+on-arrival: resources -= 2; socialism += 2; farmer_flp += 1; worker_flp += 1; unemployed_flp += 1; new_middle_flp += 1; labour_radicalism -= 1;
 
 Spreading pamphlets increases awareness of the benefits of socialism and helps everyone get a better grasp of what we stand for. 
 
 
 @women_rb
-title: Allow women to join the UFC (SS).
+title: Allow women to join the CCYM
 subtitle: -1 resources - This might cause a backlash from existing members.
 choose-if: resources > 0
 view-if: womens_rights >= 4 and jamieson_advisor == 1 and iron_front_formed == 1

@@ -223,12 +223,14 @@ if (Q.ufc_strength) {
 }
 !}
 
-= Saskatchewan Organizations
+= Terrorists
 
 [? if 1 == 1 :
 KKK Strength: [+ kkk_strength_2 +] Thousand<br>
 KKK Militancy: [+ kkk_militancy : militancy +]<br>
 ?]
+
+= Communist Organizaations
 
 [? if 1 == 1 : 
 FUL Strength: [+ ful_strength_2 +] Thousand<br>
@@ -239,6 +241,8 @@ FUL Militancy: [+ ful_militancy : militancy +]<br>
 WUL Strength: [+ wul_strength_2 +] Thousand<br>
 WUL Militancy: [+ wul_militancy : militancy +]<br>
 ?]
+
+= Saskatchewan Unions
 
 [? if sta_affiliated == 0 :
 STA Relations: [+ sta_relations : relationships +]<br>
@@ -252,10 +256,10 @@ TLC Militancy: [+ tlc_militancy : militancy +]<br>
 TLC Strength: [+ tlc_strength +] Thousand<br>
 ?]
 
-[? if ccl_affiliated == 0 and year = 1935:
-TLC Relations: [+ ccl_relations : relationships +]<br>
-TLC Militancy: [+ ccl_militancy : militancy +]<br>
-TLC Strength: [+ ccl_strength +] Thousand<br>
+[? if ccl_affiliated == 0:
+CCL Relations: [+ ccl_relations : relationships +]<br>
+CCL Militancy: [+ ccl_militancy : militancy +]<br>
+CCL Strength: [+ ccl_strength +] Thousand<br>
 ?]
 
 

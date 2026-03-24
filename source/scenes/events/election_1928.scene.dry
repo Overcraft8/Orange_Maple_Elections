@@ -137,11 +137,6 @@ for (var d of Q.district_names) {
 console.log("EXPECTED:", expected);
 
 
-var combined_support = 0;
-for (var d of Q.district_names) {
-    combined_support += Q[d + '_party_support'][party] || 0;
-}
-
 var total_support = 0;
 for (var d of Q.district_names) {
     total_support += Object.values(Q[d + '_party_support'] || {}).reduce((a,b)=>a+b, 0);

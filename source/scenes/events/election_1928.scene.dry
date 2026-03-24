@@ -577,7 +577,7 @@ go-to: coalition_menu
 
 {!<button class="tab_button" id="district_tab" onclick="window.toggleDistrict();">SubProvincial Results</button>!}
 
-{!<div id="district_results" style="display: none;">!}
+{!<div id="district_results_legislative" style="display: none;">!}
     {!<div style="overflow-x:auto;">!}
     {!<table style="text-align:center; border-spacing: 0.2em; font-size: 0.75em;">!}
         {!<tr>!}

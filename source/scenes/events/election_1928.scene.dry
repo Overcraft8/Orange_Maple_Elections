@@ -26,6 +26,110 @@ on-arrival: {!
 
 Q.use_decimals = 1;
 
+// 1. Normalize class voting shares (0–100)
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c + '_' + party] < 0) Q[c + '_' + party] = 0;
+        class_votes += Q[c + '_' + party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized'] = class_votes > 0 ? Q[c + '_' + party] / class_votes : 0;
+    }
+}
+
+// 2. Reset seat counts
+for (var party of Q.parties) {
+    Q[party + '_seats'] = 0;
+}
+
+// 3. Helper: D’Hondt allocation
+function allocateSeats(votes, totalSeats) {
+    var seats = {};
+    for (var p in votes) seats[p] = 0;
+
+    for (var s = 0; s < totalSeats; s++) {
+        var maxQ = -1;
+        var winner = null;
+        for (var p in votes) {
+            var q = votes[p] / (seats[p] + 1);
+            if (q > maxQ) {
+                maxQ = q;
+                winner = p;
+            }
+        }
+        seats[winner]++;
+    }
+    return seats;
+}
+
+// 4. Loop over districts
+for (var d of Q.district_names) {
+    var district_seats = Q[d + '_seats'] || 0;
+    var district_party_support = {};
+
+    // Compute raw support per party
+    for (var party of Q.parties) {
+        var support = 0;
+        for (var c of Q.classes) {
+            var class_share = Q[d + '_' + c] || 0;
+            if (Q.old_demographics) {
+                support += class_share * (Q[c + '_' + party] || 0);
+            } else {
+                support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
+            }
+        }
+        // Apply FPTP distortion: square the support
+        district_party_support[party] = support * support;
+    }
+
+    Q[d + '_party_support'] = district_party_support;
+
+    // Normalize distorted votes to 1
+    var total_support = Object.values(district_party_support).reduce((a, b) => a + b, 0);
+    var district_votes = {};
+    for (var party of Q.parties) {
+        district_votes[party] = total_support > 0 ? district_party_support[party] / total_support : 0;
+    }
+
+    // Allocate seats
+    var result = allocateSeats(district_votes, district_seats);
+
+    // Store + accumulate
+    for (var party of Q.parties) {
+        Q[d + '_' + party + '_seats'] = result[party];
+        Q[party + '_seats'] += result[party];
+    }
+}
+
+// 5. Compute total vote share (party_r)
+var grand_total_support = 0;
+for (var d of Q.district_names) {
+    grand_total_support += Object.values(Q[d + '_party_support']).reduce((a,b)=>a+b,0);
+}
+
+for (var party of Q.parties) {
+    var combined_support = 0;
+    for (var d of Q.district_names) {
+        combined_support += Q[d + '_party_support'][party] || 0;
+    }
+
+    // party_r = total vote share in percent
+    Q[party + '_r'] = grand_total_support > 0 ? Math.round((combined_support / grand_total_support) * 1000)/10 : 0;
+
+    // Display
+    Q[party + '_r_disp'] = Q[party + '_r'].toFixed(1);
+}
+
+console.log("Vote shares (party_r):");
+for (var party of Q.parties) {
+    console.log(party, Q[party + '_r']);
+}
+
+
+/*
+Q.use_decimals = 1;
+
 // calculate normalized class voting amounts (0 to 100)
 for (var c of Q.classes) {
     var class_votes = 0;
@@ -165,7 +269,7 @@ console.log("FLP votes:", Q.flp_votes);
 console.log("PPS votes:", Q.pps_votes);
 console.log("CP(S) votes:", Q.cp_s_votes);
 
-
+*/
 !}
 go-to: post_election_1928
 

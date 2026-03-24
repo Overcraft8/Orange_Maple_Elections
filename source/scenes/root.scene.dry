@@ -731,11 +731,11 @@ Q.princealbert_old_middle = 30;
 Q.princealbert_d_new_middle = 30;
 Q.princealbert_d_unemployed = 10;
 
-Q.quappelle_d_seats = 10;
-Q.princealbert_d_worker = 30;
-Q.princealbert_farmer = 30; 
-Q.princealbert_d_farmhand = 30;
-Q.princealbert_d_res_worker = 10;
+Q.quappelle_d_seats = 15;
+Q.quappelle_d_worker = 30;
+Q.quappelle_d_farmer = 30; 
+Q.quappelle_d_farmhand = 30;
+Q.quappelle_d_res_worker = 10;
 
 
 

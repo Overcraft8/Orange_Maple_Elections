@@ -706,6 +706,10 @@ Q.district_names = [
     'quappelle_d'
 ];
 
+Q.district_results_legislative = [];
+
+Q.party_seats_district = [];
+
 
 Q.regina_d_seats = 3;
 Q.regina_d_worker = 30;

@@ -477,3 +477,10 @@ document.addEventListener("click", function(e) {
   window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
   window.dendryUI.dendryEngine.goToScene(scene);
 });
+
+
+
+window.toggleDistrict = function() {
+    var div = document.getElementById('district_results');
+    div.style.display = div.style.display === 'none' ? 'block' : 'none';
+};

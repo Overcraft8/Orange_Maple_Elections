@@ -102,6 +102,19 @@ for (var d of Q.district_names) {
     }
 }
 
+for (var party of Q.parties) {
+        Q.party_seats_district[party] = Q[d + '_' + party + '_seats'] || 0;
+    }
+
+
+for (district_name of Q.district_names) {
+Q.district_results_legislative.push({
+        name: district_name,
+        seats: district_seats,
+        results: party_seats_district
+    });
+}
+
 // 5. Compute total vote share (party_r)
 var grand_total_support = 0;
 for (var d of Q.district_names) {
@@ -535,25 +548,58 @@ go-to: coalition_menu
 {!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Rural Seats</td><td>Urban Seats</td><td>Total Seats</td></tr>!}
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ str_change_flp +]** {!</td><td>!} **[+ flp_rural_seats +]** {!</td><td>!} **[+ flp_urban_seats +]** {!</td><td>!} **[+ flp_seats +]**{!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ str_change_flp +]** {!</td><td>!}  **[+ flp_seats +]**{!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!} [+ cp_s_rural_seats +] {!</td><td>!} [+ cp_s_urban_seats +] {!</td><td>!} [+ cp_s_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!}  [+ cp_s_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_rural_seats +] {!</td><td>!} [+ lps_urban_seats +] {!</td><td>!} [+ lps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_rural_seats +] {!</td><td>!} [+ pps_urban_seats +] {!</td><td>!} [+ pps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_rural_seats +] {!</td><td>!} [+ cps_urban_seats +] {!</td><td>!} [+ cps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_seats +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_rural_seats +] {!</td><td>!} [+ other_urban_seats +] {!</td><td>!} [+ other_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_rural_seats +] {!</td><td>!} [+ scps_urban_seats +] {!</td><td>!} [+ scps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_seats +] {!</td></tr>!}
 
 {!</table>!}
+
+{!<button class="tab_button" id="district_tab" onclick="window.toggleDistrict();">SubProvincial Results</button>!}
+
+{!<div id="district_results" style="display: none;">!}
+    {!<div style="overflow-x:auto;">!}
+    {!<table style="text-align:center; border-spacing: 0.2em; font-size: 0.75em;">!}
+        {!<tr>!}
+            {!<th>District</th>!}
+            {!<th>Seats</th>!}
+            {!<th><span>CP(S)</span></th>!}
+            {!<th><span>FLP</span></th>!}
+            {!<th><span>PPS</span></th>!}
+            {!<th><span>LPS</span></th>!}
+            {!<th><span>CPS</span></th>!}
+            {!<th><span>Others</span></th>!}
+            [? if scps_formed : {!<th><span>SCPS</span></th>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Regina**{!</td>!}
+            {!<td>!}[+ regina_d_district_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ regina_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+    {!</table>!}
+    {!</div>!}
+{!</div>!}
+
+
 
 **Potential coalitions:**
 

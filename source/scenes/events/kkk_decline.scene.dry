@@ -3,7 +3,7 @@ new-page: true
 subtitle: For the better!
 tags: event
 view-if: year = 1932 and month = 4
-max-visits: 0
+max-visits: 1
 face-image: img/burn_cross.jpg
 
 = Terrorists Struggle to Feed Families

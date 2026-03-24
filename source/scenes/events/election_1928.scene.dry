@@ -541,17 +541,17 @@ go-to: coalition_menu
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_r +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!} [+ cp_s_rural_seats +] {!</td><td>!} [+ cp_s_urban_seats +] {!</td><td>!} [+ cp_s_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!} [+ cp_s_rural_seats +] {!</td><td>!} [+ cp_s_urban_seats +] {!</td><td>!} [+ cp_s_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_rural_seats +] {!</td><td>!} [+ lps_urban_seats +] {!</td><td>!} [+ lps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_rural_seats +] {!</td><td>!} [+ lps_urban_seats +] {!</td><td>!} [+ lps_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_r +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_rural_seats +] {!</td><td>!} [+ pps_urban_seats +] {!</td><td>!} [+ pps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_rural_seats +] {!</td><td>!} [+ pps_urban_seats +] {!</td><td>!} [+ pps_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_r +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_rural_seats +] {!</td><td>!} [+ cps_urban_seats +] {!</td><td>!} [+ cps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_rural_seats +] {!</td><td>!} [+ cps_urban_seats +] {!</td><td>!} [+ cps_seats +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_rural_seats +] {!</td><td>!} [+ other_urban_seats +] {!</td><td>!} [+ other_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_rural_seats +] {!</td><td>!} [+ other_urban_seats +] {!</td><td>!} [+ other_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_r +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_rural_seats +] {!</td><td>!} [+ scps_urban_seats +] {!</td><td>!} [+ scps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_rural_seats +] {!</td><td>!} [+ scps_urban_seats +] {!</td><td>!} [+ scps_seats +] {!</td></tr>!}
 
 {!</table>!}
 

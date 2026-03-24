@@ -24,6 +24,10 @@ The Legislative elections are to be held now.
 @election_algorithm_sk
 on-arrival: {!
 
+Q.district_results_legislative = [];
+
+Q.party_seats_district = [];
+
 Q.use_decimals = 1;
 
 // 1. Normalize class voting shares (0–100)
@@ -113,7 +117,7 @@ for (var d of Q.district_names) {
 
     Q.district_results_legislative.push({
         name: d,
-        seats: Q[d + "_seats"] || 0,
+        seats: Q[d + '_seats'] || 0,
         results: results
     });
 }

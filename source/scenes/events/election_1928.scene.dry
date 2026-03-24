@@ -538,6 +538,7 @@ if (window && d3) {
     parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#assembly").datum(data).call(parliament);
 }
+
 !}
 go-to: coalition_menu
 
@@ -595,9 +596,98 @@ go-to: coalition_menu
             {!<td>!}[+ regina_d_other_seats +]{!</td>!}
             [? if scps_formed : {!<td>!}[+ regina_d_scps_seats +]{!</td>!} ?]
         {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Saskatoon**{!</td>!}
+            {!<td>!}[+ saskatoon_d_district_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ saskatoon_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Moose Jaw**{!</td>!}
+            {!<td>!}[+ moosejaw_d_district_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ moosejaw_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Prince Albert**{!</td>!}
+            {!<td>!}[+ princealbert_d_district_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ princealbert_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Qu'Appelle**{!</td>!}
+            {!<td>!}[+ quappelle_d_district_seats +]{!</td>!}
+            {!<td>!}[+ quappelle_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ quappelle_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ quappelle_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ quappelle_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ quappelle_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ quappelle_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ quappelle_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Southwest**{!</td>!}
+            {!<td>!}[+ southwest_d_district_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ southwest_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Southeast**{!</td>!}
+            {!<td>!}[+ southeast_d_district_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ southeast_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Central**{!</td>!}
+            {!<td>!}[+ central_d_district_seats +]{!</td>!}
+            {!<td>!}[+ central_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ central_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ central_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ central_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ central_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ central_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ central_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**North**{!</td>!}
+            {!<td>!}[+ north_d_district_seats +]{!</td>!}
+            {!<td>!}[+ north_d_cp_s_seats +]{!</td>!}
+            {!<td>!}[+ north_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ north_d_pps_seats +]{!</td>!}
+            {!<td>!}[+ north_d_lps_seats +]{!</td>!}
+            {!<td>!}[+ north_d_cps_seats +]{!</td>!}
+            {!<td>!}[+ north_d_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ north_d_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
     {!</table>!}
     {!</div>!}
 {!</div>!}
+
 
 
 

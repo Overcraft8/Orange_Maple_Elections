@@ -481,6 +481,6 @@ document.addEventListener("click", function(e) {
 
 
 window.toggleDistrict = function() {
-    var div = document.getElementById('district_results');
+    var div = document.getElementById('district_results_legislative');
     div.style.display = div.style.display === 'none' ? 'block' : 'none';
 };

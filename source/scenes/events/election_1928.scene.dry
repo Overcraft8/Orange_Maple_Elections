@@ -18,11 +18,211 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 The Legislative elections are to be held now.
 
-- @election_algorithm: May we do our best...
+- @election_algorithm_sk: May we do our best...
+
+
+@election_algorithm_sk
+on-arrival: {!
+
+
+Q.district_names = ['urban', 'rural'];
+Q.urban_seats = Q.urban_seats || 30;
+Q.rural_seats = Q.rural_seats || 80;
+
+// calculate normalized class voting amounts (0 to 100)
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c+'_'+party] < 0) {
+            Q[c+'_'+party] = 0;
+        }
+        class_votes += Q[c+'_'+party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
+        Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
+    }
+}
+
+// 1. calculate support for each of the parties
+var urban_support = 0;
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        if (c === "farmer" || c === "farmhand" || c === "res_worker") continue;   // skip farmer, farmhand, res_worker
+        // but this version is somewhat more entertaining and allows for wilder swings in votes.
+        // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
+        if (Q.old_demographics) {
+            // okay i'm pretty sure this is wrong, and the hard version is correct
+            // basically this allows for "spillover" effects in other demographics.
+            // so you can campaign among say the workers and 
+            party_support += Q[c]*Q[c+'_'+party];
+            // However, there should be a cap on how much party support you can get in a certain demo.
+        } else  {
+            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
+        }
+    }
+    Q[party + '_support'] = party_support;
+    urban_support += party_support;
+}
+
+var rural_support = 0;
+for (var party of Q.parties) {
+    var party_support_rural = 0;
+    for (var c of ["farmer","farmhand","res_worker"]) {
+        if (!Q.classes.includes(c)) continue;
+        // but this version is somewhat more entertaining and allows for wilder swings in votes.
+        // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
+        if (Q.old_demographics) {
+            // okay i'm pretty sure this is wrong, and the hard version is correct
+            // basically this allows for "spillover" effects in other demographics.
+            // so you can campaign among say the workers and 
+            party_support_rural += Q[c]*Q[c+'_'+party];
+            // However, there should be a cap on how much party support you can get in a certain demo.
+        } else  {
+            party_support_rural += Q[c]*Q[c+'_'+party+'_normalized'];
+        }
+    }
+    Q[party + '_support_rural'] = party_support_rural;
+    rural_support += party_support_rural;
+}
+
+// 2. normalize support (fraction)
+// 3. Round to integers
+// TODO: round to 1 decimal instead of rounding to integers
+// to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
+
+var total_support = urban_support + rural_support;
+
+if (urban_support === 0) urban_support = 1;
+if (rural_support === 0) rural_support = 1;
+
+
+
+for (var party of Q.parties) {
+
+    Q[party + '_urban_norm'] = Q[party + '_support'] / urban_support;
+    Q[party + '_rural_norm'] = Q[party + '_support_rural'] / rural_support;
+
+    Q[party + '_urban_votes'] = Math.round(Q[party + '_urban_norm'] * 100);
+    Q[party + '_rural_votes'] = Math.round(Q[party + '_rural_norm'] * 100);
+}
+
+// reset seats
+for (var party of Q.parties) {
+    Q[party + '_seats'] = 0;
+}
+
+// helper function: D’Hondt
+function allocateSeats(votes, totalSeats) {
+    var seats = {};
+    for (var p in votes) seats[p] = 0;
+
+    for (var s = 0; s < totalSeats; s++) {
+        var maxQ = -1;
+        var winner = null;
+
+        for (var p in votes) {
+            var q = votes[p] / (seats[p] + 1);
+            if (q > maxQ) {
+                maxQ = q;
+                winner = p;
+            }
+        }
+
+        seats[winner]++;
+    }
+
+    return seats;
+}
+
+
+// URBAN DISTRICT (D’Hondt)
+var urban_votes = {};
+for (var party of Q.parties) {
+    urban_votes[party] = Q[party + '_urban_norm'];
+}
+
+var urban_result = allocateSeats(urban_votes, Q.urban_seats);
+
+for (var party of Q.parties) {
+    Q[party + '_urban_seats'] = urban_result[party];
+    Q[party + '_seats'] += urban_result[party];
+}
+
+// RURAL DISTRICT (D’Hondt)
+var rural_votes = {};
+for (var party of Q.parties) {
+    rural_votes[party] = Q[party + '_rural_norm'];
+}
+
+var rural_result = allocateSeats(rural_votes, Q.rural_seats);
+
+for (var party of Q.parties) {
+    Q[party + '_rural_seats'] = rural_result[party];
+    Q[party + '_seats'] += rural_result[party];
+}
+
+
+for (var party of Q.parties) {
+
+    Q[party+'_seats'] =
+        Q[party+'_urban_seats'] +
+        Q[party+'_rural_seats'];
+}
+
+var total = 0;
+
+for (var party of Q.parties) {
+    total += Q[party+'_seats'];
+}
+
+console.log("TOTAL SEATS:", total);
+console.log("EXPECTED:", Q.urban_seats + Q.rural_seats);
+
+for (var party of Q.parties) {
+    var combined_support = Q[party + '_support'] + Q[party + '_support_rural'];
+
+    Q[party+'_normalized'] = combined_support / total_support;
+
+    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized'] * 1000) / 10;
+
+    if (Q.use_decimals) {
+        Q[party+'_votes'] = Q[party+'_votes_dec'];
+        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+    } 
+    else {
+        Q[party+'_votes'] = Math.round(Q[party+'_normalized'] * 100);
+
+        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+    }
+}
+
+console.log("FLP votes:", Q.flp_votes);
+console.log("PPS votes:", Q.pps_votes);
+console.log("CP(S) votes:", Q.cp_s_votes);
+
+
+!}
+go-to: post_election_1928
+
+# note: this is a helpful utility to deal with elections and so on.
 
 
 @post_election_1928
 on-arrival: {!
+
+Q.total_assembly_seats = 110;
+
+Q.district_names = [
+    'regina_d'
+];
+/*
+ 'saskatoon_d', 'moosejaw_d', 
+    'southeast_d', 'southwest_d', 
+    'central_d', 'quappelle_d', 'north_d'
+*/
+
 // set old results
 // election threshold constitutional reform
 // banning parties
@@ -33,11 +233,11 @@ for (var party of Q.parties) {
         if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
             Q[party + '_r'] = 0;
         } else {
-            Q[party + '_r'] = Q[party + '_votes'];
+            Q[party + '_r'] = Q[party + '_seats'];
         }
         new_party_sum += Q[party + '_r'];
     } else {
-        Q[party + '_r'] = Q[party + '_votes'];
+        Q[party + '_r'] = Q[party + '_seats'];
     }
     // if we use decimals, then we might want to truncate the numbers
     if (Q.use_decimals) {

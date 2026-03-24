@@ -3,7 +3,7 @@ new-page: true
 subtitle: For the better!
 tags: event
 view-if: year = 1932 and month = 2
-max-visits: 1
+max-visits: 0
 face-image: img/Towards_The_Dawn.jpg
 
 

@@ -24,7 +24,7 @@ const tooltipList = [{
     explanationText: "The Social Credit Party of Saskatchewan"
 }, 
 {
-    searchString: "UFC",
+    searchString: "UFC(SS)",
     explanationText: "The United Farmers of Canada (Saskatchewan Section)"
 },
 {
@@ -111,7 +111,7 @@ const colourList = [{
         style: "color: #0055A5; font-weight: bold;"
     },
     {
-        word: "UFC",
+        word: "UFC(SS)",
         style: "color: #86a71b; font-weight: bold;"
     },
     {

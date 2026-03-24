@@ -1,0 +1,1709 @@
+title: Parliament Elections
+new-page: true
+tags: event
+priority: -1
+view-if: (year = next_parl_election_year and month >= next_parl_election_month) or (year > next_parl_election_year)
+on-departure: month_actions += 1; in_election = 0; next_parl_election_year = next_parl_election_year + 6; n_elections += 1; next_election_time = time + 72;
+set-jump: post_election
+face-image: img/Election_Time.png
+
+= Parliamentary Elections, [+ month : month +] [+ year +]
+
+Elections to the Parliament of Sri Lanka are to be held now. 196 seats will be distributed across the electoral districts using proportional representation. [? if national_list_added = 1 : A recent ammendment has also added a 29 member national list (Further info in library) ?]
+
+- @election_algorithm_sl: May we do our best...
+
+
+@election_algorithm_sl
+on-arrival: {!
+// Total seats in parliament
+Q.total_parliament_seats = 196;
+
+
+//jaffna+kilinochchi=one electoral district
+//mullaitivu+mannar+vavuniya=one electoral district (Wanni)
+Q.district_names = [
+    'colombo_d', 'gampaha_d', 'kalutara_d',           //Western Province
+    'jaffna_electoral_d',                              //Northern Province (Jaffna+Kilinochchi)
+    'wanni_electoral_d',                               //Northern Province (Mullaitivu+Mannar+Vavuniya)
+    'trincomalee_d', 'batticaloa_d', 'ampara_d',      //Eastern Province
+    'kandy_d', 'matale_d', 'nuwaraeliya_d',           //Central Province
+    'galle_d', 'matara_d', 'hambantota_d',            //Southern Province
+    'kurunegala_d', 'puttalam_d',                      //North Western Province
+    'anuradhapura_d', 'polonnaruwa_d',                 //North Central Province
+    'badulla_d', 'monaragala_d',                       //Uva Province
+    'ratnapura_d', 'kegalle_d'                         //Sabaragamuwa Province
+];
+
+
+Q.jaffna_electoral_d_seats = 10;  //jaffna+kilinochchi combined
+
+var stored_jaffna_d_pop_weight = Q.jaffna_d_pop_weight || 0;
+var stored_kilinochchi_d_pop_weight = Q.kilinochchi_d_pop_weight || 0;
+
+var total_jaffna_electoral = stored_jaffna_d_pop_weight + stored_kilinochchi_d_pop_weight;
+var jaffna_weight = (total_jaffna_electoral > 0) ? stored_jaffna_d_pop_weight / total_jaffna_electoral : 0.85;
+var kili_weight = (total_jaffna_electoral > 0) ? stored_kilinochchi_d_pop_weight / total_jaffna_electoral : 0.15;
+
+Q.jaffna_electoral_d_pop_weight = total_jaffna_electoral;
+
+Q.jaffna_electoral_d_sinhala = (Q.jaffna_d_sinhala * jaffna_weight) + (Q.kilinochchi_d_sinhala * kili_weight);
+Q.jaffna_electoral_d_sltamil = (Q.jaffna_d_sltamil * jaffna_weight) + (Q.kilinochchi_d_sltamil * kili_weight);
+Q.jaffna_electoral_d_itamil = (Q.jaffna_d_itamil * jaffna_weight) + (Q.kilinochchi_d_itamil * kili_weight);
+Q.jaffna_electoral_d_muslim = (Q.jaffna_d_muslim * jaffna_weight) + (Q.kilinochchi_d_muslim * kili_weight);
+Q.jaffna_electoral_d_other = (Q.jaffna_d_other * jaffna_weight) + (Q.kilinochchi_d_other * kili_weight);
+Q.jaffna_electoral_d_upper = (Q.jaffna_d_upper * jaffna_weight) + (Q.kilinochchi_d_upper * kili_weight);
+Q.jaffna_electoral_d_middle = (Q.jaffna_d_middle * jaffna_weight) + (Q.kilinochchi_d_middle * kili_weight);
+Q.jaffna_electoral_d_worker = (Q.jaffna_d_worker * jaffna_weight) + (Q.kilinochchi_d_worker * kili_weight);
+Q.jaffna_electoral_d_rural = (Q.jaffna_d_rural * jaffna_weight) + (Q.kilinochchi_d_rural * kili_weight);
+Q.jaffna_electoral_d_control = Math.min(Q.jaffna_d_control || 100, Q.kilinochchi_d_control || 100);
+
+
+Q.wanni_electoral_d_seats = 6;  //mullaitivu+mannar+vavuniya combined
+
+var stored_mullaitivu_d_pop_weight = Q.mullaitivu_d_pop_weight || 0;
+var stored_mannar_d_pop_weight = Q.mannar_d_pop_weight || 0;
+var stored_vavuniya_d_pop_weight = Q.vavuniya_d_pop_weight || 0;
+
+var total_wanni_electoral = stored_mullaitivu_d_pop_weight + stored_mannar_d_pop_weight + stored_vavuniya_d_pop_weight;
+var mull_weight = (total_wanni_electoral > 0) ? stored_mullaitivu_d_pop_weight / total_wanni_electoral : 0.25;
+var mann_weight = (total_wanni_electoral > 0) ? stored_mannar_d_pop_weight / total_wanni_electoral : 0.30;
+var vavu_weight = (total_wanni_electoral > 0) ? stored_vavuniya_d_pop_weight / total_wanni_electoral : 0.45;
+
+Q.wanni_electoral_d_pop_weight = total_wanni_electoral;
+
+Q.wanni_electoral_d_sinhala = (Q.mullaitivu_d_sinhala * mull_weight) + (Q.mannar_d_sinhala * mann_weight) + (Q.vavuniya_d_sinhala * vavu_weight);
+Q.wanni_electoral_d_sltamil = (Q.mullaitivu_d_sltamil * mull_weight) + (Q.mannar_d_sltamil * mann_weight) + (Q.vavuniya_d_sltamil * vavu_weight);
+Q.wanni_electoral_d_itamil = (Q.mullaitivu_d_itamil * mull_weight) + (Q.mannar_d_itamil * mann_weight) + (Q.vavuniya_d_itamil * vavu_weight);
+Q.wanni_electoral_d_muslim = (Q.mullaitivu_d_muslim * mull_weight) + (Q.mannar_d_muslim * mann_weight) + (Q.vavuniya_d_muslim * vavu_weight);
+Q.wanni_electoral_d_other = (Q.mullaitivu_d_other * mull_weight) + (Q.mannar_d_other * mann_weight) + (Q.vavuniya_d_other * vavu_weight);
+Q.wanni_electoral_d_upper = (Q.mullaitivu_d_upper * mull_weight) + (Q.mannar_d_upper * mann_weight) + (Q.vavuniya_d_upper * vavu_weight);
+Q.wanni_electoral_d_middle = (Q.mullaitivu_d_middle * mull_weight) + (Q.mannar_d_middle * mann_weight) + (Q.vavuniya_d_middle * vavu_weight);
+Q.wanni_electoral_d_worker = (Q.mullaitivu_d_worker * mull_weight) + (Q.mannar_d_worker * mann_weight) + (Q.vavuniya_d_worker * vavu_weight);
+Q.wanni_electoral_d_rural = (Q.mullaitivu_d_rural * mull_weight) + (Q.mannar_d_rural * mann_weight) + (Q.vavuniya_d_rural * vavu_weight);
+Q.wanni_electoral_d_control = Math.min(Q.mullaitivu_d_control || 100, Q.mannar_d_control || 100, Q.vavuniya_d_control || 100);
+
+//the zero point
+Q.jaffna_d_seats = 0;
+Q.kilinochchi_d_seats = 0;
+Q.mullaitivu_d_seats = 0;
+Q.mannar_d_seats = 0;
+Q.vavuniya_d_seats = 0;
+
+Q.jaffna_d_pop_weight = 0;
+Q.kilinochchi_d_pop_weight = 0;
+Q.mullaitivu_d_pop_weight = 0;
+Q.mannar_d_pop_weight = 0;
+Q.vavuniya_d_pop_weight = 0;
+
+//Ethnic groups and classes arrays
+var ethnic_groups = ['sinhala', 'sltamil', 'itamil', 'muslim', 'other'];
+var class_groups = ['upper', 'middle', 'worker', 'rural'];
+
+//The weight factors
+//Can be tweaked to balance the influence of ethnic identity vs class interests
+var ethnic_weight = Q.ethnic_weight;  
+var class_weight = Q.class_weight;   
+
+//Initialize seat counts for all parties
+for (var party of Q.parties) {
+    Q[party + '_seats'] = 0;
+    Q[party + '_votes_total'] = 0;
+}
+
+//The tracker
+Q.district_results = [];
+
+//normalisation ethnic
+//only include parties with parl_yes=1
+for (var ethnic of ethnic_groups) {
+    var ethnic_total = 0;
+    
+    var nonvoter_support = Q[ethnic + '_nonvoter'] || 0;
+    if (nonvoter_support < 0) nonvoter_support = 0;
+    ethnic_total += nonvoter_support;
+    
+    for (var party of Q.parties) {
+        if (Q[party + '_parl_yes'] === 0) continue;
+        var support = Q[ethnic + '_' + party] || 0;
+        if (support < 0) support = 0;
+        ethnic_total += support;
+    }
+    
+    Q[ethnic + '_nonvoter_norm'] = (ethnic_total > 0) ? (nonvoter_support / ethnic_total) : 0;
+    
+    //normalize to proportions (0 to 1)
+    for (var party of Q.parties) {
+        if (Q[party + '_parl_yes'] === 0) {
+            Q[ethnic + '_' + party + '_norm'] = 0;
+            continue;
+        }
+        var support = Q[ethnic + '_' + party] || 0;
+        if (support < 0) support = 0;
+        Q[ethnic + '_' + party + '_norm'] = (ethnic_total > 0) ? (support / ethnic_total) : 0;
+    }
+}
+
+//normalisation class
+var class_var_map = {
+    'upper': 'upper',
+    'middle': 'middle', 
+    'worker': 'workers',
+    'rural': 'rural'
+};
+
+for (var cls of class_groups) {
+    var class_total = 0;
+    var cls_var = class_var_map[cls];
+    
+    var nonvoter_support = Q[cls_var + '_nonvoter'] || 0;
+    if (nonvoter_support < 0) nonvoter_support = 0;
+    class_total += nonvoter_support;
+    
+    for (var party of Q.parties) {
+        if (Q[party + '_parl_yes'] === 0) continue;
+        var support = Q[cls_var + '_' + party] || 0;
+        if (support < 0) support = 0;
+        class_total += support;
+    }
+    
+    Q[cls + '_nonvoter_norm'] = (class_total > 0) ? (nonvoter_support / class_total) : 0;
+    
+    //normalize to proportions (0 to 1)
+    for (var party of Q.parties) {
+        if (Q[party + '_parl_yes'] === 0) {
+            Q[cls + '_' + party + '_norm'] = 0;
+            continue;
+        }
+        var support = Q[cls_var + '_' + party] || 0;
+        if (support < 0) support = 0;
+        Q[cls + '_' + party + '_norm'] = (class_total > 0) ? (support / class_total) : 0;
+    }
+}
+
+//district based calculations
+var total_seats_allocated = 0;
+var total_turnout_weighted = 0;  
+var total_pop_weight_parl = 0;  
+
+//coalition set-up
+//map each party to their coalition ID, or -1 if independent
+var partyToCoalition = {};
+var coalitionMembers = {}; // coalition_id -> array of member parties
+
+//initialize all parties as independent
+for (var party of Q.parties) {
+    partyToCoalition[party] = -1;
+}
+
+//building of coalitions by mappings from Q.active_coalitions
+if (Q.active_coalitions && Q.active_coalitions.length > 0) {
+    for (var c = 0; c < Q.active_coalitions.length; c++) {
+        var coalition = Q.active_coalitions[c];
+        coalitionMembers[c] = [];
+        
+        for (var m = 0; m < coalition.members.length; m++) {
+            var memberParty = coalition.members[m].toLowerCase();
+            //only add if party exists in Q.parties and is participating
+            if (Q.parties.indexOf(memberParty) !== -1 && Q[memberParty + '_parl_yes'] !== 0) {
+                partyToCoalition[memberParty] = c;
+                coalitionMembers[c].push(memberParty);
+            }
+        }
+    }
+}
+
+//backup check in case
+var all_party_names = ['slfp', 'unp', 'jvp', 'cpsl', 'lssp', 'nssp', 'tulf', 'actc', 'cwc', 
+                       'slmc', 'slmp', 'slpp', 'mep', 'npp', 'eros', 'dplf', 'pflt'];
+for (var pname of all_party_names) {
+    //skip if no participating
+    if (Q[pname + '_parl_yes'] === 0) continue;
+    var cid = Q[pname + '_coalition_id'];
+    if (cid !== undefined && cid >= 0) {
+        partyToCoalition[pname] = cid;
+        if (!coalitionMembers[cid]) {
+            coalitionMembers[cid] = [];
+        }
+        if (coalitionMembers[cid].indexOf(pname) === -1) {
+            coalitionMembers[cid].push(pname);
+        }
+    }
+}
+
+//final list of unique competing entities (coalitions and independent parties)
+var competingEntities = []; //array of {type: 'coalition'|'party', id: coalition_id or party_name}
+var processedCoalitions = {};
+
+for (var party of Q.parties) {
+    //skip if not participating
+    if (Q[party + '_parl_yes'] === 0) continue;
+    
+    var cid = partyToCoalition[party];
+    if (cid >= 0) {
+        //party is in a coalition
+        if (!processedCoalitions[cid]) {
+            competingEntities.push({type: 'coalition', id: cid});
+            processedCoalitions[cid] = true;
+        }
+    } else {
+        //independent party
+        competingEntities.push({type: 'party', id: party});
+    }
+}
+
+//district calculations
+for (var i = 0; i < Q.district_names.length; i++) {
+    var district_name = Q.district_names[i];
+    
+    //get district seats from Q variables (e.g., Q.colombo_d_seats)
+    var district_seats = Q[district_name + '_seats'] || 0;
+    
+    //get ethnic composition from Q variables (e.g., Q.colombo_d_sinhala)
+    var district_ethnic = {
+        'sinhala': Q[district_name + '_sinhala'] || 0,
+        'sltamil': Q[district_name + '_sltamil'] || 0,
+        'itamil': Q[district_name + '_itamil'] || 0,
+        'muslim': Q[district_name + '_muslim'] || 0,
+        'other': Q[district_name + '_other'] || 0
+    };
+    
+    //getting class composition from Q variables (e.g., Q.colombo_d_upper)
+    var district_class = {
+        'upper': Q[district_name + '_upper'] || 0,
+        'middle': Q[district_name + '_middle'] || 0,
+        'worker': Q[district_name + '_worker'] || 0,
+        'rural': Q[district_name + '_rural'] || 0
+    };
+    
+    //gettin district control (for areas under militant influence)
+    var district_control = Q[district_name + '_control'];
+    if (district_control === undefined) district_control = 100;
+
+    //calculate district non-voter rate (for turnout)
+    var district_nonvoter_ethnic = 0;
+    for (var ethnic of ethnic_groups) {
+        district_nonvoter_ethnic += (district_ethnic[ethnic] / 100) * (Q[ethnic + '_nonvoter_norm'] || 0);
+    }
+    
+    var district_nonvoter_class = 0;
+    for (var cls of class_groups) {
+        district_nonvoter_class += (district_class[cls] / 100) * (Q[cls + '_nonvoter_norm'] || 0);
+    }
+    
+    var district_nonvoter_rate = (ethnic_weight * district_nonvoter_ethnic) + (class_weight * district_nonvoter_class);
+    var turnout_factor = 1 - district_nonvoter_rate;
+    
+    //accumulate for overall turnout calculation
+    var district_pop_weight = Q[district_name + '_pop_weight'] || 0;
+    total_turnout_weighted += district_nonvoter_rate * district_pop_weight;
+    total_pop_weight_parl += district_pop_weight;
+    
+    //calculate party support in this district
+    var district_party_support = {};
+    var district_total_support = 0;
+    
+    for (var party of Q.parties) {
+        //skipifnotparticipating
+        if (Q[party + '_parl_yes'] === 0) {
+            district_party_support[party] = 0;
+            continue;
+        }
+        
+        //ethnic support
+        //Sum of (ethnic % in district)*(party support among that ethnic group)
+        var ethnic_support = 0;
+        for (var ethnic of ethnic_groups) {
+            ethnic_support += (district_ethnic[ethnic] / 100) * Q[ethnic + '_' + party + '_norm'];
+        }
+        
+        //class support
+        //sum of (class % in district) * (party support among that class)
+        var class_support = 0;
+        for (var cls of class_groups) {
+            class_support += (district_class[cls] / 100) * Q[cls + '_' + party + '_norm'];
+        }
+        
+        //combine ethnic and class support with weights
+        var combined_support = (ethnic_weight * ethnic_support) + (class_weight * class_support);
+        
+        district_party_support[party] = combined_support;
+        district_total_support += combined_support;
+    }
+    
+    //normalize vote shares for this district (individual party votes)
+    var district_votes = {};
+    
+    for (var party of Q.parties) {
+        //skip if not participating
+        if (Q[party + '_parl_yes'] === 0) {
+            district_votes[party] = 0;
+            continue;
+        }
+        district_votes[party] = (district_total_support > 0) ? 
+            (district_party_support[party] / district_total_support) : 0;
+        //population weightage for national totals with turnout applied
+        Q[party + '_votes_total'] += district_votes[party] * district_pop_weight * turnout_factor;
+    }
+    
+    //coalition and inter coaliton seats
+    var entity_votes = {};
+    var entity_party_votes = {}; 
+    
+    for (var e = 0; e < competingEntities.length; e++) {
+        var entity = competingEntities[e];
+        var entityKey = entity.type + '_' + entity.id;
+        
+        if (entity.type === 'coalition') {
+            //sum of votes of all coalition members
+            var coalitionVotes = 0;
+            entity_party_votes[entityKey] = {};
+            
+            var members = coalitionMembers[entity.id] || [];
+            for (var m = 0; m < members.length; m++) {
+                var memberParty = members[m];
+                var memberVotes = district_votes[memberParty] || 0;
+                coalitionVotes += memberVotes;
+                entity_party_votes[entityKey][memberParty] = memberVotes;
+            }
+            entity_votes[entityKey] = coalitionVotes;
+        } else {
+            //independent parties
+            entity_votes[entityKey] = district_votes[entity.id] || 0;
+        }
+    }
+    
+    //proportional representation using D'Hondt method
+    var seats_remaining = district_seats;
+    var party_seats_district = {};
+    var entity_seats = {}; // Track seats won by each entity
+    
+    for (var party of Q.parties) {
+        party_seats_district[party] = 0;
+    }
+    for (var e = 0; e < competingEntities.length; e++) {
+        var entityKey = competingEntities[e].type + '_' + competingEntities[e].id;
+        entity_seats[entityKey] = 0;
+    }
+    
+    while (seats_remaining > 0) {
+        var max_quotient = -1;
+        var winning_entity = null;
+        var winning_entity_key = null;
+        
+        //find party with highest D'Hondt quotient
+        for (var e = 0; e < competingEntities.length; e++) {
+            var entity = competingEntities[e];
+            var entityKey = entity.type + '_' + entity.id;
+            
+            //D'Hondt: votes/(seats already won+1)
+            var quotient = entity_votes[entityKey] / (entity_seats[entityKey] + 1);
+            
+            if (quotient > max_quotient) {
+                max_quotient = quotient;
+                winning_entity = entity;
+                winning_entity_key = entityKey;
+            }
+        }
+        
+        if (winning_entity && max_quotient > 0) {
+            entity_seats[winning_entity_key]++;
+            
+            if (winning_entity.type === 'party') {
+                //independent parties win the seat directly
+                var winningParty = winning_entity.id;
+                party_seats_district[winningParty]++;
+                Q[winningParty + '_seats']++;
+            } else {
+                //coalition wining means to allocate seat to member with highest remaining proportion
+                //use D'Hondt within the coalition to distribute seats fairly
+                var coalitionPartyVotes = entity_party_votes[winning_entity_key];
+                var members = coalitionMembers[winning_entity.id] || [];
+                
+                var maxMemberQuotient = -1;
+                var winningMember = null;
+                
+                for (var m = 0; m < members.length; m++) {
+                    var memberParty = members[m];
+                    var memberVotes = coalitionPartyVotes[memberParty] || 0;
+                    //D'Hondt within coalition: member_votes/(member_seats+1)
+                    var memberQuotient = memberVotes / (party_seats_district[memberParty] + 1);
+                    
+                    if (memberQuotient > maxMemberQuotient) {
+                        maxMemberQuotient = memberQuotient;
+                        winningMember = memberParty;
+                    }
+                }
+                
+                if (winningMember) {
+                    party_seats_district[winningMember]++;
+                    Q[winningMember + '_seats']++;
+                }
+            }
+            
+            seats_remaining--;
+        } else {
+            break;
+        }
+    }
+    
+    total_seats_allocated += district_seats;
+    
+    //storing of district level results
+    Q[district_name + '_district_seats'] = district_seats;
+    Q[district_name + '_slfp_seats'] = party_seats_district['slfp'] || 0;
+    Q[district_name + '_unp_seats'] = party_seats_district['unp'] || 0;
+    Q[district_name + '_tulf_seats'] = party_seats_district['tulf'] || 0;
+    Q[district_name + '_actc_seats'] = party_seats_district['actc'] || 0;
+    Q[district_name + '_jvp_seats'] = party_seats_district['jvp'] || 0;
+    Q[district_name + '_cwc_seats'] = party_seats_district['cwc'] || 0;
+    Q[district_name + '_cpsl_seats'] = party_seats_district['cpsl'] || 0;
+    Q[district_name + '_lssp_seats'] = party_seats_district['lssp'] || 0;
+    Q[district_name + '_nssp_seats'] = party_seats_district['nssp'] || 0;
+    //formable parties
+    Q[district_name + '_slpp_seats'] = party_seats_district['slpp'] || 0;
+    Q[district_name + '_slmp_seats'] = party_seats_district['slmp'] || 0;
+    Q[district_name + '_slmc_seats'] = party_seats_district['slmc'] || 0;
+    Q[district_name + '_npp_seats'] = party_seats_district['npp'] || 0;
+    Q[district_name + '_mep_seats'] = party_seats_district['mep'] || 0;
+    Q[district_name + '_eros_seats'] = party_seats_district['eros'] || 0;
+    Q[district_name + '_dplf_seats'] = party_seats_district['dplf'] || 0;
+    Q[district_name + '_pflt_seats'] = party_seats_district['pflt'] || 0;
+    
+    Q.district_results.push({
+        name: district_name,
+        seats: district_seats,
+        results: party_seats_district
+    });
+}
+
+//calculate overall turnout
+Q.parl_turnout = (total_pop_weight_parl > 0) ? Math.round((1 - (total_turnout_weighted / total_pop_weight_parl)) * 1000) / 10 : 100;
+
+//final seat counts
+var total_votes = 0;
+for (var party of Q.parties) {
+    total_votes += Q[party + '_votes_total'];
+}
+
+//old data 
+for (var party of Q.parties) {
+    Q['old_' + party + '_r'] = Q[party + '_r'];
+}
+
+
+for (var party of Q.parties) {
+    //skipifnotparticipating
+    if (Q[party + '_parl_yes'] === 0) {
+        Q[party + '_r'] = 0;
+        Q[party + '_votes'] = 0;
+        continue;
+    }
+    Q[party + '_r'] = Q[party + '_seats'];
+    Q[party + '_votes'] = (total_votes > 0) ? 
+        Math.round((Q[party + '_votes_total'] / total_votes) * 1000) / 10 : 0;
+}
+
+Q.total_seats_distributed = total_seats_allocated;
+
+//national listitisation adding 29 more seats
+if (Q.national_list_added == 1) {
+    var national_list_seats = 29;
+    var national_list_remaining = national_list_seats;
+    var party_national_seats = {};
+    var entity_national_seats = {}; // Track seats won by each entity for D'Hondt
+    
+    for (var party of Q.parties) {
+        //skipifnotparticipating
+        if (Q[party + '_parl_yes'] === 0) {
+            party_national_seats[party] = 0;
+            continue;
+        }
+        party_national_seats[party] = 0;
+    }
+    
+    //initialize entity seats for national list
+    for (var e = 0; e < competingEntities.length; e++) {
+        var entityKey = competingEntities[e].type + '_' + competingEntities[e].id;
+        entity_national_seats[entityKey] = 0;
+    }
+    
+    //calculate national votes for each entity (coalition or independent party)
+    var entity_national_votes = {};
+    var entity_national_party_votes = {}; // For coalitions: track individual party contributions
+    
+    for (var e = 0; e < competingEntities.length; e++) {
+        var entity = competingEntities[e];
+        var entityKey = entity.type + '_' + entity.id;
+        
+        if (entity.type === 'coalition') {
+            //scum national votes of all coalition members
+            var coalitionNationalVotes = 0;
+            entity_national_party_votes[entityKey] = {};
+            
+            var members = coalitionMembers[entity.id] || [];
+            for (var m = 0; m < members.length; m++) {
+                var memberParty = members[m];
+                var memberVotes = Q[memberParty + '_votes_total'] || 0;
+                coalitionNationalVotes += memberVotes;
+                entity_national_party_votes[entityKey][memberParty] = memberVotes;
+            }
+            entity_national_votes[entityKey] = coalitionNationalVotes;
+        } else {
+            //independent parties
+            entity_national_votes[entityKey] = Q[entity.id + '_votes_total'] || 0;
+        }
+    }
+    
+    //D'Hondt allocation for national list with coalitions
+    while (national_list_remaining > 0) {
+        var max_quotient = -1;
+        var winning_entity = null;
+        var winning_entity_key = null;
+        
+        //find party with highest D'Hondt quotient
+        for (var e = 0; e < competingEntities.length; e++) {
+            var entity = competingEntities[e];
+            var entityKey = entity.type + '_' + entity.id;
+            
+            //D'Hondt: votes / (seats already won + 1)
+            var quotient = entity_national_votes[entityKey] / (entity_national_seats[entityKey] + 1);
+            
+            if (quotient > max_quotient) {
+                max_quotient = quotient;
+                winning_entity = entity;
+                winning_entity_key = entityKey;
+            }
+        }
+        
+        if (winning_entity && max_quotient > 0) {
+            entity_national_seats[winning_entity_key]++;
+            
+            if (winning_entity.type === 'party') {
+                //independent party wins the seat directly
+                var winningParty = winning_entity.id;
+                party_national_seats[winningParty]++;
+                Q[winningParty + '_seats']++;
+                Q[winningParty + '_r']++;
+            } else {
+                //coalition wins means allocate seat to member using D'Hondt within coalition
+                var coalitionPartyVotes = entity_national_party_votes[winning_entity_key];
+                var members = coalitionMembers[winning_entity.id] || [];
+                
+                var maxMemberQuotient = -1;
+                var winningMember = null;
+                
+                for (var m = 0; m < members.length; m++) {
+                    var memberParty = members[m];
+                    var memberVotes = coalitionPartyVotes[memberParty] || 0;
+                    //D'Hondt within coalition: member_votes/(member_national_seats+1)
+                    var memberQuotient = memberVotes / (party_national_seats[memberParty] + 1);
+                    
+                    if (memberQuotient > maxMemberQuotient) {
+                        maxMemberQuotient = memberQuotient;
+                        winningMember = memberParty;
+                    }
+                }
+                
+                if (winningMember) {
+                    party_national_seats[winningMember]++;
+                    Q[winningMember + '_seats']++;
+                    Q[winningMember + '_r']++;
+                }
+            }
+            
+            national_list_remaining--;
+        } else {
+            break;
+        }
+    }
+    
+    //Storage point
+    for (var party of Q.parties) {
+        //skipifnotparticipating
+        if (Q[party + '_parl_yes'] === 0) {
+            Q[party + '_national_list_seats'] = 0;
+            continue;
+        }
+        Q[party + '_national_list_seats'] = party_national_seats[party];
+    }
+    
+    Q.total_seats_distributed += national_list_seats;
+}
+
+//Calculation of the  change AFTER national list seats are added
+for (var party of Q.parties) {
+    if (Q[party + '_parl_yes'] === 0) {
+        Q['change_' + party + '_r'] = 0;
+        Q['str_change_' + party] = '0';
+        continue;
+    }
+    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+    var sign = Q['change_' + party + '_r'] > 0 ? '+' : '';
+    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];
+}
+
+//coalitions
+Q.largest_party = '';
+Q.second_largest_party = '';
+
+var max1 = -1;   // largest
+var max2 = -1;   // second largest
+
+for (var party of Q.parties) {
+    if (Q[party + '_parl_yes'] === 0) continue;
+    
+    var seats = Q[party + '_r'];
+
+    if (seats > max1) {
+        // shift current largest to second largest
+        max2 = max1;
+        Q.second_largest_party = Q.largest_party;
+
+        // update largest
+        max1 = seats;
+        Q.largest_party = party.toUpperCase();
+
+    } else if (seats > max2) {
+        // update second largest only
+        max2 = seats;
+        Q.second_largest_party = party.toUpperCase();
+    }
+}
+
+
+
+Q.majority_needed = Math.floor(Q.total_seats_distributed / 2) + 1;
+
+// Define party colors for coalition display
+var partyColors = {
+    'UNP': '#006400', 'SLFP': '#00008B', 'TULF': '#F7D917', 'CWC': '#E52B50',
+    'ACTC': '#FDCC01', 'CPSL': '#65000B', 'JVP': '#FF2226', 'LSSP': '#A91101',
+    'NSSP': '#FF8080', 'SLPP': '#800020', 'SLMP': '#663399', 'SLMC': '#2DCF3E',
+    'NPP': '#9F005D', 'MEP': '#FF3915', 'EROS': '#FF2400', 'DPLF': '#CE2029', 'PFLT': '#DC143C'
+};
+
+//seats calc for any and all active coalitions
+//also prepare display data for results table and parliament graph
+Q.coalition_display_data = []; // Array to store coalition info for display
+
+for (var c = 0; c < Q.active_coalitions.length; c++) {
+    var coalition = Q.active_coalitions[c];
+    var coalitionSeats = 0;
+    var coalitionVotes = 0;
+    var memberData = [];
+    var leadParty = coalition.lead.toLowerCase();
+    
+    //get the lead party's color for the coalition
+    var coalitionColor = partyColors[coalition.lead] || '#888888';
+    
+    for (var m = 0; m < coalition.members.length; m++) {
+        var memberParty = coalition.members[m].toLowerCase();
+        var memberSeats = Q[memberParty + '_r'] || 0;
+        var memberVotes = Q[memberParty + '_votes'] || 0;
+        var memberChange = Q['str_change_' + memberParty] || '0';
+        
+        coalitionSeats += memberSeats;
+        coalitionVotes += memberVotes;
+        
+        memberData.push({
+            party: memberParty,
+            partyUpper: coalition.members[m],
+            seats: memberSeats,
+            votes: memberVotes,
+            change: memberChange,
+            color: partyColors[coalition.members[m]] || '#888888'
+        });
+    }
+    
+    //store coalition seats with a consistent naming convention pls work
+    Q['coalition_' + c + '_seats'] = coalitionSeats;
+    Q['coalition_' + c + '_name'] = coalition.name;
+    Q['coalition_' + c + '_lead'] = coalition.lead;
+    Q['coalition_' + c + '_color'] = coalitionColor;
+    Q['coalition_' + c + '_votes'] = Math.round(coalitionVotes * 10) / 10;
+    Q['coalition_' + c + '_members'] = coalition.members.join(', ');
+    
+    //store for display purposes
+    Q.coalition_display_data.push({
+        id: c,
+        name: coalition.name,
+        lead: coalition.lead,
+        leadLower: leadParty,
+        color: coalitionColor,
+        seats: coalitionSeats,
+        votes: Math.round(coalitionVotes * 10) / 10,
+        members: memberData
+    });
+}
+
+//tack which parties are in coalitions (for display logic)
+Q.parties_in_coalitions = {};
+for (var c = 0; c < Q.active_coalitions.length; c++) {
+    var coalition = Q.active_coalitions[c];
+    for (var m = 0; m < coalition.members.length; m++) {
+        Q.parties_in_coalitions[coalition.members[m].toLowerCase()] = c;
+    }
+}
+
+//coaltion probability (legacy support for hardcoded coalitions, will need to be changed later)
+//Left coalition (SLFP + socialist parties)
+Q.left_coalition_seats = Q.slfp_r + Q.jvp_r + Q.cpsl_r + Q.lssp_r + Q.nssp_r;
+// Add splinter parties if they exist
+if (Q.slmp_formed) Q.left_coalition_seats += (Q.slmp_r || 0);
+
+//UNP + allies(CWC,SLPP?)
+Q.unp_coalition_seats = Q.unp_r + Q.cwc_r;
+// Add SLPP if formed (right-wing SLFP splinter)
+if (Q.slpp_formed) Q.unp_coalition_seats += (Q.slpp_r || 0);
+
+//store election record for historical tracking
+var election_result = {'date': new Date(Q.year, Q.month - 1)};
+for (var party of Q.parties) {
+    election_result[party] = Q[party + '_r'];
+}
+Q.election_records.push(election_result);
+
+Q.jaffna_d_seats = 11;
+Q.kilinochchi_d_seats = 11;
+Q.mullaitivu_d_seats = 5;
+Q.mannar_d_seats = 5;
+Q.vavuniya_d_seats = 5;
+
+Q.jaffna_d_pop_weight = stored_jaffna_d_pop_weight;
+Q.kilinochchi_d_pop_weight = stored_kilinochchi_d_pop_weight;
+Q.mullaitivu_d_pop_weight = stored_mullaitivu_d_pop_weight;
+Q.mannar_d_pop_weight = stored_mannar_d_pop_weight;
+Q.vavuniya_d_pop_weight = stored_vavuniya_d_pop_weight;
+
+//goVernment and coalition rest 
+Q.coalition_dissent = 0;
+Q.unp_in_government = 0;
+Q.slfp_in_government = 0;
+Q.jvp_in_government = 0;
+Q.cpsl_in_government = 0;
+Q.lssp_in_government = 0;
+Q.nssp_in_government = 0;
+Q.tulf_in_government = 0;
+Q.actc_in_government = 0;
+
+Q.slpp_in_government = 0;
+Q.slmp_in_government = 0;
+Q.slmc_in_government = 0;
+Q.npp_in_government = 0;
+Q.mep_in_government = 0;
+Q.eros_in_government = 0;
+Q.dplf_in_government = 0;
+Q.pflt_in_government = 0;
+
+!}
+go-to: post_election
+
+@post_election
+on-display: {!
+data = [];
+
+// Simple parliament display - each party with its own color
+if (Q.jvp_r > 0) {
+    data.push({"id": "jvp", "legend": "JVP", "name": "JVP", "seats": Q.jvp_r});
+}
+if (Q.cpsl_r > 0) {
+    data.push({"id": "cpsl", "legend": "CPSL", "name": "CPSL", "seats": Q.cpsl_r});
+}
+if (Q.lssp_r > 0) {
+    data.push({"id": "lssp", "legend": "LSSP", "name": "LSSP", "seats": Q.lssp_r});
+}
+if (Q.nssp_r > 0) {
+    data.push({"id": "nssp", "legend": "NSSP", "name": "NSSP", "seats": Q.nssp_r});
+}
+if (Q.slfp_r > 0) {
+    data.push({"id": "slfp", "legend": "SLFP", "name": "SLFP", "seats": Q.slfp_r});
+}
+if (Q.slpp_formed && Q.slpp_r > 0) {
+    data.push({"id": "slpp", "legend": "SLPP", "name": "SLPP", "seats": Q.slpp_r});
+}
+if (Q.slmp_formed && Q.slmp_r > 0) {
+    data.push({"id": "slmp", "legend": "SLMP", "name": "SLMP", "seats": Q.slmp_r});
+}
+if (Q.tulf_r > 0) {
+    data.push({"id": "tulf", "legend": "TULF", "name": "TULF", "seats": Q.tulf_r});
+}
+if (Q.actc_r > 0) {
+    data.push({"id": "actc", "legend": "ACTC", "name": "ACTC", "seats": Q.actc_r});
+}
+if (Q.cwc_r > 0) {
+    data.push({"id": "cwc", "legend": "CWC", "name": "CWC", "seats": Q.cwc_r});
+}
+if (Q.slmc_formed && Q.slmc_r > 0) {
+    data.push({"id": "slmc", "legend": "SLMC", "name": "SLMC", "seats": Q.slmc_r});
+}
+if (Q.npp_formed && Q.npp_r > 0) {
+    data.push({"id": "npp", "legend": "NPP", "name": "NPP", "seats": Q.npp_r});
+}
+if (Q.mep_formed && Q.mep_r > 0) {
+    data.push({"id": "mep", "legend": "MEP", "name": "MEP", "seats": Q.mep_r});
+}
+if (Q.eros_formed && Q.eros_r > 0) {
+    data.push({"id": "eros", "legend": "EROS", "name": "EROS", "seats": Q.eros_r});
+}
+if (Q.dplf_formed && Q.dplf_r > 0) {
+    data.push({"id": "dplf", "legend": "DPLF", "name": "DPLF", "seats": Q.dplf_r});
+}
+if (Q.pflt_formed && Q.pflt_r > 0) {
+    data.push({"id": "pflt", "legend": "PFLT", "name": "PFLT", "seats": Q.pflt_r});
+}
+if (Q.unp_r > 0) {
+    data.push({"id": "unp", "legend": "UNP", "name": "UNP", "seats": Q.unp_r});
+}
+
+if (window && d3) {
+    var width = 500; 
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("parliament").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#parliament").datum(data).call(parliament);
+}
+!}
+go-to: coalition_menu
+
+= Election Results
+
+**Voter Turnout:** [+ parl_turnout +]%
+
+[? if parl_turnout > 70 : Voter turnout is at expected or even exceeded expectations. ?]
+[? if parl_turnout < 70 : Voter turnout is concerningly lower than normal. ?]
+[? if parl_turnout < 50 : Turnout is rather low. ?]
+[? if parl_turnout < 30 : Turnout is catastrophicly low. ?]
+
+{!<svg id="parliament" style="width: 500px; height: 250px;"> </svg>!}
+
+**Parliament Composition ([+ total_seats_distributed +] seats)**
+
+{!<table>!} 
+{!<tr><td>Party/Coalition</td><td>Seats</td><td>Vote %</td><td>Change</td></tr>!}
+
+[? if coalition_0_seats > 0 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_0_name +]{!</strong></td><td><strong>!}[+ coalition_0_seats +]{!</strong></td><td><strong>!}[+ coalition_0_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 0 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 0 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 0 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 0 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 0 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 0 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 0 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 0 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 0 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if coalition_1_seats > 0 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_1_name +]{!</strong></td><td><strong>!}[+ coalition_1_seats +]{!</strong></td><td><strong>!}[+ coalition_1_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 1 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 1 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 1 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 1 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 1 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 1 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 1 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 1 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 1 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if coalition_2_seats > 0 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_2_name +]{!</strong></td><td><strong>!}[+ coalition_2_seats +]{!</strong></td><td><strong>!}[+ coalition_2_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 2 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 2 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 2 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 2 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 2 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 2 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 2 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 2 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 2 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if coalition_3_seats > 0 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_3_name +]{!</strong></td><td><strong>!}[+ coalition_3_seats +]{!</strong></td><td><strong>!}[+ coalition_3_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 3 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 3 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 3 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 3 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 3 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 3 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 3 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 3 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 3 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if coalition_4_seats > 0 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_4_name +]{!</strong></td><td><strong>!}[+ coalition_4_seats +]{!</strong></td><td><strong>!}[+ coalition_4_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 4 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 4 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 4 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 4 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 4 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 4 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 4 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 4 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 4 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if coalition_5_seats > 5 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_5_name +]{!</strong></td><td><strong>!}[+ coalition_5_seats +]{!</strong></td><td><strong>!}[+ coalition_5_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 5 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 5 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 5 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 5 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 5 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 5 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 5 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 5 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 5 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if coalition_6_seats > 0 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_6_name +]{!</strong></td><td><strong>!}[+ coalition_6_seats +]{!</strong></td><td><strong>!}[+ coalition_6_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 6 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 6 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 6 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 6 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 6 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 6 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 6 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 6 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 6 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if coalition_7_seats > 7 : {!<tr style="background-color: transparent;"><td><strong>!}[+ coalition_7_name +]{!</strong></td><td><strong>!}[+ coalition_7_seats +]{!</strong></td><td><strong>!}[+ coalition_7_votes +]%{!</strong></td><td></td></tr>!} ?]
+[? if slfp_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+[? if unp_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+[? if tulf_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+[? if actc_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+[? if jvp_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+[? if cpsl_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+[? if lssp_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+[? if nssp_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+[? if cwc_coalition_id = 7 : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+[? if slpp_coalition_id = 7 and slpp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+[? if slmp_coalition_id = 7 and slmp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+[? if slmc_coalition_id = 7 and slmc_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+[? if npp_coalition_id = 7 and npp_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+[? if mep_coalition_id = 7 and mep_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+[? if eros_coalition_id = 7 and eros_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+[? if dplf_coalition_id = 7 and dplf_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+[? if pflt_coalition_id = 7 and pflt_formed : {!<tr><td style="padding-left: 20px;"><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+[? if slfp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#00008B; outline: 2px; outline-style: solid;'> </div> !} **SLFP** {!</td><td>!} **[+ slfp_r +]** {!</td><td>!} **[+ slfp_votes +]%** {!</td><td>!} **[+ str_change_slfp +]** {!</td></tr>!} ?]
+
+[? if slpp_formed and slpp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#800020'> </div> !} SLPP {!</td><td>!} [+ slpp_r +] {!</td><td>!} [+ slpp_votes +]% {!</td><td>!} [+ str_change_slpp +] {!</td></tr>!} ?]
+
+[? if slmp_formed and slmp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#663399'> </div> !} SLMP {!</td><td>!} [+ slmp_r +] {!</td><td>!} [+ slmp_votes +]% {!</td><td>!} [+ str_change_slmp +] {!</td></tr>!} ?]
+
+[? if unp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#006400'> </div> !} UNP {!</td><td>!} [+ unp_r +] {!</td><td>!} [+ unp_votes +]% {!</td><td>!} [+ str_change_unp +] {!</td></tr>!} ?]
+
+[? if tulf_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#F7D917'> </div> !} TULF {!</td><td>!} [+ tulf_r +] {!</td><td>!} [+ tulf_votes +]% {!</td><td>!} [+ str_change_tulf +] {!</td></tr>!} ?]
+
+[? if actc_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#FDCC01'> </div> !} ACTC {!</td><td>!} [+ actc_r +] {!</td><td>!} [+ actc_votes +]% {!</td><td>!} [+ str_change_actc +] {!</td></tr>!} ?]
+
+[? if jvp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#FF2226'> </div> !} JVP {!</td><td>!} [+ jvp_r +] {!</td><td>!} [+ jvp_votes +]% {!</td><td>!} [+ str_change_jvp +] {!</td></tr>!} ?]
+
+[? if cpsl_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#65000B'> </div> !} CPSL {!</td><td>!} [+ cpsl_r +] {!</td><td>!} [+ cpsl_votes +]% {!</td><td>!} [+ str_change_cpsl +] {!</td></tr>!} ?]
+
+[? if lssp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#A91101'> </div> !} LSSP {!</td><td>!} [+ lssp_r +] {!</td><td>!} [+ lssp_votes +]% {!</td><td>!} [+ str_change_lssp +] {!</td></tr>!} ?]
+
+[? if nssp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#FF8080'> </div> !} NSSP {!</td><td>!} [+ nssp_r +] {!</td><td>!} [+ nssp_votes +]% {!</td><td>!} [+ str_change_nssp +] {!</td></tr>!} ?]
+
+[? if cwc_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#E52B50'> </div> !} CWC {!</td><td>!} [+ cwc_r +] {!</td><td>!} [+ cwc_votes +]% {!</td><td>!} [+ str_change_cwc +] {!</td></tr>!} ?]
+
+[? if slmc_formed and slmc_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#2DCF3E'> </div> !} SLMC {!</td><td>!} [+ slmc_r +] {!</td><td>!} [+ slmc_votes +]% {!</td><td>!} [+ str_change_slmc +] {!</td></tr>!} ?]
+
+[? if npp_formed and npp_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#9F005D'> </div> !} NPP {!</td><td>!} [+ npp_r +] {!</td><td>!} [+ npp_votes +]% {!</td><td>!} [+ str_change_npp +] {!</td></tr>!} ?]
+
+[? if mep_formed and mep_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#FF3915'> </div> !} MEP {!</td><td>!} [+ mep_r +] {!</td><td>!} [+ mep_votes +]% {!</td><td>!} [+ str_change_mep +] {!</td></tr>!} ?]
+
+[? if eros_formed and eros_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#FF2400'> </div> !} EROS {!</td><td>!} [+ eros_r +] {!</td><td>!} [+ eros_votes +]% {!</td><td>!} [+ str_change_eros +] {!</td></tr>!} ?]
+
+[? if dplf_formed and dplf_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#CE2029'> </div> !} DPLF {!</td><td>!} [+ dplf_r +] {!</td><td>!} [+ dplf_votes +]% {!</td><td>!} [+ str_change_dplf +] {!</td></tr>!} ?]
+
+[? if pflt_formed and pflt_coalition_id < 0 : {!<tr><td><div class="box" style='background-color:#DC143C'> </div> !} PFLT {!</td><td>!} [+ pflt_r +] {!</td><td>!} [+ pflt_votes +]% {!</td><td>!} [+ str_change_pflt +] {!</td></tr>!} ?]
+
+{!</table>!}
+
+{!<button class="tab_button" id="district_tab" onclick="window.toggleDistrict();">District Results</button>!}
+[? if national_list_added = 1 : {!<button class="tab_button" id="national_list_tab" onclick="window.toggleNationalList();">National List</button>!} ?]
+
+{!<div id="district_results" style="display: none;">!}
+    {!<div style="overflow-x:auto;">!}
+    {!<table style="text-align:center; border-spacing: 0.2em; font-size: 0.8em;">!}
+        {!<tr>!}
+            {!<th>District</th>!}
+            {!<th>Seats</th>!}
+            {!<th><span style="color: #00008B;">SLFP</span></th>!}
+            {!<th><span style="color: #006400;">UNP</span></th>!}
+            {!<th><span style="color: #F7D917;">TULF</span></th>!}
+            {!<th><span style="color: #FDCC01;">ACTC</span></th>!}
+            {!<th><span style="color: #FF2226;">JVP</span></th>!}
+            {!<th><span style="color: #E52B50;">CWC</span></th>!}
+            {!<th><span style="color: #65000B;">CPSL</span></th>!}
+            {!<th><span style="color: #A91101;">LSSP</span></th>!}
+            {!<th><span style="color: #FF8080;">NSSP</span></th>!}
+            [? if slpp_formed : {!<th><span style="color: #E52B50;">SLPP</span></th>!} ?]
+            [? if slmp_formed : {!<th><span style="color: #663399;">SLMP</span></th>!} ?]
+            [? if slmc_formed : {!<th><span style="color: #2DCF3E;">SLMC</span></th>!} ?]
+            [? if npp_formed : {!<th><span style="color: #9F005D;">NPP</span></th>!} ?]
+            [? if mep_formed : {!<th><span style="color: #FF3915;">MEP</span></th>!} ?]
+            [? if eros_formed : {!<th><span style="color: #FF2400;">EROS</span></th>!} ?]
+            [? if dplf_formed : {!<th><span style="color: #CE2029;">DPLF</span></th>!} ?]
+            [? if pflt_formed : {!<th><span style="color: #DC143C;">PFLT</span></th>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Colombo**{!</td>!}
+            {!<td>!}[+ colombo_d_district_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ colombo_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ colombo_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ colombo_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ colombo_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ colombo_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ colombo_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ colombo_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ colombo_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ colombo_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Gampaha**{!</td>!}
+            {!<td>!}[+ gampaha_d_district_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ gampaha_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ gampaha_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ gampaha_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ gampaha_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ gampaha_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ gampaha_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ gampaha_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ gampaha_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ gampaha_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Kalutara**{!</td>!}
+            {!<td>!}[+ kalutara_d_district_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ kalutara_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ kalutara_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ kalutara_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ kalutara_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ kalutara_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ kalutara_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ kalutara_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ kalutara_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ kalutara_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Jaffna** (incl. Kilinochchi){!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_district_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ jaffna_electoral_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ jaffna_electoral_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ jaffna_electoral_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ jaffna_electoral_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ jaffna_electoral_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ jaffna_electoral_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ jaffna_electoral_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ jaffna_electoral_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ jaffna_electoral_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Vanni** (Mannar, Mullaitivu, Vavuniya){!</td>!}
+            {!<td>!}[+ wanni_electoral_d_district_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ wanni_electoral_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ wanni_electoral_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ wanni_electoral_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ wanni_electoral_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ wanni_electoral_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ wanni_electoral_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ wanni_electoral_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ wanni_electoral_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ wanni_electoral_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Trincomalee**{!</td>!}
+            {!<td>!}[+ trincomalee_d_district_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ trincomalee_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ trincomalee_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ trincomalee_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ trincomalee_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ trincomalee_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ trincomalee_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ trincomalee_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ trincomalee_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ trincomalee_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Batticaloa**{!</td>!}
+            {!<td>!}[+ batticaloa_d_district_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ batticaloa_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ batticaloa_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ batticaloa_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ batticaloa_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ batticaloa_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ batticaloa_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ batticaloa_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ batticaloa_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ batticaloa_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Ampara**{!</td>!}
+            {!<td>!}[+ ampara_d_district_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ ampara_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ ampara_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ ampara_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ ampara_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ ampara_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ ampara_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ ampara_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ ampara_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ ampara_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Kandy**{!</td>!}
+            {!<td>!}[+ kandy_d_district_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ kandy_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ kandy_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ kandy_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ kandy_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ kandy_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ kandy_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ kandy_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ kandy_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ kandy_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Matale**{!</td>!}
+            {!<td>!}[+ matale_d_district_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ matale_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ matale_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ matale_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ matale_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ matale_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ matale_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ matale_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ matale_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ matale_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Nuwara Eliya**{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_district_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ nuwaraeliya_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ nuwaraeliya_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ nuwaraeliya_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ nuwaraeliya_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ nuwaraeliya_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ nuwaraeliya_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ nuwaraeliya_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ nuwaraeliya_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ nuwaraeliya_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Galle**{!</td>!}
+            {!<td>!}[+ galle_d_district_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ galle_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ galle_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ galle_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ galle_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ galle_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ galle_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ galle_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ galle_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ galle_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Matara**{!</td>!}
+            {!<td>!}[+ matara_d_district_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ matara_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ matara_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ matara_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ matara_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ matara_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ matara_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ matara_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ matara_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ matara_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Hambantota**{!</td>!}
+            {!<td>!}[+ hambantota_d_district_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ hambantota_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ hambantota_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ hambantota_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ hambantota_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ hambantota_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ hambantota_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ hambantota_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ hambantota_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ hambantota_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Kurunegala**{!</td>!}
+            {!<td>!}[+ kurunegala_d_district_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ kurunegala_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ kurunegala_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ kurunegala_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ kurunegala_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ kurunegala_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ kurunegala_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ kurunegala_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ kurunegala_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ kurunegala_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Puttalam**{!</td>!}
+            {!<td>!}[+ puttalam_d_district_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ puttalam_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ puttalam_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ puttalam_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ puttalam_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ puttalam_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ puttalam_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ puttalam_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ puttalam_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ puttalam_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Anuradhapura**{!</td>!}
+            {!<td>!}[+ anuradhapura_d_district_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ anuradhapura_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ anuradhapura_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ anuradhapura_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ anuradhapura_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ anuradhapura_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ anuradhapura_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ anuradhapura_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ anuradhapura_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ anuradhapura_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Polonnaruwa**{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_district_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ polonnaruwa_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ polonnaruwa_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ polonnaruwa_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ polonnaruwa_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ polonnaruwa_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ polonnaruwa_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ polonnaruwa_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ polonnaruwa_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ polonnaruwa_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Badulla**{!</td>!}
+            {!<td>!}[+ badulla_d_district_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ badulla_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ badulla_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ badulla_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ badulla_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ badulla_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ badulla_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ badulla_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ badulla_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ badulla_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Monaragala**{!</td>!}
+            {!<td>!}[+ monaragala_d_district_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ monaragala_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ monaragala_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ monaragala_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ monaragala_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ monaragala_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ monaragala_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ monaragala_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ monaragala_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ monaragala_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Ratnapura**{!</td>!}
+            {!<td>!}[+ ratnapura_d_district_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ ratnapura_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ ratnapura_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ ratnapura_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ ratnapura_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ ratnapura_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ ratnapura_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ ratnapura_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ ratnapura_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ ratnapura_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**Kegalle**{!</td>!}
+            {!<td>!}[+ kegalle_d_district_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_slfp_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_unp_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_tulf_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_actc_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_jvp_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_cwc_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_cpsl_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_lssp_seats +]{!</td>!}
+            {!<td>!}[+ kegalle_d_nssp_seats +]{!</td>!}
+            [? if slpp_formed : {!<td>!}[+ kegalle_d_slpp_seats +]{!</td>!} ?]
+            [? if slmp_formed : {!<td>!}[+ kegalle_d_slmp_seats +]{!</td>!} ?]
+            [? if slmc_formed : {!<td>!}[+ kegalle_d_slmc_seats +]{!</td>!} ?]
+            [? if npp_formed : {!<td>!}[+ kegalle_d_npp_seats +]{!</td>!} ?]
+            [? if mep_formed : {!<td>!}[+ kegalle_d_mep_seats +]{!</td>!} ?]
+            [? if eros_formed : {!<td>!}[+ kegalle_d_eros_seats +]{!</td>!} ?]
+            [? if dplf_formed : {!<td>!}[+ kegalle_d_dplf_seats +]{!</td>!} ?]
+            [? if pflt_formed : {!<td>!}[+ kegalle_d_pflt_seats +]{!</td>!} ?]
+        {!</tr>!}
+    {!</table>!}
+    {!</div>!}
+{!</div>!}
+
+{!<div id="national_list_results" style="display: none;">!}
+    {!<p><em>National List seats (29 total) are allocated proportionally based on national vote share.</em></p>!}
+    {!<table style="text-align:center; border-spacing: 0.2em;">!}
+        {!<tr>!}
+            {!<th>Party</th>!}
+            {!<th>National List Seats</th>!}
+        {!</tr>!}
+        [? if slfp_national_list_seats >= 1 : {!<tr><td><span style="color: #00008B;">!}**SLFP**{!</span></td><td>!}[+ slfp_national_list_seats +]{!</td></tr>!} ?]
+        [? if unp_national_list_seats >= 1 : {!<tr><td><span style="color: #006400;">!}**UNP**{!</span></td><td>!}[+ unp_national_list_seats +]{!</td></tr>!} ?]
+        [? if tulf_national_list_seats >= 1 : {!<tr><td><span style="color: #F7D917;">!}**TULF**{!</span></td><td>!}[+ tulf_national_list_seats +]{!</td></tr>!} ?]
+        [? if actc_national_list_seats >= 1 : {!<tr><td><span style="color: #FDCC01;">!}**ACTC**{!</span></td><td>!}[+ actc_national_list_seats +]{!</td></tr>!} ?]
+        [? if jvp_national_list_seats >= 1 : {!<tr><td><span style="color: #FF2226;">!}**JVP**{!</span></td><td>!}[+ jvp_national_list_seats +]{!</td></tr>!} ?]
+        [? if cpsl_national_list_seats >= 1 : {!<tr><td><span style="color: #65000B;">!}**CPSL**{!</span></td><td>!}[+ cpsl_national_list_seats +]{!</td></tr>!} ?]
+        [? if lssp_national_list_seats >= 1 : {!<tr><td><span style="color: #A91101;">!}**LSSP**{!</span></td><td>!}[+ lssp_national_list_seats +]{!</td></tr>!} ?]
+        [? if nssp_national_list_seats >= 1 : {!<tr><td><span style="color: #FF8080;">!}**NSSP**{!</span></td><td>!}[+ nssp_national_list_seats +]{!</td></tr>!} ?]
+        [? if cwc_national_list_seats >= 1 : {!<tr><td><span style="color: #E52B50;">!}**CWC**{!</span></td><td>!}[+ cwc_national_list_seats +]{!</td></tr>!} ?]
+        [? if slpp_formed and slpp_national_list_seats >= 1 : {!<tr><td><span style="color: #E52B50;">!}**SLPP**{!</span></td><td>!}[+ slpp_national_list_seats +]{!</td></tr>!} ?]
+        [? if slmp_formed and slmp_national_list_seats >= 1 : {!<tr><td><span style="color: #663399;">!}**SLMP**{!</span></td><td>!}[+ slmp_national_list_seats +]{!</td></tr>!} ?]
+        [? if slmc_formed and slmc_national_list_seats >= 1 : {!<tr><td><span style="color: #2DCF3E;">!}**SLMC**{!</span></td><td>!}[+ slmc_national_list_seats +]{!</td></tr>!} ?]
+        [? if npp_formed and npp_national_list_seats >= 1 : {!<tr><td><span style="color: #9F005D;">!}**NPP**{!</span></td><td>!}[+ npp_national_list_seats +]{!</td></tr>!} ?]
+        [? if mep_formed and mep_national_list_seats >= 1 : {!<tr><td><span style="color: #FF3915;">!}**MEP**{!</span></td><td>!}[+ mep_national_list_seats +]{!</td></tr>!} ?]
+        [? if eros_formed and eros_national_list_seats >= 1 : {!<tr><td><span style="color: #FF2400;">!}**EROS**{!</span></td><td>!}[+ eros_national_list_seats +]{!</td></tr>!} ?]
+        [? if dplf_formed and dplf_national_list_seats >= 1 : {!<tr><td><span style="color: #CE2029;">!}**DPLF**{!</span></td><td>!}[+ dplf_national_list_seats +]{!</td></tr>!} ?]
+        [? if pflt_formed and pflt_national_list_seats >= 1 : {!<tr><td><span style="color: #DC143C;">!}**PFLT**{!</span></td><td>!}[+ pflt_national_list_seats +]{!</td></tr>!} ?]
+    {!</table>!}
+{!</div>!}
+
+{!<script>
+window.toggleDistrict = function() {
+    var div = document.getElementById('district_results');
+    div.style.display = div.style.display === 'none' ? 'block' : 'none';
+};
+window.toggleNationalList = function() {
+    var div = document.getElementById('national_list_results');
+    div.style.display = div.style.display === 'none' ? 'block' : 'none';
+};
+</script>!}
+
+**Active Coalitions:** ([+ majority_needed +] seats needed for majority)
+
+[? if coalition_0_seats > 0 : [+ coalition_0_name +]: **[+ coalition_0_seats +] seats** ([+ coalition_0_members +]) ?]
+
+[? if coalition_1_seats > 0 : [+ coalition_1_name +]: **[+ coalition_1_seats +] seats** ([+ coalition_1_members +]) ?]
+
+[? if coalition_2_seats > 0 : [+ coalition_2_name +]: **[+ coalition_2_seats +] seats** ([+ coalition_2_members +]) ?]
+
+[? if coalition_3_seats > 0 : [+ coalition_3_name +]: **[+ coalition_3_seats +] seats** ([+ coalition_3_members +]) ?]
+
+[? if coalition_4_seats > 0 : [+ coalition_4_name +]: **[+ coalition_4_seats +] seats** ([+ coalition_4_members +]) ?]
+
+[? if coalition_5_seats > 0 : [+ coalition_5_name +]: **[+ coalition_5_seats +] seats** ([+ coalition_5_members +]) ?]
+
+[? if coalition_6_seats > 0 : [+ coalition_6_name +]: **[+ coalition_6_seats +] seats** ([+ coalition_6_members +]) ?]
+
+[? if coalition_7_seats > 0 : [+ coalition_7_name +]: **[+ coalition_7_seats +] seats** ([+ coalition_7_members +]) ?]
+
+
+[? if largest_party == "UNP" and unp_r >= majority_needed : The UNP has won an outright majority and will continue to govern. ?]
+
+[? if largest_party == "UNP" and unp_r < majority_needed and unp_coalition_seats >= majority_needed : The UNP remains the largest party. With CWC support, they can form a government. ?]
+
+[? if largest_party == "UNP" and unp_r < majority_needed and unp_coalition_seats < majority_needed : The UNP remains the largest party but even with allies, they lack a clear majority. Complex negotiations lie ahead. ?]
+
+[? if largest_party == "SLFP" and slfp_r >= majority_needed : The SLFP has won an outright majority! This is a historic victory. ?]
+
+[? if largest_party == "SLFP" and slfp_r < majority_needed : The SLFP has emerged as the largest party! However, we will need coalition partners to govern. ?]
+
+[? if second_largest_party == "SLFP" : We are atleast the second largest party in parliament meaning we will be the offical opposition ?]
+
+[? if second_largest_party == "UNP" : The UNP has been pushed back to the opposition, this is a major victory for the SLFP ?]
+
+
+@coalition_menu
+
+What should we do now?
+
+- @slfp_majority: Form an SLFP majority government.
+- @left_coalition_form: Form a left wing coalition government.
+- @unp_continues: The UNP continues to govern. We will remain in the opposition.
+
+@slfp_majority
+title: Form an SLFP majority government.
+view-if: slfp_r >= majority_needed
+on-arrival: slfp_in_government = 1; prime_minister_party = "SLFP"; current_gov = "SLFP"; opposition_leader_party = "UNP";
+
+//There should be two version of each slfp victory based on if the UNP has the presidency creating the cohabiation and the president_tension
+
+The SLFP has won enough seats to govern alone! A historic victory. We now have the mandate to implement our agenda.
+
+[? if president_party = "UNP" : Our victory is a blow to UNP president [+ president +]. This however leaves the government split between two parties, we must be careful. ?]
+
+[? if president_party = "SLFP" : We now also hold both the presidency and parliament, we have the initiative to push through our agenda without interference ?]
+
+- @form_cabinet: Form our cabinet.
+
+@left_coalition_form
+title: Form a left coalition (SLFP + JVP + CPSL + LSSP + NSSP).
+subtitle: [+ left_coalition_seats +] seats [? if left_coalition_seats < majority_needed : - Not enough for majority ?]
+view-if: left_coalition_seats >= majority_needed
+choose-if: jvp_relation >= 25 and cpsl_relation >= 25 and lssp_relation >= 25
+unavailable-subtitle: Relations with coalition partners are too poor (need 25+ with JVP, CPSL, LSSP).
+on-arrival: slfp_in_government = 1; jvp_in_government = 1; cpsl_in_government = 1; lssp_in_government = 1; nssp_in_government = 1; prime_minister_party = "SLFP"; current_gov = "Left Coalition"; opposition_leader_party = "UNP"; nationalist_dissent += 15;
+
+We have formed a left coalition government, reminiscent of the United Front era. The nationalists in our party are unhappy about working so closely with Marxist parties.
+
+[? if president_party = "UNP" : Our victory is a blow to UNP president [+ president +]. This however leaves the government split between two parties, we must be careful. ?]
+
+[? if president_party = "SLFP" : We now also hold both the presidency and parliament, we have the initiative to push through our agenda without interference ?]
+
+- @form_cabinet: Form our cabinet.
+
+@unp_continues
+title: The UNP forms the government.
+view-if: unp_coalition_seats >= majority_needed and slfp_r < unp_r
+on-arrival: slfp_in_government = 0; unp_in_government = 1; cwc_in_government = 1; prime_minister = "Ranasinghe Premadasa"; prime_minister_party = 'UNP'; current_gov = "UNP & CWC";
+
+The UNP, with support from the CWC, has formed the government. We will continue our work in the opposition.
+
+- @opposition_leadership: As the second largest party in parliament, we can head the opposition, but we need to appoint an offical head.
+
+@opposition_leadership
+on-arrival: opposition_leader = "Anura Bandaranaike"; opposition_leader_party = "SLFP";
+
+The obvious choice for now is Anura.....
+
+
+@form_cabinet
+
+Now we must decide on the composition of our cabinet...
+
+- @end_election: Continue.
+
+@end_election
+
+The new government has been formed.

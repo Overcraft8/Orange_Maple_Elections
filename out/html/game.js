@@ -440,6 +440,15 @@ function Colombo_info() {
   window.updateSidebarRight(); 
 }
 
+function regina_info(){
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  Q.district_name = "Regina";
+  Q.district_worker = Q.regina_d_worker;
+  Q.district_old_middle = Q.regina_d_old_middle;
+  Q.district_new_middle = Q.regina_d_new_middle;
+  Q.district_unemployed = Q.regina_d_unemployed;
+}
+
 document.addEventListener('mousemove', e => {
     document.querySelectorAll('.mytooltiptext').forEach(el => {
         el.style.setProperty('--mouse-x', e.clientX + 'px');

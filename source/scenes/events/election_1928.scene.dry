@@ -24,6 +24,8 @@ The Legislative elections are to be held now.
 @election_algorithm_sk
 on-arrival: {!
 
+Q.use_decimals = 1;
+
 // calculate normalized class voting amounts (0 to 100)
 for (var c of Q.classes) {
     var class_votes = 0;
@@ -40,64 +42,12 @@ for (var c of Q.classes) {
 }
 
 // 1. calculate support for each of the parties
-var urban_support = 0;
-for (var party of Q.parties) {
-    var party_support = 0;
-    for (var c of Q.classes) {
-        if (c === "farmer" || c === "farmhand" || c === "res_worker") continue;   // skip farmer, farmhand, res_worker
-        if (Q.old_demographics) {
-            // okay i'm pretty sure this is wrong, and the hard version is correct
-            // basically this allows for "spillover" effects in other demographics.
-            // so you can campaign among say the workers and 
-            party_support += Q[c]*Q[c+'_'+party];
-            // However, there should be a cap on how much party support you can get in a certain demo.
-        } else  {
-            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
-        }
-    }
-    Q[party + '_support'] = party_support;
-    urban_support += party_support;
-}
-
-var rural_support = 0;
-for (var party of Q.parties) {
-    var party_support_rural = 0;
-    for (var c of ["farmer","farmhand","res_worker"]) {
-        if (!Q.classes.includes(c)) continue;
-        if (Q.old_demographics) {
-            // okay i'm pretty sure this is wrong, and the hard version is correct
-            // basically this allows for "spillover" effects in other demographics.
-            // so you can campaign among say the workers and 
-            party_support_rural += Q[c]*Q[c+'_'+party];
-            // However, there should be a cap on how much party support you can get in a certain demo.
-        } else  {
-            party_support_rural += Q[c]*Q[c+'_'+party+'_normalized'];
-        }
-    }
-    Q[party + '_support_rural'] = party_support_rural;
-    rural_support += party_support_rural;
-}
 
 // 2. normalize support (fraction)
 // 3. Round to integers
 // TODO: round to 1 decimal instead of rounding to integers
 // to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
 
-var total_support = urban_support + rural_support;
-
-if (urban_support === 0) urban_support = 1;
-if (rural_support === 0) rural_support = 1;
-
-
-
-for (var party of Q.parties) {
-
-    Q[party + '_urban_norm'] = Q[party + '_support'] / urban_support;
-    Q[party + '_rural_norm'] = Q[party + '_support_rural'] / rural_support;
-
-    Q[party + '_urban_votes'] = Math.round(Q[party + '_urban_norm'] * 100);
-    Q[party + '_rural_votes'] = Math.round(Q[party + '_rural_norm'] * 100);
-}
 
 // reset seats
 for (var party of Q.parties) {
@@ -150,7 +100,7 @@ for (var i = 0; i < Q.district_names.length; i++) {
             }
         }
 
-        district_party_support[party] = support;
+        Q[d + '_party_support'] = district_party_support;
         district_support_total += support;
     }
 
@@ -184,20 +134,34 @@ for (var d of Q.district_names) {
 }
 console.log("EXPECTED:", expected);
 
+
+var combined_support = 0;
+for (var d of Q.district_names) {
+    combined_support += Object.values(Q[d + '_party_support'] || {}).reduce((a,b)=>a+b, 0);
+}
+
+var total_support = 0;
+for (var d of Q.district_names) {
+    for (var party of Q.parties) {
+        total_support += Q[d + '_' + party + '_votes'] || 0;
+    }
+}
+
+
 for (var party of Q.parties) {
-    var combined_support = Q[party + '_support'] + Q[party + '_support_rural'];
+    var combined_support = 0;
+    for (var d of Q.district_names) {
+        combined_support += Q[d + '_party_support'][party] || 0;
+    }
 
     Q[party+'_normalized'] = combined_support / total_support;
-
     Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized'] * 1000) / 10;
 
     if (Q.use_decimals) {
         Q[party+'_votes'] = Q[party+'_votes_dec'];
         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-    } 
-    else {
+    } else {
         Q[party+'_votes'] = Math.round(Q[party+'_normalized'] * 100);
-
         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
     }
 }
@@ -218,9 +182,6 @@ on-arrival: {!
 
 Q.total_assembly_seats = 110;
 
-Q.district_names = [
-    'regina_d'
-];
 /*
  'saskatoon_d', 'moosejaw_d', 
     'southeast_d', 'southwest_d', 

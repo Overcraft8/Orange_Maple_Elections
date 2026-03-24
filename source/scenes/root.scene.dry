@@ -700,6 +700,12 @@ Q.min_wage_plat = 0;
 
 
 //                             Districts Electoral
+
+Q.district_names = [
+    'regina_d'
+];
+
+
 Q.regina_d_seats = 3;
 Q.regina_d_worker = 30;
 Q.regina_d_old_middle = 30; 

@@ -24,11 +24,6 @@ The Legislative elections are to be held now.
 @election_algorithm_sk
 on-arrival: {!
 
-
-Q.district_names = ['urban', 'rural'];
-Q.urban_seats = Q.urban_seats || 30;
-Q.rural_seats = Q.rural_seats || 80;
-
 // calculate normalized class voting amounts (0 to 100)
 for (var c of Q.classes) {
     var class_votes = 0;
@@ -50,8 +45,6 @@ for (var party of Q.parties) {
     var party_support = 0;
     for (var c of Q.classes) {
         if (c === "farmer" || c === "farmhand" || c === "res_worker") continue;   // skip farmer, farmhand, res_worker
-        // but this version is somewhat more entertaining and allows for wilder swings in votes.
-        // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
         if (Q.old_demographics) {
             // okay i'm pretty sure this is wrong, and the hard version is correct
             // basically this allows for "spillover" effects in other demographics.
@@ -71,8 +64,6 @@ for (var party of Q.parties) {
     var party_support_rural = 0;
     for (var c of ["farmer","farmhand","res_worker"]) {
         if (!Q.classes.includes(c)) continue;
-        // but this version is somewhat more entertaining and allows for wilder swings in votes.
-        // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
         if (Q.old_demographics) {
             // okay i'm pretty sure this is wrong, and the hard version is correct
             // basically this allows for "spillover" effects in other demographics.
@@ -137,38 +128,48 @@ function allocateSeats(votes, totalSeats) {
 }
 
 
-// URBAN DISTRICT (D’Hondt)
-var urban_votes = {};
-for (var party of Q.parties) {
-    urban_votes[party] = Q[party + '_urban_norm'];
-}
+// loop through districts
+for (var i = 0; i < Q.district_names.length; i++) {
 
-var urban_result = allocateSeats(urban_votes, Q.urban_seats);
+    var d = Q.district_names[i];
+    var district_seats = Q[d + '_seats'] || 0;
 
-for (var party of Q.parties) {
-    Q[party + '_urban_seats'] = urban_result[party];
-    Q[party + '_seats'] += urban_result[party];
-}
+    var district_support_total = 0;
+    var district_party_support = {};
 
-// RURAL DISTRICT (D’Hondt)
-var rural_votes = {};
-for (var party of Q.parties) {
-    rural_votes[party] = Q[party + '_rural_norm'];
-}
+    for (var party of Q.parties) {
+        var support = 0;
 
-var rural_result = allocateSeats(rural_votes, Q.rural_seats);
+        for (var c of Q.classes) {
+            var class_share = Q[d + '_' + c] || 0;
 
-for (var party of Q.parties) {
-    Q[party + '_rural_seats'] = rural_result[party];
-    Q[party + '_seats'] += rural_result[party];
-}
+            if (Q.old_demographics) {
+                support += class_share * (Q[c + '_' + party] || 0);
+            } else {
+                support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
+            }
+        }
 
+        district_party_support[party] = support;
+        district_support_total += support;
+    }
 
-for (var party of Q.parties) {
+    // normalize votes
+    var district_votes = {};
+    for (var party of Q.parties) {
+        district_votes[party] = (district_support_total > 0)
+            ? district_party_support[party] / district_support_total
+            : 0;
+    }
 
-    Q[party+'_seats'] =
-        Q[party+'_urban_seats'] +
-        Q[party+'_rural_seats'];
+    // allocate seats
+    var result = allocateSeats(district_votes, district_seats);
+
+    // store + accumulate
+    for (var party of Q.parties) {
+        Q[d + '_' + party + '_seats'] = result[party];
+        Q[party + '_seats'] += result[party];
+    }
 }
 
 var total = 0;
@@ -177,8 +178,11 @@ for (var party of Q.parties) {
     total += Q[party+'_seats'];
 }
 
-console.log("TOTAL SEATS:", total);
-console.log("EXPECTED:", Q.urban_seats + Q.rural_seats);
+var expected = 0;
+for (var d of Q.district_names) {
+    expected += Q[d + '_seats'] || 0;
+}
+console.log("EXPECTED:", expected);
 
 for (var party of Q.parties) {
     var combined_support = Q[party + '_support'] + Q[party + '_support_rural'];

@@ -102,18 +102,24 @@ for (var d of Q.district_names) {
     }
 }
 
-for (var party of Q.parties) {
-        Q.party_seats_district[party] = Q[d + '_' + party + '_seats'] || 0;
+
+for (var d of Q.district_names) {
+
+    var results = {};
+
+    for (var party of Q.parties) {
+        results[party] = Q[d + "_" + party + "_seats"] || 0;
     }
 
-
-for (district_name of Q.district_names) {
-Q.district_results_legislative.push({
-        name: district_name,
-        seats: district_seats,
-        results: party_seats_district
+    Q.district_results_legislative.push({
+        name: d,
+        seats: Q[d + "_seats"] || 0,
+        results: results
     });
 }
+
+
+
 
 // 5. Compute total vote share (party_r)
 var grand_total_support = 0;

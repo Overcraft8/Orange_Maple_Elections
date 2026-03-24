@@ -100,9 +100,11 @@ for (var i = 0; i < Q.district_names.length; i++) {
             }
         }
 
-        Q[d + '_party_support'] = district_party_support;
+        district_party_support[party] = support;
         district_support_total += support;
     }
+
+    Q[d + '_party_support'] = district_party_support;
 
     // normalize votes
     var district_votes = {};
@@ -137,14 +139,12 @@ console.log("EXPECTED:", expected);
 
 var combined_support = 0;
 for (var d of Q.district_names) {
-    combined_support += Object.values(Q[d + '_party_support'] || {}).reduce((a,b)=>a+b, 0);
+    combined_support += Q[d + '_party_support'][party] || 0;
 }
 
 var total_support = 0;
 for (var d of Q.district_names) {
-    for (var party of Q.parties) {
-        total_support += Q[d + '_' + party + '_votes'] || 0;
-    }
+    total_support += Object.values(Q[d + '_party_support'] || {}).reduce((a,b)=>a+b, 0);
 }
 
 

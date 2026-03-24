@@ -702,7 +702,8 @@ Q.min_wage_plat = 0;
 //                             Districts Electoral
 
 Q.district_names = [
-    'regina_d'
+    'regina_d', 'saskatoon_d', 'moosejaw_d', 'princealbert_d',
+    'quapelle_d'
 ];
 
 
@@ -712,9 +713,29 @@ Q.regina_d_old_middle = 30;
 Q.regina_d_new_middle = 30;
 Q.regina_d_unemployed = 10;
 
+Q.saskatoon_d_seats = 3;
+Q.saskatoon_d_worker = 20;
+Q.saskatoon_d_old_middle = 30; 
+Q.saskatoon_d_new_middle = 40;
+Q.saskatoon_d_unemployed = 10;
 
+Q.moosejaw_d_seats = 2;
+Q.moosejaw_d_worker = 60;
+Q.moosejaw_d_old_middle = 20; 
+Q.moosejaw_d_new_middle = 10;
+Q.moosejaw_d_unemployed = 10;
 
+Q.princealbert_d_seats = 2;
+Q.princealbert_d_worker = 30;
+Q.princealbert_old_middle = 30; 
+Q.princealbert_d_new_middle = 30;
+Q.princealbert_d_unemployed = 10;
 
+Q.quappelle_d_seats = 10;
+Q.princealbert_d_worker = 30;
+Q.princealbert_farmer = 30; 
+Q.princealbert_d_farmhand = 30;
+Q.princealbert_d_res_worker = 10;
 
 
 

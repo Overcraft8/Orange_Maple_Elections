@@ -589,12 +589,12 @@ go-to: coalition_menu
         {!<tr>!}
             {!<th>District</th>!}
             {!<th>Seats</th>!}
-            {!<th><span>CP(S)</span></th>!}
-            {!<th><span>FLP</span></th>!}
-            {!<th><span>PPS</span></th>!}
-            {!<th><span>LPS</span></th>!}
-            {!<th><span>CPS</span></th>!}
-            {!<th><span>Others</span></th>!}
+            {!<th><td>!}CP(S){!<td></th>!}
+            {!<th><td>!}FLP{!<td></th>!}
+            {!<th><td>!}PPS{!<td></th>!}
+            {!<th><td>!}LPS{!<td></th>!}
+            {!<th><td>!}CPS{!<td></th>!}
+            {!<th><td>!}Other{!<td></th>!}
             [? if scps_formed : {!<th><span>SCPS</span></th>!} ?]
         {!</tr>!}
         {!<tr>!}

@@ -2,7 +2,7 @@ title: Regina Riot
 new-page: true
 subtitle: The trekkers come to Saskatchewan...
 tags: event
-view-if: year = 1932 and month = 7
+view-if: year = 1942 and month = 7
 max-visits: 1
 face-image: img/ccf_convention_1933.jpg
 

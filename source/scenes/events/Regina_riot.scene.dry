@@ -2,7 +2,7 @@ title: Regina Riot
 new-page: true
 subtitle: The trekkers come to Saskatchewan...
 tags: event
-view-if: year = 1932 and month = 3
+view-if: year = 1942 and month = 3
 max-visits: 1
 face-image: img/Regina_Riot.jpg
 

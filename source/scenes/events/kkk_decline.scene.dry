@@ -2,7 +2,7 @@ title: The KKK in decline?
 new-page: true
 subtitle: For the better!
 tags: event
-view-if: year = 1932 and month = 4
+view-if: year = 1942 and month = 4
 max-visits: 1
 face-image: img/burn_cross.jpg
 

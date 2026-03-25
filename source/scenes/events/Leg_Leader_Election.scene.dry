@@ -2,7 +2,7 @@ title: FLP Legislative Leader
 new-page: true
 subtitle: Who will lead our party's representatives?
 tags: event
-view-if: year = 1932 and month = 3
+view-if: year = 1942 and month = 3
 max-visits: 1
 
 <div><img src="img/CCF_Convention.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>

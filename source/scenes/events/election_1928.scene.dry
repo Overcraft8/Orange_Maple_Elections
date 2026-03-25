@@ -589,12 +589,12 @@ go-to: coalition_menu
         {!<tr>!}
             {!<th>District</th>!}
             {!<th>Seats</th>!}
-            {!<th><td>!}CP(S){!<td></th>!}
-            {!<th><td>!}FLP{!<td></th>!}
-            {!<th><td>!}PPS{!<td></th>!}
-            {!<th><td>!}LPS{!<td></th>!}
-            {!<th><td>!}CPS{!<td></th>!}
-            {!<th><td>!}Other{!<td></th>!}
+            {!<th>!} CP(S) {!</th>!}
+            {!<th>!} FLP {!</th>!}
+            {!<th>!} PPS {!</th>!}
+            {!<th>!} LPS {!</th>!}
+            {!<th>!} CPS {!</th>!}
+            {!<th>!} Other {!</th>!}
             [? if scps_formed : {!<th><span>SCPS</span></th>!} ?]
         {!</tr>!}
         {!<tr>!}
@@ -708,8 +708,6 @@ go-to: coalition_menu
 Liberal-CCF Coalition (FLP + LPS): [+ lps_coalition +]%
 
 Progressive-CCF Coalition (FLP + PPS): [+ pps_coalition +]%
-
-Grand Coalition (FLP + PPS + LPS + CPS): [+ grand_coalition +]%
 
 Bourgeois Coalition (PPS + LPS + CPS + Others): [+ bourgeois_coalition +]%
 

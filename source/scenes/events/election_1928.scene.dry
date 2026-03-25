@@ -119,7 +119,7 @@ for (var d of Q.district_names) {
 
     Q.district_results_legislative.push({
         name: d,
-        seats: Q[d + '_seats'] || 0,
+        seats: Q[d + '_district_seats'] || 0,
         results: results
     });
 }

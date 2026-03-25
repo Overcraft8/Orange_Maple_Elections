@@ -571,7 +571,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_seats +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#E7DB73'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#d8ce6fb3'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_seats +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_seats +] {!</td></tr>!}
  

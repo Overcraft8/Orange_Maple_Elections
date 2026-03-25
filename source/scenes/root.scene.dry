@@ -727,7 +727,7 @@ Q.moosejaw_d_unemployed = 10;
 
 Q.princealbert_d_seats = 2;
 Q.princealbert_d_worker = 30;
-Q.princealbert_old_middle = 30; 
+Q.princealbert_d_old_middle = 30; 
 Q.princealbert_d_new_middle = 30;
 Q.princealbert_d_unemployed = 10;
 

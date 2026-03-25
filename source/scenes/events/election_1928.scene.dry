@@ -585,7 +585,7 @@ go-to: coalition_menu
 
 {!<div id="district_results_legislative" style="display: none;">!}
     {!<div style="overflow-x:auto;">!}
-    {!<table style="text-align:center; border-spacing: 0.2em; font-size: 0.75em;">!}
+    {!<table class="poll-table"!}
         {!<tr>!}
             {!<th>District</th>!}
             {!<th>Seats</th>!}

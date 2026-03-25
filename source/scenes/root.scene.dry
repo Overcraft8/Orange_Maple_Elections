@@ -703,7 +703,7 @@ Q.min_wage_plat = 0;
 
 Q.district_names = [
     'regina_d', 'saskatoon_d', 'moosejaw_d', 'princealbert_d',
-    'quappelle_d', 'southwest', 'southeast', 'north', 'central'
+    'quappelle_d', 'southwest_d', 'southeast_d', 'north_d', 'central_d'
 ];
 
 

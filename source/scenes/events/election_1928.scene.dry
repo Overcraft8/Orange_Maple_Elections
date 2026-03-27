@@ -589,13 +589,13 @@ go-to: coalition_menu
         {!<tr>!}
             {!<th>District</th>!}
             {!<th>Seats</th>!}
-            {!<th>!} CP(S) {!</th>!}
-            {!<th>!} FLP {!</th>!}
-            {!<th>!} PPS {!</th>!}
-            {!<th>!} LPS {!</th>!}
-            {!<th>!} CPS {!</th>!}
-            {!<th>!} Other {!</th>!}
-            [? if scps_formed : {!<th><span>SCPS</span></th>!} ?]
+            {!<th>CP(S)</th>!}
+            {!<th>FLP</th>!}
+            {!<th>PPS</th>!}
+            {!<th>LPS</th>!}
+            {!<th>CPS</th>!}
+            {!<th>Other</th>!}
+            [? if scps_formed : {!<th>SCPS</th>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Regina**{!</td>!}

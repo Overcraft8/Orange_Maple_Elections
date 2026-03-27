@@ -761,7 +761,7 @@ Q.central_d_farmer = 10;
 Q.central_d_farmhand = 10;
 Q.central_d_res_worker = 30;
 
-
+Q.selected_button = "";
 
 
 // Advisors/Leaders

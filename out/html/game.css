@@ -78,39 +78,24 @@ header {
   padding: 0;
   padding-left: 1em;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-  background-color: transparent;
 }
 #header-links a {
-      display: inline-block;
-  padding: 0.35em 0.9em;
-  margin-right: 0.4em;
   border-radius: 4px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
+  background-color: #bba993;
 }
+
 #header-links a:last-of-type {
   margin-right: 0;
 }
 
-/* These are the colors for Library, Save, Options */
 
-#header-links a:first-of-type {   
-  background-color: #eded36;
-  color: #8a8a66;
-}
-#header-links a:nth-of-type(2) {
-  background-color: #786d3e;
-  color: #c5b697;
-}
-#header-links a:nth-of-type(3) {
-  background-color: #8dd33e;
-  color: #475948;
-}
 header h1, header h2 {
   display: inline-block;
   font-weight: normal;
   margin: 0;
   font-size: 1em;
-  color: #FFFFFF;
+  color: #8e6344;
 }
 header h1 {
   font-weight: bold;
@@ -748,6 +733,14 @@ table {
   width: 100%;
 }
 
+.poll-table.dark-mode {
+  font-size: 0.9005em;         /* smaller font */
+  line-height: 1.1;          /* tighter rows */
+  border: 1px solid #d53737;
+  border-collapse: collapse;
+  width: 100%;
+}
+
 /* Cell styling */
 .poll-table td {
   border: 1px solid #000;
@@ -763,6 +756,11 @@ table {
 /* Header row styling */
 .poll-table tr:first-child td {
   background-color: #f2d3a8;
+  font-weight: bold;
+}
+
+.poll-table.dark-mode tr:first-child td {
+  background-color: #252320;
   font-weight: bold;
 }
 

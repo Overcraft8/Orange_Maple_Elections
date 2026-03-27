@@ -24,9 +24,9 @@ if (Q.economic_growth) {
 <div style="display:flex; align-items:flex-start;">
 
 <!-- LEFT IMAGE -->
-<div style="width:60%; text-align:center;">
-<img src="img/Red_Lily.png" style="max-width:100%;">
-</div>
+#* <div style="width:60%; text-align:center;">
+# <img src="img/Red_Lily.png" style="max-width:100%;">
+#* </div>
 
 <!-- MAIN CONTENT -->
 <div style="width:60%; padding:0 10px;">
@@ -38,9 +38,9 @@ if (Q.economic_growth) {
 </div>
 
 <!-- RIGHT IMAGE -->
-<div style="width:60%; text-align:center;">
-<img src="img/Wheat_Bundle.png" style="max-width:100%;">
-</div>
+# <div style="width:60%; text-align:center;">
+# <img src="img/Wheat_Bundle.png" style="max-width:100%;">
+# </div>
 
 </div>
 !}
@@ -71,18 +71,18 @@ Premier: [+ premier +] ([+ premier_party +])
 Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="Farmer-Labour Group">!}[? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_r +]%
+[? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-{!<span class="tooltip-text" title="Progressive Party">!}[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_r +]%
+[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_r +]%
 # 1928: 10, 1930: 13
-{!<span class="tooltip-text" title="Communist Party of Saskatchewan">!}[? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_r +]%
+[? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-{!<span class="tooltip-text" title="Liberal Party">!}[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_r +]%
+[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_r +]%
 # 1928: 9, 1930: 5
-{!<span class="tooltip-text" title="Conservative Party">!}[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_r +]%
+[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_r +]%
 # 1928: 14, 1930: 7
-{!<span class="tooltip-text" title="Social Credit Party">!}[? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_r +]%
+[? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
@@ -361,6 +361,20 @@ Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
 @situations 
 
 = Situations
+
+{!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
+
+{!<div id="nationalization" style="display: none;">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+    Nationalization
+    <img 
+      src="img/Melfort_Market.jpg" 
+      style="width: 40%; display: block; margin: auto; cursor: pointer;"
+    >
+  <div>
+!}
+
+    
 
 [? if depression == 1:
 {!

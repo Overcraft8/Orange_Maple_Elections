@@ -32,6 +32,7 @@
   } else {
       window.dendryUI.dendryEngine.goToScene('library');
   }
+
   };
 
   window.showMods = function() {
@@ -252,7 +253,6 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     const ideologyKey = ideologyMap[searchString];
 
     if (ideologyKey && Q[ideologyKey] !== undefined) {
-        // Fixed argument
         const ideologyText = getPartyIdeology(searchString, Q);
         result += '<br>Politics: ' + ideologyText;
     }
@@ -482,5 +482,10 @@ document.addEventListener("click", function(e) {
 
 window.toggleDistrict = function() {
     var div = document.getElementById('district_results_legislative');
+    div.style.display = div.style.display === 'none' ? 'block' : 'none';
+};
+
+window.toggle_statusbutton = function() {
+    var div = document.getElementById(selected_button);
     div.style.display = div.style.display === 'none' ? 'block' : 'none';
 };

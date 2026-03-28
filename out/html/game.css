@@ -815,5 +815,23 @@ a.status_panel_card {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+.card-flags {
+  position:absolute;
+  top:5px;
+  left:5px;
+  right:5px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.flag {
+  padding:2px 6px;
+  border-radius:4px;
+  font-size:0.7em;
+  color:white;
+}
+
+.flag.nat { background:#b22222; } /* deep red */
+.flag.dev { background:#2e8b57; } /* green */
 
 

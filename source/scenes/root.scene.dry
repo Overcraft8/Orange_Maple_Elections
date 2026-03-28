@@ -539,6 +539,11 @@ Q.indu_production = (100).toFixed(1);
 
 
 //                         Nationalization and Intervention
+
+Q.state_capacity = 2;
+Q.state_intervention = "Scarce";
+
+
 Q.potash_nationalized = -6;
 Q.potash_development = 0;
 Q.housing_intervention = -6; 

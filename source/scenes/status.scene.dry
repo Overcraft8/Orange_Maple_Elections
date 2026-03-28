@@ -357,6 +357,7 @@ Industrial Production Index: [+ indu_production +]
 
     Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
     </div>
+  </div>
 !}
 
 {!<button class="tab_button" id="development_tab" onclick="selected_button = 'development'; window.toggle_statusbutton();">Sectoral Development</button>!}
@@ -379,6 +380,7 @@ Industrial Production Index: [+ indu_production +]
     Oil: [+ oil_development : development +]
 
     </div>
+  </div>
 !}
 
 

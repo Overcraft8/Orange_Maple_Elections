@@ -371,58 +371,6 @@ function applyWholesome(str) {
     window.updateSidebarRight();
   };
 
-  /* For buttons nested inside the status panel */
-  window.showStatusTab = function(tabId) {
-    if (window.activeStatusTab === tabId) {
-        window.activeStatusTab = null;
-
-        // Hide all content
-        const contents = document.getElementsByClassName('status_tab_content');
-        for (let i = 0; i < contents.length; i++) {
-        contents[i].style.display = 'none';
-        }
-
-        // Remove active class from all buttons
-        const buttons = document.getElementsByClassName('status_tab_button');
-        for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('active');
-        }
-
-        return; // Stop here — nothing should be shown
-    }
-
-  window.activeStatusTab = tabId;
-  // Hide all tab content
-  const contents = document.getElementsByClassName('status_tab_content');
-  for (let i = 0; i < contents.length; i++) {
-    contents[i].style.display = 'none';
-  }
-
-  // Remove 'active' class from all buttons
-  const buttons = document.getElementsByClassName('status_tab_button');
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].classList.remove('active');
-  }
-
-  // Show selected tab content
-  const selectedContent = document.getElementById(tabId);
-  if (selectedContent) selectedContent.style.display = 'block';
-
-  // Highlight button
-  const selectedButton = document.getElementById(tabId + '_tab');
-  if (selectedButton) selectedButton.classList.add('active');
-};
-
-  window.onDisplayContent = function() {
-    window.updateSidebar();
-    window.updateSidebarRight();
-
-    if (window.activeStatusTab) {
-        window.showStatusTab(window.activeStatusTab);
-    }
-};
-
-
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator
@@ -536,3 +484,50 @@ window.toggle_statusbutton = function() {
     var div = document.getElementById(selected_button);
     div.style.display = div.style.display === 'none' ? 'block' : 'none';
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTab = localStorage.getItem("activeStatusTab");
+
+    if (savedTab) {
+        window.activeStatusTab = savedTab;
+        window.showStatusTab(savedTab);
+    }
+});
+
+/* For buttons nested inside a status panel */
+window.showStatusTab = function(tabId) {
+    // Toggle off if same tab is clicked
+    if (window.activeStatusTab === tabId) {
+        window.activeStatusTab = null;
+        localStorage.removeItem("activeStatusTab");
+
+        hideAllTabs();
+        return;
+    }
+
+    // Set new active tab
+    window.activeStatusTab = tabId;
+    localStorage.setItem("activeStatusTab", tabId);
+
+    hideAllTabs();
+
+    // Show selected tab
+    const selectedContent = document.getElementById(tabId);
+    if (selectedContent) selectedContent.style.display = 'block';
+
+    // Highlight button
+    const selectedButton = document.getElementById(tabId + '_tab');
+    if (selectedButton) selectedButton.classList.add('active');
+};
+
+function hideAllTabs() {
+    const contents = document.getElementsByClassName('status_tab_content');
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+
+    const buttons = document.getElementsByClassName('status_tab_button');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+}

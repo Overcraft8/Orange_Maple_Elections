@@ -339,11 +339,13 @@ Agricultural Production Index: [+ agri_production +]
 
 Industrial Production Index: [+ indu_production +]
 
+{!<div class="tab_container">
+
 {!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
 
 {!<div id="nationalization" style="display: none;">
     <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
-    = Nationalization
+    Nationalization
 
     [? if year <= 1940 ?]
     Potash: [+ potash_nationalized : nationalization +]
@@ -371,7 +373,7 @@ Industrial Production Index: [+ indu_production +]
 
     State Capacity: [+ state_capacity : development +]
 
-    = Sectoral Development 
+    Sectoral Development 
 
     Agriculture: [+ agri_development : development +]
 
@@ -386,7 +388,7 @@ Industrial Production Index: [+ indu_production +]
     </div>
   </div>
 !}
-
+</div>!}
 
 
 

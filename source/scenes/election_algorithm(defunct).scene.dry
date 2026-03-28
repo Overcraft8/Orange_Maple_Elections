@@ -18,7 +18,7 @@ for (var c of Q.classes) {
 // 1. calculate support for each of the parties
 var urban_support = 0;
 for (var party of Q.parties) {
-    var party_support = 0;
+    var party_support_urban = 0;
     for (var c of Q.classes) {
         if (c === "farmer" || c === "farmhand" || c === "res_worker") continue;   // skip farmer, farmhand, res_worker
         // but this version is somewhat more entertaining and allows for wilder swings in votes.
@@ -27,14 +27,14 @@ for (var party of Q.parties) {
             // okay i'm pretty sure this is wrong, and the hard version is correct
             // basically this allows for "spillover" effects in other demographics.
             // so you can campaign among say the workers and 
-            party_support += Q[c]*Q[c+'_'+party];
+            party_support_urban += Q[c]*Q[c+'_'+party];
             // However, there should be a cap on how much party support you can get in a certain demo.
         } else  {
-            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
+            party_support_urban += Q[c]*Q[c+'_'+party+'_normalized'];
         }
     }
-    Q[party + '_support'] = party_support;
-    urban_support += party_support;
+    Q[party + '_support'] = party_support_urban;
+    urban_support += party_support_urban;
 }
 
 var rural_support = 0;

@@ -139,7 +139,7 @@ Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
 !}
 view-if: (not historical_mode) or game_over
-go-to: election_algorithm
+go-to: election_algorithm_sk
 set-jump: election_projections
 
 **Public Opinion**

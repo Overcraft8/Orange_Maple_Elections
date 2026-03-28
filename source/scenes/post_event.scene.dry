@@ -41,17 +41,17 @@ for (var c of Q.classes) {
 // calculate support for each of the parties
 var urban_support = 0; 
 for (var party of Q.parties) {
-    var party_support = 0;
+    var party_support_urban = 0;
     for (var c of Q.classes) {
         if (c === "farmer" || c === "farmhand" || c === "res_worker") continue;   // skip farmer
         if (Q.old_demographics) { 
-            party_support += Q[c]*Q[c+'_'+party];
+            party_support_urban += Q[c]*Q[c+'_'+party];
         } else  { 
-            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
+            party_support_urban += Q[c]*Q[c+'_'+party+'_normalized'];
         } 
     }
-    Q[party + '_support'] = party_support;
-    urban_support += party_support; 
+    Q[party + '_support'] = party_support_urban;
+    urban_support += party_support_urban; 
 }
 
 var rural_support = 0;

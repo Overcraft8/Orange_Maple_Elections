@@ -47,7 +47,7 @@ for (var party of Q.parties) {
     Q[party + '_seats'] = 0;
 }
 
-// 3. Helper: D’Hondt allocation
+//Helper
 function allocateSeats(votes, totalSeats) {
     var seats = {};
     for (var p in votes) seats[p] = 0;
@@ -85,7 +85,7 @@ for (var d of Q.district_names) {
                 support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
             }
         }
-        // Apply FPTP distortion: square the support
+        // Squaring for FPTP simulation
         district_party_support[party] = support * support;
     }
 
@@ -152,149 +152,7 @@ for (var party of Q.parties) {
 }
 
 
-/*
-Q.use_decimals = 1;
 
-// calculate normalized class voting amounts (0 to 100)
-for (var c of Q.classes) {
-    var class_votes = 0;
-    for (var party of Q.parties) {
-        if (Q[c+'_'+party] < 0) {
-            Q[c+'_'+party] = 0;
-        }
-        class_votes += Q[c+'_'+party];
-    }
-    for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
-        Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
-    }
-}
-
-// 1. calculate support for each of the parties
-
-// 2. normalize support (fraction)
-// 3. Round to integers
-// TODO: round to 1 decimal instead of rounding to integers
-// to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
-
-
-// reset seats
-for (var party of Q.parties) {
-    Q[party + '_seats'] = 0;
-}
-
-// helper function: D’Hondt
-function allocateSeats(votes, totalSeats) {
-    var seats = {};
-    for (var p in votes) seats[p] = 0;
-
-    for (var s = 0; s < totalSeats; s++) {
-        var maxQ = -1;
-        var winner = null;
-
-        for (var p in votes) {
-            var q = votes[p] / (seats[p] + 1);
-            if (q > maxQ) {
-                maxQ = q;
-                winner = p;
-            }
-        }
-
-        seats[winner]++;
-    }
-
-    return seats;
-}
-
-
-// loop through districts
-for (var i = 0; i < Q.district_names.length; i++) {
-
-    var d = Q.district_names[i];
-    var district_seats = Q[d + '_seats'] || 0;
-
-    var district_support_total = 0;
-    var district_party_support = {};
-
-    for (var party of Q.parties) {
-        var support = 0;
-
-        for (var c of Q.classes) {
-            var class_share = Q[d + '_' + c] || 0;
-
-            if (Q.old_demographics) {
-                support += class_share * (Q[c + '_' + party] || 0);
-            } else {
-                support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
-            }
-        }
-
-        district_party_support[party] = support;
-        district_support_total += support;
-    }
-
-    Q[d + '_party_support'] = district_party_support;
-
-    // normalize votes
-    var district_votes = {};
-    for (var party of Q.parties) {
-        district_votes[party] = (district_support_total > 0)
-            ? district_party_support[party] / district_support_total
-            : 0;
-    }
-
-    // allocate seats
-    var result = allocateSeats(district_votes, district_seats);
-
-    // store + accumulate
-    for (var party of Q.parties) {
-        Q[d + '_' + party + '_seats'] = result[party];
-        Q[party + '_seats'] += result[party];
-    }
-}
-
-var total = 0;
-
-for (var party of Q.parties) {
-    total += Q[party+'_seats'];
-}
-
-var expected = 0;
-for (var d of Q.district_names) {
-    expected += Q[d + '_seats'] || 0;
-}
-console.log("EXPECTED:", expected);
-
-
-var total_support = 0;
-for (var d of Q.district_names) {
-    total_support += Object.values(Q[d + '_party_support'] || {}).reduce((a,b)=>a+b, 0);
-}
-
-
-for (var party of Q.parties) {
-    var combined_support = 0;
-    for (var d of Q.district_names) {
-        combined_support += Q[d + '_party_support'][party] || 0;
-    }
-
-    Q[party+'_normalized'] = combined_support / total_support;
-    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized'] * 1000) / 10;
-
-    if (Q.use_decimals) {
-        Q[party+'_votes'] = Q[party+'_votes_dec'];
-        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-    } else {
-        Q[party+'_votes'] = Math.round(Q[party+'_normalized'] * 100);
-        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-    }
-}
-
-console.log("FLP votes:", Q.flp_votes);
-console.log("PPS votes:", Q.pps_votes);
-console.log("CP(S) votes:", Q.cp_s_votes);
-
-*/
 !}
 go-to: post_election_1928
 

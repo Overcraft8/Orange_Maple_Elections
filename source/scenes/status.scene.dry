@@ -340,51 +340,42 @@ Agricultural Production Index: [+ agri_production +]
 Industrial Production Index: [+ indu_production +]
 
 {!
-  
 <div class="tab_container">
 
-{!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
+  <button class="status_tab_button active"
+    id="nationalization_tab"
+    onclick="window.showStatusTab('nationalization')">
+    State Intervention
+  </button>
 
-{!<div id="nationalization" style="display: none;">
+  <button class="status_tab_button"
+    id="development_tab"
+    onclick="window.showStatusTab('development')">
+    Sectoral Development
+  </button>
 
-    Nationalization <br>
+  <div id="nationalization" class="status_tab_content" style="display: block; margin-top: 10px;">
+    = Nationalization <br>
 
     [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]<br>
-
     Healthcare: [+ universal_healthcare : nationalization +]<br>
-
     Power: [+ power_nationalized : nationalization +]<br>
-
     Oil: [+ oil_nationalized : nationalization +]<br>
-
     Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]<br>
-
     Auto Insurance: [+ auto_insurance_nationalized : nationalization +]<br>
-    </div>
   </div>
-!}
 
-{!<button class="tab_button" id="development_tab" onclick="selected_button = 'development'; window.toggle_statusbutton();">Sectoral Development</button>!}
-
-{!<div id="development" style="display: none;">
-
+  <div id="development" class="status_tab_content" style="display: none; margin-top: 10px;">
     State Intervention Level: [+ state_intervention : development +]<br>
-
     State Capacity: [+ state_capacity : development +]<br>
 
-    Sectoral Development <br>
-
+    = Sectoral Development <br>
     Agriculture: [+ agri_development : development +]<br>
-
     Industry: [+ industry_development : development +]<br>
-
     [? if year <= 1940: Potash: [+ potash_development : development +] ?]<br>
-
     Oil: [+ oil_development : development +]<br>
-
-    </div>
   </div>
-!}
+
 </div>
 !}
 

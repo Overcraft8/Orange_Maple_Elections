@@ -371,6 +371,30 @@ function applyWholesome(str) {
     window.updateSidebarRight();
   };
 
+  /* For buttons nested inside the status panel */
+  
+  window.showStatusTab = function(tabId) {
+  // Hide all tab content
+  const contents = document.getElementsByClassName('status_tab_content');
+  for (let i = 0; i < contents.length; i++) {
+    contents[i].style.display = 'none';
+  }
+
+  // Remove 'active' class from all buttons
+  const buttons = document.getElementsByClassName('status_tab_button');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
+
+  // Show selected tab content
+  const selectedContent = document.getElementById(tabId);
+  if (selectedContent) selectedContent.style.display = 'block';
+
+  // Highlight button
+  const selectedButton = document.getElementById(tabId + '_tab');
+  if (selectedButton) selectedButton.classList.add('active');
+};
+
   window.onDisplayContent = function() {
       window.updateSidebar();
       window.updateSidebarRight();

@@ -303,6 +303,32 @@ img.inline-img.icon {
 /* status buttons */
 .tab_button_wide {width: 100%;}
 
+
+
+/* For tabs nested inside status page */
+
+.status_tab_button {
+  font-family: "Minion Pro", Georgia, serif;
+    background-color: var(--tab-color);
+    color: var(--text-color);
+    /*float: left;*/
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.status_tab_button.active {
+    background-color: var(--tab-hover-color);
+}
+.status_tab_button:hover {
+    background-color: var(--tab-hover-color);
+}
+
+
+/* status buttons */
+.status_tab_button_wide {width: 100%;}
+
+
 .status_button {
   font-family: "Minion Pro", Georgia, serif;
   color: var(--text-color);

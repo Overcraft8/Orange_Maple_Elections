@@ -379,7 +379,7 @@ Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
 Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
 </div>
 
-<div id="cooperatives" class="status_tab_content" style="display:block; margin-top:10px;">
+<div id="cooperatives" class="status_tab_content" style="display:none; margin-top:10px;">
 = Cooperatives
 
 Agricultural Co-ops: [+ agri_coops : development +]
@@ -403,10 +403,11 @@ State Intervention Level: [+ state_intervention : development +]
 
 State Capacity: [+ state_capacity : development +]
 
-= Sectoral Development
+= Industry Development
+
 Agriculture: [+ agri_development : development +]
 
-Industry: [+ industry_development : development +]
+Heavy Industry: [+ industry_development : development +]
 
 [? if year <= 1940: Potash: [+ potash_development : development +] ?]
 

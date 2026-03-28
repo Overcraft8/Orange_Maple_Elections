@@ -373,6 +373,24 @@ function applyWholesome(str) {
 
   /* For buttons nested inside the status panel */
   window.showStatusTab = function(tabId) {
+    if (window.activeStatusTab === tabId) {
+        window.activeStatusTab = null;
+
+        // Hide all content
+        const contents = document.getElementsByClassName('status_tab_content');
+        for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+        }
+
+        // Remove active class from all buttons
+        const buttons = document.getElementsByClassName('status_tab_button');
+        for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+        }
+
+        return; // Stop here — nothing should be shown
+    }
+
   window.activeStatusTab = tabId;
   // Hide all tab content
   const contents = document.getElementsByClassName('status_tab_content');

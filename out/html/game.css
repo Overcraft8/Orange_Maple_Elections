@@ -802,16 +802,17 @@ table {
 }
 
 a.status_panel_card {
-  height: 0.7em;
-  width: 0.7em;
+  width: 8em;
   display: inline-block;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 0.5em;
   position: relative;
+  text-align: center;
 }
 
 .status_panel_card_image {
-  border: 8px solid var(--card-border-color);
+  --status_card_border_color: #4d9d1b99;
+  border: 3px solid var(--status_card_border_color);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 

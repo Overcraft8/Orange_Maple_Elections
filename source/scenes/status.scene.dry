@@ -346,7 +346,7 @@ Industrial Production Index: [+ indu_production +]
 {!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
 
 {!<div id="nationalization" style="display: none;">
-    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+
     Nationalization <br>
 
     [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]<br>
@@ -367,7 +367,6 @@ Industrial Production Index: [+ indu_production +]
 {!<button class="tab_button" id="development_tab" onclick="selected_button = 'development'; window.toggle_statusbutton();">Sectoral Development</button>!}
 
 {!<div id="development" style="display: none;">
-    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
 
     State Intervention Level: [+ state_intervention : development +]<br>
 
@@ -389,7 +388,7 @@ Industrial Production Index: [+ indu_production +]
 </div>
 !}
 
-
+# <div style="text-align: center; font-weight: bold; margin-bottom: 5px;"> 
 
 
 

@@ -579,12 +579,12 @@ img {
   }
   #content {
       position: static;
-      font-size: 0.9em;
+      font-size: 13px;
       line-height: 130%;
       padding: 1em 1em 1.5em 1em;
   }
   #qualities {
-      font-size: 1em;
+      font-size: 10px;
   }
   #tools_wrapper {
     position: static;
@@ -831,6 +831,7 @@ a.status_panel_card {
   position:relative;
   display:flex;
   justify-content:space-between;
+  width: 125px;
 }
 
 .flag {
@@ -841,6 +842,8 @@ a.status_panel_card {
 
 .flag.nat { background:#b22222; } /* deep red */
 .flag.dev { background:#2e8b57; } /* green */
+
+
 
 
 

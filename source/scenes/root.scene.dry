@@ -556,7 +556,11 @@ Q.auto_insurance_nationalized = -6;
 
 Q.industry_development = 0;
 
-
+Q.agri_coops = 4;
+Q.retail_coops = 3;
+Q.credit_unions = 3;
+Q.housing_coops = 1;
+Q.factory_coops = 0;
 
 
 

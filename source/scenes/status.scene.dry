@@ -16,36 +16,36 @@ if (Q.economic_growth) {
 
 !}
 
-{!</div>!}
+#{!</div>!}
 
-{!<div style="max-height:350px; overflow-y:auto; padding:6px;">!}
+#{!<div style="max-height:350px; overflow-y:auto; padding:6px;">!}
 
-{!
-<div style="display:flex; align-items:flex-start;">
+#{!
+#<div style="display:flex; align-items:flex-start;">
 
-<!-- LEFT IMAGE -->
+#<!-- LEFT IMAGE -->
 #* <div style="width:60%; text-align:center;">
 # <img src="img/Red_Lily.png" style="max-width:100%;">
 #* </div>
 
-<!-- MAIN CONTENT -->
-<div style="width:60%; padding:0 10px;">
-!}
+#<!-- MAIN CONTENT -->
+#<div style="width:60%; padding:0 10px;">
+#!}
 
 = Status
 
-{!
-</div>
+#{!
+#</div>
 
-<!-- RIGHT IMAGE -->
+#<!-- RIGHT IMAGE -->
 # <div style="width:60%; text-align:center;">
 # <img src="img/Wheat_Bundle.png" style="max-width:100%;">
 # </div>
 
-</div>
-!}
+#</div>
+#!}
 
-{!</div>!}
+#{!</div>!}
 
 [+ month : month +] [+ year +]
 
@@ -354,6 +354,12 @@ Industrial Production Index: [+ indu_production +]
     Sectoral Development
   </button>
 
+  <button class="status_tab_button"
+    id="cooperatives_tab"
+    onclick="window.showStatusTab('cooperatives')">
+    Cooperatives
+  </button>
+
 </div>
 !}
 
@@ -361,22 +367,51 @@ Industrial Production Index: [+ indu_production +]
 = Nationalization
 
 [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]
+
 Healthcare: [+ universal_healthcare : nationalization +]
+
 Power: [+ power_nationalized : nationalization +]
+
 Oil: [+ oil_nationalized : nationalization +]
+
 Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
+
 Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
+</div>
+
+<div id="cooperatives" class="status_tab_content" style="display:block; margin-top:10px;">
+= Cooperatives
+
+Agricultural Co-ops: [+ agri_coops : development +]
+
+Retail Co-ops: [+ retail_coops : development +]
+
+Credit Unions: [+ credit_unions : development +]
+
+Housing Co-ops: [+ housing_coops : development +]
+
+Factory Co-ops: [+ factory_coops : development +]
+
+[? if year <= 1940: Potash: [+ potash_development : development +] ?]
+
+Oil: [+ oil_development : development +]
+
 </div>
 
 <div id="development" class="status_tab_content" style="display:none; margin-top:10px;">
 State Intervention Level: [+ state_intervention : development +]
+
 State Capacity: [+ state_capacity : development +]
 
 = Sectoral Development
 Agriculture: [+ agri_development : development +]
+
 Industry: [+ industry_development : development +]
+
 [? if year <= 1940: Potash: [+ potash_development : development +] ?]
+
 Oil: [+ oil_development : development +]
+
 </div>
 
 

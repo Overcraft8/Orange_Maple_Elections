@@ -376,6 +376,8 @@ Industrial Production Index: [+ indu_production +]
     Oil: [+ oil_development : development +]<br>
   </div>
 
+  <div id="no_content" class="status_tab_content">
+
 </div>
 !}
 

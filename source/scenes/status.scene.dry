@@ -339,12 +339,14 @@ Agricultural Production Index: [+ agri_production +]
 
 Industrial Production Index: [+ indu_production +]
 
-{!<div class="tab_container">
+<div class="tab_container">
 
-{!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
+<button class="tab_button" id="nationalization_tab">
+  State Intervention
+</button>
 
-{!<div id="nationalization" style="display: none;">
-    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+<div id="nationalization" style="display: none;">
+  <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
     Nationalization
 
     [? if year <= 1940 ?]
@@ -352,43 +354,38 @@ Industrial Production Index: [+ indu_production +]
     [? endif ?]
 
     Healthcare: [+ universal_healthcare : nationalization +]
-
     Power: [+ power_nationalized : nationalization +]
-
     Oil: [+ oil_nationalized : nationalization +]
-
     Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
-
     Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
-    </div>
   </div>
-!}
+</div>
 
-{!<button class="tab_button" id="development_tab" onclick="selected_button = 'development'; window.toggle_statusbutton();">Sectoral Development</button>!}
+<button class="tab_button" id="development_tab">
+  Sectoral Development
+</button>
 
-{!<div id="development" style="display: none;">
-    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+<div id="development" style="display: none;">
+  <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
 
     State Intervention Level: [+ state_intervention +]
-
     State Capacity: [+ state_capacity : development +]
 
-    Sectoral Development 
+    Sectoral Development
 
     Agriculture: [+ agri_development : development +]
-
     Industry: [+ industry_development : development +]
 
     [? if year <= 1940 ?]
-    Potash: [+ potash_development : development +] 
+    Potash: [+ potash_development : development +]
     [? endif ?]
 
     Oil: [+ oil_development : development +]
 
-    </div>
   </div>
-!}
-</div>!}
+</div>
+
+</div>
 
 
 

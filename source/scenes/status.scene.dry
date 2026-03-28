@@ -406,29 +406,23 @@ State Capacity: [+ state_capacity : development +]
 = Industry Development
 
 {!
-  <div id="agriculture_status" style="display:flex; gap:1em">
-  <a class="status_panel_card">
+  <div style="display:flex; gap:1em">
+  <a id="agriculture_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/Melfort_Market.jpg" >
     <span class="card-caption">Agriculture</span>
   </a>
-  </div>
 
-  <div id="manufacturing_status" style="display:flex; gap:1em">
-  <a class="status_panel_card">
+  <a id="manufacturing_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/robin_hood_mill.jpg" >
     <span class="card-caption">Manufacturing</span>
   </a>
-  </div>
 
-  <div id="manufacturing_status" style="display:flex; gap:1em">
-  <a class="status_panel_card">
+  <a id="manufacturing_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/robin_hood_mill.jpg" >
     <span class="card-caption">Manufacturing</span>
   </a>
-  </div>
 
-  <div id="potash_status" style="display:flex; gap:1em">
-  <a class="status_panel_card">
+  <a id="potash_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/coal_mining.jpg" >
     <span class="card-caption">Potash Mining</span>
   </a>

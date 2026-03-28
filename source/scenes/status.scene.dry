@@ -339,68 +339,54 @@ Agricultural Production Index: [+ agri_production +]
 
 Industrial Production Index: [+ indu_production +]
 
-<div class="tab_container">
+{!<div class="tab_container">
 
-<button class="tab_button" id="nationalization_tab">
-  State Intervention
-</button>
+{!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
 
-<div id="nationalization" style="display: none;">
-  <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+{!<div id="nationalization" style="display: none;">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
     Nationalization
 
-    [? if year <= 1940 ?]
-    Potash: [+ potash_nationalized : nationalization +]
-    [? endif ?]
+    [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]
 
     Healthcare: [+ universal_healthcare : nationalization +]
+
     Power: [+ power_nationalized : nationalization +]
+
     Oil: [+ oil_nationalized : nationalization +]
+
     Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
+
     Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
+    </div>
   </div>
-</div>
+!}
 
-<button class="tab_button" id="development_tab">
-  Sectoral Development
-</button>
+{!<button class="tab_button" id="development_tab" onclick="selected_button = 'development'; window.toggle_statusbutton();">Sectoral Development</button>!}
 
-<div id="development" style="display: none;">
-  <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+{!<div id="development" style="display: none;">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
 
-    State Intervention Level: [+ state_intervention +]
+    State Intervention Level: [+ state_intervention : development +]
+
     State Capacity: [+ state_capacity : development +]
 
-    Sectoral Development
+    Sectoral Development 
 
     Agriculture: [+ agri_development : development +]
+
     Industry: [+ industry_development : development +]
 
-    [? if year <= 1940 ?]
-    Potash: [+ potash_development : development +]
-    [? endif ?]
+    [? if year <= 1940: Potash: [+ potash_development : development +] ?]
 
     Oil: [+ oil_development : development +]
 
+    </div>
   </div>
-</div>
+!}
+</div>!}
 
-</div>
 
-<script>
-let selected_button = null;
-
-window.toggle_statusbutton = function() {
-  document.getElementById("nationalization").style.display = "none";
-  document.getElementById("development").style.display = "none";
-
-  if (selected_button === "nationalization") {
-    document.getElementById("nationalization").style.display = "block";
-  } else if (selected_button === "development") {
-    document.getElementById("development").style.display = "block";
-  }
-};
-</script>
 
 
 

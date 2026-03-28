@@ -207,7 +207,7 @@ img.inline-img.icon {
 }
 /* This is mostly copied from undum. */
 #mid_panel {
-  margin: 0 11rem;
+  margin: 0 400px;
 }
 #page {
   margin: 0 auto;
@@ -223,7 +223,7 @@ img.inline-img.icon {
 }
 .tools {
   padding: 0.6em;
-  width: 21rem;
+  width: 375px;
   color: var(--text-color);
   background-color: var(--content-bg-color);
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
@@ -801,10 +801,20 @@ table {
   display: inline-block;
 }
 
+.status-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  vertical-align: top;
+  gap: 1em;
+}
+
+
 a.status_panel_card {
-  width: 8em;
+  width: 120px;
+  height: 120px;
   display: inline-block;
-  margin-bottom: 0.5em;
+  margin-bottom: 2em;
   position: relative;
   text-align: center;
 }
@@ -813,6 +823,8 @@ a.status_panel_card {
   --status_card_border_color: #4d9d1b99;
   border: 3px solid var(--status_card_border_color);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  width: 120px;
+  height: 80px;
 }
 
 .card-flags {
@@ -822,13 +834,15 @@ a.status_panel_card {
 }
 
 .flag {
-  padding:1px 2px;
-  border-radius:4px;
-  font-size:4px;
+  height: 20px;
+  font-size: 4px;
   color:white;
 }
 
 .flag.nat { background:#b22222; } /* deep red */
 .flag.dev { background:#2e8b57; } /* green */
+
+
+
 
 

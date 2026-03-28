@@ -324,7 +324,7 @@ Healthcare quality: [+ healthcarequality +]
 = Economy
 
 {!
-<div class="tab_container">
+<div class="tab_container_status">
 
   <button class="status_tab_button active"
     id="nationalization_tab"
@@ -376,9 +376,6 @@ Housing Co-ops: [+ housing_coops : development +]
 
 Factory Co-ops: [+ factory_coops : development +]
 
-[? if year <= 1940: Potash: [+ potash_development : development +] ?]
-
-Oil: [+ oil_development : development +]
 
 </div>
 
@@ -391,29 +388,29 @@ State Capacity: [+ state_capacity : development +]
 
 {!
   <div class="status-card-row">
-  <a id="agriculture_status" class="status_panel_card">
-    <div class="card-flags">
-      <span class="flag nat">N: [+ potash_nationalized : nationalization +]</span>
-      <span class="flag dev">D: [+ potash_development : development +]</span>
-    </div>
+  <button id="agriculture_status" class="status_panel_card">
+    #<div class="card-flags">
+    #  <span class="flag nat">N: [+ potash_nationalized : nationalization +]</span>
+     # <span class="flag dev">D: [+ potash_development : development +]</span>
+    # </div>
     <img class="status_panel_card_image" src="img/Melfort_Market.jpg" >
     <span class="card-caption">Agriculture</span>
-  </a>
+  </button>
 
-  <a id="manufacturing_status" class="status_panel_card">
+  <button id="manufacturing_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/robin_hood_mill.jpg" >
     <span class="card-caption">Manufacturing</span>
-  </a>
+  </button>
 
-  <a id="manufacturing_status" class="status_panel_card">
-    <img class="status_panel_card_image" src="img/robin_hood_mill.jpg" >
-    <span class="card-caption">Manufacturing</span>
-  </a>
+  <button id="energy_status" class="status_panel_card">
+    <img class="status_panel_card_image" src="img/island_falls_plant.jpg" >
+    <span class="card-caption">Energy Production</span>
+  </button>
 
-  <a id="potash_status" class="status_panel_card">
+  <button id="potash_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/coal_mining.jpg" >
     <span class="card-caption">Potash Mining</span>
-  </a>
+  </button>
   </div>
 !}
 

@@ -118,7 +118,7 @@ header h2:before {
 }
 #content h1 {
   margin: 2em 0 1em 0;
-  font-size: 1.35em;
+  font-size: 1.6em;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -244,7 +244,7 @@ img.inline-img.icon {
   text-indent: 0;
 }
 #qualities h1 {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -277,7 +277,17 @@ img.inline-img.icon {
 
 /* tabs */
 .tab_container {
+  padding: 0.3em 0.1em;
     background-color: var(--tab-bg-color);
+    margin-top: -0.6em;
+    margin-left: -0.6em;
+    margin-right: -0.6em;
+}
+
+.tab_container_status {
+    background-color: rgb(159 123 82 / 33%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    padding: 0.3em 0.1em;
     margin-top: -0.6em;
     margin-left: -0.6em;
     margin-right: -0.6em;
@@ -579,12 +589,12 @@ img {
   }
   #content {
       position: static;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 130%;
       padding: 1em 1em 1.5em 1em;
   }
   #qualities {
-      font-size: 10px;
+      font-size: 1em;
   }
   #tools_wrapper {
     position: static;
@@ -696,7 +706,7 @@ table {
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
   border: 1px solid #b22222;
   pointer-events: none;
-  font-size: 13px !important;
+  font-size: 11px !important;
   line-height: 1.2em !important;
   font-weight: 500 !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
@@ -756,7 +766,7 @@ table {
 
 /* Table styling */
 .poll-table {
-  font-size: 0.85em;         /* smaller font */
+  font-size: 0.8em;         /* smaller font */
   line-height: 1.1;          /* tighter rows */
   border: 1px solid #6d6d6d;
   border-collapse: collapse;
@@ -764,7 +774,7 @@ table {
 }
 
 .poll-table.dark-mode {
-  font-size: 0.9005em;         /* smaller font */
+  font-size: 0.8em;         /* smaller font */
   line-height: 1.1;          /* tighter rows */
   border: 1px solid #d53737;
   border-collapse: collapse;
@@ -842,10 +852,5 @@ a.status_panel_card {
 
 .flag.nat { background:#b22222; } /* deep red */
 .flag.dev { background:#2e8b57; } /* green */
-
-
-
-
-
 
 

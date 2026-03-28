@@ -372,8 +372,8 @@ function applyWholesome(str) {
   };
 
   /* For buttons nested inside the status panel */
-
   window.showStatusTab = function(tabId) {
+  window.activeStatusTab = tabId;
   // Hide all tab content
   const contents = document.getElementsByClassName('status_tab_content');
   for (let i = 0; i < contents.length; i++) {
@@ -387,30 +387,23 @@ function applyWholesome(str) {
   }
 
   // Show selected tab content
+  const selectedContent = document.getElementById(tabId);
+  if (selectedContent) selectedContent.style.display = 'block';
 
-  // Hide previous content
-  if (selectedContent) {
-    selectedContent.style.display = 'none';
-  }
-
-  // Show new content
-  selectedContent = document.getElementById(tabId);
-  selectedContent.style.display = 'block';
-
-  // Remove active class from previous button
-  if (selectedButton) {
-    selectedButton.classList.remove('active');
-  }
-
-  // Add active class to new button
-  selectedButton = document.getElementById(tabId + '_tab');
-  selectedButton.classList.add('active');
+  // Highlight button
+  const selectedButton = document.getElementById(tabId + '_tab');
+  if (selectedButton) selectedButton.classList.add('active');
 };
 
   window.onDisplayContent = function() {
-      window.updateSidebar();
-      window.updateSidebarRight();
-  };
+    window.updateSidebar();
+    window.updateSidebarRight();
+
+    if (window.activeStatusTab) {
+        window.showStatusTab(window.activeStatusTab);
+    }
+};
+
 
 
   /*

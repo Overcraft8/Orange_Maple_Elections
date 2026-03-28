@@ -351,7 +351,7 @@ Industrial Production Index: [+ indu_production +]
   <button class="status_tab_button"
     id="development_tab"
     onclick="window.showStatusTab('development')">
-    Sectoral Development
+    Industry Development
   </button>
 
   <button class="status_tab_button"
@@ -404,6 +404,15 @@ State Intervention Level: [+ state_intervention : development +]
 State Capacity: [+ state_capacity : development +]
 
 = Industry Development
+
+{!
+  <div class="status_panel_card">
+    Agriculture
+    <img 
+      src="img/Melfort_Market.jpg" 
+    >
+  <div>
+!}
 
 Agriculture: [+ agri_development : development +]
 

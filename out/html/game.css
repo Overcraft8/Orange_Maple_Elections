@@ -799,3 +799,16 @@ table {
   width: 0.7em;
   display: inline-block;
 }
+
+a.status_panel_card {
+  height: 0.7em;
+  width: 0.7em;
+  display: inline-block;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.status_panel_card_image {
+  border: 8px solid var(--card-border-color);
+}

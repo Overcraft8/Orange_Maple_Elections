@@ -406,13 +406,26 @@ State Capacity: [+ state_capacity : development +]
 = Industry Development
 
 {!
-  <div class="status_panel_card">
-    Agriculture
-    <img 
-      src="img/Melfort_Market.jpg" 
-    >
-  <div>
+  <div id="agriculture_status" style="display:flex; gap:1em">
+  <a class="status_panel_card">
+    <img class="status_panel_card_image" src="img/Melfort_Market.jpg" >
+    <span class="card-caption">Agriculture</span>
+  </a>
+  </div>
 !}
+
+<div style="display:flex; gap:1em;">
+
+<a class="card" go-to="flp_president">
+  <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
+  <span class="card-caption">Party President</span>
+</a>
+
+<a class="card" go-to="flp_legislative_leader">
+  <img class="card-img" src="img/portraits/[+ flp_legislative_leader_img +]" style="display:block; margin:auto;">
+  <span class="card-caption">Legislative Leader</span>
+</a>
+</div>
 
 Agriculture: [+ agri_development : development +]
 

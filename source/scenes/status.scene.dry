@@ -339,19 +339,47 @@ Agricultural Production Index: [+ agri_production +]
 
 Industrial Production Index: [+ indu_production +]
 
-= State Intervention
+{!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
 
-[? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]
+{!<div id="nationalization" style="display: none;">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+    = Nationalization
 
-Healthcare: [+ universal_healthcare : nationalization +]
+    [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]
 
-Power: [+ power_nationalized : nationalization +]
+    Healthcare: [+ universal_healthcare : nationalization +]
 
-Oil: [+ oil_nationalized : nationalization +]
+    Power: [+ power_nationalized : nationalization +]
 
-Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
+    Oil: [+ oil_nationalized : nationalization +]
 
-Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
+    Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
+
+    Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
+    </div>
+!}
+
+{!<button class="tab_button" id="development_tab" onclick="selected_button = 'development'; window.toggle_statusbutton();">Sectoral Development</button>!}
+
+{!<div id="development" style="display: none;">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+
+    State Intervention Level: [+ state_intervention +]
+
+    State Capacity: [+ state_capacity : development +]
+
+    = Sectoral Development 
+
+    Agriculture: [+ agri_development : development +]
+
+    Industry: [+ industry_development : development +]
+
+    [? if year <= 1940: Potash: [+ potash_development : development +] ?]
+
+    Oil: [+ oil_development : development +]
+
+    </div>
+!}
 
 
 
@@ -362,20 +390,7 @@ Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
 
 = Situations
 
-{!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
-
-{!<div id="nationalization" style="display: none;">
-    <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
-    Nationalization
-    <img 
-      src="img/Melfort_Market.jpg" 
-      style="width: 40%; display: block; margin: auto; cursor: pointer;"
-    >
-  <div>
-!}
-
     
-
 [? if depression == 1:
 {!
   <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">

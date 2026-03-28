@@ -540,11 +540,16 @@ Q.indu_production = (100).toFixed(1);
 
 //                         Nationalization and Intervention
 Q.potash_nationalized = -6;
+Q.potash_development = 0;
 Q.housing_intervention = -6; 
-Q.oil_nationalized
+Q.oil_nationalized = -6;
+Q.oil_development = 0;
 Q.agri_marketing_nationalized = 0;
+Q.agri_development = 8;
 Q.power_nationalized = -6;
 Q.auto_insurance_nationalized = -6;
+
+Q.industry_development = 0;
 
 
 

@@ -345,7 +345,9 @@ Industrial Production Index: [+ indu_production +]
     <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
     = Nationalization
 
-    [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]
+    [? if year <= 1940 ?]
+    Potash: [+ potash_nationalized : nationalization +]
+    [? endif ?]
 
     Healthcare: [+ universal_healthcare : nationalization +]
 
@@ -375,7 +377,9 @@ Industrial Production Index: [+ indu_production +]
 
     Industry: [+ industry_development : development +]
 
-    [? if year <= 1940: Potash: [+ potash_development : development +] ?]
+    [? if year <= 1940 ?]
+    Potash: [+ potash_development : development +] 
+    [? endif ?]
 
     Oil: [+ oil_development : development +]
 

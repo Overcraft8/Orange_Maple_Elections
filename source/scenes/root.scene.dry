@@ -541,7 +541,7 @@ Q.indu_production = (100).toFixed(1);
 //                         Nationalization and Intervention
 
 Q.state_capacity = 2;
-Q.state_intervention = "Scarce";
+Q.state_intervention = "Scarce";    
 
 
 Q.potash_nationalized = -6;
@@ -928,11 +928,33 @@ For more information on the politics and government of Saskatchewan, see the "Li
 - @1932_historical: Begin (historical mode)
 
 @1932_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 35.00; cp_s_relation = 29; pps_relation = 54; cps_relation = 49; treasury = 15;
+on-arrival: {!
+  Q.difficulty = -1;
+  Q.resources = 4;
+  Q.dues = 3;
+  Q.ufc_strength = 35.00;
+  Q.cp_s_relation = 29;
+  Q.pps_relation = 54;
+  Q.cps_relation = 49;
+  Q.treasury = 15;
+!}
 go-to: 1932_main
 
 @1932_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 25.00; reformist_dissent = 25; far_left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_s_relation = 16; cps_relation = 31; treasury = 5;
+on-arrival: {!
+  Q.difficulty = 1;
+  Q.resources = 0;
+  Q.dues = 1;
+  Q.ufc_strength = 25.00;
+  Q.reformist_dissent = 25;
+  Q.far_left_dissent = 30;
+  Q.labour_dissent = 25;
+  Q.agrarian_dissent = 25;
+  Q.pps_relation = 41;
+  Q.cp_s_relation = 16;
+  Q.cps_relation = 31;
+  Q.treasury = 5;
+!}
 go-to: 1932_main
 
 @1932_historical

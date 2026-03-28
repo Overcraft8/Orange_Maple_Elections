@@ -339,25 +339,27 @@ Agricultural Production Index: [+ agri_production +]
 
 Industrial Production Index: [+ indu_production +]
 
-{!<div class="tab_container">
+{!
+  
+<div class="tab_container">
 
 {!<button class="tab_button" id="nationalization_tab" onclick="selected_button = 'nationalization'; window.toggle_statusbutton();">State Intervention</button>!}
 
 {!<div id="nationalization" style="display: none;">
     <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
-    Nationalization
+    Nationalization <br>
 
-    [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]
+    [? if year <= 1940: Potash: [+ potash_nationalized : nationalization +] ?]<br>
 
-    Healthcare: [+ universal_healthcare : nationalization +]
+    Healthcare: [+ universal_healthcare : nationalization +]<br>
 
-    Power: [+ power_nationalized : nationalization +]
+    Power: [+ power_nationalized : nationalization +]<br>
 
-    Oil: [+ oil_nationalized : nationalization +]
+    Oil: [+ oil_nationalized : nationalization +]<br>
 
-    Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
+    Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]<br>
 
-    Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
+    Auto Insurance: [+ auto_insurance_nationalized : nationalization +]<br>
     </div>
   </div>
 !}
@@ -367,24 +369,25 @@ Industrial Production Index: [+ indu_production +]
 {!<div id="development" style="display: none;">
     <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
 
-    State Intervention Level: [+ state_intervention : development +]
+    State Intervention Level: [+ state_intervention : development +]<br>
 
-    State Capacity: [+ state_capacity : development +]
+    State Capacity: [+ state_capacity : development +]<br>
 
-    Sectoral Development 
+    Sectoral Development <br>
 
-    Agriculture: [+ agri_development : development +]
+    Agriculture: [+ agri_development : development +]<br>
 
-    Industry: [+ industry_development : development +]
+    Industry: [+ industry_development : development +]<br>
 
-    [? if year <= 1940: Potash: [+ potash_development : development +] ?]
+    [? if year <= 1940: Potash: [+ potash_development : development +] ?]<br>
 
-    Oil: [+ oil_development : development +]
+    Oil: [+ oil_development : development +]<br>
 
     </div>
   </div>
 !}
-</div>!}
+</div>
+!}
 
 
 

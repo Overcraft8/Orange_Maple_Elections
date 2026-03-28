@@ -387,7 +387,20 @@ Industrial Production Index: [+ indu_production +]
 
 </div>
 
+<script>
+let selected_button = null;
 
+window.toggle_statusbutton = function() {
+  document.getElementById("nationalization").style.display = "none";
+  document.getElementById("development").style.display = "none";
+
+  if (selected_button === "nationalization") {
+    document.getElementById("nationalization").style.display = "block";
+  } else if (selected_button === "development") {
+    document.getElementById("development").style.display = "block";
+  }
+};
+</script>
 
 
 

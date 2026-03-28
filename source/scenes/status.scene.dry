@@ -406,11 +406,11 @@ State Capacity: [+ state_capacity : development +]
 = Industry Development
 
 {!
-  <div style="display:flex; gap:1em">
+  <div class="status-card-row">
   <a id="agriculture_status" class="status_panel_card">
     <div class="card-flags">
-      <span class="flag nat">N: [+ potash_nationalized +]</span>
-      <span class="flag dev">D: [+ potash_development +]</span>
+      <span class="flag nat">N: [+ potash_nationalized : nationalization +]</span>
+      <span class="flag dev">D: [+ potash_development : development +]</span>
     </div>
     <img class="status_panel_card_image" src="img/Melfort_Market.jpg" >
     <span class="card-caption">Agriculture</span>

@@ -380,6 +380,7 @@ Factory Co-ops: [+ factory_coops : development +]
 </div>
 
 <div id="development" class="status_tab_content" style="display:none; margin-top:10px;">
+
 State Intervention Level: [+ state_intervention : development +]
 
 State Capacity: [+ state_capacity : development +]
@@ -388,7 +389,8 @@ State Capacity: [+ state_capacity : development +]
 
 {!
   <div class="status-card-row">
-  <button id="agriculture_status" class="status_panel_card">
+  <button id="agriculture_status" class="status_panel_card" 
+          onclick="window.status_info('agriculture')">
     #<div class="card-flags">
     #  <span class="flag nat">N: [+ potash_nationalized : nationalization +]</span>
      # <span class="flag dev">D: [+ potash_development : development +]</span>
@@ -444,7 +446,20 @@ Oil: [+ oil_development : development +]
 </div>
 
 
-# <div style="text-align: center; font-weight: bold; margin-bottom: 5px;"> 
+# Below are status info panels
+
+<div id="agriculture" class="status_panel_info" style="display:none">
+= Agriculture
+
+Agricultural Co-ops: [+ agri_coops : development +]
+
+</div>
+
+
+
+
+
+
 
 
 

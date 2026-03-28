@@ -837,6 +837,15 @@ a.status_panel_card {
   height: 80px;
 }
 
+a.status_panel_info {
+  width: 120px;
+  height: 120px;
+  display: inline-block;
+  margin-bottom: 2em;
+  position: relative;
+  text-align: center;
+}
+
 .card-flags {
   position:relative;
   display:flex;

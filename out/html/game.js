@@ -531,3 +531,23 @@ function hideAllTabs() {
         buttons[i].classList.remove('active');
     }
 }
+
+window.status_info = function(panelId) {
+    // Hide all industry info panels
+    const panels = document.getElementsByClassName('status_panel_info');
+    for (let i = 0; i < panels.length; i++) {
+        panels[i].style.display = 'none';
+    }
+
+    // Toggle the selected panel
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+
+    // If already visible, hide it
+    if (panel.style.display === 'block') {
+        panel.style.display = 'none';
+    } else {
+        panel.style.display = 'block';
+    }
+};
+

@@ -277,6 +277,7 @@ img.inline-img.icon {
 
 /* tabs */
 .tab_container {
+  box-shadow: 0 2px 4px #606060;
   padding: 0.3em 0.1em;
     background-color: var(--tab-bg-color);
     margin-top: -0.6em;

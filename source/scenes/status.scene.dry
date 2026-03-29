@@ -412,6 +412,12 @@ State Capacity: [+ state_capacity : development +]
   </div>
 !}
 
+<a class="card" go-to="flp_president">
+  <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
+  <span class="card-caption">Party President</span>
+</a>
+
+
 
 
 
@@ -451,13 +457,6 @@ Oil: [+ oil_development : development +]
 Agricultural Co-ops: [+ agri_coops : development +]
 
 </div>
-
-
-
-<a class="card" go-to="flp_president">
-  <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
-  <span class="card-caption">Party President</span>
-</a>
 
 
 

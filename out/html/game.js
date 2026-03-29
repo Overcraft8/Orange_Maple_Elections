@@ -528,21 +528,32 @@ function hideAllTabs() {
 }
 
 window.status_info = function(panelId) {
+
+    // Build the actual panel ID
+    const fullId = panelId + "_status";
+
+    // Clear any active tab state
+    window.activeStatusTab = null;
+    localStorage.removeItem("activeStatusTab");
+    hideAllTabs();
+
+    // Get the panel
+    const panel = document.getElementById(fullId);
+    if (!panel) return;
+
+    // If this panel is already open → close it and exit
+    const isOpen = panel.style.display === 'block';
+
     // Hide all industry info panels
     const panels = document.getElementsByClassName('status_panel_info');
     for (let i = 0; i < panels.length; i++) {
         panels[i].style.display = 'none';
     }
 
-    // Toggle the selected panel
-    const panel = document.getElementById(panelId);
-    if (!panel) return;
-
-    // If already visible, hide it
-    if (panel.style.display === 'block') {
-        panel.style.display = 'none';
-    } else {
+    // Toggle: if it was open, leave it closed; if closed, open it
+    if (!isOpen) {
         panel.style.display = 'block';
     }
 };
+
 

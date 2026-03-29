@@ -489,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* For buttons nested inside a status panel */
+// For buttons nested inside a status panel 
 window.showStatusTab = function(tabId) {
     // Toggle off if same tab is clicked
     if (window.activeStatusTab === tabId) {
@@ -529,16 +529,13 @@ function hideAllTabs() {
 
 window.status_info = function(panelId) {
 
-    // Build the actual panel ID
-    const fullId = panelId + "_status";
-
     // Clear any active tab state
     window.activeStatusTab = null;
     localStorage.removeItem("activeStatusTab");
     hideAllTabs();
 
     // Get the panel
-    const panel = document.getElementById(fullId);
+    const panel = document.getElementById(panelId);
     if (!panel) return;
 
     // If this panel is already open → close it and exit

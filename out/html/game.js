@@ -529,28 +529,27 @@ function hideAllTabs() {
 
 window.status_info = function(panelId) {
 
-    window.activeStatusTab = null;
-    localStorage.removeItem("activeStatusTab");
-    hideAllTabs();
-
-    // Make sure the parent tab is visible
-    const devTab = document.getElementById("development");
-    if (devTab) devTab.style.display = "block";
+    // Do NOT hide tabs here.
+    // Do NOT clear activeStatusTab.
+    // Leave the tab system alone.
 
     const panel = document.getElementById(panelId);
     if (!panel) return;
 
     const isOpen = panel.style.display === 'block';
 
+    // Hide all industry info panels
     const panels = document.getElementsByClassName('status_panel_info');
     for (let i = 0; i < panels.length; i++) {
         panels[i].style.display = 'none';
     }
 
+    // Toggle the selected panel
     if (!isOpen) {
         panel.style.display = 'block';
     }
 };
+
 
 
 

@@ -529,28 +529,28 @@ function hideAllTabs() {
 
 window.status_info = function(panelId) {
 
-    // Clear any active tab state
     window.activeStatusTab = null;
     localStorage.removeItem("activeStatusTab");
     hideAllTabs();
 
-    // Get the panel
+    // Make sure the parent tab is visible
+    const devTab = document.getElementById("development");
+    if (devTab) devTab.style.display = "block";
+
     const panel = document.getElementById(panelId);
     if (!panel) return;
 
-    // If this panel is already open → close it and exit
     const isOpen = panel.style.display === 'block';
 
-    // Hide all industry info panels
     const panels = document.getElementsByClassName('status_panel_info');
     for (let i = 0; i < panels.length; i++) {
         panels[i].style.display = 'none';
     }
 
-    // Toggle: if it was open, leave it closed; if closed, open it
     if (!isOpen) {
         panel.style.display = 'block';
     }
 };
+
 
 

@@ -487,6 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+/* 
 // For buttons nested inside a status panel 
 window.showStatusTab = function(tabId) {
     // Toggle off if same tab is clicked
@@ -524,6 +525,7 @@ function hideAllTabs() {
         buttons[i].classList.remove('active');
     }
 }
+*/
 
 window.changePanel = function(newPanel, PanelId) {
 

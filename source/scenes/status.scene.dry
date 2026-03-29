@@ -393,29 +393,26 @@ State Capacity: [+ state_capacity : development +]
           onclick="window.status_info('agriculture')">
     <img class="status_panel_card_image" src="img/Melfort_Market.jpg" >
     <span class="card-caption">Agriculture</span>
-  <<button>
+  </button>
 
   <button id="manufacturing_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/robin_hood_mill.jpg" >
     <span class="card-caption">Manufacturing</span>
-  <<button>
+  </button>
 
   <button id="energy_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/island_falls_plant.jpg" >
     <span class="card-caption">Energy Production</span>
-  <<button>
+  </button>
 
   <button id="potash_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/coal_mining.jpg" >
     <span class="card-caption">Potash Mining</span>
-  <<button>
+  </button>
   </div>
 !}
 
-#<div class="card-flags">
-    #  <span class="flag nat">N: [+ potash_nationalized : nationalization +]</span>
-     # <span class="flag dev">D: [+ potash_development : development +]</span>
-    # </div>
+
 
 
 Inflation: [+ inflation_2 +]%

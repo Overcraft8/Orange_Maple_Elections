@@ -7,7 +7,7 @@ body {
   --link-hover-color: rgba(0, 0, 0, 0.05);
   --unavailable-bg-color: rgba(0, 0, 0, 0.1);
   --unavailable-color: #9a795f;
-  --tab-bg-color: #e5d7b4;
+  --tab-bg-color: #9f7b5240;
   --tab-color: #e5d7b4;
   --tab-hover-color: #caaa588a;
   --card-border-color: #dfd1ba; 
@@ -285,7 +285,7 @@ img.inline-img.icon {
 }
 
 .tab_container_status {
-    background-color: rgb(159 123 82 / 33%);
+    background-color: #9F7B5254;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     padding: 0.3em 0.1em;
     margin-top: -0.6em;

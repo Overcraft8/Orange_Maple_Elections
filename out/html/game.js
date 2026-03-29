@@ -15,6 +15,8 @@
     // Add your custom code here.
   };
 
+  var panelActivated = false;
+
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
 
   // the url is a link to game.json
@@ -328,7 +330,7 @@ function applyWholesome(str) {
   // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
       $('#qualities').empty();
-      if (PanelActivated) {
+      if (PanelActivated == true) {
         var scene = dendryUI.game.scenes[window.statusPanel];
         var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
         $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));

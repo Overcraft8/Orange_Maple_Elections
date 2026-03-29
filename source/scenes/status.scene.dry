@@ -452,15 +452,6 @@ Oil: [+ oil_development : development +]
 Agricultural Co-ops: [+ agri_coops : development +]
 
 
-# Below are status info panels
-#
-# <div id="agriculture" class="status_panel_info" style="display:none">
-#
-# = Agriculture
-#
-# Agricultural Co-ops: [+ agri_coops : development +]
-#
-# </div>
 
 
 

@@ -15,7 +15,7 @@
     // Add your custom code here.
   };
 
-window.panelActivated = false;
+  window.panelActivated = false;
 
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
 
@@ -328,10 +328,10 @@ function applyWholesome(str) {
   };
 
   // TODO: have some code for tabbed sidebar browsing.
-  window.updateSidebar = function(PanelActivated) {
+  window.updateSidebar = function() {
   $('#qualities').empty();
 
-  if (PanelActivated === true) {
+  if (window.PanelActivated === true) {
     var scene = dendryUI.game.scenes[window.statusPanel];
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
@@ -343,6 +343,7 @@ function applyWholesome(str) {
   var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
   $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
 };
+
 
 
     window.updateSidebarRight = function() {
@@ -538,14 +539,14 @@ window.changePanel = function(newPanel, PanelId) {
   var panelButtons = document.getElementsByClassName('status_panel_card');
 
   for (let i = 0; i < panelButtons.length; i++) {
-    panelButtons[i].classList.remove('active');
+    panelButtons[i].classList.remove(' active');
   }
 
-  panelButton.classList.add('active');
+  panelButton.classList.add(' active');
   window.statusPanel = newPanel;
   window.PanelActivated = true;
 
-  window.updateSidebar(window.PanelActivated);
+  window.updateSidebar();
 };
 
 

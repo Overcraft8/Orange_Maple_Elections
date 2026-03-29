@@ -480,11 +480,6 @@ window.toggleDistrict = function() {
     div.style.display = div.style.display === 'none' ? 'block' : 'none';
 };
 
-window.toggle_statusbutton = function() {
-    var div = document.getElementById(selected_button);
-    div.style.display = div.style.display === 'none' ? 'block' : 'none';
-};
-
 document.addEventListener("DOMContentLoaded", () => {
     const savedTab = localStorage.getItem("activeStatusTab");
 

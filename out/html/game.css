@@ -839,8 +839,8 @@ table {
   --status_card_border_color: #4d9d1b99;
   border: 3px solid var(--status_card_border_color);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  height: 110px;
-  width: 160px;
+  height: 90px;
+  width: 135px;
 }
 
 a.status_panel_info {

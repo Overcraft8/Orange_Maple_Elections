@@ -527,6 +527,7 @@ function hideAllTabs() {
     }
 }
 
+/* 
 window.status_info = function(panelId) {
 
     // Do NOT hide tabs here.
@@ -547,6 +548,29 @@ window.status_info = function(panelId) {
     // Toggle the selected panel
     if (!isOpen) {
         panel.style.display = 'block';
+    }
+};
+*/
+
+window.status_info = function(panelId) {
+
+    // Close any open overlays
+    const overlays = document.getElementsByClassName('status_overlay');
+    for (let i = 0; i < overlays.length; i++) {
+        overlays[i].style.display = 'none';
+    }
+
+    // Open the selected overlay
+    const panel = document.getElementById(panelId);
+    if (panel) {
+        panel.style.display = 'flex'; // flex centers the panel
+    }
+};
+
+window.closeStatusOverlay = function(panelId) {
+    const panel = document.getElementById(panelId);
+    if (panel) {
+        panel.style.display = 'none';
     }
 };
 

@@ -390,7 +390,7 @@ State Capacity: [+ state_capacity : development +]
 {!
   <div class="status-card-row">
   <button id="agriculture_status" class="status_panel_card" 
-          onclick="window.status_info('agriculture')">
+          onclick="window.changePanel('agriculture', 'agriculture_status')">
     <img class="status_panel_card_image" src="img/Melfort_Market.jpg" >
     <span class="card-caption">Agriculture</span>
   </button>
@@ -411,11 +411,6 @@ State Capacity: [+ state_capacity : development +]
   </button>
   </div>
 !}
-
-<a class="card" go-to="flp_president">
-  <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
-  <span class="card-caption">Party President</span>
-</a>
 
 
 

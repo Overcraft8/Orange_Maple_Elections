@@ -328,6 +328,12 @@ function applyWholesome(str) {
   // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
       $('#qualities').empty();
+      if (PanelActivated) {
+        var scene = dendryUI.game.scenes[window.statusPanel];
+        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+        $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+        return;
+      }
       var scene = dendryUI.game.scenes[window.statusTab];
       dendryUI.dendryEngine._runActions(scene.onArrival);
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
@@ -420,20 +426,6 @@ function applyWholesome(str) {
 
 })();
 
-// Western Province
-function Colombo_info() {
-  var Q = window.dendryUI.dendryEngine.state.qualities;
-  Q.district_name = "Colombo";
-  Q.district_worker = Q.colombo_d_worker;
-  Q.district_old_middle = Q.colombo_d_old_middle;
-  Q.district_new_middle = Q.colombo_d_new_middle;
-  Q.district_upper = Q.colombo_d_upper;
-  Q.district_rural = Q.colombo_d_rural;
-  Q.district_catholic = Q.colombo_d_catholic;
-  Q.district_seats = Q.colombo_d_seats;
-  Q.district_industries = Q.colombo_d_industries;  
-  window.updateSidebarRight(); 
-}
 
 function regina_info(){
   var Q = window.dendryUI.dendryEngine.state.qualities;
@@ -527,52 +519,26 @@ function hideAllTabs() {
     }
 }
 
-/* 
-window.status_info = function(panelId) {
-
-    // Do NOT hide tabs here.
-    // Do NOT clear activeStatusTab.
-    // Leave the tab system alone.
-
-    const panel = document.getElementById(panelId);
-    if (!panel) return;
-
-    const isOpen = panel.style.display === 'block';
-
-    // Hide all industry info panels
-    const panels = document.getElementsByClassName('status_panel_info');
-    for (let i = 0; i < panels.length; i++) {
-        panels[i].style.display = 'none';
+window.changePanel = function(newPanel, PanelId) {
+      if (PanelActivated == true) {
+        var scene = dendryUI.game.scenes[window.statusTab];
+        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+        $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+        PanelActivated = false;
+        return;
+      }
+      else {
+      var panelButton = document.getElementById(PanelId);
+      var panelButtons = document.getElementsByClassName('status_panel_card');
+      for (i = 0; i < panelButtons.length; i++) {
+        panelButtons[i].className = panelButtons[i].className.replace(' active', '');
+      }
+      panelButton.className += ' active';
+      window.statusPanel = newPanel;
+      var PanelActivated = true;
+      window.updateSidebar();
     }
-
-    // Toggle the selected panel
-    if (!isOpen) {
-        panel.style.display = 'block';
-    }
-};
-*/
-
-window.status_info = function(panelId) {
-
-    // Close any open overlays
-    const overlays = document.getElementsByClassName('status_overlay');
-    for (let i = 0; i < overlays.length; i++) {
-        overlays[i].style.display = 'none';
-    }
-
-    // Open the selected overlay
-    const panel = document.getElementById(panelId);
-    if (panel) {
-        panel.style.display = 'flex'; // flex centers the panel
-    }
-};
-
-window.closeStatusOverlay = function(panelId) {
-    const panel = document.getElementById(panelId);
-    if (panel) {
-        panel.style.display = 'none';
-    }
-};
+  };
 
 
 

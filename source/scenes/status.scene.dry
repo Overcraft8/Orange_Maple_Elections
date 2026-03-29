@@ -450,29 +450,22 @@ Oil: [+ oil_development : development +]
 </div>
 
 
-<div id="agriculture" class="status_overlay" style="display:none;">
-  <div class="status_overlay_panel">
+@agriculture
 
-    <button class="close_overlay" onclick="window.closeStatusOverlay('agriculture')">
-      ✖
-    </button>
+= Agriculture: 
 
-    <h2>Agriculture</h2>
-    Agricultural Co-ops: [+ agri_coops : development +]
-
-  </div>
-</div>
+Agricultural Co-ops: [+ agri_coops : development +]
 
 
 # Below are status info panels
 #
-#<div id="agriculture" class="status_panel_info" style="display:none">
+# <div id="agriculture" class="status_panel_info" style="display:none">
 #
-#= Agriculture
+# = Agriculture
 #
-#Agricultural Co-ops: [+ agri_coops : development +]
+# Agricultural Co-ops: [+ agri_coops : development +]
 #
-#</div>
+# </div>
 
 
 

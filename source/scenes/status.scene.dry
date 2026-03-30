@@ -365,7 +365,11 @@ Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
 Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
 # </div>
 
-<div id="cooperatives" class="status_tab_content" style="display:none; margin-top:10px;">
+# <div id="cooperatives" class="status_tab_content" style="display:none; margin-top:10px;">
+
+@cooperatives
+
+
 = Cooperatives
 
 Agricultural Co-ops: [+ agri_coops : development +]
@@ -379,9 +383,11 @@ Housing Co-ops: [+ housing_coops : development +]
 Factory Co-ops: [+ factory_coops : development +]
 
 
-</div>
+# </div>
 
 # <div id="development" class="status_tab_content" style="display:none; margin-top:10px;">
+
+@development
 
 State Intervention Level: [+ state_intervention : development +]
 
@@ -445,7 +451,7 @@ Oil: [+ oil_development : development +]
 
 </div>
 
-</div>
+# </div>
 
 
 @agriculture

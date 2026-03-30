@@ -340,7 +340,7 @@ Healthcare quality: [+ healthcarequality +]
 
   <button class="status_tab_button"
     id="cooperatives_tab"
-    onclick="window.showStatusTab('cooperatives')">
+    onclick="window.changeTab('cooperatives', 'cooperatives_tab')">
     Cooperatives
   </button>
 

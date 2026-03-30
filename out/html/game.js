@@ -373,6 +373,7 @@ function applyWholesome(str) {
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
   };
+  
 /* Double old changeTab
   window.changeTab = function(newTab, tabId) {
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
@@ -397,32 +398,35 @@ function applyWholesome(str) {
   };
 */
 
-  indow.updateSidebar = function() {
-    $('#qualities').empty();
+  window.changeTab = function(newTab, tabId) {
+    var tabButton = document.getElementById(tabId);
 
-    let sceneKey;
-
-    // Decide which scene to load
-    if (window.mainTab === 'status.economy') {
-        sceneKey = window.subTab || 'nationalization';
-    } else {
-        sceneKey = window.mainTab;
-    }
-
-    var scene = dendryUI.game.scenes[sceneKey];
-
-    if (!scene) {
-        console.error("Scene not found:", sceneKey);
-        console.log("Available scenes:", Object.keys(dendryUI.game.scenes));
+    if (!tabButton) {
+        console.error("changeTab error: No element found with id:", tabId);
         return;
     }
 
-    if (scene.onArrival) {
-        dendryUI.dendryEngine._runActions(scene.onArrival);
+    var tabButtons = document.getElementsByClassName('tab_button');
+    var statusTabButtons = document.getElementsByClassName('status_tab_button');
+
+    if (tabButton.classList.contains('status_tab_button')) {
+        // SUB TAB
+        for (let i = 0; i < statusTabButtons.length; i++) {
+            statusTabButtons[i].className =
+                statusTabButtons[i].className.replace(' active', '');
+        }
+        window.subTab = newTab;
+    } else {
+        // MAIN TAB
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].className =
+                tabButtons[i].className.replace(' active', '');
+        }
+        window.mainTab = newTab;
     }
 
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+    tabButton.className += ' active';
+    window.updateSidebar();
 };
 
 

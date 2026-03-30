@@ -285,6 +285,15 @@ img.inline-img.icon {
     margin-right: -0.6em;
 }
 
+.status_tab_container {
+    background-color: #9F7B5254;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    padding: 0.3em 0.2em;
+    margin-top: 1em;
+    margin-left: -0.6em;
+    margin-right: -0.6em;
+}
+
 .tab_container_status {
     background-color: #9F7B5254;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);

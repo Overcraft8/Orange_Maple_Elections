@@ -330,21 +330,11 @@ function applyWholesome(str) {
   // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
   $('#qualities').empty();
-
-  if (window.PanelActivated === true) {
-    var scene = dendryUI.game.scenes[window.statusPanel];
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-    return;
-  }
-
   var scene = dendryUI.game.scenes[window.statusTab];
   dendryUI.dendryEngine._runActions(scene.onArrival);
   var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
   $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
 };
-
-
 
     window.updateSidebarRight = function() {
     $('#qualities_right').empty();
@@ -363,11 +353,12 @@ function applyWholesome(str) {
       var tabButtons = document.getElementsByClassName('tab_button');
       var statustabButtons = document.getElementsByClassName('status_tab_button');
       if (tabButton.classList.contains('status_tab_button')) {
+        for (i = 0; i < statustabButtons.length; i++) {
+        statustabButtons[i].className = statustabButtons[i].className.replace(' active', '');
+      }
+      }
+      else { 
         for (i = 0; i < tabButtons.length; i++) {
-        statustabButtons[i].className = tabButtons[i].className.replace(' active', '');
-      }
-      }
-      else { for (i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }}
       tabButton.className += ' active';

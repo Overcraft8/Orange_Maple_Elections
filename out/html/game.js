@@ -361,9 +361,15 @@ function applyWholesome(str) {
       }
       var tabButton = document.getElementById(tabId);
       var tabButtons = document.getElementsByClassName('tab_button');
-      for (i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+      var statustabButtons = document.getElementsByClassName('status_tab_button');
+      if (tabButton.classList.contains('status_tab_button')) {
+        for (i = 0; i < tabButtons.length; i++) {
+        statustabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }
+      }
+      else { for (i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+      }}
       tabButton.className += ' active';
       window.statusTab = newTab;
       window.updateSidebar();

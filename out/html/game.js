@@ -328,12 +328,42 @@ function applyWholesome(str) {
   };
 
   // TODO: have some code for tabbed sidebar browsing.
+  /*
   window.updateSidebar = function() {
   $('#qualities').empty();
   var scene = dendryUI.game.scenes[window.statusTab];
   dendryUI.dendryEngine._runActions(scene.onArrival);
   var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
   $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+};
+*/
+
+  window.updateSidebar = function() {
+    $('#qualities').empty();
+
+    let sceneKey;
+
+    // Decide which scene to load
+    if (window.mainTab === 'status.economy') {
+        sceneKey = window.subTab || 'nationalization';
+    } else {
+        sceneKey = window.mainTab;
+    }
+
+    var scene = dendryUI.game.scenes[sceneKey];
+
+    if (!scene) {
+        console.error("Scene not found:", sceneKey);
+        console.log("Available scenes:", Object.keys(dendryUI.game.scenes));
+        return;
+    }
+
+    if (scene.onArrival) {
+        dendryUI.dendryEngine._runActions(scene.onArrival);
+    }
+
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
 };
 
     window.updateSidebarRight = function() {
@@ -343,7 +373,7 @@ function applyWholesome(str) {
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
   };
-/* 
+/* Double old changeTab
   window.changeTab = function(newTab, tabId) {
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
           window.alert('Polls are not available in historical mode.');
@@ -367,39 +397,32 @@ function applyWholesome(str) {
   };
 */
 
-  window.changeTab = function(newTab, tabId) {
-    if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-        window.alert('Polls are not available in historical mode.');
-        return;
-    }
+  indow.updateSidebar = function() {
+    $('#qualities').empty();
 
-    var tabButton = document.getElementById(tabId);
+    let sceneKey;
 
-    // Prevent crash if ID does not exist
-    if (!tabButton) {
-        console.error("changeTab error: No element found with id:", tabId);
-        return;
-    }
-
-    var tabButtons = document.getElementsByClassName('tab_button');
-    var statusTabButtons = document.getElementsByClassName('status_tab_button');
-
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusTabButtons.length; i++) {
-            statusTabButtons[i].className =
-                statusTabButtons[i].className.replace(' active', '');
-        }
+    // Decide which scene to load
+    if (window.mainTab === 'status.economy') {
+        sceneKey = window.subTab || 'nationalization';
     } else {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].className =
-                tabButtons[i].className.replace(' active', '');
-        }
+        sceneKey = window.mainTab;
     }
 
-    tabButton.className += ' active';
+    var scene = dendryUI.game.scenes[sceneKey];
 
-    window.statusTab = newTab;
-    window.updateSidebar();
+    if (!scene) {
+        console.error("Scene not found:", sceneKey);
+        console.log("Available scenes:", Object.keys(dendryUI.game.scenes));
+        return;
+    }
+
+    if (scene.onArrival) {
+        dendryUI.dendryEngine._runActions(scene.onArrival);
+    }
+
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
 };
 
 

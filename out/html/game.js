@@ -347,6 +347,7 @@ function applyWholesome(str) {
 
   
   window.changeTab = function(newTab, tabId) {
+      console.log("status tab button clicked!");
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
           window.alert('Polls are not available in historical mode.');
           return;

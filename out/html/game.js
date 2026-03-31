@@ -391,46 +391,6 @@ function applyWholesome(str) {
     window.updateSidebar();
 };
 
-  /* Deffunct?????
-  window.changeTab = function(newTab, tabId) {
-      if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-          window.alert('Polls are not available in historical mode.');
-          return;
-      }
-      var tabButton = document.getElementById(tabId);
-      var tabButtons = document.getElementsByClassName('tab_button');
-      var statustabButtons = document.getElementsByClassName('status_tab_button');
-      if (tabButton.classList.contains('status_tab_button')) {
-        console.log("status tab button clicked!");
-        var parent = tabButton.parentElement;
-        for (let i = 0; i < statustabButtons.length; i++) {
-        statustabButtons[i].className = statustabButtons[i].className.replace('_active', '');
-      }
-      }
-      else { 
-        console.log("tab button clicked!");
-        for (let i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace('_active', '');
-        removeStatusTabs(parent, );
-      }}
-      tabButton.className += '_active';
-      window.statusTab = newTab;
-      window.updateSidebar();
-  };
-*/
-
-  window.removeStatusTabs = function(statustabcontainer) {
-    if (statustabcontainer == null || statustabcontainer == undefined) {
-        console.log("wahtawed?");
-        return;
-    }
-    if (statustabcontainer) {
-        statustabcontainer.style.display = 'none';
-    }
-}
-
-
-
 
   window.changeTabRight = function(newTab, tabId) {
     var tabButton = document.getElementById(tabId);
@@ -439,9 +399,9 @@ function applyWholesome(str) {
     var rightSidebar = document.getElementById('stats_sidebar_right');
     var rightTabButtons = rightSidebar.getElementsByClassName('tab_button');
     for (i = 0; i < rightTabButtons.length; i++) {
-        rightTabButtons[i].className = rightTabButtons[i].className.replace('_active', '');
+        rightTabButtons[i].className = rightTabButtons[i].className.replace('._active', '');
     }
-    tabButton.className += '_active';
+    tabButton.className += '._active';
     window.statusTabRight = newTab;
     window.updateSidebarRight();
   };

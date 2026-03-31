@@ -409,8 +409,10 @@ function applyWholesome(str) {
 
     window.changeTabRight = function(newTab, tabId) {
     const tabButton = document.getElementById(tabId);
-    const tabButtons = document.getElementsByClassName('tab_button');
-    const statusButtons = document.getElementsByClassName('status_tab_button');
+    const rightSidebar = document.getElementById('stats_sidebar_right');
+
+    const tabButtons = rightSidebar.getElementsByClassName('tab_button');
+    const statusButtons = rightSidebar.getElementsByClassName('status_tab_button');
 
     // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
@@ -428,7 +430,7 @@ function applyWholesome(str) {
         tabButton.classList.add('_active');
 
         // Handle sub tabs
-        const allTabContainers = document.getElementsByClassName('status_tab_container');
+        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
 
         for (let i = 0; i < allTabContainers.length; i++) {
             allTabContainers[i].style.display = 'none';
@@ -443,7 +445,9 @@ function applyWholesome(str) {
     }
 
     window.statusTabRight = newTab;
-    window.updateSidebar();
+
+    // ✅ FIXED LINE
+    window.updateSidebarRight();
 };
 
   /*

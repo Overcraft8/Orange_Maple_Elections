@@ -374,6 +374,10 @@ function applyWholesome(str) {
   };
 
   window.removeStatusTabs = function(statustabcontainer) {
+    if (statustabcontainer == null || statustabcontainer == undefined) {
+        console.log("wahtawed?");
+        return;
+    }
     if (statustabcontainer) {
         statustabcontainer.remove();
     }

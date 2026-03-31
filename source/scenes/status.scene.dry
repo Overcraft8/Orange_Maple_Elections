@@ -325,7 +325,7 @@ Healthcare quality: [+ healthcarequality +]
 
 
 
-# <div id="nationalization" class="status_tab_content" style="display:block; margin-top:10px;">
+
 @nationalization
 
 = Nationalization
@@ -341,9 +341,7 @@ Oil: [+ oil_nationalized : nationalization +]
 Agricultural Marketing: [+ agri_marketing_nationalized : nationalization +]
 
 Auto Insurance: [+ auto_insurance_nationalized : nationalization +]
-# </div>
 
-# <div id="cooperatives" class="status_tab_content" style="display:none; margin-top:10px;">
 
 @cooperatives
 
@@ -361,9 +359,6 @@ Housing Co-ops: [+ housing_coops : development +]
 Factory Co-ops: [+ factory_coops : development +]
 
 
-# </div>
-
-# <div id="development" class="status_tab_content" style="display:none; margin-top:10px;">
 
 @development
 

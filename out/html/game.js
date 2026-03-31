@@ -360,17 +360,17 @@ function applyWholesome(str) {
     // 🔹 STATUS SUB-TABS
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove(' active');
+            statusButtons[i].classList.remove('_active');
         }
-        tabButton.classList.add(' active');
+        tabButton.classList.add('_active');
     }
 
     // 🔹 MAIN TABS
     else {
         for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove(' active');
+            tabButtons[i].classList.remove('_active');
         }
-        tabButton.classList.add(' active');
+        tabButton.classList.add('_active');
 
         // 🔥 AUTO HANDLE SUB-TABS
         const allTabContainers = document.getElementsByClassName('status_tab_container');
@@ -404,16 +404,16 @@ function applyWholesome(str) {
         console.log("status tab button clicked!");
         var parent = tabButton.parentElement;
         for (let i = 0; i < statustabButtons.length; i++) {
-        statustabButtons[i].className = statustabButtons[i].className.replace(' active', '');
+        statustabButtons[i].className = statustabButtons[i].className.replace('_active', '');
       }
       }
       else { 
         console.log("tab button clicked!");
         for (let i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+        tabButtons[i].className = tabButtons[i].className.replace('_active', '');
         removeStatusTabs(parent, );
       }}
-      tabButton.className += ' active';
+      tabButton.className += '_active';
       window.statusTab = newTab;
       window.updateSidebar();
   };
@@ -439,9 +439,9 @@ function applyWholesome(str) {
     var rightSidebar = document.getElementById('stats_sidebar_right');
     var rightTabButtons = rightSidebar.getElementsByClassName('tab_button');
     for (i = 0; i < rightTabButtons.length; i++) {
-        rightTabButtons[i].className = rightTabButtons[i].className.replace(' active', '');
+        rightTabButtons[i].className = rightTabButtons[i].className.replace('_active', '');
     }
-    tabButton.className += ' active';
+    tabButton.className += '_active';
     window.statusTabRight = newTab;
     window.updateSidebarRight();
   };
@@ -574,7 +574,7 @@ window.showStatusTab = function(tabId) {
 
     // Highlight button
     const selectedButton = document.getElementById(tabId + '_tab');
-    if (selectedButton) selectedButton.classList.add(' active');
+    if (selectedButton) selectedButton.classList.add('_active');
 };
 
 function hideAllTabs() {
@@ -585,7 +585,7 @@ function hideAllTabs() {
 
     const buttons = document.getElementsByClassName('status_tab_button');
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove(' active');
+        buttons[i].classList.remove('_active');
     }
 }
 */
@@ -604,10 +604,10 @@ window.changePanel = function(newPanel, PanelId) {
   var panelButtons = document.getElementsByClassName('status_panel_card');
 
   for (let i = 0; i < panelButtons.length; i++) {
-    panelButtons[i].classList.remove(' active');
+    panelButtons[i].classList.remove('_active');
   }
 
-  panelButton.classList.add(' active');
+  panelButton.classList.add('_active');
   window.statusPanel = newPanel;
   window.PanelActivated = true;
 

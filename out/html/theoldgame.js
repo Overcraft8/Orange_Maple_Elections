@@ -232,9 +232,9 @@ function applyWholesome(str) {
       var tabButton = document.getElementById(tabId);
       var tabButtons = document.getElementsByClassName('tab_button');
       for (i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+        tabButtons[i].className = tabButtons[i].className.replace('_active', '');
       }
-      tabButton.className += ' active';
+      tabButton.className += '_active';
       window.statusTab = newTab;
       window.updateSidebar();
   };

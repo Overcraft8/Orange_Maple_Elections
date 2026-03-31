@@ -285,11 +285,33 @@ img.inline-img.icon {
     margin-right: -0.6em;
 }
 
+/* status buttons */
+.tab_button {
+    font-family: "Minion Pro", Georgia, serif;
+    background-color: var(--tab-color);
+    color: var(--text-color);
+    /*float: left;*/
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.tab_button.active {
+    background-color: var(--tab-hover-color);
+}
+.tab_button:hover {
+    background-color: var(--tab-hover-color);
+}
+
+.tab_button_wide {width: 100%;}
+
+
+/* status tabs (nested) */
 .status_tab_container {
     background-color: #9F7B5254;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 4px #606060;
     padding: 0.3em 0.2em;
-    margin-top: 1em;
+    margin-top: 0.4em;
     margin-left: -0.6em;
     margin-right: -0.6em;
 }
@@ -303,32 +325,11 @@ img.inline-img.icon {
     margin-right: -0.6em;
 }
 
-.tab_button {
-    font-family: "Minion Pro", Georgia, serif;
-    background-color: var(--tab-color);
-    color: var(--text-color);
-    /*float: left;*/
-    border: none;
-    outline: none;
-    padding: 10px;
-}
-.tab_button.active {
-    background-color: var(--tab-hover-color);
-}
-.tab_button:hover {
-    background-color: var(--tab-hover-color);
-}
-
-
-/* status buttons */
-.tab_button_wide {width: 100%;}
-
-
-
-/* For tabs nested inside status page */
+/* For tab buttons 'nested' with scenes */
 
 .status_tab_button {
-  font-family: "Minion Pro", Georgia, serif;
+    font-size: 12px;
+    font-family: "Minion Pro", Georgia, serif;
     background-color: var(--tab-color);
     color: var(--text-color);
     /*float: left;*/
@@ -378,6 +379,7 @@ img.inline-img.icon {
   background-color: var(--hover-color);
   border: 2px solid var(--htext-color);
 }
+
 
 .overlay {
     background: rgba(0,0,0,0.7);

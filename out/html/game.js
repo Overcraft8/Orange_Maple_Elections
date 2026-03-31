@@ -357,7 +357,7 @@ function applyWholesome(str) {
     const tabButtons = document.getElementsByClassName('tab_button');
     const statusButtons = document.getElementsByClassName('status_tab_button');
 
-    // 🔹 STATUS SUB-TABS
+    // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) {
             statusButtons[i].classList.remove('_active');
@@ -365,14 +365,14 @@ function applyWholesome(str) {
         tabButton.classList.add('_active');
     }
 
-    // 🔹 MAIN TABS
+    // Main tab
     else {
         for (let i = 0; i < tabButtons.length; i++) {
             tabButtons[i].classList.remove('_active');
         }
         tabButton.classList.add('_active');
 
-        // 🔥 AUTO HANDLE SUB-TABS
+        // Handle sub tabs
         const allTabContainers = document.getElementsByClassName('status_tab_container');
 
         for (let i = 0; i < allTabContainers.length; i++) {

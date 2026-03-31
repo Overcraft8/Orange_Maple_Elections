@@ -390,8 +390,8 @@ function applyWholesome(str) {
     window.statusTab = newTab;
     window.updateSidebar();
 };
-
-
+ 
+/*  defunct????
   window.changeTabRight = function(newTab, tabId) {
     var tabButton = document.getElementById(tabId);
     var tabButtons = document.getElementsByClassName('tab_button');
@@ -405,7 +405,46 @@ function applyWholesome(str) {
     window.statusTabRight = newTab;
     window.updateSidebarRight();
   };
+*/
 
+    window.changeTabRight = function(newTab, tabId) {
+    const tabButton = document.getElementById(tabId);
+    const tabButtons = document.getElementsByClassName('tab_button');
+    const statusButtons = document.getElementsByClassName('status_tab_button');
+
+    // Sub tabs (status)
+    if (tabButton.classList.contains('status_tab_button')) {
+        for (let i = 0; i < statusButtons.length; i++) {
+            statusButtons[i].classList.remove('_active');
+        }
+        tabButton.classList.add('_active');
+    }
+
+    // Main tab
+    else {
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove('_active');
+        }
+        tabButton.classList.add('_active');
+
+        // Handle sub tabs
+        const allTabContainers = document.getElementsByClassName('status_tab_container');
+
+        for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
+        }
+
+        const baseId = tabId.replace('_tab', '');
+        const targetContainer = document.getElementById(baseId + '_tabs');
+
+        if (targetContainer) {
+            targetContainer.style.display = 'block';
+        }
+    }
+
+    window.statusTabRight = newTab;
+    window.updateSidebar();
+};
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator

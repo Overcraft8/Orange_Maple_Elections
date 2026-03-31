@@ -355,13 +355,15 @@ function applyWholesome(str) {
       var tabButtons = document.getElementsByClassName('tab_button');
       var statustabButtons = document.getElementsByClassName('status_tab_button');
       if (tabButton.classList.contains('status_tab_button')) {
+        console.log("status tab button clicked!");
         var parent = tabButton.parentElement;
-        for (i = 0; i < statustabButtons.length; i++) {
+        for (let i = 0; i < statustabButtons.length; i++) {
         statustabButtons[i].className = statustabButtons[i].className.replace(' active', '');
       }
       }
       else { 
-        for (i = 0; i < tabButtons.length; i++) {
+        console.log("tab button clicked!");
+        for (let i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
         removeStatusTabs(parent);
       }}

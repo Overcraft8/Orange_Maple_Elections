@@ -345,9 +345,54 @@ function applyWholesome(str) {
     $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
   };
 
-  
+
+
   window.changeTab = function(newTab, tabId) {
-      console.log("status tab button clicked!");
+    if (tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
+        window.alert('Polls are not available in historical mode.');
+        return;
+    }
+
+    const tabButton = document.getElementById(tabId);
+    const tabButtons = document.getElementsByClassName('tab_button');
+    const statusButtons = document.getElementsByClassName('status_tab_button');
+
+    // 🔹 STATUS SUB-TABS
+    if (tabButton.classList.contains('status_tab_button')) {
+        for (let i = 0; i < statusButtons.length; i++) {
+            statusButtons[i].classList.remove(' active');
+        }
+        tabButton.classList.add(' active');
+    }
+
+    // 🔹 MAIN TABS
+    else {
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove(' active');
+        }
+        tabButton.classList.add(' active');
+
+        // 🔥 AUTO HANDLE SUB-TABS
+        const allTabContainers = document.getElementsByClassName('status_tab_container');
+
+        for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
+        }
+
+        const baseId = tabId.replace('_tab', '');
+        const targetContainer = document.getElementById(baseId + '_tabs');
+
+        if (targetContainer) {
+            targetContainer.style.display = 'block';
+        }
+    }
+
+    window.statusTab = newTab;
+    window.updateSidebar();
+};
+
+  /* Deffunct?????
+  window.changeTab = function(newTab, tabId) {
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
           window.alert('Polls are not available in historical mode.');
           return;
@@ -366,12 +411,13 @@ function applyWholesome(str) {
         console.log("tab button clicked!");
         for (let i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
-        removeStatusTabs(parent);
+        removeStatusTabs(parent, );
       }}
       tabButton.className += ' active';
       window.statusTab = newTab;
       window.updateSidebar();
   };
+*/
 
   window.removeStatusTabs = function(statustabcontainer) {
     if (statustabcontainer == null || statustabcontainer == undefined) {
@@ -379,7 +425,7 @@ function applyWholesome(str) {
         return;
     }
     if (statustabcontainer) {
-        statustabcontainer.remove();
+        statustabcontainer.style.display = 'none';
     }
 }
 
@@ -528,7 +574,7 @@ window.showStatusTab = function(tabId) {
 
     // Highlight button
     const selectedButton = document.getElementById(tabId + '_tab');
-    if (selectedButton) selectedButton.classList.add('active');
+    if (selectedButton) selectedButton.classList.add(' active');
 };
 
 function hideAllTabs() {
@@ -539,7 +585,7 @@ function hideAllTabs() {
 
     const buttons = document.getElementsByClassName('status_tab_button');
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('active');
+        buttons[i].classList.remove(' active');
     }
 }
 */

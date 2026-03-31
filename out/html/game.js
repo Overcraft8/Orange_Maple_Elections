@@ -355,6 +355,7 @@ function applyWholesome(str) {
       var tabButtons = document.getElementsByClassName('tab_button');
       var statustabButtons = document.getElementsByClassName('status_tab_button');
       if (tabButton.classList.contains('status_tab_button')) {
+        var parent = tabButton.parentElement;
         for (i = 0; i < statustabButtons.length; i++) {
         statustabButtons[i].className = statustabButtons[i].className.replace(' active', '');
       }
@@ -362,11 +363,18 @@ function applyWholesome(str) {
       else { 
         for (i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+        removeStatusTabs(parent);
       }}
       tabButton.className += ' active';
       window.statusTab = newTab;
       window.updateSidebar();
   };
+
+  window.removeStatusTabs = function(statustabcontainer) {
+    if (statustabcontainer) {
+        statustabcontainer.remove();
+    }
+}
 
 
 

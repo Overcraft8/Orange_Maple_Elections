@@ -5,7 +5,7 @@ is-special: true
 = Party Hierarchy
 
 
-<div style="display:flex; gap:1em;">
+<div style="display:flex; gap:1em; justify-content: center;">
 
 <a class="card" go-to="flp_president">
   <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">

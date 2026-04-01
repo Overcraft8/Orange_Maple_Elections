@@ -99,6 +99,38 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 = Inter-party Relations and Voteshare Estimates
 
+# Row 1
+
+<div id="lps_status_panel" class="party_status_panel">
+
+  <div id="liberal_party_status">
+    <div style="text-align: center;">
+        <p>Relationship: [+ lps_relation +]</p>
+        <p>Support: [+ lps_votes +]</p>
+        <p>Current Actions: Governing...</p>
+    </div>
+  </div>
+
+    <div style="text-align: center;">
+        <p>amock</p>
+    </div>
+
+</div>
+
+# Row 2
+
+<div style="display: flex; justify-content: center; font-size: 12px; gap: 2px;">
+
+<div style="text-align: center;">
+        <p>closly</p>
+    </div>
+
+    <div style="text-align: center;">
+        <p>You fool</p>
+    </div>
+</div>
+
+
 {!<table class="poll-table">!}
 
 {!<tr><td>Party</td><td>Relationships</td><td>Polling</td></tr>!}
@@ -267,7 +299,33 @@ Healthcare quality: [+ healthcarequality +]
 
 = Economy
 
+Inflation: [+ inflation_2 +]%
 
+Unemployment: [+ unemployed_2 +]%
+
+Rural Poverty Incidence: [+ rural_poverty +]%
+
+GDP Growth: [+ economic_growth_2 +]%
+
+Saskatchewan GDP Index (1932 = 100): [+ saskatchewan_gdp +]
+
+Total Saskatchewan Debt Index: [+ saskatchewan_debt +]
+
+Agricultural Production Index: [+ agri_production +]
+
+Industrial Production Index: [+ indu_production +]
+
+<div style="display:flex; gap:1em;">
+
+Agriculture: [+ agri_development : development +]
+
+Heavy Industry: [+ industry_development : development +]
+
+[? if year <= 1940: Potash: [+ potash_development : development +] ?]
+
+Oil: [+ oil_development : development +]
+
+</div>
 
 
 @nationalization
@@ -336,39 +394,6 @@ State Capacity: [+ state_capacity : development +]
   </button>
   </div>
 !}
-
-
-
-
-Inflation: [+ inflation_2 +]%
-
-Unemployment: [+ unemployed_2 +]%
-
-Rural Poverty Incidence: [+ rural_poverty +]%
-
-GDP Growth: [+ economic_growth_2 +]%
-
-Saskatchewan GDP Index (1932 = 100): [+ saskatchewan_gdp +]
-
-Total Saskatchewan Debt Index: [+ saskatchewan_debt +]
-
-Agricultural Production Index: [+ agri_production +]
-
-Industrial Production Index: [+ indu_production +]
-
-<div style="display:flex; gap:1em;">
-
-Agriculture: [+ agri_development : development +]
-
-Heavy Industry: [+ industry_development : development +]
-
-[? if year <= 1940: Potash: [+ potash_development : development +] ?]
-
-Oil: [+ oil_development : development +]
-
-</div>
-
-# </div>
 
 
 @agriculture

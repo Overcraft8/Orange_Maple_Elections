@@ -877,3 +877,10 @@ a.status_panel_info {
 .flag.dev { background:#2e8b57; } /* green */
 
 
+a.party_status_panel {
+  display: flex; 
+  justify-content: center; 
+  font-size: 12px; 
+  gap: 2px; 
+  margin-bottom: 4px;
+}

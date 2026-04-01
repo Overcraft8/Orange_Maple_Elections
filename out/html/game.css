@@ -760,22 +760,10 @@ table {
 
 
 
-
-/* Wrapper handles scrolling and hides scrollbar */
-.poll-wrapper {
-  max-height: 350px;         /* table height limit */
-  overflow-y: auto;          /* scroll if too tall */
-  scrollbar-width: none;     /* Firefox */
-}
-
-.poll-wrapper::-webkit-scrollbar {
-  display: none;             /* Chrome, Edge, Safari */
-}
-
 /* Table styling */
 .poll-table {
   font-size: 0.8em;         /* smaller font */
-  line-height: 1.1;          /* tighter rows */
+  line-height: 1.1;          /* tight row */
   border: 1px solid #6d6d6d;
   border-collapse: collapse;
   width: 100%;

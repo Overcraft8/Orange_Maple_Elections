@@ -95,7 +95,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 @politics
 
-{!<div style="width:80%; overflow-y:auto; padding:2px;">!}
+# {!<div style="width:80%; overflow-y:auto; padding:2px;">!}
 
 = Inter-party Relations and Voteshare Estimates
 
@@ -103,17 +103,23 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 <div id="lps_status_panel" class="party_status_panel_container">
 
-  <div id="liberal_party_status">
+  <div id="liberal_party_status" class="poll-table">
     <div style="text-align: center;">
-        <p>Relationship: [+ lps_relation +]</p>
-        <p>Support: [+ lps_votes +]</p>
-        <p>Current Actions: Governing...</p>
+        <tr>Relationship:</td><td> [+ lps_relation +]</td><tr>
+        <tr>Ideology:</td><td> [+ lps_ideology +]</td><tr>
+        <tr>Polling</td><td> [+ lps_votes +]</td><tr>
+        <tr>Current Actions:</td><td>Partying!</td><tr>
     </div>
   </div>
 
+  <div id="conservative_party_status" class="poll-table">
     <div style="text-align: center;">
-        <p>amock</p>
+        <tr>Relationship:</td><td> [+ cps_relation +]</td><tr>
+        <tr>Ideology:</td><td> [+ cps_ideology +]</td><tr>
+        <tr>Polling</td><td> [+ cps_votes +]</td><tr>
+        <tr>Current Actions:</td><td>Governing...</td><tr>
     </div>
+  </div>
 
 </div>
 

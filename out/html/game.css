@@ -316,15 +316,6 @@ img.inline-img.icon {
     margin-right: -0.6em;
 }
 
-.tab_container_status {
-    background-color: #9F7B5254;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    padding: 0.3em 0.1em;
-    margin-top: -0.6em;
-    margin-left: -0.6em;
-    margin-right: -0.6em;
-}
-
 /* For tab buttons 'nested' with scenes */
 
 .status_tab_button {
@@ -332,7 +323,6 @@ img.inline-img.icon {
     font-family: "Minion Pro", Georgia, serif;
     background-color: var(--tab-color);
     color: var(--text-color);
-    /*float: left;*/
     border: none;
     outline: none;
     padding: 10px;
@@ -486,11 +476,13 @@ div.blank-card {
   text-align: center;
   display: block;
   font-size: 0.95em;
-  color: #c58766;
+  -webkit-text-stroke: 0.15px #000000;
+  color: #d6703a;
 }
 
 .dark-mode .card-caption {
   color: #c58766;
+  -webkit-text-stroke: 0.15px #ffffff;
 }
 
 .card-tooltip {
@@ -838,8 +830,10 @@ table {
   -webkit-appearance: none;
 }
 
-.status_panel_card_image:hover {
-  background: #c98f6596;
+.status_panel_card:hover {
+  left: -5px;
+  top: -5px;
+  background: #8d5b374d;
 }
 
 
@@ -877,10 +871,18 @@ a.status_panel_info {
 .flag.dev { background:#2e8b57; } /* green */
 
 
-a.party_status_panel {
+a.party_status_panel_container {
   display: flex; 
   justify-content: center; 
   font-size: 12px; 
   gap: 2px; 
   margin-bottom: 4px;
+}
+
+.party_status_panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  vertical-align: top;
+  gap: 1em;
 }

@@ -101,7 +101,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 # Row 1
 
-<div id="lps_status_panel" class="party_status_panel">
+<div id="lps_status_panel" class="party_status_panel_container">
 
   <div id="liberal_party_status">
     <div style="text-align: center;">

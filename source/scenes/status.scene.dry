@@ -103,21 +103,22 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 <div id="lps_status_panel" class="party_status_panel_container">
 
-  <div id="liberal_party_status" class="poll-table">
-      <tr>Relationship:</td><td> [+ lps_relation +]</td></tr>
-      <tr>Ideology:</td><td> [+ lps_ideology +]</td></tr>
-      <tr>Polling</td><td> [+ lps_votes +]</td></tr>
-      <tr>Current Actions:</td><td>Partying!</td></tr>
-  </div>
+  <table id="liberal_party_status" class="poll-table">
+    <tr><td>Relationship:</td><td>[+ lps_relation +]</td></tr>
+    <tr><td>Ideology:</td><td>[+ lps_ideology +]</td></tr>
+    <tr><td>Polling:</td><td>[+ lps_votes +]</td></tr>
+    <tr><td>Current Actions:</td><td>Partying!</td></tr>
+  </table>
 
-  <div id="conservative_party_status" class="poll-table">
-      <tr>Relationship:</td><td> [+ cps_relation +]</td></tr>
-      <tr>Ideology:</td><td> [+ cps_ideology +]</td></tr>
-      <tr>Polling</td><td> [+ cps_votes +]</td></tr>
-      <tr>Current Actions:</td><td>Governing...</td></tr>
-  </div>
+  <table id="conservative_party_status" class="poll-table">
+    <tr><td>Relationship:</td><td>[+ cps_relation +]</td></tr>
+    <tr><td>Ideology:</td><td>[+ cps_ideology +]</td></tr>
+    <tr><td>Polling:</td><td>[+ cps_votes +]</td></tr>
+    <tr><td>Current Actions:</td><td>Governing...</td></tr>
+  </table>
 
 </div>
+
 
 # Row 2
 

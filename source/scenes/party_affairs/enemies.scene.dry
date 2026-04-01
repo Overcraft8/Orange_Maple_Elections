@@ -21,7 +21,7 @@ In our media and campaign materials, who should we consider as our main opponent
 - @easy_discard
 
 @anti_dem
-on-arrival: enemies = "anti-democratic parties"; agrarian_support += 5; reformist_strength += 5; far_left_dissent += 5; workers_cp_s -= 2; workers_scps -= 2; workers_scps -= 2; cp_s_relation -= 10
+on-arrival: enemies = "anti-democratic parties"; agrarian_support += 5; moderate_strength += 5; far_left_dissent += 5; workers_cp_s -= 2; workers_scps -= 2; workers_scps -= 2; cp_s_relation -= 10
 
 Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the CP(S) in the future.
 
@@ -36,11 +36,11 @@ on-arrival: enemies = "SCPS"; neorevisionist_strength += 5; scps_urgency += 1; w
 [? if scps_urgency == 0 or scps_r < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_r >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]
 
 @cp_s
-on-arrival: enemies = "CP(S)"; reformist_strength += 5; far_left_dissent += 8; reformist_dissent -= 5; cp_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cp_s -= 4;
+on-arrival: enemies = "CP(S)"; moderate_strength += 5; far_left_dissent += 8; moderate_dissent -= 5; cp_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cp_s -= 4;
 
 Attacking the CP(S) is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the CP(S), this may not be the best choice.
 
 @bourgeois
-on-arrival: enemies = "bourgeois parties"; far_left_strength += 8; far_left_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_s_relation += 5; reformist_dissent += 8; workers_pps -= 3; coalition_dissent += 1
+on-arrival: enemies = "bourgeois parties"; far_left_strength += 8; far_left_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_s_relation += 5; moderate_dissent += 8; workers_pps -= 3; coalition_dissent += 1
 
 Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.

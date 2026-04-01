@@ -23,7 +23,7 @@ subtitle: -1 resources
 view-if: year = 1933 and month = 4
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; american_relation += 1; reformist_strength += 5; moderate_plan_support += 1
+on-arrival: resources -= 1; american_relation += 1; moderate_strength += 5; moderate_plan_support += 1
 
 We can improve relations with the Democrats in order to 
 
@@ -41,7 +41,7 @@ Britain is Saskatchewan's main trading partner. It would be wise to build good r
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
+on-arrival: moderate_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
 
 The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
 

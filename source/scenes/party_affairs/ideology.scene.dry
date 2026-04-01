@@ -38,7 +38,7 @@ if (Q.ideology && Q.ideology != "agrarian") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "agrarian"; agrarian_support += 10; agrarian_dissent -= 10; far_left_dissent -= 5; reformist_dissent -= 5
+on-departure: ideology = "agrarian"; agrarian_support += 10; agrarian_dissent -= 10; far_left_dissent -= 5; moderate_dissent -= 5
 
 The Agrarian wing of the party seeks to work with the farmers' movement to improve the lives of small farmers. 
 
@@ -55,16 +55,16 @@ The labour wing of the party supports continued particp_sation in government in 
 
 @reform
 on-arrival: {!
-if (Q.ideology && Q.ideology != "reformist") {
+if (Q.ideology && Q.ideology != "moderate") {
     Q.changed = 1;
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; democratization += 1; reformist_dissent -= 5; pps_relation += 5; cps_relation += 5; cp_s_relation -= 8; moderate_plan_support += 1
+on-departure: ideology = "moderate"; moderate_strength += 10; democratization += 1; moderate_dissent -= 5; pps_relation += 5; cps_relation += 5; cp_s_relation -= 8; moderate_plan_support += 1
 
-The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The moderate wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
 
 @changed
-on-arrival: far_left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; reformist_dissent += 5
+on-arrival: far_left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; moderate_dissent += 5
 
 We have changed ideologies. Many in the party feel unmoored.

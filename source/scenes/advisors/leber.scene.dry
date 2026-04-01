@@ -21,7 +21,7 @@ title: Rally for democracy
 subtitle: Rally our party and the Saskatchewanian people to defend democracy and freedom.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; reformist_strength += 3; workers_flp += 4*(1-dissent) if democratization >= 4; new_middle_flp += 3*(1-dissent) if democratization >= 4
+on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; moderate_strength += 3; workers_flp += 4*(1-dissent) if democratization >= 4; new_middle_flp += 3*(1-dissent) if democratization >= 4
 
 Leber helps us to rally the people in defense of democracy.
 

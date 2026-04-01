@@ -61,7 +61,7 @@ With the onset of the Depression and its throngs of unemployed, our unemployment
 
 @cut_benefits
 subtitle: The workers will regard this as a betrayal.
-on-arrival: workers_flp -= 0.12*workers_flp; unemployed_flp -= 0.2*unemployed_flp; workers_cp_s += 6; workers_scps += 6; unemployed_cp_s += 5; unemployed_scps += 5; far_left_dissent += 15; agrarian_dissent += 10; labour_dissent += 15; reformist_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; pro_republic -= 4; cp_s_relation -= 8; inflation -= 2; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
+on-arrival: workers_flp -= 0.12*workers_flp; unemployed_flp -= 0.2*unemployed_flp; workers_cp_s += 6; workers_scps += 6; unemployed_cp_s += 5; unemployed_scps += 5; far_left_dissent += 15; agrarian_dissent += 10; labour_dissent += 15; moderate_dissent += 5; welfare -= 2; treasury += 1; unemployed += 3; pro_republic -= 4; cp_s_relation -= 8; inflation -= 2; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
 
 For budgetary reasons, we have cut unemployment insurance benefits. Unfortunately, our reasons for fiscal discipline are alien to the workers. They are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the CP(S)'s gain, and even the SCPS, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
 

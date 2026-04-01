@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: agrarian_advisor, left_advisor, reformist_advisor, labour_advisor, neorev_advisor, nonfactional_advisor 
+tags: agrarian_advisor, left_advisor, moderate_advisor, labour_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -70,7 +70,7 @@ go-to: rm_main
 
 Williams has been removed as an advisor. The Agrarian faction disapproves.
 
-# reformists
+# moderates
 
 
 @remove_brockelbank
@@ -86,19 +86,19 @@ Brockelbank has been removed as an advisor. The Agrarian faction disapproves.
 title: Remove J. S. Woodsworth
 view-if: woodsworth_advisor = 1
 tags: remove_advisor
-on-arrival: woodsworth_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: woodsworth_advisor = 0; moderate_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-J. S. Woodsworth has been removed as an advisor. The Reformist faction disapproves.
+J. S. Woodsworth has been removed as an advisor. The Moderate faction disapproves.
 
 @remove_lucas
 title: Remove Lucas
 view-if: lucas_advisor = 1
 tags: remove_advisor
-on-arrival: lucas_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: lucas_advisor = 0; moderate_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Lucas has been removed as an advisor. The Reformist faction disapproves.
+Lucas has been removed as an advisor. The Moderate faction disapproves.
 
 @remove_eliason
 title: Remove Eliason
@@ -231,7 +231,7 @@ Schumacher has been removed as an advisor. The Neorevisionist faction disapprove
 
 ## nonfactional
 
-# tbh I'm not sure if Wright should be a reformist or nonfactional. same for spry. they were vaguely reformist-aligned but had pretty different ideas from the other reformists here. so they're non-factional.
+# tbh I'm not sure if Wright should be a moderate or nonfactional. same for spry. they were vaguely moderate-aligned but had pretty different ideas from the other moderates here. so they're non-factional.
 
 @remove_wright
 title: Remove Wright
@@ -274,13 +274,13 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: agrarian_advisor, left_advisor, reformist_advisor, labour_advisor, neorev_advisor, nonfactional_advisor
+tags: agrarian_advisor, left_advisor, moderate_advisor, labour_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
 
 - @agrarian: Add Agrarians
 - @left: Add Leftists
-- @reformist: Add Reformists
+- @moderate: Add Moderates
 - @labour: Add Labour
 - @neorev: Add Neorevisionists
 - @nonfactional: Add non-factional advisors
@@ -292,10 +292,10 @@ view-if: n_advisors < 3
 
 - #agrarian_advisor
 
-@reformist
+@moderate
 view-if: n_advisors < 3
 
-- #reformist_advisor
+- #moderate_advisor
 
 @left
 view-if: n_advisors < 3
@@ -391,16 +391,16 @@ tags: agrarian_advisor
 
 William Irvine is now an advisor.
 
-#                                      reformist
+#                                      moderate
 
 @add_woodsworth
 title: J. S. Woodsworth
 subtitle: James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the FLP's Party Leader. {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Negotiating with the Coalition ?]
 is-card: true
 card-image: img/portraits/WoodsworthJS.jpg
-tags: reformist_advisor
+tags: moderate_advisor
 view-if: woodsworth_advisor = 0 and n_advisors < 3
-on-arrival: woodsworth_advisor = 1; n_advisors += 1; reformist_strength += 5
+on-arrival: woodsworth_advisor = 1; n_advisors += 1; moderate_strength += 5
 go-to: advisor_menu
 
 J. S. Woodsworth is now an advisor.
@@ -411,9 +411,9 @@ subtitle: Louise Lucas is a leading feminist farmer, member of the FLP's Board o
 is-card: true
 card-image: img/portraits/LucasLouise.jpg
 view-if: lucas_advisor = 0 and n_advisors < 3
-on-arrival: lucas_advisor = 1; n_advisors += 1; reformist_strength += 5
+on-arrival: lucas_advisor = 1; n_advisors += 1; moderate_strength += 5
 go-to: advisor_menu
-tags: reformist_advisor
+tags: moderate_advisor
 
 Louise Lucas is now an advisor.
 

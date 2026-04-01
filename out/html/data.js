@@ -127,7 +127,7 @@ const colourList = [{
         style: "color: #7b1616; font-weight: bold;"
     },
     {
-        word: "Reformist", 
+        word: "Moderate", 
         style: "color: #d26e28; font-weight: bold;"
     },
     {

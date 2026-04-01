@@ -486,7 +486,11 @@ div.blank-card {
   text-align: center;
   display: block;
   font-size: 0.95em;
-  color: #4e3410;
+  color: #c58766;
+}
+
+.dark-mode .card-caption {
+  color: #c58766;
 }
 
 .card-tooltip {
@@ -785,14 +789,6 @@ table {
   width: 100%;
 }
 
-.poll-table.dark-mode {
-  font-size: 0.8em;         /* smaller font */
-  line-height: 1.1;          /* tighter rows */
-  border: 1px solid #d53737;
-  border-collapse: collapse;
-  width: 100%;
-}
-
 /* Cell styling */
 .poll-table td {
   border: 1px solid #000;
@@ -811,7 +807,7 @@ table {
   font-weight: bold;
 }
 
-.poll-table.dark-mode tr:first-child td {
+.dark-mode .poll-table tr:first-child td {
   background-color: #252320;
   font-weight: bold;
 }

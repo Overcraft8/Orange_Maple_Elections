@@ -49,7 +49,7 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['far_left', 'agrarian', 'labour', 'reformist', 'neorevisionist'];
+Q.factions = ['far_left', 'agrarian', 'labour', 'moderate', 'neorevisionist'];
 // should this be normalized to 100%?
 
 
@@ -67,8 +67,8 @@ Q.labour_dissent = 5;
 Q.labour_radicalism = 16;
 
 
-Q.reformist_strength = 15;
-Q.reformist_dissent = 5;
+Q.moderate_strength = 15;
+Q.moderate_dissent = 5;
 
 
 Q.neorevisionist_strength = 0;
@@ -80,7 +80,7 @@ Q.neorevisionist_dissent = 10;
 Q.unions_independent = 0;
 Q.agrarians_resign = 0;
 Q.left_split = 0;
-Q.reformists_resigned = 0;
+Q.moderates_resigned = 0;
 
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
@@ -881,7 +881,7 @@ Q.irvine_advisor = 0; // William Irvine
 Q.eliason_advisor = 1; // Frank Eliason
 Q.williams_advisor = 1; // George Hara Williams
 
-// Reformist advisors
+// Moderate advisors
 Q.brockelbank_advisor = 0; // John Brockelbank
 Q.woodsworth_advisor = 0; // JS_Woodsworth
 Q.lucas_advisor = 0; // Louise Lucas
@@ -940,7 +940,7 @@ on-arrival: {!
   Q.resources = 0;
   Q.dues = 1;
   Q.ufc_strength = 25.00;
-  Q.reformist_dissent = 25;
+  Q.moderate_dissent = 25;
   Q.far_left_dissent = 30;
   Q.labour_dissent = 25;
   Q.agrarian_dissent = 25;
@@ -959,7 +959,7 @@ Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
 Q.ufc_strength = 15.00;
-Q.reformist_dissent = 25;
+Q.moderate_dissent = 25;
 Q.far_left_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;

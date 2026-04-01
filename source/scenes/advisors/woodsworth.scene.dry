@@ -1,6 +1,6 @@
 title: J. S. Woodsworth
 is-pinned-card: true
-tags: advisor, reformist
+tags: advisor, moderate
 card-image: img/portraits/WoodsworthJS.jpg
 view-if: woodsworth_advisor = 1
 new-page: true 
@@ -9,7 +9,7 @@ new-page: true
 
 James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the FLP's Party Leader.
 
-J. S. Woodsworth [? if flp_prussia = 1 : is ?][? if flp_prussia = 0 : was ?] the Minister-Prime Minister of City Police, the largest state in Saskatchewan. He is a reformist leader who seeks to work with the bourgeois parties.
+J. S. Woodsworth [? if flp_prussia = 1 : is ?][? if flp_prussia = 0 : was ?] the Minister-Prime Minister of City Police, the largest state in Saskatchewan. He is a moderate leader who seeks to work with the bourgeois parties.
 
 - @coalition
 - @city_bulwark

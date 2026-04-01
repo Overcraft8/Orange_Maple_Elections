@@ -36,7 +36,7 @@ Which faction should we support?
 - @support_left: Left
 - @support_center: Agrarian
 - @support_labour: Labour
-- @support_reform: Reformists
+- @support_reform: Moderates
 - @support_neorev: Neorevisionists
 
 @support_left
@@ -55,9 +55,9 @@ on-arrival: labour_dissent -= 8; labour_support += 8
 Vorwärts prints editorials in support of the policies of the trade unions.
 
 @support_reform
-on-arrival: reformist_dissent -= 8; reformist_strength += 8;
+on-arrival: moderate_dissent -= 8; moderate_strength += 8;
 
-Vorwärts prints editorials in support of the reformist policies.
+Vorwärts prints editorials in support of the moderate policies.
 
 @support_neorev
 view-if: neorevisionism
@@ -70,6 +70,6 @@ title: Cooperation with the CP(S)
 subtitle: Could we build closer ties with the CP(S)?
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; far_left_strength += 2; cp_s_relation += 4*(1-dissent); reformist_dissent += 2
+on-arrival: advisor_action_timer = 6; far_left_strength += 2; cp_s_relation += 4*(1-dissent); moderate_dissent += 2
 
 Spry works towards closer ties with the CP(S) through our media.

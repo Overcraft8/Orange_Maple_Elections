@@ -301,18 +301,18 @@ Dissent: [+ far_left_dissent : dissent +]<br>
 ?]
 
 [? if 1 == 1 : 
-<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Reformist**</span><br> 
-Strength: [+ reformist_strength : strength +]<br> 
-Dissent: [+ reformist_dissent : dissent +]<br>
+<span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Moderate**</span><br> 
+Strength: [+ moderate_strength : strength +]<br> 
+Dissent: [+ moderate_dissent : dissent +]<br>
 ?]
 
-**Reformists**
+**Moderates**
 
-Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if flp_prussia : They are dominant in the state government of City Police. ?]
+Moderates are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if flp_prussia : They are dominant in the state government of City Police. ?]
 
-Strength: [+ reformist_strength : strength +]
+Strength: [+ moderate_strength : strength +]
 
-Dissent: [+ reformist_dissent : dissent +]
+Dissent: [+ moderate_dissent : dissent +]
 
 @neorevisionists
 go-to: menu

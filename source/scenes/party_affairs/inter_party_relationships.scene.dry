@@ -27,7 +27,7 @@ on-arrival: resources -= 1; cp_s_inter_party_seen += 1
 go-to: cp_s_blutmai if blutmai = 1; cp_s_1 if blutmai = 0 and cp_s_coalition_success = 0 and (cp_s_relation < 40 or cp_s_rectified_history = 1); cp_s_rectification_of_history if cp_s_relation >= 40 and cp_s_rectified_history = 0; cp_s_2 if cp_s_coalition_success = 1 and cp_s_rectified_history = 1
 
 @cp_s_1
-on-arrival: cp_s_relation += 6*(1 - dissent); communist_coalition += 1 if cp_s_inter_party_seen <= 1; reformist_dissent += 2; pps_relation -= 2; cps_relation -= 3
+on-arrival: cp_s_relation += 6*(1 - dissent); communist_coalition += 1 if cp_s_inter_party_seen <= 1; moderate_dissent += 2; pps_relation -= 2; cps_relation -= 3
 
 The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
 
@@ -41,11 +41,11 @@ For further improvements in CP(S) relations, it might be necessary to expel Nosk
 - @no_history: No, we have no need to apologize.
 
 @yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; far_left_dissent -= 6; far_left_strength += 5; cp_s_rectified_history = 1; pps_relation -= 6; cps_relation -= 6; lps_relation -= 4; cp_s_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: moderate_dissent += 12; moderate_strength -= 2; neorevisionist_dissent += 5; far_left_dissent -= 6; far_left_strength += 5; cp_s_rectified_history = 1; pps_relation -= 6; cps_relation -= 6; lps_relation -= 4; cp_s_relation += 8*(1-dissent); coalition_dissent += 1
 
 As part of normalizing relations with the CP(S), we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 
-This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
+This leads to tensions with the moderates and moderates within our party, and criticism from the conservative and liberal parties.
 
 @no_history
 on-arrival: cp_s_relation -= 3
@@ -54,12 +54,12 @@ We have no need to apologize for the actions of Ebert and Noske; it is the Commu
 
 
 @cp_s_2
-on-arrival: cp_s_relation += 8*(1 - dissent); communist_coalition += 1 if cp_s_inter_party_seen <= 1; reformist_dissent += 2; pps_relation -= 3; cps_relation -= 3
+on-arrival: cp_s_relation += 8*(1 - dissent); communist_coalition += 1 if cp_s_inter_party_seen <= 1; moderate_dissent += 2; pps_relation -= 3; cps_relation -= 3
 
 After the success of the coalition government with the CP(S), they are much more amenable to us.
 
 @cp_s_blutmai
-on-arrival: cp_s_relation += 3*(1 - dissent); reformist_dissent += 1
+on-arrival: cp_s_relation += 3*(1 - dissent); moderate_dissent += 1
 
 After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
 

@@ -12,7 +12,7 @@ max-visits: 4
 
 Contrary to orthodox Marxist predictions, the industrial proletariat is not constantly increasing in size. The rapid growth of the "new middle class" of white-collar workers and the persistence of small farmers and the peasantry confound predictions of a working-class majority.
 
-In order to build a socialist majority, many reformists and neorevisionists are calling for our party to move beyond the urban working class, to embrace the concerns of the middle class, farmers, and women of all classes. We can create a new and inclusive vision of the party that encompasses all people who work for a living, which is almost everyone in the country save the aristocrats and top capitalists.
+In order to build a socialist majority, many moderates and neorevisionists are calling for our party to move beyond the urban working class, to embrace the concerns of the middle class, farmers, and women of all classes. We can create a new and inclusive vision of the party that encompasses all people who work for a living, which is almost everyone in the country save the aristocrats and top capitalists.
 
 - @support_peoples_party: Yes, we must become a people's party!
 - @build_support: We must build additional support before becoming a people's party.
@@ -23,16 +23,16 @@ In order to build a socialist majority, many reformists and neorevisionists are 
 - @cancel_advisor_action
 
 @build_support
-view-if: (neorevisionist_strength + reformist_strength < far_left_strength + agrarian_strength) or peoples_party_support < 5
+view-if: (neorevisionist_strength + moderate_strength < far_left_strength + agrarian_strength) or peoples_party_support < 5
 on-arrival: peoples_party_support += 1; neorevisionist_strength += 5; far_left_strength -= 5; far_left_dissent += 5
 
 Within our party, we are pushing forward proposals for a people's party against the Left and Agrarians.
 
 
 @support_peoples_party
-choose-if: (neorevisionist_strength + reformist_strength >= far_left_strength + agrarian_strength) and peoples_party_support >= 4
+choose-if: (neorevisionist_strength + moderate_strength >= far_left_strength + agrarian_strength) and peoples_party_support >= 4
 unavailable-subtitle: The opposition is too strong.
-on-arrival: neorevisionist_strength += 15; reformist_strength += 15; neorevisionist_dissent -= 10; reformist_dissent -= 10; peoples_party = 1; workers_flp -= 12; farmer_flp += 10; new_middle_flp += 10; old_middle_flp += 8; catholics_flp += 8; far_left_dissent += 25; agrarian_dissent += 20; cp_s_relation -= 10; cp_s_coalition_dissent += 1; coalition_dissent -= 1; pps_relation += 5*(1-dissent); cps_relation += 5*(1-dissent)
+on-arrival: neorevisionist_strength += 15; moderate_strength += 15; neorevisionist_dissent -= 10; moderate_dissent -= 10; peoples_party = 1; workers_flp -= 12; farmer_flp += 10; new_middle_flp += 10; old_middle_flp += 8; catholics_flp += 8; far_left_dissent += 25; agrarian_dissent += 20; cp_s_relation -= 10; cp_s_coalition_dissent += 1; coalition_dissent -= 1; pps_relation += 5*(1-dissent); cps_relation += 5*(1-dissent)
 achievement: volkspartei
 
 In an emergency conference, we have decided to become a people's party that encompasses all of the regular people of Saskatchewan, not just the workers and urban poor. The Left and Agrarians claim that our new party platform is a betrayal of our founding principles, a turn away from Marxism towards bourgeois opportunism. Whatever the case, we are now a party representing all of the people, not just the proletariat.
@@ -49,8 +49,8 @@ Should we run a new campaign to publicize our new platform?
 
 @support_peoples_party_hard
 subtitle: This will increase dissent.
-view-if: (neorevisionist_strength + reformist_strength < far_left_strength + agrarian_strength) or (peoples_party_support < 4)
-on-arrival: neorevisionist_strength += 10; reformist_strength += 8; peoples_party = 1; workers_flp -= 15; farmer_flp += 10; new_middle_flp += 10; old_middle_flp += 8; catholics_flp += 8; far_left_dissent += 40; agrarian_dissent += 40; cp_s_relation -= 10; cp_s_coalition_dissent += 1; coalition_dissent -= 1
+view-if: (neorevisionist_strength + moderate_strength < far_left_strength + agrarian_strength) or (peoples_party_support < 4)
+on-arrival: neorevisionist_strength += 10; moderate_strength += 8; peoples_party = 1; workers_flp -= 15; farmer_flp += 10; new_middle_flp += 10; old_middle_flp += 8; catholics_flp += 8; far_left_dissent += 40; agrarian_dissent += 40; cp_s_relation -= 10; cp_s_coalition_dissent += 1; coalition_dissent -= 1
 achievement: volkspartei
 
 It is an arduous and contentious process, but we have pushed through the proposal to become a people's party. The Left and Agrarians claim that our new party platform is a betrayal of our founding principles, a turn away from Marxism towards bourgeois opportunism. Whatever the case, we are now a party representing all of the people, not just the proletariat.

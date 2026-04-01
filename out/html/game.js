@@ -446,7 +446,6 @@ function applyWholesome(str) {
 
     window.statusTabRight = newTab;
 
-    // ✅ FIXED LINE
     window.updateSidebarRight();
 };
 
@@ -516,16 +515,6 @@ document.addEventListener('mousemove', e => {
 });
 
 
-
-// President Button
-
-window.goToDepressionSituation = function() {
-    window.previousScene = window.dendryUI.dendryEngine.state.sceneId;
-    window.dendryUI.dendryEngine.goToScene("Depression_Situation");
-};
-
-
-
 document.addEventListener("click", function(e) {
   var card = e.target.closest("[go-to]");
   if (!card) return;
@@ -544,54 +533,7 @@ window.toggleDistrict = function() {
     div.style.display = div.style.display === 'none' ? 'block' : 'none';
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    const savedTab = localStorage.getItem("activeStatusTab");
 
-    if (savedTab) {
-        window.activeStatusTab = savedTab;
-        window.showStatusTab(savedTab);
-    }
-});
-
-/* 
-// For buttons nested inside a status panel 
-window.showStatusTab = function(tabId) {
-    // Toggle off if same tab is clicked
-    if (window.activeStatusTab === tabId) {
-        window.activeStatusTab = null;
-        localStorage.removeItem("activeStatusTab");
-
-        hideAllTabs();
-        return;
-    }
-
-    // Set new active tab
-    window.activeStatusTab = tabId;
-    localStorage.setItem("activeStatusTab", tabId);
-
-    hideAllTabs();
-
-    // Show selected tab
-    const selectedContent = document.getElementById(tabId);
-    if (selectedContent) selectedContent.style.display = 'block';
-
-    // Highlight button
-    const selectedButton = document.getElementById(tabId + '_tab');
-    if (selectedButton) selectedButton.classList.add('_active');
-};
-
-function hideAllTabs() {
-    const contents = document.getElementsByClassName('status_tab_content');
-    for (let i = 0; i < contents.length; i++) {
-        contents[i].style.display = 'none';
-    }
-
-    const buttons = document.getElementsByClassName('status_tab_button');
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('_active');
-    }
-}
-*/
 
 window.changePanel = function(newPanel, PanelId) {
 

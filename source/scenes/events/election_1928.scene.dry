@@ -47,32 +47,35 @@ for (var party of Q.parties) {
     Q[party + '_seats'] = 0;
 }
 
-//Helper
+// allocate seats function
 function allocateSeats(votes, totalSeats) {
     var seats = {};
-    for (var p in votes) seats[p] = 0;
+    for (var p in votes) seats[p] = 0; // Set all party seats at 0
 
-    for (var s = 0; s < totalSeats; s++) {
+    for (var s = 0; s < totalSeats; s++) { //Loop once per seat to allocate
         var maxQ = -1;
-        var winner = null;
+        var winner = null; // 'winning' party of the seat
         for (var p in votes) {
-            var q = votes[p] / (seats[p] + 1);
-            if (q > maxQ) {
-                maxQ = q;
-                winner = p;
+            var q = votes[p] / (seats[p] + 1); // D'hondt quotient for each party
+            if (q > maxQ) { // If this party has the highest quotient so far, they are the current winner of the seat
+                maxQ = q; // Update maxQ to this party's quotient
+                winner = p; // Winner of the seat is the party with the highest quotient
             }
         }
-        seats[winner]++;
+        seats[winner]++; //Increase winner seat count by 1
     }
-    return seats;
+    return seats; //return final seat distribution for all parties contesting
 }
 
 // 4. Loop over districts
-for (var d of Q.district_names) {
-    var district_seats = Q[d + '_seats'] || 0;
-    Q[d + '_district_seats'] = district_seats;
+for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district_names
+    var district_seats = Q[d + '_seats'] || 0; // district_seats is that districts name + '_seats' (e.g. regina_d_seats) or 0 if that doesn't exist, changes each loop
+    Q[d + '_district_seats'] = district_seats; // store district seats in the old Q variable
+    if (d == 'regina_d') {
+        console.log("District:", d, "Seats:", district_seats);
+    }
 
-    var district_party_support = {};
+    var district_party_support = {}; // Dictionary to hold support for each party's support in this district
 
     // Compute raw support per party
     for (var party of Q.parties) {
@@ -85,11 +88,11 @@ for (var d of Q.district_names) {
                 support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
             }
         }
-        // Squaring for FPTP simulation
+        // Squaring for FPTP simulation (rudimentary, ik)
         district_party_support[party] = support * support;
     }
 
-    Q[d + '_party_support'] = district_party_support;
+    Q[d + '_party_support'] = district_party_support; // Save FPTP distorted support for the district
 
     // Normalize distorted votes to 1
     var total_support = Object.values(district_party_support).reduce((a, b) => a + b, 0);
@@ -101,29 +104,30 @@ for (var d of Q.district_names) {
     // Allocate seats
     var result = allocateSeats(district_votes, district_seats);
 
-    // Store + accumulate
+    // Store + add to party seat total
     for (var party of Q.parties) {
-        Q[d + '_' + party + '_seats'] = result[party];
-        Q[party + '_seats'] += result[party];
+        Q[d + '_' + party + '_seats'] = result[party]; //District-level seat results
+        Q[party + '_seats'] += result[party]; // Add to party's total seat count
     }
 }
 
-
+// 
 for (var d of Q.district_names) {
 
-    var results = {};
+    var results = {}; // Soon to be dictionary
 
     for (var party of Q.parties) {
-        results[party] = Q[d + "_" + party + "_seats"] || 0;
+        results[party] = Q[d + "_" + party + "_seats"] || 0; //results[specific party] is number of seats that specific party won in this district (or 0)
     }
 
-    Q.district_results_legislative.push({
-        name: d,
-        seats: Q[d + '_district_seats'] || 0,
-        results: results
+    Q.district_results_legislative.push({ // Another dictionary (?) to hold all information for election results
+        name: d, // Name of district
+        seats: Q[d + '_district_seats'] || 0, // total seats in this district
+        results: results // Dictionary for this district's results by party
     });
 }
 
+console.log(Q.district_results_legislative);
 
 
 
@@ -393,7 +397,7 @@ data = data.filter(p => p.seats > 0);
 
 console.log("Seat totals by party:");
 for (var party of Q.parties) {
-    console.log(party, Q[party+'_urban_seats'], Q[party+'_rural_seats'], Q[party+'_seats']);
+    console.log(party, Q[party+'_seats']);
 }
 
 if (window && d3) {

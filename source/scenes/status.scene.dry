@@ -103,14 +103,16 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 <div id="lps_status_panel" class="party_status_panel_container">
 
-  <table id="liberal_party_status" class="poll-table">
+  <table id="liberal_party_status" class="party-table">
+    <tr><td>Liberal Party</td></tr>
     <tr><td>Relationship:</td><td>[+ lps_relation +]</td></tr>
     <tr><td>Ideology:</td><td>[+ lps_ideology +]</td></tr>
     <tr><td>Polling:</td><td>[+ lps_votes +]</td></tr>
     <tr><td>Current Actions:</td><td>Partying!</td></tr>
   </table>
 
-  <table id="conservative_party_status" class="poll-table">
+  <table id="conservative_party_status" class="party-table">
+    <tr><td>Conservative Party</td></tr>
     <tr><td>Relationship:</td><td>[+ cps_relation +]</td></tr>
     <tr><td>Ideology:</td><td>[+ cps_ideology +]</td></tr>
     <tr><td>Polling:</td><td>[+ cps_votes +]</td></tr>

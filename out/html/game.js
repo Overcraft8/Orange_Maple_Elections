@@ -563,14 +563,8 @@ window.changePanel = function(newPanel, PanelId) {
   window.updateSidebar();
 };
 
-/* 
-document.addEventListener("DOMContentLoaded", () => {
-    const savedTab = localStorage.getItem("activeStatusTab");
-
-    if (savedTab) {
-        window.activeStatusTab = savedTab;
-        window.showStatusTab(savedTab);
-    }
-});
-*/
+window.toggleDistrict = function() {
+    var div = document.getElementById('district_tab');
+    div.style.display = div.style.display === 'none' ? 'block' : 'none';
+};
 

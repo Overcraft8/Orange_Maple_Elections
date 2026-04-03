@@ -400,8 +400,8 @@ if (window && d3) {
 
     d3.select("#assembly").selectAll("*").remove();
 
-    var width = 400; 
-    var height = 400;
+    var width = 350; 
+    var height = 350;
     var screenWidth = document.getElementById('content').offsetWidth;
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 

@@ -151,6 +151,13 @@ for (var party of Q.parties) {
     console.log(party, Q[party + '_r']);
 }
 
+Q.lps_votes = Q.lps_votes.toFixed(1);
+Q.flp_votes = Q.flp_votes.toFixed(1);
+Q.pps_votes = Q.pps_votes.toFixed(1);
+Q.cps_votes = Q.cps_votes.toFixed(1);
+Q.other_votes = Q.other_votes.toFixed(1);
+Q.cp_s_votes = Q.cp_s_votes.toFixed(1);
+Q.scps_votes = Q.scps_votes.toFixed(1);
 
 
 !}

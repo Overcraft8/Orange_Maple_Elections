@@ -560,6 +560,13 @@ window.changePanel = function(newPanel, PanelId) {
 };
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTab = localStorage.getItem("activeStatusTab");
 
+    if (savedTab) {
+        window.activeStatusTab = savedTab;
+        window.showStatusTab(savedTab);
+    }
+});
 
 

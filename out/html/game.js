@@ -391,7 +391,7 @@ function applyWholesome(str) {
     window.updateSidebar();
 };
  
-/*  defunct????
+/*  defunct!!!!!! (But saved for bugss)
   window.changeTabRight = function(newTab, tabId) {
     var tabButton = document.getElementById(tabId);
     var tabButtons = document.getElementsByClassName('tab_button');
@@ -447,6 +447,10 @@ function applyWholesome(str) {
     window.statusTabRight = newTab;
 
     window.updateSidebarRight();
+};
+
+window.onDisplayContent = function() {
+    window.updateSidebar();
 };
 
   /*
@@ -559,7 +563,7 @@ window.changePanel = function(newPanel, PanelId) {
   window.updateSidebar();
 };
 
-
+/* 
 document.addEventListener("DOMContentLoaded", () => {
     const savedTab = localStorage.getItem("activeStatusTab");
 
@@ -568,5 +572,5 @@ document.addEventListener("DOMContentLoaded", () => {
         window.showStatusTab(savedTab);
     }
 });
-
+*/
 

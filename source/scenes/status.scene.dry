@@ -114,7 +114,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
     <tr><td>Relationship:</td><td>[+ cps_relation +]</td></tr>
     <tr><td>Ideology:</td><td>[+ cps_ideology +]</td></tr>
     <tr><td>Polling:</td><td>[+ cps_votes +]</td></tr>
-    <tr><td>Current Actions:</td><td>Governing...</td></tr>
+    <tr><td>Current Actions:</td><td>Governwing...</td></tr>
   </table>
 
 </div>

@@ -434,7 +434,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ str_change_flp +]** {!</td><td>!}  **[+ flp_seats +]**{!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!}  [+ cp_s_seats +] {!</td></tr>!}
 
@@ -568,8 +568,6 @@ go-to: coalition_menu
     {!</table>!}
     {!</div>!}
 {!</div>!}
-
-
 
 
 **Potential coalitions:**

@@ -285,7 +285,7 @@ Support for Socialism: [+ socialism +]%
 
 
 
-@Interior
+@interior
 
 = Infrastructure
 
@@ -460,13 +460,15 @@ on-display: {!
 })
 !}
 
+{!<svg id="bar" style="width: 500px; height: 250px;"> </svg>!}
+
 {!<div style="max-width: 400px; overflow-y:auto; padding: 2px;">!}
 
 {!<table class="poll-table">!}
 
 {!<tr><td>Party</td><td>Polling</td></tr>!}
 
-{!<tr><td>!} **FLP** {!</td><td>!}**Our Party**{!</td><td>!} **[+ flp_votes +]%** {!</td><tr>!}
+{!<tr><td>!} **FLP** {!</td><td>!}**Our Party** {!</td><tr>!}
 
 {!<tr><td>!} PPS {!</td><td>!} [+ pps_votes +]% {!</td><tr>!}
 

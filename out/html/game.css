@@ -790,7 +790,7 @@ table {
 
 /* Cell styling */
 .poll-table td {
-  border: 1px solid #000;
+  border: 1px solid var(--content-bg-color);
   padding: 2px 4px;
   text-align: center;
 }

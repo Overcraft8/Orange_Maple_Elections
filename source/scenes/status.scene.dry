@@ -169,19 +169,19 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>Party</td><td>Relationships</td><td>Polling</td></tr>!}
 
-{!<tr><td>!} **FLP** {!</td><td>!}**Our Party**{!</td><td>!} **[+ flp_votes +]%** {!</td><tr>!}
+{!<tr style='background-color: #D26E28;'>!}{!<td>!} **FLP** {!</td><td>!}**Our Party**{!</td><td>!} **[+ flp_votes +]%** {!</td></tr>!}
 
-{!<tr><td>!} PPS {!</td><td>!}[+ pps_relation : relationships +]{!</td><td>!} [+ pps_votes +]% {!</td><tr>!}
+{!<tr style='background-color: #d8ce6fb3;'>!}{!<td>!} PPS {!</td><td>!}[+ pps_relation : relationships +]{!</td><td>!} [+ pps_votes +]% {!</td></tr>!}
 
-{!<tr><td>!} LPS {!</td><td>!}[+ lps_relation : relationships +]{!</td><td>!} [+ lps_votes +]% {!</td><tr>!}
+{!<tr style='background-color: #BE0028;'>!}{!<td>!} LPS {!</td><td>!}[+ lps_relation : relationships +]{!</td><td>!} [+ lps_votes +]% {!</td></tr>!}
 
-{!<tr><td>!} CPS {!</td><td>!}[+ cps_relation : relationships +]{!</td><td>!} [+ cps_votes +]% {!</td><tr>!}
+{!<tr style='background-color: #0055A5;'>!}{!<td>!} CPS {!</td><td>!}[+ cps_relation : relationships +]{!</td><td>!} [+ cps_votes +]% {!</td></tr>!}
 
-{!<tr><td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +]{!</td><td>!} [+ cp_s_votes +]% {!</td><tr>!}
+{!<tr style='background-color: #920c0c;'>!}{!<td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +]{!</td><td>!} [+ cp_s_votes +]% {!</td></tr>!}
 
-{!<tr><td>!} Others {!</td><td>!} Varied {!</td><td>!} [+ other_votes +]% {!</td><tr>!}
+{!<tr style='background-color: #909090;'>!}{!<td>!} Others {!</td><td>!} Varied {!</td><td>!} [+ other_votes +]% {!</td></tr>!}
 
-{!<tr><td>!} SCPS {!</td><td>!}[+ scps_relation : relationships +]{!</td><td>!} [+ scps_votes +]% {!</td><tr>!}
+{!<tr style='background-color: #50E23D;'>!}{!<td>!} SCPS {!</td><td>!}[+ scps_relation : relationships +]{!</td><td>!} [+ scps_votes +]% {!</td></tr>!}
 
 {!</table>!}
 {!</div>!}

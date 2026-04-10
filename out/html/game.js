@@ -562,9 +562,3 @@ window.changePanel = function(newPanel, PanelId) {
 
   window.updateSidebar();
 };
-
-window.toggleDistrict = function() {
-    var div = document.getElementById('district_tab');
-    div.style.display = div.style.display === 'none' ? 'block' : 'none';
-};
-

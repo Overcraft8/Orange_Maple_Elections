@@ -450,7 +450,7 @@ go-to: coalition_menu
 
 {!</table>!}
 
-{!<button class="tab_button" id="district_tab" onclick="window.toggleDistrict();">Regional Results</button>!}
+{!<button class="tab_button" onclick="window.toggleDistrict();">Regional Results</button>!}
 
 {!<div id="district_results_legislative" style="display: none;">!}
     {!<div style="overflow-x:auto;">!}

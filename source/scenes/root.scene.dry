@@ -703,7 +703,7 @@ Q.min_wage_plat = 0;
 
 
 
-//                             Districts Electoral
+//                             Electoral district information
 
 Q.district_names = [
     'regina_d', 'saskatoon_d', 'moosejaw_d', 'princealbert_d',

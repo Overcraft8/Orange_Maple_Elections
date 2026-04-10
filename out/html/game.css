@@ -279,7 +279,7 @@ img.inline-img.icon {
 .tab_container {
   box-shadow: 0 2px 4px #606060;
   padding: 0.3em 0.1em;
-    background-color: var(--tab-bg-color);
+    background-color: #b08a5e7a;
     margin-top: -0.6em;
     margin-left: -0.6em;
     margin-right: -0.6em;
@@ -308,7 +308,7 @@ img.inline-img.icon {
 
 /* status tabs (nested) */
 .status_tab_container {
-    background-color: #9F7B5254;
+    background-color: var(--tab-bg-color);
     box-shadow: 0 2px 4px #606060;
     padding: 0.3em 0.2em;
     margin-top: 0.4em;
@@ -597,12 +597,12 @@ img {
   }
   #content {
       position: static;
-      font-size: 12px;
+      font-size: 0.85em;
       line-height: 130%;
       padding: 1em 1em 1.5em 1em;
   }
   #qualities {
-      font-size: 1em;
+      font-size: 0.85em;
   }
   #tools_wrapper {
     position: static;
@@ -826,7 +826,7 @@ table {
 
 
 .status_panel_card_image {
-  --status_card_border_color: #4d9d1b99;
+  --status_card_border_color: #534b4199;
   border: 3px solid var(--status_card_border_color);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   height: 90px;

@@ -13,10 +13,11 @@ view-if: 2 = 1
 
 <p style="text-align: center; margin-bottom: 0;">[+ flp_president +]</p>
 
+The President of the FLP is the highest-ranking official within the party and the chief of the executive. The President is responsible for setting the overall direction of the party as well as it's funding and relationship with the Riding Associations. 
+
 [? if flp_president = "George Hara Williams" : George Hara Williams is a farmer by trade and de facto leader of the Agrarian wing of the party. ?]
 
 [? if flp_president = "Major James Coldwell" : Major James Coldwell is a teacher by profession and de facto leader of the Labour wing of the party. ?]
-
 
 - @backSpecialScene: Exit informational tab.
 

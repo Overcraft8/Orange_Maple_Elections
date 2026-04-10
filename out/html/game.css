@@ -748,6 +748,25 @@ table {
     margin: 10px 0;
 }
 
+.bar {
+    position: relative;
+    background: #ddd;
+    margin: 6px 0;
+    height: 22px;
+    font-size: 12px;
+    line-height: 22px;
+    padding-left: 5px;
+}
+
+.barValue {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #4caf50;
+    z-index: 0;
+}
+
 .segment {
     height: 100%;
     color: white;

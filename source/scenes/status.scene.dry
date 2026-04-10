@@ -440,7 +440,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 
 @polls
-on-arrival: {! 
+on-display: {! 
     const bar_container = document.getElementById("bars_container");
     bar_container.innerHTML = "";
     let vote_total = 0;

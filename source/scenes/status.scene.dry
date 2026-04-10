@@ -441,45 +441,81 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 @polls
 on-display: {!
-setTimeout(() => {
-    const bar_container = document.getElementById("bars_container");
-
-    if (!bar_container) {
-        console.log("bars_container not found");
-        return;
+    var subgroups = ["workers", "unemployed", "farmers"];
+    var data = [
+    {
+        group: "FLP",
+        workers: Q.workers_flp || 0,
+        unemployed: Q.unemployed_flp || 0,
+        farmers: Q.farmers_flp || 0
+    },
+    {
+        group: "PPS",
+        workers: Q.workers_pps || 0,
+        unemployed: Q.unemployed_pps || 0,
+        farmers: Q.farmers_pps || 0
+    },
+    {
+        group: "LPS",
+        workers: Q.workers_lps || 0,
+        unemployed: Q.unemployed_lps || 0,
+        farmers: Q.farmers_lps || 0
     }
+    ];
 
-    if (!Q.parties) {
-        console.log("Q.parties missing");
-        return;
-    }
+    const margin = {top: 10, right: 30, bottom: 20, left: 50},
+      width = 460 - margin.left - margin.right,
+      height = 400 - margin.top - margin.bottom;
 
-    bar_container.innerHTML = "";
+    const svg = d3.select("#my_dataviz")
+    .html("")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    let vote_total = 0;
-    Q.parties.forEach(p => {
-        vote_total += Q[p + '_votes'] || 0;
-    });
+    const x = d3.scaleBand()
+    .domain(data.map(d => d.group))
+    .range([0, width])
+    .padding(0.2);
 
-    if (vote_total === 0) vote_total = 1;
+    svg.append("g")
+    .attr("transform", `translate(0,${height})`)
+    .call(d3.axisBottom(x));
 
-    Q.parties.forEach(p => {
-        const votes = Q[p + '_votes'] || 0;
+    const y = d3.scaleLinear()
+    .domain([0, 100])
+    .range([height, 0]);
 
-        const bar = window.generateBar(
-            votes,
-            p.toUpperCase(),
-            vote_total,
-            0,
-            true
-        );
+    svg.append("g")
+    .call(d3.axisLeft(y));
 
-        bar_container.appendChild(bar);
-    });
-}, 50);
+    const color = d3.scaleOrdinal()
+    .domain(subgroups)
+    .range(["#4caf50", "#ff9800", "#2196f3"]);
+
+    const stackedData = d3.stack().keys(subgroups)(data);
+
+    svg.append("g")
+    .selectAll("g")
+    .data(stackedData)
+    .enter()
+    .append("g")
+    .attr("fill", d => color(d.key))
+    .selectAll("rect")
+    .data(d => d)
+    .enter()
+    .append("rect")
+    .attr("x", d => x(d.data.group))
+    .attr("y", d => y(d[1]))
+    .attr("height", d => y(d[0]) - y(d[1]))
+    .attr("width", x.bandwidth());
 !}
 
-# {!<div id="bars_container" style="width:500px;"> </div>!}
+= General
+
+<div id="my_dataviz"></div>
 
 {!<div style="max-width: 400px; overflow-y:auto; padding: 2px;">!}
 
@@ -505,7 +541,7 @@ setTimeout(() => {
 
 =                                  Urban Polling
 
-{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; ">!}
+{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; font-size: 1.15em; ">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
             {!<th>Party</th>!}
@@ -568,7 +604,7 @@ setTimeout(() => {
 
 =                             Rural Polling
 
-{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; ">!}
+{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; font-size: 1.15em; ">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
             {!<th>Party</th>!}

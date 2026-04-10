@@ -1,0 +1,40 @@
+Bars generator?? Doesn't work. This inside on-dispaly:
+
+setTimeout(() => {
+    const bar_container = document.getElementById("bars_container");
+
+    if (!bar_container) {
+        console.log("bars_container not found");
+        return;
+    }
+
+    if (!Q.parties) {
+        console.log("Q.parties missing");
+        return;
+    }
+
+    bar_container.innerHTML = "";
+
+    let vote_total = 0;
+    Q.parties.forEach(p => {
+        vote_total += Q[p + '_votes'] || 0;
+    });
+
+    if (vote_total === 0) vote_total = 1;
+
+    Q.parties.forEach(p => {
+        const votes = Q[p + '_votes'] || 0;
+
+        const bar = window.generateBar(
+            votes,
+            p.toUpperCase(),
+            vote_total,
+            0,
+            true
+        );
+
+        bar_container.appendChild(bar);
+    });
+}, 50);
+
+# {!<div id="bars_container" style="width:500px;"> </div>!} <- outside of on-display block

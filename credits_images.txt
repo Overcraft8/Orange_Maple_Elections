@@ -54,3 +54,13 @@ robin_hood_mill.jpg https://www.prairie-towns.com/saskatoon-6.html
 
 island_falls_plant.jpg https://archive.org/details/PC011107
 
+
+
+
+
+
+
+
+
+
+stacked bar graph (thanks maybe): https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html

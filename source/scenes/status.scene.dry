@@ -479,7 +479,7 @@ setTimeout(() => {
 }, 50);
 !}
 
-{!<div id="bars_container" style="width:500px;"> </div>!}
+# {!<div id="bars_container" style="width:500px;"> </div>!}
 
 {!<div style="max-width: 400px; overflow-y:auto; padding: 2px;">!}
 
@@ -503,6 +503,7 @@ setTimeout(() => {
 
 {!</table>!}
 
+{!<div style="max-width: 400px; overflow-y:auto; padding: 2px;">!}
 {!<table class="poll-table">!}
         {!<tr>!}
             {!<th>Party</th>!}
@@ -512,12 +513,18 @@ setTimeout(() => {
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #c59471fe; font-size: 0.85em;">!}[+ workers_flp_display +]%{!</td>!}
-            {!<td style="background-color: #c59471fe;">!}[+ new_middle_flp_display +]%{!</td>!}
-            {!<td style="background-color: #c59471fe;">!}[+ old_middle_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}[+ workers_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395fe;">!}[+ new_middle_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395fe;">!}[+ old_middle_flp_display +]%{!</td>!}
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**CP(S)**{!</td>!}
+            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}[+ workers_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ new_middle_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ old_middle_cp_s_display +]%{!</td>!}
         {!</tr>!}
 {!</table>!}
-
+{!</div>!}
 =                      Urban Polling
 
 {!<table class="poll-table">!}
@@ -544,9 +551,6 @@ setTimeout(() => {
 
 {!</div>!}
 
-# Rural Polling below
-
-{!</div>!}
 {!<div style="overflow-y:auto; padding: 2px;">!}
 
 

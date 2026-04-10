@@ -169,19 +169,19 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>Party</td><td>Relationships</td><td>Polling</td></tr>!}
 
-{!<tr style='background-color: #D26E28;'>!}{!<td>!} **FLP** {!</td><td>!}**Our Party**{!</td><td>!} **[+ flp_votes +]%** {!</td></tr>!}
+{!<tr><td>!} **FLP** {!</td><td>!}**Our Party**{!</td><td>!} **[+ flp_votes +]%** {!</td><tr>!}
 
-{!<tr style='background-color: #d8ce6fb3;'>!}{!<td>!} PPS {!</td><td>!}[+ pps_relation : relationships +]{!</td><td>!} [+ pps_votes +]% {!</td></tr>!}
+{!<tr><td>!} PPS {!</td><td>!}[+ pps_relation : relationships +]{!</td><td>!} [+ pps_votes +]% {!</td><tr>!}
 
-{!<tr style='background-color: #BE0028;'>!}{!<td>!} LPS {!</td><td>!}[+ lps_relation : relationships +]{!</td><td>!} [+ lps_votes +]% {!</td></tr>!}
+{!<tr><td>!} LPS {!</td><td>!}[+ lps_relation : relationships +]{!</td><td>!} [+ lps_votes +]% {!</td><tr>!}
 
-{!<tr style='background-color: #0055A5;'>!}{!<td>!} CPS {!</td><td>!}[+ cps_relation : relationships +]{!</td><td>!} [+ cps_votes +]% {!</td></tr>!}
+{!<tr><td>!} CPS {!</td><td>!}[+ cps_relation : relationships +]{!</td><td>!} [+ cps_votes +]% {!</td><tr>!}
 
-{!<tr style='background-color: #920c0c;'>!}{!<td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +]{!</td><td>!} [+ cp_s_votes +]% {!</td></tr>!}
+{!<tr><td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +]{!</td><td>!} [+ cp_s_votes +]% {!</td><tr>!}
 
-{!<tr style='background-color: #909090;'>!}{!<td>!} Others {!</td><td>!} Varied {!</td><td>!} [+ other_votes +]% {!</td></tr>!}
+{!<tr><td>!} Others {!</td><td>!} Varied {!</td><td>!} [+ other_votes +]% {!</td><tr>!}
 
-{!<tr style='background-color: #50E23D;'>!}{!<td>!} SCPS {!</td><td>!}[+ scps_relation : relationships +]{!</td><td>!} [+ scps_votes +]% {!</td></tr>!}
+{!<tr><td>!} SCPS {!</td><td>!}[+ scps_relation : relationships +]{!</td><td>!} [+ scps_votes +]% {!</td><tr>!}
 
 {!</table>!}
 {!</div>!}
@@ -503,6 +503,21 @@ setTimeout(() => {
 
 {!</table>!}
 
+{!<table class="poll-table">!}
+        {!<tr>!}
+            {!<th>Party</th>!}
+            {!<th>Workers</th>!}
+            {!<th>N.M.</th>!}
+            {!<th>O.M.</th>!}
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**FLP**{!</td>!}
+            {!<td style="background-color: #c59471fe; font-size: 0.85em;">!}[+ workers_flp_display +]%{!</td>!}
+            {!<td style="background-color: #c59471fe;">!}[+ new_middle_flp_display +]%{!</td>!}
+            {!<td style="background-color: #c59471fe;">!}[+ old_middle_flp_display +]%{!</td>!}
+        {!</tr>!}
+{!</table>!}
+
 =                      Urban Polling
 
 {!<table class="poll-table">!}
@@ -513,7 +528,7 @@ setTimeout(() => {
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ workers_sapd_display +]%  {!</td><td>!} [+ unemployed_sapd_display +]% {!</td><td>!} [+ new_middle_sapd_display +]% {!</td><td>!} [+ old_middle_sapd_display +]% {!</td></tr>!} ?]
 
-{!<tr><td>!} CP(S): {!</td><td>!} [+ workers_cp_s_display +]% {!</td><td>!} [+ unemployed_cp_s_display +]% {!</td><td>!} [+ new_middle_cp_s_display +]% {!</td><td>!} [+ old_middle_cp_s_display +]% {!</td></tr>!}
+{!<tr><td>!} CP(S): {!</td> !}{!<td>!} [+ workers_cp_s_display +]% {!</td><td>!} [+ unemployed_cp_s_display +]% {!</td><td>!} [+ new_middle_cp_s_display +]% {!</td><td>!} [+ old_middle_cp_s_display +]% {!</td></tr>!}
 
 {!<tr><td>!} [+ lps_name +]: {!</td><td>!} [+ workers_lps_display +]% {!</td><td>!} [+ unemployed_lps_display +]% {!</td><td>!} [+ new_middle_lps_display +]% {!</td><td>!} [+ old_middle_lps_display +]% {!</td></tr>!}
 

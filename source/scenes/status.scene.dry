@@ -285,7 +285,7 @@ Support for Socialism: [+ socialism +]%
 
 
 
-@infrastructure
+@Interior
 
 = Infrastructure
 
@@ -302,9 +302,6 @@ Farmers Electrification: [+ farmer_electrification +]%
 Farmers Sanitation Access: [+ farmer_sanitation +]%
 
 Farmers Telephone Access: [+ farmer_telephone +]%
-
-
-@social
 
 = Tax Rates 
 
@@ -443,10 +440,47 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 
 @polls
+on-arrival: {! 
+    const bar_container = document.getElementById("bars_container");
+    bar_container.innerHTML = "";
+    let vote_total = 0;
+    Q.parties.forEach(p => {
+        vote_total += Q[p + '_votes'] || 0;
+    });
 
-= Polls
+    Q.parties.forEach(p => {
+    const bar = window.generateBar(
+        Q[p + '_votes'],
+        p.toUpperCase(),
+        vote_total,
+        0,
+        true
+    );
+    bar_container.appendChild(bar);
+})
+!}
 
 {!<div style="max-width: 400px; overflow-y:auto; padding: 2px;">!}
+
+{!<table class="poll-table">!}
+
+{!<tr><td>Party</td><td>Polling</td></tr>!}
+
+{!<tr><td>!} **FLP** {!</td><td>!}**Our Party**{!</td><td>!} **[+ flp_votes +]%** {!</td><tr>!}
+
+{!<tr><td>!} PPS {!</td><td>!} [+ pps_votes +]% {!</td><tr>!}
+
+{!<tr><td>!} LPS {!</td><td>!} [+ lps_votes +]% {!</td><tr>!}
+
+{!<tr><td>!} CPS {!</td><td>!}  [+ cps_votes +]% {!</td><tr>!}
+
+{!<tr><td>!} CP(S) {!</td><td>!} [+ cp_s_votes +]% {!</td><tr>!}
+
+{!<tr><td>!} Others {!</td><td>!} [+ other_votes +]% {!</td><tr>!}
+
+{!<tr><td>!} SCPS {!</td><td>!} [+ scps_votes +]% {!</td><tr>!}
+
+{!</table>!}
 
 =                      Urban Polling
 

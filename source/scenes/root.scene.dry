@@ -257,6 +257,10 @@ Q.new_middle_qol = 100;
 Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhand', 'res_worker', 'unemployed', 'catholics'];
 Q.parties = ['flp', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
 Q.parties_disp_names = ['FLP', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other']
+
+// Dynamic parties / existing parties
+Q.pps_exists = 1;
+
 Q.urban_seats = 24;
 Q.rural_seats = 31;
 

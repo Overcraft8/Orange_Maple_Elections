@@ -43,7 +43,19 @@ Q.resources = 2;
 // party dues
 Q.dues = 2;
 
-// the state of the party
+// the state of the party                       THE PARTY The Party The party the Party
+
+Q.party_bureaucracy = 0;
+
+Q.riding_associations = 0;
+
+Q.membership = 4000;
+
+Q.membership_change = 0;
+
+
+
+
 // overall dissent reduces every increase in party support.
 Q.dissent = 0.05;
 Q.dissent_percent = 5;

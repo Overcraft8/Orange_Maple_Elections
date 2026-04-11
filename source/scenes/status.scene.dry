@@ -439,118 +439,49 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 
 @polls
-on-display: {!
 
-setTimeout(() => {
-
-const subgroups = ["workers", "unemployed", "farmers"];
-
-const data = [
-  {
-    group: "FLP",
-    workers: Q.workers_flp || 0,
-    unemployed: Q.unemployed_flp || 0,
-    farmers: Q.farmers_flp || 0
-  },
-  {
-    group: "PPS",
-    workers: Q.workers_pps || 0,
-    unemployed: Q.unemployed_pps || 0,
-    farmers: Q.farmers_pps || 0
-  },
-  {
-    group: "LPS",
-    workers: Q.workers_lps || 0,
-    unemployed: Q.unemployed_lps || 0,
-    farmers: Q.farmers_lps || 0
-  }
-];
-
-const svg = d3.select("#my_dataviz").html("")
-  .append("svg")
-  .attr("width", 460)
-  .attr("height", 400)
-  .append("g")
-  .attr("transform", "translate(50,10)");
-
-const width = 460 - 50 - 30;
-const height = 400 - 10 - 20;
-
-const x = d3.scaleBand()
-  .domain(data.map(d => d.group))
-  .range([0, width])
-  .padding(0.2);
-
-svg.append("g")
-  .attr("transform", "translate(0," + height + ")")
-  .call(d3.axisBottom(x));
-
-const maxY = Math.max(1, d3.max(data, d =>
-  subgroups.reduce((sum, k) => sum + (d[k] || 0), 0)
-));
-
-const y = d3.scaleLinear()
-  .domain([0, maxY])
-  .nice()
-  .range([height, 0]);
-
-svg.append("g")
-  .call(d3.axisLeft(y));
-
-const color = d3.scaleOrdinal()
-  .domain(subgroups)
-  .range(["#4caf50", "#ff9800", "#2196f3"]);
-
-const stackedData = d3.stack()
-  .keys(subgroups)(data);
-
-
-
-svg.append("g")
-  .selectAll("g")
-  .data(stackedData)
-  .join("g")
-    .attr("fill", d => color(d.key))
-  .selectAll("rect")
-  .data(d => d)
-  .join("rect")
-    .attr("x", d => x(d.data.group))
-    .attr("y", d => y(d[1]))
-    .attr("height", d => y(d[0]) - y(d[1]))
-    .attr("width", x.bandwidth());
-
-    console.log("DATA:", data);
-
-}, 50);
-!}
-
-{!<div id="my_dataviz" style="width:460px; height:400px;"></div>!}
-
-{!<div style="max-width: 400px; overflow-y:auto; padding: 2px;">!}
-
-{!<table class="poll-table">!}
-
-{!<tr><td>Party</td><td>Polling</td></tr>!}
-
-{!<tr><td>!} **FLP** {!</td><td>!}**Our Party** {!</td><tr>!}
-
-{!<tr><td>!} PPS {!</td><td>!} [+ pps_votes +]% {!</td><tr>!}
-
-{!<tr><td>!} LPS {!</td><td>!} [+ lps_votes +]% {!</td><tr>!}
-
-{!<tr><td>!} CPS {!</td><td>!}  [+ cps_votes +]% {!</td><tr>!}
-
-{!<tr><td>!} CP(S) {!</td><td>!} [+ cp_s_votes +]% {!</td><tr>!}
-
-{!<tr><td>!} Others {!</td><td>!} [+ other_votes +]% {!</td><tr>!}
-
-{!<tr><td>!} SCPS {!</td><td>!} [+ scps_votes +]% {!</td><tr>!}
-
+{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; font-size: 1.15em; ">!}
+{!<table style='text-align: center;'>!}
+        {!<tr>!}
+            {!<th>Party</th>!}
+            {!<th>Polling</th>!}
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}CP(S){!</td>!}
+            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}[+ flp_votes +]%{!</td>!}
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**FLP**{!</td>!}
+            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}[+ flp_votes +]%{!</td>!}
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}PPS{!</td>!}
+            {!<td style="background-color: #c8c288; font-size: 0.85em;">!}[+ pps_votes +]%{!</td>!}
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}LPS{!</td>!}
+            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}[+ lps_votes +]%{!</td>!}
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}CPS{!</td>!}
+            {!<td style="background-color: #758391; font-size: 0.85em;">!}[+ cps_votes +]%{!</td>!}
+        {!</tr>!} 
+        {!<tr>!}
+            {!<td>!}SCPS{!</td>!}
+            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}[+ scps_votes +]%{!</td>!}
+        {!</tr>!} 
+        {!<tr>!}
+            {!<td>!}Others{!</td>!}
+            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}[+ other_votes +]%{!</td>!}
+        {!</tr>!} 
 {!</table>!}
+{!</div>!}
+
 
 =                                  Urban Polling
 
 {!<div style="max-width: 400px; overflow-y:auto; padding: 2px; font-size: 1.15em; ">!}
+
 {!<table style='text-align: center;'>!}
         {!<tr>!}
             {!<th>Party</th>!}
@@ -619,47 +550,47 @@ svg.append("g")
             {!<th>Party</th>!}
             {!<th>Farmers</th>!}
             {!<th>Farmhands</th>!}
-            {!<th>Nat. Res. Workers</th>!}
+            {!<th>Natural Res. Workers</th>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}[+ farmers_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}[+ farmer_flp_display +]%{!</td>!}
             {!<td style="background-color: #b7a395fe;">!}[+ farmhand_flp_display +]%{!</td>!}
             {!<td style="background-color: #b7a395fe;">!}[+ res_worker_flp_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
-            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}[+ farmers_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}[+ farmer_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ farmhand_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ res_worker_cp_s_display +]%{!</td>!}
         {!</tr>!}
         [? if pps_exists : {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
-            {!<td style="background-color: #c8c288; font-size: 0.85em;">!}[+ farmers_pps_display +]%{!</td>!}
+            {!<td style="background-color: #c8c288; font-size: 0.85em;">!}[+ farmer_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ uemployed_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ res_worker_pps_display +]%{!</td>!} 
         {!</tr>!} ?]
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
-            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}[+ farmers_lps_display +]%{!</td>!}
+            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}[+ farmer_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ farmhand_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ res_worker_lps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CPS**{!</td>!}
-            {!<td style="background-color: #758391; font-size: 0.85em;">!}[+ farmers_cps_display +]%{!</td>!}
+            {!<td style="background-color: #758391; font-size: 0.85em;">!}[+ farmer_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ farmhand_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ res_worker_cps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**SCPS**{!</td>!}
-            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}[+ farmers_scps_display +]%{!</td>!}
+            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}[+ farmer_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ farmhand_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ res_worker_scps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Others**{!</td>!}
-            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}[+ farmers_other_display +]%{!</td>!}
+            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}[+ farmer_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ farmhand_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ res_worker_other_display +]%{!</td>!}
         {!</tr>!}

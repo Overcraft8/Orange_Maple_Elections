@@ -79,6 +79,8 @@ Dissent: [+ moderate_dissent : dissent +]<br>
 
 @partyaffiliates
 
+<div style="margin-top: 1em; center-align: center;">
+
 = Party Affiliates of the FLP
 
 [? if 1 == 1 : 
@@ -111,3 +113,13 @@ Relations: [+ tlc_relations : relationships +]<br>
 Militancy: [+ tlc_militancy : militancy +]<br>
 Strength: [+ tlc_strength +] Thousand<br>
 ?]
+
+</div>
+
+[+ party_bureaucracy : p_bureaucracy +]
+
+[+ riding_associations : p_riding_associations +]
+
+[+ membership +]
+
+[+ membership_change +] 

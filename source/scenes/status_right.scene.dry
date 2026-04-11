@@ -49,6 +49,8 @@ is-special: true
 #</div>
 # ================
 
+<div style="margin-top: 1em; text-align: center;">
+
 = Internal Factions of the FLP
 
 [? if 1 == 1 :
@@ -77,9 +79,17 @@ Strength: [+ moderate_strength : strength +]<br>
 Dissent: [+ moderate_dissent : dissent +]<br>
 ?]
 
-@partyaffiliates
+Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]
 
-<div style="margin-top: 1em; center-align: center;">
+Riding Association Strength: [+ riding_associations : p_riding_associations +]
+
+Membership: [+ membership +]
+
+Membership Change: [+ membership_change +] 
+
+</div>
+
+@partyaffiliates
 
 = Party Affiliates of the FLP
 
@@ -113,13 +123,3 @@ Relations: [+ tlc_relations : relationships +]<br>
 Militancy: [+ tlc_militancy : militancy +]<br>
 Strength: [+ tlc_strength +] Thousand<br>
 ?]
-
-</div>
-
-[+ party_bureaucracy : p_bureaucracy +]
-
-[+ riding_associations : p_riding_associations +]
-
-[+ membership +]
-
-[+ membership_change +] 

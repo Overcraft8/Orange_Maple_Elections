@@ -440,7 +440,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 @polls
 
-{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; font-size: 1.15em; ">!}
+{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
             {!<th>Party</th>!}
@@ -480,7 +480,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 =                                  Urban Polling
 
-{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; font-size: 1.15em; ">!}
+{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
 
 {!<table style='text-align: center;'>!}
         {!<tr>!}
@@ -544,7 +544,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 =                             Rural Polling
 
-{!<div style="max-width: 400px; overflow-y:auto; padding: 2px; font-size: 1.15em; ">!}
+{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
             {!<th>Party</th>!}

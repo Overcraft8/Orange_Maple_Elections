@@ -697,6 +697,7 @@ table {
   position: relative;
   cursor: pointer;
   background-color: transparent;
+  cursor: help;
 }
 
 .mytooltip:hover { background-color: #f3f3e3; }
@@ -708,23 +709,21 @@ table {
   background: #fff4e6;
   color: #3b1f0a;
   text-align: left;
-  border-radius: 8px;
-  padding: 12px 14px;
+  border-radius: 5px;
+  padding: 8px 11px;
   opacity: 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-  border: 1px solid #b22222;
+  border: 1px solid #b27b22d9;
   pointer-events: none;
   font-size: 11px !important;
   line-height: 1.2em !important;
   font-weight: 500 !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   transform: translateY(5px);
-  text-align: center;
 }
 
 .mytooltip:hover .mytooltiptext { 
   opacity: 1; 
-
 }
 
 .mytooltip .mytooltiptext img { 
@@ -735,10 +734,22 @@ table {
 
 .mytooltip .mytooltiptext {
   bottom: auto;
-  top: calc(var(--mouse-y, 0px) - 20px);
-  left: calc(var(--mouse-x, 0px));
-  transform: translate(-50%, -100%);
+  position: absolute;
+  left: 0;
+  top: 12px;;
 }
+
+/* status tooltip */
+.status_tooltip-text {
+  color: #000000;
+  cursor: help;
+  text-decoration: dotted underline;
+  user-select: none;
+  position: relative; /* anchor */
+}
+
+
+
 
 .bar-container {
     width: 100%;

@@ -49,9 +49,9 @@ is-special: true
 #</div>
 # ================
 
-<div style="margin-top: 1em; justify-content: center; gap: 2px; display: flex;">
-
 = Internal Factions of the FLP
+
+<div style="margin-top: 1em; justify-content: center; gap: 2px; display: flex;">
 
   <div style="text-align: center;">
   [? if 1 == 1 :
@@ -70,6 +70,9 @@ is-special: true
   Radicalism: [+ labour_radicalism : radicalism +]
   ?]
   </div>
+</div>
+
+<div style="margin-top: 1em; justify-content: center; gap: 2px; display: flex;">
 
   <div style="text-align: center;">
   [? if 1 == 1 :

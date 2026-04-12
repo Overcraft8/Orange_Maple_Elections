@@ -869,6 +869,7 @@ table {
 }
 
 .status-card-row {
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
@@ -898,8 +899,8 @@ table {
   --status_card_border_color: #534b4199;
   border: 3px solid var(--status_card_border_color);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  height: 90px;
-  width: 135px;
+  height: 115px;
+  width: 165px;
 }
 
 a.status_panel_info {

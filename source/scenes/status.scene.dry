@@ -99,89 +99,21 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 = Inter-party Relations and Voteshare Estimates
 
-# Row 1
-
-<div id="lps_status_panel" class="party_status_panel_container">
-
-  <table id="liberal_party_status" class="party-table">
-    <tr><td>Liberal Party</td></tr>
-    <tr><td>Relationship:</td><td>[+ lps_relation +]</td></tr>
-    <tr><td>Ideology:</td><td>[+ lps_ideology +]</td></tr>
-    <tr><td>Polling:</td><td>[+ lps_votes +]</td></tr>
-    <tr><td>Current Actions:</td><td>Partying!</td></tr>
-  </table>
-
-  <table id="conservative_party_status" class="party-table">
-    <tr><td>Conservative Party</td></tr>
-    <tr><td>Relationship:</td><td>[+ cps_relation +]</td></tr>
-    <tr><td>Ideology:</td><td>[+ cps_ideology +]</td></tr>
-    <tr><td>Polling:</td><td>[+ cps_votes +]</td></tr>
-    <tr><td>Current Actions:</td><td>Governing...</td></tr>
-  </table>
-
-</div>
-
-
-# Row 2
-
-<div style="display: flex; justify-content: center; font-size: 12px; gap: 2px;">
-
-<div style="text-align: center;">
-        <p>closly</p>
-    </div>
-
-    <div style="text-align: center;">
-        <p>You fool</p>
-    </div>
-</div>
-
-= Board of Directors 
-
-<!-- ROW 1 -->
-
-<div style="display: flex; justify-content: center; font-size: 12px; gap: 2px; margin-bottom: 4px;">
-
-    <div style="text-align: center;">
-        <p>[+ flp_board_one +]</p>
-    </div>
-
-    <div style="text-align: center;">
-        <p>[+ flp_board_two +]</p>
-    </div>
-
-</div>
-
-<!-- ROW 2 -->
-
-<div style="display: flex; justify-content: center; font-size: 12px; gap: 2px;">
-
-<div style="text-align: center;">
-        <p>[+ flp_board_three +]</p>
-    </div>
-
-    <div style="text-align: center;">
-        <p>[+ flp_board_four +]</p>
-    </div>
-</div>
-
-
 {!<table class="poll-table">!}
 
-{!<tr><td>Party</td><td>Relationships</td><td>Polling</td></tr>!}
+{!<tr><td>Party</td><td>Relations</td></tr>!}
 
-{!<tr><td>!} **FLP** {!</td><td>!}**Our Party**{!</td><td>!} **[+ flp_votes +]%** {!</td><tr>!}
+{!<tr><td>!} PPS {!</td><td>!}[+ pps_relation : relationships +] {!</td><tr>!}
 
-{!<tr><td>!} PPS {!</td><td>!}[+ pps_relation : relationships +]{!</td><td>!} [+ pps_votes +]% {!</td><tr>!}
+{!<tr><td>!} LPS {!</td><td>!}[+ lps_relation : relationships +] {!</td><tr>!}
 
-{!<tr><td>!} LPS {!</td><td>!}[+ lps_relation : relationships +]{!</td><td>!} [+ lps_votes +]% {!</td><tr>!}
+{!<tr><td>!} CPS {!</td><td>!}[+ cps_relation : relationships +] {!</td><tr>!}
 
-{!<tr><td>!} CPS {!</td><td>!}[+ cps_relation : relationships +]{!</td><td>!} [+ cps_votes +]% {!</td><tr>!}
+{!<tr><td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +] {!</td><tr>!}
 
-{!<tr><td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +]{!</td><td>!} [+ cp_s_votes +]% {!</td><tr>!}
+{!<tr><td>!} Others {!</td><td>!} Varied {!</td><tr>!}
 
-{!<tr><td>!} Others {!</td><td>!} Varied {!</td><td>!} [+ other_votes +]% {!</td><tr>!}
-
-{!<tr><td>!} SCPS {!</td><td>!}[+ scps_relation : relationships +]{!</td><td>!} [+ scps_votes +]% {!</td><tr>!}
+{!<tr><td>!} SCPS {!</td><td>!}[+ scps_relation : relationships +] {!</td><tr>!}
 
 {!</table>!}
 {!</div>!}

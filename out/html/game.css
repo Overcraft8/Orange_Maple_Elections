@@ -458,6 +458,7 @@ div.blank-card {
 }
 
 .card-in-hand, .pinned-card, .deck {
+  padding: 0.3em;
   display: inline-block;
   position: relative;
   max-width: 95px;
@@ -617,6 +618,7 @@ img {
       left: 0;
   }
   .tools.right {
+      font-size: 0.8em;
       float: none;
       right: 0;
   }
@@ -643,6 +645,7 @@ img {
     margin-bottom: 0.5em;
   }
   .card-in-hand, .pinned-card, .deck {
+    padding: 0.3em;
     width: 90px;
     height: 112.5px;
     margin-right: 1em;

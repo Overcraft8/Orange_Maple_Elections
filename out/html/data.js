@@ -123,14 +123,6 @@ const colourList = [{
         style: "color: #b06262; font-weight: bold;"
     },
     {
-        word: "Far Left", 
-        style: "color: #7b1616; font-weight: bold;"
-    },
-    {
-        word: "Moderate", 
-        style: "color: #d26e28; font-weight: bold;"
-    },
-    {
         word: "Cooperative Coalition", 
         style: "color: #288ed2; font-weight: bold;"
     },

@@ -55,7 +55,7 @@ is-special: true
 
   <div style="text-align: center;">
   [? if 1 == 1 :
-  <span class="status_tooltip-text" title="A faction consisting of radical farmers, mainly representing the small family farm." style="color: #86a71b;">**Agrarians**</span><br>
+  <span class="tooltip-text" title="A faction consisting of radical farmers, mainly representing the small family farm." style="color: #86a71b;">**Agrarians**</span><br>
   Strength: [+ agrarian_strength : strength +] <br>
   Dissent: [+ agrarian_dissent : dissent +]<br>
   Radicalism: [+ agrarian_radicalism : radicalism +]
@@ -64,7 +64,7 @@ is-special: true
 
   <div style="text-align: center;">
   [? if 1 == 1 :
-  <span class="status_tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers and lower middle-classes." style="color: #0F52BA;">**Labour**</span><br>
+  <span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers and lower middle-classes." style="color: #0F52BA;">**Labour**</span><br>
   Strength: [+ labour_strength : strength +]<br> 
   Dissent: [+ labour_dissent : dissent +]<br>
   Radicalism: [+ labour_radicalism : radicalism +]
@@ -76,7 +76,7 @@ is-special: true
 
   <div style="text-align: center;">
   [? if 1 == 1 :
-  <span class="status_tooltip-text" title="A faction of radical socialists. Many of them have ties to the CP(S) and the Soviet Union." style="color: #7b1616;">**Far Left**</span><br> 
+  <span class="tooltip-text" title="A faction of radical socialists. Many of them have ties to the CP(S) and the Soviet Union." style="color: #7b1616;">**Far Left**</span><br> 
   Strength: [+ far_left_strength : strength +]<br> 
   Dissent: [+ far_left_dissent : dissent +]<br>
   ?]
@@ -84,7 +84,7 @@ is-special: true
 
   <div style="text-align: center;">
   [? if 1 == 1 : 
-  <span class="status_tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Moderate**</span><br> 
+  <span class="tooltip-text" title="The moderate wing of the FLP and most aligned with the Federal CCF." style="color: #d26e28;">**Moderate**</span><br> 
   Strength: [+ moderate_strength : strength +]<br> 
   Dissent: [+ moderate_dissent : dissent +]<br>
   ?]

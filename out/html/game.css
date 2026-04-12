@@ -740,7 +740,7 @@ table {
 }
 
 /* status tooltip */
-.status_tooltip-text {
+.tooltip-text {
   color: #000000;
   cursor: help;
   text-decoration: dotted underline;
@@ -748,7 +748,7 @@ table {
   position: relative; /* anchor */
 }
 
-.status_tooltip-text[data-tooltip]::after {
+.tooltip-text[data-tooltip]::after {
   content: attr(data-tooltip);
   white-space: pre-line; /* \n becomes line breaks */
   display: none;
@@ -776,13 +776,13 @@ table {
   pointer-events: none;
 }
 
-.status_tooltip-text[data-tooltip]:hover::after,
-.status_tooltip-text[data-tooltip]:focus::after {
+.tooltip-text[data-tooltip]:hover::after,
+.tooltip-text[data-tooltip]:focus::after {
   display: block;
 }
 
 /* Optional: make highlight slightly different on hover */
-.status_tooltip-text:hover {
+.tooltip-text:hover {
   color: #255794;
   text-decoration: underline;
 }

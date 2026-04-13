@@ -57,8 +57,8 @@ is-special: true
 <tr>
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 :
-  <div class="tooltip" style="color: #d26e28;"> **Agrarians**<br>
-  <span class="tooltip-text" title="A faction consisting of radical farmers, mainly representing the small family farm." style="color: #86a71b;">**Agrarians**</span><br>
+  <div class="tooltip" style="color: #86a71b;"> **Agrarians**
+  <span class="tooltip-text" title="A faction consisting of radical farmers, mainly representing the small family farm."</span><br>
   </div>
   <div style="text-align: left">
   Strength: [+ agrarian_strength : strength +] <br>
@@ -70,7 +70,7 @@ is-special: true
 
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 :
-  <div class="tooltip" style="color: #0F52BA;"> **Labour**<br>
+  <div class="tooltip" style="color: #0F52BA;"> **Labour**
   <span class="tooltip-text"> A faction of trade unionists and labour activists, representing the urban workers and lower middle-classes.</span><br>
   </div>
   <div style="text-align: left">
@@ -86,7 +86,7 @@ is-special: true
 
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 :
-  <div class="tooltip" style="color: #7b1616;"> **Far Left**<br>
+  <div class="tooltip" style="color: #7b1616;"> **Far Left**
   <span class="tooltip-text"> A faction of radical socialists. Many of them have ties to the CP(S) and the Soviet Union. </span><br> 
   </div>
   <div style="text-align: left">
@@ -98,7 +98,7 @@ is-special: true
 
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 : 
-  <div class="tooltip" style="color: #d26e28;"> **Moderate** <br>
+  <div class="tooltip" style="color: #d26e28;"> **Moderate** 
   <span class="tooltip-text"> The moderate wing of the FLP and most aligned with the Federal CCF. </span><br> 
   </div>
   <div style="text-align: left">

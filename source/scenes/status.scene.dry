@@ -375,37 +375,24 @@ Agricultural Co-ops: [+ agri_coops : development +]
 {!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
-            {!<th>Party</th>!}
             {!<th>Polling</th>!}
+            {!<th style="background-color: #8a4545; font-size: 0.85em;">[+ cp_s_votes +]%</th>!}
+            {!<th style="background-color: #b7a395fe; font-size: 0.85em;">[+ flp_votes +]%</th>!}
+            {!<th style="background-color: #c8c288; font-size: 0.85em;">[+ pps_votes +]%</th>!}
+            {!<th style="background-color: #a86a77; font-size: 0.85em;">[+ lps_votes +]%</th>!}
+            {!<th style="background-color: #758391; font-size: 0.85em;">[+ cps_votes +]%</th>!}
+            {!<th style="background-color: #e7e7e7; font-size: 0.85em;">[+ other_votes +]%</th>!}
+            {!<th style="background-color: #bcdeb8; font-size: 0.85em;">[+ scps_votes +]%</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}CP(S){!</td>!}
-            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}[+ flp_votes +]%{!</td>!}
+            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}CP(S){!</td>!}
+            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}**FLP**{!</td>!}
+            {!<td style="background-color: #c8c288; font-size: 0.85em;">>!}PPS{!</td>!}
+            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}LPS{!</td>!}
+            {!<td style="background-color: #758391; font-size: 0.85em;">!}CPS{!</td>!}
+            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}Other{!</td>!}
+            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}SCPS{!</td>!}
         {!</tr>!}
-        {!<tr>!}
-            {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}[+ flp_votes +]%{!</td>!}
-        {!</tr>!}
-        {!<tr>!}
-            {!<td>!}PPS{!</td>!}
-            {!<td style="background-color: #c8c288; font-size: 0.85em;">!}[+ pps_votes +]%{!</td>!}
-        {!</tr>!}
-        {!<tr>!}
-            {!<td>!}LPS{!</td>!}
-            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}[+ lps_votes +]%{!</td>!}
-        {!</tr>!}
-        {!<tr>!}
-            {!<td>!}CPS{!</td>!}
-            {!<td style="background-color: #758391; font-size: 0.85em;">!}[+ cps_votes +]%{!</td>!}
-        {!</tr>!} 
-        {!<tr>!}
-            {!<td>!}SCPS{!</td>!}
-            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}[+ scps_votes +]%{!</td>!}
-        {!</tr>!} 
-        {!<tr>!}
-            {!<td>!}Others{!</td>!}
-            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}[+ other_votes +]%{!</td>!}
-        {!</tr>!} 
 {!</table>!}
 {!</div>!}
 

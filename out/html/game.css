@@ -740,8 +740,8 @@ table {
 .mytooltip .mytooltiptext {
   bottom: auto;
   position: absolute;
-  left: 10px;
-  top: -90px;;
+  left: 0;
+  top: 12px;
 }
 
 

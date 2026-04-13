@@ -751,6 +751,7 @@ table {
   display: inline-block;
   border-bottom: 1px dotted black;
   cursor: pointer;  
+  text-decoration: underline;
 }
 
 .tooltiptext {

@@ -30,6 +30,11 @@ Q.party_seats_district = [];
 
 Q.use_decimals = 1;
 
+for (var party of Q.parties) {
+    Q['old_' + party + '_seats'] = Q[party + '_seats'];
+}
+
+
 // 1. Normalize class voting shares (0–100)
 for (var c of Q.classes) {
     var class_votes = 0;
@@ -242,6 +247,16 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
     }
 }
 
+for (var party of Q.parties) {
+    Q['change_' + party + '_seats'] = Q[party + '_seats'] - Q['old_' + party + '_seats'];
+    var sign_seats = Q['change_' + party + '_seats'] > 0 
+                    ? '<img src="img/arrowup.png"> ' 
+                    : Q['change_' + party + '_seats'] < 0 
+                      ? '<img src="img/arrowdown.png"> ' 
+                      : '<img src="img/steady.png"> ';
+        Q['seats_change_' + party] = sign_seats + Math.abs(Q['change_' + party + '_seats']).toFixed(1);
+}
+
 
 // The largest party can only be the FLP, LPS, CPS, or SCPS.
 Q.largest_party = 'FLP';
@@ -442,23 +457,23 @@ go-to: coalition_menu
 {!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td></tr>!}
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td><td>Seat Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ str_change_flp +]** {!</td><td>!}  **[+ flp_seats +]**{!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ str_change_flp +]** {!</td><td>!}  **[+ flp_seats +]** {!</td><td>!}  **[+ seats_change_flp +]**{!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td><td>!} [+ seat_change_sapd +]{!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!}  [+ cp_s_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!}  [+ cp_s_seats +] {!</td><td>!}  [+ seats_change_cp_s_ +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_seats +] {!</td><td>!} [+ seats_change_lps +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#d8ce6fb3'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#d8ce6fb3'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_seats +] {!</td><td>!} [+ seats_change_pps +]  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_seats +] {!</td><td>!} [+ seats_change_cps +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_seats +] {!</td><td>!} [+ seats_change_other +]  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_seats +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_seats +] {!</td><td>!} [+ seats_change_scps +] {!</td></tr>!}
 
 {!</table>!}
 

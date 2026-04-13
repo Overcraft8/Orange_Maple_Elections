@@ -254,7 +254,7 @@ for (var party of Q.parties) {
                     : Q['change_' + party + '_seats'] < 0 
                       ? '<img src="img/arrowdown.png"> ' 
                       : '<img src="img/steady.png"> ';
-        Q['seats_change_' + party] = sign_seats + Math.abs(Q['change_' + party + '_seats']).toFixed(1);
+        Q['seats_change_' + party] = sign_seats + Math.abs(Q['change_' + party + '_seats']);
 }
 
 

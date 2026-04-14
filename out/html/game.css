@@ -619,21 +619,21 @@ img {
     position: static;
   }
   .tools {
-      margin: em 0 1em 0;
+    width: 100%;
       margin: 0.4em;
   }
   .tools.left {
-    font-size: 0.8em;
+    font-size: 1.4em;
       float: none;
       left: 0;
   }
   .tools.right {
-      font-size: 0.8em;
+      font-size: 1.4em;
       float: none;
-      right: 0;
   }
   #mid_panel {
-     width: 135%;
+    font-size: 0.7em;
+    width: 100%;
       margin: 0 1.2em;
   }
 

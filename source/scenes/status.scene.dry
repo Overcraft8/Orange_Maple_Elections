@@ -372,26 +372,26 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 @polls
 
-{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
+= Overall Polls
+
+{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 8px; ">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
-            {!<th>Polling</th>!}
-            {!<th style="background-color: #8a4545; font-size: 0.85em;">[+ cp_s_votes +]%</th>!}
-            {!<th style="background-color: #b7a395fe; font-size: 0.85em;">[+ flp_votes +]%</th>!}
-            {!<th style="background-color: #c8c288; font-size: 0.85em;">[+ pps_votes +]%</th>!}
-            {!<th style="background-color: #a86a77; font-size: 0.85em;">[+ lps_votes +]%</th>!}
-            {!<th style="background-color: #758391; font-size: 0.85em;">[+ cps_votes +]%</th>!}
-            {!<th style="background-color: #e7e7e7; font-size: 0.85em;">[+ other_votes +]%</th>!}
-            {!<th style="background-color: #bcdeb8; font-size: 0.85em;">[+ scps_votes +]%</th>!}
+            {!<th style="background-color: #b7a395fe; ">!}[+ flp_votes +]{!%</th>!}
+            {!<th style="background-color: #c8c288; ">!}[+ pps_votes +]{!%</th>!}
+            {!<th style="background-color: #a86a77; ">!}[+ lps_votes +]%{!</th>!}
+            {!<th style="background-color: #758391; ">!}[+ cps_votes +]{!%</th>!}
+            {!<th style="background-color: #e7e7e7; ">!}[+ other_votes +]{!%</th>!}
+            {!<th style="background-color: #bcdeb8; ">!}[+ scps_votes +]{!%</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}CP(S){!</td>!}
-            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}**FLP**{!</td>!}
-            {!<td style="background-color: #c8c288; font-size: 0.85em;">>!}PPS{!</td>!}
-            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}LPS{!</td>!}
-            {!<td style="background-color: #758391; font-size: 0.85em;">!}CPS{!</td>!}
-            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}Other{!</td>!}
-            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}SCPS{!</td>!}
+            {!<td style="background-color: #8a4545; ">!}CP(S){!</td>!}
+            {!<td style="background-color: #b7a395fe; ">!}**FLP**{!</td>!}
+            {!<td style="background-color: #c8c288; ">>!}PPS{!</td>!}
+            {!<td style="background-color: #a86a77; ">!}LPS{!</td>!}
+            {!<td style="background-color: #758391; ">!}CPS{!</td>!}
+            {!<td style="background-color: #e7e7e7; ">!}Other{!</td>!}
+            {!<td style="background-color: #bcdeb8; ">!}SCPS{!</td>!}
         {!</tr>!}
 {!</table>!}
 {!</div>!}
@@ -411,49 +411,49 @@ Agricultural Co-ops: [+ agri_coops : development +]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}[+ workers_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395fe; ">!}[+ workers_flp_display +]%{!</td>!}
             {!<td style="background-color: #b7a395fe;">!}[+ unemployed_flp_display +]%{!</td>!}
             {!<td style="background-color: #b7a395fe;">!}[+ new_middle_flp_display +]%{!</td>!}
             {!<td style="background-color: #b7a395fe;">!}[+ old_middle_flp_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
-            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}[+ workers_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545; ">!}[+ workers_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ unemployed_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ new_middle_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ old_middle_cp_s_display +]%{!</td>!}
         {!</tr>!}
         [? if pps_exists : {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
-            {!<td style="background-color: #c8c288; font-size: 0.85em;">!}[+ workers_pps_display +]%{!</td>!}
+            {!<td style="background-color: #c8c288; ">!}[+ workers_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ uemployed_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ new_middle_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ old_middle_pps_display +]%{!</td>!} 
         {!</tr>!} ?]
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
-            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}[+ workers_lps_display +]%{!</td>!}
+            {!<td style="background-color: #a86a77; ">!}[+ workers_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ unemployed_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ new_middle_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ old_middle_lps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CPS**{!</td>!}
-            {!<td style="background-color: #758391; font-size: 0.85em;">!}[+ workers_cps_display +]%{!</td>!}
+            {!<td style="background-color: #758391; ">!}[+ workers_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ unemployed_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ new_middle_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ old_middle_cps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**SCPS**{!</td>!}
-            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}[+ workers_scps_display +]%{!</td>!}
+            {!<td style="background-color: #bcdeb8; ">!}[+ workers_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ unemployed_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ new_middle_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ old_middle_scps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Others**{!</td>!}
-            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}[+ workers_other_display +]%{!</td>!}
+            {!<td style="background-color: #e7e7e7; ">!}[+ workers_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ unemployed_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ new_middle_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ old_middle_other_display +]%{!</td>!}
@@ -473,43 +473,43 @@ Agricultural Co-ops: [+ agri_coops : development +]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #b7a395fe; font-size: 0.85em;">!}[+ farmer_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395fe; ">!}[+ farmer_flp_display +]%{!</td>!}
             {!<td style="background-color: #b7a395fe;">!}[+ farmhand_flp_display +]%{!</td>!}
             {!<td style="background-color: #b7a395fe;">!}[+ res_worker_flp_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
-            {!<td style="background-color: #8a4545; font-size: 0.85em;">!}[+ farmer_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545; ">!}[+ farmer_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ farmhand_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ res_worker_cp_s_display +]%{!</td>!}
         {!</tr>!}
         [? if pps_exists : {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
-            {!<td style="background-color: #c8c288; font-size: 0.85em;">!}[+ farmer_pps_display +]%{!</td>!}
+            {!<td style="background-color: #c8c288; ">!}[+ farmer_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ uemployed_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ res_worker_pps_display +]%{!</td>!} 
         {!</tr>!} ?]
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
-            {!<td style="background-color: #a86a77; font-size: 0.85em;">!}[+ farmer_lps_display +]%{!</td>!}
+            {!<td style="background-color: #a86a77; ">!}[+ farmer_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ farmhand_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ res_worker_lps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CPS**{!</td>!}
-            {!<td style="background-color: #758391; font-size: 0.85em;">!}[+ farmer_cps_display +]%{!</td>!}
+            {!<td style="background-color: #758391; ">!}[+ farmer_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ farmhand_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ res_worker_cps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**SCPS**{!</td>!}
-            {!<td style="background-color: #bcdeb8; font-size: 0.85em;">!}[+ farmer_scps_display +]%{!</td>!}
+            {!<td style="background-color: #bcdeb8; ">!}[+ farmer_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ farmhand_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ res_worker_scps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Others**{!</td>!}
-            {!<td style="background-color: #e7e7e7; font-size: 0.85em;">!}[+ farmer_other_display +]%{!</td>!}
+            {!<td style="background-color: #e7e7e7; ">!}[+ farmer_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ farmhand_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ res_worker_other_display +]%{!</td>!}
         {!</tr>!}

@@ -377,6 +377,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 {!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 8px; ">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
+            {!<th style="background-color: #8a4545; ">!}[+ cp_s_votes +]{!%</th>!}
             {!<th style="background-color: #b7a395fe; ">!}[+ flp_votes +]{!%</th>!}
             {!<th style="background-color: #c8c288; ">!}[+ pps_votes +]{!%</th>!}
             {!<th style="background-color: #a86a77; ">!}[+ lps_votes +]%{!</th>!}

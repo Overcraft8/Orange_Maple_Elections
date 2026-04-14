@@ -454,6 +454,7 @@ a.card {
 }
 
 a.card:hover {
+  filter: brightness(110%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   left: -5px;
   top: -5px;
@@ -905,6 +906,7 @@ table {
 }
 
 .status_panel_card_image:hover {
+  filter: brightness(130%);
   position: relative;
   left: -5px;
   top: -5px;

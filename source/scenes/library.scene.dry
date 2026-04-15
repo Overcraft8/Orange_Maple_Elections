@@ -55,7 +55,7 @@ go-to: menu
 
 **1931**: Striking workers at the Bienfait Coal Mine collaborate with the WUL to demand better working conditions from the American owners. When scabs are prevented from entering the mine, the RCMP is brought in, resulting in a riot and the deaths of 3 mine workers. 
 
-**1932**: The FLP is formed by a merger of the ILP and the UFC (SS)'s political apparatus. 
+**1932**: The FLP is formed by a merger of the ILP and the UFC(SS)'s political apparatus. 
 
 @curr_gov
 go-to: cabinet if flp_in_government; menu if not flp_in_government
@@ -233,7 +233,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**UFC (SS)**: A farm organization whose primary aim is to serve the interests of the farmers. 
+**UFC(SS)**: A farm organization whose primary aim is to serve the interests of the farmers. 
 
 Strength: [+ ufc_strength +] Thousand
 
@@ -251,7 +251,7 @@ Strength: [+ kkk_strength +] Thousand
 
 Militarization: [+ kkk_militancy : militancy +]
 
-**Farmers Unity League (FUL)**: This is the farmer's organization of the CP(S), more militant and radical than the UFC (SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
+**Farmers Unity League (FUL)**: This is the farmer's organization of the CP(S), more militant and radical than the UFC(SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
 
 Strength: [+ ful_strength +] Thousand
 

@@ -63,8 +63,10 @@ is-special: true
   <div style="text-align: left">
   Strength: [+ agrarian_strength : strength +] <br>
   Dissent: [+ agrarian_dissent : dissent +]<br>
+  <div style = "text-align: center;">
   Radicalism: <br>
   [+ agrarian_radicalism : radicalism +]
+  </div>
   </div>
   ?]
   </td>
@@ -77,8 +79,10 @@ is-special: true
   <div style="text-align: left">
   Strength: [+ labour_strength : strength +]<br> 
   Dissent: [+ labour_dissent : dissent +]<br>
+  <div style = "text-align: center;">
   Radicalism: <br>
   [+ labour_radicalism : radicalism +]
+  </div>
   </div>
   ?]
   </td>

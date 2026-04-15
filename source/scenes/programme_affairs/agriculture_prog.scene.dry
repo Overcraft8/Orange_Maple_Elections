@@ -19,8 +19,8 @@ Our Party has many policies that we can choose from. Some of them include a use-
 subtitle: The farmers are a traditional voting bloc of ours. 
 face-image: img/Williams_picnic.jpg
 
-[? if ufc_affiliated == 1 : Our party is traditionally agrarian-oriented, owing to the tremendous backing of the UFC (SS) in financing our operations and promoting membership to our party. ?]
-[? if ufc_affiliated == 0 : As the UFC (SS) is no longer officially affiliated with us, we will have a harder time recruiting farmers to our cause. ?]
+[? if ufc_affiliated == 1 : Our party is traditionally agrarian-oriented, owing to the tremendous backing of the UFC(SS) in financing our operations and promoting membership to our party. ?]
+[? if ufc_affiliated == 0 : As the UFC(SS) is no longer officially affiliated with us, we will have a harder time recruiting farmers to our cause. ?]
 
 - @use_lease: We can protect the farmers by illegalizing immediate foreclosure by their creditors. 
 - @wheat_pool: We can create a provincially regulated and operated wheat pool. 

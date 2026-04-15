@@ -720,7 +720,7 @@ table {
 .mytooltip:hover { background-color: #f3f3e3; }
 
 .mytooltip .mytooltiptext {
-  position: fixed;
+  position: absolute;
   z-index: 999999;
   width: 120px;
   background: #fff4e6;
@@ -729,7 +729,7 @@ table {
   border-radius: 5px;
   padding: 8px 11px;
   opacity: 0;
-  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  transition: opacity 0.12s ease-out, transform 0.12s ease-out;
   border: 1px solid #b27b22d9;
   pointer-events: none;
   font-size: 11px !important;
@@ -753,7 +753,7 @@ table {
   bottom: auto;
   position: absolute;
   left: 0;
-  top: 12px;
+  bottom: 120%;
 }
 
 
@@ -762,25 +762,29 @@ table {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
-  cursor: help;  
+  cursor: help;
   text-decoration: underline;
-  pointer-events: pointer;
 }
 
 .tooltip-text {
   position: absolute;
   left: 0;
-  top: 12px;
+
+  /* ⭐ Position ABOVE the word */
+  bottom: 60%;          /* Tooltip bottom touches the top of the word */
+  margin-bottom: 6px;    /* Small gap (optional) */
+
   color: #3b1f0a;
   text-align: left;
-  font-size: 11px !important;
-  line-height: 1.2em !important;
-  font-weight: 500 !important;
+  font-size: 11px;
+  line-height: 1.2em;
+  font-weight: 500;
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  transition: opacity 0.12s ease-out, transform 0.12s ease-out;
+
+  /* Slide-up animation */
   transform: translateY(5px);
 
   width: 12em;
@@ -788,13 +792,13 @@ table {
   border: 1px solid #b27b22d9;
   border-radius: 5px;
   padding: 8px 11px;
-  font-size: 11px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
   z-index: 9998;
 }
 
 .tooltip:hover .tooltip-text {
   opacity: 1;
+  transform: translateY(0);
 }
 
 

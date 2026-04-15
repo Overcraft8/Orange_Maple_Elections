@@ -1,4 +1,4 @@
-title: UFC (SS)
+title: UFC(SS)
 new-page: true
 is-card: true
 tags: party_affairs
@@ -8,15 +8,15 @@ on-arrival: month_actions += 1; ufc_timer += 6; ufc_militarization_cost = 2 if u
 subtitle: The largest agrarian organization around.
 
 
-= UFC (SS)
+= UFC(SS)
 
 The UFC(SS) is the largest farmer organization in Saskatchewan, devoted to the defense of the small farm compact. It has many factions vying for power and is currently [+ ufc_relationship: relationships +] towards us. Depending on the mood of the UFC(SS), the organization can be militant to passive.
 
-[? if workers_flp < 46 or workers_flp < workers_scps or workers_flp < workers_cp_s : The UFC (SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_flp < 46 or workers_flp < workers_scps or workers_flp < workers_cp_s : The UFC(SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
 
 - @militant: Make the UFC(SS) more militant
 - @militant_2: Use our existing resources to make the UFC(SS) more militant. 
-- @same: Keep the UFC (SS) as it is.
+- @same: Keep the UFC(SS) as it is.
 - @cut_rb: Make the UFC(SS) less militant. 
 - @farmer_protest: Conduct protests with the UFC(SS)
 - @women_rb
@@ -31,21 +31,21 @@ unavailable-subtitle: Not enough resources ([+ ufc_militarization_cost +] needed
 subtitle: -[+ ufc_militarization_cost +] resources
 on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; far_left_strength += 2; far_left_dissent -= 2; moderate_dissent += 5; flp_militancy += 0.05; workers_flp += 2*(1-dissent); unemployed_flp += 2*(1-dissent); pps_relation -= 5 if historical_mode 
 
-Some in our party decry the increasing militarization of the UFC (SS). They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
+Some in our party decry the increasing militarization of the UFC(SS). They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
 
-[? if historical_mode : The PPS Party decries the militarization of the UFC (SS), and its members are leaving the republican organization. ?]
+[? if historical_mode : The PPS Party decries the militarization of the UFC(SS), and its members are leaving the republican organization. ?]
 
 
 @militant_2
 view-if: funded_ufc >= 1
 on-arrival: ufc_militancy += 0.02; funded_ufc -= 1
 
-As we have already funded resources towards the UFC (SS), we can invest in building up their militancy.
+As we have already funded resources towards the UFC(SS), we can invest in building up their militancy.
 
 
 @same
 
-The UFC (SS) is already serving the purpose it needs to serve. There is no reason to change what already works.
+The UFC(SS) is already serving the purpose it needs to serve. There is no reason to change what already works.
 
 - @return: Continue...
 
@@ -54,7 +54,7 @@ The UFC (SS) is already serving the purpose it needs to serve. There is no reaso
 subtitle: +1 resources
 on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; far_left_strength -= 2; far_left_dissent -= 2; workers_cp_s += 2; unemployed_cp_s += 2;
 
-Cutting resources to the UFC (SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
+Cutting resources to the UFC(SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
 
 
 
@@ -67,7 +67,7 @@ We organize various protests across the province. The Liberal and Conservative P
 
 
 @women_rb
-title: Allow women to join the UFC (SS).
+title: Allow women to join the UFC(SS).
 subtitle: -1 resources - This might cause a backlash from existing members.
 choose-if: resources > 0
 view-if: womens_rights >= 4 and jamieson_advisor == 1 and iron_front_formed == 1
@@ -76,7 +76,7 @@ go-to: homosexual if trans_rights or repealed_175 or reformed_183
 max-visits: 1
 achievement: women_ufc
 
-The suggestion to allow women into the UFC (SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
+The suggestion to allow women into the UFC(SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
 
 After allowing women to join, the number of comrades who leave is more than balanced out by the number of radicalized women and others who join. However, many of our departed members were veterans, and many of the new members have no experience with military-style training.
 

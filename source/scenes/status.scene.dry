@@ -374,7 +374,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 = Overall Polls
 
-{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 8px; ">!}
+{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 10px; justify-content: center;">!}
 {!<table style='text-align: center;'>!}
         {!<tr>!}
             {!<th style="background-color: #8a4545; ">!}[+ cp_s_votes +]{!%</th>!}
@@ -386,13 +386,13 @@ Agricultural Co-ops: [+ agri_coops : development +]
             {!<th style="background-color: #bcdeb8; ">!}[+ scps_votes +]{!%</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td style="background-color: #8a4545; ">!}CP(S){!</td>!}
-            {!<td style="background-color: #b7a395fe; ">!}**FLP**{!</td>!}
-            {!<td style="background-color: #c8c288; ">>!}PPS{!</td>!}
-            {!<td style="background-color: #a86a77; ">!}LPS{!</td>!}
-            {!<td style="background-color: #758391; ">!}CPS{!</td>!}
-            {!<td style="background-color: #e7e7e7; ">!}Other{!</td>!}
-            {!<td style="background-color: #bcdeb8; ">!}SCPS{!</td>!}
+            {!<td>!}CP(S){!</td>!}
+            {!<td>!}**FLP**{!</td>!}
+            {!<td>!}PPS{!</td>!}
+            {!<td>!}LPS{!</td>!}
+            {!<td>!}CPS{!</td>!}
+            {!<td>!}Other{!</td>!}
+            {!<td>!}SCPS{!</td>!}
         {!</tr>!}
 {!</table>!}
 {!</div>!}

@@ -524,7 +524,51 @@ window.toggleDistrict = function() {
 };
 
 
+window.updateSidebar = function() {
+  console.log("got into updatesidebar, statusTab =", window.statusTab);
+  $('#qualities').empty();
+  var scene = dendryUI.game.scenes[window.statusTab];
+  dendryUI.dendryEngine._runActions(scene.onArrival);
+  var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+  $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+};
 
+window.changePanel = function(newPanel, PanelId) {
+  console.log("got into changepanel! newPanel =", newPanel, "PanelId =", PanelId);
+
+  if (window.PanelActivated === true) {
+    console.log("got into PANEL ACTIVATED - refreshing");
+    window.PanelActivated = false;
+    window.updateSidebar();   // updateSidebar already empties #qualities
+    return;
+  }
+
+  console.log("Passed panelactivated");
+
+  var panelButton = document.getElementById(PanelId);
+  var panelButtons = document.getElementsByClassName('status_panel_card');
+
+  for (let i = 0; i < panelButtons.length; i++) {
+    panelButtons[i].classList.remove('active');
+    console.log("removed active from", panelButtons[i].id);
+  }
+
+  panelButton.classList.add('active');
+
+  // FIX: set the same variable updateSidebar expects
+  window.statusTab = newPanel;
+
+  window.PanelActivated = true;
+  console.log("Am now passing to updatesidebar, statusTab =", window.statusTab);
+
+  window.updateSidebar();
+};
+
+
+
+
+
+/*
 window.changePanel = function(newPanel, PanelId) {
 
   console.log("got into changepanel!");
@@ -554,4 +598,4 @@ window.changePanel = function(newPanel, PanelId) {
   console.log("Am now passing to updatesidebar");
 
   window.updateSidebar();
-};
+}; */

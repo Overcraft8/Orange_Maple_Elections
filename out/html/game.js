@@ -520,7 +520,7 @@ window.toggleDistrict = function() {
 };
 
 
-
+/*
 window.changePanel = function(newPanel, PanelId) {
 
   if (window.PanelActivated === true) {
@@ -543,5 +543,5 @@ window.changePanel = function(newPanel, PanelId) {
   window.PanelActivated = true;
 
   window.updateSidebar();
-};
+};*/
 

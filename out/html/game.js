@@ -546,3 +546,4 @@ window.changePanel = function(newPanel, PanelId) {
 
   window.updateSidebar();
 };
+

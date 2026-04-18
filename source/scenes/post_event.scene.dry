@@ -144,7 +144,6 @@ var total_dissent = Q.far_left_strength*Q.far_left_dissent + Q.agrarian_strength
 
 Q.dissent = 0.01*total_dissent/total_strength;
 Q.dissent_percent = Q.dissent*100;
-console.log('new dissent: ' + Q.dissent);
 
 if (Q.dissent < 0) {
     Q.dissent = 0;
@@ -272,7 +271,6 @@ if (Q.month_actions >= 1) {
     if (Q.science_bonus > 6) {
         Q.science_bonus = 6;
     }
-    console.log(Q.science_bonus);
     // this is kinda messy but basically more science -> higher levels of baseline growth
     if (Q.science_bonus >= 1) {
         if (Q.return_to_normalcy && Q.economic_growth < Q.science_bonus + 3) {

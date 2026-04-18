@@ -240,7 +240,7 @@ img.inline-img.icon {
 }
 
 .tools {
-  border: ridge;
+  border: outset;
   border-color: #cfb678;
   padding: 0.6em;
   width: 14rem;
@@ -626,9 +626,12 @@ img {
 /* mobile: move the stat box to the top if the screen is too small,
  * and reduce font size slightly. */
 @media screen and (max-width: 560px) {
-  #page {
-      position: static;
-  }
+  body, #page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* horizontally centers children */
+}
+  
   #content {
       position: static;
       font-size: 1.2em;
@@ -642,13 +645,13 @@ img {
     position: static;
   }
   .tools {
-    width: 100%;
-      margin: 0.4em;
+    width: auto;
+    margin: 0.4em auto;   /* centers the panel */
+    text-align: center;
   }
   .tools.left {
     font-size: 1.4em;
-      float: none;
-      left: 0;
+    float: none;
   }
   .tools.right {
       font-size: 1.4em;
@@ -924,7 +927,7 @@ table {
 
 .status_panel_card_image {
   --status_card_border_color: #534b4199;
-  border: 3px solid var(--status_card_border_color);
+  border: 3px groove var(--status_card_border_color);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   height: 85px;
   width: 115px;

@@ -329,6 +329,7 @@ function applyWholesome(str) {
 
   // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
+    console.log("got into updatesidebar");
   $('#qualities').empty();
   var scene = dendryUI.game.scenes[window.statusTab];
   dendryUI.dendryEngine._runActions(scene.onArrival);
@@ -434,6 +435,7 @@ function applyWholesome(str) {
 };
 
 window.onDisplayContent = function() {
+    console.log("proof that this function works");
     window.updateSidebar();
 };
 
@@ -525,7 +527,10 @@ window.toggleDistrict = function() {
 
 window.changePanel = function(newPanel, PanelId) {
 
+  console.log("got into changepanel!");
+
   if (window.PanelActivated === true) {
+    console.log("got into paNeEL ACTIVATED");
     var scene = dendryUI.game.scenes[window.statusTab];
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
@@ -533,22 +538,20 @@ window.changePanel = function(newPanel, PanelId) {
     return;
   }
 
+  console.log("Passed panelactivated");
+
   var panelButton = document.getElementById(PanelId);
   var panelButtons = document.getElementsByClassName('status_panel_card');
 
   for (let i = 0; i < panelButtons.length; i++) {
     panelButtons[i].classList.remove('active');
+    console.log("inside idk");
   }
 
   panelButton.classList.add('active');
   window.statusPanel = newPanel;
   window.PanelActivated = true;
+  console.log("Am now passing to updatesidebar");
 
   window.updateSidebar();
 };
-
-document.querySelectorAll('.status_panel_card_image').forEach(img => {
-    img.addEventListener('click', function () {
-        window.changeTab(this.dataset.tab, this.dataset.tabId);
-    });
-});

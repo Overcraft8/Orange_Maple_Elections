@@ -366,7 +366,7 @@ function applyWholesome(str) {
     }
 
     // Sub Tab Images (nested inside sub tab scenes)
-    if (tabButton.classList.contains('status_panel_card_image')) {
+    else if (tabButton.classList.contains('status_panel_card_image')) {
         for (let i = 0; i < statusPanelCards.length; i++) {
             statusPanelCards[i].classList.remove('active');
         }
@@ -375,6 +375,7 @@ function applyWholesome(str) {
 
     // Main tab
     else {
+        console.log("Hello, this either means its working or its not")
         for (let i = 0; i < tabButtons.length; i++) {
             tabButtons[i].classList.remove('active');
         }

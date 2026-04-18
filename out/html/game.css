@@ -1,7 +1,8 @@
 body {
   --bg-color: #555555;
   --border-color: #000;
-  --content-bg-color: #f5ebd6;
+  --sidebar-bg-color: #f5ebd6;
+  --content-bg-color: #e8dcc3;
   --text-color: #431;
   --link-color: #900; 
   --link-hover-color: rgba(0, 0, 0, 0.05);
@@ -56,7 +57,7 @@ header, #content, footer {
   overflow-x: scroll;
   scrollbar-width: none;
   border: ridge;
-  background-color: #f2e7cd;
+  border-color: #9c8c64;
   position: relative;
   background-color: var(--content-bg-color);
   font-size: 1em;
@@ -241,7 +242,7 @@ img.inline-img.icon {
   padding: 0.6em;
   width: 14rem;
   color: var(--text-color);
-  background-color: var(--content-bg-color);
+  background-color: var(--sidebar-bg-color);
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 .tools.left {
@@ -306,12 +307,11 @@ img.inline-img.icon {
 
 /* status buttons */
 .tab_button {
-  border-color: #bcac84;
   font-family: "Minion Pro", Georgia, serif;
   background-color: var(--tab-color);
   color: var(--text-color);
   border: ridge;
-  outline: none;
+  border-color: #9c8c64;
   padding: 10px;
 }
 
@@ -338,13 +338,12 @@ img.inline-img.icon {
 /* For tab buttons 'nested' with scenes */
 
 .status_tab_button {
-   border-color: #bcac84;
     font-size: 12px;
     font-family: "Minion Pro", Georgia, serif;
     background-color: var(--tab-color);
     color: var(--text-color);
     border: ridge;
-    outline: none;
+    border-color: #9c8c64;
     padding: 10px;
 }
 

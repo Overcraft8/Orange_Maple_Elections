@@ -360,7 +360,7 @@ function applyWholesome(str) {
     // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove(' active');
+            statusButtons[i].classList.replace(' active', '');
         }
         tabButton.classList.add(' active');
     }
@@ -368,7 +368,7 @@ function applyWholesome(str) {
     // Main tab
     else {
         for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove(' active');
+            tabButtons[i].classList.replace(' active', '');
         }
         tabButton.classList.add(' active');
 
@@ -401,7 +401,7 @@ function applyWholesome(str) {
     // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove(' active');
+            statusButtons[i].classList.replace(' active', '');
         }
         tabButton.classList.add(' active');
     }
@@ -409,7 +409,7 @@ function applyWholesome(str) {
     // Main tab
     else {
         for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove(' active');
+            tabButtons[i].classList.replace(' active', '');
         }
         tabButton.classList.add(' active');
 
@@ -537,7 +537,7 @@ window.changePanel = function(newPanel, PanelId) {
   var panelButtons = document.getElementsByClassName('status_panel_card');
 
   for (let i = 0; i < panelButtons.length; i++) {
-    panelButtons[i].classList.remove(' active');
+    panelButtons[i].classList.replace(' active', '');
   }
 
   panelButton.classList.add(' active');

@@ -27,6 +27,7 @@ body {
 body.dark-mode {
   --bg-color: #000;
   --border-color: #fff;
+  --sidebar-bg-color: #242424;
   --content-bg-color: #242424;
   --text-color: #efefef;
   --link-color: #ff8080;
@@ -85,9 +86,11 @@ header {
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 #header-links a {
+  border: ridge;
+  border-color: var(--border-color);
   border-radius: 4px;
   box-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
-  background-color: #bba993;
+  background-color: var(--content-bg-color)
 }
 
 #header-links a:last-of-type {
@@ -305,6 +308,10 @@ img.inline-img.icon {
   margin-right: -0.6em;
 }
 
+.dark-mode .tab_container {
+  background-color: var(--tab-bg-color)
+}
+
 /* status buttons */
 .tab_button {
   font-family: "Minion Pro", Georgia, serif;
@@ -313,6 +320,10 @@ img.inline-img.icon {
   border: ridge;
   border-color: #9c8c64;
   padding: 10px;
+}
+
+.dark-mode .tab_button, .dark-mode .status_tab_button{
+  border-color: var(--border-color)
 }
 
 .tab_button.active {

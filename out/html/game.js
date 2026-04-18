@@ -360,17 +360,17 @@ function applyWholesome(str) {
     // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.replace(' active', '');
+            statusButtons[i].classList.remove('active');
         }
-        tabButton.classList.add(' active');
+        tabButton.classList.add('active');
     }
 
     // Main tab
     else {
         for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.replace(' active', '');
+            tabButtons[i].classList.remove('active');
         }
-        tabButton.classList.add(' active');
+        tabButton.classList.add('active');
 
         // Handle sub tabs
         const allTabContainers = document.getElementsByClassName('status_tab_container');
@@ -401,17 +401,17 @@ function applyWholesome(str) {
     // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.replace(' active', '');
+            statusButtons[i].classList.remove('active');
         }
-        tabButton.classList.add(' active');
+        tabButton.classList.add('active');
     }
 
     // Main tab
     else {
         for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.replace(' active', '');
+            tabButtons[i].classList.remove('active');
         }
-        tabButton.classList.add(' active');
+        tabButton.classList.add('active');
 
         // Handle sub tabs
         const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
@@ -537,10 +537,10 @@ window.changePanel = function(newPanel, PanelId) {
   var panelButtons = document.getElementsByClassName('status_panel_card');
 
   for (let i = 0; i < panelButtons.length; i++) {
-    panelButtons[i].classList.replace(' active', '');
+    panelButtons[i].classList.remove('active');
   }
 
-  panelButton.classList.add(' active');
+  panelButton.classList.add('active');
   window.statusPanel = newPanel;
   window.PanelActivated = true;
 

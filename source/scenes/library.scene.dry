@@ -342,7 +342,7 @@ data = [
         "id": "cp_s",
         "legend": "CP(S)",
         "name": "CP(S)",
-        "seats": (60 / Q.cp_s_r) * 100,
+        "seats": Q.cp_s_seats,
     }];
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
@@ -357,37 +357,37 @@ data = data.concat([
         "id": "flp",
         "legend": "FLP",
         "name": "FLP",
-        "seats": (60 / Q.flp_r) * 100 ,
+        "seats": Q.flp_seats,
     },
     {
         "id": "lps",
         "legend": "LPS",
         "name": "LPS",
-        "seats": (60 / Q.lps_r) * 100,
+        "seats": Q.lps_seats,
     },
     {
         "id": "pps",
         "legend": "PPS",
         "name": "PPS",
-        "seats": (60 / Q.pps_r) * 100,
+        "seats": Q.pps_seats,
     },
     {
         "id": "cps",
         "legend": "CPS",
         "name": "CPS",
-        "seats": (60 / Q.cps_r) * 100,
+        "seats": Q.cps_seats,
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": (60 / Q.other_r) * 100,
+        "seats": Q.other_seats,
     },
     {
         "id": "scps",
         "legend": "SCPS",
         "name": "SCPS",
-        "seats": (60 / Q.scps_r) * 100,
+        "seats": Q.scps_seats,
     },
 ]);
 if (d3 && window) {
@@ -402,8 +402,8 @@ if (d3 && window) {
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromPPS(true).smallToBig(true);
-    parliament.exit.toPPS(false).bigToSmall(true);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#assembly").datum(data).call(parliament);
 
     var lines = d3.linegraph(false, false,

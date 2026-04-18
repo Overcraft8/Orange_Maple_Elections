@@ -368,6 +368,19 @@ Q.catholics_other = 6;
 // source: wikipedia
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
+
+Q.flp_seats = 0;
+Q.cp_s_seats = 0;
+Q.pps_seats = 6;
+Q.lps_seats = 24;
+Q.cps_seats = 23;
+Q.other_seats = 6;
+Q.scps_seats = 0;
+
+
+
+
+
 Q.flp_r = 0;
 Q.cp_s_r = 0;
 Q.pps_r =  8;

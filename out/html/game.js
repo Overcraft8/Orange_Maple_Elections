@@ -329,7 +329,6 @@ function applyWholesome(str) {
 
   // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
-    console.log("got into updatesidebar");
   $('#qualities').empty();
   var scene = dendryUI.game.scenes[window.statusTab];
   dendryUI.dendryEngine._runActions(scene.onArrival);
@@ -347,7 +346,6 @@ function applyWholesome(str) {
   };
 
 
-
   window.changeTab = function(newTab, tabId) {
     if (tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
         window.alert('Polls are not available in historical mode.');
@@ -357,11 +355,20 @@ function applyWholesome(str) {
     const tabButton = document.getElementById(tabId);
     const tabButtons = document.getElementsByClassName('tab_button');
     const statusButtons = document.getElementsByClassName('status_tab_button');
+    const statusPanelCards = document.getElementsByClassName('status_panel_card_image');
 
     // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) {
             statusButtons[i].classList.remove('active');
+        }
+        tabButton.classList.add('active');
+    }
+
+    // Sub Tab Images (nested inside sub tab scenes)
+    if (tabButton.classList.contains('status_panel_card_image')) {
+        for (let i = 0; i < statusPanelCards.length; i++) {
+            statusPanelCards[i].classList.remove('active');
         }
         tabButton.classList.add('active');
     }
@@ -435,7 +442,6 @@ function applyWholesome(str) {
 };
 
 window.onDisplayContent = function() {
-    console.log("proof that this function works");
     window.updateSidebar();
 };
 
@@ -487,16 +493,6 @@ window.onDisplayContent = function() {
 
 })();
 
-
-function regina_info(){
-  var Q = window.dendryUI.dendryEngine.state.qualities;
-  Q.district_name = "Regina";
-  Q.district_worker = Q.regina_d_worker;
-  Q.district_old_middle = Q.regina_d_old_middle;
-  Q.district_new_middle = Q.regina_d_new_middle;
-  Q.district_unemployed = Q.regina_d_unemployed;
-}
-
 document.addEventListener('mousemove', e => {
     document.querySelectorAll('.mytooltiptext').forEach(el => {
         el.style.setProperty('--mouse-x', e.clientX + 'px');
@@ -524,57 +520,10 @@ window.toggleDistrict = function() {
 };
 
 
-window.updateSidebar = function() {
-  console.log("got into updatesidebar, statusTab =", window.statusTab);
-  $('#qualities').empty();
-  var scene = dendryUI.game.scenes[window.statusTab];
-  dendryUI.dendryEngine._runActions(scene.onArrival);
-  var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-  $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-};
 
 window.changePanel = function(newPanel, PanelId) {
-  console.log("got into changepanel! newPanel =", newPanel, "PanelId =", PanelId);
 
   if (window.PanelActivated === true) {
-    console.log("got into PANEL ACTIVATED - refreshing");
-    window.PanelActivated = false;
-    window.updateSidebar();   // updateSidebar already empties #qualities
-    return;
-  }
-
-  console.log("Passed panelactivated");
-
-  var panelButton = document.getElementById(PanelId);
-  var panelButtons = document.getElementsByClassName('status_panel_card');
-
-  for (let i = 0; i < panelButtons.length; i++) {
-    panelButtons[i].classList.remove('active');
-    console.log("removed active from", panelButtons[i].id);
-  }
-
-  panelButton.classList.add('active');
-
-  // FIX: set the same variable updateSidebar expects
-  window.statusTab = newPanel;
-
-  window.PanelActivated = true;
-  console.log("Am now passing to updatesidebar, statusTab =", window.statusTab);
-
-  window.updateSidebar();
-};
-
-
-
-
-
-/*
-window.changePanel = function(newPanel, PanelId) {
-
-  console.log("got into changepanel!");
-
-  if (window.PanelActivated === true) {
-    console.log("got into paNeEL ACTIVATED");
     var scene = dendryUI.game.scenes[window.statusTab];
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
@@ -582,20 +531,17 @@ window.changePanel = function(newPanel, PanelId) {
     return;
   }
 
-  console.log("Passed panelactivated");
-
   var panelButton = document.getElementById(PanelId);
   var panelButtons = document.getElementsByClassName('status_panel_card');
 
   for (let i = 0; i < panelButtons.length; i++) {
     panelButtons[i].classList.remove('active');
-    console.log("inside idk");
   }
 
   panelButton.classList.add('active');
-  window.statusTab = newPanel;
+  window.statusPanel = newPanel;
   window.PanelActivated = true;
-  console.log("Am now passing to updatesidebar");
 
   window.updateSidebar();
-}; */
+};
+

@@ -364,7 +364,7 @@ State Capacity: [+ state_capacity : development +]
 = Agriculture
 
     <button id="return_agriculture_status" class="tab_button" 
-    onclick="window.changeTab('status.development', 'return_agriculture_status')">Button</button>
+    onclick="window.changeTab('status.development', 'return_agriculture_status')">Back</button>
 
 Agricultural Co-ops: [+ agri_coops : development +]
 

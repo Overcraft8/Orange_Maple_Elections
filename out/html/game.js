@@ -549,7 +549,7 @@ window.changePanel = function(newPanel, PanelId) {
   }
 
   panelButton.classList.add('active');
-  window.statusPanel = newPanel;
+  window.statusTab = newPanel;
   window.PanelActivated = true;
   console.log("Am now passing to updatesidebar");
 

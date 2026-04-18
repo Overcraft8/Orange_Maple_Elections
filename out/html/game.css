@@ -310,8 +310,7 @@ img.inline-img.icon {
   font-family: "Minion Pro", Georgia, serif;
   background-color: var(--tab-color);
   color: var(--text-color);
-  /*float: left;*/
-  border: none;
+  border: ridge;
   outline: none;
   padding: 10px;
 }
@@ -344,7 +343,7 @@ img.inline-img.icon {
     font-family: "Minion Pro", Georgia, serif;
     background-color: var(--tab-color);
     color: var(--text-color);
-    border: none;
+    border: ridge;
     outline: none;
     padding: 10px;
 }

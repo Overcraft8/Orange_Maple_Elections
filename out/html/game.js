@@ -547,3 +547,8 @@ window.changePanel = function(newPanel, PanelId) {
   window.updateSidebar();
 };
 
+document.querySelectorAll('.status_panel_card_image').forEach(img => {
+    img.addEventListener('click', function () {
+        window.changeTab(this.dataset.tab, this.dataset.tabId);
+    });
+});

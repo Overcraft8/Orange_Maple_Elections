@@ -337,7 +337,9 @@ State Capacity: [+ state_capacity : development +]
   <div class="status-card-row">
   <button id="agriculture_status" class="status_panel_card" 
           onclick="window.changePanel('agriculture', 'agriculture_status')">
-    <img class="status_panel_card_image" src="img/Melfort_Market.jpg" >
+    <img class="status_panel_card_image"
+     data-tab="agriculture"
+     data-tab-id="agriculture_status" src="img/Melfort_Market.jpg" >
     <span class="card-caption">Agriculture</span>
   </button>
 

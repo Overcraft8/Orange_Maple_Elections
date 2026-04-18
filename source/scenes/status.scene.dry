@@ -375,7 +375,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 = Overall Polls
 
 {!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 10px; justify-content: center;">!}
-{!<table style='text-align: center;'>!}
+{!<table style="text-align: center; width: 300px; font-size: 13px; ">!}
         {!<tr>!}
             {!<th style="background-color: #8a4545; ">!}[+ cp_s_votes +]{!%</th>!}
             {!<th style="background-color: #b7a395fe; ">!}[+ flp_votes +]{!%</th>!}

@@ -390,22 +390,6 @@ function applyWholesome(str) {
     window.statusTab = newTab;
     window.updateSidebar();
 };
- 
-/*  defunct!!!!!! (But saved for bugss)
-  window.changeTabRight = function(newTab, tabId) {
-    var tabButton = document.getElementById(tabId);
-    var tabButtons = document.getElementsByClassName('tab_button');
-    
-    var rightSidebar = document.getElementById('stats_sidebar_right');
-    var rightTabButtons = rightSidebar.getElementsByClassName('tab_button');
-    for (i = 0; i < rightTabButtons.length; i++) {
-        rightTabButtons[i].className = rightTabButtons[i].className.replace('._active', '');
-    }
-    tabButton.className += '._active';
-    window.statusTabRight = newTab;
-    window.updateSidebarRight();
-  };
-*/
 
     window.changeTabRight = function(newTab, tabId) {
     const tabButton = document.getElementById(tabId);

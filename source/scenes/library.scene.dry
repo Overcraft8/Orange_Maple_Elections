@@ -11,7 +11,7 @@ Herein contains relevant information about the government and politics of the Sa
 @menu
 
 - @government: Saskatchewan's system of government
-- @Saskatchewanian_timeline: Timeline of the Province of Saskatchewan
+- @Saskatchewan_timeline: Timeline of the Province of Saskatchewan
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -24,13 +24,13 @@ Herein contains relevant information about the government and politics of the Sa
 @government
 go-to: menu
 
-The Province of Saskatchewan has a unicameral legislature, the Legislative Assembly of Saskatchewan. The Premier is the head of government, and is the leader of the party with the most seats in the Assembly. The Premier appoints a cabinet of ministers to oversee various departments of government. 
+The Province of Saskatchewan has a unicameral legislature, the Legislative Assembly of Saskatchewan. The Premier is the head of government, and is the leader of the party who has the confidence of a majority of the house. The Premier appoints a cabinet of ministers from elected MLAs to oversee various departments of government. 
 
-The Legislative Assembly is elected based on a first-past-the-post system divided into urban and farmer electoral districts, colloquially referred to as "ridings". 
+The Legislative Assembly is primarily elected based on a first-past-the-post system divided into various electoral districts, colloquially referred to as "ridings". Some ridings are multi-member, elected using block voting. The cities of Regina, Saskatoon, and Moose Jaw are elected on a block voting basis. The candidate elected in each riding becomes an MLA (Member of the Legislative Assembly). 
 
 The Province of Saskatchewan oversees various policy areas, including education, healthcare, agriculture, and natural resources, among others. 
 
-@Saskatchewanian_timeline
+@Saskatchewan_timeline
 go-to: menu
 
 = Timeline of Saskatchewan
@@ -450,21 +450,21 @@ if (d3 && window) {
 {!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div></td><td>!} **FLP:** {!</td><td>!} **[+ flp_r +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div></td><td>!} **FLP:** {!</td><td>!} **[+ flp_seats +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div></td> <td>!} CP(S): {!</td><td>!} [+ cp_s_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div></td> <td>!} CP(S): {!</td><td>!} [+ cp_s_seats +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lps_name +]: {!</td><td>!} [+ lps_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lps_name +]: {!</td><td>!} [+ lps_seats +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#d8ce6fb3'> </div></td><td>!} PPS: {!</td><td>!} [+ pps_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#d8ce6fb3'> </div></td><td>!} PPS: {!</td><td>!} [+ pps_seats +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div></td><td>!} CPS: {!</td><td>!} [+ cps_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div></td><td>!} CPS: {!</td><td>!} [+ cps_seats +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_seats +] % {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div></td><td>!} SCPS: {!</td><td>!} [+ scps_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div></td><td>!} SCPS: {!</td><td>!} [+ scps_seats +]% {!</td></tr>!}
 
 = Election history
 

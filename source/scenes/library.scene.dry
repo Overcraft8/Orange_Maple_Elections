@@ -410,7 +410,7 @@ if (d3 && window) {
     var filteredData = data.filter(function(party) {
     return party.seats > 0; 
 });
-    d3.select("#assembly").datum(data).call(parliament);
+    d3.select("#assembly").datum(filteredData).call(parliament);
 
     var lines = d3.linegraph(false, false,
             Q.parties,

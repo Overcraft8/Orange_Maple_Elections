@@ -379,8 +379,6 @@ Q.scps_seats = 0;
 
 
 
-
-
 Q.flp_r = 0;
 Q.cp_s_r = 0;
 Q.pps_r =  8;

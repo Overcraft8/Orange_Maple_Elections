@@ -101,7 +101,7 @@ d3.parliament = function() {
                     /* get current party and go to the next one if it has all its seats filled */
                     var party = d[partyIndex];
                     var nSeatsInParty = typeof party.seats === 'number' ? party.seats : party.seats.length;
-                    if (seatIndex >= nSeatsInParty) {
+                    while (seatIndex >= nSeatsInParty) {
                         partyIndex++;
                         seatIndex = 0;
                         party = d[partyIndex];

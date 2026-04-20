@@ -930,8 +930,6 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 // Nonfactional advisors
 Q.underhill_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
-
-console.log(Q.flp_votes)
 !}
 set-bg: img/Saskatchewan_grid_map2.jpg
 new-page: true

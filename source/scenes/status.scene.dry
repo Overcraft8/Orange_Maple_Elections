@@ -21,6 +21,7 @@ data = [
         "seats": Q.cp_s_seats
     }
 ];
+console.log("1");
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
             "id": "sapd",
@@ -29,7 +30,7 @@ if (Q.sapd_formed && Q.sapd_r) {
             "seats": Math.round(Q.sapd_r * 0.6),
             });
 }
-
+console.log("2");
 data = data.concat([
     {
         "id": "flp",
@@ -69,24 +70,33 @@ data = data.concat([
         /* "seats": Math.round(Q.scps_r * 0.6), */
     },
 ]);
+console.log("3");
 if (d3 && window) {
+    console.log("4");
     // get screen width
     var width = 500;
     var height = 500;
     var screenWidth = document.getElementById('content').offsetWidth;
+    console.log("5");
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
+        console.log("6");
         document.getElementById("assembly").style.height = screenWidth/2 + "px";
     }
+    console.log("7");
     var parliament = d3.parliament();
+    console.log("8");
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
+    console.log("9");
     var filteredData = data.filter(function(party) {
+    console.log("10");
     return party.seats > 0; 
 });
     d3.select("#assembly").datum(filteredData).call(parliament);
+    console.log("11");
 }
 !}
 

@@ -14,90 +14,12 @@ if (Q.economic_growth) {
 }
 !}
 on-display: {!
-data = [
-    {
-        "id": "cp_s",
-        "legend": "CP(S)",
-        "name": "CP(S)",
-        "seats": Q.cp_s_seats
-    }
-];
-console.log("1");
-if (Q.sapd_formed && Q.sapd_r) {
-    data.push({
-            "id": "sapd",
-            "legend": "SAPD",
-            "name": "SAPD",
-            "seats": Math.round(Q.sapd_r * 0.6),
-            });
-}
-console.log("2");
-data = data.concat([
-    {
-        "id": "flp",
-        "legend": "FLP",
-        "name": "FLP",
-        "seats": Q.flp_seats
-    },
-    {
-        "id": "lps",
-        "legend": "LPS",
-        "name": "LPS",
-        "seats": Q.lps_seats
-    },
-    {
-        "id": "pps",
-        "legend": "PPS",
-        "name": "PPS",
-        "seats": Q.pps_seats
-    },
-    {
-        "id": "cps",
-        "legend": "CPS",
-        "name": "CPS",
-        "seats": Q.cps_seats
-    },
-    {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Q.other_seats
-    },
-    {
-        "id": "scps",
-        "legend": "SCPS",
-        "name": "SCPS",
-        "seats": Q.scps_seats
-        /* "seats": Math.round(Q.scps_r * 0.6), */
-    },
-]);
-console.log("3");
-if (d3 && window) {
-    console.log("4");
-    // get screen width
-    var width = 500;
-    var height = 500;
-    var screenWidth = document.getElementById('content').offsetWidth;
-    console.log("5");
-    if (screenWidth < width - 50) {
-        width = screenWidth - 50;
-        height = width;
-        console.log("6");
-        document.getElementById("assembly").style.height = screenWidth/2 + "px";
-    }
-    console.log("7");
-    var parliament = d3.parliament();
-    console.log("8");
-    parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromCenter(true).smallToBig(true);
-    parliament.exit.toCenter(false).bigToSmall(true);
-    console.log("9");
-    var filteredData = data.filter(function(party) {
-    console.log("10");
-    return party.seats > 0; 
-});
-    d3.select("#assembly").datum(filteredData).call(parliament);
-    console.log("11");
+if (window.cachedAssembly) {
+    document.getElementById('assembly_container').innerHTML = 
+        `<img src="${window.cachedAssembly}" style="width: 100%; height: auto;">`;
+} else {
+    document.getElementById('assembly_container').innerHTML = 
+        `<p>No assembly data available. Please visit the Library.</p>`;
 }
 !}
 
@@ -119,7 +41,7 @@ if (d3 && window) {
 
 = Status
 
-{!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
+{!<div id="assembly_container"><svg id="assembly" style="width: 500px; height: 250px;"></svg></div>!}
 
 #{!
 #</div>

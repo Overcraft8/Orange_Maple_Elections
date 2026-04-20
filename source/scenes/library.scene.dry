@@ -442,6 +442,10 @@ if (d3 && window) {
             maxUnemployment + 5, minInflation - 5, 21);
     lines_3.width(width).height(300);
     d3.select("#economic_history").datum(Q.economic_records).call(lines_3);
+
+window.svgToPng("assembly", function(pngData) {
+    window.cachedAssembly = pngData;
+});
 }
 !}
 

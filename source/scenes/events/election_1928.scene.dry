@@ -447,10 +447,6 @@ if (window && d3) {
     d3.select("#assembly").datum(data).call(parliament);
     
 }
-window.svgToPng("assembly", function(pngData) {
-    window.cachedAssembly = pngData;
-});
-
 !}
 go-to: coalition_menu
 

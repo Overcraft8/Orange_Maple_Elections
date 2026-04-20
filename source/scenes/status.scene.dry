@@ -13,15 +13,6 @@ if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
 !}
-on-display: {!
-if (window.cachedAssembly) {
-    document.getElementById('assembly_container').innerHTML = 
-        `<img src="${window.cachedAssembly}" style="width: 100%; height: auto;">`;
-} else {
-    document.getElementById('assembly_container').innerHTML = 
-        `<p>No assembly data available. Please visit the Library.</p>`;
-}
-!}
 
 #{!</div>!}
 
@@ -40,8 +31,6 @@ if (window.cachedAssembly) {
 #!}
 
 = Status
-
-{!<div id="assembly_container"><svg id="assembly" style="width: 500px; height: 250px;"></svg></div>!}
 
 #{!
 #</div>

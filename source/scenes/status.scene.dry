@@ -13,6 +13,65 @@ if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
 
+data = [
+    {
+        "id": "cp_s",
+        "legend": "CP(S)",
+        "name": "CP(S)",
+        "seats": Q.cp_s_seats
+    }
+];
+
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+            "id": "sapd",
+            "legend": "SAPD",
+            "name": "SAPD",
+            "seats": Math.round(Q.sapd_r * 0.6),
+            });
+}
+
+data = data.concat([
+    {
+        "id": "flp",
+        "legend": "FLP",
+        "name": "FLP",
+        "seats": Q.flp_seats
+    },
+    {
+        "id": "lps",
+        "legend": "LPS",
+        "name": "LPS",
+        "seats": Q.lps_seats
+    },
+    {
+        "id": "pps",
+        "legend": "PPS",
+        "name": "PPS",
+        "seats": Q.pps_seats
+    },
+    {
+        "id": "cps",
+        "legend": "CPS",
+        "name": "CPS",
+        "seats": Q.cps_seats
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Q.other_seats
+    },
+    {
+        "id": "scps",
+        "legend": "SCPS",
+        "name": "SCPS",
+        "seats": Q.scps_seats
+        /* "seats": Math.round(Q.scps_r * 0.6), */
+    },
+]);
+
+d3.select("#assembly").datum(filteredData).call(parliament);
 
 !}
 
@@ -23,12 +82,12 @@ if (Q.economic_growth) {
 #{!
 #<div style="display:flex; align-items:flex-start;">
 
-#<!-- LEFT IMAGE -->
+# LEFT IMAGE
 #* <div style="width:60%; text-align:center;">
 # <img src="img/Red_Lily.png" style="max-width:100%;">
 #* </div>
 
-#<!-- MAIN CONTENT -->
+#< MAIN CONTENT
 #<div style="width:60%; padding:0 10px;">
 #!}
 
@@ -37,7 +96,7 @@ if (Q.economic_growth) {
 #{!
 #</div>
 
-#<!-- RIGHT IMAGE -->
+# RIGHT IMAGE 
 # <div style="width:60%; text-align:center;">
 # <img src="img/Wheat_Bundle.png" style="max-width:100%;">
 # </div>
@@ -90,8 +149,9 @@ Others: [+ other_r +]%
 
 Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_election_year +]
 
+{!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
-# = Public Opinion
+
 
 @politics
 
@@ -363,7 +423,7 @@ State Capacity: [+ state_capacity : development +]
 
 = Agriculture
 
-    <button id="return_agriculture_status" class="tab_button" 
+    <button id="return_agriculture_status" class="status_tab_button" 
     onclick="window.changeTab('status.development', 'return_agriculture_status')">Back</button>
 
 Agricultural Co-ops: [+ agri_coops : development +]

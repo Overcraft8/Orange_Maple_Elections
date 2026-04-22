@@ -682,11 +682,11 @@ img {
     margin-bottom: 0.5em;
   }
   .card-in-hand, .pinned-card, .deck {
+    margin-left: 1.3em;
     padding: 0.3em;
     width: 90px;
     height: 112.5px;
-    margin-right: 1em;
-    margin-bottom: 5em;
+    margin-bottom: 4em;
     vertical-align: top;
   }
 }

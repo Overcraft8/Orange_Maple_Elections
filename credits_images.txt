@@ -64,3 +64,6 @@ island_falls_plant.jpg https://archive.org/details/PC011107
 
 
 stacked bar graph (thanks maybe): https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html
+
+svgtopng conveerter: https://stackoverflow.com/questions/11567668/svg-to-canvas-with-d3-js/23667012#23667012
+

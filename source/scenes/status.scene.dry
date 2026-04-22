@@ -69,18 +69,18 @@ Premier: [+ premier +] ([+ premier_party +])
 Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-[? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_r +]%
+[? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_seats +]
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_r +]%
+[? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +]
 # 1928: 10, 1930: 13
-[? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_r +]%
+[? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_seats +]
 # 1928: 5, 1930: 4 (as DstP)
-[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_r +]%
+[? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_seats +]
 # 1928: 9, 1930: 5
-[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_r +]%
+[? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_seats +]
 # 1928: 14, 1930: 7
-[? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_r +]%
+[? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_seats +]
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 

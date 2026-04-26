@@ -739,13 +739,13 @@ Q.district_names = [
 ];
 
 
-Q.regina_d_seats = 3;
+Q.regina_d_seats = 2;
 Q.regina_d_worker = 30;
 Q.regina_d_old_middle = 30; 
 Q.regina_d_new_middle = 30;
 Q.regina_d_unemployed = 10;
 
-Q.saskatoon_d_seats = 3;
+Q.saskatoon_d_seats = 2;
 Q.saskatoon_d_worker = 20;
 Q.saskatoon_d_old_middle = 30; 
 Q.saskatoon_d_new_middle = 40;
@@ -769,25 +769,25 @@ Q.quappelle_d_farmer = 30;
 Q.quappelle_d_farmhand = 30;
 Q.quappelle_d_res_worker = 10;
 
-Q.southwest_d_seats = 5;
+Q.southwest_d_seats = 7;
 Q.southwest_d_worker = 20;
 Q.southwest_d_farmer = 30; 
 Q.southwest_d_farmhand = 30;
 Q.southwest_d_res_worker = 20;
 
-Q.southeast_d_seats = 11;
+Q.southeast_d_seats = 13;
 Q.southeast_d_worker = 10;
 Q.southeast_d_farmer = 50; 
 Q.southeast_d_farmhand = 30;
 Q.southeast_d_res_worker = 10;
 
-Q.north_d_seats = 3;
+Q.north_d_seats = 12;
 Q.north_d_worker = 20;
 Q.north_d_farmer = 20; 
 Q.north_d_farmhand = 20;
 Q.north_d_res_worker = 40;
 
-Q.central_d_seats = 8;
+Q.central_d_seats = 14;
 Q.central_d_worker = 30;
 Q.central_d_farmer = 10; 
 Q.central_d_farmhand = 10;

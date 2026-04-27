@@ -197,4 +197,39 @@ Strength: [+ tlc_strength +] Thousand<br>
   <path  class="district" d="M3848 478 l-3 -43 -184 -3 -184 -2 6 -122 c4 -67 7 -143 7 -170 l0 -48 670 0 670 0 0 215 0 215 -489 0 -490 0 -3 -42z"/>
   <path  class="district" d="M4850 305 l0 -215 575 0 575 0 0 79 c0 44 -4 83 -10 86 -5 3 -10 46 -10 96 l0 89 -210 0 -210 0 0 40 0 40 -355 0 -355 0 0 -215z"/>
 </g>
-</svg>!}
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="55pt" height="55pt" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet">
+
+<text x="225" y="833" text-anchor="middle" font-size="22" fill="#333">Regina</text>
+
+<g transform="translate(0.000000,55.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+<path d="M0 525 l0 -25 268 -2 267 -3 0 -230 0 -230 -212 -3 -213 -2 0 30 c0 30 0 30 -55 30 l-55 0 0 -45 0 -45 275 0 275 0 0 275 0 275 -275 0 -275 0 0 -25z"/>
+<path d="M40 296 l0 -165 53 -3 c48 -3 52 -5 55 -30 l3 -28 175 0 174 0 0 195 0 195 -230 0 -230 0 0 -164z"/>
+</g>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="39.000000pt" height="46.000000pt" viewBox="0 0 39.000000 46.000000" preserveAspectRatio="xMidYMid meet">
+
+<text x="225" y="833" text-anchor="middle" font-size="22" fill="#333">Saskatoon</text>
+
+<g transform="translate(0.000000,46.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+<path d="M0 230 l0 -230 195 0 195 0 0 230 0 230 -195 0 -195 0 0 -230z m300 205 c0 -8 7 -15 15 -15 13 0 15 -28 15 -190 l0 -191 -143 3 -142 3 -2 190 c-2 105 -1 196 2 203 3 9 39 12 130 12 104 0 125 -2 125 -15z"/>
+<path d="M70 240 l0 -181 118 3 117 3 3 163 c2 141 0 162 -13 162 -9 0 -18 7 -21 15 -5 12 -26 15 -105 15 l-99 0 0 -180z"/>
+</g>
+</svg>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="232.000000pt" height="97.000000pt" viewBox="0 0 232.000000 97.000000" preserveAspectRatio="xMidYMid meet">
+
+<text x="225" y="833" text-anchor="middle" font-size="22" fill="#333">Moose Jaw</text>
+
+<g transform="translate(0.000000,97.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+<path d="M2 488 l3 -483 5 370 5 370 372 3 373 2 0 60 c0 56 2 60 26 66 45 12 508 -6 517 -19 4 -7 6 -33 3 -59 l-5 -48 499 0 c275 0 501 -1 502 -2 1 -2 5 -172 8 -378 l5 -375 3 488 2 487 -1160 0 -1160 0 2 -482z"/>
+<path d="M800 770 l0 -60 -375 0 -375 0 0 -350 0 -350 183 0 c100 0 597 -3 1105 -7 l922 -6 0 356 0 357 -497 2 -498 3 -3 58 -3 57 -229 0 -230 0 0 -60z"/>
+</g>
+</svg>
+
+
+
+!}

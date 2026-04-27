@@ -4,7 +4,7 @@ body {
   --sidebar-bg-color: #f5ebd6;
   --content-bg-color: #e8dcc3;
   --text-color: #431;
-  --link-color: #900; 
+  --link-color: #6c2f00; 
   --link-hover-color: rgba(0, 0, 0, 0.05);
   --unavailable-bg-color: rgba(0, 0, 0, 0.1);
   --unavailable-color: #9a795f;
@@ -30,7 +30,7 @@ body.dark-mode {
   --sidebar-bg-color: #242424;
   --content-bg-color: #242424;
   --text-color: #efefef;
-  --link-color: #ff8080;
+  --link-color: #d9986e;
   --link-hover-color: rgba(255, 255, 255, 0.06);
   --tab-bg-color: #555555;
   --tab-color: #505050;
@@ -55,7 +55,7 @@ header, #content, footer {
   overflow: auto;
 }
 #content {
-  overflow-x: scroll;
+  overflow: visible;
   scrollbar-width: none;
   border: ridge;
   border-color: #9c8c64;
@@ -750,7 +750,7 @@ table {
   color: #3b1f0a;
   border-radius: 8px;
   padding: 12px 14px;
-  border: 1px solid #b22222;
+  border: 1px solid #b27b22d9;
   font-size: 12px;
   line-height: 1.3em;
   font-weight: 500;

@@ -131,7 +131,7 @@ Militancy: [+ tlc_militancy : militancy +]<br>
 Strength: [+ tlc_strength +] Thousand<br>
 ?]
 
-@@electoralmap
+@electoralmap
 
 {!<svg id="sk-map" viewBox="0 0 650 850" width="200" height="380" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
   <style>

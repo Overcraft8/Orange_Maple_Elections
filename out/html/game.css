@@ -1045,3 +1045,9 @@ a.party_status_panel_container {
     font-weight: 200;
     font-variant:small-caps;
 }
+
+.rotated-district {
+  transform: rotate(180deg);
+  transform-origin: center; /* This keeps it from flying off-screen */
+  transform-box: fill-box;   /* Ensures the 'center' is the shape itself */
+}

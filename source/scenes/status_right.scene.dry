@@ -204,7 +204,7 @@ Strength: [+ tlc_strength +] Thousand<br>
 <div class="status-card-row">
 
 
-<svg id="regina-map" viewBox="0 0 850 850" width="150" height="150" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
+<svg id="regina-map" viewBox="0 0 850 850" width="125" height="125" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
   <style>
     .district { fill: #d69546; stroke: #000000; stroke-width: 2px; 
     }
@@ -229,32 +229,7 @@ Strength: [+ tlc_strength +] Thousand<br>
 
 
 
-<svg id="regina-map" viewBox="0 0 850 850" width="150" height="150" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
-  <style>
-    .district { fill: #d69546; stroke: #000000; stroke-width: 2px; 
-    }
-    .district:hover { fill: #cd5737; opacity: 0.8; cursor: pointer; 
-    }
-    .rotated-district {
-    transform: rotate(180deg);
-    transform-origin: center; /* This keeps it from flying off-screen */
-    transform-box: fill-box;   /* Ensures the 'center' is the shape itself */
-    }
-  </style>
-
-  <text x="400" y="833" text-anchor="middle" font-size="100" fill="#333">Regina</text>
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="609.000000pt" height="649.000000pt" viewBox="0 0 200.000000 1100.000000" preserveAspectRatio="xMidYMid meet">
-
-<g transform="translate(-25.000000,50.000000) scale(1.400000,1.400000)" style="rotated-district" fill="#000000" stroke="none">
-  <path class="district" d="M40 296 l0 -165 53 -3 c48 -3 52 -5 55 -30 l3 -28 175 0 174 0 0 195 0 195 -230 0 -230 0 0 -164z"/>
-</g>
-</svg>
-</svg>
-
-
-
-<svg id="saskatoon-map" viewBox="0 0 850 850" width="150" height="150" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
+<svg id="saskatoon-map" viewBox="0 0 850 850" width="125" height="125" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
   <style>
     .district { fill: #d69546; stroke: #000000; stroke-width: 2px; 
     }
@@ -279,7 +254,7 @@ Strength: [+ tlc_strength +] Thousand<br>
 
 
 
-<svg id="moosejaw-map" viewBox="0 0 850 850" width="150" height="150" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
+<svg id="moosejaw-map" viewBox="0 0 850 850" width="125" height="125" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
   <style>
     .district { fill: #d69546; stroke: #000000; stroke-width: 2px; 
     }

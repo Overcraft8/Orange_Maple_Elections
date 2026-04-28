@@ -141,7 +141,7 @@ Strength: [+ tlc_strength +] Thousand<br>
     .district:hover { fill: #e1491e; opacity: 0.8; cursor: pointer; }
   </style>
 
-  <text x="400" y="900" text-anchor="middle" font-size="36" fill="#333">Click on districts to view specific information</text>
+  <text x="425" y="900" text-anchor="middle" font-size="40" fill="#333">Click on districts to view specific information</text>
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="609.000000pt" height="649.000000pt" viewBox="0 0 609.000000 649.000000" preserveAspectRatio="xMidYMid meet">
 
@@ -201,19 +201,18 @@ Strength: [+ tlc_strength +] Thousand<br>
 </svg>
 </svg>
 
-<svg id="regina-map" viewBox="0 0 850 850" width="250" height="300" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
+<svg id="regina-map" viewBox="0 0 850 850" width="150" height="150" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
   <style>
     .district { fill: #d69546; stroke: #000000; stroke-width: 2px; }
     .district:hover { fill: #e1491e; opacity: 0.8; cursor: pointer; }
   </style>
 
-  <text x="225" y="833" text-anchor="middle" font-size="22" fill="#333">Regina</text>
+  <text x="400" y="833" text-anchor="middle" font-size="100" fill="#333">Regina</text>
 
-<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="609.000000pt" height="649.000000pt" viewBox="0 0 609.000000 649.000000" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="609.000000pt" height="649.000000pt" viewBox="0 0 200.000000 1100.000000" preserveAspectRatio="xMidYMid meet">
 
-<g transform="translate(0.000000,649.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-  <path d="M0 525 l0 -25 268 -2 267 -3 0 -230 0 -230 -212 -3 -213 -2 0 30 c0 30 0 30 -55 30 l-55 0 0 -45 0 -45 275 0 275 0 0 275 0 275 -275 0 -275 0 0 -25z"/>
-  <path d="M40 296 l0 -165 53 -3 c48 -3 52 -5 55 -30 l3 -28 175 0 174 0 0 195 0 195 -230 0 -230 0 0 -164z"/>
+<g transform="translate(40.000000,50.000000) scale(1.00000,1.00000)" fill="#000000" stroke="none">
+  <path class="district" d="M40 296 l0 -165 53 -3 c48 -3 52 -5 55 -30 l3 -28 175 0 174 0 0 195 0 195 -230 0 -230 0 0 -164z"/>
 </g>
 </svg>
 </svg>!}

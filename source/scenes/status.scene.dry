@@ -92,9 +92,47 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 @politics
 
+<svg id="saskatoon-map" viewBox="0 0 650 850" width="200" height="380" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
+    <style>
+      .district { fill: #d69546; stroke: #000000; stroke-width: 2px; }
+      .district:hover { fill: #e1491e; opacity: 0.8; cursor: pointer; }
+    </style>
+
+    <text x="225" y="833" text-anchor="middle" font-size="22" fill="#333">Saskatoon</text>
+
+    <g xmlns="http://www.w3.org/2000/svg" transform="translate(0.000000,649.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+  <path d="M130 6371 l0 -118 52 -6 c42 -5 59 -14 92 -45 24 -22 60 -44 85 -51 24 -7 61 -24 82 -37 35 -22 43 -23 111 -14 88 11 123 5 142 -25 16 -24 48 -33 155 -42 49 -4 76 0 120 16 38 14 74 19 114 17 55 -2 60 -1 80 26 11 15 30 28 41 28 32 0 50 16 42 35 -8 22 31 82 59 89 11 3 35 6 52 6 26 0 36 6 48 30 8 16 15 38 15 49 0 30 47 62 79 55 14 -4 33 -12 41 -20 8 -7 29 -15 45 -19 67 -15 64 -11 58 -73 -6 -55 -10 -63 -45 -103 -10 -10 -18 -34 -18 -53 0 -28 7 -38 40 -61 22 -15 40 -32 40 -36 0 -5 11 -11 24 -15 14 -3 32 -14 42 -25 10 -11 30 -19 50 -19 26 0 41 -8 66 -36 40 -43 47 -67 36 -117 -9 -43 -2 -83 17 -90 14 -6 90 -105 123 -160 20 -34 22 -52 22 -173 l0 -134 1840 0 1840 0 0 190 c0 120 -4 190 -10 190 -6 0 -10 75 -10 205 0 176 -2 205 -15 205 -13 0 -15 29 -15 205 0 120 -4 205 -9 205 -5 0 -13 9 -16 20 -6 20 -15 20 -2761 20 l-2754 0 0 -119z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="609.000000pt" height="649.000000pt" viewBox="0 0 609.000000 649.000000" preserveAspectRatio="xMidYMid meet">
+
+  <g transform="translate(0.000000,649.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+    <path d="M0 230 l0 -230 195 0 195 0 0 230 0 230 -195 0 -195 0 0 -230z m300 205 c0 -8 7 -15 15 -15 13 0 15 -28 15 -190 l0 -191 -143 3 -142 3 -2 190 c-2 105 -1 196 2 203 3 9 39 12 130 12 104 0 125 -2 125 -15z"/>
+    <path d="M70 240 l0 -181 118 3 117 3 3 163 c2 141 0 162 -13 162 -9 0 -18 7 -21 15 -5 12 -26 15 -105 15 l-99 0 0 -180z"/>
+  </g>
+  </svg>
+
+
+  <svg id="moosejaw-map" viewBox="0 0 650 850" width="200" height="380" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
+    <style>
+      .district { fill: #d69546; stroke: #000000; stroke-width: 2px; }
+      .district:hover { fill: #e1491e; opacity: 0.8; cursor: pointer; }
+    </style>
+
+    <text x="225" y="833" text-anchor="middle" font-size="22" fill="#333">Moose Jaw</text>
+
+    <g xmlns="http://www.w3.org/2000/svg" transform="translate(0.000000,649.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+  <path d="M130 6371 l0 -118 52 -6 c42 -5 59 -14 92 -45 24 -22 60 -44 85 -51 24 -7 61 -24 82 -37 35 -22 43 -23 111 -14 88 11 123 5 142 -25 16 -24 48 -33 155 -42 49 -4 76 0 120 16 38 14 74 19 114 17 55 -2 60 -1 80 26 11 15 30 28 41 28 32 0 50 16 42 35 -8 22 31 82 59 89 11 3 35 6 52 6 26 0 36 6 48 30 8 16 15 38 15 49 0 30 47 62 79 55 14 -4 33 -12 41 -20 8 -7 29 -15 45 -19 67 -15 64 -11 58 -73 -6 -55 -10 -63 -45 -103 -10 -10 -18 -34 -18 -53 0 -28 7 -38 40 -61 22 -15 40 -32 40 -36 0 -5 11 -11 24 -15 14 -3 32 -14 42 -25 10 -11 30 -19 50 -19 26 0 41 -8 66 -36 40 -43 47 -67 36 -117 -9 -43 -2 -83 17 -90 14 -6 90 -105 123 -160 20 -34 22 -52 22 -173 l0 -134 1840 0 1840 0 0 190 c0 120 -4 190 -10 190 -6 0 -10 75 -10 205 0 176 -2 205 -15 205 -13 0 -15 29 -15 205 0 120 -4 205 -9 205 -5 0 -13 9 -16 20 -6 20 -15 20 -2761 20 l-2754 0 0 -119z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="609.000000pt" height="649.000000pt" viewBox="0 0 609.000000 649.000000" preserveAspectRatio="xMidYMid meet">
+
+  <g transform="translate(0.000000,649.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+    <path d="M2 488 l3 -483 5 370 5 370 372 3 373 2 0 60 c0 56 2 60 26 66 45 12 508 -6 517 -19 4 -7 6 -33 3 -59 l-5 -48 499 0 c275 0 501 -1 502 -2 1 -2 5 -172 8 -378 l5 -375 3 488 2 487 -1160 0 -1160 0 2 -482z"/>
+    <path d="M800 770 l0 -60 -375 0 -375 0 0 -350 0 -350 183 0 c100 0 597 -3 1105 -7 l922 -6 0 356 0 357 -497 2 -498 3 -3 58 -3 57 -229 0 -230 0 0 -60z"/>
+  </g>
+  </svg>
+
+
 # {!<div style="width:80%; overflow-y:auto; padding:2px;">!}
 
-= Inter-party Relations and Voteshare Estimates
+= Inter-party Relations and Voteshare Estimates1
 
 {!<table class="poll-table">!}
 

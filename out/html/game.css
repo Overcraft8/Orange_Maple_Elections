@@ -13,7 +13,7 @@ body {
   --tab-hover-color: #caaa588a;
   --card-border-color: #dfd1ba; 
   --card-bg-color: #ede1c2; 
-  font-family: Courier New, monospace, serif;
+  font-family: monospace, serif;
   background-color: var(--bg-color);
   padding: 0;
   line-height: 130%;
@@ -50,7 +50,7 @@ body.dark-mode .tools {
 }
 header, #content, footer {
   color: var(--text-color);
-  max-width: 450px;
+  max-width: 26em;
   margin: 0 auto;
   overflow: auto;
 }
@@ -63,7 +63,6 @@ header, #content, footer {
   background-color: var(--content-bg-color);
   font-size: 1em;
   padding: 1em 1.5em 1.5em 1.5em;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 footer {
   margin-top: 1em;
@@ -83,7 +82,6 @@ header {
   margin-bottom: 0.5em;
   padding: 0;
   padding-left: 1em;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 #header-links a {
   border: ridge;
@@ -131,8 +129,6 @@ header h2:before {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
-               rgba(0, 0, 0, 0.1) -1px -1px 2px;
 }
 a {
   color: var(--link-color);
@@ -216,7 +212,7 @@ img.inline-img.icon {
 
 /* This is mostly copied from undum. */
 #mid_panel {
-  margin: 0 25rem;
+  margin: 0 23em;
 }
 #page {
   margin: 0 auto;
@@ -225,28 +221,19 @@ img.inline-img.icon {
 #tools_wrapper {
   position: absolute;
   width: 100%;
-  max-width: 69em;
+  max-width: 80em;
   left: 0;
   right: 0;
   margin: 0 auto;
-}
-
-#stats_sidebar {
-  width: 300px;
-}
-
-#stats_sidebar_right {
-  width: 300px;
 }
 
 .tools {
   border: outset;
   border-color: #cfb678;
   padding: 0.6em;
-  width: 14rem;
+  width: 22em;
   color: var(--text-color);
   background-color: var(--sidebar-bg-color);
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 .tools.left {
   float: left;
@@ -269,8 +256,6 @@ img.inline-img.icon {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
-               rgba(0, 0, 0, 0.1) -1px -1px 2px;
 }
 #qualities h1 + p:first-line {
   font-weight: normal;
@@ -288,8 +273,6 @@ img.inline-img.icon {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
-               rgba(0, 0, 0, 0.1) -1px -1px 2px;
 }
 #qualities_right h1 + p:first-line {
   font-weight: normal;
@@ -300,7 +283,7 @@ img.inline-img.icon {
   display: flex;
   gap: 0.1em;
   flex-wrap: wrap;
-  box-shadow: 0 2px 4px #606060;
+  box-shadow: 0 2px 4px #d0b8b8;
   padding: 0.3em 0.1em;
   background-color: #b08a5e7a;
   margin-top: -0.6em;
@@ -339,7 +322,6 @@ img.inline-img.icon {
 /* status tabs (nested) */
 .status_tab_container {
     background-color: var(--tab-bg-color);
-    box-shadow: 0 2px 4px #606060;
     padding: 0.3em 0.2em;
     margin-top: 0.4em;
     margin-left: -0.6em;
@@ -378,7 +360,6 @@ img.inline-img.icon {
   outline: none;
   border-radius: 0.4rem;
   padding: 4px;
-  box-shadow: 1px 1px 5px var(--bgBack-color);
 }
 .status_button:hover {
   background-color: var(--hover-color);
@@ -718,7 +699,7 @@ table {
     fill: #BE0028;
 }
 .seat.pps {
-    fill: #d8ce6fb3;
+    fill: #7e741ab3;
 }
 .seat.cps {
     fill: #0055A5;
@@ -1033,17 +1014,6 @@ a.party_status_panel_container {
   cursor: help;
   background: #554d2230;
   box-shadow: 0 0 12px #554d2240;
-}
-
-@font-face {
-  font-family: myFont;
-  src: url(sansation_light.woff);
-}
-
-* {
-   font-family: myFont;
-    font-weight: 200;
-    font-variant:small-caps;
 }
 
 .rotated-district {

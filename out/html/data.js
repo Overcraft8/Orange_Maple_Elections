@@ -95,7 +95,7 @@ const colourList = [{
     },
     {
         word: "PPS", 
-        style: "color: #d8ce6fb3; font-weight: bold;"
+        style: "color: #7e741ab3; font-weight: bold;"
     },
     {
         word: "CPS", 

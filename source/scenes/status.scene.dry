@@ -408,8 +408,8 @@ Agricultural Co-ops: [+ agri_coops : development +]
             {!<th>Party</th>!}
             {!<th>Workers</th>!}
             {!<th>Unem.</th>!}
-            {!<th>N.M.</th>!}
-            {!<th>O.M.</th>!}
+            {!<th>New Middle.</th>!}
+            {!<th>Old Middle</th>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}

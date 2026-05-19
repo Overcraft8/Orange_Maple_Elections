@@ -43,7 +43,7 @@ We also aim to improve relations with our eastern neighbors, Poland and Czechosl
 
 @improve_soviet
 title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the CP...
+subtitle: We could also broach the question of the CP(S)...
 
 The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
 
@@ -67,24 +67,24 @@ on-arrival: treasury -= 1; soviet_relation += 2; coalition_dissent += 1; foreign
 
 The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
 
-- @cp: Ask if Moscow could help repair our relations with the CP.
+- @cp_s: Ask if Moscow could help repair our relations with the CP(S).
 - @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the CP.
+- @root: Do not mention the CP(S).
 
 @soviet_economic_aid_no
 
 The Soviets are slightly upset, but they seemed to expect this answer.
 
 
-@cp
-on-arrival: cp_relation += 8*(1-dissent); communist_coalition += 1 if cp_foreign_seen == 0; cp_foreign_seen = 1
+@cp_s
+on-arrival: cp_s_relation += 8*(1-dissent); communist_coalition += 1 if cp_s_foreign_seen == 0; cp_s_foreign_seen = 1
 
-We also mention the CP in our conversations with the Soviet ambassador. They claim that the CP is entirely independent of the Soviet government, and that the conflict is Tim Buck's doing. But, soon after our conversation we notice a slight improvement in attitudes from the CP.
+We also mention the CP(S) in our conversations with the Soviet ambassador. They claim that the CP(S) is entirely independent of the Soviet government, and that the conflict is Tim Buck's doing. But, soon after our conversation we notice a slight improvement in attitudes from the CP(S).
 
 @wittorf
 view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1932) and wittorf_soviet_union = 0
 unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
-on-arrival: wittorf_soviet_union = 1; cp_relation += 6*(1-dissent); cp_foreign_seen = 1
+on-arrival: wittorf_soviet_union = 1; cp_s_relation += 6*(1-dissent); cp_s_foreign_seen = 1
 max-visits: 1
 
 Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Tim Buck, but perhaps now they will be less inclined to defend him.
@@ -126,10 +126,10 @@ Negotiations procede smoothly for the most part. The Western powers are convince
 title: The Western Allies are finally willing to pause our reparations payments!
 subtitle: Our negotiations have been successful.
 view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparations > -2
-on-arrival: american_relation += 1; reparations = -2; treasury += 2 if hoover_memorandum_seen == 0; treasury += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_flp += 8*(1-dissent); old_middle_flp += 5*(1-dissent); new_middle_flp += 5*(1-dissent); rural_flp += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0
+on-arrival: american_relation += 1; reparations = -2; treasury += 2 if hoover_memorandum_seen == 0; treasury += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_flp += 8*(1-dissent); old_middle_flp += 5*(1-dissent); new_middle_flp += 5*(1-dissent); farmer_flp += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0
 max-visits: 1
 
-Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American monarch Hoover, who has been friendlier towards us than the Europeans.
+Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American prime minister Hoover, who has been friendlier towards us than the Europeans.
 
 This has reduced tensions within our government, and our party has gotten credit for the achievement.
 
@@ -155,7 +155,7 @@ The Roman Catholic Church is interested in furthering relations with the Saskatc
 @concordat
 title: We can sign a Concordat with the Vatican!
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
-on-arrival: reichskonkordat = 1; pps_relation += 15*(1-dissent); catholics_flp += 8*(1-dissent); catholics_pps += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
+on-arrival: reichskonkordat = 1; pps_relation += 15*(1-dissent); catholics_flp += 8*(1-dissent); catholics_pps += 5 if in_lps_coalition or in_grand_coalition or in_unity_government;
 achievement: reichskonkordat
 
 We have successfully signed a Concordat between Saskatchewan and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the Saskatchewanian state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Saskatchewan are pleased, as are their representatives in the PPS Party.
@@ -174,7 +174,7 @@ Forming a "United States of Europe" has long been part of the Social Democratic 
 @european_union_2
 title: We can sign a treaty to form a European Union!
 view-if: american_relation >= 5 and britain_relation >= 4 and eu_progress >= 2 and eu = 0
-on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_flp += 5*(1-dissent); new_middle_flp += 5*(1-dissent); old_middle_flp += 5*(1-dissent); rural_flp += 4*(1-dissent); catholics_flp += 4*(1-dissent); unemployed_flp += 4*(1-dissent); pro_republic += 5; nationalism -= 5; treasury += 1; economic_growth += 1; economic_growth += 1 if economic_growth < 3
+on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_flp += 5*(1-dissent); new_middle_flp += 5*(1-dissent); old_middle_flp += 5*(1-dissent); farmer_flp += 4*(1-dissent); catholics_flp += 4*(1-dissent); unemployed_flp += 4*(1-dissent); pro_republic += 5; nationalism -= 5; treasury += 1; economic_growth += 1; economic_growth += 1 if economic_growth < 3
 max-visits: 1
 achievement: eu
 

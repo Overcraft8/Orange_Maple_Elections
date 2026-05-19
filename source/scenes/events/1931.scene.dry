@@ -1,7 +1,7 @@
 title: 1931
 subtitle: A new year 
 on-arrival: {!
-// increase SCP vote share 
+// increase SCPS vote share 
 // TODO: if a public works program has started, unemployment is not so bad.
 Q.unemployed += 6;
 Q.inflation -= 5;

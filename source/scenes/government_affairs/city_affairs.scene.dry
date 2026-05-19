@@ -4,19 +4,19 @@ is-card: true
 view-if: flp_prussia = 1 and city_affairs_timer <= 0
 on-arrival: city_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
-card-image: img/woodsworth.jpg
+card-image: img/regina_cityhall.jpg
 #subtitle: The state government of City Police is a bulwark of democracy...
 
 = Urban Affairs
 
-City Police, by far the largest and most important state in Saskatchewan, is governed by our party, in a coalition with the PPS and Democratic parties. It is the most stable and democratic state government in Saskatchewan, led by the able J. S. Woodsworth.
+City Police, by far the largest and most important state in Saskatchewan, is governed by our party, in a coalition with the PPS  parties. It is the most stable and democratic state government in Saskatchewan, led by the able J. S. Woodsworth.
 
 We can enact policies in City Police.
 
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
-- @ban_ful: Ban the FUL, the SCPs paramilitary group.
+- @ban_ful: Ban the FUL, the SCPSs paramilitary group.
 - @unban_ful: Reverse the FUL ban.
 - @ban_wul: Ban the WUL, the Communist paramilitary.
 - @unban_wul: Reverse the WUL ban.
@@ -45,13 +45,13 @@ We have increased the size of the Urban police.
 @bureaucracy
 on-arrival: city_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_flp += 2*(1-dissent) if democratization >= 3; new_middle_flp += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
 
-The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
+The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-prime ministery and pro-dictatorship elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
 @ban_ful
-view-if: scp_urgency >= 3 and ful_banned == 0
+view-if: scps_urgency >= 3 and ful_banned == 0
 on-arrival: ful_strength *= 0.9; ful_strength *= 0.75 if city_police_loyalty >= 0.75; ful_banned = 1; cps_relation -= 3; city_police_loyalty -= 0.05; ful_militancy -= 0.05; ful_ban_timer = 6;
 
-As it turns out, the SCPs FUL has many allies in the police and bureaucracy. Our relationship with the police weakens, and the FUL can still organize illegally, right under the police's noses. [? if city_police_loyalty >= 0.7 : Nevertheless, the FUL is substantially weakened by our ban. ?] 
+As it turns out, the SCPSs FUL has many allies in the police and bureaucracy. Our relationship with the police weakens, and the FUL can still organize illegally, right under the police's noses. [? if city_police_loyalty >= 0.7 : Nevertheless, the FUL is substantially weakened by our ban. ?] 
 
 @unban_ful
 view-if: ful_banned = 1
@@ -60,10 +60,10 @@ on-arrival: ful_banned = 0; ful_strength += 100; ful_militancy += 0.05
 The FUL is no longer banned. They immediately go on a recruiting spree.
 
 @ban_kkk
-on-arrival: kkk_strength *= 0.85; kkk_strength *= 0.7 if city_police_loyalty >= 0.75; kkk_banned = 1; cps_relation -= 5; city_police_loyalty -= 0.1; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V"; kkk_ban_timer = 6;
+on-arrival: kkk_strength *= 0.85; kkk_strength *= 0.7 if city_police_loyalty >= 0.75; kkk_banned = 1; cps_relation -= 5; city_police_loyalty -= 0.1; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett"; kkk_ban_timer = 6;
 view-if: kkk_banned == 0
 
-[? if monarch == "George V": Banning the Ku Klux Klan weakens our relationship with Monarch George V, as well as the political right and the police. ?][? if monarch != "George V": Banning the Ku Klux Klan weakens our relationship with the political right and the police. ?] [? if flp_in_government = 1 and in_grand_coalition = 1 and monarch = "George V" : It also weakens our coalition due to the influence of George V on the right wing of our coalition. ?] In addition, the Ku Klux Klan still operates out of public sight. 
+[? if prime_minister == "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with Prime Minister Richard Bennett, as well as the political right and the police. ?][? if prime_minister != "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with the political right and the police. ?] [? if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett" : It also weakens our coalition due to the influence of Richard Bennett on the right wing of our coalition. ?] In addition, the Ku Klux Klan still operates out of public sight. 
 
 @unban_kkk
 view-if: kkk_banned = 1
@@ -74,7 +74,7 @@ The Ku Klux Klan is no longer banned.
 
 @ban_wul
 view-if: communist_coalition < 3 and wul_banned = 0
-on-arrival: cp_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1
+on-arrival: cp_s_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
 

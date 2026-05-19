@@ -1,0 +1,15 @@
+title: Participate in Municipal Politics?
+new-page: true
+subtitle: Should we?
+tags: event
+view-if: year = 1942 and month = 8
+max-visits: 1
+face-image: img/regina_cityhall.jpg
+
+= Regina Municipal Election
+
+Elections for the city of Regina will take place in two months time. Municipal politics have traditionally been nonpartisan. However, the ILP had endorsed candidates in the past, even winning 2 city councillor seats. 
+
+- @continue: This is great news!
+
+@continue

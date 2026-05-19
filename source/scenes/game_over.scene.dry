@@ -8,8 +8,8 @@ Q.game_over = 1;
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
-// Roter PPSar von Preußen - At the end of the game, JS_Woodsworth is monarch, premier, and minister-monarch of prussia at the same time.
-if (Q.monarch == 'JS_Woodsworth' && Q.premier == 'JS_Woodsworth' && Q.flp_prussia) {
+// Roter PPSar von Preußen - At the end of the game, JS_Woodsworth is prime minister, premier, of prussia at the same time.
+if (Q.prime_minister == 'JS_Woodsworth' && Q.premier == 'JS_Woodsworth' && Q.flp_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
 // Sieg für die Republik - victory for the republic
@@ -20,7 +20,7 @@ if (Q.republic_victory) {
 // Einigkeit und Recht - survive on medium without a civil war.
 // Einigkeit und Recht und Freiheit - survive on hard without a civil war.
 
-// Einheitsfront - form a united front with the CP, and win the civil war.
+// Einheitsfront - form a united front with the CP(S), and win the civil war.
 
 // Volksfront - form a popular front government, and win the civil war.
 
@@ -40,14 +40,14 @@ if (Q.republic_victory && Q.resist_coup) {
 if (Q.homosexual_rights >= 2) {
     this.achieve('hirschfeld');
 }
-// Mädchen und Uniform - a woman's place is in the UFC (SS).
+// Mädchen und Uniform - a woman's place is in the UFC(SS).
 // Gleichheit - Support and enact reforms for women's rights.
 if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_rights >= 3)) {
     this.achieve('equality');
 }
 
-// Sohn seiner Klasse - elect Tim Buck as monarch or premier.
-if (Q.premier == "Tim Buck" || Q.monarch == "Tim Buck") {
+// Sohn seiner Klasse - elect Tim Buck as prime minister or premier.
+if (Q.premier == "Tim Buck" || Q.prime_minister == "Tim Buck") {
     this.achieve('sohn_seiner_klasse');
 }
 
@@ -65,23 +65,23 @@ for (var c of Q.classes) {
     }
 }
 
-// Die Rote Fahne - join the CP in the May Day march.
+// Die Rote Fahne - join the CP(S) in the May Day march.
 // Mehrheitspartei - form an FLP majority government in the Assembly.
 // Panik im Mittelstand - have over 50% of New Middle Class support.
 if (Q.new_middle_flp_normalized && Q.new_middle_flp_normalized >= 50) {
     this.achieve('panik_im_mittelstand');
 }
-// Bauernrevolution - have over 50% rural support.
-if (Q.rural_flp_normalized && Q.rural_flp_normalized >= 50) {
+// Bauernrevolution - have over 50% farmer support.
+if (Q.farmer_flp_normalized && Q.farmer_flp_normalized >= 50) {
     this.achieve('bauernrevolution');
 }
 if (Q.catholics_flp_normalized && Q.catholics_flp_normalized >= 50) {
     this.achieve('katholischer_sozialismus');
 }
-if (Q.workers_flp_normalized >= 80 && Q.new_middle_flp_normalized <= 20 && Q.old_middle_flp_normalized <= 20 && Q.rural_flp_normalized <= 20) {
+if (Q.workers_flp_normalized >= 80 && Q.new_middle_flp_normalized <= 20 && Q.old_middle_flp_normalized <= 20 && Q.farmer_flp_normalized <= 20) {
     this.achieve('klassenkampf');
 }
-if (Q.workers_flp_normalized >= 40 && Q.new_middle_flp_normalized >= 40 && Q.old_middle_flp_normalized >= 40 && Q.rural_flp_normalized >= 40) {
+if (Q.workers_flp_normalized >= 40 && Q.new_middle_flp_normalized >= 40 && Q.old_middle_flp_normalized >= 40 && Q.farmer_flp_normalized >= 40) {
     this.achieve('grosse_volkspartei');
 }
 // Räterepublik - begin the transformation to a socialist economy.
@@ -89,7 +89,7 @@ if (Q.flp_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democ
     this.achieve('raterepublik');
 }
 // Polykrise - survive both a fascist coup and a capital strike.
-if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.premier != "Needham" && Q.monarch != "Needham" && !Q.total_defeat) {
+if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.premier != "Needham" && Q.prime_minister != "Needham" && !Q.total_defeat) {
     this.achieve("polykrise");
 }
 // Wirtschaftsexperiment - implement two different economic plans.
@@ -101,7 +101,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Stolperstein - lose the civil war against Needham.
-if ((Q.premier_party == "LPS" || Q.premier == "James Gardiner" || Q.monarch == "Mackenzie King") && Q.total_defeat) {
+if ((Q.premier_party == "LPS" || Q.premier == "James Gardiner" || Q.prime_minister == "Mackenzie King") && Q.total_defeat) {
     this.achieve('stolperstein');
 }
 // Heidelberger Programm - fulfill the goals of the Heidelberg programm - increase welfare, reform justice, support women's rights, progressive taxation, works councils, build a European Union.
@@ -120,7 +120,7 @@ if ((Q.welfare > 0 && Q.judicial_reform >= 2 && Q.womens_work >= 1 && Q.family_l
 
 
 @needham_wins
-view-if: (premier == "Needham" or monarch == "Needham") and (total_defeat==1)
+view-if: (premier == "Needham" or prime_minister == "Needham") and (total_defeat==1)
 title: Needham is in undisputed control over Saskatchewan.
 tags: endings
 go-to: eg_menu
@@ -128,7 +128,7 @@ go-to: eg_menu
 Needham is in undisputed control over Saskatchewan. The FLP, along with all of the democratic forces, have failed.
 
 @war_against_needham
-view-if: (premier == "Needham" or monarch == "Needham") and (long_war == 1)
+view-if: (premier == "Needham" or prime_minister == "Needham") and (long_war == 1)
 title: Needham is in power, but we are fighting to stop him.
 tags: endings
 go-to: eg_menu
@@ -152,35 +152,35 @@ Saskatchewan is currently in the grip of a civil war, a brutal affair that has n
 
 @woodsworth_victorious
 title: JS_Woodsworth victorious
-view-if: monarch == "JS_Woodsworth"
+view-if: prime_minister == "JS_Woodsworth"
 tags: endings
 go-to: eg_menu
 
-JS_Woodsworth has been elected as Monarch of Saskatchewan. He had never desired to be the most powerful man in Saskatchewan, but now he is.
+JS_Woodsworth has been elected as Prime Minister of Saskatchewan. He had never desired to be the most powerful man in Saskatchewan, but now he is.
 
-@monarch_schumacher
+@prime_minister_schumacher
 title: Kurt Schumacher victorious
-view-if: monarch == "Schumacher"
+view-if: prime_minister == "Schumacher"
 tags: endings
 go-to: eg_menu
 
-Kurt Schumacher has been elected as Monarch of Saskatchewan. As a young and ambitious FLP member, he will be shaping Saskatchewan for years to come.
+Kurt Schumacher has been elected as Prime Minister of Saskatchewan. As a young and ambitious FLP member, he will be shaping Saskatchewan for years to come.
 
-@monarch_macphail
-title: Agnes Macphail is Monarch
-view-if: monarch == "Macphail"
+@prime_minister_macp_shail
+title: Agnes Macp_shail is Prime Minister
+view-if: prime_minister == "Macp_shail"
 tags: endings
 go-to: eg_menu
 
-Agnes Macphail has been elected as Monarch of Saskatchewan. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Saskatchewan for years to come.
+Agnes Macp_shail has been elected as Prime Minister of Saskatchewan. She is the first woman to be elected as the head of state of any republic, and will contribute to shaping Saskatchewan for years to come.
 
-@monarch_einstein
-title: Albert Einstein is Monarch
-view-if: monarch == "Einstein"
+@prime_minister_einstein
+title: Albert Einstein is Prime Minister
+view-if: prime_minister == "Einstein"
 tags: endings
 go-to: eg_menu
 
-Albert Einstein, possibly the most famous scientist in the world, has been elected as Monarch of Saskatchewan. As a Saskatchewanian Jew and a pacifist, he is the repudiation of everything the SCPs stood for, and a symbol of a new Saskatchewanian Republic that has moved beyond its checkered past.
+Albert Einstein, possibly the most famous scientist in the world, has been elected as Prime Minister of Saskatchewan. As a Saskatchewanian Jew and a pacifist, he is the repudiation of everything the SCPSs stood for, and a symbol of a new Saskatchewanian Republic that has moved beyond its checkered past.
 
 
 
@@ -194,11 +194,11 @@ The FLP is still in government, under Premier [+ premier +]. Given the circumsta
 
 @communist_victory
 title: Communist victory
-view-if: premier_party == "CP" or monarch == "Tim Buck" and total_defeat == 0 and long_war == 0
+view-if: premier_party == "CP(S)" or prime_minister == "Tim Buck" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The CP has won power in Saskatchewan, with our assistance. They will try to remake Saskatchewan in the Soviet image. How much they succeed is yet to be determined.
+The CP(S) has won power in Saskatchewan, with our assistance. They will try to remake Saskatchewan in the Soviet image. How much they succeed is yet to be determined.
 
 @works_program
 title: Works program enacted!
@@ -228,14 +228,14 @@ Unemployment levels have fallen substantially! This is a success of our economic
 
 @unemployment_high
 title: Unemployment is still too high.
-view-if: unemployed >= 20 and (premier != "Needham" and monarch != "Needham") and (total_defeat == 0) and long_war == 0
+view-if: unemployed >= 20 and (premier != "Needham" and prime_minister != "Needham") and (total_defeat == 0) and long_war == 0
 tags: endings
 go-to: eg_menu
 
 Unemployment is still at dangerously high levels. Even though Needham is not in power, the situation is ripe for instability and extremism.
 
 
-The FLP is ruling as part of an emergency minority government, led by Monarch [+ monarch +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
+The FLP is ruling as part of an emergency minority government, led by Prime Minister [+ prime_minister +] and Premier [+ premier +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
 
 @peoples_party_achieved
 title: The FLP is a "People's Party".
@@ -293,21 +293,21 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Urban Coup and win. ?]
 
-[? if game_achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if game_achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
-[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
+[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP(S). ?]
 
-[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
+[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP(S) demands. ?]
 
-[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP(S), form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
+[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP(S) demands. ?]
 
 [? if game_achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
-[? if game_achievement_weimar_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
+[? if game_achievement_lps_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
 
 [? if game_achievement_majority_party: **Mehrheitspartei** - form an FLP-only majority government. ?]
 
@@ -315,11 +315,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volkspartei: **Volkspartei** - the FLP is a People's Party. ?]
 
-[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or premier. ?]
+[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either prime minister or premier. ?]
 
-[? if game_achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
+[? if game_achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is prime minister. ?]
 
-[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
+[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the CP(S). ?]
 
 [? if game_achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -333,23 +333,23 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if game_achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC (SS). ?]
+[? if game_achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if game_achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
-[? if game_achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
+[? if game_achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP prime minister, and deport Needham in one playthrough on at least normal difficulty. ?]
 
-[? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
+[? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the CP(S) in their May Day march. ?]
 
 [? if game_achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
-[? if game_achievement_bauernrevolution: **Bauernrevolution** - FLP rural support is at least 50%. ?]
+[? if game_achievement_bauernrevolution: **Bauernrevolution** - FLP farmer support is at least 50%. ?]
 
 [? if game_achievement_katholischer_sozialismus: **Katholischer Sozialismus** - FLP Catholic support is at least 50%. ?]
 
 [? if game_achievement_grosse_volkspartei: **Große Volkspartei** - All classes have at least 40% FLP support. ?]
 
-[? if game_achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and rural supports are less than 20%. ?]
+[? if game_achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmer supports are less than 20%. ?]
 
 [? if game_achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -367,13 +367,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
-[? if game_achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
+[? if game_achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected prime minister. ?]
 
-[? if game_achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected monarch. ?]
+[? if game_achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macp_shail has been elected prime minister. ?]
 
-[? if game_achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected monarch, and constitutional reforms have reduced monarchial power. ?]
+[? if game_achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected prime minister, and constitutional reforms have reduced prime ministerial power. ?]
 
-[? if game_achievement_republik_der_wissenschaft : **Republik der Wissenschaft** - Albert Einstein has been elected monarch. ?]
+[? if game_achievement_republik_der_wissenschaft : **Republik der Wissenschaft** - Albert Einstein has been elected prime minister. ?]
 
 [? if game_achievement_arbeiter_von_wien : **Arbeiter von Wien** - SDAPÖ victory in Austria. ?]
 
@@ -399,21 +399,21 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Urban Coup and win. ?]
 
-[? if achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
-[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
+[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP(S). ?]
 
-[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
+[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP(S) demands. ?]
 
-[? if achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP(S), form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
+[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP(S) demands. ?]
 
 [? if achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
-[? if achievement_weimar_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
+[? if achievement_lps_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
 
 [? if achievement_majority_party: **Mehrheitspartei** - form an FLP-only majority government. ?]
 
@@ -421,11 +421,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volkspartei: **Volkspartei** - the FLP is a People's Party. ?]
 
-[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or premier. ?]
+[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either prime minister or premier. ?]
 
-[? if achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
+[? if achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is prime minister. ?]
 
-[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
+[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the CP(S). ?]
 
 [? if achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -439,23 +439,23 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC (SS). ?]
+[? if achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
-[? if achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
+[? if achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP prime minister, and deport Needham in one playthrough on at least normal difficulty. ?]
 
-[? if achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
+[? if achievement_die_rote_fahne: **Die Rote Fahne** - join the CP(S) in their May Day march. ?]
 
 [? if achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
-[? if achievement_bauernrevolution: **Bauernrevolution** - FLP rural support is at least 50%. ?]
+[? if achievement_bauernrevolution: **Bauernrevolution** - FLP farmer support is at least 50%. ?]
 
 [? if achievement_katholischer_sozialismus: **Katholischer Sozialismus** - FLP Catholic support is at least 50%. ?]
 
 [? if achievement_grosse_volkspartei: **Große Volkspartei** - All classes have at least 40% FLP support. ?]
 
-[? if achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and rural supports are less than 20%. ?]
+[? if achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmer supports are less than 20%. ?]
 
 [? if achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -473,13 +473,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
-[? if achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
+[? if achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected prime minister. ?]
 
-[? if achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected monarch. ?]
+[? if achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macp_shail has been elected prime minister. ?]
 
-[? if achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected monarch, and constitutional reforms have reduced monarchial power. ?]
+[? if achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected prime minister, and constitutional reforms have reduced prime ministerial power. ?]
 
-[? if achievement_republik_der_wissenschaft : **Republik der Wissenschaft** - Albert Einstein has been elected monarch. ?]
+[? if achievement_republik_der_wissenschaft : **Republik der Wissenschaft** - Albert Einstein has been elected prime minister. ?]
 
 [? if achievement_arbeiter_von_wien : **Arbeiter von Wien** - SDAPÖ victory in Austria. ?]
 
@@ -502,21 +502,21 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Urban Coup and win. ?]
 
-[? if not achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Monarch, Premier, and Minister-Monarch. ?]
+[? if not achievement_red_tzar_of_prussia : **Roter PPSar von Preußen** - JS_Woodsworth is Prime Minister, Premier, and Minister-Prime Minister. ?]
 
-[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP. ?]
+[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the FLP and CP(S). ?]
 
-[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP demands. ?]
+[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the CP(S) demands. ?]
 
-[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if not achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP, form a government consisting of the FLP, CP, PPS, and LPS. ?]
+[? if not achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the PPS Party and the Conciliators leading the CP(S), form a government consisting of the FLP, CP(S), PPS, and LPS. ?]
 
-[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP demands. ?]
+[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the CP(S) demands. ?]
 
 [? if not achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
-[? if not achievement_weimar_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
+[? if not achievement_lps_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
 
 [? if not achievement_majority_party: **Mehrheitspartei** - form an FLP-only majority government. ?]
 
@@ -524,11 +524,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volkspartei: **Volkspartei** - the FLP is a People's Party. ?]
 
-[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either monarch or premier. ?]
+[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Tim Buck is either prime minister or premier. ?]
 
-[? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
+[? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is prime minister. ?]
 
-[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the CP. ?]
+[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the CP(S). ?]
 
 [? if not achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -542,23 +542,23 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
 
-[? if not achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC (SS). ?]
+[? if not achievement_women_ufc: **Mädchen in Uniform** - a woman's place is in the UFC(SS). ?]
 
 [? if not achievement_anders_als_die_andern: **Anders als die Andern** - sexual minorities will defend the Republic. ?]
 
-[? if not achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP monarch, and deport Needham in one playthrough on at least normal difficulty. ?]
+[? if not achievement_bruder_ppsur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an FLP prime minister, and deport Needham in one playthrough on at least normal difficulty. ?]
 
-[? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the CP in their May Day march. ?]
+[? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the CP(S) in their May Day march. ?]
 
 [? if not achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
-[? if not achievement_bauernrevolution: **Bauernrevolution** - FLP rural support is at least 50%. ?]
+[? if not achievement_bauernrevolution: **Bauernrevolution** - FLP farmer support is at least 50%. ?]
 
 [? if not achievement_katholischer_sozialismus: **Katholischer Sozialismus** - FLP Catholic support is at least 50%. ?]
 
 [? if not achievement_grosse_volkspartei: **Große Volkspartei** - All classes have at least 40% FLP support. ?]
 
-[? if not achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and rural supports are less than 20%. ?]
+[? if not achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmer supports are less than 20%. ?]
 
 [? if not achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -576,13 +576,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
-[? if not achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected monarch. ?]
+[? if not achievement_ppseppelin_kapitan : **PPSeppelinkapitän** - Hugo Eckener has been elected prime minister. ?]
 
-[? if not achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macphail has been elected monarch. ?]
+[? if not achievement_wahlrechts : **Wahlrechts für Frauen** - Agnes Macp_shail has been elected prime minister. ?]
 
-[? if not achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected monarch, and constitutional reforms have reduced monarchial power. ?]
+[? if not achievement_bundesrepublik : **Bundesrepublik** - Konrad Adenauer or Kurt Schumacher has been elected prime minister, and constitutional reforms have reduced prime ministerial power. ?]
 
-[? if not achievement_republik_der_wissenschaft : **Republik der Wissenschaft** - Albert Einstein has been elected monarch. ?]
+[? if not achievement_republik_der_wissenschaft : **Republik der Wissenschaft** - Albert Einstein has been elected prime minister. ?]
 
 [? if not achievement_arbeiter_von_wien : **Arbeiter von Wien** - SDAPÖ victory in Austria. ?]
 

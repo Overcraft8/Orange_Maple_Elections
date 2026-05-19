@@ -18,4 +18,4 @@ A new year begins. [? if works_program = 0 : The economic depression seems to ha
 
 [? if return_to_normalcy: With the return to normalcy, the political landscape in Saskatchewan is shifting. Liberalism is making a return among the middle classes, and the radical parties of the right are declining. ?]
 
-[? if monarch = "George V" : The monarch is in poor health; he is not expected to live out the year. ?]
+[? if prime_minister = "Richard Bennett" : The prime minister is in poor health; he is not expected to live out the year. ?]

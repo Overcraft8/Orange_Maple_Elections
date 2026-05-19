@@ -11,7 +11,7 @@ Graham Spry is a cofounder of the LSR. He also owns the New Commonwealth and Sas
 
 - @media_
 - @faction_support_
-- @cp_cooperation
+- @cp_s_cooperation
 - @root: Return to main
 
 
@@ -36,28 +36,28 @@ Which faction should we support?
 - @support_left: Left
 - @support_center: Agrarian
 - @support_labour: Labour
-- @support_reform: Reformists
+- @support_reform: Moderates
 - @support_neorev: Neorevisionists
 
 @support_left
-on-arrival: left_dissent -= 8; left_strength += 8
+on-arrival: far_left_dissent -= 8; far_left_strength += 8
 
 Vorwärts prints editorials in support of Left positions.
 
 @support_center
-on-arrival: agrarian_dissent -= 8; agrarian_strength += 8
+on-arrival: agrarian_dissent -= 8; agrarian_support += 8
 
 Vorwärts prints editorials in support of agrarian positions.
 
 @support_labour
-on-arrival: labour_dissent -= 8; labour_strength += 8
+on-arrival: labour_dissent -= 8; labour_support += 8
 
 Vorwärts prints editorials in support of the policies of the trade unions.
 
 @support_reform
-on-arrival: reformist_dissent -= 8; reformist_strength += 8;
+on-arrival: moderate_dissent -= 8; moderate_strength += 8;
 
-Vorwärts prints editorials in support of the reformist policies.
+Vorwärts prints editorials in support of the moderate policies.
 
 @support_neorev
 view-if: neorevisionism
@@ -65,11 +65,11 @@ on-arrival: neorevisionist_dissent -= 8; neorevisionist_strength += 8
 
 Vorwärts prints editorials in support of neorevisionist ideas.
 
-@cp_cooperation
-title: Cooperation with the CP
-subtitle: Could we build closer ties with the CP?
+@cp_s_cooperation
+title: Cooperation with the CP(S)
+subtitle: Could we build closer ties with the CP(S)?
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 2; cp_relation += 4*(1-dissent); reformist_dissent += 2
+on-arrival: advisor_action_timer = 6; far_left_strength += 2; cp_s_relation += 4*(1-dissent); moderate_dissent += 2
 
-Spry works towards closer ties with the CP through our media.
+Spry works towards closer ties with the CP(S) through our media.

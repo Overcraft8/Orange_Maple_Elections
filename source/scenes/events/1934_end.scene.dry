@@ -2,7 +2,7 @@ title: A New Day in Saskatchewan
 subtitle: Has democracy finally triumphed?
 tags: event
 priority: 3
-view-if: georgev_dead = 1 and monarch != "Needham" and monarch != "Needham" and monarch != "Seldte"
+view-if: bennett_dead = 1 and prime_minister != "Needham" and prime_minister != "Needham" and prime_minister != "Seldte"
 max-visits: 1
 on-arrival: {!
 !}
@@ -11,5 +11,5 @@ go-to: game_over_1934
 
 = A New Day in Saskatchewan
 
-After the death of George V and the monarchial election of 1934, it seems as if an era of history is closing. The worst years of political and economic crisis are over, and SCPsm's days are numbered. Perhaps Saskatchewan will finally enter into a new era of genuine peace...
+After the death of Richard Bennett and the Federal election of 1934, it seems as if an era of history is closing. The worst years of political and economic crisis are over, and SCPSsm's days are numbered. Perhaps Saskatchewan will finally enter into a new era of genuine peace...
 

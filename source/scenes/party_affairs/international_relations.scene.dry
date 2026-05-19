@@ -10,8 +10,8 @@ max-visits: 4
 
 At the Labour and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
 
-- @usa: Build relationships with the French SFIO and British Labour Party to move their governments in Saskatchewan's favor.
-- @britain: Learn organization and street fighting from the Austrian SDAPÖ.
+- @usa: Build a relationship with the Democratic Party of the United States
+- @britain: Learn from the British Labour Party's reforms
 - @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
 - @comintern: Forget the second international - embed a spy in the Comintern's conference.
 - @return: We do not need international contacts at the moment.
@@ -20,11 +20,12 @@ At the Labour and Socialist International, we can forge contacts with our frater
 
 @usa
 subtitle: -1 resources
+view-if: year = 1933 and month = 4
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; american_relation += 1; reformist_strength += 5; moderate_plan_support += 1
+on-arrival: resources -= 1; american_relation += 1; moderate_strength += 5; moderate_plan_support += 1
 
-We can improve relations with our southern neighbour in the hopes that they will invest in our province and reducing tariffs.
+We can improve relations with the Democrats in order to 
 
 @britain
 subtitle: -1 resources
@@ -40,7 +41,7 @@ Britain is Saskatchewan's main trading partner. It would be wise to build good r
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
+on-arrival: moderate_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
 
 The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
 
@@ -48,9 +49,9 @@ The programs of the Nordic socialists involve active government intervention in 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; cp_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
+on-arrival: resources -= 1; cp_s_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
 
-The Stalinists of the CP insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the CP, enabling us to potentially improve relations, or counter the CP if it may come to that.
+The Stalinists of the CP(S) insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the CP(S), enabling us to potentially improve relations, or counter the CP(S) if it may come to that.
 
 @reduce
 

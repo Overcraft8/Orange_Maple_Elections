@@ -10,7 +10,7 @@ new-page: true
 Percy Wright is a farmer by trade and a candidate in the Melfort riding. 
 
 - @agriculture
-- @rural_campaign
+- @farmer_campaign
 - @depression
 - @root: Return to main
 
@@ -23,21 +23,21 @@ on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advis
 go-to: agricultural_policy
 
 
-@rural_campaign
-title: Rural Campaign
-subtitle: Try to campaign among the rural populace.
-choose-if: advisor_action_timer == 0 and rural_policy > 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
-on-arrival: advisor_action_timer = 6; rural_flp += 5*(1-dissent); peoples_party_support += 1
+@farmer_campaign
+title: Farmers Campaign
+subtitle: Try to campaign among the farmer populace.
+choose-if: advisor_action_timer == 0 and farmer_policy > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if farmer_policy == 0 : We have not enacted any farmer policies. ?]
+on-arrival: advisor_action_timer = 6; farmer_flp += 5*(1-dissent); peoples_party_support += 1
 
-We have increased our campaigning among farmers and the rural populace.
+We have increased our campaigning among farmers and the farmer populace.
 
 @depression
 title: Addressing the economic crisis
 subtitle: Formulate a plan to rescue us from the economic crisis.
 choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
-on-arrival: advisor_action_timer = 6; wtb_support += 2; agrarian_dissent += 10; labour_strength += 1
+on-arrival: advisor_action_timer = 6; wtb_support += 2; agrarian_dissent += 10; labour_support += 1
 
 The WTB-Plan, standing for its primary supporters Forsey, Tarnow, and Wright, has been adopted as the unions' plan for getting us out of the depression. Wright canvasses in favor of this plan throughout the party.
 

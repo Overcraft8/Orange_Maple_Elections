@@ -1,0 +1,8 @@
+title: Our own Media?
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: media_construction_timer <= 0; media_power < 3;
+on-arrival: month_actions += 1; media_timer += 6;
+card-image: img/North_Star.jpg
+#subtitle: Setting the direction for our newspapers and radio.

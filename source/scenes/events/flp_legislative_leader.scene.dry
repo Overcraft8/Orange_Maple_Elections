@@ -1,0 +1,25 @@
+title: FLP Legislative Leader
+new-page: true
+is-special: true
+tags: event
+view-if: 2 = 1
+
+= The Legislative Leader
+
+<div>
+  <img src="img/portraits/[+ flp_legislative_leader_img +]" 
+       style="width: 60%; display: block; margin: auto; margin-bottom: 5px;">
+</div>
+
+<p style="text-align: center; margin-bottom: 0;">[+ flp_legislative_leader +]</p>
+
+[? if flp_president = "George Hara Williams" : George Hara Williams is a farmer by trade and de facto leader of the Agrarian wing of the party. ?]
+
+[? if flp_president = "Major James Coldwell" : Major James Coldwell is a teacher by profession and de facto leader of the Labour wing of the party. ?]
+
+
+- @backSpecialScene: Exit informational tab.
+
+@Information
+
+Yes, he was really quite cool

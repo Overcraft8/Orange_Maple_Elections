@@ -4,9 +4,10 @@ go-to: post_event if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
+set-bg: img/Towards_The_Dawn.jpg
 go-to: start_menu_2
 
-= Social Democracy: An Alternate History
+= Social Democracy: The Orange-Red Lily
 
 @start_menu_2
 
@@ -14,6 +15,7 @@ go-to: start_menu_2
 - @election_simulation: Election simulation
 - @credits: Credits
 - @game_over.achievements
+- @intro_to_sask: Saskatchewan: Past and Present
 - @Preface: Preface
 
 
@@ -42,39 +44,64 @@ Q.resources = 2;
 // party dues
 Q.dues = 2;
 
-// the state of the party
+// the state of the party                       THE PARTY The Party The party the Party
+
+Q.party_bureaucracy = 0;
+
+Q.riding_associations = 0;
+
+Q.membership = 4000;
+
+Q.membership_change = 0;
+
+
+
+
 // overall dissent reduces every increase in party support.
 Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'agrarian', 'labour', 'reformist', 'neorevisionist'];
+Q.factions = ['far_left', 'agrarian', 'labour', 'moderate', 'neorevisionist'];
 // should this be normalized to 100%?
-Q.left_strength = 5;
-Q.left_dissent = 20;
-Q.agrarian_strength = 55;
+
+
+Q.far_left_strength = 5;
+Q.far_left_dissent = 20;
+
 Q.agrarian_dissent = 0;
-Q.labour_strength = 25;
+Q.agrarian_support = 55;
+Q.agrarian_strength = 55;
+Q.agrarian_radicalism = 21;
+
+Q.labour_support = 30;
+Q.labour_strength = 40;
 Q.labour_dissent = 5;
-Q.reformist_strength = 15;
-Q.reformist_dissent = 5;
+Q.labour_radicalism = 16;
+
+
+Q.moderate_strength = 15;
+Q.moderate_dissent = 5;
+
+
 Q.neorevisionist_strength = 0;
 Q.neorevisionist_dissent = 10;
+
 
 
 // secret events...
 Q.unions_independent = 0;
 Q.agrarians_resign = 0;
 Q.left_split = 0;
-Q.reformists_resigned = 0;
+Q.moderates_resigned = 0;
 
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
 // crisis_urgency indicates how seriously the FLP is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
-// scp_urgency indicates how seriously the FLP takes the scp - scale from 0 to 10.
-Q.scp_urgency = 0;
+// scps_urgency indicates how seriously the FLP takes the scps - scale from 0 to 10.
+Q.scps_urgency = 0;
 // radicalization indicates how radical the FLP's rhetoric is - scale from 0 to 10.
 Q.radicalization = 0;
 // Support for the WTB plan and proto-Keynesian works creation plans in general
@@ -101,22 +128,20 @@ Q.nationalization_adopted = 0;
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
 
-// organizations
 
 // inter-party relations
 Q.pps_relation = 50;
-Q.cp_relation = 25;
+Q.cp_s_relation = 25;
 Q.lps_relation = 60;
 Q.cps_relation = 35;
-// SCP are invariably hostile
-Q.SCP_relation = 10;
+// SCPS are invariably hostile
+Q.SCPS_relation = 10;
 
 
 Q.flp_legislative_leader = "None";
 Q.flp_legislative_leader_img = "Question_Mark.jpg";
 Q.flp_president = "None";
-Q.flp_president_img = "Question_Mark.jpg";
-Q.flp_secretary = "Frank Eliason";
+Q.flp_president_img = "ColdwellMajorJames.jpg";
 
 Q.flp_board_one = "Alexander Nicholson";
 Q.flp_board_one_faction = "agrarian";
@@ -128,24 +153,33 @@ Q.flp_board_four = "Clarence Fines";
 Q.flp_board_one_faction = "labour";
 
 
-Q.cp_leader = "Tim Buck";
-Q.cp_party_leader = "Tim Buck";
+Q.cp_s_leader = "None";
+Q.cp_s_party_leader = "None";
 Q.cps_leader = "James Anderson";
 Q.lps_leader = "James Gardiner";
-Q.scp_leader = "Joseph Needham"; 
-Q.pps_leader = "Henry Stevens";
-// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the FLP.
-Q.pps_party_leader = "Henry Stevens";
+Q.scps_leader = "Joseph Needham"; 
+Q.pps_leader = "None";
+Q.pps_party_leader = "None";
 
-// hmm... maybe we can play nice with George V???
-Q.georgev_relation = 25;
-// whether or not georgev can dismiss the government.
-Q.georgev_enabled = 0;
+Q.flp_legislative_ableader = "Williams";
+Q.flp_abpresident = "Williams";
+Q.cp_s_ableader = "None";
+Q.cps_ableader = "Anderson";
+Q.lps_ableader = "Gardiner";
+Q.scps_ableader = "Needham"; 
+Q.pps_ableader = "None";
+
+
+
+// hmm... maybe we can play nice with Richard Bennett???
+Q.bennett_relation = 25;
+// whether or not bennett can dismiss the government.
+Q.bennett_enabled = 0;
 
 
 // Does the FLP lead in City Police?
 Q.flp_prussia = 1;
-// Options: flp, lps, cps, scp
+// Options: flp, lps, cps, scps
 Q.city_government = "FLP";
 
 // The state of the country
@@ -167,11 +201,11 @@ Q.electoral_threshold = 0;
 Q.constitutional_reform = 0;
 // constructive vote of no confidence
 Q.constructive_vonc = 0;
-// reduction in monarchial powers
-Q.monarchial_powers = 0;
+// reduction in prime ministerial powers
+Q.prime_ministerial_powers = 0;
 // allows banning of non-constitutional parties
 Q.constitutional_protection = 0;
-Q.cp_banned = 0;
+Q.cp_s_banned = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
@@ -189,7 +223,7 @@ Q.district_name = "Name Of";
 Q.district_worker = 0;
 Q.district_old_middle = 0;
 Q.district_new_middle = 0;
-Q.district_rural = 0;
+Q.district_farmer = 0;
 Q.district_catholic = 0;
 
 
@@ -198,60 +232,64 @@ Q.district_infastructure = 0;
 Q.district_seats = 0;
 Q.district_industries = ['Major industries'];
 
-//mannar
-
-Q.mannar_d_old_middle = 20;
-Q.mannar_d_new_middle = 20;
-Q.mannar_d_worker = 20;
-Q.mannar_d_rural = 20;
-Q.mannar_d_catholic = 20;
-
-Q.mannar_d_seats = 5;
-Q.mannar_d_pop_weight = 0.72;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
-Q.workers = 17; // industry and trade
-Q.old_middle = 8; // "old mittelstand"
+Q.workers = 19; // industry and trade
+Q.old_middle = 5; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
-Q.new_middle = 14; // "new mittelstand"
-Q.rural = 61; // agriculture and forestry employment... but many of those are proletarians so...
+Q.new_middle = 13; // "new mittelstand"
+Q.farmer = 40; // agriculture and forestry employment... but many of those are proletarians so...
+Q.farmhand = 20;
+Q.res_worker = 3;
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
 Q.unemployed = 15;
-Q.catholics = 30;
+Q.catholics = 1;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
 // income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
 Q.income = 1600;
-// what about incomes for different classes? rural workers? middle-class workers?
+// what about incomes for different classes? farmer workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BFLPRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
 Q.inflation = 2.9;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
-Q.economic_growth = 4.4;
-Q.monthly_economic_growth = 1;
 
-Q.saskatchewan_debt = Number((160).toFixed(1));
-Q.saskatchewan_gdp = Number((200).toFixed(1)); // new GDP
-// Q.saskatchewan_old_gdp should already exist
-
-Q.depression = 1;
-
-// economic expansion timer
-Q.economic_expansion = 0;
 
 // quality of life (as % of 1932 - currently unused - should be welfare-adjusted.)
 Q.workers_qol = 100;
-Q.rural_qol = 100;
+Q.farmer_qol = 100;
+Q.farmhand_qol = 100;
+Q.res_worker_qol = 100;
 Q.unemployed_qol = 100;
 Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['flp', 'cp', 'pps', 'lps', 'cps', 'scp', 'other'];
+Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhand', 'res_worker', 'unemployed', 'catholics'];
+Q.parties = ['flp', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
+Q.parties_disp_names = ['FLP', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other']
 
+// Dynamic parties / existing parties
+Q.pps_exists = 1;
+
+Q.urban_seats = 24;
+Q.rural_seats = 31;
+
+//                           Party Ideologies
+Q.cp_s_ideology = "Marxism-Leninism";
+Q.cp_s_politlean = 3;
+Q.flp_ideology = "Democratic Socialism";
+Q.flp_politlean = 7;
+Q.pps_ideology = "Even they don't know...";
+Q.pps_politlean = 8;
+Q.lps_ideology = "Liberalism";
+Q.lps_politlean = 10;
+Q.cps_ideology = "Conservatism";
+Q.cps_politlean = 13;
+Q.scps_ideology = "Social Credit";
+Q.scps_politlean = 16;
 
 
 
@@ -260,52 +298,68 @@ Q.sapd_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_flp = 10;
-Q.workers_cp = 3;
+Q.workers_flp = 4;
+Q.workers_cp_s = 3;
 Q.workers_pps = 3;
-Q.workers_lps = 38;
-Q.workers_cps = 34;
-Q.workers_scp = 0;
+Q.workers_lps = 43;
+Q.workers_cps = 35;
+Q.workers_scps = 0;
 Q.workers_other = 12;
 
-Q.old_middle_flp = 2;
-Q.old_middle_cp = 0;
+Q.old_middle_flp = 0;
+Q.old_middle_cp_s = 0;
 Q.old_middle_pps = 10;
-Q.old_middle_lps= 40;
-Q.old_middle_cps = 45;
-Q.old_middle_scp = 0;
+Q.old_middle_lps= 38;
+Q.old_middle_cps = 49;
+Q.old_middle_scps = 0;
 Q.old_middle_other = 3;
 
-Q.new_middle_flp = 5;
-Q.new_middle_cp = 0;
+Q.new_middle_flp = 4;
+Q.new_middle_cp_s = 0;
 Q.new_middle_pps = 12;
-Q.new_middle_lps= 43;
+Q.new_middle_lps= 44;
 Q.new_middle_cps = 38;
-Q.new_middle_scp = 0;
+Q.new_middle_scps = 0;
 Q.new_middle_other = 2;
 
-Q.rural_flp = 13;
-Q.rural_cp = 0;
-Q.rural_pps = 6;
-Q.rural_lps= 41;
-Q.rural_cps = 37;
-Q.rural_scp = 0;
-Q.rural_other = 3;
+Q.farmer_flp = 7;
+Q.farmer_cp_s = 3;
+Q.farmer_pps = 6;
+Q.farmer_lps= 44;
+Q.farmer_cps = 37;
+Q.farmer_scps = 0;
+Q.farmer_other = 3;
 
-Q.unemployed_flp = 9;
-Q.unemployed_cp = 5;
+Q.farmhand_flp = 4;
+Q.farmhand_cp_s = 3;
+Q.farmhand_lps = 39;
+Q.farmhand_pps = 5;
+Q.farmhand_cps = 34;
+Q.farmhand_scps = 0;
+Q.farmhand_other = 5;
+
+Q.res_worker_flp = 8;
+Q.res_worker_cp_s = 10;
+Q.res_worker_lps = 42;
+Q.res_worker_pps = 7;
+Q.res_worker_cps = 28;
+Q.res_worker_scps = 0;
+Q.res_worker_other = 5;
+
+Q.unemployed_flp = 6;
+Q.unemployed_cp_s = 5;
 Q.unemployed_pps = 7;
-Q.unemployed_lps = 40;
+Q.unemployed_lps = 43;
 Q.unemployed_cps = 32;
-Q.unemployed_scp = 0;
+Q.unemployed_scps = 0;
 Q.unemployed_other = 5;
 
 Q.catholics_flp = 7;
-Q.catholics_cp = 2;
+Q.catholics_cp_s = 2;
 Q.catholics_pps = 10;
 Q.catholics_lps = 45;
 Q.catholics_cps = 30;
-Q.catholics_scp = 0;
+Q.catholics_scps = 0;
 Q.catholics_other = 6;
 
 
@@ -314,21 +368,32 @@ Q.catholics_other = 6;
 // source: wikipedia
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
+
+Q.flp_seats = 0;
+Q.cp_s_seats = 0;
+Q.pps_seats = 5;
+Q.lps_seats = 28;
+Q.cps_seats = 24;
+Q.other_seats = 6;
+Q.scps_seats = 0;
+
+
+
 Q.flp_r = 0;
-Q.cp_r = 0;
+Q.cp_s_r = 0;
 Q.pps_r =  8;
 Q.lps_r = 44;
 Q.cps_r = 38;
-Q.scp_r = 0;
+Q.scps_r = 0;
 Q.other_r = 10;
 
 // diff from prev
 Q.old_flp_r = 26;
-Q.old_cp_r = 9;
+Q.old_cp_s_r = 9;
 Q.old_pps_r = 17;
 Q.old_lps_r = 6;
 Q.old_cps_r = 10;
-Q.old_scp_r = 20;
+Q.old_scps_r = 20;
 Q.old_other_r = 9;
 
 // sapd isn't formed yet, but it may be formed
@@ -338,7 +403,7 @@ Q.old_sapd_r = 0;
 // for changing the LPS's name to the DStP
 Q.lps_name = "LPS";
 
-// array of objects of the form {date: Date(), flp: 10, cp: 12, ...} for each election
+// array of objects of the form {date: Date(), flp: 10, cp_s: 12, ...} for each election
 Q.election_records = [];
 // party support records for every month
 Q.party_support_records = [];
@@ -347,7 +412,7 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.monarch = "George V";
+Q.prime_minister = "Richard Bennett (CPC)";
 // starting premier: James Anderson
 Q.premier = "James Anderson";
 Q.premier_party = 'CPS';
@@ -355,20 +420,20 @@ Q.flp_in_government = 0;
 Q.pps_in_government = 0;
 Q.lps_in_government = 0;
 Q.cps_in_government = 1;
-Q.scp_in_government = 0;
-Q.cp_in_government = 0;
+Q.scps_in_government = 0;
+Q.cp_s_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = FLP + PPS + LPS
-Q.in_weimar_coalition = 0;
+Q.in_lps_coalition = 0;
 // Grand coalition = FLP + PPS + LPS + CPS
 // also includes the "new grand coalition" of FLP + PPS + LPS + CPS + Others
 Q.in_grand_coalition = 0;
-// Popular front = FLP + CP + PPS + LPS
-Q.in_popular_front = 0;
-// left coalition = FLP + CP + left-splinters
+// Popular front = FLP + CP(S) + PPS + LPS
+Q.in_unity_government = 0;
+// left coalition = FLP + CP(S) + left-splinters
 Q.in_left_front = 0;
-// emergency government containing the FLP: only monarch JS_Woodsworth can do this.
+// emergency government containing the FLP: only prime minister JS_Woodsworth can do this.
 Q.in_emergency_government = 0;
 Q.in_flp_majority = 0;
 Q.grand_coalition_failed = 0;
@@ -378,15 +443,15 @@ Q.in_minority_government = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
-// dissent from the CP, in a popular front or left front government
-Q.cp_coalition_dissent = 0;
+// dissent from the CP(S), in a popular front or left front government
+Q.cp_s_coalition_dissent = 0;
 
 // does the FLP tolerate the government even if it is not a participant?
 Q.flp_toleration = 0;
 
-// is the current government a monarchial minority government?
+// is the current government a minority government?
 Q.minority_government = 0;
-Q.ruling_government = "Cooperative Coalition Government";
+Q.ruling_government = "Cooperative Coalition";
 
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
@@ -413,9 +478,9 @@ Q.telephones_telegraphs_minister_party = "CPS";
 Q.foreign_minister = 'Streseman';
 Q.foreign_minister_party = 'CPS';
 Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'SCP';
+Q.interior_minister_party = 'SCPS';
 Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'SCP';
+Q.justice_minister_party = 'SCPS';
 Q.labour_minister = 'JS_Woodsworth';
 Q.labour_minister_party = 'PPS';
 Q.rcmp_minister = 'Groener';
@@ -425,7 +490,7 @@ Q.economic_minister_party = 'CPS';
 Q.finance_minister = 'Köhler';
 Q.finance_minister_party = 'PPS';
 Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'SCP';
+Q.agriculture_minister_party = 'SCPS';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
@@ -468,38 +533,77 @@ Q.eu_progress = 0;
 Q.science = 0;
 Q.education_science = 0;
 
+
 //                     Economy 
 
+
+Q.economic_growth = 4.4;
+Q.monthly_economic_growth = 1;
+
+Q.saskatchewan_debt = (100).toFixed(1);
+Q.saskatchewan_gdp = (100).toFixed(1); // new GDP
+
+Q.depression = 1;
+
+// economic expansion timer
+Q.economic_expansion = 0;
+
+
 Q.monthly_economic_growth = Q.economic_growth / 12;
-Q.saskatchewan_old_gdp = Q.saskatchewan_gdp
-Q.saskatchewan_gdp = Number(
-  (Q.saskatchewan_gdp * (Q.monthly_economic_growth / 100 + 1)).toFixed(1));
+Q.saskatchewan_old_gdp = Q.saskatchewan_gdp;
+Q.saskatchewan_gdp = Number((Q.saskatchewan_gdp * (Q.monthly_economic_growth / 100 + 1)).toFixed(1));
+Q.agri_production = (100).toFixed(1);
+Q.indu_production = (100).toFixed(1);
 
-var gdp_sign_img =
-    Q.saskatchewan_gdp > Q.saskatchewan_old_gdp
-        ? '<img src="img/GreenPlus.png"> '
-        : Q.saskatchewan_gdp < Q.saskatchewan_old_gdp
-            ? '<img src="img/RedNegative.png"> '
-            : '<img src="img/BlueStatic.png"> ';
 
-Q.str_saskatchewan_gdp = gdp_sign_img + Q.saskatchewan_gdp;
+//                         Nationalization and Intervention
+
+Q.state_capacity = 2;
+Q.state_intervention = 5;    
+
+
+Q.potash_nationalized = -6;
+Q.potash_development = 0;
+Q.housing_intervention = -6; 
+Q.oil_nationalized = -6;
+Q.oil_development = 0;
+Q.agri_marketing_nationalized = 0;
+Q.agri_development = 8;
+Q.power_nationalized = -6;
+Q.auto_insurance_nationalized = -6;
+
+Q.industry_development = 0;
+
+Q.agri_coops = 4;
+Q.retail_coops = 3;
+Q.credit_unions = 3;
+Q.housing_coops = 1;
+Q.factory_coops = 0;
+
+
+
+
+
+
+
+
+
 
 
 //                   Living Standards
 // level of welfare relative to 1932 (can go negative)
 Q.welfare = 0;
 Q.educationquality = "Basic";
-Q.highereducationquality = "Basic";
 Q.Curriculum = "Traditional";
 Q.healthcarequality = "Basic";
-Q.poverty = 10;
+Q.rural_poverty = (10).toFixed(1);
 //  
-//                   Rural living standards
-// Rural Access to electricity
-Q.rural_electrification = 0;
-// Rural Access to sanitation
-Q.rural_sanitation = 0;
-Q.rural_telephone = 0;
+//                   Farmers living standards
+// Farmers Access to electricity
+Q.farmer_electrification = 5;
+// Farmers Access to sanitation
+Q.farmer_sanitation = 3;
+Q.farmer_telephone = 20;
 
 //                 Foreign Relations
 // Relations with the UFUL
@@ -515,11 +619,12 @@ Q.public_transit = 0;
 // Have we nationalized the provinces' resources?
 Q.resource_nationalization = 0;
 // Railway Length
-Q.railway_length = 6500; // in km
-Q.road_length = 20000; // in km
+Q.railway_length = 6551; // in km
+Q.road_length = 20127; // in km
 
 // Tax rates relative to 1928 baseline
 Q.lower_tax_rates = 0;
+Q.middle_tax_rates = 0;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 
@@ -539,34 +644,54 @@ Q.George_Williams_Dead = 0;
 
 // Saskatchewan Organizations
 
+Q.ufc_aff_prog = 5;
+Q.tlc_aff_prog = 0;
+Q.ccl_aff_prog = 0; 
+Q.sta_aff_prog = 0;
+
+
+
+
 
 Q.ccym_influence = 25;
-Q.ccym_strength = 0;
+Q.ccym_strength = 3.00;
 Q.ccym_relations = 60;
-Q.ufcss_influence = 60;
-Q.ufcss_strength = 0;
-Q.ufcss_relations = 70;
+Q.ccym_militancy = 0.15;
+
+Q.ufc_influence = 60;
+Q.ufc_relations = 70;
+Q.ufc_affiliated = 1;
+Q.ufc_strength = 35.00;
+Q.ufc_militancy = 0.30;
+
 Q.sta_affiliated = 0;
-Q.sta_strength = 5;
+Q.sta_strength = 5.00;
 Q.sta_relations = 50;
 Q.sta_militancy = 0.30;
-Q.tlc_relations = 40;
-Q.tlc_militancy = 20;
 
-Q.ufc_strength = 20.00;
-Q.ufc_militancy = 0.30;
+Q.tlc_relations = 40;
+Q.tlc_militancy = 0.20;
+Q.tlc_strength = 30.00;
+
+Q.ccl_relations = 0;
+Q.ccl_militancy = 0.20;
+Q.ccl_strength = 20.00;
+
+
 Q.women_in_rb = 0;
 Q.ufc_banned = 0;
-Q.ccym_militancy = 0.15;
-Q.scful_militancy = 0.03;
+
+
 Q.kkk_strength = 15.00;
 Q.kkk_militancy = 0.5;
 Q.kkk_banned = 0;
 Q.kkk_banned_prussia = 0;
+
 Q.ful_strength = 8.00;
 Q.ful_militancy = 0.5;
 Q.ful_banned = 0;
 Q.ful_banned_prussia = 0;
+
 Q.wul_strength = 13.00;
 Q.wul_militancy = 0.5;
 Q.wul_banned = 0;
@@ -580,7 +705,7 @@ Q.interior_police_loyalty = 0.45;
 
 Q.city_police_strength = 20;
 Q.city_police_militancy = 1;
-Q.city_police_loyalty = 0.5;
+Q.city_police_loyalty = 0.25;
 
 // strength includes actual military and de facto reserves?
 Q.rcmp_strength = 100;
@@ -589,7 +714,86 @@ Q.rcmp_loyalty = 0.2;
 Q.rcmp_suspicion = 50;
 
 
+//                               FLP / CCF Programme
+Q.use_lease_plat = 0;
+Q.wheat_pool_plat = 0;
+Q.grain_elevator_plat = 0;
+Q.price_guarantee_plat = 0;
 
+Q.rural_elec_plat = 0;
+Q.rural_sanit_plat = 0;
+
+Q.coll_bargain_plat = 0;
+Q.safety_standard_plat = 0;
+Q.min_wage_plat = 0;
+
+
+
+
+
+//                             Electoral district information
+
+Q.district_names = [
+    'regina_d', 'saskatoon_d', 'moosejaw_d', 'princealbert_d',
+    'quappelle_d', 'southwest_d', 'southeast_d', 'north_d', 'central_d'
+];
+
+
+Q.regina_d_seats = 2;
+Q.regina_d_worker = 30;
+Q.regina_d_old_middle = 30; 
+Q.regina_d_new_middle = 30;
+Q.regina_d_unemployed = 10;
+
+Q.saskatoon_d_seats = 2;
+Q.saskatoon_d_worker = 20;
+Q.saskatoon_d_old_middle = 30; 
+Q.saskatoon_d_new_middle = 40;
+Q.saskatoon_d_unemployed = 10;
+
+Q.moosejaw_d_seats = 2;
+Q.moosejaw_d_worker = 60;
+Q.moosejaw_d_old_middle = 20; 
+Q.moosejaw_d_new_middle = 10;
+Q.moosejaw_d_unemployed = 10;
+
+Q.princealbert_d_seats = 2;
+Q.princealbert_d_worker = 30;
+Q.princealbert_d_old_middle = 30; 
+Q.princealbert_d_new_middle = 30;
+Q.princealbert_d_unemployed = 10;
+
+Q.quappelle_d_seats = 7;
+Q.quappelle_d_worker = 30;
+Q.quappelle_d_farmer = 30; 
+Q.quappelle_d_farmhand = 30;
+Q.quappelle_d_res_worker = 10;
+
+Q.southwest_d_seats = 7;
+Q.southwest_d_worker = 20;
+Q.southwest_d_farmer = 30; 
+Q.southwest_d_farmhand = 30;
+Q.southwest_d_res_worker = 20;
+
+Q.southeast_d_seats = 13;
+Q.southeast_d_worker = 10;
+Q.southeast_d_farmer = 50; 
+Q.southeast_d_farmhand = 30;
+Q.southeast_d_res_worker = 10;
+
+Q.north_d_seats = 12;
+Q.north_d_worker = 20;
+Q.north_d_farmer = 20; 
+Q.north_d_farmhand = 20;
+Q.north_d_res_worker = 40;
+
+Q.central_d_seats = 14;
+Q.central_d_worker = 30;
+Q.central_d_farmer = 10; 
+Q.central_d_farmhand = 10;
+Q.central_d_res_worker = 30;
+
+Q.selected_button = "";
 
 
 // Advisors/Leaders
@@ -597,13 +801,14 @@ Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
+Q.timers = ['advisor_action', 'confronting_scps', 'crisis_program',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
             'party_organizations', 'rally', 'ufc',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
-            'party_disunity',
+            'party_disunity', 'organizations_relations', 
+            'labour_prog', 'infra_prog', 'agri_prog',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labour_affairs', 'military_policy',
@@ -616,12 +821,12 @@ Q.timers = ['advisor_action', 'confronting_scp', 'crisis_program',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'ful_ban', 'kkk_ban', 'papen_premier',
-            'cp_policy', 'cp_ultimatum', 'popular_front_dispute',
+            'cp_s_policy', 'cp_s_ultimatum', 'unity_government_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'schleichers_schemes'];
 Q.advisor_action_timer = 0;
 // party affairs timers
-Q.confronting_scp_timer = 0;
+Q.confronting_scps_timer = 0;
 Q.crisis_program_timer = 0;
 Q.fundraising_timer = 0;
 Q.ideology_timer = 0;
@@ -629,8 +834,15 @@ Q.inter_party_relationships_timer = 0;
 Q.international_relations_timer = 0;
 Q.iron_front_timer = 0;
 Q.media_timer = 0;
+Q.media_established = 0;
+Q.media_construction_timer = 0;
+Q.media_power = 0;
+Q.agri_prog_timer = 0;
+Q.infra_prog_timer = 0;
+Q.labour_prog_timer = 0;
 Q.enemies_timer = 0;
 Q.party_organizations_timer =  0;
+Q.organizations_relations_timer = 0;
 Q.rally_timer = 0;
 Q.ufc_timer = 0;
 Q.shuffle_leadership_timer = 0;
@@ -676,7 +888,7 @@ Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
 Q.ful_ban_timer = 0;
 Q.kkk_ban_timer = 0;
-Q.cp_ultimatum_timer = 0;
+Q.cp_s_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 
@@ -697,7 +909,7 @@ Q.irvine_advisor = 0; // William Irvine
 Q.eliason_advisor = 1; // Frank Eliason
 Q.williams_advisor = 1; // George Hara Williams
 
-// Reformist advisors
+// Moderate advisors
 Q.brockelbank_advisor = 0; // John Brockelbank
 Q.woodsworth_advisor = 0; // JS_Woodsworth
 Q.lucas_advisor = 0; // Louise Lucas
@@ -719,7 +931,7 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 Q.underhill_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
 !}
-set-bg: img/Weyburn_Overhead.jpg
+set-bg: img/weyburn_street.jpg
 new-page: true
 
 > *"Emergency measures, however, are of only temporary value, for the present depression is a sign of the mortal sickness of the whole capitalist system, and this sickness cannot be cured by the application of salves. These leave untouched the cancer which is eating at the heart of our society, namely, the economic system in which our natural resources and our principal means of production and distribution are owned, controlled and operated for the private profit of a small proportion of our population.
@@ -730,6 +942,8 @@ new-page: true
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
+This game is a total conversion mod of Autumn Chen's great game - Social Democracy: An Alternate History. It is based on the Saskatchewan CCF/NDP, a social democratic party that governed the Canadian province of Saskatchewan for much of the 20th century.
+
 For more information on the politics and government of Saskatchewan, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
 - @1932_easy: Begin (easy difficulty)
@@ -738,11 +952,33 @@ For more information on the politics and government of Saskatchewan, see the "Li
 - @1932_historical: Begin (historical mode)
 
 @1932_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; ufc_strength = 2500; cp_relation = 29; pps_relation = 54; cps_relation = 49; treasury = 15;
+on-arrival: {!
+  Q.difficulty = -1;
+  Q.resources = 4;
+  Q.dues = 3;
+  Q.ufc_strength = 35.00;
+  Q.cp_s_relation = 29;
+  Q.pps_relation = 54;
+  Q.cps_relation = 49;
+  Q.treasury = 15;
+!}
 go-to: 1932_main
 
 @1932_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; ufc_strength = 1000; reformist_dissent = 25; left_dissent = 30; labour_dissent = 25; agrarian_dissent = 25; pps_relation = 41; cp_relation = 16; cps_relation = 31; treasury = 5;
+on-arrival: {!
+  Q.difficulty = 1;
+  Q.resources = 0;
+  Q.dues = 1;
+  Q.ufc_strength = 25.00;
+  Q.moderate_dissent = 25;
+  Q.far_left_dissent = 30;
+  Q.labour_dissent = 25;
+  Q.agrarian_dissent = 25;
+  Q.pps_relation = 41;
+  Q.cp_s_relation = 16;
+  Q.cps_relation = 31;
+  Q.treasury = 5;
+!}
 go-to: 1932_main
 
 @1932_historical
@@ -752,21 +988,22 @@ Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
-Q.ufc_strength = 2000;
-Q.reformist_dissent = 25;
-Q.left_dissent = 30;
+Q.ufc_strength = 15.00;
+Q.moderate_dissent = 25;
+Q.far_left_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;
 Q.pps_relation = 41;
-Q.cp_relation = 16;
+Q.cp_s_relation = 16;
 Q.cps_relation = 31;
 Q.treasury = 12;
 this.state.disableSaves = true;
 !}
+
 go-to: 1932_main
 
 @1932_main
-audio: shuffle music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3 music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 
+audio: shuffle music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 music/OCanadaColdstreamGuards.mp3 music/courage.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
@@ -776,18 +1013,38 @@ It is a dire time for Saskatchewan. The Great Depression has begun, and the gove
 
 The Farmer-Labour Group (FLP) is the only party offering a real alternative to the old capitalist order. However, we are a young and inexperienced party, and we face opposition not only from opposing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLP's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
 
+@intro_to_sask
+
+Saskatchewan seems to be one of the most schizophrenic provinces in Canada. In the last one hundred years, it has alternated between the staunchly conservative right-wing economics of the Conservative, Liberal, and Saskatchewan Party. Most dominant however, was the CCF/NDP, a Social Democratic Party in a sea of rural voters. It elected the government of Tommy Douglas who Canadians know is famous for introducing Universal Healthcare. It elected Allan Blakeney who sought direct government participation in the province's prestigious potash reserves. Yet it also elected the government of Grant Devine, a follower of Reaganomics who sent much of the provincial welfare state and crown corporations into deep depths underground. 
+
+This picture becomes clearer when we paint the windows perse. 
+
+At it's inauguration as a province, Saskatchewan was dominated by the agricultural sector. Everything revovled around wheat, from the land, the people, and what little industry made home in the province. Farmer's organizations such as the SGGA, the FUC, and later the UFC(SS) becmae important lobbying groups. Accordingly, the provincial Liberals, who were proponents of Free Trade and popular among the immigrant farmers, were the dominant political force up until the Great Depression. The Great Depression hit Saskatchewan the hardest of all the provinces, especially the farmers who saw a 90% decrease in income per capita. Thousands filed into the cities looking for work only to be turned away by what little non-agricultural industry and retail existed. 
+
+All of this struggle brewed a more immediately-focused socialism than in other provinces. This coalesced with the formation of the FLP in 1932, a merger of the UFPA, the UFC(SS)'s political arm, and the ILP, a small urban labour party. The party would soon affiliate itself with the national CCF, a democratic socialist party and rebrand into the Saskatchewan CCF. Over the next decade, the party would grow it's voteshare until Tommy Douglas won a majority in 1944. Over the years, the party had watered down it's programme yet it remained staunchly social democratic and even democratic socialist. Under Tommy, the provincial government established a strong welfare state and empowered Crown Corporations such as SaskPower and SGI, providing direct government intervention in the economy. Their most notable achievement was the implementation of a universal healthcare plan, although not without a troubling confrontation with Saskatchewan doctors. 
+
+Through the 1940s up until today, agriculture in Saskatchewan became increasingly centralized under large corporations and large family farms. Throughout these decades, rural support for the CCF/NDP gradually waned as it's base of small family compacts were driven out of business until rural Saskatchewan became a foundational stone upon which the right-wing Saskatchewan Party stands. 
+
+Tommy left to head the National CCF in 1961. His successor, Woodrow Lloyd, was defeated by the Liberals under Ross Thatcher. Thatcher, despite the fears of the CCF, did not dismantle the welfare state. In 1971, the newly branded NDP, the CCF's successor, was reelected under Allan Blakeney. Blakeney continued Tommy's policy of state integration into the economy with the state-run Potash Corporation, among others. Yet these summer years would not last. A recession in the early 80s paved the way for Grant Devine's Conservatives to retake control after nearly 50 years locked out of power. Devine immediately began privatizing much of the NDP's work and wracked up a huge debt while doing so. Devine's government was eventually defeated in 1993 after several corruption scandals and arrests. 
+
+The newly reelected NDP government of Roy Romanow however, had a conflicting situation. Devine had left the province so debt-ridden that the NDP government pursued a policy of low expenditures and did not ever reclaim it's role in the economy as it had in the preceding decades. Yet the NDP remained in power until 2007 when a newly established Saskatchewan Party, a union of Liberal and Conservative officials, won a landslide victory under Brad Wall. From then on, the Saskatchewan Party has dominated provincial politics and the floundering NDP has seen it's traditional base in rural Saskatchewan withered away. 
+
+
+
+
+
 @Preface 
 
 = Background to the Mod
 
-This mod was given birth to in December of 2025. I was visiting some relatives in Regina and after having lunch, we headed off to Indigo to make use of a giftcard. While browsing, I came upon this intriguing book called "The Prairie Populist" by J. F. Conway. 
+# This mod was given birth to in December of 2025. I was visiting some relatives in Regina and after having lunch, we headed off to Indigo to make use of a giftcard. While browsing, I came upon this intriguing book called "The Prairie Populist" by J. F. Conway. 
 
-This book was interesting. The back cover said, quote, "George Hara Williams was undermined by Tommy Douglas and M.J. Coldwell just as Saskatchewan's CCF was on the threshold of power." As a Saskatchewanian (lol), I had grown up hearing stories about Tommy Douglas, the so called "Greatest Canadian" who had introduced universal healthcare and won five consecutive elections on a Social Democratic platform in backwater, rural, conservative Saskatchewan. 
+# This book was interesting. The back cover said, quote, "George Hara Williams was undermined by Tommy Douglas and M.J. Coldwell just as Saskatchewan's CCF was on the threshold of power." As a Saskatchewanian (lol), I had grown up hearing stories about Tommy Douglas, the so called "Greatest Canadian" who had introduced universal healthcare and won five consecutive elections on a Social Democratic platform in backwater, farmer, conservative Saskatchewan. 
 
-So who was this "George Hara Williams" and what did good old Tommy do to him? I bought the book and devoured it for the next week or so. Turns out, George Williams had been the decisive role in rallying Saskatchewan farmers to the FLP and later, the CCF/NDP. This was quite shocking considering how forgotten Williams is nowadays. 
+# So who was this "George Hara Williams" and what did good old Tommy do to him? I bought the book and devoured it for the next week or so. Turns out, George Williams had been the decisive role in rallying Saskatchewan farmers to the FLP and later, the CCF/NDP. This was quite shocking considering how forgotten Williams is nowadays. 
 
-And that made me think about all the other stories that have been lost to time. How much of my province's history has been wiped clean off the slate in popular consciousness, only remaining alive in tedious though thorough academic papers and old books? That thought stayed with me for quite a while. 
+# And that made me think about all the other stories that have been lost to time. How much of my province's history has been wiped clean off the slate in popular consciousness, only remaining alive in tedious through thorough academic papers and old books? That thought stayed with me for quite a while. 
 
-In the end, I decided that I might make my own dedication to my province in the form of a mod for Autumn's SDAAH. Though I did try my best, much of the mod is rather shoddily built, both functionality-wise and software-wise. My only experience with coding prior was with simple C++ Arduinos and rudimentary Python from a 10-level Computer Science Course way back when. In spite of this, this mod makes me quite proud. Really, this is a loveletter to my home province and I hope that this mod helps keep Saskatchewan's rich political history alive and accessible. 
+# In the end, I decided that I might make my own dedication to my province in the form of a mod for Autumn's SDAAH. Though I did try my best, much of the mod is rather shoddily built, both functionality-wise and software-wise. My only experience with coding prior was with simple C++ Arduinos and rudimentary Python from a 10-level Computer Science Course way back when. In spite of this, this mod makes me quite proud. Really, this is a loveletter to my home province and I hope that this mod helps keep Saskatchewan's rich political history alive and accessible. 
 
-I hope you will enjoy Orange Maple as much as I have. 
+# I hope you will enjoy In the Prairie Sun as much as I have. 

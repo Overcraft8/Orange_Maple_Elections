@@ -10,7 +10,7 @@ max-visits: 6
 
 = UFC (SS)
 
-The *UFC (SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLP, PPS, and [+ lps_name +], but by far the largest component is with the FLP.
+The *UFC (SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the FLP and LPS, and [+ lps_name +], but by far the largest component is with the FLP.
 
 [? if workers_flp < 46 or workers_flp < workers_scp or workers_flp < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the FLP is no longer the dominant party among the workers. Many of its members have left. ?]
 

@@ -4,45 +4,47 @@ set-jump: post_election
 Don't looky here
 
 go-to: election_algorithm
-set-jump: post_election
 
 @post_election
 on-arrival: {!
 // set congress proportion to votes
 Q.flp_r = Q.flp_votes;
 Q.pps_r = Q.pps_votes;
-Q.cp_r = Q.cp_votes;
+Q.cp_s_r = Q.cp_s_votes;
 Q.lps_r = Q.lps_votes;
 Q.cps_r = Q.cps_votes;
-Q.scp_r = Q.scp_votes;
+Q.scps_r = Q.scps_votes;
 Q.other_r = Q.other_votes;
 
-// The largest party can only be the FLP, LPS, CPS, or SCP.
+// The largest party can only be the FLP, LPS, CPS, or SCPS.
 Q.largest_party = 'FLP';
 
-if (Q.lps_r >= Q.flp_r && Q.lps_r >= Q.cps_r && Q.lps_r >= Q.scp_r) {
+if (Q.lps_r >= Q.flp_r && Q.lps_r >= Q.cps_r && Q.lps_r >= Q.scps_r) {
     Q.largest_party = 'LPS';
 }
-if (Q.cps_r >= Q.flp_r && Q.cps_r >= Q.lps_r && Q.cps_r >= Q.scp_r) {
-    Q.largest_party = 'CP';
+if (Q.cps_r >= Q.flp_r && Q.cps_r >= Q.lps_r && Q.cps_r >= Q.scps_r) {
+    Q.largest_party = 'CPS';
 }
-if (Q.scp_r >= Q.flp_r && Q.scp_r >= Q.lps_r && Q.scp_r >= Q.cps_r) {
-    Q.largest_party = 'CP';
+if (Q.scps_r >= Q.flp_r && Q.scps_r >= Q.lps_r && Q.scps_r >= Q.cps_r) {
+    Q.largest_party = 'SCPS';
 }
 
 // coalitions
-Q.weimar_coalition = Q.flp_r + Q.lps_r + Q.pps_r;
+Q.lps_coalition = Q.flp_r + Q.lps_r;
+Q.pps_coalition = Q.flp_r + Q.pps_r;
+Q.scps_coalition = Q.flp_r + Q.scps_r;
+Q.left_coalition = Q.flp_r + Q.cp_s_r;
 Q.grand_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r;
-Q.bourgeois_coalition = Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
-Q.center_right_coalition = Q.pps_r + Q.lps_r + Q.cps_r + Q.other_r + Q.scp_r;
-Q.right_coalition = Q.pps_r + Q.cps_r + Q.other_r + Q.scp_r;
-Q.scp_majority = Q.scp_r 
-Q.left_coalition = Q.flp_r + Q.cp_r;
+Q.bourgeois_coalition = Q.lps_r + Q.cps_r + Q.other_r;
+Q.conservative_coalition = Q.cps_r + Q.scps_r;
+Q.right_coalition = Q.cps_r + Q.other_r + Q.scps_r;
+Q.cooperative_coalition = Q.cps_r + Q.pps_r + Q.other_r;
+Q.scps_majority = Q.scps_r;
 // this is an absurd concept lol
-Q.united_front_coalition = Q.flp_r + Q.cp_r + Q.pps_r + Q.lps_r - 3;
-Q.anti_democratic_coalition = Q.cp_r
-// aka everyone except scp, cp, scp
-Q.neo_weimar_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
+Q.united_front_coalition = Q.flp_r + Q.cp_s_r + Q.pps_r + Q.lps_r;
+Q.anti_democratic_coalition = Q.cp_s_r;
+// aka everyone except scps, cp_s, scps
+Q.neo_lps_coalition = Q.flp_r + Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
 !}
 
 The electoral system is essentially proportional, with the proportion of Assembly seats roughly equal to the proportion of votes.
@@ -56,7 +58,7 @@ FLP: [+ flp_r +]
 PPS: [+ pps_r +]
 
 # 1928: 10, 1930: 13
-CP: [+ cp_r +]
+CP(S): [+ cp_s_r +]
 
 # 1928: 5, 1930: 4 
 LPS: [+ lps_r +]
@@ -65,7 +67,7 @@ LPS: [+ lps_r +]
 CPS: [+ cps_r +]
 
 # 1928: 14, 1930: 7
-SCP: [+ scp_r +]
+SCPS: [+ scps_r +]
 
 
 # 1928: 9, 1930: 10
@@ -73,11 +75,16 @@ Other: [+ other_r +]
 
 **Potential coalitions:**
 
-Weimar Coalition (FLP + PPS + LPS): [+ weimar_coalition +]
+Liberal-CCF Coalition (FLP + LPS): [+ lps_coalition +]
+
+Progressive-CCF Coalition (FLP + PPS): [+ pps_coalition +]
+
+[? if scps_exists = 1 : SCPS-CCF Coalition (FLP + SCPS): [+ scps_coalition +] ?]
 
 Grand Coalition (FLP + PPS + LPS + CPS): [+ grand_coalition +]
 
 Bourgeois Coalition (PPS + LPS + CPS + Others): [+ bourgeois_coalition +]
 
-Right-wing Coalition (PPS + CPS + Others + SCP): [+ right_coalition +]
+Right-wing Coalition (CPS + Others + SCPS): [+ right_coalition +]
 
+Cooperative Coalition (PPS + CPS + Others): [+ cooperative_coalition +]

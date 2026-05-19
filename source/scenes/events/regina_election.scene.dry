@@ -1,0 +1,15 @@
+title: Regina Election
+new-page: true
+subtitle: For the better!
+tags: event
+view-if: year = 1942 and month = 4
+max-visits: 1
+face-image: img/regina_cityhall.jpg
+
+= Regina Municipal Election
+
+Elections for the city of Regina are now underway. 
+
+- @continue: This is great news!
+
+@continue

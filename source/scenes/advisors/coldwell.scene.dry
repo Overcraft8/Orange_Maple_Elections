@@ -36,7 +36,7 @@ title: Party Discipline
 subtitle: Reduce dissent across the party.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; left_dissent -= 5; labour_dissent -= 10; agrarian_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
+on-arrival: advisor_action_timer = 6; far_left_dissent -= 5; labour_dissent -= 10; agrarian_dissent -= 10; moderate_dissent -= 10; neorevisionist_dissent -= 5
 
 We have enforced party discipline to reduce dissent across all factions.
 
@@ -53,7 +53,7 @@ We have gained +[+ dues +] resources.
 @snap_election
 title: Snap Election
 subtitle: Call a snap election.
-unavailable-subtitle: [? if premier != "Coldwell" : Coldwell must be Premier or Monarch. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if premier != "Coldwell" : Coldwell must be Premier or Prime Minister. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0 and (premier == "Coldwell")
 on-arrival: advisor_action_timer = 6; time_to_election = 3
 call: set_next_election_time

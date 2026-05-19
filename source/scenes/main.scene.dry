@@ -1,5 +1,5 @@
 title: Next month
-set-bg: img/Weyburn_Overhead.jpg
+set-bg: img/weyburn_street.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
@@ -10,19 +10,22 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-max-cards: 3
+max-cards: 6
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1932 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1932 and month = 2 : The Anderson government buckles down on it's policy of retrenchment.?]
+
+[? if year = 1932 and month = 4 : The Alberta Social Credit Party wins a majority in the provincial legislature. Our family in the Alberta CCF are deeply disturbed by the usurpation of what could've been a CCF stronghold. Aberhart's SCPS has already won over the the farmers of Albert. Is it possible the party could become just as infectious in Saskatchewan? ?]
 
 - @party
 - @govt
+- @programme
 - #advisor
 - @shuffle_leadership_pinned
 
 @main_easy
-set-bg: img/Weyburn_Overhead.jpg
+set-bg: img/weyburn_street.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
@@ -33,21 +36,23 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-max-cards: 4
+max-cards: 6
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1932 and month = 2 : The Anderson government continues to mismanage the crisis ?]
+[? if year = 1932 and month = 2 : The Anderson government buckles down on it's policy of retrenchment.?]
+
+[? if year = 1932 and month = 4 : The Alberta Social Credit Party wins a majority in the provincial legislature. Our family in the Alberta CCF are deeply disturbed by the usurpation of what could've been a CCF stronghold. Aberhart's SCPS has already won over the the farmers of Albert. Is it possible the party could become just as infectious in Saskatchewan? ?]
 
 - @party
 - @govt
+- @programme
 - #advisor
 - @shuffle_leadership_pinned
 
-
 @party
 title: Party Affairs
-card-image: img/CCF_logo.jpg
+card-image: img/all_join_ccf.jpg
 is-deck: true
 
 - #party_affairs
@@ -59,3 +64,10 @@ card-image: img/Saskatchewan_Legislature.jpg
 is-deck: true
 
 - #govt_affairs
+
+@programme 
+title: Party Programme
+card-image: img/Sask_CCF_Programme.jpg
+is-deck: true
+
+- #programme

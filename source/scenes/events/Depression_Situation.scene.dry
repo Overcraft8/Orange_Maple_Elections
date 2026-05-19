@@ -1,0 +1,15 @@
+title: Depression
+new-page: true
+tags: event
+max-visits: 1
+view-if: year = 1932 and month = 7
+
+
+
+= Cool
+
+9wda h
+
+- @continue: This is great news!
+
+@continue

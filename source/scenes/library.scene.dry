@@ -204,18 +204,18 @@ Catholics: FLP: [+ catholics_flp_display +]%, PPS: [+ catholics_pps_display +]%,
 @parties
 go-to: menu
 
-**FLP** - *Farmer-Labour Group* - this is us. We are a multi-faceted socialist party, home to agrarian socialists, radical labour members, and social gospelers. We are the foremost representative of those struck down by the capitalist system. 
+**FLP** - *Farmer-Labour Group* - This is us. We are a multi-faceted socialist party with a primarily agrarian and new middle class base. 
 
-**PPS** - *Progressive Party*  - One of the original arbiters of the Farmers' entrance into politics, they are primarily an agrarian party though they remain deeply divided ideologically. They have recently entered power on a coalition government with the Tories. 
+**PPS** - *Progressive Party*  - One of the original arbiters of the organized farmers' entrance into politics, they are ultimately an agrarian protest movement. They have shifted rightwards recently after forming a coalition with Anderson's Conservatives. 
 
 Current relations: [+ pps_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**LPS** - *Liberal Party* (The Grits) - a center-left big tent liberal party, popular among the intelligensia and educated middle class. They are proponents of free trade and generally supportive of American investment. They are one of the 2 dominant parties of the Saskatchewan Legislative Assembly. 
+**LPS** - *Liberal Party* (The Grits) - a center-left big tent liberal party. They have historically maintained close ties with organized farmers, Catholics, and Francophones, a coalition that has kept them in power for all but the preceding three years. 
 
 Current relations: [+ lps_relation : relationships +]
 
-**CPS** - *Conservative Party* (The Tories) - a centre-right big tent conservative party, supported by the middle classes and bourgeoisie. They are more isolationist and prefer to keep close economic ties with Britain. . They are the other dominant party of the Saskatchewan Legistlative Assembly. 
+**CPS** - *Conservative Party* (The Tories) - a centre-right big tent conservative party, mainly supported by the more affluent farmers and the old middle class. Under Anderson's leadership, they have adopted a strong nativist stance but also a more interventionist economic policy. 
 
 Current relations: [+ cps_relation : relationships +]
 
@@ -223,13 +223,13 @@ Current relations: [+ cps_relation : relationships +]
 
 Current relations: [+ scps_relation : relationships +]
 
-**CP(S)** - *Communist Party* - A far-Left revolutionary party aiming to overthrow capitalism and establish a dictatorship of the proletariat. They are supported by a minority of the working class, and are heavily repressed by the government. They have alleged links to Moscow
+**CP(S)** - *Communist Party* - A far-Left party aiming to overthrow capitalism. 
 
 Current relations: [+ cp_s_relation : relationships +]
 
 [? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Saskatchewan) - a party recently formed in a split from the FLP, the SAPD is essentially an agglomeration of various left-wing splinter groups between the FLP and CP(S). ?]
 
-**Other parties** - there is a multitude of small parties, including the miniscule Labour party and Economic Group. There are many candidates nominated by the LPS, CPS, or PPS that run as independents and also fusion candidates such as Liberal-Labour candidates. 
+**Other parties** - There is a multitude of small parties, including the miniscule Labour party and Economic Group. There are many candidates nominated by the LPS, CPS, or PPS that run as independents and also fusion candidates such as Liberal-Labour candidates. 
 
 @organizations
 on-arrival: {!

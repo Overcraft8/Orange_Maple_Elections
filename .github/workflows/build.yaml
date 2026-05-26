@@ -41,9 +41,11 @@ jobs:
       - name: Copy game.json to output
         run: cp out/game.json out/html/
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: 'out/html'
+          retention-days: 1
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

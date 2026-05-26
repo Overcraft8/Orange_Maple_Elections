@@ -3,7 +3,7 @@ new-page: true
 subtitle: Who will lead our party's representatives?
 tags: event
 view-if: year = 1942 and month = 3
-max-visits: 1
+max-visits: 10
 
 <div><img src="img/CCF_Convention.jpg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
 

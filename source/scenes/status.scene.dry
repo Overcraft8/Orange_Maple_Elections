@@ -379,84 +379,91 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 {!<script>
 (function() {
-    const data = [
-        { party: "CP(S)", votes: parseInt([+ cp_s_votes +]), color: "#8a4545" },
-        { party: "FLP", votes: parseInt([+ flp_votes +]), color: "#b7a395fe" },
-        { party: "PPS", votes: parseInt([+ pps_votes +]), color: "#c8c288" },
-        { party: "LPS", votes: parseInt([+ lps_votes +]), color: "#a86a77" },
-        { party: "CPS", votes: parseInt([+ cps_votes +]), color: "#758391" },
-        { party: "Other", votes: parseInt([+ other_votes +]), color: "#e7e7e7" },
-        { party: "SCPS", votes: parseInt([+ scps_votes +]), color: "#bcdeb8" }
-    ];
+    try {
+        if (typeof d3 === 'undefined') {
+            console.warn('D3 library not yet available');
+            setTimeout(arguments.callee, 100);
+            return;
+        }
 
-    const container = document.getElementById("overall-polls-chart");
-    const width = container.offsetWidth || 500;
-    const height = 350;
-    const margin = { top: 20, right: 20, bottom: 40, left: 50 };
-    const chartWidth = width - margin.left - margin.right;
-    const chartHeight = height - margin.top - margin.bottom;
+        const data = [
+            { party: "CP(S)", votes: Math.round(parseFloat([+ cp_s_votes +]) || 0), color: "#8a4545" },
+            { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#b7a395fe" },
+            { party: "PPS", votes: Math.round(parseFloat([+ pps_votes +]) || 0), color: "#c8c288" },
+            { party: "LPS", votes: Math.round(parseFloat([+ lps_votes +]) || 0), color: "#a86a77" },
+            { party: "CPS", votes: Math.round(parseFloat([+ cps_votes +]) || 0), color: "#758391" },
+            { party: "Other", votes: Math.round(parseFloat([+ other_votes +]) || 0), color: "#e7e7e7" },
+            { party: "SCPS", votes: Math.round(parseFloat([+ scps_votes +]) || 0), color: "#bcdeb8" }
+        ];
 
-    const svg = d3.select(container).append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        const container = document.getElementById("overall-polls-chart");
+        if (!container) return;
 
-    const g = svg.append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
+        const width = Math.min(container.offsetWidth || 500, 500);
+        const height = 300;
+        const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+        const chartWidth = width - margin.left - margin.right;
+        const chartHeight = height - margin.top - margin.bottom;
 
-    const xScale = d3.scaleBand()
-        .domain(data.map(d => d.party))
-        .range([0, chartWidth])
-        .padding(0.2);
+        const svg = d3.select(container).append("svg")
+            .attr("width", width)
+            .attr("height", height);
 
-    const yScale = d3.scaleLinear()
-        .domain([0, 100])
-        .range([chartHeight, 0]);
+        const g = svg.append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    // Draw Y-axis
-    g.append("g")
-        .call(d3.axisLeft(yScale))
-        .style("font-size", "12px");
+        const xScale = d3.scaleBand()
+            .domain(data.map(d => d.party))
+            .range([0, chartWidth])
+            .padding(0.2);
 
-    // Draw Y-axis label
-    g.append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
-        .attr("x", 0 - (chartHeight / 2))
-        .attr("dy", "1em")
-        .style("text-anchor", "middle")
-        .style("font-size", "12px")
-        .text("Vote Share (%)");
+        const yScale = d3.scaleLinear()
+            .domain([0, 100])
+            .range([chartHeight, 0]);
 
-    // Draw bars
-    g.selectAll(".bar")
-        .data(data)
-        .enter().append("rect")
-        .attr("class", "bar")
-        .attr("x", d => xScale(d.party))
-        .attr("y", d => yScale(d.votes))
-        .attr("width", xScale.bandwidth())
-        .attr("height", d => chartHeight - yScale(d.votes))
-        .attr("fill", d => d.color)
-        .style("stroke", "#333")
-        .style("stroke-width", 1);
+        g.append("g")
+            .call(d3.axisLeft(yScale))
+            .style("font-size", "12px");
 
-    // Draw value labels on bars
-    g.selectAll(".bar-label")
-        .data(data)
-        .enter().append("text")
-        .attr("class", "bar-label")
-        .attr("x", d => xScale(d.party) + xScale.bandwidth() / 2)
-        .attr("y", d => yScale(d.votes) - 5)
-        .attr("text-anchor", "middle")
-        .style("font-size", "12px")
-        .style("font-weight", "bold")
-        .text(d => `${d.votes}%`);
+        g.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left)
+            .attr("x", 0 - (chartHeight / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .style("font-size", "12px")
+            .text("Vote Share (%)");
 
-    // Draw X-axis
-    g.append("g")
-        .attr("transform", `translate(0,${chartHeight})`)
-        .call(d3.axisBottom(xScale))
-        .style("font-size", "12px");
+        g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", d => xScale(d.party))
+            .attr("y", d => yScale(d.votes))
+            .attr("width", xScale.bandwidth())
+            .attr("height", d => chartHeight - yScale(d.votes))
+            .attr("fill", d => d.color)
+            .style("stroke", "#333")
+            .style("stroke-width", 1);
+
+        g.selectAll(".bar-label")
+            .data(data)
+            .enter().append("text")
+            .attr("class", "bar-label")
+            .attr("x", d => xScale(d.party) + xScale.bandwidth() / 2)
+            .attr("y", d => yScale(d.votes) - 5)
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .style("font-weight", "bold")
+            .text(d => `${d.votes}%`);
+
+        g.append("g")
+            .attr("transform", `translate(0,${chartHeight})`)
+            .call(d3.axisBottom(xScale))
+            .style("font-size", "12px");
+    } catch (err) {
+        console.error('Error rendering overall polls chart:', err);
+    }
 })();
 </script>!}
 

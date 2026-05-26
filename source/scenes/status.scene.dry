@@ -375,28 +375,90 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 = Overall Polls
 
-{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 10px; justify-content: center;">!}
-{!<table style="text-align: center; width: 300px; font-size: 13px; ">!}
-        {!<tr>!}
-            {!<th style="background-color: #8a4545; ">!}[+ cp_s_votes +]{!%</th>!}
-            {!<th style="background-color: #b7a395fe; ">!}[+ flp_votes +]{!%</th>!}
-            {!<th style="background-color: #c8c288; ">!}[+ pps_votes +]{!%</th>!}
-            {!<th style="background-color: #a86a77; ">!}[+ lps_votes +]%{!</th>!}
-            {!<th style="background-color: #758391; ">!}[+ cps_votes +]{!%</th>!}
-            {!<th style="background-color: #e7e7e7; ">!}[+ other_votes +]{!%</th>!}
-            {!<th style="background-color: #bcdeb8; ">!}[+ scps_votes +]{!%</th>!}
-        {!</tr>!}
-        {!<tr>!}
-            {!<td>!}CP(S){!</td>!}
-            {!<td>!}**FLP**{!</td>!}
-            {!<td>!}PPS{!</td>!}
-            {!<td>!}LPS{!</td>!}
-            {!<td>!}CPS{!</td>!}
-            {!<td>!}Other{!</td>!}
-            {!<td>!}SCPS{!</td>!}
-        {!</tr>!}
-{!</table>!}
-{!</div>!}
+{!<div id="overall-polls-chart" style="max-width: 500px; height: 350px; justify-content: center;"></div>!}
+
+{!<script>
+(function() {
+    const data = [
+        { party: "CP(S)", votes: parseInt([+ cp_s_votes +]), color: "#8a4545" },
+        { party: "FLP", votes: parseInt([+ flp_votes +]), color: "#b7a395fe" },
+        { party: "PPS", votes: parseInt([+ pps_votes +]), color: "#c8c288" },
+        { party: "LPS", votes: parseInt([+ lps_votes +]), color: "#a86a77" },
+        { party: "CPS", votes: parseInt([+ cps_votes +]), color: "#758391" },
+        { party: "Other", votes: parseInt([+ other_votes +]), color: "#e7e7e7" },
+        { party: "SCPS", votes: parseInt([+ scps_votes +]), color: "#bcdeb8" }
+    ];
+
+    const container = document.getElementById("overall-polls-chart");
+    const width = container.offsetWidth || 500;
+    const height = 350;
+    const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+    const chartWidth = width - margin.left - margin.right;
+    const chartHeight = height - margin.top - margin.bottom;
+
+    const svg = d3.select(container).append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    const g = svg.append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const xScale = d3.scaleBand()
+        .domain(data.map(d => d.party))
+        .range([0, chartWidth])
+        .padding(0.2);
+
+    const yScale = d3.scaleLinear()
+        .domain([0, 100])
+        .range([chartHeight, 0]);
+
+    // Draw Y-axis
+    g.append("g")
+        .call(d3.axisLeft(yScale))
+        .style("font-size", "12px");
+
+    // Draw Y-axis label
+    g.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (chartHeight / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .style("font-size", "12px")
+        .text("Vote Share (%)");
+
+    // Draw bars
+    g.selectAll(".bar")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", d => xScale(d.party))
+        .attr("y", d => yScale(d.votes))
+        .attr("width", xScale.bandwidth())
+        .attr("height", d => chartHeight - yScale(d.votes))
+        .attr("fill", d => d.color)
+        .style("stroke", "#333")
+        .style("stroke-width", 1);
+
+    // Draw value labels on bars
+    g.selectAll(".bar-label")
+        .data(data)
+        .enter().append("text")
+        .attr("class", "bar-label")
+        .attr("x", d => xScale(d.party) + xScale.bandwidth() / 2)
+        .attr("y", d => yScale(d.votes) - 5)
+        .attr("text-anchor", "middle")
+        .style("font-size", "12px")
+        .style("font-weight", "bold")
+        .text(d => `${d.votes}%`);
+
+    // Draw X-axis
+    g.append("g")
+        .attr("transform", `translate(0,${chartHeight})`)
+        .call(d3.axisBottom(xScale))
+        .style("font-size", "12px");
+})();
+</script>!}
 
 
 =                                  Urban Polling

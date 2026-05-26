@@ -12,6 +12,28 @@ Q.economic_growth_2 = '0';
 if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
+
+
+data = Q.parliament_diagram;
+if (d3 && window && Q.started) {
+    var data = Q.parliament_diagram;
+    var screenWidth = document.getElementById('qualities').offsetWidth;
+
+    var width = Math.max(Math.min(screenWidth , 250), 120);
+    var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+    var height = width * heightRatio;
+
+    document.getElementById("reichstag_status").style.height = height + "px";
+
+    var reichstag_status = d3.parliament();
+    reichstag_status.width(width)
+    reichstag_status.height(height)
+    reichstag_status.innerRadiusCoef(0.4)
+    reichstag_status.enter.fromCenter(false).smallToBig(false)
+    reichstag_status.exit.toCenter(false).bigToSmall(false);
+    d3.select("#reichstag_status").datum(data).call(reichstag_status);
+}
+
 !}
 
 #{!</div>!}
@@ -45,6 +67,8 @@ if (Q.economic_growth) {
 
 #{!</div>!}
 
+<div>{!<svg id="reichstag_status" style="width: 500px; height: 250px;"> </svg>!}
+
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]
@@ -56,7 +80,7 @@ FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in g
 
 [? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
 
-Internal dissent: [+ dissent_percent : dissent +]
+Internal dissent: [+ dissent_percent : dissent +]</div>
 
 = Government
 

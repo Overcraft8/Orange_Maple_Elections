@@ -427,6 +427,8 @@ for (var party of Q.parties) {
     console.log(party, Q[party+'_seats']);
 }
 
+Q.parliament_diagram = data
+
 if (window && d3) {
 
     d3.select("#assembly").selectAll("*").remove();

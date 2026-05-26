@@ -322,24 +322,31 @@ img.inline-img.icon {
 
 
 /* status tabs (nested) */
+/* 1. Force the container to handle the spacing tightly */
 .status_tab_container {
-    background-color: var(--tab-bg-color);
-    padding: 0.3em 0.2em;
-    margin-top: 0.4em;
-    margin-left: -0.6em;
-    margin-right: -0.6em;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.1em !important;        
+  justify-content: flex-start; 
+  
+  background-color: var(--tab-bg-color);
+  padding: 0.3em 0.2em;
+  margin-top: 0.4em;
+  margin-left: -0.6em;
+  margin-right: -0.6em;
 }
 
-/* For tab buttons 'nested' with scenes */
-
+/* For tab buttons nested inside scenes */
 .status_tab_button {
-    font-size: 12px;
-    font-family: "Minion Pro", Georgia, serif;
-    background-color: var(--tab-color);
-    color: var(--text-color);
-    border: ridge;
-    border-color: #9c8c64;
-    padding: 10px;
+  font-size: 12px;
+  background-color: var(--tab-color);
+  color: var(--text-color);
+  border: ridge;
+  border-color: #9c8c64;
+  padding: 10px;
+  
+  flex: 0 1 auto; 
+  box-sizing: border-box; 
 }
 
 .status_tab_button.active {
@@ -775,7 +782,7 @@ table {
 
 .tooltip-text {
   position: absolute;
-  left: 0;
+  left: -3em;
 
   /* ⭐ Position ABOVE the word */
   bottom: 60%;          /* Tooltip bottom touches the top of the word */
@@ -912,8 +919,8 @@ table {
   --status_card_border_color: #534b4199;
   border: 3px groove var(--status_card_border_color);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  height: 85px;
-  width: 115px;
+  height: 95px;
+  width: 140px;
   transition: transform 1s, filter 1s;
 }
 

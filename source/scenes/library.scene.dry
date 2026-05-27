@@ -16,7 +16,7 @@ Herein contains relevant information about the government and politics of the Sa
 - @demographics: Demographics
 - @parties: Parties
 - @public_opinion: Public opinion (and projected election results)
-- @organizations: Unions, terrorist organizations, farmer organizations
+- @organizations: Unions and Organizations
 - @factions: Internal factions
 - @figures: Figures and charts
 - @backSpecialScene: Exit library.

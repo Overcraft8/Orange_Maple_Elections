@@ -24,6 +24,8 @@ The Legislative elections are to be held now.
 @election_algorithm_sk
 on-arrival: {!
 
+
+// Lots of this election code taken from the Beeshana Kelaya mod...
 Q.district_results_legislative = [];
 
 Q.party_seats_district = [];

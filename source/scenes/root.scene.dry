@@ -930,6 +930,77 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 // Nonfactional advisors
 Q.underhill_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
+
+
+
+data = [
+    {
+        "id": "cp_s",
+        "legend": "CP(S)",
+        "name": "CP(S)",
+        "seats": Q.cp_s_seats
+    }
+];
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+            "id": "sapd",
+            "legend": "SAPD",
+            "name": "SAPD",
+            "seats": Math.round(Q.sapd_r * 0.6),
+            });
+}
+
+data = data.concat([
+    {
+        "id": "flp",
+        "legend": "FLP",
+        "name": "FLP",
+        "seats": Q.flp_seats
+    },
+    {
+        "id": "lps",
+        "legend": "LPS",
+        "name": "LPS",
+        "seats": Q.lps_seats
+    },
+    {
+        "id": "pps",
+        "legend": "PPS",
+        "name": "PPS",
+        "seats": Q.pps_seats
+    },
+    {
+        "id": "cps",
+        "legend": "CPS",
+        "name": "CPS",
+        "seats": Q.cps_seats
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Q.other_seats
+    },
+    {
+        "id": "scps",
+        "legend": "SCPS",
+        "name": "SCPS",
+        "seats": Q.scps_seats
+        /* "seats": Math.round(Q.scps_r * 0.6), */
+    },
+]);
+
+data = data.filter(p => p.seats > 0);
+
+console.log("Seat totals by party:");
+for (var party of Q.parties) {
+    console.log(party, Q[party+'_seats']);
+}
+
+Q.parliament_diagram = data;
+
+
+
 !}
 set-bg: img/weyburn_street.jpg
 new-page: true

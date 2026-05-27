@@ -728,7 +728,6 @@ table {
 .mytooltip {
   position: relative;
   cursor: pointer;
-  padding: 2px 1px;
 }
 
 /* Tooltip box */

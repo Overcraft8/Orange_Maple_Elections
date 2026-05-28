@@ -65,7 +65,7 @@ on-display: {!
 
 #{!</div>!}
 
-<div> {!<svg id="reichstag_status" style="width: 500px; height: 250px;"> </svg>!}
+<div> {!<svg id="reichstag_status" style="width: 300px; height: 150px; display: flex; justify-content: center align-items: center;"> </svg>!}
 
 [+ month : month +] [+ year +]
 

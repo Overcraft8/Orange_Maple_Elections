@@ -324,17 +324,13 @@ img.inline-img.icon {
 /* status tabs (nested) */
 /* 1. Force the container to handle the spacing tightly */
 .status_tab_container {
-
-  font-size: 20px;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 0.1em !important;        
-  justify-content: flex-start; 
-  
-  background-color: var(--tab-bg-color);
-  padding: 1em 0.2em;
-  margin-top: 0.4em;
-  margin-left: 10em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1em;
+  justify-content: flex-start;
+  box-shadow: 0 2px 4px #d0b8b8;
+  padding: 0.3em 0.1em;
+  background-color: #b08a5e7a;
 }
 
 /* For tab buttons nested inside scenes */

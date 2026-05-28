@@ -337,7 +337,7 @@ function applyWholesome(str) {
   $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
 };
 */
-
+/* 
     window.updateSidebar = function () {
         $('#qualities').empty();
         var statusScene = dendryUI.game.scenes["status"];
@@ -349,6 +349,7 @@ function applyWholesome(str) {
         dendryUI.dendryEngine._runActions(scene.onDisplay);
     };
 
+
     window.updateSidebarRight = function() {
     $('#qualities_right').empty();
     var scene = dendryUI.game.scenes[window.statusTabRight];
@@ -356,7 +357,38 @@ function applyWholesome(str) {
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
   };
+*/
 
+  window.updateSidebar = function () {
+        $('#qualities').empty();
+        var statusScene = dendryUI.game.scenes["status"];
+        var scene = dendryUI.game.scenes[window.statusTab];
+        dendryUI.dendryEngine._runActions(statusScene.onArrival);
+        dendryUI.dendryEngine._runActions(scene.onArrival);
+        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+        var htmlContent = dendryUI.contentToHTML.convert(displayContent);
+        // Sanitize HTML to prevent script execution errors
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlContent;
+        // Remove any script tags
+        tempDiv.querySelectorAll('script').forEach(script => script.remove());
+        $('#qualities').html(tempDiv.innerHTML);
+        dendryUI.dendryEngine._runActions(scene.onDisplay);
+    };
+
+    window.updateSidebarRight = function() {
+    $('#qualities_right').empty();
+    var scene = dendryUI.game.scenes[window.statusTabRight];
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
+    // Sanitize HTML to prevent script execution errors
+    var tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlContent;
+    // Remove any script tags
+    tempDiv.querySelectorAll('script').forEach(script => script.remove());
+    $('#qualities_right').html(tempDiv.innerHTML);
+  };
 
   window.changeTab = function(newTab, tabId) {
     if (tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {

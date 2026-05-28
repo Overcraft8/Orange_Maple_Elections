@@ -411,7 +411,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
         const data = [
             { party: "CP(S)", votes: Math.round(parseFloat([+ cp_s_votes +]) || 0), color: "#8a4545" },
-            { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#b7a395fe" },
+            { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#b7a395ff" },
             { party: "PPS", votes: Math.round(parseFloat([+ pps_votes +]) || 0), color: "#c8c288" },
             { party: "LPS", votes: Math.round(parseFloat([+ lps_votes +]) || 0), color: "#a86a77" },
             { party: "CPS", votes: Math.round(parseFloat([+ cps_votes +]) || 0), color: "#758391" },
@@ -512,10 +512,10 @@ Agricultural Co-ops: [+ agri_coops : development +]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #b7a395fe; ">!}[+ workers_flp_display +]%{!</td>!}
-            {!<td style="background-color: #b7a395fe;">!}[+ unemployed_flp_display +]%{!</td>!}
-            {!<td style="background-color: #b7a395fe;">!}[+ new_middle_flp_display +]%{!</td>!}
-            {!<td style="background-color: #b7a395fe;">!}[+ old_middle_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395ff; ">!}[+ workers_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395ff;">!}[+ unemployed_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395ff;">!}[+ new_middle_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395ff;">!}[+ old_middle_flp_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
@@ -527,7 +527,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
         [? if pps_exists : {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
             {!<td style="background-color: #c8c288; ">!}[+ workers_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ uemployed_pps_display +]%{!</td>!}
+            {!<td style="background-color: #c8c288;">!}[+ unemployed_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ new_middle_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ old_middle_pps_display +]%{!</td>!} 
         {!</tr>!} ?]
@@ -574,9 +574,9 @@ Agricultural Co-ops: [+ agri_coops : development +]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #b7a395fe; ">!}[+ farmer_flp_display +]%{!</td>!}
-            {!<td style="background-color: #b7a395fe;">!}[+ farmhand_flp_display +]%{!</td>!}
-            {!<td style="background-color: #b7a395fe;">!}[+ res_worker_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395ff; ">!}[+ farmer_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395ff;">!}[+ farmhand_flp_display +]%{!</td>!}
+            {!<td style="background-color: #b7a395ff;">!}[+ res_worker_flp_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
@@ -587,7 +587,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
         [? if pps_exists : {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
             {!<td style="background-color: #c8c288; ">!}[+ farmer_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ uemployed_pps_display +]%{!</td>!}
+            {!<td style="background-color: #c8c288;">!}[+ farmhand_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ res_worker_pps_display +]%{!</td>!} 
         {!</tr>!} ?]
         {!<tr>!}

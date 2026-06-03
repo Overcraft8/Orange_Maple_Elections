@@ -18,8 +18,8 @@ on-display: {!
     if (d3 && window && Q.started) {
         var data = Q.parliament_diagram;
         var screenWidth = document.getElementById('qualities').offsetWidth;
-
-        var width = Math.max(Math.min(screenWidth , 250), 120);
+/* Old dimensions 250 and 120 */
+        var width = Math.max(Math.min(screenWidth , 200), 90);
         var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
         var height = width * heightRatio;
 
@@ -65,7 +65,7 @@ on-display: {!
 
 #{!</div>!}
 
-<div> {!<svg id="reichstag_status" style="width: 300px; height: 150px; display: flex; justify-content: center align-items: center;"> </svg>!}
+<div style="display: flex; justify-content: center align-items: center;"> {!<svg id="reichstag_status" style="width: 300px; height: 150px;"> </svg>!} </div>
 
 [+ month : month +] [+ year +]
 
@@ -78,7 +78,7 @@ FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in g
 
 [? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
 
-Internal dissent: [+ dissent_percent : dissent +]</div>
+Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 

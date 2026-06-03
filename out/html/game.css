@@ -253,7 +253,7 @@ img.inline-img.icon {
   text-indent: 0;
 }
 #qualities h1 {
-  font-size: 1.1em;
+  font-size: 1.4em;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -270,7 +270,7 @@ img.inline-img.icon {
   text-indent: 0;
 }
 #qualities_right h1 {
-  font-size: 1.1em;
+  font-size: 1.4em;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -335,6 +335,7 @@ img.inline-img.icon {
 
 /* For tab buttons nested inside scenes */
 .status_tab_button {
+  font-family: "Minion Pro", Georgia, serif;
   font-size: 12px;
   background-color: var(--tab-color);
   color: var(--text-color);
@@ -742,7 +743,6 @@ table {
 
   /* Final state */
   left: 50%;
-  top: -10px;
   transform: translate(-50%, -100%);
 
   /* Starting state */
@@ -775,7 +775,7 @@ table {
 
 .tooltip-text {
   position: absolute;
-  left: -3em;
+  left: -4em;
 
   /* ⭐ Position ABOVE the word */
   bottom: 60%;          /* Tooltip bottom touches the top of the word */
@@ -932,23 +932,6 @@ a.status_panel_info {
   position: relative;
   text-align: center;
 }
-
-.card-flags {
-  position:relative;
-  display:flex;
-  justify-content:space-between;
-  width: 125px;
-}
-
-.flag {
-  height: 20px;
-  font-size: 4px;
-  color:white;
-}
-
-.flag.nat { background:#b22222; } /* deep red */
-.flag.dev { background:#2e8b57; } /* green */
-
 
 a.party_status_panel_container {
   display: flex; 

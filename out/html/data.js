@@ -29,7 +29,7 @@ const tooltipList = [{
 },
 {
     searchString: "UFPA",
-    explanationText: "The United Farmers Political Association. \n They have merged into the FLP"
+    explanationText: "The United Farmers Political Association."
 },
 {
     searchString: "CCYM",
@@ -37,7 +37,7 @@ const tooltipList = [{
 },
 {
     searchString: "ILP",
-    explanationText: "The Independent Labour Party.\n They have merged into the FLP. "
+    explanationText: "The Independent Labour Party."
 },
 {
     searchString: "FUL",

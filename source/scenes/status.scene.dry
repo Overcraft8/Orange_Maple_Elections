@@ -400,24 +400,12 @@ Agricultural Co-ops: [+ agri_coops : development +]
 {!<div id="overall-polls-chart" style="max-width: 300px; height: 225px; justify-content: center;"></div>!}
 
 {!<script>
-(function() {
-
+window.renderPollsChart = function(pollsData) {
     try {
         if (typeof d3 === 'undefined') {
-            console.warn('D3 library not yet available');
-            setTimeout(arguments.callee, 100);
+            setTimeout(() => window.renderPollsChart(pollsData), 100);
             return;
         }
-
-        const data = [
-            { party: "CP(S)", votes: Math.round(parseFloat([+ cp_s_votes +]) || 0), color: "#8a4545" },
-            { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#b7a395ff" },
-            { party: "PPS", votes: Math.round(parseFloat([+ pps_votes +]) || 0), color: "#c8c288" },
-            { party: "LPS", votes: Math.round(parseFloat([+ lps_votes +]) || 0), color: "#a86a77" },
-            { party: "CPS", votes: Math.round(parseFloat([+ cps_votes +]) || 0), color: "#758391" },
-            { party: "Other", votes: Math.round(parseFloat([+ other_votes +]) || 0), color: "#e7e7e7" },
-            { party: "SCPS", votes: Math.round(parseFloat([+ scps_votes +]) || 0), color: "#bcdeb8" }
-        ];
 
         const container = document.getElementById("overall-polls-chart");
         if (!container) return;
@@ -429,6 +417,9 @@ Agricultural Co-ops: [+ agri_coops : development +]
         const chartWidth = width - margin.left - margin.right;
         const chartHeight = height - margin.top - margin.bottom;
 
+        // Clear previous content
+        d3.select(container).selectAll("*").remove();
+
         const svg = d3.select(container).append("svg")
             .attr("width", width)
             .attr("height", height);
@@ -437,7 +428,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
             .attr("transform", `translate(${margin.left},${margin.top})`);
 
         const xScale = d3.scaleBand()
-            .domain(data.map(d => d.party))
+            .domain(pollsData.map(d => d.party))
             .range([0, chartWidth])
             .padding(0.2);
 
@@ -462,7 +453,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
         // Draw bars
         g.selectAll(".bar")
-            .data(data)
+            .data(pollsData)
             .enter().append("rect")
             .attr("class", "bar")
             .attr("x", d => xScale(d.party))
@@ -475,7 +466,7 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
         // Draw value labels on bars
         g.selectAll(".bar-label")
-            .data(data)
+            .data(pollsData)
             .enter().append("text")
             .attr("class", "bar-label")
             .attr("x", d => xScale(d.party) + xScale.bandwidth() / 2)
@@ -493,8 +484,19 @@ Agricultural Co-ops: [+ agri_coops : development +]
     } catch (err) {
         console.error('Error rendering overall polls chart:', err);
     }
-    
-})();
+};
+</script>!}
+
+{!<script>
+window.renderPollsChart([
+    { party: "CP(S)", votes: Math.round(parseFloat([+ cp_s_votes +]) || 0), color: "#8a4545" },
+    { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#b7a395ff" },
+    { party: "PPS", votes: Math.round(parseFloat([+ pps_votes +]) || 0), color: "#c8c288" },
+    { party: "LPS", votes: Math.round(parseFloat([+ lps_votes +]) || 0), color: "#a86a77" },
+    { party: "CPS", votes: Math.round(parseFloat([+ cps_votes +]) || 0), color: "#758391" },
+    { party: "Other", votes: Math.round(parseFloat([+ other_votes +]) || 0), color: "#e7e7e7" },
+    { party: "SCPS", votes: Math.round(parseFloat([+ scps_votes +]) || 0), color: "#bcdeb8" }
+]);
 </script>!}
 
 

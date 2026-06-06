@@ -677,21 +677,21 @@ window.renderPollsChart = function(pollsData) {
 
 
 window.toggleSidebar3 = function() {
-    var content = document.getElementById('qualities_3');
-    var chart   = document.getElementById('faction-chart');
-    var unionEl = document.getElementById('union-chart');
-    var btn     = document.getElementById('collapse_3');
+    var content = document.getElementById('qualities');
+    var chart   = document.getElementById('overall-polls-chart');
+    //var unionEl = document.getElementById('union-chart');
+    //var btn     = document.getElementById('collapse_3');
     window.sidebar3Collapsed = !window.sidebar3Collapsed;
     if (window.sidebar3Collapsed) {
         content.style.display = 'none';
         if (chart)   chart.style.display = 'none';
-        if (unionEl) unionEl.style.display = 'none';
-        btn.textContent = '▼';
+        //if (unionEl) unionEl.style.display = 'none';
+        //btn.textContent = '▼';
     } else {
         content.style.display = '';
         var showCharts = (window.statusTab3 === 'status_3.factions') ? '' : 'none';
         if (chart)   chart.style.display = showCharts;
-        if (unionEl) unionEl.style.display = showCharts;
-        btn.textContent = '▲';
+        //if (unionEl) unionEl.style.display = showCharts;
+        //btn.textContent = '▲';
     }
 };

@@ -311,6 +311,18 @@ function applyWholesome(str) {
 }
 
 
+// ---------------------------------------------------------------
+//   IMPORTANT STUFF
+
+
+window.sidebar3Collapsed = false;
+
+
+
+
+
+
+
 
   // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
@@ -327,37 +339,7 @@ function applyWholesome(str) {
     }
   };
 
-  /* 
-  // TODO: have some code for tabbed sidebar browsing.
-  window.updateSidebar = function() {
-  $('#qualities').empty();
-  var scene = dendryUI.game.scenes[window.statusTab];
-  dendryUI.dendryEngine._runActions(scene.onArrival);
-  var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-  $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-};
-*/
-/* 
-    window.updateSidebar = function () {
-        $('#qualities').empty();
-        var statusScene = dendryUI.game.scenes["status"];
-        var scene = dendryUI.game.scenes[window.statusTab];
-        dendryUI.dendryEngine._runActions(statusScene.onArrival);
-        dendryUI.dendryEngine._runActions(scene.onArrival);
-        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-        $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-        dendryUI.dendryEngine._runActions(scene.onDisplay);
-    };
 
-
-    window.updateSidebarRight = function() {
-    $('#qualities_right').empty();
-    var scene = dendryUI.game.scenes[window.statusTabRight];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
-  };
-*/
 
   window.updateSidebar = function () {
         $('#qualities').empty();
@@ -374,6 +356,18 @@ function applyWholesome(str) {
         tempDiv.querySelectorAll('script').forEach(script => script.remove());
         $('#qualities').html(tempDiv.innerHTML);
         dendryUI.dendryEngine._runActions(scene.onDisplay);
+
+
+        if (!window.sidebar3Collapsed) {
+            $('#qualities_3').empty();
+            var scene3 = dendryUI.game.scenes[window.statusTab3];
+            if (scene3) {
+                dendryUI.dendryEngine._runActions(scene3.onArrival);
+                var dc3 = dendryUI.dendryEngine._makeDisplayContent(scene3.content, true);
+                $('#qualities_3').append(dendryUI.contentToHTML.convert(dc3));
+            }
+        }
+        
     };
 
     window.updateSidebarRight = function() {
@@ -396,8 +390,11 @@ function applyWholesome(str) {
         return;
     }
 
+    const leftsidebar = document.getElementById('stats_sidebar'); 
+
     const tabButton = document.getElementById(tabId);
-    const tabButtons = document.getElementsByClassName('tab_button');
+    const tabButtons = leftsidebar.getElementsByClassName('tab_button');
+
     const statusButtons = document.getElementsByClassName('status_tab_button');
     const statusPanelCards = document.getElementsByClassName('status_panel_card_image');
 
@@ -672,5 +669,29 @@ window.renderPollsChart = function(pollsData) {
             .style("font-size", "12px");
     } catch (err) {
         console.error('Error rendering overall polls chart:', err);
+    }
+};
+
+
+// copied from the code for Australian Dawn
+
+
+window.toggleSidebar3 = function() {
+    var content = document.getElementById('qualities_3');
+    var chart   = document.getElementById('faction-chart');
+    var unionEl = document.getElementById('union-chart');
+    var btn     = document.getElementById('collapse_3');
+    window.sidebar3Collapsed = !window.sidebar3Collapsed;
+    if (window.sidebar3Collapsed) {
+        content.style.display = 'none';
+        if (chart)   chart.style.display = 'none';
+        if (unionEl) unionEl.style.display = 'none';
+        btn.textContent = '▼';
+    } else {
+        content.style.display = '';
+        var showCharts = (window.statusTab3 === 'status_3.factions') ? '' : 'none';
+        if (chart)   chart.style.display = showCharts;
+        if (unionEl) unionEl.style.display = showCharts;
+        btn.textContent = '▲';
     }
 };

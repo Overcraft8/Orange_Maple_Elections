@@ -397,22 +397,22 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 = Overall Polls
 
-{!<div id="overall-polls-chart" style="max-width: 300px; height: 225px; justify-content: center;"></div>!}
+# {!<div id="overall-polls-chart" style="max-width: 300px; height: 225px; justify-content: center;"></div>!}
 
-{!<script>
-window.renderPollsChart([
-    { party: "CP(S)", votes: Math.round(parseFloat([+ cp_s_votes +]) || 0), color: "#8a4545" },
-    { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#b7a395ff" },
-    { party: "PPS", votes: Math.round(parseFloat([+ pps_votes +]) || 0), color: "#c8c288" },
-    { party: "LPS", votes: Math.round(parseFloat([+ lps_votes +]) || 0), color: "#a86a77" },
-    { party: "CPS", votes: Math.round(parseFloat([+ cps_votes +]) || 0), color: "#758391" },
-    { party: "Other", votes: Math.round(parseFloat([+ other_votes +]) || 0), color: "#e7e7e7" },
-    { party: "SCPS", votes: Math.round(parseFloat([+ scps_votes +]) || 0), color: "#bcdeb8" }
-]);
-</script>!}
+# {!<script>
+# window.renderPollsChart([
+#     { party: "CP(S)", votes: Math.round(parseFloat([+ cp_s_votes +]) || 0), color: "#8a4545" },
+#     { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#b7a395ff" },
+#     { party: "PPS", votes: Math.round(parseFloat([+ pps_votes +]) || 0), color: "#c8c288" },
+#     { party: "LPS", votes: Math.round(parseFloat([+ lps_votes +]) || 0), color: "#a86a77" },
+#     { party: "CPS", votes: Math.round(parseFloat([+ cps_votes +]) || 0), color: "#758391" },
+#     { party: "Other", votes: Math.round(parseFloat([+ other_votes +]) || 0), color: "#e7e7e7" },
+#     { party: "SCPS", votes: Math.round(parseFloat([+ scps_votes +]) || 0), color: "#bcdeb8" }
+# ]);
+# </script>!}
 
 
-=                                  Urban Polling
+=                                  Urban Polling222222
 
 {!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
 

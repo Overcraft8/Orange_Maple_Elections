@@ -23,15 +23,15 @@ on-display: {!
         var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
         var height = width * heightRatio;
 
-        document.getElementById("reichstag_status").style.height = height + "px";
+        document.getElementById("legislative_status").style.height = height + "px";
 
-        var reichstag_status = d3.parliament();
-        reichstag_status.width(width)
-        reichstag_status.height(height)
-        reichstag_status.innerRadiusCoef(0.4)
-        reichstag_status.enter.fromCenter(false).smallToBig(false)
-        reichstag_status.exit.toCenter(false).bigToSmall(false);
-        d3.select("#reichstag_status").datum(data).call(reichstag_status);
+        var legislative_status = d3.parliament();
+        legislative_status.width(width)
+        legislative_status.height(height)
+        legislative_status.innerRadiusCoef(0.4)
+        legislative_status.enter.fromCenter(false).smallToBig(false)
+        legislative_status.exit.toCenter(false).bigToSmall(false);
+        d3.select("#legislative_status").datum(data).call(legislative_status);
 }
 !}
 #{!</div>!}
@@ -65,7 +65,7 @@ on-display: {!
 
 #{!</div>!}
 
-<div style="display: flex; justify-content: center align-items: center;"> {!<svg id="reichstag_status" style="width: 300px; height: 150px;"> </svg>!} </div>
+<div style="display: flex; justify-content: center; align-items: stretch; margin-right: 40px;"> {!<svg id="legislative_status" viewBox="0 0 110 110" style="width: 400px; height: 120px;"> </svg>!} </div>
 
 [+ month : month +] [+ year +]
 

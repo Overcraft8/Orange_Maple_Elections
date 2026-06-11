@@ -65,7 +65,7 @@ on-display: {!
 
 #{!</div>!}
 
-<div style="display: flex; justify-content: center; align-items: stretch; margin-right: 40px;"> {!<svg id="legislative_status" viewBox="0 0 110 110" style="width: 400px; height: 120px;"> </svg>!} </div>
+<div style="display: flex; justify-content: center; align-items: stretch;"> {!<svg id="legislative_status"  style="border: 2px outset black;"> </svg>!} </div>
 
 [+ month : month +] [+ year +]
 

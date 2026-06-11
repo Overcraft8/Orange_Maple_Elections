@@ -144,8 +144,13 @@ d3.parliament = function() {
                 container = svg.append("g");
                 container.classed("parliament", true);
             }
-            container.attr("transform", "translate(" + width / 2 + "," + outerParliamentRadius + ")");
 
+            if (container.closest('#qualities')) {
+                container.setAttribute("transform", "translate(" + 150 + "," + 120 + ")"); 
+            }
+            else {
+            container.attr("transform", "translate(" + width / 2 + "," + outerParliamentRadius + ")");
+            }
             /* all the seats as circles */
             var circles = container.selectAll(".seat").data(seats);
             circles.attr("class", seatClasses);

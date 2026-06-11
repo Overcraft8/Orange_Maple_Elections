@@ -254,9 +254,11 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     const ideologyKey = ideologyMap[searchString];
 
+    const divider = '<span style="display: block; border-top: 1px solid #dcb682; margin: 8px 0;"></span>';
+
     if (ideologyKey && Q[ideologyKey] !== undefined) {
         const ideologyText = getPartyIdeology(searchString, Q);
-        result += '<hr style="border: none; border-top: 1px solid #dcb682; margin: 8px 0;">Politics: ' + ideologyText;
+        result += divider + 'Politics: ' + ideologyText;
     }
 
     // Special case
@@ -266,9 +268,10 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     const relationKey = relationMap[searchString];
 
+
     if (relationKey && Q[relationKey] !== undefined) {
         const relationText = getRelationshipText(Q[relationKey]);
-        result += '<hr style="border: none; border-top: 1px solid #dcb682; margin: 8px 0;">Relation: ' + relationText;
+        result += divider + 'Relation: ' + relationText;
     }
 
     return result;

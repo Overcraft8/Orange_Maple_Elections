@@ -298,17 +298,17 @@ Agricultural Production Index: [+ agri_production +]
 
 Industrial Production Index: [+ indu_production +]
 
-<div style="display:flex; gap:1em;">
-
-Agriculture: [+ agri_development : development +]
-
-Heavy Industry: [+ industry_development : development +]
-
-[? if year <= 1940: Potash: [+ potash_development : development +] ?]
-
-Oil: [+ oil_development : development +]
-
-</div>
+# <div style="display:flex; gap:1em;">
+# 
+# Agriculture: [+ agri_development : development +]
+# 
+# Heavy Industry: [+ industry_development : development +]
+# 
+# [? if year <= 1940: Potash: [+ potash_development : development +] ?]
+# 
+# Oil: [+ oil_development : development +]
+# 
+# </div>
 
 
 @nationalization

@@ -256,7 +256,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     if (ideologyKey && Q[ideologyKey] !== undefined) {
         const ideologyText = getPartyIdeology(searchString, Q);
-        result += '<br>Politics: ' + ideologyText;
+        result += '<hr style="border: none; border-top: 1px solid #dcb682; margin: 8px 0;">Politics: ' + ideologyText;
     }
 
     // Special case
@@ -268,7 +268,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     if (relationKey && Q[relationKey] !== undefined) {
         const relationText = getRelationshipText(Q[relationKey]);
-        result += '<br>Relation: ' + relationText;
+        result += '<hr style="border: none; border-top: 1px solid #dcb682; margin: 8px 0;">Relation: ' + relationText;
     }
 
     return result;

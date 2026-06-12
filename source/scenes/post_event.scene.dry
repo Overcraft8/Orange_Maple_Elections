@@ -98,7 +98,7 @@ if (Q.pro_republic >= 100) {
 //     }
 // }
 
-Q.total_pop = 0;
+Q.total_population = 0;
 
 for (var c of Q.classes) {
     Q[c + '_total_population'] = 0;
@@ -122,13 +122,13 @@ for (var c of Q.classes) {
 
 
 
-// 2. normalize support (fraction)
-for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
-    Q[party+'_votes'] = Q[party+'_votes_dec'];
-    Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-}
+// // 2. normalize support (fraction)
+// for (var party of Q.parties) {
+//     Q[party+'_normalized'] = Q[party + '_support']/total_support;
+//     Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
+//     Q[party+'_votes'] = Q[party+'_votes_dec'];
+//     Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+// }
 
 
 // set faction strength/dissent to 0

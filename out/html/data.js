@@ -1,7 +1,7 @@
 const tooltipList = [{
     // for organizations and parties
     searchString: "FLP",
-    explanationText: "The Farmer-Labour Group - Our Party"
+    explanationText: "<img src=img/CCF_logo.jpg>The Farmer-Labour Group - Our Party"
 }, 
 {
     searchString: "CP(S)", 

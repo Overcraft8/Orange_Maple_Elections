@@ -49,7 +49,7 @@ is-special: true
   Strength: [+ labour_strength : strength +]<br> 
   Dissent: [+ labour_dissent : dissent +]<br>
   <div style = "text-align: center;">
-  <span style=Radicalism: span><br>
+  <span>Radicalism: </span><br>
   [+ labour_radicalism : radicalism +]
   </div>
   </div>

@@ -691,7 +691,6 @@ window.renderPollsChart = function(pollsData) {
 
 // copied from the code for Australian Dawn
 
-
 window.toggleSidebar3 = function() {
     var content = document.getElementById('qualities');
     var chart   = document.getElementById('overall-polls-chart');

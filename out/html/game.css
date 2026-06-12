@@ -739,6 +739,7 @@ table {
   line-height: 1.3em;
   font-weight: 500;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-indent: 0%;
   text-align: center;
 
   /* Final state */

@@ -23,108 +23,112 @@ if (Q.pro_republic < 0) {
 if (Q.pro_republic >= 100) {
     Q.pro_republic = 99;
 }
-// // re-calculate party support
-// // calculate normalized class voting for the achievements
-// for (var c of Q.classes) {
-//     var class_votes = 0;
-//     for (var party of Q.parties) {
-//         if (Q[c+'_'+party] < 0) {
-//             Q[c+'_'+party] = 0;
-//         }
-//         class_votes += Q[c+'_'+party];
-//     }
-//     for (var party of Q.parties) {
-//         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
-//         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
-//     }
-// }
-// // calculate support for each of the parties
-// var urban_support = 0; 
-// for (var party of Q.parties) {
-//     var party_support_urban = 0;
-//     for (var c of Q.classes) {
-//         if (c === "farmer" || c === "farmhand" || c === "rural_worker") continue;   // skip farmer
-//         if (Q.old_demographics) { 
-//             party_support_urban += Q[c]*Q[c+'_'+party];
-//         } else  { 
-//             party_support_urban += Q[c]*Q[c+'_'+party+'_normalized'];
-//         } 
-//     }
-//     Q[party + '_support'] = party_support_urban;
-//     urban_support += party_support_urban; 
-// }
-// 
-// var rural_support = 0;
-// for (var party of Q.parties) {
-//     var party_support_rural = 0;
-//     for (var c of ["farmer","farmhand","rural_worker"]) {
-//         if (!Q.classes.includes(c)) continue;
-//         // but this version is somewhat more entertaining and allows for wilder swings in votes.
-//         // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
-//         if (Q.old_demographics) {
-//             // okay i'm pretty sure this is wrong, and the hard version is correct
-//             // basically this allows for "spillover" effects in other demographics.
-//             // so you can campaign among say the workers and 
-//             party_support_rural += Q[c]*Q[c+'_'+party];
-//             // However, there should be a cap on how much party support you can get in a certain demo.
-//         } else  {
-//             party_support_rural += Q[c]*Q[c+'_'+party+'_normalized'];
-//         }
-//     }
-//     Q[party + '_support_rural'] = party_support_rural;
-//     rural_support += party_support_rural;
-// }
-// 
-// 
-// var total_support = urban_support + rural_support;
-// 
-// 
-// 
-// for (var party of Q.parties) {
-//     var combined_support = Q[party + '_support'] + Q[party + '_support_rural'];
-// 
-//     Q[party+'_normalized'] = combined_support / total_support;
-// 
-//     Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized'] * 1000) / 10;
-// 
-//     if (Q.use_decimals) {
-//         Q[party+'_votes'] = Q[party+'_votes_dec'];
-//         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-//     } 
-//     else {
-//         Q[party+'_votes'] = Math.round(Q[party+'_normalized'] * 100);
-// 
-//         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-//     }
-// }
+ // re-calculate party support
+ // calculate normalized class voting for the achievements
+ for (var c of Q.classes) {
+     var class_votes = 0;
+     for (var party of Q.parties) {
+         if (Q[c+'_'+party] < 0) {
+             Q[c+'_'+party] = 0;
+         }
+         class_votes += Q[c+'_'+party];
+     }
+     for (var party of Q.parties) {
+         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
+         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
+     }
+ }
+ // calculate support for each of the parties
+ var urban_support = 0; 
+ for (var party of Q.parties) {
+     var party_support_urban = 0;
+     for (var c of Q.classes) {
+         if (c === "farmer" || c === "farmhand" || c === "rural_worker") continue;   // skip farmer
+         if (Q.old_demographics) { 
+             party_support_urban += Q[c]*Q[c+'_'+party];
+         } else  { 
+             party_support_urban += Q[c]*Q[c+'_'+party+'_normalized'];
+         } 
+     }
+     Q[party + '_support'] = party_support_urban;
+     urban_support += party_support_urban; 
+ }
+ 
+ var rural_support = 0;
+ for (var party of Q.parties) {
+     var party_support_rural = 0;
+     for (var c of ["farmer","farmhand","rural_worker"]) {
+         if (!Q.classes.includes(c)) continue;
+         // but this version is somewhat more entertaining and allows for wilder swings in votes.
+         // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
+         if (Q.old_demographics) {
+             // okay i'm pretty sure this is wrong, and the hard version is correct
+             // basically this allows for "spillover" effects in other demographics.
+             // so you can campaign among say the workers and 
+             party_support_rural += Q[c]*Q[c+'_'+party];
+             // However, there should be a cap on how much party support you can get in a certain demo.
+         } else  {
+             party_support_rural += Q[c]*Q[c+'_'+party+'_normalized'];
+         }
+     }
+     Q[party + '_support_rural'] = party_support_rural;
+     rural_support += party_support_rural;
+ }
+ 
+ 
+ var total_support = urban_support + rural_support;
+ 
+ 
+ 
+ for (var party of Q.parties) {
+     var combined_support = Q[party + '_support'] + Q[party + '_support_rural'];
+ 
+     Q[party+'_normalized'] = combined_support / total_support;
+ 
+     Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized'] * 1000) / 10;
+ 
+     if (Q.use_decimals) {
+         Q[party+'_votes'] = Q[party+'_votes_dec'];
+         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+     } 
+     else {
+         Q[party+'_votes'] = Math.round(Q[party+'_normalized'] * 100);
+ 
+         Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+     }
+ }
 
 Q.total_pop = 0;
 
 for (var c of Q.classes) {
     Q[c + '_total_population'] = 0;
     for (var d of Q.district_names) {
-        if (Q[d+'_'+c] != undefined) {
-            Q[c + '_total_pop'] += Q[d+'_'+c];
+        if (Q[d + '_' + c] !== undefined) {
+            Q[c + '_total_population'] += Number(Q[d + '_' + c]) || 0;
         }
-    Q.total_pop += Q[c + '_total_pop'];
     }
+    Q.total_pop += Q[c + '_total_population'];
 }
 
 for (var c of Q.classes) {
-    Q[c + '_population_percent'] = 100*Q[c + '_total_pop']/Q.total_pop;
+    if (Q.total_pop > 0) {
+        Q[c + '_population_percent'] = 100 * Q[c + '_total_population'] / Q.total_pop;
+    } else {
+        Q[c + '_population_percent'] = 0;
+    }
     console.log(c + ' population percent: ' + Q[c + '_population_percent']);
 }
 
 
 
 
-// 2. normalize support (fraction)
-//for (var party of Q.parties) {
-//    Q[party+'_normalized'] = Q[party + '_support']/total_support;
-//    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
-//    Q[party+'_votes'] = Q[party+'_votes_dec'];
-//    Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-//}
+ 2. normalize support (fraction)
+for (var party of Q.parties) {
+    Q[party+'_normalized'] = Q[party + '_support']/total_support;
+    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
+    Q[party+'_votes'] = Q[party+'_votes_dec'];
+    Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+}
 
 
 // set faction strength/dissent to 0

@@ -222,9 +222,6 @@ function getPartyIdeology(party, Q) {
         default: 
             return "Unknown";
     }
-
-
-
 }
 
 function getDynamicTooltipContent(searchString, baseTooltip) {
@@ -249,12 +246,22 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
         'SCPS': 'scps_ideology'
     };
 
+    const party_seats = {
+        'CP(S)': 'cp_s_seats',
+        'FLP': 'flp_seats',
+        'PPS': 'pps_seats',
+        'LPS': 'lps_seats',
+        'CPS': 'cps_seats',
+        'SCPS': 'scps_seats'
+    }
+
     //  Always initialize
     let result = baseTooltip.explanationText;
 
     const ideologyKey = ideologyMap[searchString];
 
-    const divider = '<span style="display: block; border-top: 1px solid #dcb682; margin: 8px 0;"></span>';
+    // const divider = '<span style="display: block; border-top: 1px solid #dcb682; margin: 8px 0;"></span>';
+    const divider = '<span style="display: inline-block; width: 100%; border-top: 1px solid #dcb682; margin: 8px 0; text-indent: 0; vertical-align: middle;"></span>';
 
     if (ideologyKey && Q[ideologyKey] !== undefined) {
         const ideologyText = getPartyIdeology(searchString, Q);
@@ -272,6 +279,12 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     if (relationKey && Q[relationKey] !== undefined) {
         const relationText = getRelationshipText(Q[relationKey]);
         result += divider + 'Relation: ' + relationText;
+    }
+
+    const seatsKey = party_seats[searchString];
+
+    if (seatsKey && Q[seatsKey] !== undefined) {
+        result += '<br>Seats: ' + Q[seatsKey];
     }
 
     return result;

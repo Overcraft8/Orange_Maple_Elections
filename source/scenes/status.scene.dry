@@ -65,7 +65,7 @@ on-display: {!
 
 #{!</div>!}
 
-<div style="display: flex; justify-content: center; align-items: stretch;"> {!<svg id="legislative_status"  style="border: 2px outset black;"> </svg>!} </div>
+<div style="display: flex; justify-content: center; align-items: stretch;"> {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} </div>
 
 [+ month : month +] [+ year +]
 

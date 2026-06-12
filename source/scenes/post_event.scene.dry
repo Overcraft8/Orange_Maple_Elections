@@ -104,7 +104,7 @@ for (var c of Q.classes) {
     Q[c + '_total_population'] = 0;
     for (var d of Q.district_names) {
         if (Q[d + '_' + c] !== undefined) {
-            Q[c + '_total_population'] += Number(Q[d + '_' + c]) || 0;
+            Q[c + '_total_population'] += (Number(Q[d + '_' + c]) * Number(Q[d + '_seats'])) || 0;
         }
     }
     Q.total_pop += Q[c + '_total_population'];

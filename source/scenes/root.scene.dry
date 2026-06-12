@@ -241,7 +241,7 @@ Q.old_middle = 5; // "old mittelstand"
 Q.new_middle = 13; // "new mittelstand"
 Q.farmer = 40; // agriculture and forestry employment... but many of those are proletarians so...
 Q.farmhand = 20;
-Q.res_worker = 3;
+Q.rural_worker = 3;
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
 Q.unemployed = 15;
 Q.catholics = 1;
@@ -262,12 +262,12 @@ Q.inflation = 2.9;
 Q.workers_qol = 100;
 Q.farmer_qol = 100;
 Q.farmhand_qol = 100;
-Q.res_worker_qol = 100;
+Q.rural_worker_qol = 100;
 Q.unemployed_qol = 100;
 Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhand', 'res_worker', 'unemployed', 'catholics'];
+Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhand', 'rural_worker', 'unemployed', 'catholics'];
 Q.parties = ['flp', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
 Q.parties_disp_names = ['FLP', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other']
 
@@ -338,13 +338,13 @@ Q.farmhand_cps = 34;
 Q.farmhand_scps = 0;
 Q.farmhand_other = 5;
 
-Q.res_worker_flp = 8;
-Q.res_worker_cp_s = 10;
-Q.res_worker_lps = 42;
-Q.res_worker_pps = 7;
-Q.res_worker_cps = 28;
-Q.res_worker_scps = 0;
-Q.res_worker_other = 5;
+Q.rural_worker_flp = 8;
+Q.rural_worker_cp_s = 10;
+Q.rural_worker_lps = 42;
+Q.rural_worker_pps = 7;
+Q.rural_worker_cps = 28;
+Q.rural_worker_scps = 0;
+Q.rural_worker_other = 5;
 
 Q.unemployed_flp = 6;
 Q.unemployed_cp_s = 5;
@@ -767,31 +767,31 @@ Q.quappelle_d_seats = 7;
 Q.quappelle_d_worker = 30;
 Q.quappelle_d_farmer = 30; 
 Q.quappelle_d_farmhand = 30;
-Q.quappelle_d_res_worker = 10;
+Q.quappelle_d_rural_worker = 10;
 
 Q.southwest_d_seats = 7;
 Q.southwest_d_worker = 20;
 Q.southwest_d_farmer = 30; 
 Q.southwest_d_farmhand = 30;
-Q.southwest_d_res_worker = 20;
+Q.southwest_d_rural_worker = 20;
 
 Q.southeast_d_seats = 13;
 Q.southeast_d_worker = 10;
 Q.southeast_d_farmer = 50; 
 Q.southeast_d_farmhand = 30;
-Q.southeast_d_res_worker = 10;
+Q.southeast_d_rural_worker = 10;
 
 Q.north_d_seats = 12;
 Q.north_d_worker = 20;
 Q.north_d_farmer = 20; 
 Q.north_d_farmhand = 20;
-Q.north_d_res_worker = 40;
+Q.north_d_rural_worker = 40;
 
 Q.central_d_seats = 14;
 Q.central_d_worker = 30;
 Q.central_d_farmer = 10; 
 Q.central_d_farmhand = 10;
-Q.central_d_res_worker = 30;
+Q.central_d_rural_worker = 30;
 
 Q.selected_button = "";
 

@@ -20,7 +20,7 @@ var urban_support = 0;
 for (var party of Q.parties) {
     var party_support_urban = 0;
     for (var c of Q.classes) {
-        if (c === "farmer" || c === "farmhand" || c === "res_worker") continue;   // skip farmer, farmhand, res_worker
+        if (c === "farmer" || c === "farmhand" || c === "rural_worker") continue;   // skip farmer, farmhand, rural_worker
         // but this version is somewhat more entertaining and allows for wilder swings in votes.
         // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
         if (Q.old_demographics) {
@@ -40,7 +40,7 @@ for (var party of Q.parties) {
 var rural_support = 0;
 for (var party of Q.parties) {
     var party_support_rural = 0;
-    for (var c of ["farmer","farmhand","res_worker"]) {
+    for (var c of ["farmer","farmhand","rural_worker"]) {
         if (!Q.classes.includes(c)) continue;
         // but this version is somewhat more entertaining and allows for wilder swings in votes.
         // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.

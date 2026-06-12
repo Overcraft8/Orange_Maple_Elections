@@ -414,9 +414,9 @@ window.renderPollsChart([
 
 =                                  Urban Polling
 
-{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
+{!<div style="width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; font-size: 1.05em; box-sizing: border-box;">!}
 
-{!<table style='text-align: center;'>!}
+{!<table style='text-align: center; width: 100%; max-width: 100%;'>!}
         {!<tr>!}
             {!<th>Party</th>!}
             {!<th>Workers</th>!}
@@ -478,8 +478,8 @@ window.renderPollsChart([
 
 =                             Rural Polling
 
-{!<div style="max-width: 350px; overflow-y:hide; overflow-x: hide; font-size: 1.05em; ">!}
-{!<table style='text-align: center;'>!}
+{!<div style="width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; font-size: 1.05em; box-sizing: border-box;">!}
+{!<table style='text-align: center; width: 100%; max-width: 100%;'>!}
         {!<tr>!}
             {!<th>Party</th>!}
             {!<th>Farmers</th>!}

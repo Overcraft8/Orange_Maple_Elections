@@ -690,3 +690,31 @@ window.toggleSidebar3 = function() {
         //btn.textContent = '▲';
     }
 };
+
+
+window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
+    // If data is undefined, null, or empty, do nothing
+    if (typeof data === 'undefined' || data === null || data === '') return '';
+
+    var container = document.getElementById(elementID);
+    if (!container) return ''; // Guard clause if the HTML element doesn't exist yet
+
+    // Ensure data is formatted cleanly as a percentage number
+    var widthPercent = Number(data);
+    if (isNaN(widthPercent)) widthPercent = 0;
+    if (widthPercent > 100) widthPercent = 100;
+    if (widthPercent < 0) widthPercent = 0;
+
+    // if (typeof innercolor === 'string') {
+    //     var inner_color = innercolor;
+    // }
+
+    // Generate the exact HTML structure you requested
+    var barHtml = 
+        '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
+            '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
+        '</div>';
+
+    // Inject the generated bar into the container element
+    container.innerHTML = barHtml;
+};

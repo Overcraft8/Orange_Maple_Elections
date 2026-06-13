@@ -88,6 +88,20 @@ Internal dissent: [+ dissent_percent : dissent +]
 </table>
 </div>
 
+
+<div id='agrarian_bar'></div>
+
+{!
+  window.customgeneratebar(Q.agrarian_strength, "#f06e60", #86a71b", "agrarian_bar");
+!}
+
+Labour
+{!
+<div style="height: 8px; background: #f06e60; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">
+  <div style="background: #A91101; opacity: 0.7; height: 100%; width: !}[+ far_left_strength +]{!%; transition: width 0.4s;"></div>
+</div>
+!}
+
 Far left
 {!
 <div style="height: 8px; background: #f06e60; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">

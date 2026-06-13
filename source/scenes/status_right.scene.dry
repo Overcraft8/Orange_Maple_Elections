@@ -20,6 +20,8 @@ is-special: true
 
 = Internal Factions of the FLP
 
+Internal dissent: [+ dissent_percent : dissent +]
+
 <div style="margin-top: 1em; justify-content: center; display: flex;">
 <table class="status_table">
 

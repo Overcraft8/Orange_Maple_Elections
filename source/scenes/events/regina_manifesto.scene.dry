@@ -18,12 +18,12 @@ What must we do?
 - @Rally: Could we rally our supporters to the aid of the trekkers?
 
 @StaySilent
-on-arrival: workers_flp -= 6; labour_support -= 4; 
+on-arrival: workers_flp -= 6; labour_dissent -= 4; 
 
 Many of the workers and strikers expected us to say *something*. 
 
 @SendSpeakers
-on-arrival: workers_flp += 4; labour_support += 1; trek_support += 1;
+on-arrival: workers_flp += 4; labour_dissent += 1; trek_support += 1;
 
 The strikers are enthusiastic that even the known moderate Major James Coldwell is speaking. 
 

@@ -71,15 +71,12 @@ Q.far_left_dissent = 20;
 
 
 // Strength indicates the influence of the faction in the party
-// Support indicates the proportion of faction members who support the party's current policies/leadership
 Q.agrarian_dissent = 0;
-Q.agrarian_support = 55;
 Q.agrarian_strength = 55;
 Q.agrarian_radicalism = 21;
 
-Q.labour_support = 30;
+Q.labour_dissent = 30;
 Q.labour_strength = 40;
-Q.labour_dissent = 5;
 Q.labour_radicalism = 16;
 
 
@@ -293,6 +290,17 @@ Q.cps_ideology = "Conservatism";
 Q.cps_politlean = 13;
 Q.scps_ideology = "Social Credit";
 Q.scps_politlean = 16;
+
+
+
+for (party of Q.parties) {
+    for (d of Q.district_names) {
+        Q[party + '_' + d + '_orgs'] = 0;
+    }
+}
+
+
+
 
 
 
@@ -810,7 +818,15 @@ Q.timers = ['advisor_action', 'confronting_scps', 'crisis_program',
             'iron_front', 'media', 'enemies',
             'party_organizations', 'rally', 'ufc',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
-            'party_disunity', 'organizations_relations', 
+            'party_disunity', 
+
+
+            // New party ones
+
+            'organizations_relations', 'riding_orgs',
+
+
+
             'labour_prog', 'infra_prog', 'agri_prog',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',

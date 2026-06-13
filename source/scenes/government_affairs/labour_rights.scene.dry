@@ -29,7 +29,7 @@ With control of the Labour Ministry, we can set national standards for labour. O
 
 @working_hours
 view-if: working_hours < 2
-on-arrival: working_hours += 1; labour_dissent -= 8; far_left_dissent -= 5; labour_support += 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1 if cps_relation <= 30; labour_goal_completed = 1; inflation += 0.1; economic_growth -= 0.1
+on-arrival: working_hours += 1; labour_dissent -= 8; far_left_dissent -= 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1 if cps_relation <= 30; labour_goal_completed = 1; inflation += 0.1; economic_growth -= 0.1
 
 While a 40-hour work week was declared during the Saskatchewanian Revolution in 1918, enforcement has become increasingly porous over the years. The capitalists have successfully added numerous exceptions and loopholes, returning to the old regime of forced overtime for workers.
 
@@ -38,13 +38,13 @@ Now, with the force of the Labour Ministry, we are finally enforcing the rights 
 @shorten_hours
 view-if: working_hours >= 2 and black_thursday_seen = 1
 subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
-on-arrival: working_hours += 1; labour_dissent -= 8; far_left_dissent -= 5; labour_support += 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; labour_goal_completed = 1; unemployed -= 0.3; economic_growth -= 0.2;
+on-arrival: working_hours += 1; labour_dissent -= 8; far_left_dissent -= 5; workers_flp += 7*(1-dissent); cps_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; labour_goal_completed = 1; unemployed -= 0.3; economic_growth -= 0.2;
 
 Some in the labour movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
 
 
 @safety
-on-arrival: workers_safety += 1; labour_dissent -= 5; labour_support += 2; workers_flp += 5*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3
+on-arrival: workers_safety += 1; labour_dissent -= 5; workers_flp += 5*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3
 
 The Labour Ministry works on developing and enforcing safety regulations, in order to ensure healty working conditions for the proletariat. [? if workers_safety >= 3 : Businesses have begun to argue that our focus on safety is overbearing and unnecessary, interfering with the economy. ?]
 

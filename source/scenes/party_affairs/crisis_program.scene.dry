@@ -27,7 +27,7 @@ Meanwhile, moderates and moderates draw up proposals for a limited plan of job c
 
 @support_centrist
 subtitle: Let the depression play itself out.
-on-arrival: agrarian_support += 5; agrarian_dissent -= 5; labour_dissent += 10; wtb_support -= 1; far_left_dissent += 10;
+on-arrival: agrarian_strength += 5; agrarian_dissent -= 5; labour_dissent += 10; wtb_support -= 1; far_left_dissent += 10;
 
 Forsey and the trade unions vehemently criticize the centrists for their policy. The workers are starving; are we going to callously abandon them and side with bourgeois austerity? On the other hand, the centrists criticize Forsey for promising the workers false hope; their position is that nothing can be done to alfinesate the depression. They also speak of the fear of another round of hyperinflation that may result from deficit spending.
 
@@ -38,7 +38,7 @@ Our policy course is currently that nothing can be done to alfinesate the depres
 subtitle: Call for increased public works and fiscal stimulus.
 unavailable-subtitle: The Labour faction is not strong enough.
 choose-if: historical_mode == 0 or (labour_strength >= far_left_strength and labour_strength >= agrarian_strength and labour_strength >= moderate_strength)
-on-arrival: agrarian_dissent += 10; far_left_dissent += 5; labour_support += 5; wtb_support += 1;
+on-arrival: agrarian_dissent += 10; far_left_dissent += 5; labour_dissent += 5; wtb_support += 1;
 go-to: plan_adopted if wtb_support >= 3; plan_support if wtb_support < 3
 
 @plan_support
@@ -48,7 +48,7 @@ Our support of the WTB plan alienates the orthodox Marxists of the Agrarian fact
 We have not yet convinced the party to formally adopt the plan. More work needs to be done.
 
 @plan_adopted
-on-arrival: wtb_adopted = 1; labour_dissent -= 15; moderate_dissent -= 10; labour_support += 10; agrarian_support -= 10; agrarian_dissent += 20; far_left_dissent += 5; economic_plan = 1
+on-arrival: wtb_adopted = 1; labour_dissent -= 15; moderate_dissent -= 10; agrarian_strength -= 10; agrarian_dissent += 20; far_left_dissent += 5; economic_plan = 1
 
 With our hard work, we have finally convinced the majority of the party to adopt the WTB plan! [? if flp_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?][? if flp_in_government = 0 : We should emphasize the plan in our electoral propaganda. ?]
 

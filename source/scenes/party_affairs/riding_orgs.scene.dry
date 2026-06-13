@@ -1,0 +1,71 @@
+title: The Riding Organizations
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: riding_orgs_timer <= 0
+on-arrival: month_actions += 1; riding_orgs_timer = 6
+card-image: img/Saskatchewan_grid_map.jpg
+
+= The Riding Organizations
+
+The riding organizations are local branches of the party, responsible for organizing at the electoral district level. They are crucial for maintaining the base, recruiting volunteers, and mobilizing electors on election day. However, they can also be a source of internal conflict and factionalism within the party.
+
+We can choose to focus on strengthening certain riding organizations which will increase our support in those areas, or decrease funding to some of them to save resources, but this may lead to dissent and loss of support in those areas.
+
+
+- @urban_orgs: Focus on the urban riding organizations
+
+- @southeast_orgs: Focus on the poor southeast ridings
+
+- @rural_orgs: Focus on the rural riding organizations
+
+- @backSpecialScene: Return
+
+
+
+@urban_orgs
+title: Focus on the urban riding organizations
+
+The FLP is not particularly strong in the urban ridings, owing to our deep ties with the agrarian movement. 
+
+- @decrease_urban_ridings: Decrease funding in the urban ridings
+
+- @increase_urban_ridings: Increase funding in the urban ridings
+
+
+@southeast_orgs
+title: Focus on the poor southeast ridings
+
+The poor southeast is the most impoversished region of the province, drought-prone and devoid of major cities. 
+
+- @decrease_southeast_ridings: Decrease funding in the southeast ridings
+
+- @increase_southeast_ridings: Increase funding in the southeast ridings
+
+
+@decrease_urban_ridings
+on-arrival: resources -=2; flp_regina_d_orgs -= 0.05; flp_saskatoon_d_orgs -= 0.05; flp_moose_jaw_d_orgs -= 0.05;
+
+We have chosen to decrease funding in the urban ridings. This will save us some resources but it will also decrease our support in those areas.
+
+@increase_urban_ridings
+
+choose-if: resources >= 2
+on-arrival: resources +=2; flp_regina_d_orgs += 0.05; flp_saskatoon_d_orgs += 0.05; flp_moose_jaw_d_orgs += 0.05; labour_dissent += 3; labour_strength += 5;
+
+Increasing funding in the urban ridings will help us maintain or increase our support in those areas. 
+
+@decrease_southeast_ridings
+on-arrival: resources -=2; flp_southeast_d_orgs -= 0.10;
+
+@increase_southeast_ridings
+choose-if: resources >= 2
+on-arrival: resources +=2; flp_southeast_d_orgs += 0.10;
+
+
+
+@rural_orgs: 
+title: Focus on the rural riding organizations
+
+The FLP is the strongest in the rural ridings, owing to our deep ties with the agrarian movement. 
+

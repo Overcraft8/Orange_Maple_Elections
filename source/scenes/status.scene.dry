@@ -432,27 +432,29 @@ Agricultural Co-ops: [+ agri_coops : development +]
 
 
 @polls
+on-display: {!
+
+window.renderPollsChart([
+    { party: "CP(S)", votes: Math.round(parseFloat(Q.cp_s_votes) || 0), color: "#8a4545" },
+    { party: "FLP", votes: Math.round(parseFloat(Q.flp_votes) || 0), color: "#da8b53" },
+    { party: "PPS", votes: Math.round(parseFloat(Q.pps_votes) || 0), color: "#c8c288" },
+    { party: "LPS", votes: Math.round(parseFloat(Q.lps_votes) || 0), color: "#a86a77" },
+    { party: "CPS", votes: Math.round(parseFloat(Q.cps_votes) || 0), color: "#758391" },
+    { party: "Other", votes: Math.round(parseFloat(Q.other_votes) || 0), color: "#e7e7e7" },
+    { party: "SCPS", votes: Math.round(parseFloat(Q.scps_votes) || 0), color: "#bcdeb8" }
+]);
+
+
+!}
 
 = Overall Polls
 
-# {!<div id="overall-polls-chart" style="max-width: 300px; height: 225px; justify-content: center;"></div>!}
-
-{!<script>
-window.renderPollsChart([
-    { party: "CP(S)", votes: Math.round(parseFloat([+ cp_s_votes +]) || 0), color: "#8a4545" },
-    { party: "FLP", votes: Math.round(parseFloat([+ flp_votes +]) || 0), color: "#da8b53" },
-    { party: "PPS", votes: Math.round(parseFloat([+ pps_votes +]) || 0), color: "#c8c288" },
-    { party: "LPS", votes: Math.round(parseFloat([+ lps_votes +]) || 0), color: "#a86a77" },
-    { party: "CPS", votes: Math.round(parseFloat([+ cps_votes +]) || 0), color: "#758391" },
-    { party: "Other", votes: Math.round(parseFloat([+ other_votes +]) || 0), color: "#e7e7e7" },
-    { party: "SCPS", votes: Math.round(parseFloat([+ scps_votes +]) || 0), color: "#bcdeb8" }
-]);
-</script>!}
+{!<div id="overall-polls-chart" style="width: 90%; height: 200px; justify-content: center;"></div>!}
 
 
 =                                  Urban Polling
 
-{!<div style="width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; font-size: 1.05em; box-sizing: border-box;">!}
+{!<div style="width: 100%; max-width: 100%; overflow: visible; font-size: 1.05em; box-sizing: border-box;">!}
 
 {!<table style='text-align: center; width: 100%; max-width: 100%;'>!}
         {!<tr>!}
@@ -516,7 +518,7 @@ window.renderPollsChart([
 
 =                             Rural Polling
 
-{!<div style="width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; font-size: 1.05em; box-sizing: border-box;">!}
+{!<div style="width: 100%; max-width: 100%; overflow: visible; font-size: 1.05em; box-sizing: border-box;">!}
 {!<table style='text-align: center; width: 100%; max-width: 100%;'>!}
         {!<tr>!}
             {!<th>Party</th>!}

@@ -665,10 +665,13 @@ window.renderPollsChart = function(pollsData) {
         }
 
         const container = document.getElementById("overall-polls-chart");
-        if (!container) return;
+        if (!container) {
+            setTimeout(() => window.renderPollsChart(pollsData), 100);
+            return; 
+        }
 
         const width = Math.min(container.offsetWidth || 500, 500);
-        const height = 300;
+        const height = 200;
         
         const margin = { top: 20, right: 20, bottom: 40, left: 50 };
         const chartWidth = width - margin.left - margin.right;

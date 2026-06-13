@@ -692,33 +692,6 @@ window.toggleSidebar3 = function() {
 };
 
 /*
-window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
-    // If data is undefined, null, or empty, do nothing
-    if (typeof data === 'undefined' || data === null || data === '') return '';
-
-    var container = document.getElementById(elementID);
-    if (!container) return ''; // Guard clause if the HTML element doesn't exist yet
-
-    // Ensure data is formatted cleanly as a percentage number
-    var widthPercent = Number(data);
-    if (isNaN(widthPercent)) widthPercent = 0;
-    if (widthPercent > 100) widthPercent = 100;
-    if (widthPercent < 0) widthPercent = 0;
-
-    // if (typeof innercolor === 'string') {
-    //     var inner_color = innercolor;
-    // }
-
-    // Generate the exact HTML structure you requested
-    var barHtml = 
-        '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
-            '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
-        '</div>';
-
-    // Inject the generated bar into the container element
-    container.innerHTML = barHtml;
-    window.updateSidebarRight();
-}; */
 
 window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
     // Ensure data is formatted cleanly as a percentage number
@@ -734,4 +707,24 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
         '</div>';
 
     return barHtml;
+}; */
+
+window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
+    // 10ms delay gives the DOM enough time to actually render the target div
+    setTimeout(function() {
+        var container = document.getElementById(elementID);
+        if (!container) return; 
+
+        var widthPercent = Number(data);
+        if (isNaN(widthPercent)) widthPercent = 0;
+        if (widthPercent > 100) widthPercent = 100;
+        if (widthPercent < 0) widthPercent = 0;
+
+        var barHtml = 
+            '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
+                '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
+            '</div>';
+
+        container.innerHTML = barHtml;
+    }, 10);
 };

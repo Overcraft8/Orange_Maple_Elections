@@ -297,6 +297,18 @@ Q.scps_politlean = 16;
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
 
+Q.flp_old_votes = 0;
+Q.cp_s_old_votes = 0;
+Q.cps_old_votes = 0;
+Q.lps_old_votes = 0;
+Q.scps_old_votes = 0;
+Q.pps_old_votes = 0;
+Q.other_old_votes = 0;
+
+
+
+
+
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_flp = 4;

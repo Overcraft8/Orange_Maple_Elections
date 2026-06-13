@@ -55,7 +55,7 @@ on-display: {!
             }
 
 
-    var container = document.getElementById('health-bar-container');
+    var container = document.getElementById('faction-bar');
 
         if (container) {
             // Clear it first to prevent duplicate bars if the player revisits the scene
@@ -103,6 +103,7 @@ on-display: {!
 <div style="display: flex; justify-content: center; align-items: stretch;"> {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} </div>
 
 {!<div id="bars_container"></div>!}
+{!<div id="faction-bar"></div>!}
 
 [+ month : month +] [+ year +]
 

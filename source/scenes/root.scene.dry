@@ -69,6 +69,9 @@ Q.factions = ['far_left', 'agrarian', 'labour', 'moderate', 'neorevisionist'];
 Q.far_left_strength = 5;
 Q.far_left_dissent = 20;
 
+
+// Strength indicates the influence of the faction in the party
+// Support indicates the proportion of faction members who support the party's current policies/leadership
 Q.agrarian_dissent = 0;
 Q.agrarian_support = 55;
 Q.agrarian_strength = 55;
@@ -1074,7 +1077,7 @@ this.state.disableSaves = true;
 go-to: 1932_main
 
 @1932_main
-audio: shuffle music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 music/OCanadaColdstreamGuards.mp3 music/courage.mp3
+audio: shuffle music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
@@ -1123,19 +1126,19 @@ On the far left, the Communist Party's Saskatchewan section CP(S) was also gaini
 
 In the buildup to the 1938 provincial election, the political landscape of Saskatchewan was looking especially fractured. Limited efforts were made by all non-Liberal parties to avoid splitting the vote as parties 'sawed off' unlikely candidates. No party aside from the LPS ran a full slate of candidates. 3 "Unity" candidates as part of the Communist Popular Front strategy were nominated, all previous MLAs of the Cooperative Coalition. 
 
-The 1938 election ended up quite turbulent. In contest were 52 seats, down from 63 in 1929 as the province underwent extreme depopulation. The new CCF(SS) won a significant 10 seats and the status of official opposition on top of 18.73% of the vote. The SCPS won only 2 seats from 15.90% of the vote. Most surprisingly, 2 of the Unity candidates won their seats. The front name of the Communist Party, the Labour Progressive-Party won 1.93% of the vote and no seats. The Conservatives won none as well, reduced to only 11.87% of the vote. And unsurprisingly, on top of all this vote splitting, the LPS won another large majority of 38 seats. 
+The 1938 election ended up quite turbulent. In contest were 52 seats, down from 63 in 1929 as the province underwent extreme depopulation. The new CCF(SS) won a significant 10 seats and the status of official opposition on top of 19% of the vote. The SCPS won only 2 seats from 16% of the vote. Most surprisingly, 2 of the Unity candidates won their seats. The front name of the Communist Party, the Labour Progressive-Party won 2% of the vote and no seats. The Conservatives won none as well, reduced to only 12% of the vote. And unsurprisingly, on top of all this vote splitting, the LPS won another large majority of 38 seats. 
 
 The 1938 election was another disappointment for the CCF(SS). The party had hoped to at least reduce the LPS to a minority government but this had not been the case. George Williams' leadership was called into question though he was saved much blame due to the extraordinary circumstances of vote splitting, allowing Williams to retain his leadership of the party. As well, the SCPS completely imploded after the election. 
 
 Patterson's returned Liberal government continued to pursue a typical Liberal agenda. A sales tax was introduced to relieve the beleaguered education system. Debt relief and the provincial pension were extended. 
 
-The onset of World War 2 divided both the Saskatchewan and Federal CCF. William's pro-war leadership was challenged by the pacifist Carlyle King though the contest proved unsuccessful for the young upstart. 
+The onset of World War 2 divided both the Saskatchewan and Federal CCF. William's pro-war leadership was challenged by the pacifist Carlyle King though the contest proved unsuccessful for the young King. 
 
 In 1940, George Williams volunteered for the army and left the province to serve in Europe. In 1942, his leadership was contested by a young Federal MP named Tommy Douglas. Douglas was a veteran of the party, having joined from the ILP in 1930 and served as a Federal CCF MP since 1935. With Williams unable to campaign to retain his position, John Brockelbank, a close Williamite ally, ran in his stead. However, Douglas' charisma and oratory proved too irrestisble for the party base and Douglas was elected as the new leader of the CCF(SS). 
 
-Douglas focused the party on grassroots organization, expanding party membership from about 4,000 in 1939 to 24,000 by 1944. Douglas also signalled a more pragmatic approach to socialism, realizing the constraints of a socialist provincial government within a capitalist federation. 
+Douglas focused the party on grassroots organization, expanding party membership from about 4,000 in 1939 to 24,000 by 1944. Douglas also signalled a more pragmatic approach to socialism, realizing the constraints of a socialist provincial government within the Canadian federation. 
 
-The 1944 election would prove to be a watershed moment in Saskatchewan history. Tommy Douglas' CCF(SS) won a landslide victory, taking 47 of 52 seats and 53.13% of the vote, marking the first nominally socialist government in North America. The LPS was reduced to only 5 seats and 35.42% of the vote. Social Credit and the Conservatives were both decimated seat and vote wise. 
+The 1944 election would prove to be a watershed moment in Saskatchewan history. Tommy Douglas' CCF(SS) won a landslide victory, taking 47 of 52 seats and 53% of the vote, marking the first nominally socialist government in North America. The LPS was reduced to only 5 seats and 35% of the vote. Social Credit and the Conservatives were both decimated seat and vote wise. 
 
 At last, it seemed, the CCF would revel in the fruits of their labour. 
 
@@ -1144,7 +1147,9 @@ At last, it seemed, the CCF would revel in the fruits of their labour.
 
 @1944-1961
 
-we
+Tommy Douglas is perhaps the most beloved politician in Canadian history. To this day, he remains regarded by many as "The Father of Medicare" and was voted "The Greatest Canadian" in a 2004 CBC poll. 
+
+
 
 
 @Preface 

@@ -107,12 +107,12 @@ for (var c of Q.classes) {
             Q[c + '_total_population'] += (Number(Q[d + '_' + c]) * Number(Q[d + '_seats'])) || 0;
         }
     }
-    Q.total_pop += Q[c + '_total_population'];
+    Q.total_population += Q[c + '_total_population'];
 }
 
 for (var c of Q.classes) {
-    if (Q.total_pop > 0) {
-        Q[c + '_population_percent'] = 100 * Q[c + '_total_population'] / Q.total_pop;
+    if (Q.total_population > 0) {
+        Q[c + '_population_percent'] = 100 * Q[c + '_total_population'] / Q.total_population;
     } else {
         Q[c + '_population_percent'] = 0;
     }

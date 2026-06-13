@@ -533,6 +533,60 @@ window.onDisplayContent = function() {
       return bar;
   };
 
+  window.generateMultiBar = function(barName, segments, max, min) {
+    // 1. Create the main wrapper
+    var bar = document.createElement('div');
+    bar.className = 'bar multi-bar';
+
+    var totalValue = 0;
+    var accumulatedWidth = 0;
+
+    // 2. Loop through each segment to build the inner divisions
+    segments.forEach(function(segment) {
+        var valueDiv = document.createElement('div');
+        valueDiv.className = 'barValue';
+        
+        // Optional: add a specific class if passed, for custom styling/tooltips
+        if (segment.className) {
+            valueDiv.classList.add(segment.className);
+        }
+
+        // Calculate width based on max/min range
+        var width = segment.value / (max - min);
+
+        // Cap the total width at 100% (1.0) to prevent overflow
+        if (accumulatedWidth + width > 1) {
+            width = 1 - accumulatedWidth;
+        } else if (width < 0) {
+            width = 0;
+        }
+
+        valueDiv.style.width = Math.round(width * 100) + '%';
+        
+        // Apply color (either from the object, or fallback to a default/probToColor)
+        if (segment.color) {
+            valueDiv.style.backgroundColor = segment.color;
+        } else if (window.probToColor) {
+            valueDiv.style.backgroundColor = window.probToColor(width * 100);
+        }
+
+        bar.appendChild(valueDiv);
+
+        totalValue += segment.value;
+        accumulatedWidth += width;
+    });
+
+    // 3. Create the text overlay
+    var textOverlay = document.createElement('div');
+    textOverlay.className = 'barText';
+    textOverlay.textContent = barName + ': ' + totalValue + '/' + max;
+    
+    // Append text overlay last so it sits on top of the segments in the DOM
+    bar.appendChild(textOverlay);
+
+    return bar;
+};
+
 
   window.justLoaded = true;
   window.statusTab = "status";
@@ -541,7 +595,8 @@ window.onDisplayContent = function() {
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
   window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: false});
+    // Was originally at false
+    window.dendryUI.loadSettings({show_portraits: true});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
     }

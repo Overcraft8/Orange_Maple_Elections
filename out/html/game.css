@@ -1007,3 +1007,46 @@ a.party_status_panel_container {
   transform-origin: center; /* This keeps it from flying off-screen */
   transform-box: fill-box;   /* Ensures the 'center' is the shape itself */
 }
+
+
+
+.multi-bar {
+    /* Set up flexbox for horizontal internal segments */
+    display: flex;
+    flex-direction: row;
+    position: relative; /* Crucial for absolute positioning the text */
+    
+    /* Typical bar styling */
+    width: 100%;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden; /* Keeps the inner segments inside the rounded corners */
+    margin-bottom: 10px;
+}
+
+.multi-bar .barValue {
+    height: 100%;
+    /* Transition for smooth animations when values change */
+    transition: width 0.3s ease; 
+}
+
+.multi-bar .barText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Center the text perfectly */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Ensure text doesn't block mouse events (like hovering over specific segments) */
+    pointer-events: none; 
+    
+    color: #000;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* Helps visibility over mixed colors */
+}

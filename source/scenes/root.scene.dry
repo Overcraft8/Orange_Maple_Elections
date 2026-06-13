@@ -293,16 +293,6 @@ Q.scps_politlean = 16;
 
 
 
-for (party of Q.parties) {
-    for (d of Q.district_names) {
-        Q[party + '_' + d + '_orgs'] = 0;
-    }
-}
-
-
-
-
-
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
@@ -949,6 +939,30 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 // Nonfactional advisors
 Q.underhill_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
+
+
+
+
+
+
+
+
+
+// FINAL CALCULATIONS and INITALIZATIONS!!!!
+
+for (party of Q.parties) {
+    for (d of Q.district_names) {
+        Q[party + '_' + d + '_orgs'] = 0;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 

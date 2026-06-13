@@ -1,6 +1,11 @@
 title: Party Hierarchy
 new-page: true
 is-special: true
+on-arrival: {! 
+if (window && window.customgeneratebar) {
+    window.customgeneratebar(Q.agrarian_strength, "#f06e60", "#86a71b", "agrarian_bar_main");
+}
+!}
 on-display: {! 
 if (window && window.customgeneratebar) {
     window.customgeneratebar(Q.agrarian_strength, "#f06e60", "#86a71b", "agrarian_bar_main");

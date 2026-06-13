@@ -632,30 +632,6 @@ window.toggleDistrict = function() {
 };
 
 
-/*
-window.changePanel = function(newPanel, PanelId) {
-
-  if (window.PanelActivated === true) {
-    var scene = dendryUI.game.scenes[window.statusTab];
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-    window.PanelActivated = false;
-    return;
-  }
-
-  var panelButton = document.getElementById(PanelId);
-  var panelButtons = document.getElementsByClassName('status_panel_card');
-
-  for (let i = 0; i < panelButtons.length; i++) {
-    panelButtons[i].classList.remove('active');
-  }
-
-  panelButton.classList.add('active');
-  window.statusPanel = newPanel;
-  window.PanelActivated = true;
-
-  window.updateSidebar();
-};*/
 
 window.renderPollsChart = function(pollsData) {
     try {

@@ -32,6 +32,7 @@ Q.use_decimals = 1;
 
 for (var party of Q.parties) {
     Q['old_' + party + '_seats'] = Q[party + '_seats'];
+    Q['old_' + party + '_votes'] = Q[party + '_votes'];
 }
 
 
@@ -185,7 +186,7 @@ for (var party of Q.parties) {
     Q[party + '_r_disp'] = Q[party + '_r'].toFixed(1);
 }
 
-
+// Calculating voteshare!
 
 for (var party of Q.parties) {
     Q[party + '_raw_votes'] = 0;
@@ -203,6 +204,7 @@ for (var party of Q.parties) {
 
 for (var party of Q.parties) {
     Q[party + '_votes'] = total_votes > 0 ? Math.round((Q[party + '_raw_votes'] / total_votes) * 1000)/10 : 0;
+    Q[party + 'vote_change'] = Q[party + '_votes'] - (Q['old_' + party + '_votes'] || 0);
 }
 
 console.log("Vote shares (party_votes):");
@@ -514,21 +516,21 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td><td>Seat Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ str_change_flp +]** {!</td><td>!}  **[+ flp_seats +]** {!</td><td>!}  **[+ seats_change_flp +]**{!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ flp_vote_change +]** {!</td><td>!}  **[+ flp_seats +]** {!</td><td>!}  **[+ seats_change_flp +]**{!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td><td>!} [+ seat_change_sapd +]{!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ sapd_vote_change +] {!</td><td>!} [+ seat_change_sapd +]{!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ str_change_cp_s +] {!</td><td>!}  [+ cp_s_seats +] {!</td><td>!}  [+ seats_change_cp_s_ +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div> !} CP(S): {!</td><td>!} [+ cp_s_votes +]% {!</td><td>!} [+ cp_s_vote_change +] {!</td><td>!}  [+ cp_s_seats +] {!</td><td>!}  [+ seats_change_cp_s_ +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ str_change_lps +] {!</td><td>!} [+ lps_seats +] {!</td><td>!} [+ seats_change_lps +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_votes +]% {!</td><td>!} [+ lps_vote_change +] {!</td><td>!} [+ lps_seats +] {!</td><td>!} [+ seats_change_lps +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#7e741ab3'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ str_change_pps +] {!</td><td>!} [+ pps_seats +] {!</td><td>!} [+ seats_change_pps +]  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#7e741ab3'> </div> !} PPS: {!</td><td>!} [+ pps_votes +]% {!</td><td>!} [+ pps_vote_change +] {!</td><td>!} [+ pps_seats +] {!</td><td>!} [+ seats_change_pps +]  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ str_change_cps +] {!</td><td>!} [+ cps_seats +] {!</td><td>!} [+ seats_change_cps +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_votes +]% {!</td><td>!} [+ cps_vote_change +] {!</td><td>!} [+ cps_seats +] {!</td><td>!} [+ seats_change_cps +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +] % {!</td><td>!} [+ str_change_other +] {!</td><td>!} [+ other_seats +] {!</td><td>!} [+ seats_change_other +]  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Ind.: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ other_vote_change +] {!</td><td>!} [+ other_seats +] {!</td><td>!} [+ seats_change_other +]  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ str_change_scps +] {!</td><td>!} [+ scps_seats +] {!</td><td>!} [+ seats_change_scps +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ scps_vote_change +] {!</td><td>!} [+ scps_seats +] {!</td><td>!} [+ seats_change_scps +] {!</td></tr>!}
 
 {!</table>!}
 

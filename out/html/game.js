@@ -710,7 +710,11 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
 }; */
 
 window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
+    console.log('asdasdasd')
     function renderBar() {
+
+        console.log('asdasdasd')
+
         var container = document.getElementById(elementID);
         if (!container) {
             if (window.__customGenerateBarAttempts < 20) {
@@ -719,23 +723,29 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
             }
             return;
         }
+        console.log('asdasdasd')
 
         var widthPercent = Number(data);
         if (isNaN(widthPercent)) widthPercent = 0;
         if (widthPercent > 100) widthPercent = 100;
         if (widthPercent < 0) widthPercent = 0;
+        console.log('asdasdasd')
 
         var barHtml = 
             '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
                 '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
             '</div>';
+        console.log('asdasdasd')
 
         container.innerHTML = barHtml;
+        console.log('asdasdasd')
     }
 
     if (typeof window.__customGenerateBarAttempts === 'undefined') {
         window.__customGenerateBarAttempts = 0;
+        console.log('asdasdasd')
     }
     window.__customGenerateBarAttempts = 0;
+    console.log('asdasdasd')
     renderBar();
 };

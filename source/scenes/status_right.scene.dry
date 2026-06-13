@@ -94,8 +94,6 @@ Internal dissent: [+ dissent_percent : dissent +]
 </div>
 
 
-<div id='agrarian_bar'></div>
-
 # {!<script>
 #   window.customgeneratebar(Q.agrarian_strength, "#f06e60", "#86a71b", "agrarian_bar");
 # </script>!}

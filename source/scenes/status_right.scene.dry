@@ -1,6 +1,11 @@
 title: Party Hierarchy
 new-page: true
 is-special: true
+on-display: {! 
+if (window && window.customgeneratebar) {
+    window.customgeneratebar([+ agrarian_strength || 0 +], "#f06e60", "#86a71b", "agrarian_bar_main");
+}
+!}
 
 = Party Hierarchy
 
@@ -98,12 +103,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 Agrarians
 # Notice we use [+ agrarian_strength +] here instead of Q.agrarian_strength
-{!
 <div id="agrarian_bar_main"></div>
-<script>
-    window.customgeneratebar([+ agrarian_strength || 0 +], "#f06e60", "#86a71b", "agrarian_bar_main");
-</script>
-!}
 
 Labour
 {!

@@ -710,10 +710,15 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
 }; */
 
 window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
-    // 10ms delay gives the DOM enough time to actually render the target div
-    setTimeout(function() {
+    function renderBar() {
         var container = document.getElementById(elementID);
-        if (!container) return; 
+        if (!container) {
+            if (window.__customGenerateBarAttempts < 20) {
+                window.__customGenerateBarAttempts += 1;
+                setTimeout(renderBar, 25);
+            }
+            return;
+        }
 
         var widthPercent = Number(data);
         if (isNaN(widthPercent)) widthPercent = 0;
@@ -726,5 +731,11 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
             '</div>';
 
         container.innerHTML = barHtml;
-    }, 10);
+    }
+
+    if (typeof window.__customGenerateBarAttempts === 'undefined') {
+        window.__customGenerateBarAttempts = 0;
+    }
+    window.__customGenerateBarAttempts = 0;
+    renderBar();
 };

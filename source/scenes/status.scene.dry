@@ -49,13 +49,7 @@ on-display: {!
         d3.select("#legislative_status").datum(data).call(legislative_status);
 }
 
-    if (typeof window !== "undefined" && window.generateBar) {
-                var container = document.getElementById("bars_container");
-                if (container) {
-                    var bar = window.generateBar(75, "Support", 100, 0, true);
-                    container.appendChild(bar);
-                }
-            }
+
 !}
 #{!</div>!}
 

@@ -59,7 +59,7 @@ on-arrival: resources +=2; flp_southeast_d_orgs += 0.10;
 
 
 
-@rural_orgs: 
+@rural_orgs
 title: Focus on the rural riding organizations
 
 The FLP is the strongest in the rural ridings, owing to our deep ties with the agrarian movement. 

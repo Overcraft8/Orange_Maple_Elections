@@ -691,7 +691,7 @@ window.toggleSidebar3 = function() {
     }
 };
 
-
+/*
 window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
     // If data is undefined, null, or empty, do nothing
     if (typeof data === 'undefined' || data === null || data === '') return '';
@@ -717,4 +717,21 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
 
     // Inject the generated bar into the container element
     container.innerHTML = barHtml;
+    window.updateSidebarRight();
+}; */
+
+window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
+    // Ensure data is formatted cleanly as a percentage number
+    var widthPercent = Number(data);
+    if (isNaN(widthPercent)) widthPercent = 0;
+    if (widthPercent > 100) widthPercent = 100;
+    if (widthPercent < 0) widthPercent = 0;
+
+    // Generate the HTML and RETURN it. We attach the elementID directly to the outer div here.
+    var barHtml = 
+        '<div id="' + elementID + '" style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
+            '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
+        '</div>';
+
+    return barHtml;
 };

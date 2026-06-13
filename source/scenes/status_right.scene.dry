@@ -88,6 +88,13 @@ Internal dissent: [+ dissent_percent : dissent +]
 </table>
 </div>
 
+Far left
+{!
+<div style="height: 8px; background: #f06e60; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">
+  <div style="background: #A91101; opacity: 0.7; height: 100%; width: !}[+ far_left_strength +]{!%; transition: width 0.4s;"></div>
+</div>
+!}
+
 Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]
 
 Riding Association Strength: [+ riding_associations : p_riding_associations +]

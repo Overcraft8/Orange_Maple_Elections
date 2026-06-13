@@ -56,21 +56,6 @@ on-display: {!
                     container.appendChild(bar);
                 }
             }
-
-
-    var container = document.getElementById('faction-bar');
-
-        if (container) {
-            // Clear it first to prevent duplicate bars if the player revisits the scene
-            container.innerHTML = ''; 
-
-            // Call your global function
-            var newBar = window.generateMultiBar('Factions', Q.faction_support, 100, 0);
-
-            // Inject it into the page
-            container.appendChild(newBar);
-        }
-
 !}
 #{!</div>!}
 

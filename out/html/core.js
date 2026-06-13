@@ -1902,7 +1902,8 @@
                         // create an <a> element, with an image nested inside.
                         var $cardLink = $('<a>').addClass('card').attr({
                             href: '#',
-                            'card-id': card.id
+                            'card-id': card.id,
+                            title: card.title
                         });
                         var $title = $('<span>').addClass('card-caption').text(card.title);
                         // if there is an image, set the image; otherwise, set image to a gradient?
@@ -1951,7 +1952,8 @@
                     // create an <a> element, with an image nested inside.
                     var $deckLink = $('<a>').addClass('card').attr({
                         href: '#',
-                        'card-id': deck.id
+                        'card-id': deck.id,
+                        title: deck.title
                     });
                     var $title = $('<span>').addClass('card-caption').text(deck.title);
                     // if there is an image, set the image; otherwise, set image to a gradient?
@@ -2002,7 +2004,8 @@
                     // create an <a> element, with an image nested inside.
                     var $cardLink = $('<a>').addClass('card').attr({
                         href: '#',
-                        'card-id': card.id
+                        'card-id': card.id,
+                        title: card.title
                     });
                     var $title = $('<span>').addClass('card-caption').text(card.title);
                     // if there is an image, set the image; otherwise, set image to a gradient?

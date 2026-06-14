@@ -693,7 +693,6 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
             '</div>';
         
         container.innerHTML = barHtml;
-        window.updateSidebarRight();
     }
 
     if (typeof window.__customGenerateBarAttempts === 'undefined') {

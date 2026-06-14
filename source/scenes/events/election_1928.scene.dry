@@ -125,7 +125,7 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
         Q[d + '_' + party + '_raw_support'] = support; // Store raw support for this party in this district
 
         // Cubing for FPTP simulation (rudimentary, ik)
-        district_party_support[party] = support * support * support; // FPTP Distorted
+        district_party_support[party] = support * support * (support / support); // FPTP Distorted
     }
 
     Q[d + '_party_support'] = district_party_support; // Save FPTP distorted support for the district

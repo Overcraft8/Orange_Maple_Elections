@@ -693,11 +693,11 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
             console.log("Dissent was null");
         } else if (dissentText === "") {
             console.log("Dissent was empty string");
-        } else {
-            // Only fires if Dendry successfully passed a real string
-            finalTooltipText += '<br><br>Dissent: ' + dissentText;
-            console.log("Dissent string successfully attached!"); 
-        }
+        // } else {
+        //     // Only fires if Dendry successfully passed a real string
+        //     finalTooltipText += '<br><br>Dissent: ' + dissentText;
+        //     console.log("Dissent string successfully attached!"); 
+        // }
         
         var barHtml = 
             '<div class="tooltip" style="position: relative; width: 100%;">' + 

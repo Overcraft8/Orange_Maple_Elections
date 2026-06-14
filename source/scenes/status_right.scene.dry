@@ -1,14 +1,14 @@
 title: Party Hierarchy
 new-page: true
 is-special: true
-on-arrival: {! 
-if (window && window.customgeneratebar) {
-    window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm', "[+ agrarian_dissent : dissent +]");
-    window.customgeneratebar(Q.labour_strength, "#091f43", "#0F52BA", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes', "[+ labour_dissent : dissent +]");
-    window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP', "[+ moderate_dissent : dissent +]");
-    window.customgeneratebar(Q.far_left_strength, "#1f0303", "#7b1616", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations', "[+ far_left_dissent : dissent +]");
-}
-!}
+# on-arrival: {! 
+# if (window && window.customgeneratebar) {
+#     window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm', "[+ agrarian_dissent : dissent +]");
+#     window.customgeneratebar(Q.labour_strength, "#091f43", "#0F52BA", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes', "[+ labour_dissent : dissent +]");
+#     window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP', "[+ moderate_dissent : dissent +]");
+#     window.customgeneratebar(Q.far_left_strength, "#1f0303", "#7b1616", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations', "[+ far_left_dissent : dissent +]");
+# }
+# !}
 
 = Party Hierarchy
 
@@ -95,6 +95,21 @@ Internal dissent: [+ dissent_percent : dissent +]
 </tr>
 </table>
 </div>
+
+
+{!
+<script>
+    if (window && window.customgeneratebar) {
+        window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm', "[+ agrarian_dissent : dissent +]");
+        
+        window.customgeneratebar(Q.labour_strength, "#091f43", "#0F52BA", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes', "[+ labour_dissent : dissent +]");
+        
+        window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP', "[+ moderate_dissent : dissent +]");
+        
+        window.customgeneratebar(Q.far_left_strength, "#1f0303", "#7b1616", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations', "[+ far_left_dissent : dissent +]");
+    }
+</script>
+!}
 
 
 

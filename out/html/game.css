@@ -304,7 +304,7 @@ img.inline-img.icon {
   color: var(--text-color);
   border: ridge;
   border-color: #9c8c64;
-  padding: 10px;
+  padding: 7px;
 }
 
 .dark-mode .tab_button, .dark-mode .status_tab_button{
@@ -341,7 +341,7 @@ img.inline-img.icon {
   color: var(--text-color);
   border: ridge;
   border-color: #9c8c64;
-  padding: 10px;
+  padding: 8px;
 }
 
 .status_tab_button.active {

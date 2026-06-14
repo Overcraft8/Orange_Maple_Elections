@@ -3,10 +3,10 @@ new-page: true
 is-special: true
 on-arrival: {! 
 if (window && window.customgeneratebar) {
-    window.customgeneratebar(Q.agrarian_strength, "#61991c", "#9ec520", "agrarian_bar_main");
-    window.customgeneratebar(Q.labour_strength, "#0f3a81", "#0F52BA", "labour_bar_main");
-    window.customgeneratebar(Q.moderate_strength, "#b26127", "#d26e28", "moderate_bar_main");
-    window.customgeneratebar(Q.far_left_strength, "#3b0606", "#7b1616", "far_left_bar_main");
+    window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm', "[+ Q.agrarian_dissent : dissent +]");
+    window.customgeneratebar(Q.labour_strength, "#091f43", "#0F52BA", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes', "[+ Q.labour_dissent : dissent +]");
+    window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP', "[+ Q.moderate_dissent : dissent +]");
+    window.customgeneratebar(Q.far_left_strength, "#1f0303", "#7b1616", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations', "[+ Q.far_left_dissent : dissent +]");
 }
 !}
 
@@ -53,7 +53,7 @@ Internal dissent: [+ dissent_percent : dissent +]
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 :
   <div class="tooltip" style="color: #0F52BA;"> **Labour**
-  <span class="tooltip-text"> A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes.</span><br>
+  <span class="tooltip-text"> </span><br>
   </div>
   <div style="text-align: left">
   Strength: [+ labour_strength : strength +]<br> 
@@ -72,7 +72,7 @@ Internal dissent: [+ dissent_percent : dissent +]
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 :
   <div class="tooltip" style="color: #7b1616;"> **Far Left**
-  <span class="tooltip-text"> A faction of radical socialists. Many of them have ties to Communist organizations </span><br> 
+  <span class="tooltip-text"> </span><br> 
   </div>
   <div style="text-align: left">
   Strength: [+ far_left_strength : strength +]<br> 
@@ -84,7 +84,7 @@ Internal dissent: [+ dissent_percent : dissent +]
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 : 
   <div class="tooltip" style="color: #d26e28;"> **Moderate** 
-  <span class="tooltip-text"> The moderate wing of the FLP </span><br> 
+  <span class="tooltip-text"> </span><br> 
   </div>
   <div style="text-align: left">
   Strength: [+ moderate_strength : strength +]<br> 
@@ -97,13 +97,8 @@ Internal dissent: [+ dissent_percent : dissent +]
 </div>
 
 
-# {!<script>
-#   window.customgeneratebar(Q.agrarian_strength, "#f06e60", "#86a71b", "agrarian_bar");
-# </script>!}
-# 
 
-Agrarians
-# Notice we use [+ agrarian_strength +] here instead of Q.agrarian_strength
+
 <div id="agrarian_bar_main"></div>
 
 <div id='labour_bar_main'></div>
@@ -111,6 +106,7 @@ Agrarians
 <div id='moderate_bar_main'></div>
 
 <div id='far_left_bar_main'></div>
+
 
 Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]
 

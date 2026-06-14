@@ -690,24 +690,21 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
         var finalTooltipText = tooltip;
 
         if (dissentText === null) {
-            console.log("sssssd")
-        }
-
-        if (dissentText === "") {
-            console.log("ssssse")
-        }
-
-        if (dissentText !== null && dissentText !== "") {
+            console.log("Dissent was null");
+        } else if (dissentText === "") {
+            console.log("Dissent was empty string");
+        } else {
+            // Only fires if Dendry successfully passed a real string
             finalTooltipText += '<br><br>Dissent: ' + dissentText;
-            console.log('ssererer') 
+            console.log("Dissent string successfully attached!"); 
         }
         
         var barHtml = 
-            '<div class="tooltip" style="position: relative; width: 100%;">' + // Outer wrapper for tooltip
+            '<div class="tooltip" style="position: relative; width: 100%;">' + 
                 '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
                     '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
                 '</div>' +
-                '<span id=' + elementID + '_tooltip; class="tooltip-text">' + finalTooltipText + ' style="text-align: center; "</span>' + // Tooltip span attached here
+                '<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
             '</div>';
 
         

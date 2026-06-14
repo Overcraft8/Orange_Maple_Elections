@@ -690,7 +690,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
         var finalTooltipText = tooltip;
 
         if (dissentText !== null && dissentText !== "") {
-            finalTooltipText += '<br>Dissent: ' + dissentText; 
+            finalTooltipText += '<br><brDissent: ' + dissentText; 
         }
         
         var barHtml = 
@@ -698,7 +698,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
                 '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
                     '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
                 '</div>' +
-                '<span id=' + elementID + '_tooltip; class="tooltip-text">' + finalTooltipText + '</span>' + // Tooltip span attached here
+                '<span id=' + elementID + '_tooltip; class="tooltip-text">' + finalTooltipText + ' style="text-align: center; "</span>' + // Tooltip span attached here
             '</div>';
 
         

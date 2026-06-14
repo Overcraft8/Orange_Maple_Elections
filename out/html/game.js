@@ -698,7 +698,8 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
         }
 
         if (dissentText !== null && dissentText !== "") {
-            finalTooltipText += '<br><brDissent: ' + dissentText; 
+            finalTooltipText += '<br><brDissent: ' + dissentText;
+            console.log('ssererer') 
         }
         
         var barHtml = 

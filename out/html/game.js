@@ -668,7 +668,7 @@ window.renderPollsChart = function(pollsData) {
     }
 };
 
-window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
+window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip) {
     
     function renderBar() {
         
@@ -688,9 +688,13 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
         if (widthPercent < 0) widthPercent = 0;
         
         var barHtml = 
-            '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
-                '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
+            '<div class="tooltip" style="position: relative; width: 100%;">' + // Outer wrapper for tooltip
+                '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
+                    '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
+                '</div>' +
+                '<span class="tooltip-text">' + tooltip + '</span>' + // Tooltip span attached here
             '</div>';
+
         
         container.innerHTML = barHtml;
     }

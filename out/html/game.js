@@ -717,3 +717,4 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
     window.__customGenerateBarAttempts = 0;
     renderBar();
 };
+};

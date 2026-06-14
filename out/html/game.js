@@ -447,8 +447,8 @@ window.sidebar3Collapsed = false;
         const baseId = tabId.replace('_tab', '');
         const targetContainer = document.getElementById(baseId + '_tabs');
 
-        if (targetContainer) {
-            targetContainer.style.display = 'block';
+        if (targetContainer) { //WARIO
+            targetContainer.style.display = 'flex';
         }
     }
 
@@ -488,8 +488,8 @@ window.sidebar3Collapsed = false;
         const baseId = tabId.replace('_tab', '');
         const targetContainer = document.getElementById(baseId + '_tabs');
 
-        if (targetContainer) {
-            targetContainer.style.display = 'block';
+        if (targetContainer) { //WARIO
+            targetContainer.style.display = 'flex';
         }
     }
 
@@ -668,52 +668,10 @@ window.renderPollsChart = function(pollsData) {
     }
 };
 
-
-// copied from the code for Australian Dawn
-
-window.toggleSidebar3 = function() {
-    var content = document.getElementById('qualities');
-    var chart   = document.getElementById('overall-polls-chart');
-    //var unionEl = document.getElementById('union-chart');
-    //var btn     = document.getElementById('collapse_3');
-    window.sidebar3Collapsed = !window.sidebar3Collapsed;
-    if (window.sidebar3Collapsed) {
-        content.style.display = 'none';
-        if (chart)   chart.style.display = 'none';
-        //if (unionEl) unionEl.style.display = 'none';
-        //btn.textContent = '▼';
-    } else {
-        content.style.display = '';
-        var showCharts = (window.statusTab3 === 'status_3.factions') ? '' : 'none';
-        if (chart)   chart.style.display = showCharts;
-        //if (unionEl) unionEl.style.display = showCharts;
-        //btn.textContent = '▲';
-    }
-};
-
-/*
-
 window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
-    // Ensure data is formatted cleanly as a percentage number
-    var widthPercent = Number(data);
-    if (isNaN(widthPercent)) widthPercent = 0;
-    if (widthPercent > 100) widthPercent = 100;
-    if (widthPercent < 0) widthPercent = 0;
-
-    // Generate the HTML and RETURN it. We attach the elementID directly to the outer div here.
-    var barHtml = 
-        '<div id="' + elementID + '" style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
-            '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
-        '</div>';
-
-    return barHtml;
-}; */
-
-window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
-    console.log('asdasdasd')
+    
     function renderBar() {
-
-        console.log('asdasdasd')
+        
 
         var container = document.getElementById(elementID);
         if (!container) {
@@ -723,29 +681,24 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID) {
             }
             return;
         }
-        console.log('asdasdasd')
 
         var widthPercent = Number(data);
         if (isNaN(widthPercent)) widthPercent = 0;
         if (widthPercent > 100) widthPercent = 100;
         if (widthPercent < 0) widthPercent = 0;
-        console.log('asdasdasd')
-
+        
         var barHtml = 
             '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
                 '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
             '</div>';
-        console.log('asdasdasd')
-
+        
         container.innerHTML = barHtml;
-        console.log('asdasdasd')
+        window.updateSidebarRight();
     }
 
     if (typeof window.__customGenerateBarAttempts === 'undefined') {
         window.__customGenerateBarAttempts = 0;
-        console.log('asdasdasd')
     }
     window.__customGenerateBarAttempts = 0;
-    console.log('asdasdasd')
     renderBar();
 };

@@ -689,6 +689,14 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 
         var finalTooltipText = tooltip;
 
+        if (dissentText === null) {
+            console.log("sssssd")
+        }
+
+        if (dissentText === "") {
+            console.log("ssssse")
+        }
+
         if (dissentText !== null && dissentText !== "") {
             finalTooltipText += '<br><brDissent: ' + dissentText; 
         }

@@ -1,6 +1,40 @@
 title: Party Hierarchy
 new-page: true
 is-special: true
+on-arrival: {!
+if (window && window.customgeneratebar) {
+    window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm');
+    window.customgeneratebar(Q.labour_strength, "#091f43", "#0F52BA", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
+    window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP');
+    window.customgeneratebar(Q.far_left_strength, "#1f0303", "#7b1616", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations');
+
+    window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#9ec520", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
+    window.customgeneratebar(Q.labour_dissent, "#091f43", "#0F52BA", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
+    window.customgeneratebar(Q.moderate_dissent, "#793f15", "#d26e28", "moderate_bar_dissent", 'The moderate wing of the FLP');
+    window.customgeneratebar(Q.far_left_dissent, "#1f0303", "#7b1616", "far_left_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
+}
+!}
+
+= Faction Strength
+
+
+<div id="agrarian_bar_main"></div>
+
+<div id='labour_bar_main'></div>
+
+<div id='moderate_bar_main'></div>
+
+<div id='far_left_bar_main'></div>
+
+= Faction Dissent
+
+<div id="agrarian_bar_dissent"></div>
+
+<div id='labour_bar_dissent'></div>
+
+<div id='moderate_bar_dissent'></div>
+
+<div id='far_left_bar_dissent'></div>
 
 = Party Hierarchy
 

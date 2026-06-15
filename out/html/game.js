@@ -668,7 +668,7 @@ window.renderPollsChart = function(pollsData) {
     }
 };
 
-window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip, dissentText = null) {
+window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip) {
     
     function renderBar() {
         
@@ -689,15 +689,6 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 
         var finalTooltipText = tooltip;
 
-        if (dissentText === null) {
-            console.log("Dissent was null");
-        } else if (dissentText === "") {
-            console.log("Dissent was empty string");
-        // } else {
-        //     // Only fires if Dendry successfully passed a real string
-        //     finalTooltipText += '<br><br>Dissent: ' + dissentText;
-        //     console.log("Dissent string successfully attached!"); 
-        // }
         
         var barHtml = 
             '<div class="tooltip" style="position: relative; width: 100%;">' + 
@@ -716,5 +707,4 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
     }
     window.__customGenerateBarAttempts = 0;
     renderBar();
-};
 };

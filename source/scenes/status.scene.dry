@@ -82,7 +82,17 @@ on-display: {!
 
 #{!</div>!}
 
+<div style="display: flex; justify-content: center; align-items: stretch;">
+
 <div style="display: flex; justify-content: center; align-items: stretch;"> {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} </div>
+    <div style='display: flex'>
+        <img src="img/portraits/JamesAnderson.jpg" style="display: block; width: 100%; height: auto; border-radius: 4px; margin-bottom: 8px;"> 
+        
+        <span style="display: block; font-size: 14px; font-weight: bold; text-align: center;">
+            Premier: [+ premier +]
+        </span> 
+    </div>
+</div>
 
 {!<div id="bars_container"></div>!}
 {!<div id="faction-bar"></div>!}

@@ -89,7 +89,7 @@ on-display: {!
     </div>
 
     <p style='display: flex'>
-        <img src="img/portraits/AndersonJamesn.jpg" style="display: block; width: 100%; height: auto; border-radius: 4px; margin-bottom: 8px;"> 
+        <img src="img/portraits/AndersonJames.jpg" style="display: block; width: 100%; height: auto; border-radius: 4px; margin-bottom: 8px;"> 
         
         <span style="display: block; font-size: 14px; font-weight: bold; text-align: center;">
             Premier: [+ premier +]

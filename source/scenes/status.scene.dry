@@ -51,52 +51,34 @@ on-display: {!
 
 
 !}
-#{!</div>!}
 
-#{!<div style="max-height:350px; overflow-y:auto; padding:6px;">!}
-
-#{!
-#<div style="display:flex; align-items:flex-start;">
-
-# LEFT IMAGE
-#* <div style="width:60%; text-align:center;">
-# <img src="img/Red_Lily.png" style="max-width:100%;">
-#* </div>
-
-#< MAIN CONTENT
-#<div style="width:60%; padding:0 10px;">
-#!}
 
 = Status
 
-#{!
-#</div>
+<div style="text-align: center; display:flex; align-items:flex-start;"> <div style="width:60%; text-align:center;">
+<img src="img/Red_Lily.png" style="max-width:100%;">
+ </div>
+<img src="img/portraits/AndersonJames.jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:1px solid #8B7355;"><p></p><div style="width:60%; text-align:center;">
+<img src="img/Red_Lily.png" style="max-width:100%;">
+ </div></div>
 
-# RIGHT IMAGE 
-# <div style="width:60%; text-align:center;">
-# <img src="img/Wheat_Bundle.png" style="max-width:100%;">
-# </div>
 
-#</div>
-#!}
+<span style="display: block; font-size: 18px; font-weight: bold;">
+    Premier: [+ premier +] ([+ premier_party +])
 
-#{!</div>!}
+    Government: [+ ruling_government +]
 
-<div>
-<img src="img/portraits/AndersonJames.jpg" style="width:170px;height:210px;object-fit:cover;object-position:top;border:1px solid #8B7355;"> 
-        
-        <span style="display: block; font-size: 14px; font-weight: bold; text-align: center;">
-            Premier: [+ premier +]
-        </span> 
-</div>
+    Prime Minister: [+ prime_minister +]
+
+</span> 
 
  <div style="display: flex; justify-content: center; align-items: stretch;"> 
  {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
  </div>
 
 
-{!<div id="bars_container"></div>!}
-{!<div id="faction-bar"></div>!}
+# {!<div id="bars_container"></div>!}
+# {!<div id="faction-bar"></div>!}
 
 [+ month : month +] [+ year +]
 
@@ -107,13 +89,7 @@ FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in g
 
 [? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
 
-= Government
-
-Government: [+ ruling_government +]
-
-Prime Minister: [+ prime_minister +]
-
-Premier: [+ premier +] ([+ premier_party +])
+= Legislature
 
 Assembly composition:
 

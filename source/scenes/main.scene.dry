@@ -12,6 +12,13 @@ if (Q.advisor_action_timer <= 0) {
 !}
 max-cards: 6
 
+<div style="text-align: center; display:flex; align-items:flex-start;"> <div style="width:60%; text-align:center;">
+<img src="img/Red_Lily.png" style="max-width:100%;">
+ </div>
+<img src="img/portraits/AndersonJames.jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:1px solid #8B7355;"><p></p><div style="width:60%; text-align:center;">
+<img src="img/Red_Lily.png" style="max-width:100%;">
+ </div></div>
+
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
 [? if year = 1932 and month = 2 : The Anderson government buckles down on it's policy of retrenchment.?]

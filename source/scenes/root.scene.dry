@@ -419,6 +419,7 @@ Q.economic_records = [];
 Q.prime_minister = "Richard Bennett (CPC)";
 // starting premier: James Anderson
 Q.premier = "James Anderson";
+Q.premier_img = 'AndersonJames.jpg';
 Q.premier_party = 'CPS';
 Q.flp_in_government = 0;
 Q.pps_in_government = 0;
@@ -743,8 +744,7 @@ Q.district_names = [
 ];
 
 
-// Q.regina_d_seats = 2;
-Q.regina_d_seats = 11;
+Q.regina_d_seats = 2;
 Q.regina_d_workers = 30;
 Q.regina_d_old_middle = 20; 
 Q.regina_d_new_middle = 20;
@@ -757,52 +757,50 @@ Q.saskatoon_d_old_middle = 20;
 Q.saskatoon_d_new_middle = 25;
 Q.saskatoon_d_unemployed = 30;
 
-//2
-Q.moosejaw_d_seats = 4;
+Q.moosejaw_d_seats = 2;
 Q.moosejaw_d_workers = 40;
 Q.moosejaw_d_old_middle = 20; 
 Q.moosejaw_d_new_middle = 10;
 Q.moosejaw_d_unemployed = 30;
 
-//1
-Q.princealbert_d_seats = 4;
+Q.princealbert_d_seats = 1;
 Q.princealbert_d_workers = 35;
 Q.princealbert_d_old_middle = 15; 
 Q.princealbert_d_new_middle = 20;
 Q.princealbert_d_unemployed = 30;
 
-//7
-Q.quappelle_d_seats = 19;
+
+Q.quappelle_d_seats = 7;
 Q.quappelle_d_workers = 15;
 Q.quappelle_d_farmer = 30; 
 Q.quappelle_d_farmhand = 25;
 Q.quappelle_d_rural_worker = 10;
 Q.quappelle_d_unemployed = 20;
 
-//7
-Q.southwest_d_seats = 24;
+
+Q.southwest_d_seats = 7;
 Q.southwest_d_workers = 15;
 Q.southwest_d_farmer = 40; 
 Q.southwest_d_farmhand = 25;
 Q.southwest_d_rural_worker = 20;
 
-//13
-Q.southeast_d_seats = 16;
+
+Q.southeast_d_seats = 13;
 Q.southeast_d_workers = 5;
 Q.southeast_d_farmer = 40; 
 Q.southeast_d_farmhand = 25;
 Q.southeast_d_rural_worker = 10;
 Q.southeast_d_unemployed = 20;
 
-//3
-Q.north_d_seats = 6;
+
+Q.north_d_seats = 3;
 Q.north_d_workers = 20;
 Q.north_d_farmer = 20; 
 Q.north_d_farmhand = 20;
 Q.north_d_rural_worker = 40;
 
-//14
-Q.central_d_seats = 28;
+
+Q.central_d_seats = 14;
 Q.central_d_workers = 15;
 Q.central_d_farmer = 35; 
 Q.central_d_farmhand = 15;

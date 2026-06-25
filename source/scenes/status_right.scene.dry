@@ -8,13 +8,13 @@ is-special: true
 <div style="display:flex; gap:1em; justify-content: center;">
 
 <a class="card" go-to="flp_president">
-  <img class="card-img" src="img/portraits/[+ flp_president_img +]" style="display:block; margin:auto;">
-  <span class="card-caption">Party President</span>
+  <img src="img/portraits/[+ flp_president_img +].jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">>
+  <span class="card-caption">Party President: [+ president +]</span>
 </a>
 
-<a class="card" go-to="flp_legislative_leader">
-  <img class="card-img" src="img/portraits/[+ flp_legislative_leader_img +]" style="display:block; margin:auto;">
-  <span class="card-caption">Legislative Leader</span>
+<a class="card" go-to="flp_party_leader">
+  <img src="img/portraits/[+ flp_party_leader_img +].jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+  <span style='font-size: 18px;' Party Leader: [+ party_leader +]</span>
 </a>
 </div>
 

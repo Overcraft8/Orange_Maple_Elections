@@ -58,40 +58,41 @@ on-display: {!
 <div style="text-align: center; display:flex; align-items:flex-start;"> <div style="width:60%; text-align:center;">
 <img src="img/Red_Lily.png" style="max-width:100%;">
  </div>
-<img src="img/portraits/AndersonJames.jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:1px solid #8B7355;"><p></p><div style="width:60%; text-align:center;">
+<img src="img/portraits/AndersonJames.jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;"><p></p><div style="width:60%; text-align:center;">
 <img src="img/Red_Lily.png" style="max-width:100%;">
  </div></div>
 
 
-<span style="display: block; font-size: 18px; font-weight: bold;">
+<span style="display: block; font-size: 18px; font-weight: bold; text-align: center;">
     Premier: [+ premier +] ([+ premier_party +])
 
     Government: [+ ruling_government +]
 
     Prime Minister: [+ prime_minister +]
 
-</span> 
 
- <div style="display: flex; justify-content: center; align-items: stretch;"> 
- {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
- </div>
+    FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
+    [? if in_lps_coalition and flp_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_unity_government and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
+
+    [? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+
+    [? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
+
+</span> 
 
 
 # {!<div id="bars_container"></div>!}
 # {!<div id="faction-bar"></div>!}
 
-[+ month : month +] [+ year +]
-
-FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
-[? if in_lps_coalition and flp_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_unity_government and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
-
-[? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
-
-[? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
+# [+ month : month +] [+ year +]
 
 = Legislature
 
 Assembly composition:
+
+ <div style="display: flex; justify-content: center; align-items: stretch;"> 
+ {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
+ </div>
 
 # 1928: 30, 1930: 25, 1932: 22
 [? if flp_seats > 0: [? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_seats +] ?]

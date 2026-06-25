@@ -1,0 +1,7 @@
+title: News
+new-page: true
+is-special: true
+
+@provincialnews
+
+[? if 1 + 1 == 2: I don't know what to put here?]

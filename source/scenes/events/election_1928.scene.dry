@@ -704,7 +704,7 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 - @majority_premier: Our legislative leader will become Premier
 
 @majority_premier
-on-arrival: premier =  legislative_leader 
+on-arrival: premier =  party_leader 
 go-to: ministries
 
 
@@ -720,7 +720,7 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 - @minority_premier: Our legislative leader will become Premier
 
 @minority_premier
-on-arrival: premier =  legislative_leader 
+on-arrival: premier =  party_leader 
 go-to: ministries
 
 
@@ -740,7 +740,7 @@ The LPS has demanded that we keep schools good.
 
 @lps_coalition_succeed
 title: We have suceeded!
-on-arrival: premier = flp_legislative_leader
+on-arrival: premier = flp_party_leader
 choose-if: lps_relation >= 70
 go-to: ministries
 

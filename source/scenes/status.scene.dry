@@ -65,12 +65,8 @@ on-display: {!
 
 <span style="display: block; font-size: 18px; font-weight: bold; text-align: center;">
     Premier: [+ premier +] ([+ premier_party +])
-
     Government: [+ ruling_government +]
-
     Prime Minister: [+ prime_minister +]
-
-
     FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
     [? if in_lps_coalition and flp_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_unity_government and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
 

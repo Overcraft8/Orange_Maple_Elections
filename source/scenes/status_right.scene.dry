@@ -5,17 +5,18 @@ is-special: true
 = Party Hierarchy
 
 
-<div style="display:flex; gap:1em; justify-content: center;">
+<div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
-<a class="card" go-to="flp_president">
-  <img src="img/portraits/[+ flp_president_img +].jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">>
-  <span class="card-caption">Party President: [+ president +]</span>
-</a>
+<span>
+<img src="img/portraits/[+ flp_president_img +]" style="width:190x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+  <span class="card-caption">Party President: 0</span>
+</span>
 
-<a class="card" go-to="flp_party_leader">
-  <img src="img/portraits/[+ flp_party_leader_img +].jpg" style="width:110x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  <span style='font-size: 18px;' Party Leader: [+ party_leader +]</span>
-</a>
+<span>
+<img src="img/portraits/[+ flp_party_leader_img +]" style="width:190x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+  <span class="card-caption">Party President: 0</span>
+</span>
+
 </div>
 
 Resources available: [+ resources +]

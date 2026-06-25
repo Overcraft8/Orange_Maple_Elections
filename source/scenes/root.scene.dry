@@ -143,15 +143,6 @@ Q.flp_party_leader_img = "Question_Mark.jpg";
 Q.flp_president = "None";
 Q.flp_president_img = "ColdwellMajorJames.jpg";
 
-Q.flp_board_one = "Alexander Nicholson";
-Q.flp_board_one_faction = "agrarian";
-Q.flp_board_two = "Louise Lucas";
-Q.flp_board_one_faction = "agrarian";
-Q.flp_board_three = "John Brockelbank";
-Q.flp_board_one_faction = "agrarian";
-Q.flp_board_four = "Clarence Fines";
-Q.flp_board_one_faction = "labour";
-
 
 Q.cp_s_leader = "None";
 Q.cp_s_party_leader = "None";

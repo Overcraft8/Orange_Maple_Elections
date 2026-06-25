@@ -65,7 +65,9 @@ on-display: {!
 
 <div style="display: block; font-size: 18px; font-weight: bold; text-align: center;">
     Premier: [+ premier +] ([+ premier_party +])
+
     Government: [+ ruling_government +]
+
     FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
     [? if in_lps_coalition and flp_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_unity_government and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
 
@@ -90,6 +92,7 @@ Assembly composition:
  {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
  </div>
 
+<div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22
 [? if flp_seats > 0: [? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_seats +] ?]
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
@@ -105,6 +108,7 @@ Assembly composition:
 [? if scps_seats > 0: [? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_seats +] ?]
 # 1928: 9, 1930: 10
 [? if other_seats > 0: Independents: [+ other_seats +] ?]
+</div>
 
 Budget: [+ treasury +] 
 

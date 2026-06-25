@@ -38,7 +38,7 @@ Membership Change: [+ membership_change +]
 = Party Affiliates of the FLP
 
 [? if 1 == 1 : 
-<span style="color: #7b1616;">**CCYM**</span> 
+<span style="color: #c32222;">**CCYM**</span> 
 Influence: [+ ccym_influence +]%<br>
 Relations: [+ ccym_relations : relationships +]<br>
 Militancy: [+ ccym_militancy : militancy +]<br>
@@ -74,17 +74,30 @@ Strength: [+ tlc_strength +] Thousand<br>
 new-page: True
 is-special: True
 on-arrival: {!
-if (window && window.customgeneratebar) {
-    window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm');
-    window.customgeneratebar(Q.labour_strength, "#091f43", "#0F52BA", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
-    window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP');
-    window.customgeneratebar(Q.far_left_strength, "#1f0303", "#7b1616", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations');
+// if (window && window.customgeneratebar) {
+//     window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm');
+//     window.customgeneratebar(Q.labour_strength, "#091f43", "#347fef", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
+//     window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP');
+//     window.customgeneratebar(Q.far_left_strength, "#1f0303", "#c32222", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations');
+// 
+//     window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#9ec520", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
+//     window.customgeneratebar(Q.labour_dissent, "#091f43", "#347fef", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
+//     window.customgeneratebar(Q.moderate_dissent, "#793f15", "#d26e28", "moderate_bar_dissent", 'The moderate wing of the FLP');
+//     window.customgeneratebar(Q.far_left_dissent, "#1f0303", "#c32222", "far_left_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
+// }
 
-    window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#9ec520", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
-    window.customgeneratebar(Q.labour_dissent, "#091f43", "#0F52BA", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
-    window.customgeneratebar(Q.moderate_dissent, "#793f15", "#d26e28", "moderate_bar_dissent", 'The moderate wing of the FLP');
-    window.customgeneratebar(Q.far_left_dissent, "#1f0303", "#7b1616", "far_left_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
-}
+if (window && window.customgeneratebar) {
+        var strengths = [Q.agrarian_strength, Q.labour_strength, Q.moderate_strength, Q.far_left_strength];
+        var factionColors = ["#9ec520", "#347fef", "#d26e28", "#c32222"];
+        
+        window.customgeneratebar(
+            strengths, 
+            "#333333", 
+            factionColors, 
+            "party_faction_split_bar", 
+            "The internal balance of power within the FLP"
+        );
+    }
 !}
 
 = Faction Strength
@@ -136,7 +149,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 :
-  <div class="tooltip" style="color: #0F52BA;"> **Labour**
+  <div class="tooltip" style="color: #347fef;"> **Labour**
   <span class="tooltip-text"> </span><br>
   </div>
   <div style="text-align: left">
@@ -155,7 +168,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
   <td style="text-align: center; max-width: 200px;">
   [? if 1 == 1 :
-  <div class="tooltip" style="color: #7b1616;"> **Far Left**
+  <div class="tooltip" style="color: #c32222;"> **Far Left**
   <span class="tooltip-text"> </span><br> 
   </div>
   <div style="text-align: left">

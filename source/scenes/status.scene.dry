@@ -63,7 +63,7 @@ on-display: {!
  </div></div>
 
 
-<span style="display: block; font-size: 18px; font-weight: bold; text-align: center;">
+<div style="display: block; font-size: 18px; font-weight: bold; text-align: center;">
     Premier: [+ premier +] ([+ premier_party +])<p>
     Government: [+ ruling_government +]<p>
     FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
@@ -75,7 +75,7 @@ on-display: {!
 
     Prime Minister: [+ prime_minister +]<p>
 
-</span> 
+</div> 
 
 
 # {!<div id="bars_container"></div>!}

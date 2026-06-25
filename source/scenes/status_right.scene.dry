@@ -102,6 +102,7 @@ if (window && window.customgeneratebar) {
 
 = Faction Strength
 
+<div id="party_faction_split_bar"></div>
 
 <div id="agrarian_bar_main"></div>
 

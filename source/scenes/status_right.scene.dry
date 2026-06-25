@@ -8,12 +8,12 @@ is-special: true
 <div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
 <span>
-<img src="img/portraits/[+ flp_president_img +]" style="width:190x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+<img src="img/portraits/[+ flp_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
   <span class="card-caption">Party President: 0</span>
 </span>
 
 <span>
-<img src="img/portraits/[+ flp_party_leader_img +]" style="width:190x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+<img src="img/portraits/[+ flp_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
   <span class="card-caption">Party President: 0</span>
 </span>
 

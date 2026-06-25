@@ -202,7 +202,7 @@ function getPartyIdeology(party, Q) {
             if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Progressivism)';
             return 'Unknown';
         case 'LPS': 
-            if (Q.lps_ideology === "Liberalism") return '<span style="color: #C42424;">Centre - Centre Left</span> (Liberalism)';
+            if (Q.lps_ideology === "Classical Liberalism") return '<span style="color: #C42424;">Centre - Centre Left</span> (Liberalism)';
             if (Q.lps_ideology === "Social Liberalism") return '<span style="color: #c45724;">Centre Left</span> (Social Liberalism)';
             if (Q.lps_ideology === "Centrism") return '<span style="color: #b97a7a;">Centrist</span> (Centrism)';
             return 'Unknown';

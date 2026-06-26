@@ -769,21 +769,21 @@ table {
 
 .tooltip {
   position: relative;
-  display: inline-block;
+  display: block; /* Works perfectly inside your flex multi-bar */
   cursor: help;
-  text-decoration: underline;
 }
 
 .tooltip-text {
   position: absolute;
-  left: -4em;
 
-  /* ⭐ Position ABOVE the word */
-  bottom: 60%;          /* Tooltip bottom touches the top of the word */
-  margin-bottom: 6px;    /* Small gap (optional) */
+  left: 50%;
+  transform: translateX(-50%) translateY(5px); /* Centers horizontally & pushes down for animation */
+  
+  bottom: 100%;         
+  margin-bottom: 8px;   
 
   color: #3b1f0a;
-  text-align: left;
+  text-align: center;   /* Keeps multi-line descriptions looking neat */
   font-size: 11px;
   line-height: 1.2em;
   font-weight: 500;
@@ -792,21 +792,21 @@ table {
   pointer-events: none;
   transition: opacity 0.12s ease-out, transform 0.12s ease-out;
 
-  /* Slide-up animation */
-  transform: translateY(5px);
-
-  width: 12em;
+  width: max-content;
+  max-width: 180px;     /* Sets a safe upper limit for small screens */
+  white-space: normal;  /* Allows longer text descriptions to wrap cleanly */
+  
   background-color: #fff4e6;
   border: 1px solid #b27b22d9;
   border-radius: 5px;
   padding: 8px 11px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  z-index: 9998;
+  z-index: 9999;
 }
 
 .tooltip:hover .tooltip-text {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 

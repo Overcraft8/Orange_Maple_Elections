@@ -731,32 +731,63 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
         var colors = Array.isArray(colorsArray) ? colorsArray : [colorsArray];
         var tooltipTexts = Array.isArray(tooltips) ? tooltips : [tooltips];
 
-        for (var i = 0; i < data.length; i++) {
-            var widthPercent = Number(data[i]);
-            if (isNaN(widthPercent)) widthPercent = 0;
-            if (widthPercent < 0) widthPercent = 0;
+        // Filter out zero or invalid items first so edge detection index (i === 0) works perfectly
+        var validSegments = [];
+        for (var j = 0; j < data.length; j++) {
+            var val = Number(data[j]);
+            if (!isNaN(val) && val > 0) {
+                validSegments.push({
+                    value: val,
+                    color: colors[j] || '#cccccc',
+                    tooltip: tooltipTexts[j] || ''
+                });
+            }
+        }
+
+        for (var i = 0; i < validSegments.length; i++) {
+            var widthPercent = validSegments[i].value;
 
             if (totalInputWeight + widthPercent > 100) {
                 widthPercent = 100 - totalInputWeight;
             }
             totalInputWeight += widthPercent;
-            var current_tooltip = tooltipTexts[i] || '';
+            
+            var current_tooltip = validSegments[i].tooltip;
+            var segmentColor = validSegments[i].color;
+            var uniqueSegmentID = 'id_' + elementID + '_' + i;
+        
+            // Default center alignment values
+            var alignmentStyle = 'left: 50%; transform: translateX(-50%) translateY(5px);';
+            var hoverTransform = 'transform: translateX(-50%) translateY(0); opacity: 1;';
 
-            if (widthPercent > 0) {
-                var segmentColor = colors[i] || '#cccccc';
-                
-                innerSegmentsHtml += 
-                '<div class="tooltip" style="position: relative; height: 100%; width: ' + widthPercent + '%; display: block;">' + 
-                    '<div style="background: ' + segmentColor + '; opacity: 0.7; height: 100%; width: 100%; transition: width 0.4s;"></div>' +
-                    '<span class="tooltip-text" style="text-align: center;">' + current_tooltip + '</span>' +
-                '</div>';
+            if (i === 0) {
+                // Far left faction box: anchor tooltip to left edge
+                alignmentStyle = 'left: 0%; transform: translateY(5px);';
+                hoverTransform = 'transform: translateY(0); opacity: 1;';
+            } else if (i === validSegments.length - 1 || totalInputWeight >= 98) {
+                // Far right faction box: anchor tooltip to right edge
+                alignmentStyle = 'right: 0%; left: auto; transform: translateY(5px);';
+                hoverTransform = 'transform: translateY(0); opacity: 1;';
             }
+        
+            // FIXED: Added id="" attribute directly to the segment block so the <style> tags can find it!
+            innerSegmentsHtml += 
+            '<div id="' + uniqueSegmentID + '" class="tooltip" style="position: relative; height: 100%; width: ' + widthPercent + '%; display: block;">' + 
+                '<div style="background: ' + segmentColor + '; opacity: 0.7; height: 100%; width: 100%;"></div>' +
+                '<span class="tooltip-text" style="' + alignmentStyle + '">' + current_tooltip + '</span>' +
+                '<style>' +
+                    '#' + uniqueSegmentID + ':hover .tooltip-text { ' + hoverTransform + ' }' +
+                '</style>' +
+            '</div>';
         }
         
+        // FIXED: Shifted the border clipping wrapper away from the flex layer so absolute tooltips pop out freely
         var barHtml = 
-            '<div style="width: 100%;">' + 
-                '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
-                    innerSegmentsHtml + 
+            '<div style="width: 100%; position: relative;">' + 
+                '<div style="border-radius: 4px; overflow: hidden; border: 1px solid #000000; height: 15px; background: ' + outercolor + ';">' +
+                    '<div style="display: flex; height: 100%; overflow: visible;">' +
+                        innerSegmentsHtml + 
+                    '</div>' +
                 '</div>' +
             '</div>';
 

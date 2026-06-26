@@ -5,6 +5,7 @@ view-if: year = 1932 and month = 3
 priority: 2
 max-visits: 1
 face-image: img/Melfort_Market.jpg
+on-departure: pps_seats -= 5; flp_seats += 1; lps_seats += 1; cps_seats += 3;
 
 = The Progressives fall out of relevance
 
@@ -13,5 +14,3 @@ The Progressive Party of Saskatchewan, once a key coalition partner of the Ander
  MLA Jacob Benson has chosen to join our party and sit as a Farmer-Labour representative and has chosen to continue supporting the Cooperative Coalition. Through him, we can finally exercise our weight in government. MLA Charles Agar has chosen to sit with the Grits. The remaining 3 MLAs have either joined the Conservative party or have retired from politics. 
 
  With the Progressives now out the picture, rural Saskatchewan seems ripe for the taking by our party. 
-
-on-departure: pps_seats -= 5; flp_seats += 1; lps_seats += 1; cps_seats += 3;

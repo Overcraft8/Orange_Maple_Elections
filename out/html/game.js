@@ -713,92 +713,70 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 
 
 window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
+    var container = document.getElementById(elementID);
     
-    function renderBar() {
-        var container = document.getElementById(elementID);
-        if (!container) {
-            if (window.__customGenerateBarAttempts < 20) {
-                window.__customGenerateBarAttempts += 1;
-                setTimeout(renderBar, 25);
-            }
-            return;
-        }
-
-        var innerSegmentsHtml = '';
-        var totalInputWeight = 0;
-
-        var data = Array.isArray(dataArray) ? dataArray : [dataArray];
-        var colors = Array.isArray(colorsArray) ? colorsArray : [colorsArray];
-        var tooltipTexts = Array.isArray(tooltips) ? tooltips : [tooltips];
-
-        // Filter out zero or invalid items first so edge detection index (i === 0) works perfectly
-        var validSegments = [];
-        for (var j = 0; j < data.length; j++) {
-            var val = Number(data[j]);
-            if (!isNaN(val) && val > 0) {
-                validSegments.push({
-                    value: val,
-                    color: colors[j] || '#cccccc',
-                    tooltip: tooltipTexts[j] || ''
-                });
-            }
-        }
-
-        for (var i = 0; i < validSegments.length; i++) {
-            var widthPercent = validSegments[i].value;
-
-            if (totalInputWeight + widthPercent > 100) {
-                widthPercent = 100 - totalInputWeight;
-            }
-            totalInputWeight += widthPercent;
-            
-            var current_tooltip = validSegments[i].tooltip;
-            var segmentColor = validSegments[i].color;
-            var uniqueSegmentID = 'id_' + elementID + '_' + i;
-        
-            // Default center alignment values
-            var alignmentStyle = 'left: 50%; transform: translateX(-50%) translateY(5px);';
-            var hoverTransform = 'transform: translateX(-50%) translateY(0); opacity: 1;';
-
-            if (i === 0) {
-                // Far left faction box: anchor tooltip to left edge
-                alignmentStyle = 'left: 0%; transform: translateY(5px);';
-                hoverTransform = 'transform: translateY(0); opacity: 1;';
-            } else if (i === validSegments.length - 1 || totalInputWeight >= 98) {
-                // Far right faction box: anchor tooltip to right edge
-                alignmentStyle = 'right: 0%; left: auto; transform: translateY(5px);';
-                hoverTransform = 'transform: translateY(0); opacity: 1;';
-            }
-        
-            // FIXED: Added id="" attribute directly to the segment block so the <style> tags can find it!
-            innerSegmentsHtml += 
-            '<div id="' + uniqueSegmentID + '" class="tooltip" style="position: relative; height: 100%; width: ' + widthPercent + '%; display: block;">' + 
-                '<div style="background: ' + segmentColor + '; opacity: 0.7; height: 100%; width: 100%;"></div>' +
-                '<span class="tooltip-text" style="' + alignmentStyle + '">' + current_tooltip + '</span>' +
-                '<style>' +
-                    '#' + uniqueSegmentID + ':hover .tooltip-text { ' + hoverTransform + ' }' +
-                '</style>' +
-            '</div>';
-        }
-        
-        // FIXED: Shifted the border clipping wrapper away from the flex layer so absolute tooltips pop out freely
-        var barHtml = 
-            '<div style="width: 100%; position: relative;">' + 
-                '<div style="border-radius: 4px; overflow: hidden; border: 1px solid #000000; height: 15px; background: ' + outercolor + ';">' +
-                    '<div style="display: flex; height: 100%; overflow: visible;">' +
-                        innerSegmentsHtml + 
-                    '</div>' +
-                '</div>' +
-            '</div>';
-
-        container.innerHTML = barHtml;
+    // Simplified container check
+    if (!container) {
+        setTimeout(function() { window.customgeneratemultibar(dataArray, outercolor, colorsArray, elementID, tooltips); }, 25);
+        return;
     }
 
-    if (typeof window.__customGenerateBarAttempts === 'undefined') {
-        window.__customGenerateBarAttempts = 0;
+    // Force inputs into arrays cleanly
+    var data = [].concat(dataArray);
+    var colors = [].concat(colorsArray);
+    var texts = [].concat(tooltips);
+
+    // 1. Filter out zero/invalid segments
+    var valid = [];
+    for (var j = 0; j < data.length; j++) {
+        var val = Number(data[j]);
+        if (val > 0) valid.push({ val: val, color: colors[j] || '#ccc', text: texts[j] || '' });
     }
-    window.__customGenerateBarAttempts = 0;
-    renderBar();
+
+    var innerSegmentsHtml = '';
+    var total = 0;
+
+    // 2. Build the inner segments
+    for (var i = 0; i < valid.length; i++) {
+        var width = valid[i].val;
+        if (total + width > 100) width = 100 - total;
+        total += width;
+
+        // Apply rounded corners to the colored blocks themselves so we don't need overflow: hidden
+        var radiusStyle = '';
+        if (i === 0) radiusStyle += 'border-top-left-radius: 3px; border-bottom-left-radius: 3px; ';
+        if (i === valid.length - 1 || total >= 99.9) radiusStyle += 'border-top-right-radius: 3px; border-bottom-right-radius: 3px; ';
+
+        // Assign edge alignment classes instead of messy inline styles
+        var alignClass = 'tt-center';
+        if (i === 0) alignClass = 'tt-left';
+        else if (i === valid.length - 1 || total >= 99.9) alignClass = 'tt-right';
+
+        innerSegmentsHtml += 
+            '<div class="tooltip ' + alignClass + '" style="position: relative; height: 100%; width: ' + width + '%; display: block;">' + 
+                '<div style="background: ' + valid[i].color + '; opacity: 0.8; height: 100%; width: 100%; ' + radiusStyle + '"></div>' +
+                '<span class="tooltip-text">' + valid[i].text + '</span>' +
+            '</div>';
+    }
+
+    // 3. One single style block to handle the tooltips flawlessly
+    var styleBlock = 
+        '<style>' +
+            '.tt-left .tooltip-text { left: 0; transform: translateY(5px); } ' +
+            '.tt-left:hover .tooltip-text { transform: translateY(0); opacity: 1; } ' +
+            '.tt-right .tooltip-text { left: auto; right: 0; transform: translateY(5px); } ' +
+            '.tt-right:hover .tooltip-text { transform: translateY(0); opacity: 1; } ' +
+            '.tt-center .tooltip-text { left: 50%; transform: translateX(-50%) translateY(5px); } ' +
+            '.tt-center:hover .tooltip-text { transform: translateX(-50%) translateY(0); opacity: 1; } ' +
+        '</style>';
+
+    // 4. Render. Notice: overflow is VISIBLE so tooltips can pop out!
+    container.innerHTML = styleBlock + 
+        '<div style="width: 100%; position: relative;">' + 
+            '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; border: 1px solid #000; overflow: visible;">' +
+                innerSegmentsHtml + 
+            '</div>' +
+        '</div>';
 };
 
 //'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 

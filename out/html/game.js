@@ -712,7 +712,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 */ 
 
 
-window.customgeneratebar = function(dataArray, outercolor, colorsArray, elementID, tooltip) {
+window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltip) {
     
     function renderBar() {
         var container = document.getElementById(elementID);

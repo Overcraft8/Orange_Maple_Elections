@@ -668,7 +668,7 @@ window.renderPollsChart = function(pollsData) {
     }
 };
 
-/* 
+
 window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip) {
     
     function renderBar() {
@@ -709,7 +709,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
     window.__customGenerateBarAttempts = 0;
     renderBar();
 };
-*/ 
+
 
 
 window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
@@ -724,47 +724,40 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
             return;
         }
 
-        // 1. Build out the inner multi-colored segment divs
         var innerSegmentsHtml = '';
         var totalInputWeight = 0;
 
-        // Ensure we have arrays to look at
         var data = Array.isArray(dataArray) ? dataArray : [dataArray];
         var colors = Array.isArray(colorsArray) ? colorsArray : [colorsArray];
+        var tooltipTexts = Array.isArray(tooltips) ? tooltips : [tooltips];
 
-        // Process percentages and generate adjacent inline blocks
         for (var i = 0; i < data.length; i++) {
             var widthPercent = Number(data[i]);
             if (isNaN(widthPercent)) widthPercent = 0;
             if (widthPercent < 0) widthPercent = 0;
 
-            // Stop building if we break the 100% threshold
             if (totalInputWeight + widthPercent > 100) {
                 widthPercent = 100 - totalInputWeight;
             }
             totalInputWeight += widthPercent;
-            var current_tooltip = tooltips[i]
+            var current_tooltip = tooltipTexts[i] || '';
 
             if (widthPercent > 0) {
-                var segmentColor = colors[i] || '#cccccc'; // Fallback gray if color is missing
+                var segmentColor = colors[i] || '#cccccc';
+                
                 innerSegmentsHtml += 
-                '<div class="tooltip" style="position: relative; width: 100%;">' + 
-                    '<div style="background: ' + segmentColor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;">'
-                    '</div>' +
-                    '<span class="tooltip-text" style="text-align: center;">' + current_tooltip + '</span>'
+                '<div class="tooltip" style="position: relative; height: 100%; width: ' + widthPercent + '%; display: block;">' + 
+                    '<div style="background: ' + segmentColor + '; opacity: 0.7; height: 100%; width: 100%; transition: width 0.4s;"></div>' +
+                    '<span class="tooltip-text" style="text-align: center;">' + current_tooltip + '</span>' +
                 '</div>';
             }
         }
-
-        var finalTooltipText = tooltip;
         
-        // 2. Structural wrapper: Added 'display: flex' to the container bar so sections line up side-by-side
         var barHtml = 
-            '<div class="tooltip" style="position: relative; width: 100%;">' + 
+            '<div style="width: 100%;">' + 
                 '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
                     innerSegmentsHtml + 
                 '</div>' +
-                //'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
             '</div>';
 
         container.innerHTML = barHtml;
@@ -776,3 +769,5 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
     window.__customGenerateBarAttempts = 0;
     renderBar();
 };
+
+//'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 

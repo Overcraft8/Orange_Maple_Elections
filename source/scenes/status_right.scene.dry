@@ -97,7 +97,7 @@ if (window && window.customgeneratemultibar) {
             "#333333", 
             factionColors, 
             "faction_strength_bar", 
-            "The internal balance of power within the FLP"
+            ['The Agrarian Wing', 'Labour', 'The Moderate Wing', 'The Far Left Wing']
         );
     }
 !}

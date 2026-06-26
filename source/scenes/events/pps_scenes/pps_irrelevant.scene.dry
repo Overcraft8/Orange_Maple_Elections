@@ -14,3 +14,4 @@ The Progressive Party of Saskatchewan, once a key coalition partner of the Ander
 
  With the Progressives now out the picture, rural Saskatchewan seems ripe for the taking by our party. 
 
+on-departure: pps_seats -= 5; flp_seats += 1; lps_seats += 1; cps_seats += 3;

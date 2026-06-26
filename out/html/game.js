@@ -712,7 +712,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 */ 
 
 
-window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltip) {
+window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
     
     function renderBar() {
         var container = document.getElementById(elementID);
@@ -743,11 +743,16 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
                 widthPercent = 100 - totalInputWeight;
             }
             totalInputWeight += widthPercent;
+            var current_tooltip = tooltips[i]
 
             if (widthPercent > 0) {
                 var segmentColor = colors[i] || '#cccccc'; // Fallback gray if color is missing
                 innerSegmentsHtml += 
-                    '<div style="background: ' + segmentColor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>';
+                '<div class="tooltip" style="position: relative; width: 100%;">' + 
+                    '<div style="background: ' + segmentColor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;">'
+                    '</div>' +
+                    '<span class="tooltip-text" style="text-align: center;">' + current_tooltip + '</span>'
+                '</div>';
             }
         }
 
@@ -756,10 +761,10 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
         // 2. Structural wrapper: Added 'display: flex' to the container bar so sections line up side-by-side
         var barHtml = 
             '<div class="tooltip" style="position: relative; width: 100%;">' + 
-                '<div style="display: flex; height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
+                '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
                     innerSegmentsHtml + 
                 '</div>' +
-                '<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
+                //'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
             '</div>';
 
         container.innerHTML = barHtml;

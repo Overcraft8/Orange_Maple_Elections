@@ -283,6 +283,7 @@ Curriculum: [+ Curriculum +]
 Healthcare quality: [+ healthcarequality +]
 
 @economy
+on-arrival: economic_year = year - 1;
 
 = Overview
 
@@ -292,9 +293,14 @@ Unemployment: [+ unemployed_2 +]%
 
 Rural Poverty Incidence: [+ rural_poverty +]%
 
-GDP Growth ({!year - 1!}): [+ economic_growth_rounded : economic_growth_colorized +]%
+
+    <div style='border: 2px solid ; width: 100%;'>
+
+GDP Growth ([+ economic_year +]): [+ economic_growth_rounded : economic_growth_colorized +]
 
 Total Saskatchewan Debt Index: [+ saskatchewan_debt +]
+
+</div>
 
 # <div style="display:flex; gap:1em;">
 # 

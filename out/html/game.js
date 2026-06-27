@@ -715,42 +715,44 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
     var container = document.getElementById(elementID);
     
-    // Simplified container check
     if (!container) {
         setTimeout(function() { window.customgeneratemultibar(dataArray, outercolor, colorsArray, elementID, tooltips); }, 25);
         return;
     }
 
-    // Force inputs into arrays cleanly
     var data = [].concat(dataArray);
     var colors = [].concat(colorsArray);
     var texts = [].concat(tooltips);
 
-    // 1. Filter out zero/invalid segments
+    // 1. Filter valid segments and calculate the TOTAL sum
     var valid = [];
+    var absoluteTotal = 0; 
+
     for (var j = 0; j < data.length; j++) {
         var val = Number(data[j]);
-        if (val > 0) valid.push({ val: val, color: colors[j] || '#ccc', text: texts[j] || '' });
+        if (val > 0) {
+            valid.push({ val: val, color: colors[j] || '#ccc', text: texts[j] || '' });
+            absoluteTotal += val; // Add to our grand total
+        }
     }
 
     var innerSegmentsHtml = '';
-    var total = 0;
+    var currentPercentTotal = 0;
 
-    // 2. Build the inner segments
+    // 2. Build the inner segments using normalized math
     for (var i = 0; i < valid.length; i++) {
-        var width = valid[i].val;
-        if (total + width > 100) width = 100 - total;
-        total += width;
+        var width = (valid[i].val / absoluteTotal) * 100;
+        
+        if (currentPercentTotal + width > 100) width = 100 - currentPercentTotal;
+        currentPercentTotal += width;
 
-        // Apply rounded corners to the colored blocks themselves so we don't need overflow: hidden
         var radiusStyle = '';
         if (i === 0) radiusStyle += 'border-top-left-radius: 3px; border-bottom-left-radius: 3px; ';
-        if (i === valid.length - 1 || total >= 99.9) radiusStyle += 'border-top-right-radius: 3px; border-bottom-right-radius: 3px; ';
+        if (i === valid.length - 1 || currentPercentTotal >= 99.9) radiusStyle += 'border-top-right-radius: 3px; border-bottom-right-radius: 3px; ';
 
-        // Assign edge alignment classes instead of messy inline styles
         var alignClass = 'tt-center';
         if (i === 0) alignClass = 'tt-left';
-        else if (i === valid.length - 1 || total >= 99.9) alignClass = 'tt-right';
+        else if (i === valid.length - 1 || currentPercentTotal >= 99.9) alignClass = 'tt-right';
 
         innerSegmentsHtml += 
             '<div class="tooltip ' + alignClass + '" style="position: relative; height: 100%; width: ' + width + '%; display: block;">' + 
@@ -759,7 +761,6 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
             '</div>';
     }
 
-    // 3. One single style block to handle the tooltips flawlessly
     var styleBlock = 
         '<style>' +
             '.tt-left .tooltip-text { left: 0; transform: translateY(5px); } ' +
@@ -770,7 +771,6 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
             '.tt-center:hover .tooltip-text { transform: translateX(-50%) translateY(0); opacity: 1; } ' +
         '</style>';
 
-    // 4. Render. Notice: overflow is VISIBLE so tooltips can pop out!
     container.innerHTML = styleBlock + 
         '<div style="width: 100%; position: relative;">' + 
             '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; border: 1px solid #000; overflow: visible;">' +

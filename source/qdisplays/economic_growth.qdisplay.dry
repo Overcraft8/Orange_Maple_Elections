@@ -1,0 +1,7 @@
+
+(..-10) <span style='color: #c71313;'>[+ economic_growth_rounded +]</span>
+(-10..-5) <span style='color: #c76d13;'>[+ economic_growth_rounded +]</span>
+(-5..0) <span style='color: #e7c31f;'>[+ economic_growth_rounded +]</span>
+(0..2) <span style='color: #acc412;'>[+ economic_growth_rounded +]</span>
+(2..5) <span style='color: #76c713;'>[+ economic_growth_rounded +]</span>
+(5..10) <span style='color: #1ba518;'>[+ economic_growth_rounded +]</span>

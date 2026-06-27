@@ -194,12 +194,12 @@ function getPartyIdeology(party, Q) {
             return 'Unknown';
         case 'FLP':
         case 'CCF':
-            if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #C42424;">Left Wing</span> (Democratic Socialism)';
-            if (Q.flp_ideology === "Social Democracy") return '<span style="color: #607808;">Centre Left</span>  (Social Democracy)';
+            if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
+            if (Q.flp_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left</span>  (Social Democracy)';
             if (Q.flp_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'PPS': 
-            if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Progressivism)';
+            if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Agrarian Progressivism)';
             return 'Unknown';
         case 'LPS': 
             if (Q.lps_ideology === "Classical Liberalism") return '<span style="color: #C42424;">Centre - Centre Left</span> (Liberalism)';

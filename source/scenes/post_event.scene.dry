@@ -84,6 +84,17 @@ for (var c of Q.factions) {
     }
 }
 
+for (var c of Q.party_demographics) {
+    if (Q[c+'_dissent'] < 0) {
+        Q[c+'_dissent'] = 0;
+    } else if (Q[c+'_dissent'] >= 100) {
+        Q[c+'_dissent'] = 99;
+    }
+    if (Q[c+'_strength'] < 0) {
+        Q[c+'_strength'] = 0;
+    }
+}
+
 
 
 
@@ -445,18 +456,6 @@ if (this.ui && this.ui.show_portraits) {
             im.url = cc.faceImage;
         }
     }
-}
-
-// monthly logic guard
-if (Q.month_checked !== Q.month) {
-
-Q.month_checked = Q.month;
-
-Q.monthly_economic_growth = Q.economic_growth / 12;
-Q.saskatchewan_old_gdp = Q.saskatchewan_gdp
-Q.saskatchewan_gdp = Number(
-  (Q.saskatchewan_gdp * (Q.monthly_economic_growth / 100 + 1)).toFixed(1));
-    
 }
 
 window.updateSidebarRight();

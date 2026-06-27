@@ -1,0 +1,12 @@
+title: Economy Calculations
+subtitle: 
+tags: event
+view-if: month = 6
+max-visits: 1
+on-arrival: {!
+    Q.economic_growth = 
+
+
+
+
+!}

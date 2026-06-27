@@ -10,10 +10,10 @@ if (Q.inflation) {
     Q.inflation_2 = Q.inflation.toFixed(1);
 }
 
-Q.economic_growth_2 = '0';
+Q.economic_growth_rounded = '0';
 
 if (Q.economic_growth) {
-    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
+    Q.economic_growth_rounded = Q.economic_growth.toFixed(1);
 }
 
 
@@ -284,7 +284,7 @@ Healthcare quality: [+ healthcarequality +]
 
 @economy
 
-= Economy
+= Overview
 
 Inflation: [+ inflation_2 +]%
 
@@ -292,15 +292,11 @@ Unemployment: [+ unemployed_2 +]%
 
 Rural Poverty Incidence: [+ rural_poverty +]%
 
-GDP Growth: [+ economic_growth_2 +]%
+GDP Growth: [+ economic_growth_rounded : economic_growth +]%
 
-Saskatchewan GDP Index (1932 = 100): [+ saskatchewan_gdp +]
+Saskatchewan GDP: [+ saskatchewan_gdp +]
 
 Total Saskatchewan Debt Index: [+ saskatchewan_debt +]
-
-Agricultural Production Index: [+ agri_production +]
-
-Industrial Production Index: [+ indu_production +]
 
 # <div style="display:flex; gap:1em;">
 # 

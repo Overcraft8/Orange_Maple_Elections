@@ -19,7 +19,7 @@ if (Q.economic_growth) {
 
 Q.faction_support = [
     { value: Q.agrarian_strength, color: '#86a71b', className: 'agrarian' },
-    { value: Q.far_left_strength, color: '#8a4545', className: 'far_left' },
+    { value: Q.true_socialist_strength, color: '#8a4545', className: 'true_socialist' },
     { value: Q.labour_strength, color: '#758391', className: 'labour' },
     { value: Q.right_strength, color: '#a86a77', className: 'right' }
 ]
@@ -292,7 +292,7 @@ Unemployment: [+ unemployed_2 +]%
 
 Rural Poverty Incidence: [+ rural_poverty +]%
 
-GDP Growth: [+ economic_growth_rounded : economic_growth +]%
+GDP Growth: [+ economic_growth_rounded : economic_growth_colorized +]%
 
 Saskatchewan GDP: [+ saskatchewan_gdp +]
 

@@ -62,14 +62,17 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['far_left', 'agrarian', 'labour', 'managerial', 'neorevisionist'];
+Q.factions = ['true_socialist', 'agrarian', 'reformist', 'managerial', 'neorevisionist'];
 // should this be normalized to 100%?
 
-Q.far_left_strength = 5;
-Q.far_left_dissent = 20;
+Q.true_socialist_strength = 5;
+Q.true_socialist_dissent = 20;
 
 Q.managerial_strength = 15;
 Q.managerial_dissent = 5;
+
+Q.reformist_stregnth = 15;
+Q.reformist_dissent = 20;
 
 
 Q.neorevisionist_strength = 0;
@@ -1084,7 +1087,7 @@ on-arrival: {!
   Q.dues = 1;
   Q.ufc_strength = 25.00;
   Q.managerial_dissent = 25;
-  Q.far_left_dissent = 30;
+  Q.true_socialist_dissent = 30;
   Q.labour_dissent = 25;
   Q.agrarian_dissent = 25;
   Q.pps_relation = 41;
@@ -1103,7 +1106,7 @@ Q.resources = 2;
 Q.dues = 1;
 Q.ufc_strength = 15.00;
 Q.managerial_dissent = 25;
-Q.far_left_dissent = 30;
+Q.true_socialist_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;
 Q.pps_relation = 41;

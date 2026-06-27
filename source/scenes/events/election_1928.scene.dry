@@ -799,8 +799,8 @@ The CP(S) is still very reluctant to join a coalition, despite grassroots friend
 - @coalition_menu: Try a different governing arrangement.
 
 @tim_buck_premier
-choose-if: prime_minister == "JS Woodsworth" and managerial_strength + neorevisionist_strength < far_left_strength
-unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if managerial_strength >= far_left_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
+choose-if: prime_minister == "JS Woodsworth" and managerial_strength + neorevisionist_strength < true_socialist_strength
+unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if managerial_strength >= true_socialist_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
 on-arrival: premier = "Tim Buck"; premier_party = "CP(S)"; cp_s_relation = 80; in_left_front = 1; flp_in_government = 1 
 
 With great reluctance, Prime Minister [+ prime_minister +] appoints [+ premier +] as premier.
@@ -968,7 +968,7 @@ We have promised to let the PPS have more influence in the government in respons
 @pps_premier
 title: Let the PPS Party have their premier.
 subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: far_left_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
+on-arrival: true_socialist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
@@ -980,7 +980,7 @@ This is highly unexpected, and many in the left and agrarian of our party are cr
 title: Let Joseph Wirth of the PPS Party be premier.
 view-if: pps_party_leader == "Joos"
 subtitle: Wirth is on the left wing of the PPS Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: far_left_dissent += 2; pps_relation += 6; lps_relation += 3; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
+on-arrival: true_socialist_dissent += 2; pps_relation += 6; lps_relation += 3; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
 go-to: ministries
 
 

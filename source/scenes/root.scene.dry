@@ -552,7 +552,6 @@ Q.education_science = 0;
 Q.economic_growth = 4.4;
 
 Q.saskatchewan_debt = (100).toFixed(1);
-Q.saskatchewan_gdp = (100).toFixed(1); // new GDP
 
 Q.depression = 1;
 

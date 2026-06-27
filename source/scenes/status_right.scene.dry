@@ -111,11 +111,11 @@ if (window && window.customgeneratemultibar) {
 
 = Faction Strength
 
-<div id="faction_strength_bar"></div>
+<div id="faction_strength_bar"></div><br>
 
 = Party Demography
 
-<div id='party_demography'></div><p><p>
+<div id='party_demography'></div><br>
 
 = Faction Dissent
 
@@ -125,7 +125,7 @@ if (window && window.customgeneratemultibar) {
 
 <div id='managerial_bar_dissent'></div>
 
-<div id='true_socialist_bar_dissent'></div>
+<div id='true_socialist_bar_dissent'></div><br>
 
 Internal dissent: [+ dissent_percent : dissent +]
 

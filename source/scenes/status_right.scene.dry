@@ -9,12 +9,12 @@ is-special: true
 
 <span>
 <img src="img/portraits/[+ flp_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  <span class="card-caption">Party President: 0</span>
+  <span class="card-caption">Party President: [+ president +] </span>
 </span>
 
 <span>
 <img src="img/portraits/[+ flp_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  <span class="card-caption">Party President: 0</span>
+  <span class="card-caption">Party Leader: [+ party_leader +]</span>
 </span>
 
 </div>
@@ -76,7 +76,7 @@ is-special: True
 on-arrival: {!
 
 if (window && window.customgeneratebar) {
-     window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#9ec520", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
+     window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#32c732", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
      window.customgeneratebar(Q.labour_dissent, "#091f43", "#347fef", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
      window.customgeneratebar(Q.managerial_dissent, "#793f15", "#d26e28", "managerial_bar_dissent", 'The moderate wing of the FLP');
      window.customgeneratebar(Q.true_socialist_dissent, "#1f0303", "#c32222", "true_socialist_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
@@ -84,7 +84,7 @@ if (window && window.customgeneratebar) {
 
 if (window && window.customgeneratemultibar) {
         var strengths = [Q.reformist_strength, Q.managerial_strength, Q.true_socialist_strength];
-        var factionColors = ["#c5c520", "#d26e28", "#c32222"];
+        var factionColors = ["#f2ff00", "#d26e28", "#c32222"];
         
         window.customgeneratemultibar(
             strengths, 

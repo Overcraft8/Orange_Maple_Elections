@@ -77,19 +77,19 @@ on-arrival: {!
 // if (window && window.customgeneratebar) {
 //     window.customgeneratebar(Q.agrarian_strength, "#466d16", "#9ec520", "agrarian_bar_main", 'A faction consisting of farmers, primarily representing the small family farm');
 //     window.customgeneratebar(Q.labour_strength, "#091f43", "#347fef", "labour_bar_main", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
-//     window.customgeneratebar(Q.moderate_strength, "#793f15", "#d26e28", "moderate_bar_main", 'The moderate wing of the FLP');
+//     window.customgeneratebar(Q.managerial_strength, "#793f15", "#d26e28", "managerial_bar_main", 'The moderate wing of the FLP');
 //     window.customgeneratebar(Q.far_left_strength, "#1f0303", "#c32222", "far_left_bar_main", 'A faction of radical socialists. Many of them have ties to Communist organizations');
 // }
 //
 if (window && window.customgeneratebar) {
      window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#9ec520", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
      window.customgeneratebar(Q.labour_dissent, "#091f43", "#347fef", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
-     window.customgeneratebar(Q.moderate_dissent, "#793f15", "#d26e28", "moderate_bar_dissent", 'The moderate wing of the FLP');
+     window.customgeneratebar(Q.managerial_dissent, "#793f15", "#d26e28", "managerial_bar_dissent", 'The moderate wing of the FLP');
      window.customgeneratebar(Q.far_left_dissent, "#1f0303", "#c32222", "far_left_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
  }
 
 if (window && window.customgeneratemultibar) {
-        var strengths = [Q.agrarian_strength, Q.labour_strength, Q.moderate_strength, Q.far_left_strength];
+        var strengths = [Q.agrarian_strength, Q.labour_strength, Q.managerial_strength, Q.far_left_strength];
         var factionColors = ["#9ec520", "#347fef", "#d26e28", "#c32222"];
         
         window.customgeneratemultibar(
@@ -110,7 +110,7 @@ if (window && window.customgeneratemultibar) {
 # 
 # <div id='labour_bar_main'></div>
 # 
-# <div id='moderate_bar_main'></div>
+# <div id='managerial_bar_main'></div>
 # 
 # <div id='far_left_bar_main'></div>
 
@@ -120,7 +120,7 @@ if (window && window.customgeneratemultibar) {
 
 <div id='labour_bar_dissent'></div>
 
-<div id='moderate_bar_dissent'></div>
+<div id='managerial_bar_dissent'></div>
 
 <div id='far_left_bar_dissent'></div>
 
@@ -187,8 +187,8 @@ Internal dissent: [+ dissent_percent : dissent +]
   <span class="tooltip-text"> </span><br> 
   </div>
   <div style="text-align: left">
-  Strength: [+ moderate_strength : strength +]<br> 
-  Dissent: [+ moderate_dissent : dissent +]<br>
+  Strength: [+ managerial_strength : strength +]<br> 
+  Dissent: [+ managerial_dissent : dissent +]<br>
   </div>
   ?]
   </td>

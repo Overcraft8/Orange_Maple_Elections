@@ -62,26 +62,14 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['far_left', 'agrarian', 'labour', 'moderate', 'neorevisionist'];
+Q.factions = ['far_left', 'agrarian', 'labour', 'managerial', 'neorevisionist'];
 // should this be normalized to 100%?
-
 
 Q.far_left_strength = 5;
 Q.far_left_dissent = 20;
 
-
-// Strength indicates the influence of the faction in the party
-Q.agrarian_dissent = 0;
-Q.agrarian_strength = 55;
-Q.agrarian_radicalism = 21;
-
-Q.labour_dissent = 30;
-Q.labour_strength = 40;
-Q.labour_radicalism = 16;
-
-
-Q.moderate_strength = 15;
-Q.moderate_dissent = 5;
+Q.managerial_strength = 15;
+Q.managerial_dissent = 5;
 
 
 Q.neorevisionist_strength = 0;
@@ -90,8 +78,18 @@ Q.neorevisionist_dissent = 10;
 
 Q.party_demographics = ['labour', 'middle class', 'agrarian'];
 
+// Strength indicates the influence of the faction in the party
+Q.agrarian_dissent = 0;
+Q.agrarian_strength = 55;
+Q.agrarian_radicalism = 21;
 
+Q.labour_dissent = 30;
+Q.labour_strength = 30;
+Q.labour_radicalism = 16;
 
+Q.middle_class_dissent = 30;
+Q.middle_class_strength = 15;
+Q.middle_class_radicalism = 11;
 
 
 
@@ -131,8 +129,8 @@ Q.peoples_party_support = 0;
 Q.nationalization_support = 0;
 Q.nationalization_adopted = 0;
 // moderate economic plan
-Q.moderate_plan_support = 0;
-Q.moderate_plan_adopted = 0;
+Q.managerial_plan_support = 0;
+Q.managerial_plan_adopted = 0;
 
 
 // inter-party relations
@@ -536,7 +534,7 @@ Q.nationalize_treasury = 4;
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
 // progress on the moderate economic plan
-Q.moderate_plan_progress = 0;
+Q.managerial_plan_progress = 0;
 // European Union negotiation process
 Q.eu = 0;
 Q.eu_progress = 0;
@@ -1085,7 +1083,7 @@ on-arrival: {!
   Q.resources = 0;
   Q.dues = 1;
   Q.ufc_strength = 25.00;
-  Q.moderate_dissent = 25;
+  Q.managerial_dissent = 25;
   Q.far_left_dissent = 30;
   Q.labour_dissent = 25;
   Q.agrarian_dissent = 25;
@@ -1104,7 +1102,7 @@ Q.historical_mode = 1;
 Q.resources = 2;
 Q.dues = 1;
 Q.ufc_strength = 15.00;
-Q.moderate_dissent = 25;
+Q.managerial_dissent = 25;
 Q.far_left_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;

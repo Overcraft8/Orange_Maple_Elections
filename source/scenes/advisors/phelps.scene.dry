@@ -12,7 +12,7 @@ Joe Phelps is a radical agrarian and advocate for public ownership of natural re
 - @white_collar
 - @union_unity
 - @crisis
-- @moderate_economic_plan
+- @managerial_economic_plan
 - @root: Return to main
 
 @white_collar
@@ -41,11 +41,11 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; 
 go-to: crisis_program.support_left 
 
-@moderate_economic_plan
+@managerial_economic_plan
 title: Support the moderate economic plan
 subtitle: Phelps can also support a moderate economic plan.
-choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the moderate economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
+choose-if: advisor_action_timer = 0 and managerial_plan_adopted = 0 and black_thursday_seen = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if managerial_economic_plan = 0 : We have already adopted the moderate economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
 on-arrival: advisor_action_timer = 6
 go-to: crisis_program.support_moderate
 

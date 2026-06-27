@@ -74,7 +74,7 @@ Strength: [+ tlc_strength +] Thousand<br>
 new-page: True
 is-special: True
 on-arrival: {!
-  
+
 if (window && window.customgeneratebar) {
      window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#9ec520", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
      window.customgeneratebar(Q.labour_dissent, "#091f43", "#347fef", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
@@ -84,7 +84,7 @@ if (window && window.customgeneratebar) {
 
 if (window && window.customgeneratemultibar) {
         var strengths = [Q.reformist_strength, Q.managerial_strength, Q.true_socialist_strength];
-        var factionColors = ["#b2c520", "#d26e28", "#c32222"];
+        var factionColors = ["#c5c520", "#d26e28", "#c32222"];
         
         window.customgeneratemultibar(
             strengths, 
@@ -115,7 +115,7 @@ if (window && window.customgeneratemultibar) {
 
 = Party Demography
 
-<div id='party_demography'></div>
+<div id='party_demography'></div><p><p>
 
 = Faction Dissent
 
@@ -127,77 +127,7 @@ if (window && window.customgeneratemultibar) {
 
 <div id='true_socialist_bar_dissent'></div>
 
-
-
-= Internal Factions of the FLP
-
 Internal dissent: [+ dissent_percent : dissent +]
-
-<div style="margin-top: 1em; justify-content: center; display: flex;">
-<table class="status_table">
-
-<tr>
-  <td style="text-align: center; max-width: 200px;">
-  [? if 1 == 1 :
-  <div class="tooltip" style="color: #86a71b;"> **Agrarians**
-  <span class="tooltip-text"> A faction consisting of farmers, primarily representing the small family farm.</span><br>
-  </div>
-  <div style="text-align: left">
-  Strength: [+ agrarian_strength : strength +] <br>
-  Dissent: [+ agrarian_dissent : dissent +]<br>
-  <div style = "text-align: center;">
-  Radicalism: <br>
-  [+ agrarian_radicalism : radicalism +]
-  </div>
-  </div>
-  ?]
-  </td>
-
-  <td style="text-align: center; max-width: 200px;">
-  [? if 1 == 1 :
-  <div class="tooltip" style="color: #347fef;"> **Labour**
-  <span class="tooltip-text"> </span><br>
-  </div>
-  <div style="text-align: left">
-  Strength: [+ labour_strength : strength +]<br> 
-  Dissent: [+ labour_dissent : dissent +]<br>
-  <div style = "text-align: center;">
-  <span>Radicalism: </span><br>
-  [+ labour_radicalism : radicalism +]
-  </div>
-  </div>
-  ?]
-  </td>
-</tr>
-
-<tr>
-
-  <td style="text-align: center; max-width: 200px;">
-  [? if 1 == 1 :
-  <div class="tooltip" style="color: #c32222;"> **Far Left**
-  <span class="tooltip-text"> </span><br> 
-  </div>
-  <div style="text-align: left">
-  Strength: [+ true_socialist_strength : strength +]<br> 
-  Dissent: [+ true_socialist_dissent : dissent +]<br>
-  </div>
-  ?]
-  </td>
-
-  <td style="text-align: center; max-width: 200px;">
-  [? if 1 == 1 : 
-  <div class="tooltip" style="color: #d26e28;"> **Moderate** 
-  <span class="tooltip-text"> </span><br> 
-  </div>
-  <div style="text-align: left">
-  Strength: [+ managerial_strength : strength +]<br> 
-  Dissent: [+ managerial_dissent : dissent +]<br>
-  </div>
-  ?]
-  </td>
-</tr>
-</table>
-</div>
 
 
 

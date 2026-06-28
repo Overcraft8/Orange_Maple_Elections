@@ -85,17 +85,17 @@ if (window && window.customgeneratebar) {
 if (window && window.customgeneratemultibar) {
   var strengths = [];
   var factionColors = [];
-
+/* 
   for (faction in Q.factions) {
     strengths.push(Q[faction + '_strength']);
     factionColors.push(Q.faction_colors[faction + '_color']);
   };
-
+*/
   console.log(strengths);
   console.log(factionColors);
 
-  // var strengths = [Q.reformist_strength, Q.managerial_strength, Q.true_socialist_strength];
-  // var factionColors = ["#f2ff00", "#d26e28", "#c32222"];
+  var strengths = [Q.reformist_strength, Q.managerial_strength, Q.agrarian_populist_strength, Q.true_socialist_strength];
+  var factionColors = ["#f2ff00", "#d26e28", "#32c732", "#c32222"];
   
   window.customgeneratemultibar(
       strengths, 

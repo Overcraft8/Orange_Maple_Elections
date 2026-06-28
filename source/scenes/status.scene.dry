@@ -15,18 +15,6 @@ Q.economic_growth_rounded = '0';
 if (Q.economic_growth) {
     Q.economic_growth_rounded = Q.economic_growth.toFixed(1);
 }
-
-
-Q.faction_support = [
-    { value: Q.agrarian_strength, color: '#86a71b', className: 'agrarian' },
-    { value: Q.true_socialist_strength, color: '#8a4545', className: 'true_socialist' },
-    { value: Q.labour_strength, color: '#758391', className: 'labour' },
-    { value: Q.right_strength, color: '#a86a77', className: 'right' }
-]
-
-
-
-
 !}
 on-display: {!
     data = Q.parliament_diagram;

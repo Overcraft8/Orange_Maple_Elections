@@ -18,4 +18,7 @@ on-arrival: {!
     Q.corporation_income_tax_revenue = Q.small_business_tax + Q.big_business_tax;
     Q.crown_corp_revenue = 0;
     Q.other_revenue = Q.property_tax
+    for (crown_corp in Q.crown_corps) {
+        
+    }
 !}

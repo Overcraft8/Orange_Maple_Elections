@@ -296,13 +296,14 @@ Rural Poverty Incidence: [+ rural_poverty +]%
 <div style='text-align: center; display: flex;'>
 
 <div style='border: 2px solid ; width: 100%; text-align: center;'>
-
 GDP Growth ([+ economic_year +]): [+ economic_growth_rounded : economic_growth_colorized +]
+</div>
 
+<div style='border: 2px solid ; width: 100%; text-align: center;'>
 Total Saskatchewan Debt: [+ saskatchewan_debt +]
 <span style='font-size: 8px; text-align: center;'>(Indexed to [+ economic_year +] GDP)</span>
-
 </div>
+
 </div>
 
 

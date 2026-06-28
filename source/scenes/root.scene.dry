@@ -82,10 +82,10 @@ Q.neorevisionist_strength = 0;
 Q.neorevisionist_dissent = 10;
 
 Q.faction_colors = {
-    true_socialist : "#c32222", 
-    agrarian_populist : "#b2c520", 
-    managerial : "#d26e28", 
-    reformist : "#f2ff00"
+    true_socialist_color : "#c32222", 
+    agrarian_populist_color : "#b2c520", 
+    managerial_color : "#d26e28", 
+    reformist_color : "#f2ff00"
 };
 
 

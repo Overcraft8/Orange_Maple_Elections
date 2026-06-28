@@ -801,7 +801,7 @@ window.get_taxes = function(taxes_in_question) {
     for (var i = 0; i < taxes_in_question.length; i++) {
         var item = taxes_in_question[i];
         var val = Number(item.val);
-        var percent = (val + 8) * 2.5;
+        var percent = val * 2.5;
         
         // Include the name followed by the percentage
         return_this += "<strong>" + item.name + ":</strong> " + 
@@ -811,3 +811,14 @@ window.get_taxes = function(taxes_in_question) {
     return_this += '</div>';
     return return_this;
 };
+
+window.get_taxes_final = function(taxes_in_question) { 
+    var lower_pop = Q.workers_population_percent + Q.rural_workers_population_percent + Q.farmhand_population_percent + (farmers_population_percent * 0.8);
+    var middle_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.9 + (farmers_population_percent)*0.2;
+    var rich_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.1;
+
+    console.log("These are the populations by wealth status")
+    console.log(lower_pop);
+    console.log(middle_pop);
+    console.log(rich_pop);
+}

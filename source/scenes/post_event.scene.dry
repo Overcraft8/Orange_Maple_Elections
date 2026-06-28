@@ -39,6 +39,8 @@ if (Q.pro_republic >= 100) {
      }
  }
 
+
+
 Q.total_population = 0;
 
 for (var c of Q.classes) {

@@ -41,6 +41,7 @@ on-display: {!
 
 !}
 
+<button class="status_tab_button" id="budget_tab" onclick="window.changeTab('status.budget', 'budget_tab');">Budget</button>
 
 = Status
 
@@ -394,6 +395,7 @@ Q.tax_list = [
 
     // Pass the list to your function
     Q.tax_display_html = window.get_taxes(Q.tax_list);
+    Q.calculated_taxes = window.get_taxes_final(Q.tax_list)
 
 
 !}
@@ -402,10 +404,12 @@ Q.tax_list = [
 
 <div id='revenue_streams' style='display: flex; border: 2px solid black; text-align: center;'>
 
-= Revenue  
+= Revenue
+<br><br>
 
+<div>
 [+ tax_display_html +]
-
+</div>
 
 </div>
 
@@ -512,44 +516,44 @@ window.renderPollsChart([
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
             {!<td style="background-color: #da8b53; ">!}[+ farmer_flp_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ farmhand_flp_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ rural_worker_flp_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ farmhands_flp_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ rural_workers_flp_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
             {!<td style="background-color: #8a4545; ">!}[+ farmer_cp_s_display +]%{!</td>!}
-            {!<td style="background-color: #8a4545;">!}[+ farmhand_cp_s_display +]%{!</td>!}
-            {!<td style="background-color: #8a4545;">!}[+ rural_worker_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ farmhands_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ rural_workers_cp_s_display +]%{!</td>!}
         {!</tr>!}
         [? if pps_exists : {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
             {!<td style="background-color: #c8c288; ">!}[+ farmer_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ farmhand_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ rural_worker_pps_display +]%{!</td>!} 
+            {!<td style="background-color: #c8c288;">!}[+ farmhands_pps_display +]%{!</td>!}
+            {!<td style="background-color: #c8c288;">!}[+ rural_workers_pps_display +]%{!</td>!} 
         {!</tr>!} ?]
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
             {!<td style="background-color: #a86a77; ">!}[+ farmer_lps_display +]%{!</td>!}
-            {!<td style="background-color: #a86a77;">!}[+ farmhand_lps_display +]%{!</td>!}
-            {!<td style="background-color: #a86a77;">!}[+ rural_worker_lps_display +]%{!</td>!}
+            {!<td style="background-color: #a86a77;">!}[+ farmhands_lps_display +]%{!</td>!}
+            {!<td style="background-color: #a86a77;">!}[+ rural_workers_lps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CPS**{!</td>!}
             {!<td style="background-color: #758391; ">!}[+ farmer_cps_display +]%{!</td>!}
-            {!<td style="background-color: #758391;">!}[+ farmhand_cps_display +]%{!</td>!}
-            {!<td style="background-color: #758391;">!}[+ rural_worker_cps_display +]%{!</td>!}
+            {!<td style="background-color: #758391;">!}[+ farmhands_cps_display +]%{!</td>!}
+            {!<td style="background-color: #758391;">!}[+ rural_workers_cps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**SCPS**{!</td>!}
             {!<td style="background-color: #bcdeb8; ">!}[+ farmer_scps_display +]%{!</td>!}
-            {!<td style="background-color: #bcdeb8;">!}[+ farmhand_scps_display +]%{!</td>!}
-            {!<td style="background-color: #bcdeb8;">!}[+ rural_worker_scps_display +]%{!</td>!}
+            {!<td style="background-color: #bcdeb8;">!}[+ farmhands_scps_display +]%{!</td>!}
+            {!<td style="background-color: #bcdeb8;">!}[+ rural_workers_scps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Others**{!</td>!}
             {!<td style="background-color: #e7e7e7; ">!}[+ farmer_other_display +]%{!</td>!}
-            {!<td style="background-color: #e7e7e7;">!}[+ farmhand_other_display +]%{!</td>!}
-            {!<td style="background-color: #e7e7e7;">!}[+ rural_worker_other_display +]%{!</td>!}
+            {!<td style="background-color: #e7e7e7;">!}[+ farmhands_other_display +]%{!</td>!}
+            {!<td style="background-color: #e7e7e7;">!}[+ rural_workers_other_display +]%{!</td>!}
         {!</tr>!}
 {!</table>!}
 {!</div>!}

@@ -283,25 +283,27 @@ on-arrival: economic_year = year - 1;
 
 <div style='text-align: center; display: flex;'>
 
-Inflation: [+ inflation_2 +]%
+    Inflation: [+ inflation_2 +]%
 
-<div style='border: 2px solid ; width: 100%; text-align: center;'>
-Unemployment: [+ unemployed_rounded +]%
-</div>
+    <div style='border: 2px solid ; width: 100%; text-align: center;'>
+        Unemployment: [+ unemployed_rounded +]%
+    </div>
 
-Rural Poverty Incidence: [+ rural_poverty +]%
+    Rural Poverty Incidence: [+ rural_poverty +]%
 </div>
 
 
 <div style='text-align: center; display: flex;'>
 
 <div style='border: 2px solid ; width: 100%; text-align: center;'>
-GDP Growth ([+ economic_year +]): [+ economic_growth_rounded : economic_growth_colorized +]
+    GDP Growth ([+ economic_year +]): Q.economic_growth_trend[+ economic_growth_rounded : economic_growth_colorized +]
 </div>
 
 <div style='border: 2px solid ; width: 100%; text-align: center;'>
-Total Saskatchewan Debt: [+ saskatchewan_debt +]
-<span style='font-size: 8px; text-align: center;'>(Indexed to [+ economic_year +] GDP)</span>
+    Total Saskatchewan Debt: [+ saskatchewan_debt +]
+    <div style='text-align: center;'>
+        <span style='font-size: 8px;'>(Indexed to [+ economic_year +] GDP)</span>
+    </div>
 </div>
 
 </div>

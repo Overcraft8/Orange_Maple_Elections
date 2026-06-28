@@ -561,7 +561,9 @@ Q.education_science = 0;
 
 //                     Economy 
 
-
+Q.old_economic_growth = 0;
+Q.old_economic_growth = 0;
+Q.economic_growth_trend = '<img src="img/arrowdown.png"> ';
 Q.economic_growth = -4.4;
 
 Q.saskatchewan_debt = (100).toFixed(1);

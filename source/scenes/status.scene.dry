@@ -351,7 +351,7 @@ State Capacity: [+ state_capacity : development +]
 
   <button id="manufacturing_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/robin_hood_mill.jpg" >
-    <span class="card-caption">Manufacturing</span>
+    <span class="card-caption">Heavy Manufacturing</span>
   </button>
 
   <button id="energy_status" class="status_panel_card">
@@ -375,6 +375,39 @@ State Capacity: [+ state_capacity : development +]
     onclick="window.changeTab('status.development', 'return_agriculture_status')">Back</button>
 
 Agricultural Co-ops: [+ agri_coops : development +]
+
+
+
+@budget 
+on-display: {!
+
+// Q.low_tax_display = get_tax(Q.lower_tax_rates)
+// Q.middle_tax_display = get_tax(Q.middle_tax_rates)
+// Q.middle_tax_display = get_tax(Q.middle_tax_rates)
+
+
+Q.tax_list = [
+        { name: "Lower Brackets", val: Q.lower_tax_rates },
+        { name: "Middle Brackets", val: Q.middle_tax_rates },
+        { name: "Upper Brackets", val: Q.upper_tax_rates }
+    ];
+
+    // Pass the list to your function
+    Q.tax_display_html = window.get_taxes(Q.tax_list);
+
+
+!}
+
+= Budget
+
+<div id='revenue_streams' style='display: flex; border: 2px solid black; text-align: center;'>
+
+= Revenue  
+
+[+ tax_display_html +]
+
+
+</div>
 
 
 

@@ -780,3 +780,34 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
 };
 
 //'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
+
+window.get_tax = function(tax_in_question) {
+    var val = Number(tax_in_question);
+    
+    // Formula: (Value + 8) * 2.5
+    // Example: If val is -8: (-8 + 8) * 2.5 = 0%
+    // Example: If val is -7: (-7 + 8) * 2.5 = 2.5%
+    // Example: If val is 0:  (0 + 8) * 2.5 = 20%
+    var percent = (val + 8) * 2.5;
+
+    return "<span style='color: #187714;'>" + percent + "%</span>";
+};
+
+window.get_taxes = function(taxes_in_question) {
+    if (!Array.isArray(taxes_in_question)) return "";
+
+    var return_this = '<div style="line-height: 1.4;">';
+    
+    for (var i = 0; i < taxes_in_question.length; i++) {
+        var item = taxes_in_question[i];
+        var val = Number(item.val);
+        var percent = (val + 8) * 2.5;
+        
+        // Include the name followed by the percentage
+        return_this += "<strong>" + item.name + ":</strong> " + 
+                       "<span style='color: #187714;'>" + percent + "%</span><br>";
+    }
+    
+    return_this += '</div>';
+    return return_this;
+};

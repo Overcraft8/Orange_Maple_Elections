@@ -99,6 +99,7 @@ header {
 
 
 header h1, header h2 {
+  font-family: "Minion Pro", Georgia, serif;
   display: inline-block;
   font-weight: normal;
   margin: 0;
@@ -253,6 +254,7 @@ img.inline-img.icon {
   text-indent: 0;
 }
 #qualities h1 {
+  font-family: Century Gothic;
   font-size: 1.4em;
   font-weight: normal;
   text-align: center;
@@ -270,6 +272,7 @@ img.inline-img.icon {
   text-indent: 0;
 }
 #qualities_right h1 {
+  font-family: Century Gothic;
   font-size: 1.4em;
   font-weight: normal;
   text-align: center;

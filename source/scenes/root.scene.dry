@@ -1149,7 +1149,7 @@ go-to: 1932_main
 @1932_main
 audio: shuffle music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3
 new-page: true
-go-to: main if difficulty >= 0; main.main_easy if difficulty < 0;
+go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1932
 

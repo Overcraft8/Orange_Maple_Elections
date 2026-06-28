@@ -29,10 +29,10 @@ on-display: {!
         document.getElementById("legislative_status").style.height = height + "px";
 
         var legislative_status = d3.parliament();
-        legislative_status.width(width)
-        legislative_status.height(height)
-        legislative_status.innerRadiusCoef(0.4)
-        legislative_status.enter.fromCenter(false).smallToBig(false)
+        legislative_status.width(width);
+        legislative_status.height(height);
+        legislative_status.innerRadiusCoef(0.4);
+        legislative_status.enter.fromCenter(false).smallToBig(false);
         legislative_status.exit.toCenter(false).bigToSmall(false);
         d3.select("#legislative_status").datum(data).call(legislative_status);
 }

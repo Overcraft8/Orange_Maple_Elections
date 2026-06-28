@@ -87,8 +87,8 @@ if (window && window.customgeneratemultibar) {
   var factionColors = []
 
   for (faction in Q.factions) {
-    strengths.append(Q[faction + '_strength'])
-    factionColors.append(Q.faction_colors[faction])
+    strengths.push(Q[faction + '_strength'])
+    factionColors.push(Q.faction_colors[faction])
   }
 
   console.log(strengths)

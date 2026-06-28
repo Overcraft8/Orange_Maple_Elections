@@ -95,7 +95,7 @@ if (window && window.customgeneratemultibar) {
   console.log(factionColors);
 
   var strengths = [Q.reformist_strength, Q.managerial_strength, Q.agrarian_populist_strength, Q.true_socialist_strength];
-  var factionColors = ["#f2ff00", "#d26e28", "#32c732", "#c32222"];
+  var factionColors = ["#f2ff00", "#d26e28", "#89c520", "#c32222"];
   
   window.customgeneratemultibar(
       strengths, 

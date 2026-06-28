@@ -276,6 +276,7 @@ on-arrival: economic_year = year - 1;
 
     <div style='border: 2px solid ; width: 100%; text-align: center;'>
         Unemployment: [+ unemployed_rounded +]%
+        <img style="width: 50%;" src="img/Melfort_Market.jpg">
     </div>
 
     Rural Poverty Incidence: [+ rural_poverty +]%
@@ -285,7 +286,7 @@ on-arrival: economic_year = year - 1;
 <div style='text-align: center; display: flex;'>
 
 <div style='border: 2px solid ; width: 100%; text-align: center;'>
-    GDP Growth ([+ economic_year +]): Q.economic_growth_trend[+ economic_growth_rounded : economic_growth_colorized +]
+    GDP Growth ([+ economic_year +]): [+ economic_growth_trend +][+ economic_growth_rounded : economic_growth_colorized +]
 </div>
 
 <div style='border: 2px solid ; width: 100%; text-align: center;'>

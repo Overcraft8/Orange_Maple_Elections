@@ -1,6 +1,21 @@
 title: Economy Calculations
 tags: event
 view-if: month = 8
-max-visits: 1
 on-arrival: {!
+
+
+
+
+!}
+go-to: budget_calc
+
+
+
+@budget_calc
+on-arrival: {! 
+// Revenue generation
+    Q.income_tax_revenue = Q.lower_tax_rates + Q.middle_tax_rates + Q.upper_tax_rates;
+    Q.corporation_income_tax_revenue = Q.small_business_tax + Q.big_business_tax;
+    Q.crown_corp_revenue = 0;
+    Q.other_revenue = Q.property_tax
 !}

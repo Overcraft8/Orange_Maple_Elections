@@ -78,12 +78,6 @@ on-display: {!
     Prime Minister: [+ prime_minister +]
 </div> 
 
-
-# {!<div id="bars_container"></div>!}
-# {!<div id="faction-bar"></div>!}
-
-# [+ month : month +] [+ year +]
-
 = Legislature
 
 Assembly composition:
@@ -296,7 +290,10 @@ Unemployment: [+ unemployed_2 +]%
 </div>
 
 Rural Poverty Incidence: [+ rural_poverty +]%
+</div>
 
+
+<div style='text-align: center; display: flex;'>
 
 <div style='border: 2px solid ; width: 100%; text-align: center;'>
 
@@ -307,18 +304,6 @@ Total Saskatchewan Debt: [+ saskatchewan_debt +]
 
 </div>
 </div>
-
-# <div style="display:flex; gap:1em;">
-# 
-# Agriculture: [+ agri_development : development +]
-# 
-# Heavy Industry: [+ industry_development : development +]
-# 
-# [? if year <= 1940: Potash: [+ potash_development : development +] ?]
-# 
-# Oil: [+ oil_development : development +]
-# 
-# </div>
 
 
 @nationalization

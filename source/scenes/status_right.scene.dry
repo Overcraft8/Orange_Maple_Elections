@@ -96,15 +96,15 @@ if (window && window.customgeneratemultibar) {
     }
 
 if (window && window.customgeneratemultibar) {
-        var strengths = [Q.agrarian_strength, Q.labour_strength, Q.middle_class_strength];
-        var factionColors = ["#b2c520", "#2844d2", "#22c3c0"];
+        var strengths = [Q.agrarian_strength, Q.labour_strength, Q.middle_class_strength, Q.students_strength];
+        var factionColors = ["#b2c520", "#2844d2", "#22c3c0", "#e92677"];
         
         window.customgeneratemultibar(
             strengths, 
             "#333333", 
             factionColors, 
             "party_demography", 
-            ['The Agrarians - Primarily Small Farmers', 'Labour - Working Class', 'Middle Class - Professionals, Civil Servants, Teachers, etc.']
+            ['The Agrarians - Primarily Small Farmers', 'Labour - Working Class', 'Middle Class - Professionals, Civil Servants, Teachers, etc.', 'Students, many of whom are radicals']
         );
     }
 !}

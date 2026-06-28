@@ -79,7 +79,7 @@ Q.neorevisionist_strength = 0;
 Q.neorevisionist_dissent = 10;
 
 
-Q.party_demographics = ['labour', 'middle class', 'agrarian'];
+Q.party_demographics = ['labour', 'middle class', 'agrarian', 'students'];
 
 // Strength indicates the influence of the faction in the party
 Q.agrarian_dissent = 0;
@@ -93,6 +93,9 @@ Q.labour_radicalism = 16;
 Q.middle_class_dissent = 30;
 Q.middle_class_strength = 15;
 Q.middle_class_radicalism = 11;
+
+Q.students_strength = 10; 
+Q.students_radicalism = 30;
 
 
 
@@ -559,6 +562,19 @@ Q.depression = 1;
 Q.economic_expansion = 0;
 
 
+Q.lower_tax_rates = 0;
+Q.middle_tax_rates = 0;
+Q.upper_tax_rates = 0;
+Q.tariffs = 0;
+
+Q.welfare = 0;
+
+
+Q.small_business_tax = 0.6;
+Q.big_business_tax = 0.6;
+Q.property_tax = 0.3;
+
+
 //                         Nationalization and Intervention
 
 Q.state_capacity = 2;
@@ -595,7 +611,6 @@ Q.factory_coops = 0;
 
 //                   Living Standards
 // level of welfare relative to 1932 (can go negative)
-Q.welfare = 0;
 Q.educationquality = "Basic";
 Q.Curriculum = "Traditional";
 Q.healthcarequality = "Basic";
@@ -624,12 +639,6 @@ Q.resource_nationalization = 0;
 // Railway Length
 Q.railway_length = 6551; // in km
 Q.road_length = 20127; // in km
-
-// Tax rates relative to 1928 baseline
-Q.lower_tax_rates = 0;
-Q.middle_tax_rates = 0;
-Q.upper_tax_rates = 0;
-Q.tariffs = 0;
 
 Q.electoral_threshold = 0;
 

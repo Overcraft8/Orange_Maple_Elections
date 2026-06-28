@@ -3,7 +3,7 @@ new-page: true
 is-special: true
 on-arrival: {!
 if (Q.unemployed) {
-    Q.unemployed_2 = Q.unemployed.toFixed(1);
+    Q.unemployed_rounded = Q.unemployed.toFixed(1);
 }
 
 if (Q.inflation) {
@@ -279,14 +279,14 @@ Healthcare quality: [+ healthcarequality +]
 @economy
 on-arrival: economic_year = year - 1;
 
-= Overview
+= Economic Overview
 
 <div style='text-align: center; display: flex;'>
 
 Inflation: [+ inflation_2 +]%
 
 <div style='border: 2px solid ; width: 100%; text-align: center;'>
-Unemployment: [+ unemployed_2 +]%
+Unemployment: [+ unemployed_rounded +]%
 </div>
 
 Rural Poverty Incidence: [+ rural_poverty +]%

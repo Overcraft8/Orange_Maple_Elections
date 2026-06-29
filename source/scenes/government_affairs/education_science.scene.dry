@@ -191,7 +191,7 @@ Our educational curriculum should be focused on the humanities, including arts, 
 @vocational_major
 title: Vocational curriculum
 subtitle: Useful technical skills for future careers
-on-arrival: curriculum_timer = 50; major_curriculum = "vocational"; cps_relation += 3*(1-dissent); lps_relation += 3*(1-dissent); workers_flp += 4*(1-dissent); farmer_flp += 2*(1-dissent); unemployed_flp += 3*(1-dissent); new_middle_flp -= 1; unemployed -= 0.1; education_science += 0.5
+on-arrival: curriculum_timer = 50; major_curriculum = "vocational"; cps_relation += 3*(1-dissent); lps_relation += 3*(1-dissent); workers_flp += 4*(1-dissent); farmers_flp += 2*(1-dissent); unemployed_flp += 3*(1-dissent); new_middle_flp -= 1; unemployed -= 0.1; education_science += 0.5
 go-to: curriculum_minor
 
 Education should be focused on providing a useful hands-on education, and teach the skills that will be most useful for students' future lives.
@@ -200,7 +200,7 @@ Education should be focused on providing a useful hands-on education, and teach 
 @trad_major
 title: Traditional curriculum
 subtitle: Classics, discipline, and nationalism
-on-arrival: curriculum_timer = 50; major_curriculum = "traditional"; cps_relation += 5*(1-dissent); pps_relation += 4*(1-dissent); old_middle_flp += 3*(1-dissent); farmer_flp += 3*(1-dissent); pacifism -= 1 if pacifism > 0; pro_republic -= 5; education_science += 0.2
+on-arrival: curriculum_timer = 50; major_curriculum = "traditional"; cps_relation += 5*(1-dissent); pps_relation += 4*(1-dissent); old_middle_flp += 3*(1-dissent); farmers_flp += 3*(1-dissent); pacifism -= 1 if pacifism > 0; pro_republic -= 5; education_science += 0.2
 go-to: curriculum_minor
 
 The traditional curriculum had a focus on ancient history and language (particularly Latin and Greek), as well as rigid discipline and some level of militarism.
@@ -253,7 +253,7 @@ Education should be focused on providing a useful hands-on education, and teach 
 title: Traditional curriculum
 subtitle: Classics, discipline, and nationalism
 view-if: major_curriculum != "traditional"
-on-arrival: minor_curriculum = "traditional"; cps_relation += 2*(1-dissent); pps_relation += 2*(1-dissent); old_middle_flp += 2*(1-dissent); farmer_flp += 2*(1-dissent); pro_republic -= 3
+on-arrival: minor_curriculum = "traditional"; cps_relation += 2*(1-dissent); pps_relation += 2*(1-dissent); old_middle_flp += 2*(1-dissent); farmers_flp += 2*(1-dissent); pro_republic -= 3
 
 The traditional curriculum had a focus on ancient history and language (particularly Latin and Greek), as well as rigid discipline.
 

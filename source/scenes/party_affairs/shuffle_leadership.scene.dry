@@ -321,7 +321,7 @@ view-if: n_advisors < 3
 
 @add_williams
 title: George Hara Williams
-subtitle: George Hara Williams is the serving President of the FLP. He is a farmer by trade and was a key figure in activating agrarian socialism across Saskatchewan.  {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: George Hara Williams is the serving President of the FLP. He is a farmers by trade and was a key figure in activating agrarian socialism across Saskatchewan.  {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/WilliamsHaraGeorge.jpg
 view-if: williams_advisor = 0 and n_advisors < 3
@@ -345,7 +345,7 @@ John Brockelbank is now an advisor.
 
 @add_nicholson
 title: Alexander Nicholson
-subtitle: Alexander Nicholson was a United Church preacher and farmer. He is now a FLP organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+subtitle: Alexander Nicholson was a United Church preacher and farmers. He is now a FLP organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
 card-image: img/portraits/NicholsonAlexander.jpg
 tags: agrarian_advisor
@@ -357,7 +357,7 @@ Alexander Nicholson is now an advisor.
 
 @add_wright
 title: Percy Wright
-subtitle: Percy Wright is a farmer by trade and a candidate in the Melfort riding. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Farmers Campaigning, Addressing the Economic Crisis ?]
+subtitle: Percy Wright is a farmers by trade and a candidate in the Melfort riding. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Farmers Campaigning, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/WrightPercy.jpg
 view-if: wright_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
@@ -407,7 +407,7 @@ J. S. Woodsworth is now an advisor.
 
 @add_lucas
 title: Louise Lucas
-subtitle: Louise Lucas is a leading feminist farmer, member of the FLP's Board of Directors, and President of the Women's FLP section. She is an outstanding orator.  {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+subtitle: Louise Lucas is a leading feminist farmers, member of the FLP's Board of Directors, and President of the Women's FLP section. She is an outstanding orator.  {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
 card-image: img/portraits/LucasLouise.jpg
 view-if: lucas_advisor = 0 and n_advisors < 3

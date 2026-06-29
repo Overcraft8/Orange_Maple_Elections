@@ -237,11 +237,11 @@ Road length: [+ road_length +] km
 = Rural Standards
 
 
-Farmers Electrification: [+ farmer_electrification +]%
+Farmers Electrification: [+ farmers_electrification +]%
 
-Farmers Sanitation Access: [+ farmer_sanitation +]%
+Farmers Sanitation Access: [+ farmers_sanitation +]%
 
-Farmers Telephone Access: [+ farmer_telephone +]%
+Farmers Telephone Access: [+ farmers_telephone +]%
 
 = Tax Rates 
 
@@ -401,26 +401,24 @@ Q.tax_list = [
 !}
 
 = Budget
-<div id='budget_holder' style='display: flex;'>
-<div id='revenue_streams' style='block: flex; border: 2px solid black; text-align: center;'>
+<div id='budget_holder' style='display: flex; border: 0px none none'>
+    <div id='revenue_streams' style='block: flex; border: 2px solid black; text-align: center;'>
 
-= Revenue
+        = Revenue
 
-<div>
-[+ tax_display_html +]
-</div>
+        <div>
+            [+ tax_display_html +]
+        </div>
 
-</div>
+    </div>
 
-<div id-'expense_streams' style='block: flex; border: 2px solid black; text-align: center;'>
+    <div id-'expense_streams' style='block: flex; border: 2px solid black; text-align: center;'>
 
-= Expenses
+        = Expenses
 
-Filler!!!!
+        Filler!!!!
 
-
-
-
+    </div>
 </div>
 
 
@@ -525,43 +523,43 @@ window.renderPollsChart([
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #da8b53; ">!}[+ farmer_flp_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53; ">!}[+ farmers_flp_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ farmhands_flp_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ rural_workers_flp_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
-            {!<td style="background-color: #8a4545; ">!}[+ farmer_cp_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545; ">!}[+ farmers_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ farmhands_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ rural_workers_cp_s_display +]%{!</td>!}
         {!</tr>!}
         [? if pps_exists : {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
-            {!<td style="background-color: #c8c288; ">!}[+ farmer_pps_display +]%{!</td>!}
+            {!<td style="background-color: #c8c288; ">!}[+ farmers_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ farmhands_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ rural_workers_pps_display +]%{!</td>!} 
         {!</tr>!} ?]
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
-            {!<td style="background-color: #a86a77; ">!}[+ farmer_lps_display +]%{!</td>!}
+            {!<td style="background-color: #a86a77; ">!}[+ farmers_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ farmhands_lps_display +]%{!</td>!}
             {!<td style="background-color: #a86a77;">!}[+ rural_workers_lps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CPS**{!</td>!}
-            {!<td style="background-color: #758391; ">!}[+ farmer_cps_display +]%{!</td>!}
+            {!<td style="background-color: #758391; ">!}[+ farmers_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ farmhands_cps_display +]%{!</td>!}
             {!<td style="background-color: #758391;">!}[+ rural_workers_cps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**SCPS**{!</td>!}
-            {!<td style="background-color: #bcdeb8; ">!}[+ farmer_scps_display +]%{!</td>!}
+            {!<td style="background-color: #bcdeb8; ">!}[+ farmers_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ farmhands_scps_display +]%{!</td>!}
             {!<td style="background-color: #bcdeb8;">!}[+ rural_workers_scps_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Others**{!</td>!}
-            {!<td style="background-color: #e7e7e7; ">!}[+ farmer_other_display +]%{!</td>!}
+            {!<td style="background-color: #e7e7e7; ">!}[+ farmers_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ farmhands_other_display +]%{!</td>!}
             {!<td style="background-color: #e7e7e7;">!}[+ rural_workers_other_display +]%{!</td>!}
         {!</tr>!}

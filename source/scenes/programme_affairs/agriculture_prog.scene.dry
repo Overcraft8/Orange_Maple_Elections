@@ -11,11 +11,11 @@ subtitle: Choosing our party's platform
 
 Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. We can promise multiple policies within a single group or promise none at all. 
 
-- @farmer_policies: Let us choose a campaign promise for the farmers. 
+- @farmers_policies: Let us choose a campaign promise for the farmers. 
 - @backSpecialScene: Return
 
 
-@farmer_policies
+@farmers_policies
 subtitle: The farmers are a traditional voting bloc of ours. 
 face-image: img/Williams_picnic.jpg
 
@@ -33,18 +33,18 @@ face-image: img/Williams_picnic.jpg
 
 Enacting this policy would allow farmers to remain on their land by leasing the property back to their creditor or a public authority. 
 
-This would enable the farmer to utilize their land to pay back their payments, acting as a safeguard from the seizure of their primary form of income generation. 
+This would enable the farmers to utilize their land to pay back their payments, acting as a safeguard from the seizure of their primary form of income generation. 
 
 We would construct a Farm Land Security Board to oversee this policy and ensure that both farmers and creditors are acting faithfully. 
 
-This is a radical farmer policy that would potentially destabilize our agricultural sector. However, it may be worth it to ensure the support of the farmers. 
+This is a radical farmers policy that would potentially destabilize our agricultural sector. However, it may be worth it to ensure the support of the farmers. 
 
 - @yes_use_lease: We will promise this policy
-- @farmer_policies: Let's go back
+- @farmers_policies: Let's go back
 
 @yes_use_lease
 title: Yes to use lease!
-on-arrival: agrarian_strength += 5; use_lease_plat += 1; farmer_flp += 8; lps_relation -= 10; cps_relation -= 15; pps_relation -= 6
+on-arrival: agrarian_strength += 5; use_lease_plat += 1; farmers_flp += 8; lps_relation -= 10; cps_relation -= 15; pps_relation -= 6
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
 
@@ -57,11 +57,11 @@ Enacting this policy would allow farmers to collect their crop and livestock for
 This would encroach upon many of the existing wheat pools in Saskatchewan though we could officiate a merger of these organizations if we so wished. In doing this, we will be displeasing the LPS and CPS who both have allies in the grain companies. 
 
 - @yes_wheat_pool: Yes to the wheat pool
-- @farmer_policies: Let's go back
+- @farmers_policies: Let's go back
 
 @yes_wheat_pool
 title: Yes to the wheat pool!
-on-arrival: agrarian_strength += 3; wheat_pool_plat += 1; farmer_flp += 4; lps_relation -= 6; cps_relation -= 8
+on-arrival: agrarian_strength += 3; wheat_pool_plat += 1; farmers_flp += 4; lps_relation -= 6; cps_relation -= 8
 
 We have chosen to add a provincial wheat pool to our platform. The farmers will surely be enthusiastic. 
 
@@ -76,11 +76,11 @@ Enacting this policy would bring the ire of the businesses, particularly CPR whi
 In doing this, we will also be slightly displeasing the LPS and CPS who both have allies in the grain companies. 
 
 - @yes_grain_elevators: Yes to the grain elevators
-- @farmer_policies: Let's go back
+- @farmers_policies: Let's go back
 
 @yes_grain_elevators
 title: Yes to the grain elevators!
-on-arrival: agrarian_strength += 3; grain_elevator_plat += 1; farmer_flp += 3; lps_relation -= 4; cps_relation -= 6
+on-arrival: agrarian_strength += 3; grain_elevator_plat += 1; farmers_flp += 3; lps_relation -= 4; cps_relation -= 6
 
 We have chosen to add a provincial grain elevator policy to our platform. 
 
@@ -93,8 +93,8 @@ Enacting this policy would provincially regulate the sale price of livestock and
 This would have major effects on the supply side, however. 
 
 - @yes_price_guarantee: Yes to the price guarantee
-- @farmer_policies: Let's go back
+- @farmers_policies: Let's go back
 
 @yes_price_guarantee
 title: Yes to the price guarantee!
-on-arrival: agrarian_strength += 3; price_guarantee_plat += 1; farmer_flp += 3;
+on-arrival: agrarian_strength += 3; price_guarantee_plat += 1; farmers_flp += 3;

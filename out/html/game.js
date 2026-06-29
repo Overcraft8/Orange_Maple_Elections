@@ -554,8 +554,8 @@ window.get_taxes_final = function(taxes_in_question) {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
 
-    var lower_pop = Q.workers_population_percent + Q.rural_workers_population_percent + Q.farmhand_population_percent + (Q.farmer_population_percent * 0.8);
-    var middle_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.9 + (Q.farmer_population_percent)*0.2;
+    var lower_pop = Q.workers_population_percent + Q.rural_workers_population_percent + Q.farmhands_population_percent + (Q.farmers_population_percent * 0.8);
+    var middle_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.9 + (Q.farmers_population_percent)*0.2;
     var rich_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.1;
 
     console.log("These are the populations by wealth status")

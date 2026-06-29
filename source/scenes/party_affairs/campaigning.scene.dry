@@ -14,7 +14,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @urban_workers: The urban working class, our traditional support base.
 - @new_middle: The "new middle class" of government employees and white-collar workers.
 - @old_middle: The "old middle class" of small independent businessmen and artisans.
-- @farmer: Farmers, our traditional support base.   
+- @farmers: Farmers, our traditional support base.   
 - @farm_hands: The farm hands, the aides of the farms
 - @rural_workerss: The rural workers, primarily employed in resource extraction
 - @unemployed: The unemployed.
@@ -46,13 +46,13 @@ on-arrival: old_middle_flp += 5*(1-dissent); resources -= 1; old_middle_flp -= 3
 
 We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
 
-@farmer
+@farmers
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: farmer_flp += 3*(1-dissent); resources -= 1; farmer_flp += 3*(1-dissent) if farmer_policy >= 2
+on-arrival: farmers_flp += 3*(1-dissent); resources -= 1; farmers_flp += 3*(1-dissent) if farmers_policy >= 2
 
-We have increased our campaigning among farmers. The farmers are a traditional voting bloc of ours[? if farmer_policy >= 2 : Our farmer policies have made it easier for us to build support among farmers. ?]
+We have increased our campaigning among farmers. The farmers are a traditional voting bloc of ours[? if farmers_policy >= 2 : Our farmers policies have made it easier for us to build support among farmers. ?]
 
 @farm_hands
 subtitle: -1 resources

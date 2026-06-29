@@ -31,7 +31,7 @@ How do we assuage our partners?
 
 @give_up_prussia
 view-if: flp_prussia == 1
-on-arrival: coalition_dissent = 0; flp_prussia = 0; city_government = "I"; managerial_dissent += 10; centrist_dissent += 10; labour_dissent += 10; true_socialist_dissent += 5; workers_flp -= 5; farmer_flp -= 5; 
+on-arrival: coalition_dissent = 0; flp_prussia = 0; city_government = "I"; managerial_dissent += 10; centrist_dissent += 10; labour_dissent += 10; true_socialist_dissent += 5; workers_flp -= 5; farmers_flp -= 5; 
 
 Fine. We no longer control the government of City Police. The vote has been called off.
 

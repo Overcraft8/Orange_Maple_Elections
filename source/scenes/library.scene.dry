@@ -133,7 +133,7 @@ go-to: menu
 
 **New Middle**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
 
-**Farmers**: Small and large farmers and independent farmer workers. This is the base of the FLP. They have been radicalized by the Depression and the Drought they they remain committed to holding their property. 60-65% of the population.
+**Farmers**: Small and large farmers and independent farmers workers. This is the base of the FLP. They have been radicalized by the Depression and the Drought they they remain committed to holding their property. 60-65% of the population.
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the PPS Party (or the Bavarian People's Party in Bavaria).
 
@@ -194,7 +194,7 @@ New Middle Class: FLP: [+ new_middle_flp_display +]%, PPS: [+ new_middle_pps_dis
 
 Old Middle Class: FLP: [+ old_middle_flp_display +]%, PPS: [+ old_middle_pps_display +]%, CP(S): [+ old_middle_cp_s_display +]%, [+ lps_name +]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCPS: [+ old_middle_scps_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Farmers: FLP: [+ farmer_flp_display +]%, PPS: [+ farmer_pps_display +]%, CP(S): [+ farmer_cp_s_display +]%, [+ lps_name +]: [+ farmer_lps_display +]%, CPS: [+ farmer_cps_display +]%; SCPS: [+ farmer_scps_display +]%, Others: [+ farmer_other_display +]% [? if sapd_formed: SAPD: [+ farmer_sapd_display +]% ?]
+Farmers: FLP: [+ farmers_flp_display +]%, PPS: [+ farmers_pps_display +]%, CP(S): [+ farmers_cp_s_display +]%, [+ lps_name +]: [+ farmers_lps_display +]%, CPS: [+ farmers_cps_display +]%; SCPS: [+ farmers_scps_display +]%, Others: [+ farmers_other_display +]% [? if sapd_formed: SAPD: [+ farmers_sapd_display +]% ?]
 
 Unemployed: FLP: [+ unemployed_flp_display +]%, PPS: [+ unemployed_pps_display +]%, CP(S): [+ unemployed_cp_s_display +]%, [+ lps_name +]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCPS: [+ unemployed_scps_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
@@ -258,7 +258,7 @@ Strength: [+ kkk_strength +] Thousand
 
 Militarization: [+ kkk_militancy : militancy +]
 
-**Farmers Unity League (FUL)**: This is the farmer's organization of the CP(S), more militant and radical than the UFC(SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
+**Farmers Unity League (FUL)**: This is the farmers's organization of the CP(S), more militant and radical than the UFC(SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
 
 Strength: [+ ful_strength +] Thousand
 

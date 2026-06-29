@@ -7,10 +7,10 @@ new-page: true
 
 = Percy Wright
 
-Percy Wright is a farmer by trade and a candidate in the Melfort riding. 
+Percy Wright is a farmers by trade and a candidate in the Melfort riding. 
 
 - @agriculture
-- @farmer_campaign
+- @farmers_campaign
 - @depression
 - @root: Return to main
 
@@ -23,14 +23,14 @@ on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advis
 go-to: agricultural_policy
 
 
-@farmer_campaign
+@farmers_campaign
 title: Farmers Campaign
-subtitle: Try to campaign among the farmer populace.
-choose-if: advisor_action_timer == 0 and farmer_policy > 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if farmer_policy == 0 : We have not enacted any farmer policies. ?]
-on-arrival: advisor_action_timer = 6; farmer_flp += 5*(1-dissent); peoples_party_support += 1
+subtitle: Try to campaign among the farmers populace.
+choose-if: advisor_action_timer == 0 and farmers_policy > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if farmers_policy == 0 : We have not enacted any farmers policies. ?]
+on-arrival: advisor_action_timer = 6; farmers_flp += 5*(1-dissent); peoples_party_support += 1
 
-We have increased our campaigning among farmers and the farmer populace.
+We have increased our campaigning among farmers and the farmers populace.
 
 @depression
 title: Addressing the economic crisis

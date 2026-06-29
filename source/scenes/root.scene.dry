@@ -232,7 +232,7 @@ Q.workers = 19; // industry and trade
 Q.old_middle = 5; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
 Q.new_middle = 13; // "new mittelstand"
-Q.farmer = 40; // agriculture and forestry employment... but many of those are proletarians so...
+Q.farmers = 40; // agriculture and forestry employment... but many of those are proletarians so...
 Q.farmhands = 20;
 Q.rural_workers = 3;
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
@@ -243,7 +243,7 @@ Q.catholics = 1;
 
 // income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
 Q.income = 1600;
-// what about incomes for different classes? farmer workers? middle-class workers?
+// what about incomes for different classes? farmers workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BFLPRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
 Q.inflation = 2.9;
@@ -253,14 +253,14 @@ Q.inflation = 2.9;
 
 // quality of life (as % of 1932 - currently unused - should be welfare-adjusted.)
 Q.workers_qol = 100;
-Q.farmer_qol = 100;
+Q.farmers_qol = 100;
 Q.farmhands_qol = 100;
 Q.rural_workers_qol = 100;
 Q.unemployed_qol = 100;
 Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'farmer', 'farmhands', 'rural_workers', 'unemployed', 'catholics'];
+Q.classes = ['workers', 'old_middle', 'new_middle', 'farmers', 'farmhands', 'rural_workers', 'unemployed', 'catholics'];
 Q.parties = ['flp', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
 Q.parties_disp_names = ['FLP', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other']
 
@@ -328,13 +328,13 @@ Q.new_middle_cps = 38;
 Q.new_middle_scps = 0;
 Q.new_middle_other = 2;
 
-Q.farmer_flp = 7;
-Q.farmer_cp_s = 3;
-Q.farmer_pps = 6;
-Q.farmer_lps= 44;
-Q.farmer_cps = 37;
-Q.farmer_scps = 0;
-Q.farmer_other = 3;
+Q.farmers_flp = 7;
+Q.farmers_cp_s = 3;
+Q.farmers_pps = 6;
+Q.farmers_lps= 44;
+Q.farmers_cps = 37;
+Q.farmers_scps = 0;
+Q.farmers_other = 3;
 
 Q.farmhands_flp = 4;
 Q.farmhands_cp_s = 3;
@@ -619,10 +619,10 @@ Q.rural_poverty = (10).toFixed(1);
 //  
 //                   Farmers living standards
 // Farmers Access to electricity
-Q.farmer_electrification = 5;
+Q.farmers_electrification = 5;
 // Farmers Access to sanitation
-Q.farmer_sanitation = 3;
-Q.farmer_telephone = 20;
+Q.farmers_sanitation = 3;
+Q.farmers_telephone = 20;
 
 //                 Foreign Relations
 // Relations with the UFUL
@@ -779,7 +779,7 @@ Q.min_wage_plat = 0;
  
  Q.quappelle_d_seats = 7;
  Q.quappelle_d_workers = 15;
- Q.quappelle_d_farmer = 30; 
+ Q.quappelle_d_farmers = 30; 
  Q.quappelle_d_farmhands = 25;
  Q.quappelle_d_rural_workers = 10;
  Q.quappelle_d_unemployed = 20;
@@ -787,14 +787,14 @@ Q.min_wage_plat = 0;
  
  Q.southwest_d_seats = 7;
  Q.southwest_d_workers = 15;
- Q.southwest_d_farmer = 40; 
+ Q.southwest_d_farmers = 40; 
  Q.southwest_d_farmhands = 25;
  Q.southwest_d_rural_workers = 20;
  
  
  Q.southeast_d_seats = 13;
  Q.southeast_d_workers = 5;
- Q.southeast_d_farmer = 40; 
+ Q.southeast_d_farmers = 40; 
  Q.southeast_d_farmhands = 25;
  Q.southeast_d_rural_workers = 10;
  Q.southeast_d_unemployed = 20;
@@ -802,14 +802,14 @@ Q.min_wage_plat = 0;
  
  Q.north_d_seats = 3;
  Q.north_d_workers = 20;
- Q.north_d_farmer = 20; 
+ Q.north_d_farmers = 20; 
  Q.north_d_farmhands = 20;
  Q.north_d_rural_workers = 40;
  
  
  Q.central_d_seats = 14;
  Q.central_d_workers = 15;
- Q.central_d_farmer = 35; 
+ Q.central_d_farmers = 35; 
  Q.central_d_farmhands = 15;
  Q.central_d_rural_workers = 15;
  Q.central_d_unemployed = 20;
@@ -833,15 +833,15 @@ Q.min_wage_plat = 0;
 
 Q.district_data = {
   "districts": {
-    "regina_d": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmer": 0, "farmhands": 0, "rural_workers": 0 },
-    "saskatoon_d": { "seats": 14, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmer": 0, "farmhands": 0, "rural_workers": 0 },
-    "moosejaw_d": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmer": 0, "farmhands": 0, "rural_workers": 0 },
-    "princealbert_d": { "seats": 1, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmer": 0, "farmhands": 0, "rural_workers": 0 },
-    "quappelle_d": { "seats": 7, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmer": 30, "farmhands": 25, "rural_workers": 10 },
-    "southwest_d": { "seats": 7, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmer": 40, "farmhands": 25, "rural_workers": 20 },
-    "southeast_d": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmer": 40, "farmhands": 25, "rural_workers": 10 },
-    "north_d": { "seats": 3, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmer": 20, "farmhands": 20, "rural_workers": 40 },
-    "central_d": { "seats": 14, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmer": 35, "farmhands": 15, "rural_workers": 15 }
+    "regina_d": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "saskatoon_d": { "seats": 14, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "moosejaw_d": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "princealbert_d": { "seats": 1, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "quappelle_d": { "seats": 7, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 30, "farmhands": 25, "rural_workers": 10 },
+    "southwest_d": { "seats": 7, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
+    "southeast_d": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "farmhands": 25, "rural_workers": 10 },
+    "north_d": { "seats": 3, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
+    "central_d": { "seats": 14, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
   }
 }
 
@@ -1232,11 +1232,11 @@ The only break in Liberal dominance was the 1929 election, wherein a coalition o
 
 The Great Depression hit Saskatchewan the hardest of all the provinces, especially the farmers who observed a 90% decrease in income per capita. Thousands filed into the cities looking for work only to be turned away by what little non-agricultural industry and retail existed. 
 
-This struggle brewed a strong localized form of socialism, more impacted by British Fabianism and the Social Gospel than Marxism. From this brew sprouted the FLP, a merger of the UFPA, the political arm of the UFC(SS), the dominant provincial farmer's organization, and the ILP, a miniscule urban socialist party whose leadership was dominated by middle class professionals rather than trade unionists. Accordingly, the early FLP was dominated by its agrarian wing and saw little electoral success in the labour-oriented cities. One core policy aim of the party was the use-lease system, wherein farmers would have the option of leasing their land back to the government for a guaranteed price, allowing them to pay off their debts and avoid foreclosure. 
+This struggle brewed a strong localized form of socialism, more impacted by British Fabianism and the Social Gospel than Marxism. From this brew sprouted the FLP, a merger of the UFPA, the political arm of the UFC(SS), the dominant provincial farmers's organization, and the ILP, a miniscule urban socialist party whose leadership was dominated by middle class professionals rather than trade unionists. Accordingly, the early FLP was dominated by its agrarian wing and saw little electoral success in the labour-oriented cities. One core policy aim of the party was the use-lease system, wherein farmers would have the option of leasing their land back to the government for a guaranteed price, allowing them to pay off their debts and avoid foreclosure. 
 
 In the 1934 Provincial Election, the Cooperative Coalition was ousted from power, losing every single seat. Attributed to this defeat was the fall of the KKK in Saskatchewan, a subtle supporter of Anderson's nativist campaign, the collapse of the provincial Progressive Party organization, and perhaps most contributory; the start of the Great Depression. The Liberals were once again in power, opposed by only 5 FLP MLAs, all elected in rural ridings. 
 
-The results of this election were disappointing to everybody but the LPS. The Conservatives, unbeknowst to them at the time, had seen their last major electoral success for the next 50 years. The FLP was also disappointed in their disappointing seat count, attributed to their presiding leader, MJ Coldwell's lack of appeal to the party's farmer base and the confusing use-lease policy which was attacked as communistic by the Liberals. Coldwell came from the ILP side of the party and accordingly, Ssakatchewan farmers were wholly unenthusiastic about an urban teacher leading the foremost farmer's political party. Coldwell left for Federal politics in 1935, replaced by George Williams, former president of the UFC(SS) and a farmer himself.
+The results of this election were disappointing to everybody but the LPS. The Conservatives, unbeknowst to them at the time, had seen their last major electoral success for the next 50 years. The FLP was also disappointed in their disappointing seat count, attributed to their presiding leader, MJ Coldwell's lack of appeal to the party's farmers base and the confusing use-lease policy which was attacked as communistic by the Liberals. Coldwell came from the ILP side of the party and accordingly, Ssakatchewan farmers were wholly unenthusiastic about an urban teacher leading the foremost farmers's political party. Coldwell left for Federal politics in 1935, replaced by George Williams, former president of the UFC(SS) and a farmers himself.
 
 The 1934 election indicated a brief return to the typical Liberal dominance in Saskatchewan. However, the seed of socialism had been planted and was soon to blossom. 
 
@@ -1291,7 +1291,7 @@ Tommy Douglas is perhaps the most beloved politician in Canadian history. To thi
 
 # This mod was given birth to in December of 2025. I was visiting some relatives in Regina and after having lunch, we headed off to Indigo to make use of a giftcard. While browsing, I came upon this intriguing book called "The Prairie Populist" by J. F. Conway. 
 
-# This book was interesting. The back cover said, quote, "George Hara Williams was undermined by Tommy Douglas and M.J. Coldwell just as Saskatchewan's CCF was on the threshold of power." As a Saskatchewanian (lol), I had grown up hearing stories about Tommy Douglas, the so called "Greatest Canadian" who had introduced universal healthcare and won five consecutive elections on a Social Democratic platform in backwater, farmer, conservative Saskatchewan. 
+# This book was interesting. The back cover said, quote, "George Hara Williams was undermined by Tommy Douglas and M.J. Coldwell just as Saskatchewan's CCF was on the threshold of power." As a Saskatchewanian (lol), I had grown up hearing stories about Tommy Douglas, the so called "Greatest Canadian" who had introduced universal healthcare and won five consecutive elections on a Social Democratic platform in backwater, farmers, conservative Saskatchewan. 
 
 # So who was this "George Hara Williams" and what did good old Tommy do to him? I bought the book and devoured it for the next week or so. Turns out, George Williams had been the decisive role in rallying Saskatchewan farmers to the FLP and later, the CCF/NDP. This was quite shocking considering how forgotten Williams is nowadays. 
 

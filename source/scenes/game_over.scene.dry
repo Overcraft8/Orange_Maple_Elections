@@ -71,17 +71,17 @@ for (var c of Q.classes) {
 if (Q.new_middle_flp_normalized && Q.new_middle_flp_normalized >= 50) {
     this.achieve('panik_im_mittelstand');
 }
-// Bauernrevolution - have over 50% farmer support.
-if (Q.farmer_flp_normalized && Q.farmer_flp_normalized >= 50) {
+// Bauernrevolution - have over 50% farmers support.
+if (Q.farmers_flp_normalized && Q.farmers_flp_normalized >= 50) {
     this.achieve('bauernrevolution');
 }
 if (Q.catholics_flp_normalized && Q.catholics_flp_normalized >= 50) {
     this.achieve('katholischer_sozialismus');
 }
-if (Q.workers_flp_normalized >= 80 && Q.new_middle_flp_normalized <= 20 && Q.old_middle_flp_normalized <= 20 && Q.farmer_flp_normalized <= 20) {
+if (Q.workers_flp_normalized >= 80 && Q.new_middle_flp_normalized <= 20 && Q.old_middle_flp_normalized <= 20 && Q.farmers_flp_normalized <= 20) {
     this.achieve('klassenkampf');
 }
-if (Q.workers_flp_normalized >= 40 && Q.new_middle_flp_normalized >= 40 && Q.old_middle_flp_normalized >= 40 && Q.farmer_flp_normalized >= 40) {
+if (Q.workers_flp_normalized >= 40 && Q.new_middle_flp_normalized >= 40 && Q.old_middle_flp_normalized >= 40 && Q.farmers_flp_normalized >= 40) {
     this.achieve('grosse_volkspartei');
 }
 // Räterepublik - begin the transformation to a socialist economy.
@@ -343,13 +343,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
-[? if game_achievement_bauernrevolution: **Bauernrevolution** - FLP farmer support is at least 50%. ?]
+[? if game_achievement_bauernrevolution: **Bauernrevolution** - FLP farmers support is at least 50%. ?]
 
 [? if game_achievement_katholischer_sozialismus: **Katholischer Sozialismus** - FLP Catholic support is at least 50%. ?]
 
 [? if game_achievement_grosse_volkspartei: **Große Volkspartei** - All classes have at least 40% FLP support. ?]
 
-[? if game_achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmer supports are less than 20%. ?]
+[? if game_achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmers supports are less than 20%. ?]
 
 [? if game_achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -449,13 +449,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
-[? if achievement_bauernrevolution: **Bauernrevolution** - FLP farmer support is at least 50%. ?]
+[? if achievement_bauernrevolution: **Bauernrevolution** - FLP farmers support is at least 50%. ?]
 
 [? if achievement_katholischer_sozialismus: **Katholischer Sozialismus** - FLP Catholic support is at least 50%. ?]
 
 [? if achievement_grosse_volkspartei: **Große Volkspartei** - All classes have at least 40% FLP support. ?]
 
-[? if achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmer supports are less than 20%. ?]
+[? if achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmers supports are less than 20%. ?]
 
 [? if achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -552,13 +552,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_panik_im_mittelstand: **Panik im Mittelstand** - FLP new middle class support is at least 50%. ?]
 
-[? if not achievement_bauernrevolution: **Bauernrevolution** - FLP farmer support is at least 50%. ?]
+[? if not achievement_bauernrevolution: **Bauernrevolution** - FLP farmers support is at least 50%. ?]
 
 [? if not achievement_katholischer_sozialismus: **Katholischer Sozialismus** - FLP Catholic support is at least 50%. ?]
 
 [? if not achievement_grosse_volkspartei: **Große Volkspartei** - All classes have at least 40% FLP support. ?]
 
-[? if not achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmer supports are less than 20%. ?]
+[? if not achievement_klassenkampf: **Klassenkampf** - FLP worker support is at least 80%, while middle-class and farmers supports are less than 20%. ?]
 
 [? if not achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 

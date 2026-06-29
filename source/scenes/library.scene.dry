@@ -291,14 +291,12 @@ Overall dissent: [+ dissent_percent : dissent +]
 <span class="tooltip-text" title="A faction consisting of radical farmers, representing the small family farm." style="color: #86a71b;">**Agrarians**</span><br>
 Strength: [+ agrarian_strength : strength +] <br>
 Dissent: [+ agrarian_dissent : dissent +]<br>
-Radicalism: [+ agrarian_radicalism : radicalism +]
 ?]
 
 [? if 1 == 1 :
 <span class="tooltip-text" title="A faction of trade unionists and labour activists, representing the urban workers." style="color: #0F52BA;">**Labour**</span><br>
 Strength: [+ labour_strength : strength +]<br> 
 Dissent: [+ labour_dissent : dissent +]<br>
-Radicalism: [+ labour_radicalism : radicalism +]
 ?]
 
 [? if 1 == 1 :

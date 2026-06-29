@@ -26,6 +26,6 @@ on-arrival: {!
     Q.crown_corp_revenue = 0;
     Q.other_revenue = Q.property_tax
     //for (crown_corp in Q.crown_corps) {
-
+    console.log("Got into economic annual")
     //}
 !}

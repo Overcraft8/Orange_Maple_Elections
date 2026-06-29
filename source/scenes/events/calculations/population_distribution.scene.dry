@@ -26,4 +26,5 @@ for (var c of Q.classes) {
     }
     console.log(c + ' population percent: ' + Q[c + '_population_percent']);
 }
+console.log("Got into pop distribution")
 !}

@@ -553,8 +553,7 @@ window.get_taxes_final = function(taxes_in_question) {
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-
-    var lower_pop = Q.workers_population_percent + Q.rural_workers_population_percent + Q.farmhands_population_percent + (Q.farmers_population_percent * 0.8);
+    var lower_pop = Q.workers_population_percent + Q.rural_workers_population_percent + Q.farmhands_population_percent + Q.unemployed_population_percent + (Q.farmers_population_percent * 0.8);
     var middle_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.9 + (Q.farmers_population_percent)*0.2;
     var rich_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.1;
 
@@ -590,97 +589,6 @@ document.addEventListener("click", function(e) {
 window.toggleDistrict = function() {
     var div = document.getElementById('district_results_legislative');
     div.style.display = div.style.display === 'none' ? 'block' : 'none';
-};
-
-
-
-window.renderPollsChart = function(pollsData) {
-    try {
-        if (typeof d3 === 'undefined') {
-            setTimeout(() => window.renderPollsChart(pollsData), 100);
-            return;
-        }
-
-        const container = document.getElementById("overall-polls-chart");
-        if (!container) {
-            setTimeout(() => window.renderPollsChart(pollsData), 100);
-            return; 
-        }
-
-        const width = Math.min(container.offsetWidth || 500, 500);
-        const height = 200;
-        
-        const margin = { top: 20, right: 20, bottom: 40, left: 50 };
-        const chartWidth = width - margin.left - margin.right;
-        const chartHeight = height - margin.top - margin.bottom;
-
-        // Clear previous content
-        d3.select(container).selectAll("*").remove();
-
-        const svg = d3.select(container).append("svg")
-            .attr("width", width)
-            .attr("height", height);
-
-        const g = svg.append("g")
-            .attr("transform", `translate(${margin.left},${margin.top})`);
-
-        const xScale = d3.scaleBand()
-            .domain(pollsData.map(d => d.party))
-            .range([0, chartWidth])
-            .padding(0.2);
-
-        const yScale = d3.scaleLinear()
-            .domain([0, 100])
-            .range([chartHeight, 0]);
-
-        // Draw Y-axis
-        g.append("g")
-            .call(d3.axisLeft(yScale))
-            .style("font-size", "12px");
-
-        // Draw Y-axis label
-        g.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 0 - margin.left)
-            .attr("x", 0 - (chartHeight / 2))
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .style("font-size", "12px")
-            .text("Vote Share (%)");
-
-        // Draw bars
-        g.selectAll(".bar")
-            .data(pollsData)
-            .enter().append("rect")
-            .attr("class", "bar")
-            .attr("x", d => xScale(d.party))
-            .attr("y", d => yScale(d.votes))
-            .attr("width", xScale.bandwidth())
-            .attr("height", d => chartHeight - yScale(d.votes))
-            .attr("fill", d => d.color)
-            .style("stroke", "#333")
-            .style("stroke-width", 1);
-
-        // Draw value labels on bars
-        g.selectAll(".bar-label")
-            .data(pollsData)
-            .enter().append("text")
-            .attr("class", "bar-label")
-            .attr("x", d => xScale(d.party) + xScale.bandwidth() / 2)
-            .attr("y", d => yScale(d.votes) - 5)
-            .attr("text-anchor", "middle")
-            .style("font-size", "12px")
-            .style("font-weight", "bold")
-            .text(d => `${d.votes}%`);
-
-        // Draw X-axis
-        g.append("g")
-            .attr("transform", `translate(0,${chartHeight})`)
-            .call(d3.axisBottom(xScale))
-            .style("font-size", "12px");
-    } catch (err) {
-        console.error('Error rendering overall polls chart:', err);
-    }
 };
 
 

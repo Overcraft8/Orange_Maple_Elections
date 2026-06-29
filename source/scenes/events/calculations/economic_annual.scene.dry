@@ -1,6 +1,6 @@
-title: Economy Calculations
+title: Economy Calculations (just for dev)
 tags: event
-view-if: month = 8
+view-if: month == 8
 on-arrival: {!
 
 var sign = Q.economic_growth > Q.old_economic_growth

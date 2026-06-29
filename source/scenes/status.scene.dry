@@ -401,15 +401,25 @@ Q.tax_list = [
 !}
 
 = Budget
-
-<div id='revenue_streams' style='display: flex; border: 2px solid black; text-align: center;'>
+<div id='budget_holder' style='display: flex;'>
+<div id='revenue_streams' style='block: flex; border: 2px solid black; text-align: center;'>
 
 = Revenue
-<br><br>
 
 <div>
 [+ tax_display_html +]
 </div>
+
+</div>
+
+<div id-'expense_streams' style='block: flex; border: 2px solid black; text-align: center;'>
+
+= Expenses
+
+Filler!!!!
+
+
+
 
 </div>
 

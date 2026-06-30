@@ -247,6 +247,7 @@ img.inline-img.icon {
   right: 0.4em;
 }
 #qualities {
+  text-align: center;
   text-indent: 0;
   line-height: 1.3em;
 }
@@ -254,7 +255,7 @@ img.inline-img.icon {
   text-indent: 0;
 }
 #qualities h1 {
-  font-family: Century Gothic;
+  font-family: Georgia, sans-serif;
   font-size: 1.4em;
   font-weight: normal;
   text-align: center;
@@ -265,6 +266,7 @@ img.inline-img.icon {
   font-weight: normal;
 }
 #qualities_right {
+  text-align: center;
   text-indent: 0;
   line-height: 1.3em;
 }
@@ -272,7 +274,7 @@ img.inline-img.icon {
   text-indent: 0;
 }
 #qualities_right h1 {
-  font-family: Century Gothic;
+  font-family: Georgia, sans-serif;
   font-size: 1.4em;
   font-weight: normal;
   text-align: center;

@@ -401,24 +401,19 @@ Q.tax_list = [
 !}
 
 = Budget
-<div id='budget_holder' style='display: flex; border: 0px none none'>
-    <div id='revenue_streams' style='block: flex; border: 2px solid black; text-align: center;'>
 
-        = Revenue
-
-        <div>
-            [+ tax_display_html +]
-        </div>
-
+<div id='budget_holder' style='display: flex; flex-direction: row; gap: 20px;'>
+    
+    <div id='revenue_streams' style='display: flex; flex-direction: row; border: 2px solid black; padding: 10px; flex: 1;'>
+        <strong>Revenue</strong>
+        [= tax_display_html =]
     </div>
 
-    <div id-'expense_streams' style='block: flex; border: 2px solid black; text-align: center;'>
-
-        = Expenses
-
+    <div id='expense_streams' style='display: flex; flex-direction: row; border: 2px solid black; padding: 10px; flex: 1;'>
+        <strong>Expenses</strong>
         Filler!!!!
-
     </div>
+
 </div>
 
 

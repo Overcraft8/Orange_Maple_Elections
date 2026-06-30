@@ -585,8 +585,9 @@ window.calculate_income_tax = function() {
     var total_revenue = 0;
 
     // Define thresholds
-    var middle_threshold = Q.middle_tax_rates; // Income above this hits Middle rate
-    var upper_threshold = Q.upper_tax_rates;  // Income above this hits Upper rate
+    var middle_threshold = 0.4; // Income above this hits Middle rate
+    // Threshold different from tax rate, (class taxed at 50% (rate) of income above 40% (threshold) for example)
+    var upper_threshold = 0.8;  // Income above this hits Upper rate
 
     for (var d of Q.district_names) {
         for (var c in Q.class_incomes) {

@@ -398,7 +398,7 @@ Q.tax_list = [
     ];
 
     // Pass the list to your function
-    Q.tax_display_html = window.get_taxes(Q.tax_list);
+    // Q.tax_display_html = window.get_taxes(Q.tax_list);
     Q.calculated_taxes = window.get_taxes_final(Q.tax_list);
     Q.final_taxes = window.calculate_revenue();
 !}

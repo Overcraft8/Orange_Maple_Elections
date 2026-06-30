@@ -274,18 +274,18 @@ on-arrival: economic_year = year - 1;
 
 <div style='text-align: center; display: flex;'>
 
-    <div style='border: 2px solid ; width: 100%;'>
+    <div style='border: 2px solid ; width: 100%; padding: 5px;'>
         Inflation: <br>
          [+ inflation_2 +]%
     </div>
 
-    <div style='border: 2px solid ; width: 100%; text-align: center;'>
+    <div style='border: 2px solid ; width: 100%; text-align: center; padding: 5px;'>
         Unemployment: <br>
         [+ unemployed_rounded +]% <br>
         <img style="width: 50%;" src="img/Melfort_Market.jpg">
     </div>
 
-    <div style='border: 2px solid ; width: 100%;'>
+    <div style='border: 2px solid ; width: 100%; padding: 5px;'>
         Rural Poverty Incidence: <br>
         [+ rural_poverty +]%
     </div>
@@ -294,11 +294,11 @@ on-arrival: economic_year = year - 1;
 
 <div style='text-align: center; display: flex;'>
 
-<div style='border: 2px solid ; width: 100%; text-align: center;'>
+<div style='border: 2px solid ; width: 100%; text-align: center; padding: 5px;'>
     GDP Growth ([+ economic_year +]): [+ economic_growth_trend +][+ economic_growth_rounded : economic_growth_colorized +]
 </div>
 
-<div style='border: 2px solid ; width: 100%; text-align: center;'>
+<div style='border: 2px solid ; width: 100%; text-align: center; padding: 5px;'>
     Total Saskatchewan Debt: [+ saskatchewan_debt +]
     <div style='text-align: center;'>
         <span style='font-size: 8px;'>(Indexed to [+ economic_year +] GDP)</span>
@@ -390,10 +390,6 @@ Agricultural Co-ops: [+ agri_coops : development +]
 @budget 
 on-display: {!
 
-// Q.low_tax_display = get_tax(Q.lower_tax_rates)
-// Q.middle_tax_display = get_tax(Q.middle_tax_rates)
-// Q.middle_tax_display = get_tax(Q.middle_tax_rates)
-
 
 Q.tax_list = [
         { name: "Lower Brackets", val: Q.lower_tax_rates },
@@ -403,22 +399,23 @@ Q.tax_list = [
 
     // Pass the list to your function
     Q.tax_display_html = window.get_taxes(Q.tax_list);
-    Q.calculated_taxes = window.get_taxes_final(Q.tax_list)
-
-
+    Q.calculated_taxes = window.get_taxes_final(Q.tax_list);
+    Q.final_taxes = window.calculate_revenue();
 !}
 
 = Budget
 
+[+ final_taxes +]
+
 <div id='budget_holder' style='display: flex; flex-direction: row;'>
     
     <div id='revenue_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
-        <strong>Revenue</strong>
+        <strong>Revenue</strong><br>
         [+ tax_display_html +]
     </div>
 
     <div id='expense_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
-        <strong>Expenses</strong>
+        <strong>Expenses</strong><br>
         Filler!!!!
     </div>
 

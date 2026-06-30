@@ -1,4 +1,5 @@
 (function() {
+  var Q = window.dendryUI?.dendryEngine?.state?.qualities;
   var game;
   var ui;
 
@@ -549,6 +550,20 @@ window.onDisplayContent = function() {
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
 
+
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+//                  TAXES AND REVENUE CALCULATIONS
+
+
+
+
 window.get_taxes_final = function(taxes_in_question) { 
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
@@ -564,6 +579,61 @@ window.get_taxes_final = function(taxes_in_question) {
 }
 
 })();
+
+window.calculate_revenue = function() {
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+    var total_revenue = 0;
+
+    // Define thresholds
+    var middle_threshold = Q.middle_tax_rates; // Income above this hits Middle rate
+    var upper_threshold = Q.upper_tax_rates;  // Income above this hits Upper rate
+
+    for (var d of Q.district_names) {
+        for (var c in Q.class_incomes) {
+            var proportion = (Q[d + '_' + c] || 0) / 10;
+            var income = Q.class_incomes[c] || 0;
+
+            if (proportion <= 0 || income <= 0) continue;
+
+            // Marginal Taxation Calculation
+
+            // 1. Portion taxed at Lower rate
+            var lower_slice = Math.min(income, middle_threshold);
+            var tax_from_lower = lower_slice * Q.lower_tax_rates;
+
+            // 2. Portion taxed at Middle rate (only if income > middle_threshold)
+            var middle_slice = Math.max(0, Math.min(income, upper_threshold) - middle_threshold);
+            var tax_from_middle = middle_slice * Q.middle_tax_rates;
+
+            // 3. Portion taxed at Upper rate (only if income > upper_threshold)
+            var upper_slice = Math.max(0, income - upper_threshold);
+            var tax_from_upper = upper_slice * Q.upper_tax_rates;
+
+            // Sum the slices
+            var total_tax_per_person = tax_from_lower + tax_from_middle + tax_from_upper;
+
+            // Apply weight
+            var revenue_slice = (Q[d + '_seats'] * proportion * total_tax_per_person) / 10;
+            total_revenue += revenue_slice;
+            console.log('District and Class Data;', d, c, revenue_slice)
+        }
+    }
+    return total_revenue.toFixed(2);
+    console.log('THis is total revenue: ', total_revenue)
+};
+
+
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
 
 document.addEventListener('mousemove', e => {
     document.querySelectorAll('.mytooltiptext').forEach(el => {
@@ -704,18 +774,7 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
 
 //'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
 
-window.get_tax = function(tax_in_question) {
-    var val = Number(tax_in_question);
-    
-    // Formula: (Value + 8) * 2.5
-    // Example: If val is -8: (-8 + 8) * 2.5 = 0%
-    // Example: If val is -7: (-7 + 8) * 2.5 = 2.5%
-    // Example: If val is 0:  (0 + 8) * 2.5 = 20%
-    var percent = (val + 8) * 2.5;
-
-    return "<span style='color: #187714;'>" + percent + "%</span>";
-};
-
+/* 
 window.get_taxes = function(taxes_in_question) {
     if (!Array.isArray(taxes_in_question)) return "";
 
@@ -734,3 +793,4 @@ window.get_taxes = function(taxes_in_question) {
     return_this += '</div>';
     return return_this;
 };
+*/ 

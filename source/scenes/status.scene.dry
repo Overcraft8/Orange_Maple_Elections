@@ -407,15 +407,15 @@ Q.tax_list = [
 
 [+ tax_display_html +]
 
-<div id='budget_holder' style='display: flex; flex-direction: row;'>
+<div id='budget_holder' style='display: flex; flex-direction: row; text-align: left;'>
     
     <div id='revenue_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
-        <strong>Revenue</strong><br>
+        <strong style='text-align: center;'>Revenue</strong><hr style='width: 100%;'>
         Income Tax: <span style='color: #187412'>[+ final_taxes +]</span>
     </div>
 
     <div id='expense_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
-        <strong>Expenses</strong><br>
+        <strong style='text-align: center;'>Expenses</strong><hr style='width: 100%;'>
         Filler!!!!
     </div>
 

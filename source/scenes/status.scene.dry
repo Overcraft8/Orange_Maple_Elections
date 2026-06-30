@@ -270,17 +270,25 @@ Healthcare quality: [+ healthcarequality +]
 on-arrival: economic_year = year - 1;
 
 = Economic Overview
+<hr>
 
 <div style='text-align: center; display: flex;'>
 
-    Inflation: [+ inflation_2 +]%
+    <div style='border: 2px solid ; width: 100%;'>
+        Inflation: <br>
+         [+ inflation_2 +]%
+    </div>
 
     <div style='border: 2px solid ; width: 100%; text-align: center;'>
-        Unemployment: [+ unemployed_rounded +]%
+        Unemployment: <br>
+        [+ unemployed_rounded +]% <br>
         <img style="width: 50%;" src="img/Melfort_Market.jpg">
     </div>
 
-    Rural Poverty Incidence: [+ rural_poverty +]%
+    <div style='border: 2px solid ; width: 100%;'>
+        Rural Poverty Incidence: <br>
+        [+ rural_poverty +]%
+    </div>
 </div>
 
 
@@ -402,14 +410,14 @@ Q.tax_list = [
 
 = Budget
 
-<div id='budget_holder' style='display: flex; flex-direction: row; gap: 20px;'>
+<div id='budget_holder' style='display: flex; flex-direction: row;'>
     
-    <div id='revenue_streams' style='display: flex; flex-direction: row; border: 2px solid black; padding: 10px; flex: 1;'>
+    <div id='revenue_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
         <strong>Revenue</strong>
-        [= tax_display_html =]
+        [+ tax_display_html +]
     </div>
 
-    <div id='expense_streams' style='display: flex; flex-direction: row; border: 2px solid black; padding: 10px; flex: 1;'>
+    <div id='expense_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
         <strong>Expenses</strong>
         Filler!!!!
     </div>

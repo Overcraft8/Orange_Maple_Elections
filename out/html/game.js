@@ -580,7 +580,7 @@ window.get_taxes_final = function(taxes_in_question) {
 
 })();
 
-window.calculate_revenue = function() {
+window.calculate_income_tax = function() {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
     var total_revenue = 0;
 
@@ -614,12 +614,13 @@ window.calculate_revenue = function() {
 
             // Apply weight
             var revenue_slice = (Q[d + '_seats'] * proportion * total_tax_per_person) / 10;
+            Number(revenue_slice.toFixed(5))
             total_revenue += revenue_slice;
             console.log('District and Class Data;', d, c, revenue_slice)
         }
     }
-    return total_revenue.toFixed(2);
     console.log('THis is total revenue: ', total_revenue)
+    return total_revenue.toFixed(2);
 };
 
 

@@ -400,18 +400,18 @@ Q.tax_list = [
     // Pass the list to your function
     // Q.tax_display_html = window.get_taxes(Q.tax_list);
     Q.calculated_taxes = window.get_taxes_final(Q.tax_list);
-    Q.final_taxes = window.calculate_revenue();
+    Q.final_taxes = window.calculate_income_tax();
 !}
 
 = Budget
 
-[+ final_taxes +]
+[+ tax_display_html +]
 
 <div id='budget_holder' style='display: flex; flex-direction: row;'>
     
     <div id='revenue_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
         <strong>Revenue</strong><br>
-        [+ tax_display_html +]
+        Income Tax: <span style='color: #187412'>[+ final_taxes +]</span>
     </div>
 
     <div id='expense_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>

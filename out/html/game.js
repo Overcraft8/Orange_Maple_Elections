@@ -563,6 +563,7 @@ window.onDisplayContent = function() {
 
 
 window.calculate_income_tax = function() {
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
     var total_revenue = 0;
 
     // Define thresholds
@@ -608,6 +609,7 @@ window.calculate_income_tax = function() {
 
 
 window.get_taxes_final = function(taxes_in_question) { 
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
     var lower_pop = Q.workers_population_percent + Q.rural_workers_population_percent + Q.farmhands_population_percent + Q.unemployed_population_percent + (Q.farmers_population_percent * 0.8);
     var middle_pop = (Q.old_middle_population_percent + Q.new_middle_population_percent)*0.9 + (Q.farmers_population_percent)*0.2;

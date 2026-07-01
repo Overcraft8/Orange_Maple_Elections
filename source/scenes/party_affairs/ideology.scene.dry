@@ -14,13 +14,15 @@ The FLP is torn between many different ideological currents. What should be our 
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @class_struggle: Class struggle and preparing the proletariat for the revolution are our primary goals.
+- @class_struggle: We must maintain a purely Socialist movement, aimed at the ultimate creation of a true Cooperative Commonwealth. 
 - @agrarian: We should work with the Agrarian movement to improve the lives of farmers.
+- @managerial: Our main goal should be to exercise Democratic Socialism in government where we can. 
 - @labour: We should work with the trade unions to improve the lives of workers.
-- @reform: We should work closely with the Federal CCF.
+- @reform: We should attempt to limit our excesses and meet the people where they are.
 - @easy_discard
 
 @class_struggle
+subtitle: The True Socialists will be pleased. 
 on-arrival: {!
 if (Q.ideology && Q.ideology != "left") {
     Q.changed = 1;
@@ -30,6 +32,8 @@ go-to: changed if changed = 1
 on-departure: ideology = "left"; true_socialist_strength += 10; communist_coalition += 1; true_socialist_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_s_relation += 3
 
 The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
+
+[? if 1 == 1: The election of the CLL to the City Council and Mayorship of Regina demonstrates that Social Democrats and Communists are not necessarily enemies. ?]
 
 @agrarian
 on-arrival: {!
@@ -41,6 +45,13 @@ go-to: changed if changed = 1
 on-departure: ideology = "agrarian"; agrarian_strength += 10; agrarian_dissent -= 10; true_socialist_dissent -= 5; managerial_dissent -= 5
 
 The Agrarian wing of the party seeks to work with the farmers' movement to improve the lives of small farmers. 
+
+
+@managerial
+on-arrival: managerial_strength += 5; 
+
+The Managerial wing is pleased with our decision. They have already begun drafting plans for our entrance into government. 
+
 
 @labour
 on-arrival: {!
@@ -62,7 +73,7 @@ if (Q.ideology && Q.ideology != "moderate") {
 go-to: changed if changed = 1
 on-departure: ideology = "moderate"; managerial_strength += 10; democratization += 1; managerial_dissent -= 5; pps_relation += 5; cps_relation += 5; cp_s_relation -= 8; managerial_plan_support += 1
 
-The moderate wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The Reformist wing is most in favour of loose cooperation or even an electoral alliance with the Cooperative Coalition. Perhaps we could use this to our advantage?
 
 @changed
 on-arrival: true_socialist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; managerial_dissent += 5

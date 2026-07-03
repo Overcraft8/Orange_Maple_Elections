@@ -315,9 +315,13 @@ function applyWholesome(str) {
                 innerText = `<img src="${colour.img}" class="p_icon" alt="">${innerText}`;
             }
 
-            if (tooltip) {
+            if (tooltip) { // MARIO
+                //var tooltipContent = getDynamicTooltipContent(match, tooltip);
+                //return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
                 var tooltipContent = getDynamicTooltipContent(match, tooltip);
-                return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
+                
+                // NEW UNIFIED VERSION:
+                return `<span class='tooltip' style='${style}'>${innerText}<span class='tooltip-text'>${tooltipContent}</span></span>`;
             } else if (colour) {
                 return `<span style='${style}'>${innerText}</span>`;
             }
@@ -636,13 +640,14 @@ window.get_taxes_final = function(taxes_in_question) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/* 
 document.addEventListener('mousemove', e => {
     document.querySelectorAll('.mytooltiptext').forEach(el => {
         el.style.setProperty('--mouse-x', e.clientX + 'px');
         el.style.setProperty('--mouse-y', e.clientY + 'px');
     });
 });
-
+*/
 
 document.addEventListener("click", function(e) {
   var card = e.target.closest("[go-to]");

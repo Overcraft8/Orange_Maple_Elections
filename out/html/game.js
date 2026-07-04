@@ -331,9 +331,17 @@ function applyWholesome(str) {
     });
 }
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ---------------------------------------------------------------
-//   IMPORTANT STUFF
+//                          SIDEBARS AND PAGES
 
 
 window.sidebar3Collapsed = false;
@@ -503,9 +511,23 @@ window.sidebar3Collapsed = false;
     window.updateSidebarRight();
 };
 
+
+
 window.onDisplayContent = function() {
     window.updateSidebar();
 };
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator
@@ -640,14 +662,6 @@ window.get_taxes_final = function(taxes_in_question) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* 
-document.addEventListener('mousemove', e => {
-    document.querySelectorAll('.mytooltiptext').forEach(el => {
-        el.style.setProperty('--mouse-x', e.clientX + 'px');
-        el.style.setProperty('--mouse-y', e.clientY + 'px');
-    });
-});
-*/
 
 document.addEventListener("click", function(e) {
   var card = e.target.closest("[go-to]");
@@ -710,7 +724,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 };
 
 
-
+/* 
 window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
     var container = document.getElementById(elementID);
     
@@ -776,27 +790,91 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
                 innerSegmentsHtml + 
             '</div>' +
         '</div>';
+}; */
+
+window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
+    var container = document.getElementById(elementID);
+    
+    if (!container) {
+        setTimeout(function() { window.customgeneratemultibar(dataArray, outercolor, colorsArray, elementID, tooltips); }, 25);
+        return;
+    }
+
+    var data = [].concat(dataArray);
+    var colors = [].concat(colorsArray);
+    var texts = [].concat(tooltips);
+
+    // 1. Filter valid segments and calculate the TOTAL sum
+    var valid = [];
+    var absoluteTotal = 0; 
+
+    for (var j = 0; j < data.length; j++) {
+        var val = Number(data[j]);
+        if (val > 0) {
+            valid.push({ val: val, color: colors[j] || '#ccc', text: texts[j] || '' });
+            absoluteTotal += val; 
+        }
+    }
+
+    var innerSegmentsHtml = '';
+    var currentPercentTotal = 0;
+
+    // 2. Build the inner segments
+    for (var i = 0; i < valid.length; i++) {
+        var width = (valid[i].val / absoluteTotal) * 100;
+        
+        if (currentPercentTotal + width > 100) width = 100 - currentPercentTotal;
+        currentPercentTotal += width;
+
+        var radiusStyle = '';
+        if (i === 0) radiusStyle += 'border-top-left-radius: 3px; border-bottom-left-radius: 3px; ';
+        if (i === valid.length - 1 || currentPercentTotal >= 99.9) radiusStyle += 'border-top-right-radius: 3px; border-bottom-right-radius: 3px; ';
+
+        // Notice we removed tt-center, tt-left, tt-right. The JS handles it now!
+        innerSegmentsHtml += 
+            '<div class="tooltip" style="position: relative; height: 100%; width: ' + width + '%; display: block;">' + 
+                '<div style="background: ' + valid[i].color + '; opacity: 0.8; height: 100%; width: 100%; ' + radiusStyle + '"></div>' +
+                '<span class="tooltip-text">' + valid[i].text + '</span>' +
+            '</div>';
+    }
+
+    // Removed styleBlock completely. The HTML is much cleaner.
+    container.innerHTML = 
+        '<div style="width: 100%; position: relative;">' + 
+            '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; border: 1px solid #000; overflow: visible;">' +
+                innerSegmentsHtml + 
+            '</div>' +
+        '</div>';
 };
 
 //'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
 
-/* 
-window.get_taxes = function(taxes_in_question) {
-    if (!Array.isArray(taxes_in_question)) return "";
+// Dynamic Tooltip Edge Detection
+document.addEventListener('mouseover', function(e) {
+    var tooltipContainer = e.target.closest('.tooltip');
+    if (!tooltipContainer) return;
+    
+    var tooltipText = tooltipContainer.querySelector('.tooltip-text');
+    if (!tooltipText) return;
 
-    var return_this = '<div style="line-height: 1.4;">';
-    
-    for (var i = 0; i < taxes_in_question.length; i++) {
-        var item = taxes_in_question[i];
-        var val = Number(item.val);
-        var percent = val * 2.5;
-        
-        // Include the name followed by the percentage
-        return_this += "<strong>" + item.name + ":</strong> " + 
-                       "<span style='color: #187714;'>" + percent + "%</span><br>";
+    // Reset to default center first to get an accurate measurement
+    tooltipText.style.removeProperty('--tt-left');
+    tooltipText.style.removeProperty('--tt-right');
+    tooltipText.style.removeProperty('--tt-x');
+
+    var rect = tooltipText.getBoundingClientRect();
+    var screenPadding = 10; // Keeps it 10px away from the actual screen edge
+
+    // Check if it spills off the left edge
+    if (rect.left < screenPadding) {
+        tooltipText.style.setProperty('--tt-left', '0');
+        tooltipText.style.setProperty('--tt-right', 'auto');
+        tooltipText.style.setProperty('--tt-x', '0');
+    } 
+    // Check if it spills off the right edge
+    else if (rect.right > (window.innerWidth - screenPadding)) {
+        tooltipText.style.setProperty('--tt-left', 'auto');
+        tooltipText.style.setProperty('--tt-right', '0');
+        tooltipText.style.setProperty('--tt-x', '0');
     }
-    
-    return_this += '</div>';
-    return return_this;
-};
-*/ 
+});

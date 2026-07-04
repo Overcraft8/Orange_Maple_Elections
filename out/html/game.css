@@ -723,73 +723,33 @@ table {
     fill: #C40000;
 }
 
-/* Automatically generated tooltip (search) 
-
-.mytooltip {
-  position: relative;
-  cursor: pointer;
-}
-
-/* Tooltip box */
-.mytooltip .mytooltiptext {
-  position: absolute;
-  z-index: 999999;
-  width: 120px;
-  background: #fff4e6;
-  color: #3b1f0a;
-  border-radius: 8px;
-  padding: 12px 14px;
-  border: 1px solid #b27b22d9;
-  font-size: 12px;
-  line-height: 1.3em;
-  font-weight: 500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  text-indent: 0%;
-  text-align: center;
-
-  /* Final state */
-  left: 50%;
-  transform: translate(-50%, -100%);
-
-  /* Starting state */
-  opacity: 0;
-  transform-origin: bottom center;
-  transform: translate(-50%, -80%); /* slightly lower */
-
-  /* Animation */
-  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
-
-  pointer-events: none;
-}
-
-/* Hover state */
-.mytooltip:hover .mytooltiptext,
-.mytooltip .mytooltiptext:hover {
-  opacity: 1;
-  transform: translate(-50%, -100%); /* slide upward into place */
-}
-
 
 /* status tooltip (For individual/select words or phrases */
-
 .tooltip {
   position: relative;
-  display: block; /* Works perfectly inside your flex multi-bar */
   cursor: help;
 }
 
-.tooltip-text {
-  position: absolute;
+span.tooltip { display: inline; }
+div.tooltip { display: block; }
 
-  left: 50%;
-  transform: translateX(-50%) translateY(5px); /* Centers horizontally & pushes down for animation */
+.tooltip-text {
+  /* Dynamic CSS Variables (defaults to center) */
+  --tt-left: 50%;
+  --tt-right: auto;
+  --tt-x: -50%;
+
+  position: absolute;
+  left: var(--tt-left);
+  right: var(--tt-right);
+  transform: translateX(var(--tt-x)) translateY(5px); 
   
-  bottom: 100%;         
+  bottom: 100%;        
   margin-bottom: 8px;   
 
   color: #3b1f0a;
-  text-align: center;   /* Keeps multi-line descriptions looking neat */
-  font-size: 11px;
+  text-align: center;
+  font-size: 0.7em;
   line-height: 1.2em;
   font-weight: 500;
 
@@ -798,8 +758,8 @@ table {
   transition: opacity 0.12s ease-out, transform 0.12s ease-out;
 
   width: max-content;
-  max-width: 180px;     /* Sets a safe upper limit for small screens */
-  white-space: normal;  /* Allows longer text descriptions to wrap cleanly */
+  max-width: 180px; 
+  white-space: normal;
   
   background-color: #fff4e6;
   border: 1px solid #b27b22d9;
@@ -809,19 +769,13 @@ table {
   z-index: 9999;
 }
 
+/* Hover state applies the dynamic X variable alongside the Y animation */
 .tooltip:hover .tooltip-text {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(var(--tt-x)) translateY(0);
 }
 
 
-/* /* Automatically generated tooltip (search) */
-/* 
-/* .mytooltip {
-/*   position: relative;
-/*   cursor: pointer;
-/* }
-/* 
 /* /* Tooltip box */
 /* .mytooltip .mytooltiptext {
 /*   position: absolute;
@@ -881,7 +835,7 @@ table {
 /* 
 /*   color: #3b1f0a;
 /*   text-align: center;   /* Keeps multi-line descriptions looking neat */
-/*   font-size: 11px;
+/*   font-size: 0.7em;
 /*   line-height: 1.2em;
 /*   font-weight: 500;
 /* 
@@ -904,36 +858,31 @@ table {
 /* .tooltip:hover .tooltip-text {
 /*   opacity: 1;
 /*   transform: translateX(-50%) translateY(0);
-/* } */
-
-
-
-.bar-container {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    border: 2px solid #333;
-    margin: 10px 0;
-}
-
-.bar {
-    position: relative;
-    background: #ddd;
-    margin: 6px 0;
-    height: 22px;
-    font-size: 12px;
-    line-height: 22px;
-    padding-left: 5px;
-}
-
-.barValue {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: #4caf50;
-    z-index: 0;
-}
+/* }
+/* 
+/* span.tooltip {
+/*   display: inline; 
+/* }
+/* 
+/* 
+/* .bar {
+/*     position: relative;
+/*     background: #ddd;
+/*     margin: 6px 0;
+/*     height: 22px;
+/*     font-size: 12px;
+/*     line-height: 22px;
+/*     padding-left: 5px;
+/* }
+/* 
+/* .barValue {
+/*     position: absolute;
+/*     left: 0;
+/*     top: 0;
+/*     height: 100%;
+/*     background: #4caf50;
+/*     z-index: 0;
+/* }
 
 .segment {
     height: 100%;
@@ -1081,23 +1030,6 @@ a.party_status_panel_container {
 .dark-mode .party-table tr:first-child td {
   background-color: #252320;
   font-weight: bold;
-}
-
-.status_table {
-  font-size: 0.80em;
-  border-collapse: collapse;
-}
-
-.status_table td {
-  border: 2px solid #554d2254;
-  width: 225px;
-  background-color: #554d2214;
-}
-
-.status_table td:hover {
-  cursor: help;
-  background: #554d2230;
-  box-shadow: 0 0 12px #554d2240;
 }
 
 .rotated-district {

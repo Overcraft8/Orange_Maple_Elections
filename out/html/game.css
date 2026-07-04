@@ -730,8 +730,12 @@ table {
   cursor: help;
 }
 
-span.tooltip { display: inline; }
-div.tooltip { display: block; }
+span.tooltip { 
+  display: inline; 
+}
+div.tooltip { 
+  display: block; 
+}
 
 .tooltip-text {
   /* Dynamic CSS Variables (defaults to center) */
@@ -882,7 +886,7 @@ div.tooltip { display: block; }
 /*     height: 100%;
 /*     background: #4caf50;
 /*     z-index: 0;
-/* }
+/* }*/
 
 .segment {
     height: 100%;

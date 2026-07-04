@@ -130,17 +130,17 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 = Ideologies
 
-CP(S): [+ cp_s_ideology +] ([+cp_s_ableader +])
+CP(S): [+ cp_s_ideology +] ([+cp_s_leader +])
 
 FLP: [+ flp_ideology +] ([+ flp_president +])
 
-PPS: [+ pps_ideology +] ([+ pps_ableader +])
+PPS: [+ pps_ideology +] ([+ pps_leader +])
 
-LPS: [+ lps_ideology +] ([+ lps_ableader +])
+LPS: [+ lps_ideology +] ([+ lps_leader +])
 
-CPS: [+ cps_ideology +] ([+ cps_ableader +])
+CPS: [+ cps_ideology +] ([+ cps_leader +])
 
-SCPS: [+ scps_ideology +] ([+ scps_ableader +])
+SCPS: [+ scps_ideology +] ([+ scps_leader +])
 
 @organizations
 on-arrival: {!

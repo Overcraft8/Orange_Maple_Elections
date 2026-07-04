@@ -172,13 +172,13 @@ Q.scps_leader = "Joseph Needham";
 Q.pps_leader = "None";
 Q.pps_party_leader = "None";
 
-Q.flp_legislative_ableader = "Williams";
+Q.flp_legislative_leader = "Williams";
 Q.flp_abpresident = "Williams";
-Q.cp_s_ableader = "None";
-Q.cps_ableader = "Anderson";
-Q.lps_ableader = "Gardiner";
-Q.scps_ableader = "Needham"; 
-Q.pps_ableader = "None";
+Q.cp_s_leader = "None";
+Q.cps_leader = "Anderson";
+Q.lps_leader = "Gardiner";
+Q.scps_leader = "Needham"; 
+Q.pps_leader = "None";
 
 
 

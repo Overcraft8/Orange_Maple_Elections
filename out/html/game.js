@@ -849,7 +849,7 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
 
 //'<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
 
-// Dynamic Tooltip Edge Detection
+// Dynamic Tooltip Edge Detection (Pixel-Perfect Nudge)
 document.addEventListener('mouseover', function(e) {
     var tooltipContainer = e.target.closest('.tooltip');
     if (!tooltipContainer) return;
@@ -857,24 +857,29 @@ document.addEventListener('mouseover', function(e) {
     var tooltipText = tooltipContainer.querySelector('.tooltip-text');
     if (!tooltipText) return;
 
-    // Reset to default center first to get an accurate measurement
-    tooltipText.style.removeProperty('--tt-left');
-    tooltipText.style.removeProperty('--tt-right');
-    tooltipText.style.removeProperty('--tt-x');
-
     var rect = tooltipText.getBoundingClientRect();
-    var screenPadding = 10; // Keeps it 10px away from the actual screen edge
+    var screenPadding = 10; // Keep it 10px away from the screen edge
 
-    // Check if it spills off the left edge
-    if (rect.left < screenPadding) {
-        tooltipText.style.setProperty('--tt-left', '0');
-        tooltipText.style.setProperty('--tt-right', 'auto');
-        tooltipText.style.setProperty('--tt-x', '0');
+    // Get the current shift amount (defaults to 0)
+    var currentShift = parseFloat(tooltipText.style.getPropertyValue('--tt-shift')) || 0;
+    
+    // Calculate where the edges WOULD be if the tooltip was perfectly centered
+    var naturalLeft = rect.left - currentShift;
+    var naturalRight = rect.right - currentShift;
+
+    var newShift = 0;
+
+    // Check if it spills off the left
+    if (naturalLeft < screenPadding) {
+        newShift = screenPadding - naturalLeft; // Nudge right (positive number)
     } 
-    // Check if it spills off the right edge
-    else if (rect.right > (window.innerWidth - screenPadding)) {
-        tooltipText.style.setProperty('--tt-left', 'auto');
-        tooltipText.style.setProperty('--tt-right', '0');
-        tooltipText.style.setProperty('--tt-x', '0');
+    // Check if it spills off the right
+    else if (naturalRight > (window.innerWidth - screenPadding)) {
+        newShift = (window.innerWidth - screenPadding) - naturalRight; // Nudge left (negative number)
+    }
+
+    // Only update the DOM if the value actually needs to change (prevents jittering)
+    if (currentShift !== newShift) {
+        tooltipText.style.setProperty('--tt-shift', newShift + 'px');
     }
 });

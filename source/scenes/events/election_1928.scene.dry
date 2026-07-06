@@ -214,7 +214,7 @@ for (var party of Q.parties) {
 }
 
 // Q.lps_votes = Q.lps_votes.toFixed(1);
-// Q.flp_votes = Q.flp_votes.toFixed(1);
+// Q.ccf_ss_votes = Q.ccf_ss_votes.toFixed(1);
 // Q.pps_votes = Q.pps_votes.toFixed(1);
 // Q.cps_votes = Q.cps_votes.toFixed(1);
 // Q.other_votes = Q.other_votes.toFixed(1);
@@ -314,58 +314,58 @@ for (var party of Q.parties) {
 }
 
 
-// The largest party can only be the FLP, LPS, CPS, or SCPS.
+// The largest party can only be the CCF(SS), LPS, CPS, or SCPS.
 Q.largest_party = 'CCF(SS)';
 
-if (Q.lps_seats >= Q.flp_seats && Q.lps_seats >= Q.cps_seats && Q.lps_seats >= Q.scps_seats) {
+if (Q.lps_seats >= Q.ccf_ss_seats && Q.lps_seats >= Q.cps_seats && Q.lps_seats >= Q.scps_seats) {
     Q.largest_party = 'LPS';
 }
-if (Q.cps_seats >= Q.flp_seats && Q.cps_seats >= Q.lps_seats && Q.cps_seats >= Q.scps_seats) {
+if (Q.cps_seats >= Q.ccf_ss_seats && Q.cps_seats >= Q.lps_seats && Q.cps_seats >= Q.scps_seats) {
     Q.largest_party = 'CPS';
 }
-if (Q.scps_seats >= Q.flp_seats && Q.scps_seats >= Q.lps_seats && Q.scps_seats >= Q.cps_seats) {
+if (Q.scps_seats >= Q.ccf_ss_seats && Q.scps_seats >= Q.lps_seats && Q.scps_seats >= Q.cps_seats) {
     Q.largest_party = 'SCPS';
 }
 
 // coalitions
-Q.lps_coalition = Math.round((Q.flp_seats + Q.lps_seats) * 10) / 10;
-Q.pps_coalition = Math.round((Q.flp_seats + Q.pps_seats) * 10) / 10;
-Q.grand_coalition = Math.round((Q.flp_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats) * 10) / 10;
+Q.lps_coalition = Math.round((Q.ccf_ss_seats + Q.lps_seats) * 10) / 10;
+Q.pps_coalition = Math.round((Q.ccf_ss_seats + Q.pps_seats) * 10) / 10;
+Q.grand_coalition = Math.round((Q.ccf_ss_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats) * 10) / 10;
 Q.bourgeois_coalition = Math.round((Q.lps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
 Q.conservative_coalition = Math.round((Q.cps_seats + Q.scps_seats) * 10) / 10;
 Q.right_coalition = Math.round((Q.cps_seats + Q.other_seats + Q.scps_seats) * 10) / 10;
 Q.scps_majority = Math.round(Q.scps_seats * 10) / 10;
-Q.left_coalition = Math.round((Q.flp_seats + Q.cp_s_seats) * 10) / 10;
+Q.left_coalition = Math.round((Q.ccf_ss_seats + Q.cp_s_seats) * 10) / 10;
 Q.cooperative_coalition = Math.round((Q.cps_seats + Q.pps_seats + Q.other_seats) * 10) / 10;
 // this is an absurd concept lol
-Q.unity_government_coalition = Math.round((Q.flp_seats + Q.cp_s_seats + Q.pps_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
+Q.unity_government_coalition = Math.round((Q.ccf_ss_seats + Q.cp_s_seats + Q.pps_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
 Q.anti_democratic_coalition = Math.round((Q.cp_s_seats + Q.scps_seats) * 10) / 10;
 // aka everyone except scps, cp_s, scps
-Q.neo_lps_coalition = Math.round((Q.flp_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
+Q.neo_lps_coalition = Math.round((Q.ccf_ss_seats + Q.lps_seats + Q.pps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
 // Needham + Right-wing parties (only comes into effect if you've alienated PPS too badly)
 Q.needham_right_coalition = Math.round((Q.scps_seats + Q.cps_seats + Q.other_seats) * 10) / 10;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = Math.round((Q.flp_seats + Q.cp_s_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
+Q.progressive_coalition = Math.round((Q.ccf_ss_seats + Q.cp_s_seats + Q.lps_seats + Q.sapd_seats) * 10) / 10;
 
 if (Q.cp_s_relation >= 30) {
     Q.lps_coalition += Q.sapd_seats;
 }
 
-Q.leverage = Q.flp_r;
+Q.leverage = Q.ccf_ss_r;
 
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
 Q.cp_s_coalition_dissent = 0;
-Q.flp_in_government = 0;
+Q.ccf_ss_in_government = 0;
 Q.in_lps_coalition = 0;
 Q.in_grand_coalition = 0;
 Q.in_left_front = 0;
 Q.in_unity_government = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
-Q.flp_toleration = 0;
-Q.flp_caretaker = 0;
+Q.ccf_ss_toleration = 0;
+Q.ccf_ss_caretaker = 0;
 // New Ministries
 Q.cooperatives_minister_party = 'PPS';
 Q.education_minister_party = 'PPS';
@@ -438,10 +438,10 @@ if (Q.sapd_formed && Q.sapd_r) {
 
 data = data.concat([
     {
-        "id": "flp",
+        "id": "ccf_ss",
         "legend": "CCF(SS)",
         "name": "CCF(SS)",
-        "seats": Q.flp_seats
+        "seats": Q.ccf_ss_seats
     },
     {
         "id": "lps",
@@ -517,7 +517,7 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td><td>Seat Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **FLP:** {!</td><td>!} **[+ flp_votes +]%** {!</td><td>!} **[+ flp_vote_change +]** {!</td><td>!}  **[+ flp_seats +]** {!</td><td>!}  **[+ seats_change_flp +]**{!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **CCF(SS):** {!</td><td>!} **[+ ccf_ss_votes +]%** {!</td><td>!} **[+ ccf_ss_vote_change +]** {!</td><td>!}  **[+ ccf_ss_seats +]** {!</td><td>!}  **[+ seats_change_ccf_ss +]**{!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ sapd_vote_change +] {!</td><td>!} [+ seat_change_sapd +]{!</td></tr>!} ?]
 
@@ -544,7 +544,7 @@ go-to: coalition_menu
             {!<th>District</th>!}
             {!<th>Seats</th>!}
             {!<th>CP(S)</th>!}
-            {!<th>FLP</th>!}
+            {!<th>CCF(SS)</th>!}
             {!<th>PPS</th>!}
             {!<th>LPS</th>!}
             {!<th>CPS</th>!}
@@ -555,7 +555,7 @@ go-to: coalition_menu
             {!<td>!}**Regina**{!</td>!}
             {!<td>!}[+ regina_d_district_seats +]{!</td>!}
             {!<td>!}[+ regina_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ regina_d_pps_seats +]{!</td>!}
             {!<td>!}[+ regina_d_lps_seats +]{!</td>!}
             {!<td>!}[+ regina_d_cps_seats +]{!</td>!}
@@ -566,7 +566,7 @@ go-to: coalition_menu
             {!<td>!}**Saskatoon**{!</td>!}
             {!<td>!}[+ saskatoon_d_district_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_pps_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_lps_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_cps_seats +]{!</td>!}
@@ -577,7 +577,7 @@ go-to: coalition_menu
             {!<td>!}**Moose Jaw**{!</td>!}
             {!<td>!}[+ moosejaw_d_district_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_pps_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_lps_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_cps_seats +]{!</td>!}
@@ -588,7 +588,7 @@ go-to: coalition_menu
             {!<td>!}**Prince Albert**{!</td>!}
             {!<td>!}[+ princealbert_d_district_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_pps_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_lps_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_cps_seats +]{!</td>!}
@@ -599,7 +599,7 @@ go-to: coalition_menu
             {!<td>!}**Qu'Appelle**{!</td>!}
             {!<td>!}[+ quappelle_d_district_seats +]{!</td>!}
             {!<td>!}[+ quappelle_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ quappelle_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ quappelle_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ quappelle_d_pps_seats +]{!</td>!}
             {!<td>!}[+ quappelle_d_lps_seats +]{!</td>!}
             {!<td>!}[+ quappelle_d_cps_seats +]{!</td>!}
@@ -610,7 +610,7 @@ go-to: coalition_menu
             {!<td>!}**Southwest**{!</td>!}
             {!<td>!}[+ southwest_d_district_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_pps_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_lps_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_cps_seats +]{!</td>!}
@@ -621,7 +621,7 @@ go-to: coalition_menu
             {!<td>!}**Southeast**{!</td>!}
             {!<td>!}[+ southeast_d_district_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_pps_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_lps_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_cps_seats +]{!</td>!}
@@ -632,7 +632,7 @@ go-to: coalition_menu
             {!<td>!}**Central**{!</td>!}
             {!<td>!}[+ central_d_district_seats +]{!</td>!}
             {!<td>!}[+ central_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ central_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ central_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ central_d_pps_seats +]{!</td>!}
             {!<td>!}[+ central_d_lps_seats +]{!</td>!}
             {!<td>!}[+ central_d_cps_seats +]{!</td>!}
@@ -643,7 +643,7 @@ go-to: coalition_menu
             {!<td>!}**North**{!</td>!}
             {!<td>!}[+ north_d_district_seats +]{!</td>!}
             {!<td>!}[+ north_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ north_d_flp_seats +]{!</td>!}
+            {!<td>!}[+ north_d_ccf_ss_seats +]{!</td>!}
             {!<td>!}[+ north_d_pps_seats +]{!</td>!}
             {!<td>!}[+ north_d_lps_seats +]{!</td>!}
             {!<td>!}[+ north_d_cps_seats +]{!</td>!}
@@ -657,9 +657,9 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Liberal-CCF Coalition (FLP + LPS): [+ lps_coalition +]%
+Liberal-CCF Coalition (CCF(SS) + LPS): [+ lps_coalition +]%
 
-Progressive-CCF Coalition (FLP + PPS): [+ pps_coalition +]%
+Progressive-CCF Coalition (CCF(SS) + PPS): [+ pps_coalition +]%
 
 Bourgeois Coalition (PPS + LPS + CPS + Others): [+ bourgeois_coalition +]%
 
@@ -675,8 +675,8 @@ There are some potential coalition arrangements.
 
 @coalition_menu
 
-- @flp_majority
-- @flp_minority
+- @ccf_ss_majority
+- @ccf_ss_minority
 - @lps_coalition
 - @grand_coalition
 #- @new_grand_coalition
@@ -693,12 +693,12 @@ There are some potential coalition arrangements.
 
 # Custom Coalitions here:
 
-@flp_majority
+@ccf_ss_majority
 title: We have achieved a majority!
-subtitle: FLP ([+ flp_seats +])
-unavailable-subtitle: FLP ([+ flp_seats +]) We do not have enough support.
-view-if: flp_seats >= 28 
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+subtitle: CCF(SS) ([+ ccf_ss_seats +])
+unavailable-subtitle: CCF(SS) ([+ ccf_ss_seats +]) We do not have enough support.
+view-if: ccf_ss_seats >= 28 
+on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
 
@@ -709,12 +709,12 @@ on-arrival: premier =  party_leader
 go-to: ministries
 
 
-@flp_minority
+@ccf_ss_minority
 title: Could we rule in a minority?
-subtitle: FLP ([+ flp_seats +])
-unavailable-subtitle: FLP ([+ flp_seats +]) We do not have enough support.
-view-if: flp_seats <= 28 and largest_party = 'CCF(SS)'
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+subtitle: CCF(SS) ([+ ccf_ss_seats +])
+unavailable-subtitle: CCF(SS) ([+ ccf_ss_seats +]) We do not have enough support.
+view-if: ccf_ss_seats <= 28 and largest_party = 'CCF(SS)'
+on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
 
@@ -729,10 +729,10 @@ go-to: ministries
 
 @lps_coalition
 title: Will the Liberals coalition with us?
-subtitle: LPS + FLP ([+ lps_coalition +])
-unavailable-subtitle: FLP ([+ flp_r +]) We do not have enough support.
+subtitle: LPS + CCF(SS) ([+ lps_coalition +])
+unavailable-subtitle: CCF(SS) ([+ ccf_ss_r +]) We do not have enough support.
 view-if: lps_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The LPS has demanded that we keep schools good. 
 
@@ -741,7 +741,7 @@ The LPS has demanded that we keep schools good.
 
 @lps_coalition_succeed
 title: We have suceeded!
-on-arrival: premier = flp_party_leader
+on-arrival: premier = ccf_ss_party_leader
 choose-if: lps_relation >= 70
 go-to: ministries
 
@@ -756,10 +756,10 @@ We have failed to convince the Liberals to coalition with us.
 
 @grand_coalition
 title: Could we coalition with the Liberals, Conservatives, and Progressives?
-subtitle: LPS + CPS + PPS + FLP ([+ grand_coalition +])
-unavailable-subtitle: FLP ([+ flp_r +]) We do not have enough support.
+subtitle: LPS + CPS + PPS + CCF(SS) ([+ grand_coalition +])
+unavailable-subtitle: CCF(SS) ([+ ccf_ss_r +]) We do not have enough support.
 view-if: grand_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; flp_in_government = 1; in_flp_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 go-to: ministries
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
@@ -771,12 +771,12 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: FLP + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
-unavailable-subtitle: FLP + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_s_relation < 50 : We do not have adequate relations with the CP(S). ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+subtitle: CCF(SS) + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
+unavailable-subtitle: CCF(SS) + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_s_relation < 50 : We do not have adequate relations with the CP(S). ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 28
 choose-if: (cp_s_relation >= 50 or (cp_s_party_leader == "Conciliators" and cp_s_relation >= 40)) and communist_coalition >= 3
 
-There are enough votes for a FLP + CP(S) coalition government, if such a thing were actually possible.
+There are enough votes for a CCF(SS) + CP(S) coalition government, if such a thing were actually possible.
 
 The far-right might attempt a coup, if such a coalition were formed.
 
@@ -801,7 +801,7 @@ The CP(S) is still very reluctant to join a coalition, despite grassroots friend
 @tim_buck_premier
 choose-if: prime_minister == "JS Woodsworth" and managerial_strength + neorevisionist_strength < true_socialist_strength
 unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if managerial_strength >= true_socialist_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
-on-arrival: premier = "Tim Buck"; premier_party = "CP(S)"; cp_s_relation = 80; in_left_front = 1; flp_in_government = 1 
+on-arrival: premier = "Tim Buck"; premier_party = "CP(S)"; cp_s_relation = 80; in_left_front = 1; ccf_ss_in_government = 1 
 
 With great reluctance, Prime Minister [+ prime_minister +] appoints [+ premier +] as premier.
 
@@ -826,11 +826,11 @@ go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: flp_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = "CCF(SS)"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_s_relation += 10
+on-arrival: ccf_ss_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = "CCF(SS)"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_s_relation += 10
 go-to: left_coalition_no_civil_war
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the FLP, CP(S), and Prime Minister [+ prime_minister +], is George Hara Williams, who belongs to the agrarian faction of the FLP, but was acceptable to the left due to his previous membership in the left-wing anti-war UFLP.
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the CCF(SS), CP(S), and Prime Minister [+ prime_minister +], is George Hara Williams, who belongs to the agrarian faction of the CCF(SS), but was acceptable to the left due to his previous membership in the left-wing anti-war UCCF(SS).
 
 # just raise the coup limit, don't immediately go to civil war
 
@@ -841,7 +841,7 @@ In response to the CP(S)'s entrance into the government, the right-wing takes a 
 
 The CP(S) has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
 
-Whatever their reasoning is, the FLP has control over the ministries of government.
+Whatever their reasoning is, the CCF(SS) has control over the ministries of government.
 
 @left_coalition_civil_war
 on-arrival: rcmp_loyalty += 0.1
@@ -854,14 +854,14 @@ subtitle: CPS + PPS ([+ cooperative_coalition +]%)
 unavailable-subtitle: CPS + PPS ([+ cooperative_coalition +]%)
 view-if: cooperative_coalition >= 50
 choose-if: cooperative_coalition >= 50
-on-arrival: flp_in_government = 0; flp_toleration = 0; foreign_minister_party = "CPS"; interior_minister_party = "CPS"; justice_minister_party = "CPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "CPS"; agriculture_minister_party = "CPS"; in_cooperative_coalition = 1;
+on-arrival: ccf_ss_in_government = 0; ccf_ss_toleration = 0; foreign_minister_party = "CPS"; interior_minister_party = "CPS"; justice_minister_party = "CPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "CPS"; agriculture_minister_party = "CPS"; in_cooperative_coalition = 1;
 
 Anderson's Cooperative Coalition has managed to attain another majority. 
 
 - @anderson_premier: Anderson holds steady
 
 @anderson_premier
-on-arrival: premier =  "Anderson"; premier_party = "CPS"; flp_in_government = 0; in_flp_majority = 0; 
+on-arrival: premier =  "Anderson"; premier_party = "CPS"; ccf_ss_in_government = 0; in_ccf_ss_majority = 0; 
 
 
 
@@ -880,11 +880,11 @@ if (Q.premier == "Brüning") {
     Q.cps_relation -= 5;
 }
 Q.pro_republic -= 8;
-Q.workers_flp -= 5;
-Q.new_middle_flp -= 5;
-Q.old_middle_flp -= 5;
-Q.farmers_flp -= 5;
-Q.catholics_flp -= 3;
+Q.workers_ccf_ss -= 5;
+Q.new_middle_ccf_ss -= 5;
+Q.old_middle_ccf_ss -= 5;
+Q.farmers_ccf_ss -= 5;
+Q.catholics_ccf_ss -= 3;
 Q.new_middle_cps -= 8;
 Q.old_middle_cps -= 8;
 Q.new_middle_lps -= 5;
@@ -897,18 +897,18 @@ Q.farmers_scps += 6;
 Q.unemployed_scps += 5;
 // Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
 if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
-    Q.workers_flp -= 6;
+    Q.workers_ccf_ss -= 6;
 }
 if (Q.pro_republic < 36) {
     // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Needham and the PPS.
     Q.pps_relation -= 5;
     Q.cps_relation -= 5;
-    Q.workers_flp *= 0.85;
-    Q.unemployed_flp -= 2;
-    Q.new_middle_flp -= 5;
-    Q.old_middle_flp -= 5;
-    Q.farmers_flp -= 5;
-    Q.catholics_flp -= 3;
+    Q.workers_ccf_ss *= 0.85;
+    Q.unemployed_ccf_ss -= 2;
+    Q.new_middle_ccf_ss -= 5;
+    Q.old_middle_ccf_ss -= 5;
+    Q.farmers_ccf_ss -= 5;
+    Q.catholics_ccf_ss -= 3;
     Q.workers_scps += 8;
     Q.old_middle_scps += 8;
     Q.new_middle_scps += 8;
@@ -931,7 +931,7 @@ The people's faith in democracy is shaken by this ordeal. Of course, the SCPSs a
 title: Tommy Douglas for Premier
 view-if: douglas_dead = 0
 subtitle: Douglas is popular within the party, and is the preferred candidate of the PPS and other parties.
-on-arrival: flp_in_government = 1; premier = "Douglas"; premier_party = "CCF(SS)"; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_ss_in_government = 1; premier = "Douglas"; premier_party = "CCF(SS)"; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 Douglas's appointment as premier is approved by all our potential allies.
@@ -940,14 +940,14 @@ Douglas's appointment as premier is approved by all our potential allies.
 title: Major James Coldwell for Premier
 view-if: douglas_dead = 1
 subtitle: Major James Coldwell is a party leader, but can he also be premier?
-on-arrival: flp_in_government = 1; premier = "Coldwell"; premier_party = "CCF(SS)"; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_ss_in_government = 1; premier = "Coldwell"; premier_party = "CCF(SS)"; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 Major James Coldwell's appointment as premier is approved by our potential allies.
 
 @woodsworth
 title: J. S. Woodsworth for Premier
-view-if: not historical_mode or not flp_prussia
+view-if: not historical_mode or not ccf_ss_prussia
 subtitle: J. S. Woodsworth is currently the Minister-Prime Minister of City Police, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
 The PPS party has significant qualms about appointing J. S. Woodsworth as premier, given that he is already Minister-Prime Minister of City Police. They ask for either more cabinet positions, or for J. S. Woodsworth to resign his state government role. The latter is completely unacceptable.
@@ -959,7 +959,7 @@ The PPS party has significant qualms about appointing J. S. Woodsworth as premie
 @woodsworth_2
 subtitle: J. S. Woodsworth will be Premier.
 view-if: not historical_mode
-on-arrival: flp_in_government = 1; premier = "JS Woodsworth"; premier_party = "CCF(SS)"; leverage -= 10; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_ss_in_government = 1; premier = "JS Woodsworth"; premier_party = "CCF(SS)"; leverage -= 10; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 We have promised to let the PPS have more influence in the government in response to the appointment of J. S. Woodsworth as premier.
@@ -968,7 +968,7 @@ We have promised to let the PPS have more influence in the government in respons
 @pps_premier
 title: Let the PPS Party have their premier.
 subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: true_socialist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
+on-arrival: true_socialist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; ccf_ss_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
@@ -980,7 +980,7 @@ This is highly unexpected, and many in the left and agrarian of our party are cr
 title: Let Joseph Wirth of the PPS Party be premier.
 view-if: pps_party_leader == "Joos"
 subtitle: Wirth is on the left wing of the PPS Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: true_socialist_dissent += 2; pps_relation += 6; lps_relation += 3; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; flp_in_government = 1; leverage += 5
+on-arrival: true_socialist_dissent += 2; pps_relation += 6; lps_relation += 3; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; ccf_ss_in_government = 1; leverage += 5
 go-to: ministries
 
 
@@ -1018,26 +1018,26 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: managerial_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "Anderson"; flp_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_flp if right_coalition >= 50 and prime_minister != "JS Woodsworth" and year < 1929; new_elections_flp if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"
+on-arrival: managerial_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "Anderson"; ccf_ss_in_government = 0; grand_coalition_failed = 1
+go-to: right_coalition_post_ccf_ss if right_coalition >= 50 and prime_minister != "JS Woodsworth" and year < 1929; new_elections_ccf_ss if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"
 
 
-@right_coalition_post_flp
+@right_coalition_post_ccf_ss
 go-to: right_coalition_2
 
 @right_coalition_2
 unavailable-subtitle: The SCPS is not interested in a coalition with the PPS.
 view-if: right_coalition >= 50
 choose-if: year < 1929
-on-arrival: flp_in_government = 0; flp_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCPS"; justice_minister_party = "SCPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCPS"; in_right_coalition = 1;
+on-arrival: ccf_ss_in_government = 0; ccf_ss_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCPS"; justice_minister_party = "SCPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCPS"; in_right_coalition = 1;
 
 Even though the SCPS is very reluctant to participate in such a coalition, they still accede to Prime Minister George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
 
 
 
 
-@new_elections_flp
-on-arrival: next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year = year + 1 if next_parl_election_month > 12; next_parl_election_month = next_parl_election_month - 12 if next_parl_election_month > 12; new_middle_flp -= 5; old_middle_flp -= 5; workers_flp -= 3; catholics_flp -= 3; in_election = 1
+@new_elections_ccf_ss
+on-arrival: next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year = year + 1 if next_parl_election_month > 12; next_parl_election_month = next_parl_election_month - 12 if next_parl_election_month > 12; new_middle_ccf_ss -= 5; old_middle_ccf_ss -= 5; workers_ccf_ss -= 3; catholics_ccf_ss -= 3; in_election = 1
 
 Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_parl_election_month : month +] [+ next_parl_election_year +]. The previous premier has resigned, and has been replaced by Heinrich Brüning, also of the PPS Party, ruling as part of a prime ministerial cabinet. 
 
@@ -1126,7 +1126,7 @@ view-if: labour_minister_party != "CCF(SS)"
 on-arrival: leverage -= 5; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"
 go-to: ministries
 
-Carlyle King of the FLP has been appointed labour minister.
+Carlyle King of the CCF(SS) has been appointed labour minister.
 
 @finance
 title: Finance Ministry
@@ -1138,7 +1138,7 @@ view-if: finance_minister_party != "CCF(SS)"
 on-arrival: leverage -= 10; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"
 go-to: ministries
 
-Alexander Nicholson of the FLP has been appointed Finance Minister.
+Alexander Nicholson of the CCF(SS) has been appointed Finance Minister.
 
 
 @justice
@@ -1151,7 +1151,7 @@ view-if: justice_minister_party != "CCF(SS)"
 on-arrival: leverage -= 10; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"
 go-to: ministries
 
-Frank Underhill of the FLP has been appointed Justice Minister.
+Frank Underhill of the CCF(SS) has been appointed Justice Minister.
 
 @agriculture
 title: Agricultural Ministry
@@ -1177,7 +1177,7 @@ view-if: rcmp_minister_party != "CCF(SS)"
 on-arrival: leverage -= 15; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"
 go-to: ministries
 
-Julius Leber of the FLP has been appointed RCMP Minister.
+Julius Leber of the CCF(SS) has been appointed RCMP Minister.
 
 
 

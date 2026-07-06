@@ -2,13 +2,13 @@ title: Cabinet
 is-pinned-card: true
 tags: advisor
 card-image: img/muller_cabinet.jpg
-view-if: difficulty < 0 and flp_in_government and premier_party = "CCF(SS)"
+view-if: difficulty < 0 and ccf_ss_in_government and premier_party = "CCF(SS)"
 on-arrival: last_cabinet_action = 1
 new-page: true 
 
 = Cabinet
 
-With an FLP premier and FLP cabinet members, we can direct the affairs of the national government.
+With an CCF(SS) premier and CCF(SS) cabinet members, we can direct the affairs of the national government.
 
 - #cabinet
 - @back: Return to main

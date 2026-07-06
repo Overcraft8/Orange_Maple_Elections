@@ -22,8 +22,8 @@ function get_party_stats() {
     // });
 
     for (var c of Q.classes) {
-        updated_polling = Q[c + '_flp'] * performanceMultiplier;
-        Q[c + '_flp'] = Math.max(0, Math.min(100, Math.round(updated_polling)))
+        updated_polling = Q[c + '_ccf_ss'] * performanceMultiplier;
+        Q[c + '_ccf_ss'] = Math.max(0, Math.min(100, Math.round(updated_polling)))
 
     };
 };

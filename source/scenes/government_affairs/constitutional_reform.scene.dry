@@ -1,7 +1,7 @@
 title: Constitutional Reform
 new-page: true
 is-card: true
-view-if: flp_in_government = 1 and justice_minister_party = "CCF(SS)" and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_lps_coalition) or (in_flp_majority) or (in_left_front) or (in_unity_government)) and constitutional_reform < 3
+view-if: ccf_ss_in_government = 1 and justice_minister_party = "CCF(SS)" and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_lps_coalition) or (in_ccf_ss_majority) or (in_left_front) or (in_unity_government)) and constitutional_reform < 3
 frequency: 25
 on-arrival: month_actions += 1; constitutional_reform_timer += 12; pass_threshold = 0.51; pass_threshold = 0.6 if pro_republic < 65;
 card-image: img/portraits/UnderhillFrank.jpg
@@ -34,7 +34,7 @@ A constitutional reform requires either a two-thirds supermajority in the Assemb
 @vote_threshold
 subtitle: Change the vote threshold to 5% for parties to be represented in the Assembly.
 on-arrival: {!
-Q.reform_support = Q.flp_normalized;
+Q.reform_support = Q.ccf_ss_normalized;
 if (Q.pps_relation > 30) {
     Q.reform_support += Q.pps_normalized - 0.03;
 }
@@ -53,7 +53,7 @@ Some political thinkers believe that the proliferation of minor parties is respo
 
 The smaller parties will obviously oppose this reform. [? if pps_relation > 30 : The PPS Party supports this reform. ?] [? if cp_s_relation > 50 and cp_s_normalized >= 0.1 : Perhaps surprisingly, the CP(S) supports this reform. ?] [? if scps_normalized >= 0.2 : The SCPS supports this reform, as they believe they have something to gain. ?]
 
-The FLP Left opposes this change, as they believe it to be anti-democratic.
+The CCF(SS) Left opposes this change, as they believe it to be anti-democratic.
 
 - @vote_threshold_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.
@@ -74,7 +74,7 @@ We have passed a constitutional amendment to increase the electoral threshold to
 @constructive_vonc
 subtitle: Votes of no confidence can only be called if an alternative plan for government formation can be passed, greatly reducing their incidence.
 on-arrival: {!
-Q.reform_support = Q.flp_normalized + Q.lps_normalized;
+Q.reform_support = Q.ccf_ss_normalized + Q.lps_normalized;
 if (Q.pps_relation >= 30) {
     Q.reform_support += Q.pps_normalized - 0.03;
 }
@@ -100,7 +100,7 @@ We have successfully passed a constitutional amendment to ban votes of no confid
 @prime_ministerial_powers
 subtitle: The prime minister can no longer dissolve the Assembly at will, or call a *Reichsexekution* on state governments.
 on-arrival: {!
-Q.reform_support = Q.flp_normalized + Q.lps_normalized + Q.cp_s_normalized;
+Q.reform_support = Q.ccf_ss_normalized + Q.lps_normalized + Q.cp_s_normalized;
 if (Q.pps_relation > 49 && (Q.prime_minister == "Richard Bennett" || Q.prime_minister == "Eckener")) {
     Q.reform_support += Q.pps_normalized;
 } else if (Q.prime_minister == "J. S. Woodsworth") {

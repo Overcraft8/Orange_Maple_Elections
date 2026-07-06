@@ -58,12 +58,12 @@ on-display: {!
 
     Government: [+ ruling_government +]
 
-    FLP position: [? if flp_toleration : toleration ?][? if flp_in_government : in government - ?][? if flp_toleration == 0 and flp_in_government == 0 and flp_caretaker == 0 : opposition ?][? if flp_caretaker : caretaker government ?]
-    [? if in_lps_coalition and flp_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and flp_in_government: Grand Coalition ?][? if in_unity_government and flp_in_government: Popular Front ?][? if in_left_front and flp_in_government: Left Front ?][? if in_flp_majority and flp_in_government: FLP majority ?][? if in_minority_government and flp_in_government: minority government ?]
+    CCF(SS) position: [? if ccf_ss_toleration : toleration ?][? if ccf_ss_in_government : in government - ?][? if ccf_ss_toleration == 0 and ccf_ss_in_government == 0 and ccf_ss_caretaker == 0 : opposition ?][? if ccf_ss_caretaker : caretaker government ?]
+    [? if in_lps_coalition and ccf_ss_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_ss_in_government: Grand Coalition ?][? if in_unity_government and ccf_ss_in_government: Popular Front ?][? if in_left_front and ccf_ss_in_government: Left Front ?][? if in_ccf_ss_majority and ccf_ss_in_government: CCF(SS) majority ?][? if in_minority_government and ccf_ss_in_government: minority government ?]
 
-    [? if flp_in_government and not in_flp_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+    [? if ccf_ss_in_government and not in_ccf_ss_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-    [? if flp_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
+    [? if ccf_ss_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
 
     Prime Minister: [+ prime_minister +]
 </div> 
@@ -78,7 +78,7 @@ Assembly composition:
 
 <div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22
-[? if flp_seats > 0: [? if not flp_name: FLP?][? if flp_name != 0 : [+ flp_name +]?]{!</span>!}: [+ flp_seats +] ?]
+[? if ccf_ss_seats > 0: [? if not ccf_ss_name: CCF(SS)?][? if ccf_ss_name != 0 : [+ ccf_ss_name +]?]{!</span>!}: [+ ccf_ss_seats +] ?]
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
@@ -132,7 +132,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 CP(S): [+ cp_s_ideology +] ([+cp_s_leader +])
 
-FLP: [+ flp_ideology +] ([+ flp_president +])
+CCF(SS): [+ ccf_ss_ideology +] ([+ ccf_ss_president +])
 
 PPS: [+ pps_ideology +] ([+ pps_leader +])
 
@@ -447,11 +447,11 @@ Q.tax_list = [
             {!<th>Old Middle</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #da8b53; ">!}[+ workers_flp_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ unemployed_flp_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ new_middle_flp_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ old_middle_flp_display +]%{!</td>!}
+            {!<td>!}**CCF(SS)**{!</td>!}
+            {!<td style="background-color: #da8b53; ">!}[+ workers_ccf_ss_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ unemployed_ccf_ss_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ new_middle_ccf_ss_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ old_middle_ccf_ss_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
@@ -509,10 +509,10 @@ Q.tax_list = [
             {!<th>Rural Workers</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**FLP**{!</td>!}
-            {!<td style="background-color: #da8b53; ">!}[+ farmers_flp_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ farmhands_flp_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ rural_workers_flp_display +]%{!</td>!}
+            {!<td>!}**CCF(SS)**{!</td>!}
+            {!<td style="background-color: #da8b53; ">!}[+ farmers_ccf_ss_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ farmhands_ccf_ss_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ rural_workers_ccf_ss_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}

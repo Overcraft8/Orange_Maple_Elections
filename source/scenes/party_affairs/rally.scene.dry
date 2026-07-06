@@ -17,7 +17,7 @@ The SCPSs FUL has disrupted our rally! Their street troops are preventing us fro
 - @cancel: Cancel the rally.
 
 @police_protect
-view-if: flp_prussia == 1
+view-if: ccf_ss_prussia == 1
 on-arrival: police_protect_success = city_police_loyalty * city_police_militancy * city_police_strength*2 - ful_militancy*ful_strength;
 go-to: police_protect_win if police_protect_success >= 0; police_protect_lose if police_protect_success < 0
 
@@ -46,7 +46,7 @@ on-arrival: workers_scps += 3; ufc_strength -= 50
 Unfortunately, the UFC(SS) was not able to hold back the FUL mob. The SCPSs have won this show of strength.
 
 @both_protect
-view-if: flp_prussia
+view-if: ccf_ss_prussia
 choose-if: city_police_training > 0
 unavailable-subtitle: The loyal sections of the police have never coordinated with the UFC(SS) before.
 on-arrival: ufc_success = ufc_strength*ufc_militancy - ful_strength*ful_militancy + city_police_loyalty*city_police_militancy*city_police_strength*2; strife += 1
@@ -81,17 +81,17 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_flp += 4*(1-dissent); unemployed_flp += 3*(1-dissent) if true_socialist_strength > managerial_strength; workers_flp += 4*(1-dissent) if nationalization_progress > 0; unemployed_flp += 3*(1-dissent) if nationalization_progress > 0; true_socialist_strength += 5; true_socialist_dissent -= 5; old_middle_flp -= 3; new_middle_flp -= 2;
+on-arrival: workers_ccf_ss += 4*(1-dissent); unemployed_ccf_ss += 3*(1-dissent) if true_socialist_strength > managerial_strength; workers_ccf_ss += 4*(1-dissent) if nationalization_progress > 0; unemployed_ccf_ss += 3*(1-dissent) if nationalization_progress > 0; true_socialist_strength += 5; true_socialist_dissent -= 5; old_middle_ccf_ss -= 3; new_middle_ccf_ss -= 2;
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 @welfare
-on-arrival: workers_flp += 3*(1-dissent); workers_flp += 3*(1-dissent) if welfare > 0; unemployed_flp += 3*(1-dissent) if welfare > 0; unemployed_flp += 4*(1-dissent) if welfare > 1; managerial_strength += 3; managerial_dissent -= 3; labour_dissent -= 3;
+on-arrival: workers_ccf_ss += 3*(1-dissent); workers_ccf_ss += 3*(1-dissent) if welfare > 0; unemployed_ccf_ss += 3*(1-dissent) if welfare > 0; unemployed_ccf_ss += 4*(1-dissent) if welfare > 1; managerial_strength += 3; managerial_dissent -= 3; labour_dissent -= 3;
 
 The moderate message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
 @democracy
-on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_flp += 4*(1-dissent) if democratization >= 3; unemployed_flp += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_flp += 4*(1-dissent) if democratization >= 3 
+on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_ccf_ss += 4*(1-dissent) if democratization >= 3; unemployed_ccf_ss += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_ccf_ss += 4*(1-dissent) if democratization >= 3 
 
 Our speakers defend the republican system and rail against the prime ministerists and authoritarians who threaten it.
 
@@ -99,7 +99,7 @@ Our speakers defend the republican system and rail against the prime ministerist
 [? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @pacifism
-on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_flp += 4*(1 - dissent) if pacifism >= 3; unemployed_flp += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_flp += 4*(1-dissent) if pacifism >= 3
+on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_ccf_ss += 4*(1 - dissent) if pacifism >= 3; unemployed_ccf_ss += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_ccf_ss += 4*(1-dissent) if pacifism >= 3
 
 Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
 
@@ -110,12 +110,12 @@ Our speakers denounce the military establishment and all the spending entering t
 view-if: wtb_adopted = 1
 choose-if: return_to_normalcy = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
-on-arrival: wtb_support += 1; workers_flp += 6*(1-dissent); unemployed_flp += 6*(1-dissent); farmers_flp += 3*(1-dissent); new_middle_flp += 3*(1-dissent); old_middle_flp += 3*(1-dissent);
+on-arrival: wtb_support += 1; workers_ccf_ss += 6*(1-dissent); unemployed_ccf_ss += 6*(1-dissent); farmers_ccf_ss += 3*(1-dissent); new_middle_ccf_ss += 3*(1-dissent); old_middle_ccf_ss += 3*(1-dissent);
 
 The WTB plan has become a popular rallying cry for our party. The workers are eager to go back to work, and that is exactly what the plan promises.
 
 
 @local
-on-arrival: workers_flp += 3*(1-dissent); old_middle_flp += 1*(1-dissent); new_middle_flp += 2*(1-dissent); unemployed_flp += 3*(1-dissent);
+on-arrival: workers_ccf_ss += 3*(1-dissent); old_middle_ccf_ss += 1*(1-dissent); new_middle_ccf_ss += 2*(1-dissent); unemployed_ccf_ss += 3*(1-dissent);
 
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.

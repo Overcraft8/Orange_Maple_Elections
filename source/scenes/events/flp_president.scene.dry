@@ -1,4 +1,4 @@
-title: FLP President
+title: CCF(SS) President
 new-page: true
 is-special: true
 tags: event
@@ -7,17 +7,17 @@ view-if: 2 = 1
 = Our President
 
 <div>
-  <img src="img/portraits/[+ flp_president_img +]" 
+  <img src="img/portraits/[+ ccf_ss_president_img +]" 
        style="width: 60%; display: block; margin: auto; margin-bottom: 5px;">
 </div>
 
-<p style="text-align: center; margin-bottom: 0;">[+ flp_president +]</p>
+<p style="text-align: center; margin-bottom: 0;">[+ ccf_ss_president +]</p>
 
-The President of the FLP is the highest-ranking official within the party and the chief of the executive. The President is responsible for setting the overall direction of the party as well as it's funding and relationship with the Riding Associations. 
+The President of the CCF(SS) is the highest-ranking official within the party and the chief of the executive. The President is responsible for setting the overall direction of the party as well as it's funding and relationship with the Riding Associations. 
 
-[? if flp_president = "George Hara Williams" : George Hara Williams is a farmers by trade and de facto leader of the Agrarian wing of the party. ?]
+[? if ccf_ss_president = "George Hara Williams" : George Hara Williams is a farmers by trade and de facto leader of the Agrarian wing of the party. ?]
 
-[? if flp_president = "Major James Coldwell" : Major James Coldwell is a teacher by profession and de facto leader of the Labour wing of the party. ?]
+[? if ccf_ss_president = "Major James Coldwell" : Major James Coldwell is a teacher by profession and de facto leader of the Labour wing of the party. ?]
 
 - @backSpecialScene: Exit informational tab.
 

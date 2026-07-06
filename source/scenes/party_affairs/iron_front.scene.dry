@@ -9,9 +9,9 @@ tags: party_affairs, antifascism
 
 = The Iron Front
 
-The Iron Front is our new antifascist coordination front, consisting of the FLP, the trade unions, and the UFC(SS). How should we use the Iron Front?
+The Iron Front is our new antifascist coordination front, consisting of the CCF(SS), the trade unions, and the UFC(SS). How should we use the Iron Front?
 
-[? if workers_flp < 45 or workers_flp < workers_scps or workers_flp < workers_cp_s : Unfortunately, the Iron Front's effectiveness is dragged down by the FLP's unpopularity, as the FLP is no longer the dominant party among the workers. Many UFC(SS) members have left, and many workers are not interested. ?]
+[? if workers_ccf_ss < 45 or workers_ccf_ss < workers_scps or workers_ccf_ss < workers_cp_s : Unfortunately, the Iron Front's effectiveness is dragged down by the CCF(SS)'s unpopularity, as the CCF(SS) is no longer the dominant party among the workers. Many UFC(SS) members have left, and many workers are not interested. ?]
 
 - @defense: Rally for defense against the fascists with the UFC(SS).
 - @pacifism: Rally for pacifism, against nationalism and war.
@@ -31,12 +31,12 @@ The Iron Front rallies for the militant defense of the republic against the fasc
 
 
 @pacifism
-on-arrival: pacifism += 1; nationalism -= 5 if pacifism >= 3; workers_flp += 5*(1-dissent) if pacifism >= 4; unemployed_flp += 4*(1-dissent) if pacifism >= 4; new_middle_flp += 4*(1-dissent) if pacifism >= 4
+on-arrival: pacifism += 1; nationalism -= 5 if pacifism >= 3; workers_ccf_ss += 5*(1-dissent) if pacifism >= 4; unemployed_ccf_ss += 4*(1-dissent) if pacifism >= 4; new_middle_ccf_ss += 4*(1-dissent) if pacifism >= 4
 
 The Iron Front rallies against nationalism and war.
 
 @republic
-on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_flp += 5*(1-dissent) if democratization >= 4; unemployed_flp += 4*(1-dissent) if democratization >= 4; new_middle_flp += 4*(1-dissent) if democratization >= 4
+on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_ccf_ss += 5*(1-dissent) if democratization >= 4; unemployed_ccf_ss += 4*(1-dissent) if democratization >= 4; new_middle_ccf_ss += 4*(1-dissent) if democratization >= 4
 
 The Iron Front rallies in defense of the democratic republic and against dictatorship.
 
@@ -44,9 +44,9 @@ The Iron Front rallies in defense of the democratic republic and against dictato
 choose-if: return_to_normalcy = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
 view-if: wtb_adopted == 1
-on-arrival: workers_flp += 8*(1-dissent); unemployed_flp += 8*(1-dissent); new_middle_flp += 5*(1-dissent); old_middle_flp += 3*(1-dissent); farmers_flp += 3*(1-dissent);
+on-arrival: workers_ccf_ss += 8*(1-dissent); unemployed_ccf_ss += 8*(1-dissent); new_middle_ccf_ss += 5*(1-dissent); old_middle_ccf_ss += 3*(1-dissent); farmers_ccf_ss += 3*(1-dissent);
 
-The WTB-Plan is the rallying point for the entire FLP and its affiliated organizations, including the Iron Front.
+The WTB-Plan is the rallying point for the entire CCF(SS) and its affiliated organizations, including the Iron Front.
 
 @antisemitism
 title: Rally against antisemitism and in defense of Jewish Germans.

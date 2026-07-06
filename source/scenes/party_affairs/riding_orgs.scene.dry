@@ -23,7 +23,7 @@ We can choose to focus on strengthening certain riding organizations which will 
 @urban_orgs
 title: Focus on the urban riding organizations
 
-The FLP is not particularly strong in the urban ridings, owing to our deep ties with the agrarian movement. 
+The CCF(SS) is not particularly strong in the urban ridings, owing to our deep ties with the agrarian movement. 
 
 - @decrease_urban_ridings: Decrease funding in the urban ridings
 - @increase_urban_ridings: Increase funding in the urban ridings
@@ -39,28 +39,28 @@ The poor southeast is the most impoversished region of the province, drought-pro
 
 
 @decrease_urban_ridings
-on-arrival: resources -=2; flp_regina_d_orgs -= 0.05; flp_saskatoon_d_orgs -= 0.05; flp_moose_jaw_d_orgs -= 0.05;
+on-arrival: resources -=2; ccf_ss_regina_d_orgs -= 0.05; ccf_ss_saskatoon_d_orgs -= 0.05; ccf_ss_moose_jaw_d_orgs -= 0.05;
 
 We have chosen to decrease funding in the urban ridings. This will save us some resources but it will also decrease our support in those areas.
 
 @increase_urban_ridings
 
 choose-if: resources >= 2
-on-arrival: resources +=2; flp_regina_d_orgs += 0.05; flp_saskatoon_d_orgs += 0.05; flp_moose_jaw_d_orgs += 0.05; labour_dissent += 3; labour_strength += 5;
+on-arrival: resources +=2; ccf_ss_regina_d_orgs += 0.05; ccf_ss_saskatoon_d_orgs += 0.05; ccf_ss_moose_jaw_d_orgs += 0.05; labour_dissent += 3; labour_strength += 5;
 
 Increasing funding in the urban ridings will help us maintain or increase our support in those areas. 
 
 @decrease_southeast_ridings
-on-arrival: resources -=2; flp_southeast_d_orgs -= 0.10;
+on-arrival: resources -=2; ccf_ss_southeast_d_orgs -= 0.10;
 
 @increase_southeast_ridings
 choose-if: resources >= 2
-on-arrival: resources +=2; flp_southeast_d_orgs += 0.10;
+on-arrival: resources +=2; ccf_ss_southeast_d_orgs += 0.10;
 
 
 
 @rural_orgs
 title: Focus on the rural riding organizations
 
-The FLP is the strongest in the rural ridings, owing to our deep ties with the agrarian movement. 
+The CCF(SS) is the strongest in the rural ridings, owing to our deep ties with the agrarian movement. 
 

@@ -30,7 +30,7 @@
   window.showStats = function() {
   var scene = window.dendryUI.dendryEngine.state.sceneId;
 
-  if (scene.startsWith('library') || scene.startsWith('flp_president')) {
+  if (scene.startsWith('library') || scene.startsWith('ccf_ss_president')) {
       window.dendryUI.dendryEngine.goToScene('backSpecialScene');
   } else {
       window.dendryUI.dendryEngine.goToScene('library');
@@ -193,11 +193,10 @@ function getPartyIdeology(party, Q) {
             if (Q.cp_s_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Marxist-Leninist)';
             if (Q.cp_s_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
-        case 'FLP':
         case 'CCF(SS)':
-            if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
-            if (Q.flp_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left</span>  (Social Democracy)';
-            if (Q.flp_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
+            if (Q.ccf_ss_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
+            if (Q.ccf_ss_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left</span>  (Social Democracy)';
+            if (Q.ccf_ss_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'PPS': 
             if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Agrarian Progressivism)';
@@ -240,7 +239,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     const ideologyMap = {
         'CP(S)': 'cp_s_ideology',
-        'FLP': 'flp_ideology', 
+        'CCF(SS)': 'ccf_ss_ideology', 
         'PPS': 'pps_ideology', 
         'LPS': 'lps_ideology', 
         'CPS': 'cps_ideology', 
@@ -249,7 +248,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     const party_seats = {
         'CP(S)': 'cp_s_seats',
-        'FLP': 'flp_seats',
+        'CCF(SS)': 'ccf_ss_seats',
         'PPS': 'pps_seats',
         'LPS': 'lps_seats',
         'CPS': 'cps_seats',
@@ -270,7 +269,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     }
 
     // Special case
-    if (searchString === 'FLP' || searchString === 'CCF(SS)') {
+    if (searchString === 'CCF(SS)') {
 
         const seatsKey = party_seats[searchString];
 

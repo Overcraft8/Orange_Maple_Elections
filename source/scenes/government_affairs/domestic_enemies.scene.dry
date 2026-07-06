@@ -1,6 +1,6 @@
 title: Investigating Domestic Enemies
 on-arrival: month_actions += 1
-view-if: flp_in_government = 1 and interior_minister_party = "CCF(SS)"
+view-if: ccf_ss_in_government = 1 and interior_minister_party = "CCF(SS)"
 #card-image: img/portraits/BrockelbankJohn.jpg
 #is-card: true
 #new-page: true
@@ -44,10 +44,10 @@ on-arrival: ful_strength *= 0.7; ful_militancy -= 0.05
 We have arrested more of the FUL's leaders and confiscated their weapons.
 
 @ban_kkk
-on-arrival: kkk_strength *= 0.85; kkk_strength *= 0.7 if interior_police_loyalty >= 0.7; kkk_banned = 1; cps_relation -= 5; city_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett"; kkk_ban_timer = 6;
+on-arrival: kkk_strength *= 0.85; kkk_strength *= 0.7 if interior_police_loyalty >= 0.7; kkk_banned = 1; cps_relation -= 5; city_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if ccf_ss_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett"; kkk_ban_timer = 6;
 view-if: kkk_banned == 0
 
-[? if prime_minister == "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with Prime Minister Richard Bennett, as well as the political right and the police. ?][? if prime_minister != "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with the political right and the police. ?] [? if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett" : It also weakens our coalition due to the influence of Richard Bennett on the right wing of our coalition. ?] In addition, the Ku Klux Klan still operates out of public sight.
+[? if prime_minister == "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with Prime Minister Richard Bennett, as well as the political right and the police. ?][? if prime_minister != "Richard Bennett": Banning the Ku Klux Klan weakens our relationship with the political right and the police. ?] [? if ccf_ss_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett" : It also weakens our coalition due to the influence of Richard Bennett on the right wing of our coalition. ?] In addition, the Ku Klux Klan still operates out of public sight.
 
 @unban_kkk
 view-if: kkk_banned = 1
@@ -60,7 +60,7 @@ title: Further persecute the Ku Klux Klan.
 view-if: kkk_banned = 1
 choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
 unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
-on-arrival: kkk_strength *= 0.7; kkk_militancy -= 0.05; cps_relation -= 5; city_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if flp_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett";
+on-arrival: kkk_strength *= 0.7; kkk_militancy -= 0.05; cps_relation -= 5; city_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if ccf_ss_in_government = 1 and in_grand_coalition = 1 and prime_minister = "Richard Bennett";
 
 We have arrested more of the Ku Klux Klan's leaders and confiscated their weapons.
 

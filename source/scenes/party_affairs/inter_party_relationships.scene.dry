@@ -10,12 +10,12 @@ max-visits: 12
 
 = Inter-Party Relationships
 
-The FLP cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Liberal-CCF Coalition of the FLP and LPS,  parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The CCF(SS) cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Liberal-CCF Coalition of the CCF(SS) and LPS,  parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
 - @liberals: Strengthen our bonds with the Liberal Party.
 - @social_credit: Strengthen our bonds with the Social Credit Party.
 - @cp_s: Work towards repairing relationships with the Communist Party.
-- @flp_alone: The FLP can stand alone for now.
+- @ccf_ss_alone: The CCF(SS) can stand alone for now.
 - @easy_discard
 
 
@@ -33,7 +33,7 @@ The communists are suspicious of our overtures, especially the Stalinist leaders
 
 @cp_s_rectification_of_history
 
-One stumbling block for our relations with the CP(S) is our history of conflict, dating back to 1918 and 1919. The CP(S) is especially contemptuous of Gustav Noske, the FLP "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP(S) revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two FLP-turned-CP(S) leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the CP(S) is our history of conflict, dating back to 1918 and 1919. The CP(S) is especially contemptuous of Gustav Noske, the CCF(SS) "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP(S) revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two CCF(SS)-turned-CP(S) leaders who were killed during the suppression of the uprising.
 
 For further improvements in CP(S) relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
@@ -68,7 +68,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; scps_relation += 2 if scps_party_leader == "Joos"
-go-to: social_credit_op if scps_in_government = 1 and flp_in_government = 0 and premier != "Needham"; social_credit_coalition if flp_in_government = 1 and scps_in_government = 1; social_credit_needham if premier = "Needham"
+go-to: social_credit_op if scps_in_government = 1 and ccf_ss_in_government = 0 and premier != "Needham"; social_credit_coalition if ccf_ss_in_government = 1 and scps_in_government = 1; social_credit_needham if premier = "Needham"
 
 @social_credit_op
 on-arrival: scps_relation += 5*(1 - dissent)
@@ -106,7 +106,7 @@ The liberal party [+ lps_name +] is electorally moribund, so perhaps our efforts
 
 However, given the influence of the CPS among the other right-leaning parties[? if prime_minister == "Richard Bennett": and with Prime Minister Richard Bennett ?], it can still be helpful to influence them.
 
-@flp_alone
+@ccf_ss_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
 

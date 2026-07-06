@@ -1,4 +1,4 @@
-title: FLP Legislative Leader
+title: CCF(SS) Legislative Leader
 new-page: true
 is-special: true
 tags: event
@@ -7,15 +7,15 @@ view-if: 2 = 1
 = The Legislative Leader
 
 <div>
-  <img src="img/portraits/[+ flp_party_leader_img +]" 
+  <img src="img/portraits/[+ ccf_ss_party_leader_img +]" 
        style="width: 60%; display: block; margin: auto; margin-bottom: 5px;">
 </div>
 
-<p style="text-align: center; margin-bottom: 0;">[+ flp_party_leader +]</p>
+<p style="text-align: center; margin-bottom: 0;">[+ ccf_ss_party_leader +]</p>
 
-[? if flp_president = "George Hara Williams" : George Hara Williams is a farmers by trade and de facto leader of the Agrarian wing of the party. ?]
+[? if ccf_ss_president = "George Hara Williams" : George Hara Williams is a farmers by trade and de facto leader of the Agrarian wing of the party. ?]
 
-[? if flp_president = "Major James Coldwell" : Major James Coldwell is a teacher by profession and de facto leader of the Labour wing of the party. ?]
+[? if ccf_ss_president = "Major James Coldwell" : Major James Coldwell is a teacher by profession and de facto leader of the Labour wing of the party. ?]
 
 
 - @backSpecialScene: Exit informational tab.

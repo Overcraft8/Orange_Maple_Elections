@@ -17,8 +17,8 @@ Percy Wright is a farmers by trade and a candidate in the Melfort riding.
 @agriculture
 title: Agricultural Policy
 subtitle: Wright is the Minister of Agriculture.
-choose-if: advisor_action_timer <= 0 and flp_in_government and agriculture_minister_party == "CCF(SS)"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flp_in_government : The FLP is not in government. ?][? if agriculture_minister_party != "CCF(SS)": The FLP does not have the Agriculture Ministry. ?]
+choose-if: advisor_action_timer <= 0 and ccf_ss_in_government and agriculture_minister_party == "CCF(SS)"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government : The CCF(SS) is not in government. ?][? if agriculture_minister_party != "CCF(SS)": The CCF(SS) does not have the Agriculture Ministry. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
 go-to: agricultural_policy
 
@@ -28,7 +28,7 @@ title: Farmers Campaign
 subtitle: Try to campaign among the farmers populace.
 choose-if: advisor_action_timer == 0 and farmers_policy > 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if farmers_policy == 0 : We have not enacted any farmers policies. ?]
-on-arrival: advisor_action_timer = 6; farmers_flp += 5*(1-dissent); peoples_party_support += 1
+on-arrival: advisor_action_timer = 6; farmers_ccf_ss += 5*(1-dissent); peoples_party_support += 1
 
 We have increased our campaigning among farmers and the farmers populace.
 

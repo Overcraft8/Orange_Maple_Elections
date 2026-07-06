@@ -23,7 +23,7 @@ The CCYM is the the youth corps of the CCF. It is populated by young radicals, m
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources, 1 resource needed).
 subtitle: -1 resources
-on-arrival: resources -= 1; ccym_strength += 0.5; labour_dissent -= 3; new_middle_flp += 3; old_middle_flp += 3
+on-arrival: resources -= 1; ccym_strength += 0.5; labour_dissent -= 3; new_middle_ccf_ss += 3; old_middle_ccf_ss += 3
 
 Spreading happiness always gives the urban middle class a better view of our party. 
 
@@ -36,7 +36,7 @@ The CCYM is doing just fine on it's own.
 
 @pamphlets
 subtitle: -2 resources
-on-arrival: resources -= 2; socialism += 2; farmers_flp += 1; worker_flp += 1; unemployed_flp += 1; new_middle_flp += 1; labour_radicalism -= 1;
+on-arrival: resources -= 2; socialism += 2; farmers_ccf_ss += 1; worker_ccf_ss += 1; unemployed_ccf_ss += 1; new_middle_ccf_ss += 1; labour_radicalism -= 1;
 
 Spreading pamphlets increases awareness of the benefits of socialism and helps everyone get a better grasp of what we stand for. 
 

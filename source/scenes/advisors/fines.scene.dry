@@ -15,16 +15,16 @@ Clarence Fines is a protege of Coldwell. He is a former ILP member and effective
 
 @building_the_left
 title: Building the Left
-subtitle: Push the FLP to the left.
+subtitle: Push the CCF(SS) to the left.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; true_socialist_strength += 10; true_socialist_dissent -= 8; managerial_dissent += 3
 
-We have increased the strength of the left faction with the FLP. This raised concern among the moderate moderates in the party.
+We have increased the strength of the left faction with the CCF(SS). This raised concern among the moderate moderates in the party.
 
 @cp_s_cooperation
 title: Cooperation with the CP(S)
-subtitle: Any cooperation between the parties requires compromise from the CP(S) as well as the FLP.
+subtitle: Any cooperation between the parties requires compromise from the CP(S) as well as the CCF(SS).
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; true_socialist_strength += 5; cp_s_relation += 6*(1-dissent); managerial_dissent += 3; communist_coalition += 1 if cp_s_cooperation_seen <= 1; cp_s_cooperation_seen += 1

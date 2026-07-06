@@ -16,8 +16,8 @@ Carlyle King is a professor at Usask and a principled pacifist.
 @labour_rights_
 title: Labour Rights
 subtitle: As Labour Minister, Carlyle can help set regulations for working conditions.
-choose-if: advisor_action_timer <= 0 and flp_in_government and labour_minister_party = "CCF(SS)"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if labour_minister_party != "CCF(SS)" : The FLP does not control the Labour Ministry. ?]
+choose-if: advisor_action_timer <= 0 and ccf_ss_in_government and labour_minister_party = "CCF(SS)"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if labour_minister_party != "CCF(SS)" : The CCF(SS) does not control the Labour Ministry. ?]
 on-arrival: advisor_action_timer = 6; labour_rights_timer -= 10; last_advisor_action = 1
 go-to: labour_rights
 

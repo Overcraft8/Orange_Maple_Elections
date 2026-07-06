@@ -15,10 +15,10 @@ The FLP is torn between many different ideological currents. What should be our 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
 - @class_struggle: We must maintain a purely Socialist movement, aimed at the ultimate creation of a true Cooperative Commonwealth. 
-- @agrarian: We should work with the Agrarian movement to improve the lives of farmers.
+- @agrarian: The plight of the struggling farmers will be our calling.
 - @managerial: Our main goal should be to exercise Democratic Socialism in government where we can. 
 - @labour: We should work with the trade unions to improve the lives of workers.
-- @reform: We should attempt to limit our excesses and meet the people where they are.
+- @reform: We should attempt to limit our excesses to improve our electability. 
 - @easy_discard
 
 @class_struggle
@@ -36,6 +36,7 @@ The radical left of the party supports a course of class struggle, and potential
 [? if 1 == 1: The election of the CLL to the City Council and Mayorship of Regina demonstrates that Social Democrats and Communists are not necessarily enemies. ?]
 
 @agrarian
+subtitle: The Agrarians will be pleased.
 on-arrival: {!
 if (Q.ideology && Q.ideology != "agrarian") {
     Q.changed = 1;
@@ -48,12 +49,14 @@ The Agrarian wing of the party seeks to work with the farmers' movement to impro
 
 
 @managerial
+subtitle: The Managerial Wing will be pleased. 
 on-arrival: managerial_strength += 5; 
 
 The Managerial wing is pleased with our decision. They have already begun drafting plans for our entrance into government. 
 
 
 @labour
+subtitle: The Labour Wing will be pleased. 
 on-arrival: {!
 if (Q.ideology && Q.ideology != "labour") {
     Q.changed = 1;
@@ -65,6 +68,7 @@ on-departure: ideology = "labour"; wtb_support += 1; labour_dissent -= 5; cp_s_r
 The labour wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
 
 @reform
+subtitle: The Reformists will be pleased. 
 on-arrival: {!
 if (Q.ideology && Q.ideology != "moderate") {
     Q.changed = 1;

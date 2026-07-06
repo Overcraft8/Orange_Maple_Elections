@@ -22,7 +22,7 @@ max-cards: 6
 - @govt
 - @programme
 - #advisor
-- @shuffle_leadership_pinned
+# - @shuffle_leadership_pinned
 
 @main_easy
 set-bg: img/weyburn_street.jpg
@@ -48,7 +48,7 @@ max-cards: 6
 - @govt
 - @programme
 - #advisor
-- @shuffle_leadership_pinned
+# - @shuffle_leadership_pinned
 
 @party
 title: Party Affairs

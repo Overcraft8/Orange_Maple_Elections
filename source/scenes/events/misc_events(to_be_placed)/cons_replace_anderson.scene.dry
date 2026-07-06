@@ -4,13 +4,17 @@ tags: event
 view-if: year = 1932 and month = 2
 priority: 2
 max-visits: 1
-face-image: img/AndersonJames.jpg
+face-image: img/portraits/AndersonJames.jpg
 on-departure: cps_leader = 'John Diefenbaker'
 
 = The End of Anderson
 
 Former Premier James Anderson, previously renowned for leading the Conservative Party to it's first electoral success in Grit-Dominated Saskatchewan, has formally been ousted from power. Sections of the right-wing of the CPS have always been uncomfortable with the parties growing collaboration with the left-leaning Progressive Party. This culminated in a rather anti-climactic end for Anderson, forced to sign away his leadership of the party privately. 
 
-The Conservative Party leadership contest is set to be held six months from now. <img src="img/portraits/Diefenbaker_George_young.jpg" style="max-width:30%;">
+The Conservative Party leadership contest is set to be held six months from now. 
 
-The most notable figure to appear has been John Diefenbaker, a lawyer. 
+<div class='face-figure'>
+    <img src="img/portraits/Diefenbaker_George_young.jpg" class="face-img">
+</div>
+
+The most notable figure to appear has been John Diefenbaker, a lawyer.

@@ -152,10 +152,10 @@ Q.managerial_plan_adopted = 0;
 // inter-party relations
 Q.pps_relation = 50;
 Q.cp_s_relation = 25;
-Q.lps_relation = 60;
+Q.lps_relation = 20;
 Q.cps_relation = 35;
 // SCPS are invariably hostile
-Q.SCPS_relation = 10;
+Q.scps_relation = 10;
 
 
 Q.flp_party_leader = "None";
@@ -549,9 +549,16 @@ Q.depression = 1;
 Q.economic_expansion = 0;
 
 
-Q.lower_tax_rates = 0.2;
-Q.middle_tax_rates = 0.2;
-Q.upper_tax_rates = 0.2;
+Q.lower_tax_rates = 1;
+Q.middle_tax_rates = 1;
+Q.upper_tax_rates = 2;
+
+
+Q.income_tax = -2.5;
+Q.corporate_tax = 
+
+
+
 Q.tariffs = 0;
 
 Q.welfare = 0;
@@ -566,9 +573,6 @@ Q.property_tax = 0.3;
 
 
 Q.saskpower_net = -0.3;
-
-
-
 
 
 Q.state_capacity = 2;

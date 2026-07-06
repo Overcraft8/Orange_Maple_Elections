@@ -412,7 +412,7 @@ Q.tax_list = [
     
     <div id='revenue_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>
         <strong style='text-align: center;'>Revenue</strong><hr style='width: 100%;'>
-        Income Tax: <span style='color: #187412'>[+ +]</span>
+        Income Tax: <span style='color: #187412'>2.2</span>
     </div>
 
     <div id='expense_streams' style='display: flex; flex-direction: column; border: 2px solid black; padding: 5px; flex: 1;'>

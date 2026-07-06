@@ -1,6 +1,6 @@
 const tooltipList = [{
     // for organizations and parties
-    searchString: "FLP",
+    searchString: "CCF(SS)",
     explanationText: "<img src=img/CCF_logo.jpg>The Farmer-Labour Group - Our Party"
 }, 
 {
@@ -82,7 +82,7 @@ const tooltipList = [{
 
 const colourList = [{
     // For organizations + parties
-        word: "FLP",
+        word: "CCF(SS)",
         style: "color: #D26E28; font-weight: bold;"
     },
     {

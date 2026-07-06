@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: labour_affairs_timer = 6; month_actions += 1; labour_affairs_seen = 1
-view-if: flp_in_government = 1 and labour_minister_party = "FLP" and labour_affairs_timer = 0 and strike_term_seen = 0
+view-if: flp_in_government = 1 and labour_minister_party = "CCF(SS)" and labour_affairs_timer = 0 and strike_term_seen = 0
 card-image: img/portraits/KingCarlyle.jpg
 #subtitle: Addressing labour unrest and strikes.
 

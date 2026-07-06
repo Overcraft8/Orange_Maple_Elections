@@ -17,7 +17,7 @@ Q.scps_r = Q.scps_votes;
 Q.other_r = Q.other_votes;
 
 // The largest party can only be the FLP, LPS, CPS, or SCPS.
-Q.largest_party = 'FLP';
+Q.largest_party = 'CCF(SS)';
 
 if (Q.lps_r >= Q.flp_r && Q.lps_r >= Q.cps_r && Q.lps_r >= Q.scps_r) {
     Q.largest_party = 'LPS';

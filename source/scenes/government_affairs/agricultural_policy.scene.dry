@@ -2,7 +2,7 @@ title: Agricultural Policy
 new-page: true
 is-card: true
 on-arrival: agricultural_policy_timer += 6; month_actions += 1
-view-if: flp_in_government = 1 and (agriculture_minister_party = "FLP") and agricultural_policy_timer == 0
+view-if: flp_in_government = 1 and (agriculture_minister_party = "CCF(SS)") and agricultural_policy_timer == 0
 card-image: img/portraits/WrightPercy.jpg
 tags: govt_affairs, cabinet
 #subtitle: Issues of farmers financing, grain purchasing, and land reform.

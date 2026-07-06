@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: month_actions += 1; foreign_policy_timer += 8
-view-if: flp_in_government = 1 and foreign_minister_party = "FLP" and  foreign_policy_timer <= 0
+view-if: flp_in_government = 1 and foreign_minister_party = "CCF(SS)" and  foreign_policy_timer <= 0
 card-image: img/portraits/WilliamsHaraGeorge.jpg
 go-to: fp_menu
 #subtitle: International relations and dealing with Versailles.

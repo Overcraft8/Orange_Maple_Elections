@@ -191,7 +191,7 @@ Q.bennett_enabled = 0;
 // Does the FLP lead in City Police?
 Q.flp_prussia = 1;
 // Options: flp, lps, cps, scps
-Q.city_government = "FLP";
+Q.city_government = "CCF(SS)";
 
 // The state of the country
 
@@ -255,7 +255,7 @@ Q.inflation = 2.9;
 
 
 Q.parties = ['flp', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
-Q.parties_disp_names = ['FLP', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other']
+Q.parties_disp_names = ['CCF(SS)', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other']
 
 // Dynamic parties / existing parties
 Q.pps_exists = 1;
@@ -1127,8 +1127,8 @@ if (Q.sapd_formed && Q.sapd_r) {
 data = data.concat([
     {
         "id": "flp",
-        "legend": "FLP",
-        "name": "FLP",
+        "legend": "CCF(SS)",
+        "name": "CCF(SS)",
         "seats": Q.flp_seats
     },
     {
@@ -1254,9 +1254,9 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1932
 
-It is a dire time for Saskatchewan. The Great Depression has begun, and the government of James Anderson has resorted to a policy of retrenchment. The government had previously attempted relief with deficit financing but this effort has been halted by business interests. As a result, Anderson's Cooperative Coalition Government has raised taxes on corporations but also levied taxes on gross revenue and oil storage tanks. Civil Service pay has fallen by 9-14%, loans to farmers have all but halted, and the Highways Budget provides for no construction. The province is in the midst of a severe drought, and many farmers are on the brink of ruin.
+It is a dire time for Saskatchewan. The province is wracked by extreme drought the likes of which has never been seen before on the Canadian prairies. Two thirds of farmers have already been forced to rely on relief. 
 
-The Farmer-Labour Group (FLP) is the only party offering a real alternative to the old capitalist order. However, we are a young and inexperienced party, and we face opposition not only from opposing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented M. J. Coldwell. The FLP's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Saskatchewan.
+The 
 
 @intro_to_sask
 

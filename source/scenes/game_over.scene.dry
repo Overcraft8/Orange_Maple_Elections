@@ -186,7 +186,7 @@ Albert Einstein, possibly the most famous scientist in the world, has been elect
 
 @flp_victorious
 title: FLP still in government
-view-if: flp_in_government == 1 and premier_party == "FLP" and total_defeat == 0 and long_war == 0
+view-if: flp_in_government == 1 and premier_party == "CCF(SS)" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 

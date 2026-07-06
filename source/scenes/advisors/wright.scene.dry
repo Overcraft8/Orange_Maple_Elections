@@ -17,8 +17,8 @@ Percy Wright is a farmers by trade and a candidate in the Melfort riding.
 @agriculture
 title: Agricultural Policy
 subtitle: Wright is the Minister of Agriculture.
-choose-if: advisor_action_timer <= 0 and flp_in_government and agriculture_minister_party == "FLP"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flp_in_government : The FLP is not in government. ?][? if agriculture_minister_party != "FLP": The FLP does not have the Agriculture Ministry. ?]
+choose-if: advisor_action_timer <= 0 and flp_in_government and agriculture_minister_party == "CCF(SS)"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not flp_in_government : The FLP is not in government. ?][? if agriculture_minister_party != "CCF(SS)": The FLP does not have the Agriculture Ministry. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
 go-to: agricultural_policy
 

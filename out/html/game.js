@@ -194,7 +194,7 @@ function getPartyIdeology(party, Q) {
             if (Q.cp_s_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'FLP':
-        case 'CCF':
+        case 'CCF(SS)':
             if (Q.flp_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
             if (Q.flp_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left</span>  (Social Democracy)';
             if (Q.flp_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
@@ -271,6 +271,13 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
     // Special case
     if (searchString === 'FLP' || searchString === 'CCF(SS)') {
+
+        const seatsKey = party_seats[searchString];
+
+        if (seatsKey && Q[seatsKey] !== undefined) {
+            result += '<br>Seats: ' + Q[seatsKey];
+        }
+
         return result;
     }
 

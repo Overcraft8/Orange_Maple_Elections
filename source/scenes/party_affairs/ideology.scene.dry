@@ -14,7 +14,7 @@ The FLP is torn between many different ideological currents. What should be our 
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @class_struggle: We must maintain a purely Socialist movement, aimed at the ultimate creation of a true Cooperative Commonwealth. 
+- @class_struggle: We must maintain a purely Socialist movement, aimed at the creation of a true Cooperative Commonwealth. 
 - @agrarian: The plight of the struggling farmers will be our calling.
 - @managerial: Our main goal should be to exercise Democratic Socialism in government where we can. 
 - @labour: We should work with the trade unions to improve the lives of workers.

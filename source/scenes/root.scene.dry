@@ -50,7 +50,7 @@ Q.party_bureaucracy = 0;
 
 Q.riding_associations = 0;
 
-Q.membership = 4000;
+Q.membership = 4900;
 
 Q.membership_change = 0;
 
@@ -158,8 +158,8 @@ Q.cps_relation = 35;
 Q.scps_relation = 10;
 
 
-Q.ccf_ss_party_leader = "None";
-Q.ccf_ss_party_leader_img = "Question_Mark.jpg";
+Q.ccf_ss_party_leader = "M.J. Coldwell";
+Q.ccf_ss_party_leader_img = "ColdwellMajorJames.jpg";
 Q.ccf_ss_president = "None";
 Q.ccf_ss_president_img = "ColdwellMajorJames.jpg";
 
@@ -368,12 +368,12 @@ Q.catholics_other = 6;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 
-Q.ccf_ss_seats = 0;
+Q.ccf_ss_seats = 5;
 Q.cp_s_seats = 0;
-Q.pps_seats = 5;
-Q.lps_seats = 28;
-Q.cps_seats = 24;
-Q.other_seats = 6;
+Q.pps_seats = 0;
+Q.lps_seats = 50;
+Q.cps_seats = 0;
+Q.other_seats = 0;
 Q.scps_seats = 0;
 
 
@@ -413,9 +413,9 @@ Q.economic_records = [];
 // State of the government
 Q.prime_minister = "Richard Bennett (CPC)";
 // starting premier: James Anderson
-Q.premier = "James Anderson";
-Q.premier_img = 'AndersonJames.jpg';
-Q.premier_party = 'CPS';
+Q.premier = "Jimmy Gardiner";
+Q.premier_img = 'Gardiner_Jimmy.jpg';
+Q.premier_party = 'LPS';
 Q.ccf_ss_in_government = 0;
 Q.pps_in_government = 0;
 Q.lps_in_government = 0;
@@ -451,7 +451,7 @@ Q.ccf_ss_toleration = 0;
 
 // is the current government a minority government?
 Q.minority_government = 0;
-Q.ruling_government = "Cooperative Coalition";
+Q.ruling_government = "Liberal Majority";
 
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet

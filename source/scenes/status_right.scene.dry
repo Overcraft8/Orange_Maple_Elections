@@ -7,10 +7,10 @@ is-special: true
 
 <div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
-<span>
-<img src="img/portraits/[+ ccf_ss_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  <span class="card-caption">Party President: [+ president +] </span>
-</span>
+# <span>
+# <img src="img/portraits/[+ ccf_ss_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+#   <span class="card-caption">Party President: [+ president +] </span>
+# </span>
 
 <span>
 <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">

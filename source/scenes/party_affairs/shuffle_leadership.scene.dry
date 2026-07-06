@@ -463,7 +463,7 @@ Dorise Nielsen is now an advisor.
 
 @add_coldwell
 title: Major James Coldwell
-subtitle: Major James Coldwell is a former school teacher and long-time party organizer. He was Leader of the provincial CCF(SS) affiliate in Saskatchewan, the Farmer-Labour Group, while it was official opposition. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
+subtitle: Major James Coldwell is a former school teacher and long-time party organizer. He was Leader of the provincial CCF affiliate in Saskatchewan, the Farmer-Labour Group, while it was official opposition. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
 is-card: true
 card-image: img/portraits/ColdwellRudolf.jpg
 tags: agrarian_advisor

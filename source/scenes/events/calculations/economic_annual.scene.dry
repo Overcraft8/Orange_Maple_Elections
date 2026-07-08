@@ -1,18 +1,21 @@
 title: Economy Calculations (just for dev)
+
 tags: event
 view-if: month == 8
 on-arrival: {!
 
 var sign = Q.economic_growth > Q.old_economic_growth
                     ? '<img src="img/arrowup.png"> ' 
-                    : Q['change_' + party + '_r'] < Q.old_economic_growth
+                    : Q.economic_growth < Q.old_economic_growth
                       ? '<img src="img/arrowdown.png"> ' 
                       : '<img src="img/steady.png"> ';
 Q.economic_growth_trend = sign;
 
 
-Q.old_economic_growth = Q.economic_growth
-Q.old_economic_growth_rounded = Q.economic_growth_rounded
+
+
+Q.old_economic_growth = Q.economic_growth;
+Q.old_economic_growth_rounded = Q.economic_growth_rounded;
 !}
 go-to: budget_calc
 

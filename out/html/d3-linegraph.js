@@ -59,9 +59,9 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
 
       // Declare the y (vertical position) scale.
       if (!dataMax) {
-          const maxCCF(SS) = d3.max(data, d => d.ccf_ss);
-          const maxLPC = d3.max(data, d => d.lpc);
-          dataMax = maxCCF(SS) >= maxLPC ? maxCCF(SS) + 10 : maxLPC + 10;
+          const maxCCF_SS = d3.max(data, d => d.ccf_ss);
+          const maxLPS = d3.max(data, d => d.lps);
+          dataMax = maxCCF_SS >= maxLPS ? maxCCF_SS + 10 : maxLPS + 10;
           dataMin = 0;
       }
       const yScale = d3.scaleLinear([dataMin, dataMax], [height - marginBottom, marginTop]);

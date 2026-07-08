@@ -54,6 +54,8 @@ Q.membership = 4900;
 
 Q.membership_change = 0;
 
+Q.membership_change_display = 0;
+
 
 
 

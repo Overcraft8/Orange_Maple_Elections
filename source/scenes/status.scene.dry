@@ -37,8 +37,6 @@ on-display: {!
         legislative_status.exit.toCenter(false).bigToSmall(false);
         d3.select("#legislative_status").datum(data).call(legislative_status);
 }
-
-
 !}
 
 <button class="status_tab_button" id="budget_tab" onclick="window.changeTab('status.budget', 'budget_tab');">Budget</button>

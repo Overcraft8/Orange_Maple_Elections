@@ -1,0 +1,17 @@
+title: Party Calculations (just for dev)
+tags: event
+view-if: month == 8
+on-arrival: {!
+
+console.log("Got into party stats");
+
+Q.membership_change_display = Q.membership_change > 0
+         ? '<img src="img/arrowup.png"> ' 
+         : Q.membership_change < 0
+           ? '<img src="img/arrowdown.png">'
+           : '<img src="img/steady.png"> ';
+
+Q.membership += Q.membership_change
+
+
+!}

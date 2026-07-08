@@ -1,5 +1,4 @@
 title: Economy Calculations (just for dev)
-tags: event
 on-arrival: {!
 
 console.log("Got into the actual ecinomic annual");

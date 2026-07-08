@@ -1,5 +1,4 @@
 title: Economy Calculations (just for dev)
-tags: event
 on-arrival: {!
 
 console.log("Got into the actual ecinomic annual")
@@ -15,6 +14,7 @@ Q.old_economic_growth = Q.economic_growth;
 Q.old_economic_growth_rounded = Q.economic_growth_rounded;
 !}
 go-to: budget_calc
+view-if: month = 8
 
 
 
@@ -29,4 +29,3 @@ on-arrival: {!
     console.log("Got into economic annual")
     //}
 !}
-view-if: month = 8

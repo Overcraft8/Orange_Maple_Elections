@@ -29,7 +29,7 @@ Riding Association Strength: [+ riding_associations : p_riding_associations +]
 
 Membership: [+ membership +]
 
-Membership Change: [+ membership_change_trend +][+ membership_change_display +]
+Membership Change: [+ membership_change_display +] 
 
 </div>
 

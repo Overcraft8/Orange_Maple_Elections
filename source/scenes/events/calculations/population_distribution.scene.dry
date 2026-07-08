@@ -2,7 +2,6 @@ title: Population Redistribution (Just for dev)
 new-page: true
 is-special: true
 tags: event
-view-if: month = 8
 on-arrival: {!
 
 
@@ -28,3 +27,4 @@ for (var c of Q.classes) {
 }
 console.log("Got into pop distribution")
 !}
+view-if: month = 8

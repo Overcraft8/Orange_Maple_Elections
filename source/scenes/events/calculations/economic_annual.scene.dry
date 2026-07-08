@@ -1,6 +1,5 @@
 title: Economy Calculations (just for dev)
 tags: event
-view-if: month = 8
 on-arrival: {!
 
 console.log("Got into the actual ecinomic annual")
@@ -30,3 +29,4 @@ on-arrival: {!
     console.log("Got into economic annual")
     //}
 !}
+view-if: month = 8

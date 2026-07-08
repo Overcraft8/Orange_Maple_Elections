@@ -1,6 +1,5 @@
 title: Party Calculations (just for dev)
 tags: event
-view-if: month = 8
 on-arrival: {!
 
 console.log("Got into party stats");
@@ -15,3 +14,4 @@ Q.membership += Q.membership_change;
 
 Q.membership_change_display = Q.membership_change_trend + Q.membership_change;
 !}
+view-if: month = 8

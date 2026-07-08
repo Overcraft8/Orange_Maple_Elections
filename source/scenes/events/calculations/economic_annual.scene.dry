@@ -1,7 +1,8 @@
 title: Economy Calculations (just for dev)
+tags: event
 on-arrival: {!
 
-console.log("Got into the actual ecinomic annual")
+console.log("Got into the actual ecinomic annual");
 
 var sign = Q.economic_growth > Q.old_economic_growth
                     ? '<img src="img/arrowup.png"> ' 

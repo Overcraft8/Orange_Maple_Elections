@@ -1,4 +1,5 @@
 title: Party Calculations (just for dev)
+tags: event
 on-arrival: {!
 
 console.log("Got into party stats");

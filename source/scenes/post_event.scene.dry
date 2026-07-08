@@ -417,6 +417,7 @@ if (Q.month_actions >= 1) {
         }
     }
 }
+console.log(Q.month)
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
 var scene = this.game.scenes['post_event.events_choice'];

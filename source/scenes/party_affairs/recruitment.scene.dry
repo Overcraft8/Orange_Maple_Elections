@@ -17,15 +17,15 @@ The party membership is the heart and soul of the party. Declining membership is
 
 @heavy_recruitment
 subtitle: A singular, widespread recruitment operation is more efficient resource wise
-choose-if: resources >= 4; 
+choose-if: resources >= 4
 on-arrival: month_actions += 1; resources -= 4; membership_change += 150;
 
 @light_recruitment
-choose-if: resources >= 2; 
+choose-if: resources >= 2
 on-arrival: month_actions += 1; resoureces -= 2; membership_change += 60;
 
 @selective_recruitment
-choose-if: resources >= 2; 
+choose-if: resources >= 2
 
 WIP!
 

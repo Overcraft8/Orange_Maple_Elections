@@ -50,11 +50,11 @@ Q.party_bureaucracy = 0;
 
 Q.riding_associations = 0;
 
+
 Q.membership = 4900;
-
 Q.membership_change = 0;
-
-Q.membership_change_display = '<img src="img/steady.png 0'
+Q.membership_change_display = 0;
+Q.membership_change_trend = '<img src="img/steady.png'
 
 
 

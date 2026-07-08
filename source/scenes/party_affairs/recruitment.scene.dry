@@ -1,0 +1,31 @@
+title: Party Recruitment
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: recruitment_timer <= 0
+on-arrival: month_actions += 1; recruitment_timer = 3
+card-image: img/Wheat_Pool_Ad.jpg
+
+= Recruitment
+
+The party membership is the heart and soul of the party. Declining membership is a sign of a weakened political force. 
+
+- @heavy_recruitment: Initiate a largescale membership drive across the province
+- @light_recruitment: Initiate a small recruitment campaign across the province. 
+- @selective_recruitment: Begin a recruitment campaign in a specific region. 
+- @easy_discard
+
+@heavy_recruitment
+subtitle: A singular, widespread recruitment operation is more efficient resource wise
+choose-if: resources >= 4; 
+on-arrival: month_actions += 1; resources -= 4; membership_change += 150;
+
+@light_recruitment
+choose-if: resources >= 2; 
+on-arrival: month_actions += 1; resoureces -= 2; membership_change += 60;
+
+@selective_recruitment
+choose-if: resources >= 2; 
+
+WIP!
+

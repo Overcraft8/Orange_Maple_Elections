@@ -1,6 +1,6 @@
 title: Party Calculations (just for dev)
 tags: event
-view-if: month == 8
+view-if: month = 8
 on-arrival: {!
 
 console.log("Got into party stats");

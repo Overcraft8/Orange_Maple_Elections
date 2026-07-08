@@ -956,7 +956,7 @@ Q.timers = ['advisor_action', 'confronting_scps', 'crisis_program',
 
             // New party ones
 
-            'organizations_relations', 'riding_orgs',
+            'organizations_relations', 'riding_orgs', 'recruitment',
 
 
 
@@ -985,6 +985,8 @@ Q.ideology_timer = 0;
 Q.inter_party_relationships_timer = 0;
 Q.international_relations_timer = 0;
 Q.iron_front_timer = 0;
+
+
 Q.media_timer = 0;
 Q.media_established = 0;
 Q.media_construction_timer = 0;
@@ -992,9 +994,15 @@ Q.media_power = 0;
 Q.agri_prog_timer = 0;
 Q.infra_prog_timer = 0;
 Q.labour_prog_timer = 0;
+
+
 Q.enemies_timer = 0;
 Q.party_organizations_timer =  0;
 Q.organizations_relations_timer = 0;
+Q.recruitment_timer = 0;
+
+
+
 Q.rally_timer = 0;
 Q.ufc_timer = 0;
 Q.shuffle_leadership_timer = 0;

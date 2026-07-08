@@ -1,8 +1,9 @@
 title: Economy Calculations (just for dev)
-
 tags: event
-view-if: month == 8
+view-if: month = 8
 on-arrival: {!
+
+console.log("Got into the actual ecinomic annual")
 
 var sign = Q.economic_growth > Q.old_economic_growth
                     ? '<img src="img/arrowup.png"> ' 
@@ -10,9 +11,6 @@ var sign = Q.economic_growth > Q.old_economic_growth
                       ? '<img src="img/arrowdown.png"> ' 
                       : '<img src="img/steady.png"> ';
 Q.economic_growth_trend = sign;
-
-
-
 
 Q.old_economic_growth = Q.economic_growth;
 Q.old_economic_growth_rounded = Q.economic_growth_rounded;

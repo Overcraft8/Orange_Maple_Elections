@@ -25,4 +25,4 @@ for (var c of Q.classes) {
 }
 console.log("Got into pop distribution")
 !}
-view-if: month = 8
+view-if: month = 7

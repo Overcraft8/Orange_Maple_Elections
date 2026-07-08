@@ -15,7 +15,7 @@ Q.old_economic_growth = Q.economic_growth;
 Q.old_economic_growth_rounded = Q.economic_growth_rounded;
 !}
 go-to: budget_calc
-view-if: month = 8
+view-if: month = 7
 
 
 

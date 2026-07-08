@@ -14,4 +14,4 @@ Q.membership += Q.membership_change;
 
 Q.membership_change_display = Q.membership_change_trend + Q.membership_change;
 !}
-view-if: month = 8
+view-if: month = 7

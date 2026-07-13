@@ -419,6 +419,20 @@ window.sidebar3Collapsed = false;
     $('#qualities_right').html(tempDiv.innerHTML);
   };
 
+    window.updateBottomBar = function() {
+    $('#qualities_bottom').empty();
+    var scene = dendryUI.game.scenes[window.statusTabBottom];
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
+    // Sanitize HTML to prevent script execution errors
+    var tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlContent;
+    // Remove any script tags
+    tempDiv.querySelectorAll('script').forEach(script => script.remove());
+    $('#qualities_bottom').html(tempDiv.innerHTML);
+  };
+
   window.changeTab = function(newTab, tabId) {
     if (tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
         window.alert('Polls are not available in historical mode.');
@@ -516,6 +530,48 @@ window.sidebar3Collapsed = false;
 
     window.updateSidebarRight();
 };
+
+window.changeTabBottom = function(newTab, tabId) {
+    const tabButton = document.getElementById(tabId);
+    const bottombar = document.getElementById('bottom_bar');
+
+    const tabButtons = rightSidebar.getElementsByClassName('tab_button');
+    const statusButtons = rightSidebar.getElementsByClassName('status_tab_button');
+
+    // Sub tabs (status)
+    if (tabButton.classList.contains('status_tab_button')) {
+        for (let i = 0; i < statusButtons.length; i++) {
+            statusButtons[i].classList.remove('active');
+        }
+        tabButton.classList.add('active');
+    }
+
+    // Main tab
+    else {
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove('active');
+        }
+        tabButton.classList.add('active');
+
+        // Handle sub tabs
+        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
+
+        for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
+        }
+
+        const baseId = tabId.replace('_tab', '');
+        const targetContainer = document.getElementById(baseId + '_tabs');
+
+        if (targetContainer) { //WARIO
+            targetContainer.style.display = 'flex';
+        }
+    }
+
+    window.statusTabBottom = newTab;
+
+    window.updateBottomBar();
+}
 
 
 

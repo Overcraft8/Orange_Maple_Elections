@@ -782,7 +782,7 @@ Q.class_incomes = {
                              Electoral district information
  Q.district_names = [
      'regina_d', 'saskatoon_d', 'moosejaw_d', 'princealbert_d',
-     'quappelle_d', 'southwest_d', 'southeast_d', 'north_d', 'central_d'
+     'southwest_d', 'southeast_d', 'north_d', 'central_d'
  ];
  
  
@@ -810,14 +810,6 @@ Q.class_incomes = {
  Q.princealbert_d_old_middle = 15; 
  Q.princealbert_d_new_middle = 20;
  Q.princealbert_d_unemployed = 30;
- 
- 
- Q.quappelle_d_seats = 7;
- Q.quappelle_d_workers = 15;
- Q.quappelle_d_farmers = 30; 
- Q.quappelle_d_farmhands = 25;
- Q.quappelle_d_rural_workers = 10;
- Q.quappelle_d_unemployed = 20;
  
  
  Q.southwest_d_seats = 7;
@@ -869,14 +861,13 @@ Q.class_incomes = {
 Q.district_data = {
   "districts": {
     "regina_d": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "saskatoon_d": { "seats": 14, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "saskatoon_d": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
     "moosejaw_d": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
     "princealbert_d": { "seats": 1, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "quappelle_d": { "seats": 7, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 30, "farmhands": 25, "rural_workers": 10 },
-    "southwest_d": { "seats": 7, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
+    "southwest_d": { "seats": 10, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
     "southeast_d": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "farmhands": 25, "rural_workers": 10 },
-    "north_d": { "seats": 3, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
-    "central_d": { "seats": 14, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
+    "north_d": { "seats": 4, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
+    "central_d": { "seats": 17, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
   }
 }
 

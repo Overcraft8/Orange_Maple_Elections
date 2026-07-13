@@ -322,7 +322,7 @@
                     </div>
 
                     <div id="economy_tabs" class="status_tab_container">
-                        <button class="status_tab_button" stye='display: none;'i d="nationalization_tab" onclick="window.changeTab('status.nationalization', 'nationalization_tab');">Nationalization</button>
+                        <button class="status_tab_button" stye='display: none;' id="nationalization_tab" onclick="window.changeTab('status.nationalization', 'nationalization_tab');">Nationalization</button>
                         <button class="status_tab_button" stye='display: none;' id="development_tab" onclick="window.changeTab('status.development', 'development_tab');">Industries</button>
                         <button class="status_tab_button" stye='display: none;' id="cooperatives_tab" onclick="window.changeTab('status.cooperatives', 'cooperatives_tab');">Cooperatives</button>
                     </div>
@@ -353,8 +353,14 @@
             </div>
 
                 <div id='content'>
-                    <button class="status_tab_button" id="budget_tab" onclick="window.changeTab('status.budget', 'budget_tab');">Budget</button>
+                    
                 </div>
+            
+            <div id="map_tab" class="status_tab_container">
+                <button class="status_tab_button" stye='display: none;' id="map_tab" onclick="window.changeTab('status_right.electoralmap', 'map_tab');">Electoral Map</button>
+            </div>
+
+
 
             <footer>
     <!--

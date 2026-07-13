@@ -554,7 +554,7 @@ window.changeTabBottom = function(newTab, tabId) {
         tabButton.classList.add('active');
 
         // Handle sub tabs
-        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
+        const allTabContainers = bottom_bar.getElementsByClassName('status_tab_container');
 
         for (let i = 0; i < allTabContainers.length; i++) {
             allTabContainers[i].style.display = 'none';

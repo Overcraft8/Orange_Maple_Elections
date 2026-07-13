@@ -1,4 +1,5 @@
-# Social Democracy: An Alternate History
+# Prairie Lily - By Overcraft16, based on -
+# Social Democracy: An Alternate History by Autumn Chen
 
 ## Included Libraries
 

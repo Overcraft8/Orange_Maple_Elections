@@ -535,8 +535,8 @@ window.changeTabBottom = function(newTab, tabId) {
     const tabButton = document.getElementById(tabId);
     const bottombar = document.getElementById('bottom_bar');
 
-    const tabButtons = rightSidebar.getElementsByClassName('tab_button');
-    const statusButtons = rightSidebar.getElementsByClassName('status_tab_button');
+    const tabButtons = bottombar.getElementsByClassName('tab_button');
+    const statusButtons = bottombar.getElementsByClassName('status_tab_button');
 
     // Sub tabs (status)
     if (tabButton.classList.contains('status_tab_button')) {
@@ -554,7 +554,7 @@ window.changeTabBottom = function(newTab, tabId) {
         tabButton.classList.add('active');
 
         // Handle sub tabs
-        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
+        const allTabContainers = bottombar.getElementsByClassName('status_tab_container');
 
         for (let i = 0; i < allTabContainers.length; i++) {
             allTabContainers[i].style.display = 'none';

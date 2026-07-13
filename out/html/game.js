@@ -420,7 +420,7 @@ window.sidebar3Collapsed = false;
   };
 
     window.updateBottomBar = function() {
-    $('#qualities_bottom').empty();
+    $('#bottom_holder').empty();
     var scene = dendryUI.game.scenes[window.statusTabBottom];
     dendryUI.dendryEngine._runActions(scene.onArrival);
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
@@ -430,7 +430,7 @@ window.sidebar3Collapsed = false;
     tempDiv.innerHTML = htmlContent;
     // Remove any script tags
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $('#qualities_bottom').html(tempDiv.innerHTML);
+    $('#bottom_holder').html(tempDiv.innerHTML);
   };
 
   window.changeTab = function(newTab, tabId) {
@@ -554,7 +554,7 @@ window.changeTabBottom = function(newTab, tabId) {
         tabButton.classList.add('active');
 
         // Handle sub tabs
-        const allTabContainers = bottombar.getElementsByClassName('status_tab_container');
+        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
 
         for (let i = 0; i < allTabContainers.length; i++) {
             allTabContainers[i].style.display = 'none';

@@ -248,6 +248,14 @@ img.inline-img.icon {
   float: right;
   right: 0.4em;
 }
+#bottom_holder {
+  border: outset;
+  border-color: #cfb678;
+  padding: 0.6em;
+  width: 35em;
+  color: var(--text-color);
+  background-color: var(--sidebar-bg-color);
+}
 #qualities {
   text-align: center;
   text-indent: 0;

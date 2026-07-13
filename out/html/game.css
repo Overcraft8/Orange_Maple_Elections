@@ -13,7 +13,8 @@ body {
   --tab-hover-color: #caaa588a;
   --card-border-color: #dfd1ba; 
   --card-bg-color: #ede1c2; 
-  font-family: Franklin Gothic Medium, serif;
+  font-family: Franklin Gothic Medium, Arial;
+  font-weight: bold;
   background-color: var(--bg-color);
   padding: 0;
   line-height: 130%;
@@ -750,7 +751,7 @@ div.tooltip {
   /* Centers natively, purely handles the float-up animation */
   transform: translateX(-50%) translateY(5px); 
 
-  font-family: Franklin Gothic Medium, serif;
+  font-family: Franklin Gothic Medium, Arial;
   color: #3b1f0a;
   text-align: center;
   font-size: 13px;

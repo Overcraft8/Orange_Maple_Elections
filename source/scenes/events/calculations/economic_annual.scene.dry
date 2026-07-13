@@ -1,4 +1,4 @@
-title: Economy Calculations (just for dev)
+id: Economy Calculations (just for dev)
 on-arrival: {!
 
 console.log("Got into the actual ecinomic annual");

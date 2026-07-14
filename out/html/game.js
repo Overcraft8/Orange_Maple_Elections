@@ -350,9 +350,6 @@ function applyWholesome(str) {
 //                          SIDEBARS AND PAGES
 
 
-window.sidebar3Collapsed = false;
-
-
 
 
 
@@ -375,7 +372,7 @@ window.sidebar3Collapsed = false;
   };
 
 
-
+/* 
   window.updateSidebar = function () {
         $('#qualities').empty();
         var statusScene = dendryUI.game.scenes["status"];
@@ -391,18 +388,6 @@ window.sidebar3Collapsed = false;
         tempDiv.querySelectorAll('script').forEach(script => script.remove());
         $('#qualities').html(tempDiv.innerHTML);
         dendryUI.dendryEngine._runActions(scene.onDisplay);
-
-
-        if (!window.sidebar3Collapsed) {
-            $('#qualities_3').empty();
-            var scene3 = dendryUI.game.scenes[window.statusTab3];
-            if (scene3) {
-                dendryUI.dendryEngine._runActions(scene3.onArrival);
-                var dc3 = dendryUI.dendryEngine._makeDisplayContent(scene3.content, true);
-                $('#qualities_3').append(dendryUI.contentToHTML.convert(dc3));
-            }
-        }
-        
     };
 
     window.updateSidebarRight = function() {
@@ -572,11 +557,136 @@ window.changeTabBottom = function(newTab, tabId) {
 
     window.updateBottomBar();
 }
+*/
+
+// ==========================================
+// 1. MASTER REGION CONFIGISTRATION
+// ==========================================
+const BAR_CONFIG = {
+    left: {
+        containerId: 'stats_sidebar',
+        targetId: 'qualities',
+        stateKey: 'statusTab',
+        isLeft: true
+    },
+    right: {
+        containerId: 'stats_sidebar_right',
+        targetId: 'qualities_right',
+        stateKey: 'statusTabRight',
+        isLeft: false
+    },
+    bottom: {
+        containerId: 'bottom_bar',
+        targetId: 'bottom_holder',
+        stateKey: 'statusTabBottom',
+        isLeft: false
+    }
+};
+
+// ==========================================
+// 2. UNIFIED CONTENT UPDATE CORE
+// ==========================================
+window.updateBarContent = function(regionKey) {
+    var config = BAR_CONFIG[regionKey];
+    if (!config) return;
+
+    var targetSelector = '#' + config.targetId;
+    $(targetSelector).empty();
+
+    var sceneId = window[config.stateKey];
+    var scene = dendryUI.game.scenes[sceneId];
+    if (!scene) return;
+
+    // Run status logic if processing the left main sidebar
+    if (config.isLeft) {
+        var statusScene = dendryUI.game.scenes["status"];
+        if (statusScene) dendryUI.dendryEngine._runActions(statusScene.onArrival);
+    }
+
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
+    
+    // Sanitize HTML to prevent script execution errors
+    var tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlContent;
+    tempDiv.querySelectorAll('script').forEach(script => script.remove());
+    $(targetSelector).html(tempDiv.innerHTML);
+
+    // Run display hooks if processing the left main sidebar
+    if (config.isLeft) {
+        dendryUI.dendryEngine._runActions(scene.onDisplay);
+    }
+};
+
+// ==========================================
+// Unified Tab Changing
+// ==========================================
+window.ChangeTab = function(regionKey, newTab, tabId) {
+    if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
+        window.alert('Polls are not available in historical mode.');
+        return;
+    }
+
+    var config = BAR_CONFIG[regionKey];
+    var container = document.getElementById(config.containerId);
+    var tabButton = document.getElementById(tabId);
+    if (!container || !tabButton) return;
+
+    var tabButtons = container.getElementsByClassName('tab_button');
+    var statusButtons = container.getElementsByClassName('status_tab_button');
+    var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
+
+    // Toggle active classes based on button element type
+    if (tabButton.classList.contains('status_tab_button')) {
+        for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
+        tabButton.classList.add('active');
+    } 
+    else if (tabButton.classList.contains('status_panel_card')) {
+        for (let i = 0; i < statusPanelCards.length; i++) statusPanelCards[i].classList.remove('active');
+        tabButton.classList.add('active');
+    } 
+    else if (tabButton.classList.contains('tab_button')) {
+        for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+        tabButton.classList.add('active');
+
+        // Reset visibility of sub tab containers inside this region
+        var allTabContainers = container.getElementsByClassName('status_tab_container');
+        for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
+        }
+
+        var baseId = tabId.replace('_tab', '');
+        var targetContainer = document.getElementById(baseId + '_tabs');
+        if (targetContainer) {
+            targetContainer.style.display = 'flex';
+        }
+    }
+
+    // Save state globally and update UI
+    window[config.stateKey] = newTab;
+    window.updateBarContent(regionKey);
+};
+
+// ==========================================
+// 4. BACKWARDS-COMPATIBILITY BACKENDS
+// ==========================================
+window.updateSidebar      = function() { window.updateBarContent('left'); };
+window.updateSidebarRight = function() { window.updateBarContent('right'); };
+window.updateBottomBar    = function() { window.updateBarContent('bottom'); };
+
+window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newTab, tabId); };
+window.changeTabRight  = function(newTab, tabId) { window.ChangeTab('right', newTab, tabId); };
+window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', newTab, tabId); };
+
 
 
 
 window.onDisplayContent = function() {
-    window.updateSidebar();
+    window.updateBarContent('left');
+    window.updateBarContent('right');
+    window.updateBarContent('bottom');
 };
 
 

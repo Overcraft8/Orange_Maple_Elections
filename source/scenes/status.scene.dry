@@ -37,7 +37,7 @@ on-display: {!
 }
 !}
 
-<button class="status_tab_button" id="budget_tab" onclick="window.changeTab('status.budget', 'budget_tab');">Budget</button>
+<button class="status_tab_button" id="budget_tab" onclick="window.ChangeTab('left', 'status.budget', 'budget_tab');">Budget</button>
 
 = Status
 
@@ -350,7 +350,7 @@ State Capacity: [+ state_capacity : development +]
   <div class="status-card-row">
   <button id="agriculture_status" class="status_panel_card">
     <img class="status_panel_card_image" src="img/Melfort_Market.jpg" 
-    onclick="window.changeTab('status.agriculture', 'agriculture_status')">
+    onclick="window.ChangeTab('left', 'status.agriculture', 'agriculture_status')">
     <span class="card-caption">Agriculture</span>
   </button>
 
@@ -377,7 +377,7 @@ State Capacity: [+ state_capacity : development +]
 = Agriculture
 
     <button id="return_agriculture_status" class="status_tab_button" 
-    onclick="window.changeTab('status.development', 'return_agriculture_status')">Back</button>
+    onclick="window.ChangeTab('left', 'status.development', 'return_agriculture_status')">Back</button>
 
 Agricultural Co-ops: [+ agri_coops : development +]
 

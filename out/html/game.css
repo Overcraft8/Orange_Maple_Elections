@@ -248,14 +248,28 @@ img.inline-img.icon {
   float: right;
   right: 0.4em;
 }
-#bottom_holder {
-  border: outset;
-  border-color: #cfb678;
-  padding: 0.6em;
-  width: 35em;
-  color: var(--text-color);
-  background-color: var(--sidebar-bg-color);
+
+.stats_qualities {
+  text-align: center;
+  text-indent: 0;
+  line-height: 1.3em;
 }
+.stats_qualities p {
+  text-indent: 0;
+}
+.stats_qualities h1 {
+  font-family: Georgia, sans-serif;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.stats_qualities h1 + p:first-line {
+  font-weight: normal;
+}
+
+/* 
 #qualities {
   text-align: center;
   text-indent: 0;
@@ -275,6 +289,7 @@ img.inline-img.icon {
 #qualities h1 + p:first-line {
   font-weight: normal;
 }
+
 #qualities_right {
   text-align: center;
   text-indent: 0;
@@ -294,6 +309,32 @@ img.inline-img.icon {
 #qualities_right h1 + p:first-line {
   font-weight: normal;
 }
+
+#qualities_bottom {
+  text-align: center;
+  text-indent: 0;
+  line-height: 1.3em;
+}
+#qualities_bottom p {
+  text-indent: 0;
+}
+#qualities_bottom h1 {
+  font-family: Georgia, sans-serif;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+#qualities_bottom h1 + p:first-line {
+  font-weight: normal;
+}
+*/
+
+
+
+
+
 
 /* tabs */
 .tab_container {

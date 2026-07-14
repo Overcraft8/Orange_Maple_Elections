@@ -999,3 +999,6 @@ a.party_status_panel_container {
   transform-origin: center; /* This keeps it from flying off-screen */
   transform-box: fill-box;   /* Ensures the 'center' is the shape itself */
 }
+
+.district { fill: #d69546; stroke: #000000; stroke-width: 2px; }
+.district:hover { fill: #e1491e; opacity: 0.8; cursor: pointer; }

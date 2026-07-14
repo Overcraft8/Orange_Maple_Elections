@@ -576,8 +576,8 @@ const BAR_CONFIG = {
         isLeft: false
     },
     bottom: {
-        containerId: 'bottom_bar',
-        targetId: 'bottom_holder',
+        containerId: 'stats_bottom_bar',
+        targetId: 'qualities_bottom',
         stateKey: 'statusTabBottom',
         isLeft: false
     }

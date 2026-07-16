@@ -906,18 +906,13 @@ div.tooltip {
   border: 1px solid #6d6d6d;
   border-collapse: collapse;
   width: 100%;
+  text-align: center;
 }
 
 /* Cell styling */
 .generic-table td {
   border: 1px solid var(--content-bg-color);
   padding: 2px 4px;
-  text-align: center;
-}
-
-/* First column left-aligned */
-.generic-table td:first-child {
-  text-align: left;
 }
 
 /* Header row styling */

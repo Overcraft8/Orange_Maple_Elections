@@ -25,32 +25,20 @@ is-special: true
     /* Target this specific table by its ID */
     #status_right_table tr:nth-child(even) { 
         color: #F2D3A8; 
-    }
-    #status_right_table td:nth-child(1) { 
-        text-align: right; 
-    }
-    #status_right_table td:nth-child(2) {
-      text-align: left;
+        border: 4px none;
     }
   </style>
 
   <table id='status_right_table' class='generic-table'>
 
     <tr>
-        <td>Resources available:</td>
-        <td>[+ resources +]</td>
+        <td>Resources available: [+ resources +]</td>
+        <td>Annual Party Dues: [+ dues +]</td>
     </tr>
     <tr>
-        <td>Annual Party Dues: </td>
-        <td>[+ dues +]</td>
-    </tr>
-    <tr>
-        <td>Membership: </td>
-        <td>[+ membership +]</td>
-    </tr>
-    <tr>
-        <td>Membership Change: <br><div style='font-size: 0.8em;'>(Updated annually)</div></td>
-        <td>[+ membership_change_trend +][+ membership_change_display +]</td>
+        <td>Membership: [+ membership +]</td>
+        <td>Membership Change: <br><div style='font-size: 0.8em;'>(Updated annually)</div> [+ membership_change_trend +][+ membership_change_display +]
+        </td>
     </tr>
 
   </table>

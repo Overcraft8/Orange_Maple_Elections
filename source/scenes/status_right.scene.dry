@@ -7,19 +7,40 @@ is-special: true
 
 <div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
-# <span>
-# <img src="img/portraits/[+ ccf_ss_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-#   <span class="card-caption">Party President: [+ president +] </span>
-# </span>
+  # <span>
+  # <img src="img/portraits/[+ ccf_ss_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+  #   <span class="card-caption">Party President: [+ president +] </span>
+  # </span>
 
-<span>
-<img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  <span class="card-caption">Party Leader: [+ party_leader +]</span>
-</span>
+  <span>
+  <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+    <span class="card-caption">Party Leader: [+ party_leader +]</span>
+  </span>
 
 </div>
 
-Resources available: [+ resources +]
+<div>
+  <table id='status_right_table' calss='generic-table'>
+
+    <tr>
+        <td>Resources available:</td>
+        <td>[+ resources +]</td>
+    </tr>
+    <tr>
+        <td>Annual Party Dues: </td>
+        <td>[+ dues +]</td>
+    </tr>
+    <tr>
+        <td>Membership: </td>
+        <td>[+ membership +]</td>
+    </tr>
+    <tr>
+        <td>Membership Change: <div style='font-size: 0.8em;'>(Updated annually)</div></td>
+        <td>[+ membership_change_trend +][+ membership_change_display +]</td>
+    </tr>
+
+  </table>
+</div>
 
 Internal dissent: [+ dissent_percent : dissent +]
 
@@ -145,6 +166,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 @electoralmap
 
 = Provincial Electoral Maps
+<br>
 {!
 # <svg id="sk-map_main" viewBox="0 0 850 850" width="250" height="300" style="display:block; margin:auto; border: 3px solid #3B3B3B;">
 #   <style>

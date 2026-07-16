@@ -900,7 +900,7 @@ div.tooltip {
 
 
 /* Table styling */
-.poll-table {
+.generic-table {
   font-size: 0.8em;         /* smaller font */
   line-height: 1.1;          /* tight row */
   border: 1px solid #6d6d6d;
@@ -909,24 +909,24 @@ div.tooltip {
 }
 
 /* Cell styling */
-.poll-table td {
+.generic-table td {
   border: 1px solid var(--content-bg-color);
   padding: 2px 4px;
   text-align: center;
 }
 
 /* First column left-aligned */
-.poll-table td:first-child {
+.generic-table td:first-child {
   text-align: left;
 }
 
 /* Header row styling */
-.poll-table tr:first-child td {
+.generic-table tr:first-child td {
   background-color: #f2d3a8;
   font-weight: bold;
 }
 
-.dark-mode .poll-table tr:first-child td {
+.dark-mode .generic-table tr:first-child td {
   background-color: #252320;
   font-weight: bold;
 }

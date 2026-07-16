@@ -560,7 +560,7 @@ window.changeTabBottom = function(newTab, tabId) {
 */
 
 // ==========================================
-// 1. MASTER REGION CONFIGISTRATION
+// Region Configurations
 // ==========================================
 const BAR_CONFIG = {
     left: {
@@ -584,7 +584,7 @@ const BAR_CONFIG = {
 };
 
 // ==========================================
-// 2. UNIFIED CONTENT UPDATE CORE
+// Update W/ Unified Content 
 // ==========================================
 window.updateBarContent = function(regionKey) {
     var config = BAR_CONFIG[regionKey];
@@ -614,10 +614,10 @@ window.updateBarContent = function(regionKey) {
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
     $(targetSelector).html(tempDiv.innerHTML);
 
-    // Run display hooks if processing the left main sidebar
-    if (config.isLeft) {
-        dendryUI.dendryEngine._runActions(scene.onDisplay);
-    }
+    // // Run display hooks if processing the left main sidebar
+    // if (config.isLeft) {
+    //     dendryUI.dendryEngine._runActions(scene.onDisplay);
+    // }
 };
 
 // ==========================================
@@ -670,7 +670,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
 };
 
 // ==========================================
-// 4. BACKWARDS-COMPATIBILITY BACKENDS
+// Backwards Compatibility
 // ==========================================
 window.updateSidebar      = function() { window.updateBarContent('left'); };
 window.updateSidebarRight = function() { window.updateBarContent('right'); };

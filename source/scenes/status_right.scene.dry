@@ -7,20 +7,34 @@ is-special: true
 
 <div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
-  # <span>
-  # <img src="img/portraits/[+ ccf_ss_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  #   <span class="card-caption">Party President: [+ president +] </span>
-  # </span>
+# <span>
+# <img src="img/portraits/[+ ccf_ss_president_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+#   <span class="card-caption">Party President: [+ president +] </span>
+# </span>
 
   <span>
   <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-    <span class="card-caption">Party Leader: [+ party_leader +]</span>
+    <span class="card-caption">Party Leader: [+ ccf_ss_party_leader +]</span>
   </span>
 
 </div>
 
 <div>
-  <table id='status_right_table' calss='generic-table'>
+
+  <style>
+    /* Target this specific table by its ID */
+    #status_right_table tr:nth-child(even) { 
+        color: #F2D3A8; 
+    }
+    #status_right_table td:nth-child(1) { 
+        text-align: right; 
+    }
+    #status_right_table td:nth-child(2) {
+      text-align: left;
+    }
+  </style>
+
+  <table id='status_right_table' class='generic-table'>
 
     <tr>
         <td>Resources available:</td>
@@ -35,7 +49,7 @@ is-special: true
         <td>[+ membership +]</td>
     </tr>
     <tr>
-        <td>Membership Change: <div style='font-size: 0.8em;'>(Updated annually)</div></td>
+        <td>Membership Change: <br><div style='font-size: 0.8em;'>(Updated annually)</div></td>
         <td>[+ membership_change_trend +][+ membership_change_display +]</td>
     </tr>
 

@@ -37,7 +37,7 @@ is-special: true
     </tr>
     <tr>
         <td>Membership: [+ membership +]</td>
-        <td>Membership Change: <br><div style='font-size: 0.8em;'>(Updated annually)</div> [+ membership_change_trend +][+ membership_change_display +]
+        <td>Membership Change: [+ membership_change_trend +][+ membership_change_display +]<br><div style='font-size: 0.8em;'>(Updated annually)</div>
         </td>
     </tr>
 

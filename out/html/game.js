@@ -371,200 +371,12 @@ function applyWholesome(str) {
     }
   };
 
-
-/* 
-  window.updateSidebar = function () {
-        $('#qualities').empty();
-        var statusScene = dendryUI.game.scenes["status"];
-        var scene = dendryUI.game.scenes[window.statusTab];
-        dendryUI.dendryEngine._runActions(statusScene.onArrival);
-        dendryUI.dendryEngine._runActions(scene.onArrival);
-        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-        var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-        // Sanitize HTML to prevent script execution errors
-        var tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlContent;
-        // Remove any script tags
-        tempDiv.querySelectorAll('script').forEach(script => script.remove());
-        $('#qualities').html(tempDiv.innerHTML);
-        dendryUI.dendryEngine._runActions(scene.onDisplay);
-    };
-
-    window.updateSidebarRight = function() {
-    $('#qualities_right').empty();
-    var scene = dendryUI.game.scenes[window.statusTabRight];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // Sanitize HTML to prevent script execution errors
-    var tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    // Remove any script tags
-    tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $('#qualities_right').html(tempDiv.innerHTML);
-  };
-
-    window.updateBottomBar = function() {
-    $('#bottom_holder').empty();
-    var scene = dendryUI.game.scenes[window.statusTabBottom];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // Sanitize HTML to prevent script execution errors
-    var tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    // Remove any script tags
-    tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $('#bottom_holder').html(tempDiv.innerHTML);
-  };
-
-  window.changeTab = function(newTab, tabId) {
-    if (tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-        window.alert('Polls are not available in historical mode.');
-        return;
-    }
-
-    const leftsidebar = document.getElementById('stats_sidebar'); 
-
-    const tabButton = document.getElementById(tabId);
-    const tabButtons = leftsidebar.getElementsByClassName('tab_button');
-
-    const statusButtons = document.getElementsByClassName('status_tab_button');
-    const statusPanelCards = document.getElementsByClassName('status_panel_card_image');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Sub Tab Images (nested inside sub tab scenes)
-    else if (tabButton.classList.contains('status_panel_card')) {
-        for (let i = 0; i < statusPanelCards.length; i++) {
-            statusPanelCards[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else if (tabButton.classList.contains('tab_button')) {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = document.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTab = newTab;
-    window.updateSidebar();
-};
-
-    window.changeTabRight = function(newTab, tabId) {
-    const tabButton = document.getElementById(tabId);
-    const rightSidebar = document.getElementById('stats_sidebar_right');
-
-    const tabButtons = rightSidebar.getElementsByClassName('tab_button');
-    const statusButtons = rightSidebar.getElementsByClassName('status_tab_button');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTabRight = newTab;
-
-    window.updateSidebarRight();
-};
-
-window.changeTabBottom = function(newTab, tabId) {
-    const tabButton = document.getElementById(tabId);
-    const bottombar = document.getElementById('bottom_bar');
-
-    const tabButtons = bottombar.getElementsByClassName('tab_button');
-    const statusButtons = bottombar.getElementsByClassName('status_tab_button');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = bottom_bar.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTabBottom = newTab;
-
-    window.updateBottomBar();
-}
-*/
-
 // ==========================================
-// Region Configurations
+// Regions
 // ==========================================
 const BAR_CONFIG = {
     left: {
-        containerId: 'stats_sidebar',
+        containerId: 'stats_sidebar_left',
         targetId: 'qualities',
         stateKey: 'statusTab',
         isLeft: true
@@ -586,7 +398,7 @@ const BAR_CONFIG = {
 // ==========================================
 // Update W/ Unified Content 
 // ==========================================
-window.updateBarContent = function(regionKey) {
+window.updateBar = function(regionKey) {
     var config = BAR_CONFIG[regionKey];
     if (!config) return;
 
@@ -615,19 +427,25 @@ window.updateBarContent = function(regionKey) {
     $(targetSelector).html(tempDiv.innerHTML);
 
     // Run display hooks if processing the left main sidebar
+    // Just for the legislature display
     if (config.isLeft) {
         dendryUI.dendryEngine._runActions(scene.onDisplay);
     }
 };
 
 // ==========================================
-// Unified Tab Changing
+// Tab Change (Unified)
 // ==========================================
+
+
+// Initialize old_tab
+var old_tab_id;
+
 window.ChangeTab = function(regionKey, newTab, tabId) {
-    if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-        window.alert('Polls are not available in historical mode.');
-        return;
-    }
+    // if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
+    //     window.alert('Polls are not available in historical mode.');
+    //     return;
+    // }
 
     var config = BAR_CONFIG[regionKey];
     var container = document.getElementById(config.containerId);
@@ -638,43 +456,56 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var statusButtons = container.getElementsByClassName('status_tab_button');
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
 
-    // Toggle active classes based on button element type
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
-        tabButton.classList.add('active');
-    } 
-    else if (tabButton.classList.contains('status_panel_card')) {
-        for (let i = 0; i < statusPanelCards.length; i++) statusPanelCards[i].classList.remove('active');
-        tabButton.classList.add('active');
-    } 
-    else if (tabButton.classList.contains('tab_button')) {
-        for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
-        tabButton.classList.add('active');
 
-        // Reset visibility of sub tab containers inside this region
-        var allTabContainers = container.getElementsByClassName('status_tab_container');
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
+    if (old_tab_id == tabId) {
+        window.dendryUI.dendryEngine.goToScene('empty');
+        tabButton.classList.remove('active')
+    }
 
-        var baseId = tabId.replace('_tab', '');
-        var targetContainer = document.getElementById(baseId + '_tabs');
-        if (targetContainer) {
-            targetContainer.style.display = 'flex';
+    else {
+        // Toggle active classes based on button element type
+        // Tabs nested in the status scenes
+        if (tabButton.classList.contains('status_tab_button')) {
+            for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
+            tabButton.classList.add('active');
+        } 
+        // Essentially the image-based buttons
+        else if (tabButton.classList.contains('status_panel_card')) {
+            for (let i = 0; i < statusPanelCards.length; i++) statusPanelCards[i].classList.remove('active');
+            tabButton.classList.add('active');
+        } 
+        // Regular tab buttons like government, party
+        else if (tabButton.classList.contains('tab_button')) {
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+            tabButton.classList.add('active');
+
+            // Reset visibility of sub tab containers inside this region
+            var allTabContainers = container.getElementsByClassName('status_tab_container');
+            for (let i = 0; i < allTabContainers.length; i++) {
+                allTabContainers[i].style.display = 'none';
+            }
+
+            var baseId = tabId.replace('_tab', '');
+            var targetContainer = document.getElementById(baseId + '_tabs');
+            if (targetContainer) {
+                targetContainer.style.display = 'flex';
+            }
         }
     }
 
+    var old_tab_id = tabId;
+
     // Save state globally and update UI
-    window[config.stateKey] = newTab;
-    window.updateBarContent(regionKey);
+    //window[config.stateKey] = newTab;
+    window.updateBar(regionKey);
 };
 
 // ==========================================
 // Backwards Compatibility
 // ==========================================
-window.updateSidebar      = function() { window.updateBarContent('left'); };
-window.updateSidebarRight = function() { window.updateBarContent('right'); };
-window.updateBottomBar    = function() { window.updateBarContent('bottom'); };
+window.updateSidebar      = function() { window.updateBar('left'); };
+window.updateSidebarRight = function() { window.updateBar('right'); };
+window.updateBottomBar    = function() { window.updateBar('bottom'); };
 
 window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newTab, tabId); };
 window.changeTabRight  = function(newTab, tabId) { window.ChangeTab('right', newTab, tabId); };
@@ -684,9 +515,9 @@ window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', ne
 
 
 window.onDisplayContent = function() {
-    window.updateBarContent('left');
-    window.updateBarContent('right');
-    window.updateBarContent('bottom');
+    window.updateBar('left');
+    window.updateBar('right');
+    window.updateBar('bottom');
 };
 
 

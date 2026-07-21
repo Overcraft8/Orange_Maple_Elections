@@ -351,11 +351,6 @@ function applyWholesome(str) {
 
 
 
-
-
-
-
-
   // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
   };
@@ -439,7 +434,7 @@ window.updateBar = function(regionKey) {
 
 
 // Initialize old_tab
-var old_tab_id;
+window.old_tab_id;
 
 window.ChangeTab = function(regionKey, newTab, tabId) {
     // if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
@@ -456,13 +451,16 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var statusButtons = container.getElementsByClassName('status_tab_button');
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
 
+    console.log("1")
 
-    if (old_tab_id == tabId) {
+    if (window.old_tab_id == tabId) {
+        console.log("got in this")
         window.dendryUI.dendryEngine.goToScene('empty');
         tabButton.classList.remove('active')
     }
 
     else {
+        console.log("3")
         // Toggle active classes based on button element type
         // Tabs nested in the status scenes
         if (tabButton.classList.contains('status_tab_button')) {
@@ -493,7 +491,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         }
     }
 
-    var old_tab_id = tabId;
+    window.old_tab_id = tabId;
 
     // Save state globally and update UI
     //window[config.stateKey] = newTab;

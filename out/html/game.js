@@ -373,19 +373,19 @@ const BAR_CONFIG = {
     left: {
         containerId: 'stats_sidebar_left',
         targetId: 'qualities',
-        stateKey: 'statusTab',
+        active_scene: 'main_tab',
         isLeft: true
     },
     right: {
         containerId: 'stats_sidebar_right',
         targetId: 'qualities_right',
-        stateKey: 'statusTabRight',
+        active_scene: 'party_tab',
         isLeft: false
     },
     bottom: {
         containerId: 'stats_bottom_bar',
         targetId: 'qualities_bottom',
-        stateKey: 'statusTabBottom',
+        active_scene: 'general_map_tab',
         isLeft: false
     }
 };
@@ -400,7 +400,7 @@ window.updateBar = function(regionKey) {
     var targetSelector = '#' + config.targetId;
     $(targetSelector).empty();
 
-    var sceneId = window[config.stateKey];
+    var sceneId = window[config.active_scene];
     var scene = dendryUI.game.scenes[sceneId];
     if (!scene) return;
 
@@ -423,9 +423,6 @@ window.updateBar = function(regionKey) {
 
     // Run display hooks if processing the left main sidebar
     // Just for the legislature display
-    if (config.isLeft) {
-        dendryUI.dendryEngine._runActions(scene.onDisplay);
-    }
 };
 
 // ==========================================
@@ -454,9 +451,21 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     console.log("1")
 
     if (window.old_tab_id == tabId) {
-        console.log("got in this")
-        window.dendryUI.dendryEngine.goToScene('empty');
-        tabButton.classList.remove('active')
+        console.log('got in')
+        tabButton.classList.remove('active');
+
+        // Hide nested sub-tab containers if applicable
+        var allTabContainers = container.getElementsByClassName('status_tab_container');
+        for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
+        }
+
+        // Reset state variables
+        window[config.stateKey] = 'empty';
+
+        // Clear rendered HTML from the sidebar
+        $('#' + config.targetId).empty();
+        return;
     }
 
     else {
@@ -494,7 +503,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     window.old_tab_id = tabId;
 
     // Save state globally and update UI
-    window[config.stateKey] = newTab;
+    window[config.active_scene] = newTab;
     window.updateBar(regionKey);
 };
 

@@ -165,9 +165,9 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 
 
-@electoralmap
+@general_map
 
-= Provincial Electoral Maps
+= Regional Map
 <br>
 {!
 # <svg id="sk-map_main" viewBox="0 0 850 850" width="250" height="300" style="display:block; margin:auto; border: 3px solid #3B3B3B;">

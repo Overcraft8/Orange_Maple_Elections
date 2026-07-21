@@ -494,7 +494,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     window.old_tab_id = tabId;
 
     // Save state globally and update UI
-    //window[config.stateKey] = newTab;
+    window[config.stateKey] = newTab;
     window.updateBar(regionKey);
 };
 

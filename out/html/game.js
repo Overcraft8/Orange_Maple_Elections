@@ -431,7 +431,8 @@ window.updateBar = function(regionKey) {
 
 
 // Initialize old_tab
-window.old_tab_id;
+window.prev_tab_id;
+var old_tab_twice = false;
 
 window.ChangeTab = function(regionKey, newTab, tabId) {
     // if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
@@ -449,23 +450,31 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
 
     console.log("1")
+    console.log(old_tab_twice)
 
-    if (window.old_tab_id == tabId) {
+    if (old_tab_twice != true) {old_tab_twice = true;}
+    else {old_tab_twice = false;}
+
+    if (window.prev_tab_id == tabId && old_tab_twice == true) {
+
         console.log('got in')
-        tabButton.classList.remove('active');
 
-        // Hide nested sub-tab containers if applicable
-        var allTabContainers = container.getElementsByClassName('status_tab_container');
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
+        if (old_tab_twice != true) {
+            tabButton.classList.remove('active');
+
+            // Hide nested sub-tab containers if applicable
+            var allTabContainers = container.getElementsByClassName('status_tab_container');
+            for (let i = 0; i < allTabContainers.length; i++) {
+                allTabContainers[i].style.display = 'none';
+            }
+
+            // Reset state variables
+            window[config.stateKey] = 'empty';
+
+            // Clear rendered HTML from the sidebar
+            $('#' + config.targetId).empty();
+            return;
         }
-
-        // Reset state variables
-        window[config.stateKey] = 'empty';
-
-        // Clear rendered HTML from the sidebar
-        $('#' + config.targetId).empty();
-        return;
     }
 
     else {
@@ -500,7 +509,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         }
     }
 
-    window.old_tab_id = tabId;
+    window.prev_tab_id = tabId;
 
     // Save state globally and update UI
     window[config.active_scene] = newTab;

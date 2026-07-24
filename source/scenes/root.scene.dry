@@ -858,7 +858,7 @@ Q.class_incomes = {
 ////////////////////////////////////////////////////////////////////////////////////////////
                                                 // DISTRICT DATA + INITALIZING
 
-Q.district_data = {
+Q.district_demography = {
   "districts": {
     "regina_d": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
     "saskatoon_d": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
@@ -871,11 +871,17 @@ Q.district_data = {
   }
 }
 
-Q.district_names = Object.keys(Q.district_data.districts);
+Q.district_economy = {
+    "districts": {
+        regina_d: {"industries": [['Car Manufacturing Plant', ]]}
+    }
+}
+
+Q.district_names = Object.keys(Q.district_demography.districts);
 console.log(Q.district_names);
 
-for (var region in Q.district_data.districts) {
-    var data = Q.district_data.districts[region];
+for (var region in Q.district_demography.districts) {
+    var data = Q.district_demography.districts[region];
     
     // Loop through every property (seats, workers, etc.) in the district
     for (var key in data) {

@@ -51,10 +51,12 @@
                     <td>
                         Event images:
                     </td>
+                    <td>
                         <label for="images_yes">On</label>
                     </td>
+                    </td>
                     <td> 
-                        <input type="radio" id="images_yes" name="images" value="1" onclick="window.enableImages();" checked><!-- Remove checked if not on at start -->
+                        <input type="radio" id="images_yes" name="images" value="1" onclick="window.enableImages();"><!-- Remove checked if not on at start -->
                     </td>
                     <td>
                         <label for="images_no">Off</label>
@@ -360,7 +362,7 @@
             <div id="stats_bottom_container" style="justify-content: center; display: flex; margin-top: 2em;">
                 <div id="stats_bottom_bar" style="width: 40em; margin: auto;" class="tools">
                     <div class="tab_container">
-                        <button class="status_tab_button" id="map_tab" onclick="window.ChangeTab('bottom', 'status_right.general_map', 'map_tab');">Electoral Map</button>
+                        <button class="status_tab_button" style="width: 100%;" id="map_tab" onclick="window.ChangeTab('bottom', 'status_bottom', 'map_tab');">Regions of Saskatchewan</button>
                     </div>
 
                     <div id="qualities_bottom" class='stats_qualities'> 

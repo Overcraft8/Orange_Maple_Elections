@@ -459,22 +459,20 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
 
         console.log('got in')
 
-        if (old_tab_twice != true) {
-            tabButton.classList.remove('active');
+        tabButton.classList.remove('active');
 
-            // Hide nested sub-tab containers if applicable
-            var allTabContainers = container.getElementsByClassName('status_tab_container');
-            for (let i = 0; i < allTabContainers.length; i++) {
-                allTabContainers[i].style.display = 'none';
-            }
-
-            // Reset state variables
-            window[config.stateKey] = 'empty';
-
-            // Clear rendered HTML from the sidebar
-            $('#' + config.targetId).empty();
-            return;
+        // Hide nested sub-tab containers if applicable
+        var allTabContainers = container.getElementsByClassName('status_tab_container');
+        for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
         }
+
+        // Reset state variables
+        window[config.stateKey] = 'empty';
+
+        // Clear rendered HTML from the sidebar
+        $('#' + config.targetId).empty();
+        return;
     }
 
     else {

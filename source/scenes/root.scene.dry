@@ -873,7 +873,7 @@ Q.district_demography = {
 
 Q.district_economy = {
     "districts": {
-        regina_d: {"industries": [['Car Manufacturing Plant', ]]}
+        regina_d: {"industries": [['Car Manufacturing Plant']]}
     }
 }
 

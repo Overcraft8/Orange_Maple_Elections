@@ -348,8 +348,6 @@ function applyWholesome(str) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ---------------------------------------------------------------
 //                          SIDEBARS AND PAGES
-console.log('achieved here6')
-
 
   // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
@@ -428,7 +426,6 @@ window.updateBar = function(regionKey) {
 // ==========================================
 // Tab Change (Unified)
 // ==========================================
-console.log('achieved here5')
 
 window.prev_tab_id = null;
 
@@ -526,7 +523,6 @@ window.onDisplayContent = function() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-console.log('achieved here4')
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *
@@ -645,7 +641,6 @@ window.get_taxes_final = function(taxes_in_question) {
     console.log(rich_pop);
 }
 
-console.log('achieved here3')
 window.region_info = function() {
 return; 
 };
@@ -667,7 +662,6 @@ return;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-console.log('achieved here2')
 document.addEventListener("click", function(e) {
   var card = e.target.closest("[go-to]");
   if (!card) return;
@@ -818,5 +812,3 @@ document.addEventListener('mouseover', function(e) {
         tooltipText.style.setProperty('--tt-shift', newShift + 'px');
     }
 });
-
-console.log('achieved here1')

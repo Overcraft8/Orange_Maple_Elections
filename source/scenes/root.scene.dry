@@ -1095,8 +1095,8 @@ window.ChangeTab('right', 'status_right', 'party_tab')
 
 // FINAL CALCULATIONS and INITALIZATIONS!!!!
 
-for (party of Q.parties) {
-    for (d of Q.district_names) {
+for (var party of Q.parties) {
+    for (var d of Q.district_names) {
         Q[party + '_' + d + '_orgs'] = 0;
     }
 }
@@ -1112,6 +1112,12 @@ for (party of Q.parties) {
 
 
 data = [
+    {
+        "id": "ccf_ss",
+        "legend": "CCF(SS)",
+        "name": "CCF(SS)",
+        "seats": Q.ccf_ss_seats
+    },
     {
         "id": "cp_s",
         "legend": "CP(S)",
@@ -1129,12 +1135,6 @@ if (Q.sapd_formed && Q.sapd_r) {
 }
 
 data = data.concat([
-    {
-        "id": "ccf_ss",
-        "legend": "CCF(SS)",
-        "name": "CCF(SS)",
-        "seats": Q.ccf_ss_seats
-    },
     {
         "id": "lps",
         "legend": "LPS",

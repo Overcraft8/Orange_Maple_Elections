@@ -869,13 +869,13 @@ Q.district_demography = {
     "north_d": { "seats": 4, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
     "central_d": { "seats": 17, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
   }
-}
+};
 
 Q.district_economy = {
     "districts": {
         regina_d: {"industries": [['Car Manufacturing Plant']]}
     }
-}
+};
 
 Q.district_names = Object.keys(Q.district_demography.districts);
 console.log(Q.district_names);
@@ -892,8 +892,6 @@ for (var region in Q.district_demography.districts) {
         Q[varName] = data[key];
     }
 }
-
-
 
 Q.total_population = 0;
 

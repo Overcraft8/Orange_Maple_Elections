@@ -509,9 +509,6 @@ window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newT
 window.changeTabRight  = function(newTab, tabId) { window.ChangeTab('right', newTab, tabId); };
 window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', newTab, tabId); };
 
-
-
-
 window.onDisplayContent = function() {
     window.updateBar('left');
     window.updateBar('right');
@@ -570,7 +567,6 @@ window.onDisplayContent = function() {
 
   window.onload = function() {
     // Was originally at false
-    window.dendryUI.loadSettings({show_portraits: true});
     window.dendryUI.loadSettings({show_portraits: true});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
@@ -652,7 +648,7 @@ window.get_taxes_final = function(taxes_in_question) {
 
 window.region_info = function() {
 return; 
-}
+};
 
 
 

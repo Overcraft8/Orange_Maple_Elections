@@ -814,4 +814,4 @@ document.addEventListener('mouseover', function(e) {
     }
 });
 
-console.log("Got to end of game.js")
+console.log("Got to end of game.js");

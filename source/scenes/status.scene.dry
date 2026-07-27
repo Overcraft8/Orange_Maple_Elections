@@ -45,7 +45,7 @@ on-display: {!
 <div style="text-align: center; display:flex; align-items:flex-start;"> <div style="width:60%; text-align:center;">
 <img src="img/Red_Lily.png" style="max-width:100%;">
  </div>
-<img src="img/portraits/[+ premier_img +]" style="width:110x;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;"><p></p><div style="width:60%; text-align:center;">
+<img src="img/portraits/[+ premier_img +]" style="width:110px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;"><p></p><div style="width:60%; text-align:center;">
 <img src="img/Red_Lily.png" style="max-width:100%;">
  </div></div>
 

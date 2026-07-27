@@ -17,6 +17,7 @@ if (Q.economic_growth) {
 }
 !}
 on-display: {!
+    data = Q.parliament_diagram;
     console.log("1status")
     if (d3 && window && Q.started) {
         var data = Q.parliament_diagram;

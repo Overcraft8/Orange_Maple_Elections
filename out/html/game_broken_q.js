@@ -46,7 +46,7 @@
         window.dendryUI.dendryEngine.goToScene('mod_loader');
     }
   };
-
+  
   window.showOptions = function() {
       var save_element = document.getElementById('options');
       window.populateOptions();
@@ -163,7 +163,7 @@
     }
   };
 
-
+  
   // This function allows you to modify the text before it's displayed.
   // E.g. wrapping chat-like messages in spans.
 window.displayText = function (text) {
@@ -325,7 +325,7 @@ function applyWholesome(str) {
                 //var tooltipContent = getDynamicTooltipContent(match, tooltip);
                 //return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
                 var tooltipContent = getDynamicTooltipContent(match, tooltip);
-
+                
                 // NEW UNIFIED VERSION:
                 return `<span class='tooltip' style='${style}'>${innerText}<span class='tooltip-text'>${tooltipContent}</span></span>`;
             } else if (colour) {
@@ -349,17 +349,10 @@ function applyWholesome(str) {
 // ---------------------------------------------------------------
 //                          SIDEBARS AND PAGES
 
-
-
-
-
-
-
-
   // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
   };
-
+  
   // This function runs on a new page. Right now, this auto-saves.
   window.onNewPage = function() {
     var scene = window.dendryUI.dendryEngine.state.sceneId;
@@ -371,214 +364,26 @@ function applyWholesome(str) {
     }
   };
 
-
-/* 
-  window.updateSidebar = function () {
-        $('#qualities').empty();
-        var statusScene = dendryUI.game.scenes["status"];
-        var scene = dendryUI.game.scenes[window.statusTab];
-        dendryUI.dendryEngine._runActions(statusScene.onArrival);
-        dendryUI.dendryEngine._runActions(scene.onArrival);
-        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-        var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-        // Sanitize HTML to prevent script execution errors
-        var tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlContent;
-        // Remove any script tags
-        tempDiv.querySelectorAll('script').forEach(script => script.remove());
-        $('#qualities').html(tempDiv.innerHTML);
-        dendryUI.dendryEngine._runActions(scene.onDisplay);
-    };
-
-    window.updateSidebarRight = function() {
-    $('#qualities_right').empty();
-    var scene = dendryUI.game.scenes[window.statusTabRight];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // Sanitize HTML to prevent script execution errors
-    var tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    // Remove any script tags
-    tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $('#qualities_right').html(tempDiv.innerHTML);
-  };
-
-    window.updateBottomBar = function() {
-    $('#bottom_holder').empty();
-    var scene = dendryUI.game.scenes[window.statusTabBottom];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // Sanitize HTML to prevent script execution errors
-    var tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    // Remove any script tags
-    tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $('#bottom_holder').html(tempDiv.innerHTML);
-  };
-
-  window.changeTab = function(newTab, tabId) {
-    if (tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-        window.alert('Polls are not available in historical mode.');
-        return;
-    }
-
-    const leftsidebar = document.getElementById('stats_sidebar'); 
-
-    const tabButton = document.getElementById(tabId);
-    const tabButtons = leftsidebar.getElementsByClassName('tab_button');
-
-    const statusButtons = document.getElementsByClassName('status_tab_button');
-    const statusPanelCards = document.getElementsByClassName('status_panel_card_image');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Sub Tab Images (nested inside sub tab scenes)
-    else if (tabButton.classList.contains('status_panel_card')) {
-        for (let i = 0; i < statusPanelCards.length; i++) {
-            statusPanelCards[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else if (tabButton.classList.contains('tab_button')) {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = document.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTab = newTab;
-    window.updateSidebar();
-};
-
-    window.changeTabRight = function(newTab, tabId) {
-    const tabButton = document.getElementById(tabId);
-    const rightSidebar = document.getElementById('stats_sidebar_right');
-
-    const tabButtons = rightSidebar.getElementsByClassName('tab_button');
-    const statusButtons = rightSidebar.getElementsByClassName('status_tab_button');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTabRight = newTab;
-
-    window.updateSidebarRight();
-};
-
-window.changeTabBottom = function(newTab, tabId) {
-    const tabButton = document.getElementById(tabId);
-    const bottombar = document.getElementById('bottom_bar');
-
-    const tabButtons = bottombar.getElementsByClassName('tab_button');
-    const statusButtons = bottombar.getElementsByClassName('status_tab_button');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = bottom_bar.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTabBottom = newTab;
-
-    window.updateBottomBar();
-}
-*/
-
 // ==========================================
-// Region Configurations
+// Regions
 // ==========================================
 const BAR_CONFIG = {
     left: {
-        containerId: 'stats_sidebar',
+        containerId: 'stats_sidebar_left',
         targetId: 'qualities',
-        stateKey: 'statusTab',
+        active_scene: 'main_tab',
         isLeft: true
     },
     right: {
         containerId: 'stats_sidebar_right',
         targetId: 'qualities_right',
-        stateKey: 'statusTabRight',
+        active_scene: 'party_tab',
         isLeft: false
     },
     bottom: {
         containerId: 'stats_bottom_bar',
         targetId: 'qualities_bottom',
-        stateKey: 'statusTabBottom',
+        active_scene: 'general_map_tab',
         isLeft: false
     }
 };
@@ -586,14 +391,14 @@ const BAR_CONFIG = {
 // ==========================================
 // Update W/ Unified Content 
 // ==========================================
-window.updateBarContent = function(regionKey) {
+window.updateBar = function(regionKey) {
     var config = BAR_CONFIG[regionKey];
     if (!config) return;
 
     var targetSelector = '#' + config.targetId;
     $(targetSelector).empty();
 
-    var sceneId = window[config.stateKey];
+    var sceneId = window[config.active_scene];
     var scene = dendryUI.game.scenes[sceneId];
     if (!scene) return;
 
@@ -604,30 +409,27 @@ window.updateBarContent = function(regionKey) {
     }
 
     dendryUI.dendryEngine._runActions(scene.onArrival);
-
+    
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-
+    
     // Sanitize HTML to prevent script execution errors
     var tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
     $(targetSelector).html(tempDiv.innerHTML);
-// // Run display hooks if processing the left main sidebar
-    // if (config.isLeft) {
-    //     dendryUI.dendryEngine._runActions(scene.onDisplay);
-    // }
+
+    // Run display hooks if processing the left main sidebar
+    // Just for the legislature display
 };
 
 // ==========================================
-// Unified Tab Changing
+// Tab Change (Unified)
 // ==========================================
-window.ChangeTab = function(regionKey, newTab, tabId) {
-    if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-        window.alert('Polls are not available in historical mode.');
-        return;
-    }
 
+window.prev_tab_id = null;
+
+window.ChangeTab = function(regionKey, newTab, tabId) {
     var config = BAR_CONFIG[regionKey];
     var container = document.getElementById(config.containerId);
     var tabButton = document.getElementById(tabId);
@@ -637,7 +439,29 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var statusButtons = container.getElementsByClassName('status_tab_button');
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
 
-    // Toggle active classes based on button element type
+    // -------------------------------------------------------------
+    // LOGIC GATE: Close if the clicked tab is ALREADY active
+    // -------------------------------------------------------------
+    if (window.prev_tab_id === tabId || tabButton.classList.contains('active')) {
+        tabButton.classList.remove('active');
+
+        // Hide nested sub-tab containers if applicable
+        var allTabContainers = container.getElementsByClassName('status_tab_container');
+        for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
+        }
+
+        // Reset state variables
+        window[config.stateKey] = 'empty';
+
+        // Clear rendered HTML from the sidebar
+        $('#' + config.targetId).empty();
+
+        // Reset prev_tab_id so clicking it next time re-opens it cleanly
+        window.prev_tab_id = null;
+        return;
+    }
+
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
         tabButton.classList.add('active');
@@ -663,29 +487,29 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         }
     }
 
+    // Track active tab ID
+    window.prev_tab_id = tabId;
+
     // Save state globally and update UI
-    window[config.stateKey] = newTab;
-    window.updateBarContent(regionKey);
+    window[config.active_scene] = newTab;
+    window.updateBar(regionKey);
 };
 
 // ==========================================
 // Backwards Compatibility
 // ==========================================
-window.updateSidebar      = function() { window.updateBarContent('left'); };
-window.updateSidebarRight = function() { window.updateBarContent('right'); };
-window.updateBottomBar    = function() { window.updateBarContent('bottom'); };
+window.updateSidebar      = function() { window.updateBar('left'); };
+window.updateSidebarRight = function() { window.updateBar('right'); };
+window.updateBottomBar    = function() { window.updateBar('bottom'); };
 
 window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newTab, tabId); };
 window.changeTabRight  = function(newTab, tabId) { window.ChangeTab('right', newTab, tabId); };
 window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', newTab, tabId); };
 
-
-
-
 window.onDisplayContent = function() {
-    window.updateBarContent('left');
-    window.updateBarContent('right');
-    window.updateBarContent('bottom');
+    window.updateBar('left');
+    window.updateBar('right');
+    window.updateBar('bottom');
 };
 
 
@@ -699,7 +523,6 @@ window.onDisplayContent = function() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *
@@ -818,6 +641,13 @@ window.get_taxes_final = function(taxes_in_question) {
     console.log(rich_pop);
 }
 
+window.region_info = function() {
+console.log('clicked!')
+return; 
+};
+
+
+
 })();
 
 
@@ -832,7 +662,6 @@ window.get_taxes_final = function(taxes_in_question) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 document.addEventListener("click", function(e) {
   var card = e.target.closest("[go-to]");
@@ -854,10 +683,9 @@ window.toggleDistrict = function() {
 
 
 window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip) {
-
+    
     function renderBar() {
-
-
+        
         var container = document.getElementById(elementID);
         if (!container) {
             if (window.__customGenerateBarAttempts < 20) {
@@ -874,7 +702,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 
         var finalTooltipText = tooltip;
 
-
+        
         var barHtml = 
             '<div class="tooltip" style="position: relative; width: 100%;">' + 
                 '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
@@ -883,7 +711,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
                 '<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 
             '</div>';
 
-
+        
         container.innerHTML = barHtml;
     }
 
@@ -894,78 +722,9 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
     renderBar();
 };
 
-
-/* 
 window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
     var container = document.getElementById(elementID);
     
-    if (!container) {
-        setTimeout(function() { window.customgeneratemultibar(dataArray, outercolor, colorsArray, elementID, tooltips); }, 25);
-        return;
-    }
-
-    var data = [].concat(dataArray);
-    var colors = [].concat(colorsArray);
-    var texts = [].concat(tooltips);
-
-    // 1. Filter valid segments and calculate the TOTAL sum
-    var valid = [];
-    var absoluteTotal = 0; 
-
-    for (var j = 0; j < data.length; j++) {
-        var val = Number(data[j]);
-        if (val > 0) {
-            valid.push({ val: val, color: colors[j] || '#ccc', text: texts[j] || '' });
-            absoluteTotal += val; // Add to our grand total
-        }
-    }
-
-    var innerSegmentsHtml = '';
-    var currentPercentTotal = 0;
-
-    // 2. Build the inner segments using normalized math
-    for (var i = 0; i < valid.length; i++) {
-        var width = (valid[i].val / absoluteTotal) * 100;
-        
-        if (currentPercentTotal + width > 100) width = 100 - currentPercentTotal;
-        currentPercentTotal += width;
-
-        var radiusStyle = '';
-        if (i === 0) radiusStyle += 'border-top-left-radius: 3px; border-bottom-left-radius: 3px; ';
-        if (i === valid.length - 1 || currentPercentTotal >= 99.9) radiusStyle += 'border-top-right-radius: 3px; border-bottom-right-radius: 3px; ';
-
-        var alignClass = 'tt-center';
-        if (i === 0) alignClass = 'tt-left';
-        else if (i === valid.length - 1 || currentPercentTotal >= 99.9) alignClass = 'tt-right';
-
-        innerSegmentsHtml += 
-            '<div class="tooltip ' + alignClass + '" style="position: relative; height: 100%; width: ' + width + '%; display: block;">' + 
-                '<div style="background: ' + valid[i].color + '; opacity: 0.8; height: 100%; width: 100%; ' + radiusStyle + '"></div>' +
-                '<span class="tooltip-text">' + valid[i].text + '</span>' +
-            '</div>';
-    }
-
-    var styleBlock = 
-        '<style>' +
-            '.tt-left .tooltip-text { left: 0; transform: translateY(5px); } ' +
-            '.tt-left:hover .tooltip-text { transform: translateY(0); opacity: 1; } ' +
-            '.tt-right .tooltip-text { left: auto; right: 0; transform: translateY(5px); } ' +
-            '.tt-right:hover .tooltip-text { transform: translateY(0); opacity: 1; } ' +
-            '.tt-center .tooltip-text { left: 50%; transform: translateX(-50%) translateY(5px); } ' +
-            '.tt-center:hover .tooltip-text { transform: translateX(-50%) translateY(0); opacity: 1; } ' +
-        '</style>';
-
-    container.innerHTML = styleBlock + 
-        '<div style="width: 100%; position: relative;">' + 
-            '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; border: 1px solid #000; overflow: visible;">' +
-                innerSegmentsHtml + 
-            '</div>' +
-        '</div>';
-}; */
-
-window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
-    var container = document.getElementById(elementID);
-
     if (!container) {
         setTimeout(function() { window.customgeneratemultibar(dataArray, outercolor, colorsArray, elementID, tooltips); }, 25);
         return;
@@ -993,7 +752,7 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
     // 2. Build the inner segments
     for (var i = 0; i < valid.length; i++) {
         var width = (valid[i].val / absoluteTotal) * 100;
-
+        
         if (currentPercentTotal + width > 100) width = 100 - currentPercentTotal;
         currentPercentTotal += width;
 
@@ -1024,7 +783,7 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
 document.addEventListener('mouseover', function(e) {
     var tooltipContainer = e.target.closest('.tooltip');
     if (!tooltipContainer) return;
-
+    
     var tooltipText = tooltipContainer.querySelector('.tooltip-text');
     if (!tooltipText) return;
 
@@ -1033,7 +792,7 @@ document.addEventListener('mouseover', function(e) {
 
     // Get the current shift amount (defaults to 0)
     var currentShift = parseFloat(tooltipText.style.getPropertyValue('--tt-shift')) || 0;
-
+    
     // Calculate where the edges WOULD be if the tooltip was perfectly centered
     var naturalLeft = rect.left - currentShift;
     var naturalRight = rect.right - currentShift;
@@ -1054,3 +813,5 @@ document.addEventListener('mouseover', function(e) {
         tooltipText.style.setProperty('--tt-shift', newShift + 'px');
     }
 });
+
+console.log("Got to end of game.js");

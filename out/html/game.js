@@ -847,13 +847,13 @@ window.get_taxes_final = function(taxes_in_question) {
 // Basic information for each building/project type
 // [ Name of item (factory, infrastructure, etc.) ] : [jobs, economic_output, standard_budget_influx]
 window.economy_presets = {
-    Manufacturing = {
+    'Manufacturing' : {
         'Car Manufacturing Plant' : [0.2, 0.4, 2]
     },
-    Mining = {
+    'Mining' : {
         'Potash Mine' : [0.4, 0.5, 3]
     }
-}
+};
 
 /* 
 window.region_info = function(region_id) {
@@ -1038,3 +1038,5 @@ document.addEventListener('mouseover', function(e) {
         tooltipText.style.setProperty('--tt-shift', newShift + 'px');
     }
 });
+
+console.log('asdasdasdasd')

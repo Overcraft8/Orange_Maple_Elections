@@ -709,6 +709,9 @@ window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', ne
 
 
 window.onDisplayContent = function() {
+    window.changeTab('left', 'status', 'main_tab');
+    window.changeTab('right', 'status_right', 'party_tab');
+    window.changeTab('bottom', 'status_bottom', 'map_tab');
     window.updateBarContent('left');
     window.updateBarContent('right');
     window.updateBarContent('bottom');

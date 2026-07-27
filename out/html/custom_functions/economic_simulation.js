@@ -96,7 +96,6 @@ window.economy_presets = {
 };
 
 // This is for displaying region information
-// This is for displaying region information
 window.region_info_display = function(region_id) {
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
@@ -139,6 +138,7 @@ window.region_info_display = function(region_id) {
 
     // Assign the entire block to your Dendry quality so the engine renders it safely
     Q.region_economy = containerHtml;
+    window.updateBarContent('bottom');
 };
 
 console.log("got to end of eco simulation");

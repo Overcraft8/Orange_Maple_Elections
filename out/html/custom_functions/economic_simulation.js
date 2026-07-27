@@ -147,7 +147,7 @@ else {
             var project_owner = project[1]
             var project_quantity = project[2]
 
-            var project_photo = window.project_photos.project_name[1]
+            // var project_photo = window.project_photos.project_name[1]
             });
         }
     };

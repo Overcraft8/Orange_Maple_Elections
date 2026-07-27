@@ -12,6 +12,8 @@ if (Q.inflation) {
 
 Q.economic_growth_rounded = '0';
 
+console.log("asdasddasd");
+
 if (Q.economic_growth) {
     Q.economic_growth_rounded = Q.economic_growth.toFixed(1);
 }
@@ -65,13 +67,37 @@ on-display: {!
     Prime Minister: [+ prime_minister +]
 </div> 
 
+# = Legislature
+# 
+# Assembly composition:
+# 
+#  <div style="display: flex; justify-content: center; align-items: stretch;"> 
+#  {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
+#  </div>
+# 
+# <div style='text-align: center;'>
+# # 1928: 30, 1930: 25, 1932: 22
+# [? if ccf_ss_seats > 0: [? if not ccf_ss_name: CCF(SS)?][? if ccf_ss_name != 0 : [+ ccf_ss_name +]?]{!</span>!}: [+ ccf_ss_seats +] ?]
+# [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
+# # 1928: 15, 1930: 15, 1932: 
+# [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
+# # 1928: 10, 1930: 13
+# [? if cp_s_seats > 0: [? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_seats +] ?]
+# # 1928: 5, 1930: 4 (as DstP)
+# [? if lps_seats > 0: [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_seats +] ?]
+# # 1928: 9, 1930: 5
+# [? if cps_seats > 0: [? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_seats +] ?]
+# # 1928: 14, 1930: 7
+# [? if scps_seats > 0: [? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_seats +] ?]
+# # 1928: 9, 1930: 10
+# [? if other_seats > 0: Independents: [+ other_seats +] ?]
+# </div>
+
 = Legislature
 
 Assembly composition:
 
- <div style="display: flex; justify-content: center; align-items: stretch;"> 
- {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
- </div>
+<div>{!<svg id="legislative_status" style="width: 200px; height: 100px;"> </svg>!}</div>
 
 <div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22

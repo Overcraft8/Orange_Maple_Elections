@@ -1,3 +1,28 @@
+(function() {
+
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+  var game;
+  var ui;
+
+  var DateOptions = {hour: 'numeric',
+                 minute: 'numeric',
+                 second: 'numeric',
+                 year: 'numeric',
+                 month: 'short',
+                 day: 'numeric' };
+
+  var main = function(dendryUI) {
+    ui = dendryUI;
+    game = ui.game;
+    // Add your custom code here.
+  };
+
+  window.panelActivated = false;
+
+  var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,3 +177,5 @@ else {
         }
     };
 };
+
+})();

@@ -845,7 +845,7 @@ window.get_taxes_final = function(taxes_in_question) {
 }
 
 // Basic information for each building/project type
-// [ Name of item (factory, infrastructure, etc.) ] : [jobs, economic_output, standard_budget_influx]
+// [ Name of item (factory, infrastructure, etc.) ] : [jobs, standard_economic_output, standard_budget_influx]
 window.economy_presets = {
     'Manufacturing' : {
         'Car Manufacturing Plant' : [0.2, 0.4, 2]
@@ -865,9 +865,10 @@ if (!Q.district_economy[region_id]) {
 }
 
 else {
-    var economy_sectors = Q.district_economy[region_id].economy
+    var economy_sectors = Q.district_economy[region_id].economy;
+
     for (sector of economy_sectors) {
-        console.log(sector)
+        console.log(sector);
     }
 };
 

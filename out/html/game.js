@@ -637,18 +637,17 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var statusButtons = container.getElementsByClassName('status_tab_button');
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
 
-    // Toggle active classes based on button element type
+    // Process button classes independently rather than using mutually exclusive else-ifs
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
-        tabButton.classList.add('active');
     } 
-    else if (tabButton.classList.contains('status_panel_card')) {
+    
+    if (tabButton.classList.contains('status_panel_card')) {
         for (let i = 0; i < statusPanelCards.length; i++) statusPanelCards[i].classList.remove('active');
-        tabButton.classList.add('active');
     } 
-    else if (tabButton.classList.contains('tab_button')) {
+    
+    if (tabButton.classList.contains('tab_button')) {
         for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
-        tabButton.classList.add('active');
 
         // Reset visibility of sub tab containers inside this region
         var allTabContainers = container.getElementsByClassName('status_tab_container');
@@ -662,6 +661,9 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
             targetContainer.style.display = 'flex';
         }
     }
+
+    // Unconditionally add the active state to the clicked button
+    tabButton.classList.add('active');
 
     // Save state globally and update UI
     window[config.stateKey] = newTab;

@@ -18,27 +18,23 @@ if (Q.economic_growth) {
 console.log("onarrive-status");
 !}
 on-display: {!
-    data = Q.parliament_diagram;
-    console.log("1status");
-    //if (d3 && window && Q.started) {
-    var data = Q.parliament_diagram;
-    var screenWidth = document.getElementById('qualities').offsetWidth;
-    var width = Math.max(Math.min(screenWidth , 200), 90); /* Old dimensions 250 and 120 */
-    var heightRatio = screenWidth < 350 ? 0.5 : 0.6; 
-    var height = width * heightRatio;
-    console.log("2status");
+    if (d3 && window && Q.started && Q.parliament_diagram) {
+        var data = Q.parliament_diagram;
+        var screenWidth = document.getElementById('qualities').offsetWidth;
+        var width = Math.max(Math.min(screenWidth , 200), 90); /* Old dimensions 250 and 120 */
+        var heightRatio = screenWidth < 350 ? 0.5 : 0.6; 
+        var height = width * heightRatio;
 
-    document.getElementById("legislative_status").style.height = height + "px";
+        document.getElementById("legislative_status").style.height = height + "px";
 
-    var legislative_status = d3.parliament();
-    legislative_status.width(width);
-    legislative_status.height(height);
-    legislative_status.innerRadiusCoef(0.4);
-    legislative_status.enter.fromCenter(false).smallToBig(false);
-    legislative_status.exit.toCenter(false).bigToSmall(false);
-    d3.select("#legislative_status").datum(data).call(legislative_status);
-    console.log("3status");
-/}
+        var legislative_status = d3.parliament();
+        legislative_status.width(width);
+        legislative_status.height(height);
+        legislative_status.innerRadiusCoef(0.4);
+        legislative_status.enter.fromCenter(false).smallToBig(false);
+        legislative_status.exit.toCenter(false).bigToSmall(false);
+        d3.select("#legislative_status").datum(data).call(legislative_status);
+    }
 !}
 
 <button class="status_tab_button" id="budget_tab" onclick="window.ChangeTab('left', 'status.budget', 'budget_tab');">Budget</button>
@@ -75,44 +71,24 @@ Assembly composition:
  <div style="display: flex; justify-content: center; align-items: stretch;"> 
  {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
  </div>
-
-
- {!<script> 
- (function() {
-    var data = Q.parliament_diagram;
-    var screenWidth = document.getElementById('qualities').offsetWidth;
-    var width = Math.max(Math.min(screenWidth , 200), 90);
-    var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
-    var height = width * heightRatio;
-
-    document.getElementById("legislative_status").style.height = height + "px";
-
-    var legislative_status = d3.parliament();
-    legislative_status.width(width);
-    legislative_status.height(height);
-    legislative_status.innerRadiusCoef(0.4);
-    legislative_status.enter.fromCenter(false).smallToBig(false);
-    legislative_status.exit.toCenter(false).bigToSmall(false);
-    d3.select("#legislative_status").datum(data).call(legislative_status);
-})();
-</script>!}
+ 
 
 <div style='text-align: center;'>
-# 1928: 30, 1930: 25, 1932: 22
-# [? if ccf_ss_seats > 0: [? if not ccf_ss_name: CCF(SS)?][? if ccf_ss_name != 0 : [+ ccf_ss_name +]?]{!</span>!}: [+ ccf_ss_seats +] ?]
-# [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
-# # 1928: 15, 1930: 15, 1932: 
-# [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
-# # 1928: 10, 1930: 13
-# [? if cp_s_seats > 0: [? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_seats +] ?]
-# # 1928: 5, 1930: 4 (as DstP)
-# [? if lps_seats > 0: [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_seats +] ?]
-# # 1928: 9, 1930: 5
-# [? if cps_seats > 0: [? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]{!</span>!}: [+ cps_seats +] ?]
-# # 1928: 14, 1930: 7
-# [? if scps_seats > 0: [? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]{!</span>!}: [+ scps_seats +] ?]
-# # 1928: 9, 1930: 10
-# [? if other_seats > 0: Independents: [+ other_seats +] ?]
+1928: 30, 1930: 25, 1932: 22
+[? if ccf_ss_seats > 0: [? if not ccf_ss_name: CCF(SS)?][? if ccf_ss_name != 0 : [+ ccf_ss_name +]?]: [+ ccf_ss_seats +] ?]
+[? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
+1928: 15, 1930: 15, 1932: 
+[? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]: [+ pps_seats +] ?]
+1928: 10, 1930: 13
+[? if cp_s_seats > 0: [? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]: [+ cp_s_seats +] ?]
+1928: 5, 1930: 4 (as DstP)
+[? if lps_seats > 0: [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]: [+ lps_seats +] ?]
+1928: 9, 1930: 5
+[? if cps_seats > 0: [? if not cps_name: CPS?][? if cps_name != 0 : [+ cps_name +]?]: [+ cps_seats +] ?]
+1928: 14, 1930: 7
+[? if scps_seats > 0: [? if not scps_name: SCPS?][? if scps_name != 0 : [+ scps_name +]?]: [+ scps_seats +] ?]
+1928: 9, 1930: 10
+[? if other_seats > 0: Independents: [+ other_seats +] ?]
 </div>
 
 Budget: [+ treasury +] 

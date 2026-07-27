@@ -107,7 +107,6 @@ window.region_info_display = function(region_id) {
 
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    // Start building a single HTML container string
     var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column;">';
 
     for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
@@ -119,6 +118,8 @@ window.region_info_display = function(region_id) {
             var project_name = project[0];
             var project_owner = project[1];
             var project_quantity = project[2] !== undefined ? project[2] : '';
+
+             // var project_photo = window.project_photos.project_name[1]
 
             // Format the quantity nicely with a space if it exists
             var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';

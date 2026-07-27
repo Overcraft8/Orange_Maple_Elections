@@ -15,30 +15,30 @@ Q.economic_growth_rounded = '0';
 if (Q.economic_growth) {
     Q.economic_growth_rounded = Q.economic_growth.toFixed(1);
 }
+console.log("onarrive-status");
 !}
 on-display: {!
     data = Q.parliament_diagram;
-    console.log("1status")
-    if (d3 && window && Q.started) {
-        var data = Q.parliament_diagram;
-        var screenWidth = document.getElementById('qualities').offsetWidth;
-/* Old dimensions 250 and 120 */
-        var width = Math.max(Math.min(screenWidth , 200), 90);
-        var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
-        var height = width * heightRatio;
-        console.log("2status")
+    console.log("1status");
+    //if (d3 && window && Q.started) {
+    var data = Q.parliament_diagram;
+    var screenWidth = document.getElementById('qualities').offsetWidth;
+    var width = Math.max(Math.min(screenWidth , 200), 90); /* Old dimensions 250 and 120 */
+    var heightRatio = screenWidth < 350 ? 0.5 : 0.6; 
+    var height = width * heightRatio;
+    console.log("2status");
 
-        document.getElementById("legislative_status").style.height = height + "px";
+    document.getElementById("legislative_status").style.height = height + "px";
 
-        var legislative_status = d3.parliament();
-        legislative_status.width(width);
-        legislative_status.height(height);
-        legislative_status.innerRadiusCoef(0.4);
-        legislative_status.enter.fromCenter(false).smallToBig(false);
-        legislative_status.exit.toCenter(false).bigToSmall(false);
-        d3.select("#legislative_status").datum(data).call(legislative_status);
-        console.log("3status")
-}
+    var legislative_status = d3.parliament();
+    legislative_status.width(width);
+    legislative_status.height(height);
+    legislative_status.innerRadiusCoef(0.4);
+    legislative_status.enter.fromCenter(false).smallToBig(false);
+    legislative_status.exit.toCenter(false).bigToSmall(false);
+    d3.select("#legislative_status").datum(data).call(legislative_status);
+    console.log("3status");
+/}
 !}
 
 <button class="status_tab_button" id="budget_tab" onclick="window.ChangeTab('left', 'status.budget', 'budget_tab');">Budget</button>

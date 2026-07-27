@@ -854,6 +854,11 @@ document.addEventListener("click", function(e) {
 });
 
 
+window.region_info = function() {
+    console.log("got into region info!!!!!");
+    return;
+}
+
 
 window.toggleDistrict = function() {
     var div = document.getElementById('district_results_legislative');

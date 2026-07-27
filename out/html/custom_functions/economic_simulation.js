@@ -96,45 +96,48 @@ window.economy_presets = {
 };
 
 // This is for displaying region information
+// This is for displaying region information
 window.region_info_display = function(region_id) {
 
-var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-if (!Q.district_economy[region_id]) {
-    return;
-}
+    if (!Q.district_economy[region_id]) {
+        return;
+    }
 
-else {
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    // Q.region_economy = '<div id="region_economy" style="display: flex"></div>'
+    // Start building a single HTML container string
+    var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column;">';
 
     for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
         console.log(`Industry Category: ${industryName}`);
         
-        // Loop through the projects (individual buildings...) inside each category
-        // Can probably be renamed
+        // Loop through the projects inside each category
         industriesList.forEach(project => {
             console.log("-", project);
-            var project_name = project[0]
-            var project_owner = project[1]
+            var project_name = project[0];
+            var project_owner = project[1];
             var project_quantity = project[2] !== undefined ? project[2] : '';
 
-            // var project_photo = window.project_photos.project_name[1]
+            // Format the quantity nicely with a space if it exists
+            var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
 
-
-            var project_Html = `
+            // Append each project's HTML to our master string
+            containerHtml += `
                 <div class="project_container" style="position: relative; width: 100%;">
-                    <span class="h1" style="text-align: center;">${project_quantity}${project_name}</span>
+                    <span class="h1" style="text-align: center;">${displayQuantity}${project_name}</span>
                     <span>${project_owner}</span>
                 </div>
             `;
+        });
+    }
 
-            document.getElementById('region_economy').appendChild(project_Html);
+    // Close the container div
+    containerHtml += '</div>';
 
-            });
-        }
-    };
+    // Assign the entire block to your Dendry quality so the engine renders it safely
+    Q.region_economy = containerHtml;
 };
 
 console.log("got to end of eco simulation");

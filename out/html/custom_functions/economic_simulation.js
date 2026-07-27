@@ -107,7 +107,7 @@ if (!Q.district_economy[region_id]) {
 else {
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    Q.region_economy = '<div id="region_economy" style="display: flex"></div>'
+    // Q.region_economy = '<div id="region_economy" style="display: flex"></div>'
 
     for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
         console.log(`Industry Category: ${industryName}`);

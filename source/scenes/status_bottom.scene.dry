@@ -23,13 +23,13 @@ is-special: true
 <svg>
 !}
 
-<div id='region_info_display_display' style="width: 24em;">
+<div id='region_info_display_scene' style="width: 24em;">
 
 = [+ region_name +]
 
 [+ region_demographic +]
 
-[+ region_economy +]
+<div id='region_economy'>
 
 [+ region_seats +]
 

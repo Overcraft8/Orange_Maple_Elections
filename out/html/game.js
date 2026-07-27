@@ -595,7 +595,14 @@ window.updateBarContent = function(regionKey) {
 
     var sceneId = window[config.stateKey];
     var scene = dendryUI.game.scenes[sceneId];
-    if (!scene) return;
+    
+    // Safety check & fallback if the Dendry scene doesn't exist
+    if (!scene) {
+        console.warn(`[Mod Warning] Scene not found for ID: "${sceneId}" in region "${regionKey}". Falling back to default scene.`);
+        sceneId = config.isLeft ? "status" : "status_right";
+        scene = dendryUI.game.scenes[sceneId];
+        if (!scene) return;
+    }
 
     // Run status logic if processing the left main sidebar
     if (config.isLeft) {

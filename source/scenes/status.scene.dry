@@ -21,7 +21,7 @@ on-display: {!
     console.log('d3', !!window.d3, 'parliament', typeof (d3 && d3.parliament));
 console.log('Q.started', Q && Q.started, 'parliament_diagram', Q && Q.parliament_diagram);
 console.log('qualities element', document.getElementById('qualities'));
-    
+    console.log("1status")
     if (d3 && window && Q.started) {
         var data = Q.parliament_diagram;
         var screenWidth = document.getElementById('qualities').offsetWidth;
@@ -29,6 +29,7 @@ console.log('qualities element', document.getElementById('qualities'));
         var width = Math.max(Math.min(screenWidth , 200), 90);
         var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
         var height = width * heightRatio;
+        console.log("2status")
 
         document.getElementById("legislative_status").style.height = height + "px";
 
@@ -39,6 +40,7 @@ console.log('qualities element', document.getElementById('qualities'));
         legislative_status.enter.fromCenter(false).smallToBig(false);
         legislative_status.exit.toCenter(false).bigToSmall(false);
         d3.select("#legislative_status").datum(data).call(legislative_status);
+        console.log("3status")
 }
 !}
 

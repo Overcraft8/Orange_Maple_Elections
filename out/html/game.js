@@ -555,12 +555,12 @@ window.onDisplayContent = function() {
   };
 
 
-  window.justLoaded = true;
-  window.statusTab = "status";
-  window.statusTabRight = "status_right";
-  window.dendryModifyUI = main;
-  console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
-
+  // window.justLoaded = true;
+  // window.statusTab = "status";
+  // window.statusTabRight = "status_right";
+  // window.dendryModifyUI = main;
+  // console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
+// 
   window.onload = function() {
     // Was originally at false
     window.dendryUI.loadSettings({show_portraits: true});

@@ -95,7 +95,7 @@ window.economy_presets = {
     }
 };
 
-
+// This is for displaying region information
 window.region_info_display = function(region_id) {
 
 var Q = window.dendryUI?.dendryEngine?.state?.qualities;
@@ -106,6 +106,8 @@ if (!Q.district_economy[region_id]) {
 
 else {
     var economy_sectors = Q.district_economy[region_id].economy;
+
+    Q.region_economy = '<div id="region_economy" style="display: flex"></div>'
 
     for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
         console.log(`Industry Category: ${industryName}`);
@@ -119,6 +121,16 @@ else {
             var project_quantity = project[2]
 
             // var project_photo = window.project_photos.project_name[1]
+
+
+            var project_Html = 
+            '<div class="project_container" style="position: relative; width: 100%;">'
+                '<span class="h1" style="text-align: center;" >' + project_quantity + ' ' + project_name + '</span>'
+                '<span>' + project_owner + '</span'
+            '</div>';
+
+            document.getElementById('region_economy').appendChild(project_Html);
+
             });
         }
     };

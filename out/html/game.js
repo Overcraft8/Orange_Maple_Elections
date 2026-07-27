@@ -642,6 +642,7 @@ window.get_taxes_final = function(taxes_in_question) {
 }
 
 window.region_info = function() {
+console.log('clicked!')
 return; 
 };
 

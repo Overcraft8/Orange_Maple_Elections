@@ -873,7 +873,7 @@ Q.district_demography = {
 // Layout = 
 // Sector : [[Preset name, ownership type (private, cooperative, hybrid, crown), Quantity]]
 Q.district_economy = {
-    regina_d: {
+    'regina_d': {
                 economy: {
                     Manufacturing : [['Car Manufacturing Plant', 'private']], 
                     Finance : [['Banks', 'private', 2], ['Credit Unions', 'cooperative', 3]]

@@ -855,20 +855,21 @@ window.economy_presets = {
     }
 };
 
-/* 
+
 window.region_info = function(region_id) {
 
 if (!Q.district_economy[region_id]) {
     return;
 }
+
 else {
-    var economy_presets = Q.district_economy[region_id].economy
-    for (preset of economy_presets) {
-
+    var economy_sectors = Q.district_economy[region_id].economy
+    for (sector of economy_sectors) {
+        console.log(sector)
     }
-}
+};
 
-};*/
+};
 
 })();
 

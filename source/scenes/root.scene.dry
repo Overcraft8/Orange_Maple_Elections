@@ -1103,8 +1103,8 @@ Q.spry_advisor = 0; // Graham Spry
 
 
 
-window.ChangeTab('left', 'status', 'main_tab')
-window.ChangeTab('right', 'status_right', 'party_tab')
+window.ChangeTab('left', 'status', 'main_tab');
+window.ChangeTab('right', 'status_right', 'party_tab');
 
 
 

@@ -118,16 +118,17 @@ else {
             console.log("-", project);
             var project_name = project[0]
             var project_owner = project[1]
-            var project_quantity = project[2]
+            var project_quantity = project[2] !== undefined ? project[2] : '';
 
             // var project_photo = window.project_photos.project_name[1]
 
 
-            var project_Html = 
-            '<div class="project_container" style="position: relative; width: 100%;">'
-                '<span class="h1" style="text-align: center;" >' + project_quantity + ' ' + project_name + '</span>'
-                '<span>' + project_owner + '</span'
-            '</div>';
+            project_Html += `
+                <div class="project_container" style="position: relative; width: 100%;">
+                    <span class="h1" style="text-align: center;">${project_quantity}${project_name}</span>
+                    <span>${project_owner}</span>
+                </div>
+            `;
 
             document.getElementById('region_economy').appendChild(project_Html);
 

@@ -19,7 +19,7 @@ if (Q.economic_growth) {
 }
 !}
 on-display: {!
-    console.log('status1')
+    console.log('status1');
     if (d3 && window && Q.started) {
         var data = Q.parliament_diagram;
         var screenWidth = document.getElementById('qualities').offsetWidth;

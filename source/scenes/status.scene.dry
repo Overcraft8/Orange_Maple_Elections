@@ -1,4 +1,4 @@
-title: Status
+title: Government
 new-page: true
 is-special: true
 on-arrival: {!
@@ -17,6 +17,10 @@ if (Q.economic_growth) {
 }
 !}
 on-display: {!
+
+    console.log('d3', !!window.d3, 'parliament', typeof (d3 && d3.parliament));
+console.log('Q.started', Q && Q.started, 'parliament_diagram', Q && Q.parliament_diagram);
+console.log('qualities element', document.getElementById('qualities'));
     
     if (d3 && window && Q.started) {
         var data = Q.parliament_diagram;
@@ -72,6 +76,27 @@ Assembly composition:
  <div style="display: flex; justify-content: center; align-items: stretch;"> 
  {!<svg id="legislative_status"  style="width: 200px; height: 100px;"> </svg>!} 
  </div>
+
+
+ {!<script> 
+ (function() {
+    var data = Q.parliament_diagram;
+    var screenWidth = document.getElementById('qualities').offsetWidth;
+    var width = Math.max(Math.min(screenWidth , 200), 90);
+    var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+    var height = width * heightRatio;
+
+    document.getElementById("legislative_status").style.height = height + "px";
+
+    var legislative_status = d3.parliament();
+    legislative_status.width(width);
+    legislative_status.height(height);
+    legislative_status.innerRadiusCoef(0.4);
+    legislative_status.enter.fromCenter(false).smallToBig(false);
+    legislative_status.exit.toCenter(false).bigToSmall(false);
+    d3.select("#legislative_status").datum(data).call(legislative_status);
+})();
+</script>!}
 
 <div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22

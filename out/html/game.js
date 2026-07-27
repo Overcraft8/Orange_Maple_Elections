@@ -639,7 +639,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
 
     // -------------------------------------------------------------
-    // Close if the clicked tab is ALREADY active
+    // Close if the clicked tab is already active
     // -------------------------------------------------------------
     if (window.prev_tab_id === tabId || tabButton.classList.contains('active')) {
         tabButton.classList.remove('active');
@@ -844,6 +844,32 @@ window.get_taxes_final = function(taxes_in_question) {
     console.log(rich_pop);
 }
 
+// Basic information for each building/project type
+// [ Name of item (factory, infrastructure, etc.) ] : [jobs, economic_output, standard_budget_influx]
+window.economy_presets = {
+    Manufacturing = {
+        'Car Manufacturing Plant' : [0.2, 0.4, 2]
+    },
+    Mining = {
+        'Potash Mine' : [0.4, 0.5, 3]
+    }
+}
+
+/* 
+window.region_info = function(region_id) {
+
+if (!Q.district_economy[region_id]) {
+    return;
+}
+else {
+    var economy_presets = Q.district_economy[region_id].economy
+    for (preset of economy_presets) {
+
+    }
+}
+
+};*/
+
 })();
 
 
@@ -920,74 +946,6 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
     renderBar();
 };
 
-
-/* 
-window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
-    var container = document.getElementById(elementID);
-    
-    if (!container) {
-        setTimeout(function() { window.customgeneratemultibar(dataArray, outercolor, colorsArray, elementID, tooltips); }, 25);
-        return;
-    }
-
-    var data = [].concat(dataArray);
-    var colors = [].concat(colorsArray);
-    var texts = [].concat(tooltips);
-
-    // 1. Filter valid segments and calculate the TOTAL sum
-    var valid = [];
-    var absoluteTotal = 0; 
-
-    for (var j = 0; j < data.length; j++) {
-        var val = Number(data[j]);
-        if (val > 0) {
-            valid.push({ val: val, color: colors[j] || '#ccc', text: texts[j] || '' });
-            absoluteTotal += val; // Add to our grand total
-        }
-    }
-
-    var innerSegmentsHtml = '';
-    var currentPercentTotal = 0;
-
-    // 2. Build the inner segments using normalized math
-    for (var i = 0; i < valid.length; i++) {
-        var width = (valid[i].val / absoluteTotal) * 100;
-        
-        if (currentPercentTotal + width > 100) width = 100 - currentPercentTotal;
-        currentPercentTotal += width;
-
-        var radiusStyle = '';
-        if (i === 0) radiusStyle += 'border-top-left-radius: 3px; border-bottom-left-radius: 3px; ';
-        if (i === valid.length - 1 || currentPercentTotal >= 99.9) radiusStyle += 'border-top-right-radius: 3px; border-bottom-right-radius: 3px; ';
-
-        var alignClass = 'tt-center';
-        if (i === 0) alignClass = 'tt-left';
-        else if (i === valid.length - 1 || currentPercentTotal >= 99.9) alignClass = 'tt-right';
-
-        innerSegmentsHtml += 
-            '<div class="tooltip ' + alignClass + '" style="position: relative; height: 100%; width: ' + width + '%; display: block;">' + 
-                '<div style="background: ' + valid[i].color + '; opacity: 0.8; height: 100%; width: 100%; ' + radiusStyle + '"></div>' +
-                '<span class="tooltip-text">' + valid[i].text + '</span>' +
-            '</div>';
-    }
-
-    var styleBlock = 
-        '<style>' +
-            '.tt-left .tooltip-text { left: 0; transform: translateY(5px); } ' +
-            '.tt-left:hover .tooltip-text { transform: translateY(0); opacity: 1; } ' +
-            '.tt-right .tooltip-text { left: auto; right: 0; transform: translateY(5px); } ' +
-            '.tt-right:hover .tooltip-text { transform: translateY(0); opacity: 1; } ' +
-            '.tt-center .tooltip-text { left: 50%; transform: translateX(-50%) translateY(5px); } ' +
-            '.tt-center:hover .tooltip-text { transform: translateX(-50%) translateY(0); opacity: 1; } ' +
-        '</style>';
-
-    container.innerHTML = styleBlock + 
-        '<div style="width: 100%; position: relative;">' + 
-            '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; border: 1px solid #000; overflow: visible;">' +
-                innerSegmentsHtml + 
-            '</div>' +
-        '</div>';
-}; */
 
 window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, elementID, tooltips) {
     var container = document.getElementById(elementID);

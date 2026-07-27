@@ -613,10 +613,9 @@ window.updateBarContent = function(regionKey) {
     tempDiv.innerHTML = htmlContent;
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
     $(targetSelector).html(tempDiv.innerHTML);
-// // Run display hooks if processing the left main sidebar
-    // if (config.isLeft) {
-    //     dendryUI.dendryEngine._runActions(scene.onDisplay);
-    // }
+
+    // Run display hooks so D3 charts, SVGs, and dynamic UI initialize
+    dendryUI.dendryEngine._runActions(scene.onDisplay);
 };
 
 // ==========================================

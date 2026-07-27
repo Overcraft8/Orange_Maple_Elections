@@ -440,7 +440,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
 
     // -------------------------------------------------------------
-    // Close if the clicked tab is ALREADY active
+    // Close if the clicked tab is already active
     // -------------------------------------------------------------
     if (window.prev_tab_id === tabId || tabButton.classList.contains('active')) {
         tabButton.classList.remove('active');

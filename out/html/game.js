@@ -623,9 +623,12 @@ window.updateBarContent = function(regionKey) {
 // ==========================================
 // Unified Tab Changing
 // ==========================================
-window.prev_tab_id = null;
-
 window.ChangeTab = function(regionKey, newTab, tabId) {
+    if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
+        window.alert('Polls are not available in historical mode.');
+        return;
+    }
+
     var config = BAR_CONFIG[regionKey];
     var container = document.getElementById(config.containerId);
     var tabButton = document.getElementById(tabId);
@@ -658,17 +661,17 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         return;
     }
 
+    // Process button classes independently rather than using mutually exclusive else-ifs
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
-        tabButton.classList.add('active');
     } 
-    else if (tabButton.classList.contains('status_panel_card')) {
+    
+    if (tabButton.classList.contains('status_panel_card')) {
         for (let i = 0; i < statusPanelCards.length; i++) statusPanelCards[i].classList.remove('active');
-        tabButton.classList.add('active');
     } 
-    else if (tabButton.classList.contains('tab_button')) {
+    
+    if (tabButton.classList.contains('tab_button')) {
         for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
-        tabButton.classList.add('active');
 
         // Reset visibility of sub tab containers inside this region
         var allTabContainers = container.getElementsByClassName('status_tab_container');
@@ -683,13 +686,14 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         }
     }
 
-    // Track active tab ID
-    window.prev_tab_id = tabId;
+    // Unconditionally add the active state to the clicked button
+    tabButton.classList.add('active');
 
     // Save state globally and update UI
-    window[config.active_scene] = newTab;
-    window.updateBar(regionKey);
+    window[config.stateKey] = newTab;
+    window.updateBarContent(regionKey);
 };
+
 // ==========================================
 // Backwards Compatibility
 // ==========================================

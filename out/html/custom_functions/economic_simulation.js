@@ -123,7 +123,7 @@ else {
             // var project_photo = window.project_photos.project_name[1]
 
 
-            project_Html += `
+            var project_Html = `
                 <div class="project_container" style="position: relative; width: 100%;">
                     <span class="h1" style="text-align: center;">${project_quantity}${project_name}</span>
                     <span>${project_owner}</span>

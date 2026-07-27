@@ -858,6 +858,8 @@ window.economy_presets = {
 
 window.region_info = function(region_id) {
 
+var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+
 if (!Q.district_economy[region_id]) {
     return;
 }
@@ -909,7 +911,6 @@ window.toggleDistrict = function() {
 window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip) {
 
     function renderBar() {
-
 
         var container = document.getElementById(elementID);
         if (!container) {

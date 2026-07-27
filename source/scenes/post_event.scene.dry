@@ -591,9 +591,9 @@ if (this.ui && this.ui.show_portraits) {
     }
 }
 
-window.updateBar('right');
-window.updateBar('left');
-window.updateBar('bottom');
+window.updateBarContent('right');
+window.updateBarContent('left');
+window.updateBarContent('bottom');
 
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0

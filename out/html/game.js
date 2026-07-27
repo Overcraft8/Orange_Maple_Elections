@@ -867,9 +867,14 @@ if (!Q.district_economy[region_id]) {
 else {
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    for (sector of economy_sectors) {
-        console.log(sector);
-    }
+    for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
+        console.log(`Industry Category: ${industryName}`);
+        
+        // Loop through the items inside each category
+        industriesList.forEach(item => {
+            console.log("-", item);
+        });
+}
 };
 
 };

@@ -26,7 +26,9 @@ is-special: true
 
 = [+ region_name +]
 
-[+ region_demographic +]
+<div id='region_demographic'></div>
+
+# [+ region_demographic +]
 
 [+ region_economy +]
 

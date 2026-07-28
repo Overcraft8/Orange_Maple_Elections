@@ -68,9 +68,6 @@ window.get_taxes_final = function(taxes_in_question) {
 }
 
 
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,6 +101,52 @@ window.region_info_display = function(region_id) {
         return;
     }
 
+    // Region Name
+    var region = Q.region_names[region_id]; 
+    Q.region_name = region;
+
+    //------------------------------------------------------
+    //                   Demographics                     //
+    //------------------------------------------------------
+
+    if (window && window.customgeneratemultibar) {
+        var strengths = [];
+        var class_info = [];
+        var tooltip = [];
+
+        for (var c of Q.classes) {
+            if (region_id + c) {
+                for (var class_collect of Q.class_info) {
+                    if (class_collect[0] == c) {
+                        class_info.push(class_collect[2]);
+                        tooltip.push(class_collect[1])
+                    }
+                }
+
+                strengths.push(region_id + c)
+            }
+        };
+        
+        window.customgeneratemultibar(
+            strengths, 
+            "#333333", 
+            class_info, 
+            "region_demography", 
+            tooltip
+        );
+    }
+
+
+
+
+
+
+
+
+    //---------------------------------------------------------
+    //                   Economy                             //
+    //---------------------------------------------------------
+
     var economy_sectors = Q.district_economy[region_id].economy;
 
     var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column;">';
@@ -123,7 +166,7 @@ window.region_info_display = function(region_id) {
             // Format the quantity nicely with a space if it exists
             var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
 
-            // Append each project's HTML to our master string
+            // Append each project's HTML to master string
             containerHtml += `
                 <div class="project_container" style="position: relative; width: 100%;">
                     <span class="h1" style="text-align: center;">${displayQuantity}${project_name}</span>

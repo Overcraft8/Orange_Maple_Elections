@@ -138,7 +138,7 @@ window.region_info_display = function(region_id) {
         strengths, 
         "#333333", 
         class_info, 
-        "region_demography", 
+        'return_html', 
         tooltip
     );
 

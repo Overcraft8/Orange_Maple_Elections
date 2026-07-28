@@ -92,7 +92,7 @@ window.economy_presets = {
     }
 };
 
-// This is for displaying region information
+// This is for displaying regional information
 window.region_info_display = function(region_id) {
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
@@ -101,7 +101,10 @@ window.region_info_display = function(region_id) {
         return;
     }
 
-    // Region Name
+    //------------------------------------------------------
+    //                   Region Name                      //
+    //------------------------------------------------------
+
     var region = Q.region_names[region_id]; 
     Q.region_name = region;
 
@@ -109,39 +112,33 @@ window.region_info_display = function(region_id) {
     //                   Demographics                     //
     //------------------------------------------------------
 
-    if (window && window.customgeneratemultibar) {
-        var strengths = [];
-        var class_info = [];
-        var tooltip = [];
+    var strengths = [];
+    var class_info = [];
+    var tooltip = [];
 
-        for (var c of Q.classes) {
-            if (region_id + c) {
-                for (var class_collect of Q.class_info) {
-                    if (class_collect[0] == c) {
-                        class_info.push(class_collect[2]);
-                        tooltip.push(class_collect[1])
-                    }
+    for (var c of Q.classes) {
+
+        var region_class = region_id + '_' + c;
+
+        if (Q[region_class] && Q[region_class] > 0) {
+            for (var class_collect of Q.class_info) {
+                if (class_collect[0] == c) {
+                    class_info.push(class_collect[2]);
+                    tooltip.push(class_collect[1])
                 }
-
-                strengths.push(region_id + c)
             }
-        };
-        
-        window.customgeneratemultibar(
-            strengths, 
-            "#333333", 
-            class_info, 
-            "region_demography", 
-            tooltip
-        );
-    }
 
-
-
-
-
-
-
+            strengths.push(region_id + c)
+        }
+    };
+    
+    window.customgeneratemultibar(
+        strengths, 
+        "#333333", 
+        class_info, 
+        "region_demography", 
+        tooltip
+    );
 
     //---------------------------------------------------------
     //                   Economy                             //

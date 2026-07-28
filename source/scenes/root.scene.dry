@@ -753,9 +753,9 @@ Q.classes = ['workers', 'old_middle', 'new_middle', 'farmers', 'farmhands', 'rur
 
 // With arrangement [Q.class_variable, Class Display Name, Class colour]
 Q.class_info = [['workers', 'Workers', '#2844d2'], ['old_middle', 'Old Middle', '#d7be1c'], ['new_middle', 'New Middle', '#22c3c0'], 
-['farmers', 'Farmers', '#b2c520'], ['farmhands', 'Farmhands', '#3a9c1c'], ['rural_workers', 'Workers', '#2844d2'], ['unemployed', 'Unemployed', '#595959"']]
+['farmers', 'Farmers', '#b2c520'], ['farmhands', 'Farmhands', '#3a9c1c'], ['rural_workers', 'Workers', '#2844d2'], ['unemployed', 'Unemployed', '#595959"']];
 
-"#b2c520", "#2844d2", "#22c3c0", "#e92677"
+
 Q.class_incomes = {
     'unemployed' : 0,
     'workers' : 0.2, 
@@ -871,7 +871,7 @@ Q.region_names = {
     "southeast_d": 'Southeast', 
     "north_d": 'North',
     "central_d": 'Central'
-}
+};
 
 
 Q.district_demography = {
@@ -940,9 +940,9 @@ for (var c of Q.classes) {
 
 
 
-//////////////////////////////////////
-// Region display            //
-////////////////////////////////////////
+//--------------------------------------
+//          Region display            //
+//--------------------------------------
 
 Q.region_name;
 Q.region_economy;

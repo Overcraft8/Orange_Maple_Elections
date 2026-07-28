@@ -108,6 +108,10 @@ window.region_info_display = function(region_id) {
     var region = Q.region_names[region_id]; 
     Q.region_name = region;
 
+    if (typeof window.updateBarContent === 'function') {
+        window.updateBarContent('bottom');
+    }
+
     //------------------------------------------------------
     //                   Demographics                     //
     //------------------------------------------------------
@@ -128,7 +132,7 @@ window.region_info_display = function(region_id) {
                 }
             }
 
-            strengths.push(region_id + c)
+            strengths.push(Q[region_class]);
         }
     };
     

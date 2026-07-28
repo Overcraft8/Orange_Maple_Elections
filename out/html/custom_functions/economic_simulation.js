@@ -134,7 +134,7 @@ window.region_info_display = function(region_id) {
         }
     };
     
-    window.customgeneratemultibar(
+    Q.region_demography = window.customgeneratemultibar(
         strengths, 
         "#333333", 
         class_info, 

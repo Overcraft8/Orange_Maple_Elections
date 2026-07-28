@@ -28,7 +28,7 @@ is-special: true
 
 <div id='region_demography'></div>
 
-[+ region_demographic +]
+[+ region_demography +]
 
 [+ region_economy +]
 

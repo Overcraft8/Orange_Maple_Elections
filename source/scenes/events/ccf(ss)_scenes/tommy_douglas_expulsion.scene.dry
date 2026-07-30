@@ -26,5 +26,5 @@ The National CCF will consider the input of it's provincial counterpart greatly.
 @remove_douglas_candidacy
 
 @expel_douglas
-choose-if: 1 = 2;
+choose-if: 1 = 2
 unavailable-subtitle: Douglas retains considerable relations with party leadership

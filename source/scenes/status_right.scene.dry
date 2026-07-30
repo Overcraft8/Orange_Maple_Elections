@@ -138,7 +138,9 @@ if (window && window.customgeneratemultibar) {
 
 = Faction Strength
 
+<div style='justify-content: center; text-align: center;'>
 <div id="faction_strength_bar"></div><br>
+</div>
 
 = Party Demography
 

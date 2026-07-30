@@ -26,11 +26,13 @@ is-special: true
 
 = [+ region_name +]
 
-<div id='region_demography'></div>
+# <div id='region_demography'></div>
 
 [+ region_demography +]
 
+<div style='justify-content: center; text-align: center;'>
 [+ region_economy +]
+</div>
 
 [+ region_seats +]
 

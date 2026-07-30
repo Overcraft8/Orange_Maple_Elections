@@ -82,7 +82,7 @@ window.get_taxes_final = function(taxes_in_question) {
 
 
 // Basic information for each building/project type
-// [ Name of item (factory, infrastructure, etc.) ] : [jobs, standard_economic_output, standard_budget_influx]
+// [ Name of item (factory, infrastructure, etc.) ] : [jobs, standard_economic_output, standard_budget_influx, photo]
 window.economy_presets = {
     'Manufacturing' : {
         'Car Manufacturing Plant' : [0.2, 0.4, 2]
@@ -91,6 +91,7 @@ window.economy_presets = {
         'Potash Mine' : [0.4, 0.5, 3]
     }
 };
+
 
 // This is for displaying regional information
 window.region_info_display = function(region_id) {

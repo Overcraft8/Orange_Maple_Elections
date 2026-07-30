@@ -1,0 +1,30 @@
+title: Tommy Douglas and Social Credit
+subtitle: A CCF-Socred Candidate?
+tags: event
+view-if: year = 1932 and month = 2
+priority: 2
+max-visits: 1
+face-image: img/DouglasTommy.jpg
+
+= A CCF-Socred Candidate?
+
+Tommy Douglas, standing CCF candidate for the Federal riding of Weyburn has come under controversy for not only receiving the endorsement of the Social Credit locale but also expressing general support for Social Credit policies. While this would normally lead to stripping of candidacy, CCF(SS) leader M.J. Coldwell has threatened public resignation if Douglas, his protege, were to be repudiated. With the Federal election just days away, such an act would haunt the party into it's first national test. 
+
+However, this may also be an opportunity to signal closer cooperation with the Social Credit Party, it too being borne out of frustration with the current order. 
+
+The National CCF will consider the input of it's provincial counterpart greatly. 
+
+- @keep_douglas: Douglas shall Remain
+- @repudiate_douglas: Recommend a censure but retain his candidacy
+- @remove_douglas_candidacy: Remove Douglas' CCF candidacy
+- @expel_douglas: Can we expel Tommy Douglas?
+
+@keep_douglas
+
+@repudiate_douglas
+
+@remove_douglas_candidacy
+
+@expel_douglas
+choose-if: 1 = 2;
+unavailable-subtitle: Douglas retains considerable relations with party leadership

@@ -389,6 +389,10 @@ img.inline-img.icon {
   background-color: #b08a5e7a;
 }
 
+.dark-mode .status_tab_container {
+  background-color: #919191
+}
+
 /* For tab buttons nested inside scenes */
 .status_tab_button {
   font-family: "Minion Pro", Georgia, serif;
@@ -994,4 +998,15 @@ a.status_panel_info {
 .project_container {
   width: 15em;
   background-color: white; 
+}
+
+.horizontal_line {
+  display: inline-block; 
+  width: 100%; .dark-mode .status_tab_container {
+  background-color: #919191
+}
+  border-top: 1px solid #dcb682; 
+  margin: 8px 0; 
+  text-indent: 0; 
+  vertical-align: middle
 }

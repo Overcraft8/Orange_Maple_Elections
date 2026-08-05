@@ -149,7 +149,7 @@ window.region_info_display = function(region_id) {
 
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column; gap: 8px;">';
+    var containerHtml = '<div id="region_economy" style="display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0.5em;">';
 
     for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
         console.log(`Industry Category: ${industryName}`);
@@ -182,8 +182,11 @@ window.region_info_display = function(region_id) {
                     padding: 12px;
                     color: #ffffff;
                     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+                    border: ridge; 
+                    border-color: #9c8c64;
                 ">
                     <span class="h1">${displayQuantity}${project_name}</span>
+                    <span class="horizontal_line"></span>
                     <span>${project_owner}</span>
                 </div>
             `;
@@ -193,7 +196,6 @@ window.region_info_display = function(region_id) {
     // Close the container div
     containerHtml += '</div>';
 
-    // Assign the entire block to your Dendry quality so the engine renders it safely
     Q.region_economy = containerHtml;
     window.updateBarContent('bottom');
 };

@@ -891,8 +891,8 @@ Q.district_demography = {
 Q.district_economy = {
     'regina_d': {
                 'economy' : {
-                    Manufacturing : [['Car Manufacturing Plant', 'private']], 
-                    Finance : [['Banks', 'private', 2], ['Credit Unions', 'cooperative', 3]]
+                    'Manufacturing' : [['Car Manufacturing Plant', 'private']], 
+                    'Finance' : [['Banks', 'private', 2], ['Credit Unions', 'cooperative', 3]]
                 }
               }
 };

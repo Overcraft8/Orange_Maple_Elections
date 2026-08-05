@@ -85,7 +85,7 @@ window.get_taxes_final = function(taxes_in_question) {
 // [ Name of item (factory, infrastructure, etc.) ] : [jobs, standard_economic_output, standard_budget_influx, photo]
 window.economy_presets = {
     'Manufacturing' : {
-        'Car Manufacturing Plant' : [0.2, 0.4, 2]
+        'Car Manufacturing Plant' : [0.2, 0.4, 2, 'robin_hood_mill.jpg']
     },
     'Mining' : {
         'Potash Mine' : [0.4, 0.5, 3, 'coal_mining.jpg']
@@ -149,44 +149,46 @@ window.region_info_display = function(region_id) {
 
     var economy_sectors = Q.district_economy[region_id].economy;
 
-var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column; gap: 8px;">';
+    var economy_presets = window.economy_presets;
 
-for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
-    console.log(`Industry Category: ${industryName}`);
-    
-    // Loop through the projects inside each category
-    industriesList.forEach(project => {
-        console.log("-", project);
-        var project_name = project[0];
-        var project_owner = project[1];
-        var project_quantity = project[2] !== undefined ? project[2] : '';
-        var image_display = project[3] !== undefined ? project[3] : 'portraits/Question_mark.jpg';
+    var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column; gap: 8px;">';
 
-        // Format the quantity nicely with a space if it exists
-        var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
+    for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
+        console.log(`Industry Category: ${industryName}`);
+        
+        // Loop through the projects inside each category
+        industriesList.forEach(project => {
+            console.log("-", project);
+            var project_name = project[0];
+            var project_owner = project[1];
+            var project_quantity = project[2] !== undefined ? project[2] : '';
+            var image_display = economy_presets[industryName][project_name][3] !== undefined ? economy_presets[industryName][project_name][3] : 'portraits/Question_Mark.jpg';
 
-        // Append each project's HTML to master string
-        containerHtml += `
-            <div class="project_container" style="
-                position: relative; 
-                display: flex; 
-                flex-direction: column; 
-                align-items: center; 
-                justify-content: center; 
-                text-align: center; 
-                background-image: url('img/${image_display}'); 
-                background-size: cover; 
-                background-position: center;
-                padding: 12px;
-                color: #ffffff;
-                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-            ">
-                <span class="h1">${displayQuantity}${project_name}</span>
-                <span>${project_owner}</span>
-            </div>
-        `;
-    });
-}
+            // Format the quantity nicely with a space if it exists
+            var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
+
+            // Append each project's HTML to master string
+            containerHtml += `
+                <div class="project_container" style="
+                    position: relative; 
+                    display: flex; 
+                    flex-direction: column; 
+                    align-items: center; 
+                    justify-content: center; 
+                    text-align: center; 
+                    background-image: url('img/${image_display}'); 
+                    background-size: cover; 
+                    background-position: center;
+                    padding: 12px;
+                    color: #ffffff;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+                ">
+                    <span class="h1">${displayQuantity}${project_name}</span>
+                    <span>${project_owner}</span>
+                </div>
+            `;
+        });
+    }
 
     // Close the container div
     containerHtml += '</div>';

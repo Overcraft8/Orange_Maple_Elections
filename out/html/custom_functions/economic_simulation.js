@@ -149,8 +149,6 @@ window.region_info_display = function(region_id) {
 
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    var economy_presets = window.economy_presets;
-
     var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column; gap: 8px;">';
 
     for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
@@ -162,7 +160,9 @@ window.region_info_display = function(region_id) {
             var project_name = project[0];
             var project_owner = project[1];
             var project_quantity = project[2] !== undefined ? project[2] : '';
-            var image_display = economy_presets[industryName][project_name][3] !== undefined ? economy_presets[industryName][project_name][3] : 'portraits/Question_Mark.jpg';
+            
+            var presetData = window.economy_presets[industryName]?.[project_name];
+            var image_display = (presetData && presetData[3]) ? presetData[3] : 'portraits/Question_Mark.jpg';
 
             // Format the quantity nicely with a space if it exists
             var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';

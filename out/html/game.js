@@ -858,7 +858,7 @@ window.customgeneratemultibar = function(dataArray, outercolor, colorsArray, ele
     }
 
     var finalHtml = 
-        '<div style="width: 900%; position: relative;">' + 
+        '<div style="width: 90%; position: relative;">' + 
             '<div style="display: flex; height: 15px; background: ' + outercolor + '; border-radius: 4px; border: 1px solid #000; overflow: visible;">' +
                 innerSegmentsHtml + 
             '</div>' +

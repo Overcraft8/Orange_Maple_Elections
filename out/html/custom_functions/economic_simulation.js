@@ -88,7 +88,7 @@ window.economy_presets = {
         'Car Manufacturing Plant' : [0.2, 0.4, 2]
     },
     'Mining' : {
-        'Potash Mine' : [0.4, 0.5, 3]
+        'Potash Mine' : [0.4, 0.5, 3, 'coal_mining.jpg']
     }
 };
 
@@ -160,6 +160,7 @@ window.region_info_display = function(region_id) {
             var project_name = project[0];
             var project_owner = project[1];
             var project_quantity = project[2] !== undefined ? project[2] : '';
+            var image_display = project[3] !== undefined ? project[3] :'portraits/Question_mark.jpg';
 
              // var project_photo = window.project_photos.project_name[1]
 
@@ -168,8 +169,9 @@ window.region_info_display = function(region_id) {
 
             // Append each project's HTML to master string
             containerHtml += `
-                <div class="project_container" style="position: relative; width: 100%;">
-                    <span class="h1" style="text-align: center;">${displayQuantity}${project_name}</span>
+                <div class="project_container" style="position: relative; display: flex; text-align: center; baackground-image: url(img/${image_display}); background-size: cover;">
+                    <span class="h1">${displayQuantity}${project_name}</span>
+                    <br>
                     <span>${project_owner}</span>
                 </div>
             `;

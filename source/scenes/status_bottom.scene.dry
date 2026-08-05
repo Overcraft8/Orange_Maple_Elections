@@ -30,9 +30,9 @@ is-special: true
 
 [+ region_demography +]
 
-<div style='justify-content: center; text-align: center;'>
+{!<div style='justify-content: center; text-align: center;'>!}
 [+ region_economy +]
-</div>
+{!</div>!}
 
 [+ region_seats +]
 

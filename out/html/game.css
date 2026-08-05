@@ -996,15 +996,13 @@ a.status_panel_info {
 
 
 .project_container {
-  width: 15em;
+  width: 7em;
   background-color: white; 
 }
 
 .horizontal_line {
   display: inline-block; 
-  width: 100%; .dark-mode .status_tab_container {
-  background-color: #919191
-}
+  width: 100%;
   border-top: 1px solid #dcb682; 
   margin: 8px 0; 
   text-indent: 0; 

@@ -185,9 +185,13 @@ window.region_info_display = function(region_id) {
                     border: ridge; 
                     border-color: #9c8c64;
                 ">
-                    <span class="h1">${displayQuantity}${project_name}</span>
-                    <span class="horizontal_line"></span>
-                    <span>${project_owner}</span>
+                    <div style='background-color: #000000; opacity: 40%;"
+                        <div style='opacity: 100%;"
+                            <span class="h1" style="text-size: 10px;">${displayQuantity}${project_name}</span>
+                            <span class="horizontal_line"></span>
+                            <span style="text-size: 10px;">${project_owner}</span>
+                        </div>
+                    </div>
                 </div>
             `;
         });

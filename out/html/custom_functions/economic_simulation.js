@@ -185,7 +185,7 @@ window.region_info_display = function(region_id) {
                     border: ridge; 
                     border-color: #9c8c64;
                 ">
-                    <div style='background-color: rgb(0, 0, 0, 0.8) opacity: 40%;"
+                    <div style="background-color: rgba(0, 0, 0, 0.2) opacity: 40%;">
                         <span class="h1" style="font-size: 10px;">${displayQuantity}${project_name}</span>
                         <span class="horizontal_line"></span>
                         <span style="font-size: 10px;">${project_owner}</span>

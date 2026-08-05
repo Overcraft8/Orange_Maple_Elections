@@ -149,34 +149,44 @@ window.region_info_display = function(region_id) {
 
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column;">';
+var containerHtml = '<div id="region_economy" style="display: flex; flex-direction: column; gap: 8px;">';
 
-    for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
-        console.log(`Industry Category: ${industryName}`);
-        
-        // Loop through the projects inside each category
-        industriesList.forEach(project => {
-            console.log("-", project);
-            var project_name = project[0];
-            var project_owner = project[1];
-            var project_quantity = project[2] !== undefined ? project[2] : '';
-            var image_display = project[3] !== undefined ? project[3] :'portraits/Question_mark.jpg';
+for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
+    console.log(`Industry Category: ${industryName}`);
+    
+    // Loop through the projects inside each category
+    industriesList.forEach(project => {
+        console.log("-", project);
+        var project_name = project[0];
+        var project_owner = project[1];
+        var project_quantity = project[2] !== undefined ? project[2] : '';
+        var image_display = project[3] !== undefined ? project[3] : 'portraits/Question_mark.jpg';
 
-             // var project_photo = window.project_photos.project_name[1]
+        // Format the quantity nicely with a space if it exists
+        var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
 
-            // Format the quantity nicely with a space if it exists
-            var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
-
-            // Append each project's HTML to master string
-            containerHtml += `
-                <div class="project_container" style="position: relative; display: flex; text-align: center; baackground-image: url(img/${image_display}); background-size: cover;">
-                    <span class="h1">${displayQuantity}${project_name}</span>
-                    <br>
-                    <span>${project_owner}</span>
-                </div>
-            `;
-        });
-    }
+        // Append each project's HTML to master string
+        containerHtml += `
+            <div class="project_container" style="
+                position: relative; 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                text-align: center; 
+                background-image: url('img/${image_display}'); 
+                background-size: cover; 
+                background-position: center;
+                padding: 12px;
+                color: #ffffff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            ">
+                <span class="h1">${displayQuantity}${project_name}</span>
+                <span>${project_owner}</span>
+            </div>
+        `;
+    });
+}
 
     // Close the container div
     containerHtml += '</div>';

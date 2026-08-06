@@ -27,14 +27,17 @@ is-special: true
 = [+ region_name +]
 
 # <div id='region_demography'></div>
-
+<div style="margin: 0.5em;">
 [+ region_demography +]
+</div>
 
 {!<div style='justify-content: center; text-align: center;'>!}
 [+ region_economy +]
 {!</div>!}
 
-[+ region_seats +]
+{!<svg id="region_seats" style="width: 250px; height: 125px;"> </svg>!}
+
+# [+ region_seats +]
 
 [+ region_situation +]
 

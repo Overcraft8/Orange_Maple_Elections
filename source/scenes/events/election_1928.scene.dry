@@ -503,7 +503,6 @@ if (window && d3) {
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#assembly").datum(data).call(parliament);
-    
 }
 !}
 go-to: coalition_menu

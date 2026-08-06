@@ -93,6 +93,14 @@ window.economy_presets = {
 };
 
 
+
+
+
+
+//------------------------------------------------------------//
+//                      REGIONAL INFO                         //
+//------------------------------------------------------------//
+
 // This is for displaying regional information
 window.region_info_display = function(region_id) {
 
@@ -185,7 +193,7 @@ window.region_info_display = function(region_id) {
                     border: ridge; 
                     border-color: #9c8c64;
                 ">
-                    <div style="background-color: rgba(0, 0, 0, 0.4)">
+                    <div style="background-color: rgba(0, 0, 0, 5)">
                         <span class="h1" style="font-size: 10px;">${displayQuantity}${project_name}</span>
                         <span class="horizontal_line"></span>
                         <span style="font-size: 10px;">${project_owner}</span>
@@ -199,6 +207,56 @@ window.region_info_display = function(region_id) {
     containerHtml += '</div>';
 
     Q.region_economy = containerHtml;
+
+    //---------------------------------------------------------
+    //                   Regional Seats                      //
+    //---------------------------------------------------------
+
+    var data = [];
+
+    for (var party of Q.parties) {
+        
+        var index = Q.parties.indexOf(party);
+        var name = Q.parties_disp_names[index];
+
+        data.push({
+            "id": party,
+            "legend": name,
+            "name": name,
+            "seats": Q[region_id + '_' + party + '_seats'] || 0
+        });
+    }
+
+    data = data.filter(p => p.seats > 0);
+
+    console.log("Seat totals by party:");
+    for (var party of Q.parties) {
+        console.log(party, Q[party+'_seats']);
+    }
+
+    if (window && d3) {
+
+        d3.select("#region_seats").selectAll("*").remove();
+
+        var width = 350; 
+        var height = 350;
+        var screenWidth = document.getElementById('content').offsetWidth;
+        if (screenWidth < width - 50) {
+            width = screenWidth - 50; 
+            height = width;
+            document.getElementById("region_seats").style.height = screenWidth/2 + "px";
+        }
+
+        var parliament = d3.parliament();
+        parliament.width(width).height(height).innerRadiusCoef(0.4);
+        parliament.enter.fromCenter(true).smallToBig(true);
+        parliament.exit.toCenter(false).bigToSmall(true);
+        d3.select("#region_seats").datum(data).call(parliament);
+    }
+    
+
+
+
     window.updateBarContent('bottom');
 };
 

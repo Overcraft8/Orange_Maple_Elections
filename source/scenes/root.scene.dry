@@ -401,6 +401,20 @@ Q.old_other_r = 9;
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
+
+
+//--------------------------------------
+// Starting Party Seats by District   //
+//--------------------------------------
+
+
+
+
+
+
+
+
+
 // for changing the LPS's name to the DStP
 Q.lps_name = "LPS";
 

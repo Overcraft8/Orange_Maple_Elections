@@ -55,9 +55,20 @@ island_falls_plant.jpg https://archive.org/details/PC011107
 
 
 
+// ----------------------------------
+//         Wikimedia Commons 
+// -----------------------------------
+
+sask_farming.jpg
+grain_elevator.jpg
+bank.png
 
 
+// -----------------------------------
+//  https://www.prairie-towns.com/
+// -----------------------------------
 
+credit_union.jpg
 
 
 

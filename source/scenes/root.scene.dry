@@ -904,11 +904,19 @@ Q.district_demography = {
 // Sector : [[Preset name, ownership type (private, cooperative, hybrid, crown), Quantity]]
 Q.district_economy = {
     'regina_d': {
-                'economy' : {
-                    'Manufacturing' : [['Car Manufacturing Plant', 'private']], 
-                    'Finance' : [['Banks', 'private', 2], ['Credit Unions', 'cooperative', 3]]
-                }
-              }
+        'economy' : {
+            'Manufacturing' : [['Car Manufacturing Plant', 'private']], 
+            'Finance' : [['Bank', 'private', 2], ['Credit Union', 'cooperative', 3]]
+        }
+        },
+    'central_d': {
+        'economy': {
+            'Agriculture' : [['Grain Elevator', 'cooperative', 14], 'Family Farm', 'private', 200], 
+            'Finance' : [['Credit Union', 'cooperative', 3]],
+            'Mining' : [['Potash Mine', 'private', 1]]
+        }
+        
+    }
 };
 
 Q.district_names = Object.keys(Q.district_demography);

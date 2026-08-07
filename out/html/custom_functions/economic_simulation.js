@@ -89,6 +89,14 @@ window.economy_presets = {
     },
     'Mining' : {
         'Potash Mine' : [0.4, 0.5, 3, 'coal_mining.jpg']
+    },
+    'Agriculture' : {
+        'Family Farm' : [0.1, 0.5, 2, 'sask_farming.jpg'],
+        'Grain Elevator' : [0.1, 0.5, 2, 'grain_elevator.jpg']
+    },
+    'Finance' : {
+        'Bank' : [0.1, 0.5, 2, 'bank.png'], 
+        'Credit Union' : [0.1, 0.5, 2, 'credit_union.jpg']
     }
 };
 

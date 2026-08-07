@@ -227,32 +227,34 @@ window.region_info_display = function(region_id) {
         });
     }
 
+    console.log(data);
+
     data = data.filter(p => p.seats > 0);
+
+    console.log(data);
 
     console.log("Seat totals by party:");
     for (var party of Q.parties) {
         console.log(party, Q[party+'_seats']);
     }
 
-    if (window && d3) {
-
-        d3.select("#region_seats").selectAll("*").remove();
-
-        var width = 350; 
-        var height = 350;
+    if (d3 && window && Q.started) {
         var screenWidth = document.getElementById('content').offsetWidth;
-        if (screenWidth < width - 50) {
-            width = screenWidth - 50; 
-            height = width;
-            document.getElementById("region_seats").style.height = screenWidth/2 + "px";
-        }
+/* Old dimensions 250 and 120 */
+        var width = Math.max(Math.min(screenWidth , 200), 90);
+        var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+        var height = width * heightRatio;
 
-        var parliament = d3.parliament();
-        parliament.width(width).height(height).innerRadiusCoef(0.4);
-        parliament.enter.fromCenter(true).smallToBig(true);
-        parliament.exit.toCenter(false).bigToSmall(true);
-        d3.select("#region_seats").datum(data).call(parliament);
-    }
+        document.getElementById("region_seats").style.height = height + "px";
+
+        var region_seats = d3.parliament();
+        region_seats.width(width);
+        region_seats.height(height);
+        region_seats.innerRadiusCoef(0.4);
+        region_seats.enter.fromCenter(false).smallToBig(false);
+        region_seats.exit.toCenter(false).bigToSmall(false);
+        d3.select("#region_seats").datum(data).call(region_seats);
+}
     
 
 

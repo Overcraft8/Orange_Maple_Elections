@@ -566,19 +566,25 @@ const BAR_CONFIG = {
     left: {
         containerId: 'stats_sidebar',
         targetId: 'qualities',
-        stateKey: 'statusTab',
+        starting_scene: 'statusTab',
         isLeft: true
     },
     right: {
         containerId: 'stats_sidebar_right',
         targetId: 'qualities_right',
-        stateKey: 'statusTabRight',
+        starting_scene: 'statusTabRight',
         isLeft: false
     },
     bottom: {
         containerId: 'stats_bottom_bar',
         targetId: 'qualities_bottom',
-        stateKey: 'statusTabBottom',
+        starting_scene: 'statusTabBottom',
+        isLeft: false
+    }, 
+    district: {
+        containerId: 'region_info_display_scene', 
+        targetId: 'region_info_display_scene', 
+        starting_scene: '', 
         isLeft: false
     }
 };
@@ -586,14 +592,14 @@ const BAR_CONFIG = {
 // ==========================================
 // Update W/ Unified Content 
 // ==========================================
-window.updateBarContent = function(regionKey) {
+window.updateBar = function(regionKey) {
     var config = BAR_CONFIG[regionKey];
     if (!config) return;
 
     var targetSelector = '#' + config.targetId;
     $(targetSelector).empty();
 
-    var sceneId = window[config.stateKey];
+    var sceneId = window[config.starting_scene];
     var scene = dendryUI.game.scenes[sceneId];
     if (!scene) return;
 
@@ -651,7 +657,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         }
 
         // Reset state variables
-        window[config.stateKey] = 'empty';
+        window[config.starting_scene] = 'empty';
 
         // Clear rendered HTML from the sidebar
         $('#' + config.targetId).empty();
@@ -690,16 +696,16 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     tabButton.classList.add('active');
 
     // Save state globally and update UI
-    window[config.stateKey] = newTab;
-    window.updateBarContent(regionKey);
+    window[config.starting_scene] = newTab;
+    window.updateBar(regionKey);
 };
 
 // ==========================================
 // Backwards Compatibility
 // ==========================================
-window.updateSidebar      = function() { window.updateBarContent('left'); };
-window.updateSidebarRight = function() { window.updateBarContent('right'); };
-window.updateBottomBar    = function() { window.updateBarContent('bottom'); };
+window.updateSidebar      = function() { window.updateBar('left'); };
+window.updateSidebarRight = function() { window.updateBar('right'); };
+window.updateBottomBar    = function() { window.updateBar('bottom'); };
 
 window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newTab, tabId); };
 window.changeTabRight  = function(newTab, tabId) { window.ChangeTab('right', newTab, tabId); };
@@ -712,9 +718,9 @@ window.onDisplayContent = function() {
     window.changeTab('left', 'status', 'main_tab');
     window.changeTab('right', 'status_right', 'party_tab');
     window.changeTab('bottom', 'status_bottom', 'map_tab');
-    window.updateBarContent('left');
-    window.updateBarContent('right');
-    window.updateBarContent('bottom');
+    window.updateBar('left');
+    window.updateBar('right');
+    window.updateBar('bottom');
 };
 
 window.justLoaded = true;

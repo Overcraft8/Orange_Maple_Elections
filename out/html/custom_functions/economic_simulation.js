@@ -117,7 +117,7 @@ window.region_info_display = function(region_id) {
     var region = Q.region_names[region_id]; 
     Q.region_name = region;
 
-    window.updateBarContent('bottom');
+    window.updateBar('bottom');
 
     //------------------------------------------------------
     //                   Demographics                     //
@@ -208,58 +208,8 @@ window.region_info_display = function(region_id) {
 
     Q.region_economy = containerHtml;
 
-    //---------------------------------------------------------
-    //                   Regional Seats                      //
-    //---------------------------------------------------------
-
-    var data = [];
-
-    for (var party of Q.parties) {
-        
-        var index = Q.parties.indexOf(party);
-        var name = Q.parties_disp_names[index];
-
-        data.push({
-            "id": party,
-            "legend": name,
-            "name": name,
-            "seats": Q[region_id + '_' + party + '_seats'] || 0
-        });
-    }
-
-    console.log(data);
-
-    data = data.filter(p => p.seats > 0);
-
-    console.log(data);
-
-    console.log("Seat totals by party:");
-    for (var party of Q.parties) {
-        console.log(party, Q[party+'_seats']);
-    }
-
-    if (d3 && window && Q.started) {
-        var screenWidth = document.getElementById('region_info_display_scene').offsetWidth;
-/* Old dimensions 250 and 120 */
-        var width = Math.max(Math.min(screenWidth , 200), 90);
-        var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
-        var height = width * heightRatio;
-
-        document.getElementById("region_seats").style.height = height + "px";
-
-        var region_seats = d3.parliament();
-        region_seats.width(width);
-        region_seats.height(height);
-        region_seats.innerRadiusCoef(0.4);
-        region_seats.enter.fromCenter(false).smallToBig(false);
-        region_seats.exit.toCenter(false).bigToSmall(false);
-        d3.select("#region_seats").datum(data).call(region_seats);
-}
-    
-
-
-
-    window.updateBarContent('bottom');
+    window.updateBar('bottom');
+    console.log("eco-sim");
 };
 
 console.log("got to end of eco simulation");

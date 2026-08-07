@@ -3,55 +3,62 @@ new-page: true
 is-special: true
 on-display: {!
 
+  var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+
+  var region_id = Q.current_region_id;
+
   //---------------------------------------------------------
-    //                   Regional Seats                      //
-    //---------------------------------------------------------
+  //                   Regional Seats                      //
+  //---------------------------------------------------------
+  var renderRegionSeats = function(region_id) {
+    var seatEl = document.getElementById('region_seats');
+    var sceneEl = document.getElementById('region_info_display_scene');
+
+    if (!seatEl || !sceneEl || !Q || !region_id) {
+      window.setTimeout(function() {
+        renderRegionSeats(region_id);
+      }, 0);
+      return;
+    }
 
     var data = [];
-
     for (var party of Q.parties) {
-        
-        var index = Q.parties.indexOf(party);
-        var name = Q.parties_disp_names[index];
+      var index = Q.parties.indexOf(party);
+      var name = Q.parties_disp_names[index];
 
-        data.push({
-            "id": party,
-            "legend": name,
-            "name": name,
-            "seats": Q[region_id + '_' + party + '_seats'] || 0
-        });
+      data.push({
+        "id": party,
+        "legend": name,
+        "name": name,
+        "seats": Q[region_id + '_' + party + '_seats'] || 0
+      });
     }
 
-    console.log(data);
+    data = data.filter(function(p) { return p.seats > 0; });
 
-    data = data.filter(p => p.seats > 0);
+    if (d3 && window && Q.started) {
+      var screenWidth = sceneEl.offsetWidth;
+      var width = Math.max(Math.min(screenWidth, 200), 90);
+      var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+      var height = width * heightRatio;
 
-    console.log(data);
+      seatEl.style.height = height + "px";
 
-    console.log("Seat totals by party:");
-    for (var party of Q.parties) {
-        console.log(party, Q[party+'_seats']);
+      var region_seats = d3.parliament();
+      region_seats.width(width);
+      region_seats.height(height);
+      region_seats.innerRadiusCoef(0.4);
+      region_seats.enter.fromCenter(false).smallToBig(false);
+      region_seats.exit.toCenter(false).bigToSmall(false);
+      d3.select(seatEl).datum(data).call(region_seats);
     }
+  };
 
-  if (d3 && window && Q.started) {
-        var screenWidth = document.getElementById('region_info_display_scene').offsetWidth;
-/* Old dimensions 250 and 120 */
-        var width = Math.max(Math.min(screenWidth , 200), 90);
-        var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
-        var height = width * heightRatio;
+  window.setTimeout(function() {
+    renderRegionSeats(region_id);
+  }, 0);
 
-        document.getElementById("region_seats").style.height = height + "px";
-
-        var region_seats = d3.parliament();
-        region_seats.width(width);
-        region_seats.height(height);
-        region_seats.innerRadiusCoef(0.4);
-        region_seats.enter.fromCenter(false).smallToBig(false);
-        region_seats.exit.toCenter(false).bigToSmall(false);
-        d3.select("#region_seats").datum(data).call(region_seats);
-}
-
-console.log("on-display");
+  console.log("on-display");
 !}
 
 <br>

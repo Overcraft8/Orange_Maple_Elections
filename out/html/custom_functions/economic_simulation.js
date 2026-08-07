@@ -208,6 +208,8 @@ window.region_info_display = function(region_id) {
 
     Q.region_economy = containerHtml;
 
+    Q.current_region_id = region_id;
+
     window.updateBar('bottom');
     console.log("eco-sim");
 };

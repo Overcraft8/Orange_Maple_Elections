@@ -67,29 +67,56 @@ on-display: {!
 <svg>
 !}
 
-<div id='region_info_display_scene' style="width: 24em;">
+# <div id='region_info_display_scene' style="width: 24em;">
+# 
+# = [+ region_name +]
+# 
+# # <div id='region_demography'></div>
+# <div style="margin: 0.5em; text-align: center;">
+# Demographics
+# [+ region_demography +]
+# </div>
+# 
+# {!<div style='justify-content: center; text-align: center;'>!}
+# [+ region_economy +]
+# {!</div>!}
+# 
+# <div style="text-align: center; ">
+# Legislative Representation:
+# <svg id="region_seats" style="width: 250px; height: 125px;"> </svg>
+# </div>
+# 
+# # [+ region_seats +]
+# 
+# [+ region_situation +]
+# 
+# 
+# </div>
+
+<div id='region_info_display_scene' style="width: 24em; display: flex; flex-direction: column; align-items: center; margin: 0 auto; text-align: center;">
 
 = [+ region_name +]
 
-# <div id='region_demography'></div>
+<div id='region_demography'></div>
 <div style="margin: 0.5em; text-align: center;">
-Demographics
+Demographics<br>
 [+ region_demography +]
 </div>
 
-{!<div style='justify-content: center; text-align: center;'>!}
+<div>
 [+ region_economy +]
-{!</div>!}
+</div>
 
-<div style="text-align: center; ">
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
 Legislative Representation:
-<svg id="region_seats" style="width: 250px; height: 125px;"> </svg>
+<svg id="region_seats" style="width: 250px; height: 125px; display: block; margin: 0 auto;"></svg>
 </div>
 
 # [+ region_seats +]
 
+<div style="width: 100%; text-align: center;">
 [+ region_situation +]
-
+</div>
 
 </div>
  

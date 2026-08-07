@@ -165,7 +165,7 @@ window.region_info_display = function(region_id) {
 
     var economy_sectors = Q.district_economy[region_id].economy;
 
-    var containerHtml = '<div id="region_economy" style="display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0.5em;">';
+    var containerHtml = '<div id="region_economy" style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
 
     for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
         console.log(`Industry Category: ${industryName}`);

@@ -8,7 +8,7 @@ on-display: {!
   //---------------------------------------------------------
   //                   Regional Seats                      //
   //---------------------------------------------------------
-  
+
   var seatEl = document.getElementById('region_seats');
   var sceneEl = document.getElementById('region_info_display_scene');
 
@@ -82,7 +82,7 @@ Demographics
 {!</div>!}
 
 <div style="text-align: center; ">
-Legislative Representation
+Legislative Representation:
 <svg id="region_seats" style="width: 250px; height: 125px;"> </svg>
 </div>
 

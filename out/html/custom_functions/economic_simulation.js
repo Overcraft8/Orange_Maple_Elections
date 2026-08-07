@@ -239,7 +239,7 @@ window.region_info_display = function(region_id) {
     }
 
     if (d3 && window && Q.started) {
-        var screenWidth = document.getElementById('content').offsetWidth;
+        var screenWidth = document.getElementById('region_info_display_scene').offsetWidth;
 /* Old dimensions 250 and 120 */
         var width = Math.max(Math.min(screenWidth , 200), 90);
         var heightRatio = screenWidth < 350 ? 0.5 : 0.6;

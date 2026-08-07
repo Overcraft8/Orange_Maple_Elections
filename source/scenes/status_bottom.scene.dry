@@ -5,58 +5,44 @@ on-display: {!
 
   var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-  var region_id = Q.current_region_id;
-
   //---------------------------------------------------------
   //                   Regional Seats                      //
   //---------------------------------------------------------
-  var renderRegionSeats = function(region_id) {
-    var seatEl = document.getElementById('region_seats');
-    var sceneEl = document.getElementById('region_info_display_scene');
+  
+  var seatEl = document.getElementById('region_seats');
+  var sceneEl = document.getElementById('region_info_display_scene');
 
-    if (!seatEl || !sceneEl || !Q || !region_id) {
-      window.setTimeout(function() {
-        renderRegionSeats(region_id);
-      }, 0);
-      return;
-    }
+  var data = [];
+  for (var party of Q.parties) {
+    var index = Q.parties.indexOf(party);
+    var name = Q.parties_disp_names[index];
 
-    var data = [];
-    for (var party of Q.parties) {
-      var index = Q.parties.indexOf(party);
-      var name = Q.parties_disp_names[index];
+    data.push({
+      "id": party,
+      "legend": name,
+      "name": name,
+      "seats": Q[Q.current_region_id + '_' + party + '_seats'] || 0
+    });
+  }
 
-      data.push({
-        "id": party,
-        "legend": name,
-        "name": name,
-        "seats": Q[region_id + '_' + party + '_seats'] || 0
-      });
-    }
+  data = data.filter(function(p) { return p.seats > 0; });
 
-    data = data.filter(function(p) { return p.seats > 0; });
+  if (d3 && window && Q.started) {
+    var screenWidth = sceneEl.offsetWidth;
+    var width = Math.max(Math.min(screenWidth, 200), 90);
+    var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+    var height = width * heightRatio;
 
-    if (d3 && window && Q.started) {
-      var screenWidth = sceneEl.offsetWidth;
-      var width = Math.max(Math.min(screenWidth, 200), 90);
-      var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
-      var height = width * heightRatio;
+    seatEl.style.height = height + "px";
 
-      seatEl.style.height = height + "px";
-
-      var region_seats = d3.parliament();
-      region_seats.width(width);
-      region_seats.height(height);
-      region_seats.innerRadiusCoef(0.4);
-      region_seats.enter.fromCenter(false).smallToBig(false);
-      region_seats.exit.toCenter(false).bigToSmall(false);
-      d3.select(seatEl).datum(data).call(region_seats);
-    }
-  };
-
-  window.setTimeout(function() {
-    renderRegionSeats(region_id);
-  }, 0);
+    var region_seats = d3.parliament();
+    region_seats.width(width);
+    region_seats.height(height);
+    region_seats.innerRadiusCoef(0.4);
+    region_seats.enter.fromCenter(false).smallToBig(false);
+    region_seats.exit.toCenter(false).bigToSmall(false);
+    d3.select(seatEl).datum(data).call(region_seats);
+  }
 
   console.log("on-display");
 !}
@@ -86,7 +72,8 @@ on-display: {!
 = [+ region_name +]
 
 # <div id='region_demography'></div>
-<div style="margin: 0.5em;">
+<div style="margin: 0.5em; text-align: center;">
+Demographics
 [+ region_demography +]
 </div>
 
@@ -94,7 +81,10 @@ on-display: {!
 [+ region_economy +]
 {!</div>!}
 
-{!<svg id="region_seats" style="width: 250px; height: 125px;"> </svg>!}
+<div style="text-align: center; ">
+Legislative Representation
+<svg id="region_seats" style="width: 250px; height: 125px;"> </svg>
+</div>
 
 # [+ region_seats +]
 

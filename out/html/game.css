@@ -991,8 +991,9 @@ a.status_panel_info {
   transform-box: fill-box;   /* Ensures the 'center' is the shape itself */
 }
 
-.district { fill: #d69546; stroke: #000000; stroke-width: 2px; }
-.district:hover { fill: #e1491e; opacity: 0.8; cursor: pointer; }
+.district { fill: #d6ca46; stroke: #000000; stroke-width: 2px; }
+.district:hover { fill: #e1a31e; opacity: 0.8; cursor: pointer; }
+.district:active { fill: #e1a31e; opacity: 0.8; cursor: pointer; }
 
 
 .project_container {

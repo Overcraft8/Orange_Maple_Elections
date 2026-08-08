@@ -911,7 +911,7 @@ Q.district_economy = {
         },
     'central_d': {
         'economy': {
-            'Agriculture' : [['Grain Elevator', 'cooperative', 14], 'Family Farm', 'private', 200], 
+            'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
             'Finance' : [['Credit Union', 'cooperative', 3]],
             'Mining' : [['Potash Mine', 'private', 1]]
         }
@@ -919,7 +919,7 @@ Q.district_economy = {
     },
     'southwest_d': {
         'economy': {
-            'Agriculture' : [['Grain Elevator', 'cooperative', 14], 'Family Farm', 'private', 200], 
+            'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
             'Finance' : [['Credit Union', 'cooperative', 3]],
             'Mining' : [['Potash Mine', 'private', 1]]
         }
@@ -927,7 +927,7 @@ Q.district_economy = {
     },
     'southeast_d': {
         'economy': {
-            'Agriculture' : [['Grain Elevator', 'cooperative', 14], 'Family Farm', 'private', 200], 
+            'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
             'Finance' : [['Credit Union', 'cooperative', 3]],
             'Mining' : [['Potash Mine', 'private', 1]]
         }
@@ -935,7 +935,7 @@ Q.district_economy = {
     },
     'prince_albert_d': {
         'economy': {
-            'Agriculture' : [['Grain Elevator', 'cooperative', 14], 'Family Farm', 'private', 200], 
+            'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
             'Finance' : [['Credit Union', 'cooperative', 3]],
             'Mining' : [['Potash Mine', 'private', 1]]
         }
@@ -943,7 +943,7 @@ Q.district_economy = {
     },
     'moose_jaw_d': {
         'economy': {
-            'Agriculture' : [['Grain Elevator', 'cooperative', 14], 'Family Farm', 'private', 200], 
+            'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
             'Finance' : [['Credit Union', 'cooperative', 3]],
             'Mining' : [['Potash Mine', 'private', 1]]
         }
@@ -951,7 +951,7 @@ Q.district_economy = {
     },
     'saskatoon_d': {
         'economy': {
-            'Agriculture' : [['Grain Elevator', 'cooperative', 14], 'Family Farm', 'private', 200], 
+            'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
             'Finance' : [['Credit Union', 'cooperative', 3]],
             'Mining' : [['Potash Mine', 'private', 1]]
         }

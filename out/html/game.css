@@ -1034,8 +1034,8 @@ a.status_panel_info {
   margin: 4px 0 0 0;
 }
 
-.pie-chart::after {
-  content: attr(tooltip); /* Pulls text from tooltip attribute */
+.pie_chart::after {
+  content: attr(data-tooltip); /* Pulls text from tooltip attribute */
   position: absolute;
   bottom: 125%; /* Position above the element */
   left: 50%;
@@ -1062,7 +1062,7 @@ a.status_panel_info {
 }
 
 /* Optional: Little triangle/arrow pointing down */
-.pie-chart::before {
+.pie_chart::before {
   content: '';
   position: absolute;
   bottom: 110%;
@@ -1080,8 +1080,8 @@ a.status_panel_info {
 }
 
 /* Reveal on Hover */
-.pie-chart:hover::after,
-.pie-chart:hover::before {
+.pie_chart:hover::after,
+.pie_chart:hover::before {
   opacity: 1;
   visibility: visible;
 }

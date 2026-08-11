@@ -219,7 +219,7 @@ window.region_info_display = function(region_id) {
                             <span style="font-size: 11px; display: block; margin-top: 4px; margin-bottom: 8px; color: #dcdcdc;">
                                 Priv: ${privateShare}% | Coop: ${coopShare}% | State: ${stateShare}%
                             </span>
-                            <figure class="pie-chart" tooltip="${tooltipText}" style="
+                            <figure class="pie_chart" data-tooltip="${tooltipText}" style="
                                 background: conic-gradient(
                                     rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
                                     rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 

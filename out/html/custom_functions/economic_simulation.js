@@ -187,9 +187,9 @@ window.region_info_display = function(region_id) {
                 var coopShare = Math.round(ownership[1] * 100);
                 var stateShare = Math.round(ownership[2] * 100);
 
-                var private_pct = privateShare / 100;
-                var coop_pct = coopShare / 100; 
-                var state_pct = stateShare / 100; 
+                // Calculate cumulative percentage stops
+                var stop1 = privateShare;
+                var stop2 = privateShare + coopShare;
 
                 var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
 
@@ -211,21 +211,22 @@ window.region_info_display = function(region_id) {
                         border: 2px ridge #9c8c64;
                         border-radius: 4px;
                     ">
-                        <div style="background-color: rgba(0, 0, 0, 0.7); padding: 6px 10px; border-radius: 3px; width: 100%;">
+                        <div style="background-color: rgba(0, 0, 0, 0.7); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
                             <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f;">${sectorName}</span>
                             <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
-                            <span style="font-size: 11px; display: block; margin-top: 4px; color: #dcdcdc;">
+                            <span style="font-size: 11px; display: block; margin-top: 4px; margin-bottom: 8px; color: #dcdcdc;">
                                 Priv: ${privateShare}% | Coop: ${coopShare}% | State: ${stateShare}%
                             </span>
-                            <figure class="pie_chart" style="background: conic-gradient(
-                            from 0deg, 
-                            rgba(90, 90, 209, 0.72) 0, 
-                            rgba(90, 90, 209, 0.72) calc(${private_pct}), 
-                            rgba(218, 222, 103, 0.93) calc(${private_pct}), 
-                            rgba(218, 222, 103, 0.93) calc(${private_pct + coop_pct}), 
-                            rgba(222, 157, 103, 0.93) calc(${private_pct + coop_pct}), 
-                            rgba(222, 157, 103, 0.93) calc(100%), 
-                            )">
+                            <figure class="pie_chart" style="
+                                width: 40px; 
+                                height: 40px; 
+                                border-radius: 50%; 
+                                margin: 4px 0 0 0;
+                                background: conic-gradient(
+                                    rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
+                                    rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 
+                                    rgba(222, 157, 103, 0.9) ${stop2}% 100%
+                                );">
                             </figure>
                         </div>
                     </div>

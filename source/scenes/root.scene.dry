@@ -880,7 +880,7 @@ Q.region_names = {
     "regina_d":'Regina', 
     "saskatoon_d": 'Saskatoon', 
     "moose_jaw_d": 'Moose Jaw', 
-    "prince_albert":' Prince Albert', 
+    "prince_albert_d":' Prince Albert', 
     "southwest_d": 'Southwest', 
     "southeast_d": 'Southeast', 
     "north_d": 'North',
@@ -902,19 +902,29 @@ Q.district_demography = {
 
 // Layout = 
 // Sector : [[Preset name, ownership type (private, cooperative, hybrid, crown), Quantity]]
-// New organization! : '[Industry]' : [ownership type, economic contribution, ]
+
+//                                       Ownership type below
+// New organization! = '[Sector]' : [[private, cooperative, state], economic contribution]
 Q.district_economy = {
     'regina_d': {
         'economy' : {
-            'Manufacturing' : [['Car Manufacturing Plant', 'private']], 
-            'Finance' : [['Bank', 'private', 2], ['Credit Union', 'cooperative', 3]]
+            // 'Manufacturing' : [['Car Manufacturing Plant', 'private']], 
+            // 'Finance' : [['Bank', 'private', 2], ['Credit Union', 'cooperative', 3]],
+
+            'Manufacturing' : [[1, 0 , 0], 7],
+            'Finance' : [[0.5, 0.5, 0], 5]
         }
         },
     'central_d': {
         'economy': {
-            'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
-            'Finance' : [['Credit Union', 'cooperative', 3]],
-            'Mining' : [['Potash Mine', 'private', 1]]
+            // Below were the archetypes for all previously!
+            // 'Agriculture' : [['Grain Elevator', 'cooperative', 14], ['Family Farm', 'private', 200]], 
+            // 'Finance' : [['Credit Union', 'cooperative', 3]],
+            // 'Mining' : [['Potash Mine', 'private', 1]]
+
+            'Farming' : [[1, 0 , 0], 4],
+            'Agricultural Marketing' : [[0.5, 0.5, 0], 2],
+            'Finance' : [[1, 0 , 0], 3]
         }
         
     },

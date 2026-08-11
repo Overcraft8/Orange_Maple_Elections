@@ -100,6 +100,13 @@ window.economy_presets = {
     }
 };
 
+window.economy_images = {
+    'Manufacturing' : 'robin+hood_mill.jpg',
+    'Mining' : 'coal_mining_.jpg', 
+    'Agriculture' : 'sask_farming.jpg', 
+    'Finance' : 'bank.png'
+};
+
 
 
 
@@ -167,21 +174,82 @@ window.region_info_display = function(region_id) {
 
     var containerHtml = '<div id="region_economy" style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
 
-    for (const [industryName, industriesList] of Object.entries(economy_sectors)) {
+    for (const [industryName, industryQualities] of Object.entries(economy_sectors)) {
         console.log(`Industry Category: ${industryName}`);
         
-        // Loop through the projects inside each category
-        industriesList.forEach(project => {
+        // Loop through the qualities inside each category
+        industryQualities.forEach(project => {
             console.log("-", project);
-            var project_name = project[0];
-            var project_owner = project[1];
-            var project_quantity = project[2] !== undefined ? project[2] : '';
-            
-            var presetData = window.economy_presets[industryName]?.[project_name];
-            var image_display = (presetData && presetData[3]) ? presetData[3] : 'portraits/Question_Mark.jpg';
 
-            // Format the quantity nicely with a space if it exists
-            var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
+            var sector_name = industryName;
+            var economic_contribution = project[1];
+
+            var image_display = window.economy_images[industryName];
+
+            Q.private_pct = project[0][0] || 0;
+            Q.cooperative_pct = project[0][1] || 0;
+            Q.state_pct = project[0][2] || 0;
+
+            containerHtml += `
+                <div class="project_container" style="
+                    position: relative; 
+                    display: flex; 
+                    flex-direction: column; 
+                    align-items: center; 
+                    justify-content: center; 
+                    text-align: center; 
+                    background-image: url('img/${image_display}'); 
+                    background-size: cover; 
+                    background-position: center;
+                    padding: 12px;
+                    color: #ffffff;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+                    border: ridge; 
+                    border-color: #9c8c64;
+                ">
+                    <div style="background-color: rgba(0, 0, 0, 0.5)">
+                        <span class="h1" style="font-size: 20px;">${sector_name}</span>
+                    </div>
+                </div>
+            `;
+
+            
+        });
+    }
+
+    // Close the container div
+    containerHtml += '</div>';
+
+    Q.region_economy = containerHtml;
+
+    Q.current_region_id = region_id;
+
+    window.updateBar('bottom');
+    console.log("eco-sim");
+};
+
+console.log("got to end of eco simulation");
+
+/* 
+console.log("-", project);
+            // var project_name = project[0];
+            // var project_owner = project[1];
+            // var project_quantity = project[2] !== undefined ? project[2] : '';
+            // 
+            // var presetData = window.economy_presets[industryName]?.[project_name];
+            // var image_display = (presetData && presetData[3]) ? presetData[3] : 'portraits/Question_Mark.jpg';
+// 
+            // // Format the quantity nicely with a space if it exists
+            // var displayQuantity = project_quantity !== '' ? project_quantity + ' ' : '';
+
+            var sector_name = industryName;
+            var economic_contribution = project[1];
+
+            var image_display = window.economy_images[industryName];
+
+            Q.private_pct = project[0][0] || 0;
+            Q.cooperative_pct = project[0][1] || 0;
+            Q.state_pct = project[0][2] || 0;
 
             // Append each project's HTML to master string
             containerHtml += `
@@ -208,18 +276,4 @@ window.region_info_display = function(region_id) {
                     </div>
                 </div>
             `;
-        });
-    }
-
-    // Close the container div
-    containerHtml += '</div>';
-
-    Q.region_economy = containerHtml;
-
-    Q.current_region_id = region_id;
-
-    window.updateBar('bottom');
-    console.log("eco-sim");
-};
-
-console.log("got to end of eco simulation");
+            */

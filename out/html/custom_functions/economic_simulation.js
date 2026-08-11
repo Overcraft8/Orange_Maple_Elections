@@ -216,9 +216,6 @@ window.region_info_display = function(region_id) {
                         <div style="background-color: rgba(0, 0, 0, 0.7); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
                             <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f;">${sectorName}</span>
                             <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
-                            <span style="font-size: 11px; display: block; margin-top: 4px; margin-bottom: 8px; color: #dcdcdc;">
-                                Priv: ${privateShare}% | Coop: ${coopShare}% | State: ${stateShare}%
-                            </span>
                             <figure class="pie_chart" data-tooltip="${tooltipText}" style="
                                 background: conic-gradient(
                                     rgba(90, 90, 209, 0.9) 0% ${stop1}%, 

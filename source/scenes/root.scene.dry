@@ -879,8 +879,8 @@ Q.class_incomes = {
 Q.region_names = {
     "regina_d":'Regina', 
     "saskatoon_d": 'Saskatoon', 
-    "moosejaw_d": 'Moose jaw', 
-    "princealbert":' Prince Albert', 
+    "moose_jaw_d": 'Moose Jaw', 
+    "prince_albert":' Prince Albert', 
     "southwest_d": 'Southwest', 
     "southeast_d": 'Southeast', 
     "north_d": 'North',
@@ -902,6 +902,7 @@ Q.district_demography = {
 
 // Layout = 
 // Sector : [[Preset name, ownership type (private, cooperative, hybrid, crown), Quantity]]
+// New organization! : '[Industry]' : [ownership type, economic contribution, ]
 Q.district_economy = {
     'regina_d': {
         'economy' : {
@@ -1019,18 +1020,25 @@ Q.region_situation;
 
 Q.regina_d_cps_seats = 2; 
 Q.saskatoon_d_cps_seats = 2; 
+
 Q.north_d_lps_seats = 2; 
+
 Q.central_d_lps_seats = 15; 
 Q.central_d_cps_seats = 3; 
 Q.central_d_other_seats = 3; 
 Q.central_d_pps_seats = 2; 
+
 Q.southwest_d_cps_seats = 8;
 Q.southwest_d_lps_seats = 5; 
 Q.southwest_d_pps_seats = 1; 
+
 Q.southeast_d_cps_seats = 7; 
 Q.southeast_d_lps_seats = 6; 
 Q.southeast_d_other_seats = 2; 
 Q.southeast_d_pps_seats = 2; 
+
+Q.prince_albert_d_lps_seats = 1; 
+Q.moose_jaw_d_cps_seats = 2;
 
 
 

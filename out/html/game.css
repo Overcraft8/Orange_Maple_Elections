@@ -24,8 +24,23 @@ body {
   --hover-color: rgba(0,0,0,0.1);
   --htext-color: #431;
 }
-body::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 body.dark-mode {
   --bg-color: #000;

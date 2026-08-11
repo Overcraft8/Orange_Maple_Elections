@@ -170,59 +170,60 @@ window.region_info_display = function(region_id) {
     //                   Economy                             //
     //---------------------------------------------------------
 
-    var economy_sectors = Q.district_economy[region_id].economy;
+    var districtData = Q.district_economy[region_id];
+    var economy_sectors = districtData ? districtData.economy : null;
 
     var containerHtml = '<div id="region_economy" style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
 
-    for (const [industryName, industryQualities] of Object.entries(economy_sectors)) {
-        console.log(`Industry Category: ${industryName}`);
-        
-        // Loop through the qualities inside each category
-        industryQualities.forEach(project => {
-            console.log("-", project);
-
-            var sector_name = industryName;
-            var economic_contribution = project[1];
-
-            var image_display = window.economy_images[industryName];
-
-            Q.private_pct = project[0][0] || 0;
-            Q.cooperative_pct = project[0][1] || 0;
-            Q.state_pct = project[0][2] || 0;
-
-            containerHtml += `
-                <div class="project_container" style="
-                    position: relative; 
-                    display: flex; 
-                    flex-direction: column; 
-                    align-items: center; 
-                    justify-content: center; 
-                    text-align: center; 
-                    background-image: url('img/${image_display}'); 
-                    background-size: cover; 
-                    background-position: center;
-                    padding: 12px;
-                    color: #ffffff;
-                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-                    border: ridge; 
-                    border-color: #9c8c64;
-                ">
-                    <div style="background-color: rgba(0, 0, 0, 0.5)">
-                        <span class="h1" style="font-size: 20px;">${sector_name}</span>
-                    </div>
-                </div>
-            `;
-
+    if (economy_sectors) {
+        for (const [sectorName, sectorData] of Object.entries(economy_sectors)) {
+            console.log(`Sector: ${sectorName}`);
             
-        });
+            if (Array.isArray(sectorData) && sectorData.length === 2 && Array.isArray(sectorData[0]) && typeof sectorData[1] === 'number') {
+                var ownership = sectorData[0]; // [private, cooperative, state] ratios
+                var contribution = sectorData[1]; // economic contribution value
+
+                var privateShare = Math.round(ownership[0] * 100);
+                var coopShare = Math.round(ownership[1] * 100);
+                var stateShare = Math.round(ownership[2] * 100);
+
+                var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
+
+                containerHtml += `
+                    <div class="project_container" style="
+                        position: relative; 
+                        display: flex; 
+                        flex-direction: column; 
+                        align-items: center; 
+                        justify-content: center; 
+                        text-align: center; 
+                        background-image: url('img/${imageName}'); 
+                        background-size: cover; 
+                        background-position: center;
+                        padding: 16px;
+                        min-width: 140px;
+                        color: #ffffff;
+                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+                        border: 2px ridge #9c8c64;
+                        border-radius: 4px;
+                    ">
+                        <div style="background-color: rgba(0, 0, 0, 0.7); padding: 6px 10px; border-radius: 3px; width: 100%;">
+                            <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f;">${sectorName}</span>
+                            <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
+                            <span style="font-size: 11px; display: block; margin-top: 4px; color: #dcdcdc;">
+                                Priv: ${privateShare}% | Coop: ${coopShare}% | State: ${stateShare}%
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
     }
 
-    // Close the container div
-    containerHtml += '</div>';
+containerHtml += '</div>';
 
-    Q.region_economy = containerHtml;
-
-    Q.current_region_id = region_id;
+Q.region_economy = containerHtml;
+Q.current_region_id = region_id;
 
     window.updateBar('bottom');
     console.log("eco-sim");

@@ -1026,8 +1026,62 @@ a.status_panel_info {
 }
 
 .pie_chart {
+  position: relative; 
+  cursor: pointer; 
   width: 40px; 
   height: 40px; 
   border-radius: 50%; 
-  background-color: #876;
+  margin: 4px 0 0 0;
+}
+
+.pie-chart::after {
+  content: attr(tooltip); /* Pulls text from tooltip attribute */
+  position: absolute;
+  bottom: 125%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Custom Typography & Box Styles */
+  background-color: #2c3e50;
+  color: #f1c40f;
+  font-family: 'Georgia', serif; /* Matching historical theme */
+  font-size: 12px;
+  padding: 6px 10px;
+  border: 1px solid #9c8c64;
+  border-radius: 4px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  white-space: pre-wrap; /* Keeps line breaks like &#10; or \n */
+  text-shadow: none;
+
+  /* Hide by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Optional: Little triangle/arrow pointing down */
+.pie-chart::before {
+  content: '';
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #2c3e50 transparent transparent transparent;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Reveal on Hover */
+.pie-chart:hover::after,
+.pie-chart:hover::before {
+  opacity: 1;
+  visibility: visible;
 }

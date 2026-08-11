@@ -225,7 +225,7 @@ window.region_info_display = function(region_id) {
                             rgba(218, 222, 103, 0.93) calc(${private_pct + coop_pct}), 
                             rgba(222, 157, 103, 0.93) calc(${private_pct + coop_pct}), 
                             rgba(222, 157, 103, 0.93) calc(100%), 
-                            )>
+                            )">
                             </figure>
                         </div>
                     </div>

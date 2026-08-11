@@ -1024,3 +1024,10 @@ a.status_panel_info {
   text-indent: 0; 
   vertical-align: middle
 }
+
+.pie_chart {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  background-color: #876;
+}

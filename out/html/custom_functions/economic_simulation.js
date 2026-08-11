@@ -101,7 +101,7 @@ window.economy_presets = {
 };
 
 window.economy_images = {
-    'Manufacturing' : 'robin+hood_mill.jpg',
+    'Manufacturing' : 'robin_hood_mill.jpg',
     'Mining' : 'coal_mining_.jpg', 
     'Agriculture' : 'sask_farming.jpg', 
     'Finance' : 'bank.png'
@@ -187,6 +187,10 @@ window.region_info_display = function(region_id) {
                 var coopShare = Math.round(ownership[1] * 100);
                 var stateShare = Math.round(ownership[2] * 100);
 
+                var private_pct = privateShare / 100;
+                var coop_pct = coopShare / 100; 
+                var state_pct = stateShare / 100; 
+
                 var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
 
                 containerHtml += `
@@ -201,7 +205,7 @@ window.region_info_display = function(region_id) {
                         background-size: cover; 
                         background-position: center;
                         padding: 16px;
-                        min-width: 140px;
+                        min-width: 80px;
                         color: #ffffff;
                         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
                         border: 2px ridge #9c8c64;
@@ -213,6 +217,16 @@ window.region_info_display = function(region_id) {
                             <span style="font-size: 11px; display: block; margin-top: 4px; color: #dcdcdc;">
                                 Priv: ${privateShare}% | Coop: ${coopShare}% | State: ${stateShare}%
                             </span>
+                            <figure class="pie_chart" style="background: conic-gradient(
+                            from 0deg, 
+                            rgba(90, 90, 209, 0.72) 0, 
+                            rgba(90, 90, 209, 0.72) calc(${private_pct}), 
+                            rgba(218, 222, 103, 0.93) calc(${private_pct}), 
+                            rgba(218, 222, 103, 0.93) calc(${private_pct + coop_pct}), 
+                            rgba(222, 157, 103, 0.93) calc(${private_pct + coop_pct}), 
+                            rgba(222, 157, 103, 0.93) calc(100%), 
+                            )>
+                            </figure
                         </div>
                     </div>
                 `;

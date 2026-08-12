@@ -284,24 +284,6 @@ img.inline-img.icon {
   font-weight: normal;
 }
 
-/* stats bottom */
-#stats_bottom_container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-}
-
-#stats_bottom_bar {
-  width: 100%;
-  max-width: 40em;
-  box-sizing: border-box;
-}
-
-#map_tab {
-  width: 100%;
-  font-size: 1.4em;
-}
-
 /* tabs */
 .tab_container {
   display: flex;

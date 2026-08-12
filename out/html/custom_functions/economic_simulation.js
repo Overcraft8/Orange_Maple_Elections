@@ -191,7 +191,7 @@ window.region_info_display = function(region_id) {
                 // Calculate cumulative percentage stops
                 var stop1 = privateShare;
                 var stop2 = privateShare + coopShare;
-                var tooltipText = `Private (Blue): ${privateShare}%\nCoop (Yellow): ${coopShare}%\nState (Orange): ${stateShare}%`;
+                var tooltipText = `Private (Blue): ${privateShare}%\nCo-op (Yellow): ${coopShare}%\nState (Orange): ${stateShare}%`;
 
                 var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
 
@@ -213,7 +213,7 @@ window.region_info_display = function(region_id) {
                         border: 2px ridge #9c8c64;
                         border-radius: 4px;
                     ">
-                        <div style="background-color: rgba(0, 0, 0, 0.7); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                        <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
                             <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f;">${sectorName}</span>
                             <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
                             <figure class="pie_chart" data-tooltip="${tooltipText}" style="

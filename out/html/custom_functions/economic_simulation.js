@@ -102,7 +102,7 @@ window.economy_presets = {
 
 window.economy_images = {
     'Manufacturing' : 'robin_hood_mill.jpg',
-    'Mining' : 'coal_mining_.jpg', 
+    'Coal Mining' : 'coal_mining_.jpg', 
     'Farming' : 'sask_farming.jpg', 
     'Agricultural Marketing' : 'grain_elevator.jpg',
     'Finance' : 'bank.png'

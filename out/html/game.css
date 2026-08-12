@@ -23,6 +23,7 @@ body {
   --bgBack-color: rgba(0,0,0,0.2);
   --hover-color: rgba(0,0,0,0.1);
   --htext-color: #431;
+  overflow-x: hidden; 
 }
 ::-webkit-scrollbar {
   width: 10px;

@@ -102,10 +102,11 @@ window.economy_presets = {
 
 window.economy_images = {
     'Manufacturing' : 'robin_hood_mill.jpg',
-    'Coal Mining' : 'coal_mining_.jpg', 
+    'Coal Mining' : 'coal_mining.jpg', 
     'Farming' : 'sask_farming.jpg', 
     'Agricultural Marketing' : 'grain_elevator.jpg',
-    'Finance' : 'bank.png'
+    'Finance' : 'bank.png',
+    'Government' : 'Saskatchewan_Legislature.jpg'
 };
 
 

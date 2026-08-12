@@ -344,8 +344,8 @@ Q.cp_s_coalition_dissent = 0;
 Q.ccf_ss_toleration = 0;
 
 // is the current government a minority government?
-Q.minority_government = 0;
-Q.ruling_government = "Liberal Majority";
+Q.minority_government = 1;
+Q.ruling_government = "Cooperative Coalition";
 
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet

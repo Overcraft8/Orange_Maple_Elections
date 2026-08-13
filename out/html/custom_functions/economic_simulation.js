@@ -7,11 +7,10 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                  TAXES AND REVENUE CALCULATIONS
 
-window.calculate_corporate_tax = function() {
-    var Q = window.dendryUI?.dendryEngine?.state?.qualities; 
-    
-    for (region of Q.region_names)
-};
+// window.calculate_corporate_tax = function() {
+//     var Q = window.dendryUI?.dendryEngine?.state?.qualities; 
+//     
+// };
 
 
 window.calculate_income_tax = function() {
@@ -71,7 +70,7 @@ window.get_taxes_final = function(taxes_in_question) {
     console.log(lower_pop);
     console.log(middle_pop);
     console.log(rich_pop);
-}
+};
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////

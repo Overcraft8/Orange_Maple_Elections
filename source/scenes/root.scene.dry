@@ -308,7 +308,7 @@ Q.economic_records = [];
 Q.prime_minister = "Richard Bennett (CPC)";
 // starting premier: James Anderson
 Q.premier = "James Anderson";
-Q.premier_img = 'Anderson_James.jpg';
+Q.premier_img = 'AndersonJames.jpg';
 Q.premier_party = 'CPS';
 Q.ccf_ss_in_government = 0;
 Q.pps_in_government = 0;

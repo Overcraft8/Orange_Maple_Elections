@@ -998,8 +998,8 @@ a.status_panel_info {
 .pie_chart {
   position: relative; 
   cursor: pointer; 
-  width: 40px; 
-  height: 40px; 
+  width: 32px; 
+  height: 32px; 
   border-radius: 50%; 
   margin: 4px 0 0 0;
 }

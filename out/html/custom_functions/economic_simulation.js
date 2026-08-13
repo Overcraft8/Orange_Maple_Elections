@@ -7,6 +7,10 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                  TAXES AND REVENUE CALCULATIONS
 
+window.calculate_corporate_tax = function() {
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities; 
+}
+
 
 window.calculate_income_tax = function() {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
@@ -106,7 +110,8 @@ window.economy_images = {
     'Farming' : 'sask_farming.jpg', 
     'Agricultural Marketing' : 'grain_elevator.jpg',
     'Finance' : 'bank.png',
-    'Government' : 'Saskatchewan_Legislature.jpg'
+    'Government' : 'Saskatchewan_Legislature.jpg', 
+    'Foresty' : 'placeholder'
 };
 
 

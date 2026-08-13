@@ -350,12 +350,6 @@ function applyWholesome(str) {
 //                          SIDEBARS AND PAGES
 
 
-
-
-
-
-
-
   // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
   };
@@ -560,14 +554,14 @@ window.changeTabBottom = function(newTab, tabId) {
 */
 
 // ==========================================
-// Region Configurations
+// "Region" Configurations
 // ==========================================
 const BAR_CONFIG = {
     left: {
         containerId: 'stats_sidebar',
         targetId: 'qualities',
         starting_scene: 'statusTab',
-        isLeft: true
+        isLeft: true //isLeft for refreshing the page
     },
     right: {
         containerId: 'stats_sidebar_right',

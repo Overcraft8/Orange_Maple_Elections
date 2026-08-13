@@ -16,7 +16,7 @@ go-to: start_menu_2
 - @credits: Credits
 - @game_over.achievements
 - @intro_to_sask: Saskatchewan: A Political History (by yours truly)
-- @Preface: Preface
+- @Information: Information
 
 
 @start
@@ -1472,18 +1472,36 @@ In the poor and largely inaccessible north, dominated demographically by First N
 
 
 
-@Preface 
+@Information
 
-= Background to the Mod
+- @why_the_name : What does 'Prairie Lily' mean?
+- @why_saskatchewan : Why Saskatchewan? 
+- @how_realistic : How realistic is this mod?
+- @return: Return
 
-# This mod was given birth to in December of 2025. I was visiting some relatives in Regina and after having lunch, we headed off to Indigo to make use of a giftcard. While browsing, I came upon this intriguing book called "The Prairie Populist" by J. F. Conway. 
 
-# This book was interesting. The back cover said, quote, "George Hara Williams was undermined by Tommy Douglas and M.J. Coldwell just as Saskatchewan's CCF was on the threshold of power." As a Saskatchewanian (lol), I had grown up hearing stories about Tommy Douglas, the so called "Greatest Canadian" who had introduced universal healthcare and won five consecutive elections on a Social Democratic platform in backwater, farmers, conservative Saskatchewan. 
+@why_the_name 
 
-# So who was this "George Hara Williams" and what did good old Tommy do to him? I bought the book and devoured it for the next week or so. Turns out, George Williams had been the decisive role in rallying Saskatchewan farmers to the CCF(SS) and later, the CCF/NDP. This was quite shocking considering how forgotten Williams is nowadays. 
+Prairie Lily refers to the provincial flower of Saskatchewan, the Eastern Red Lily or colloquially, the Prairie Lily. It is quite a distinctive flower, with shades of orange and red that pop out. Like all other flowers this far north, it endures cold hard winters. If you wander around the province, you occassionally stumble upon it. It is proudly displayed on the modern Saskatchewan Flag. 
 
+You can draw various links between it and the CCF. Both have a distinct colour (To this day, an orange billboard means an NDP advertisement). Like the beautiful, determined lily, the CCF springs from the ground and provides uncaringly. 
+
+@why_saskatchewan
+
+# The idea for this mod was placed in my mind in December of 2025. I was visiting some relatives in Regina and after having lunch, we headed off to a bookstore. While browsing, I came upon this intriguing book called "The Prairie Populist" by J. F. Conway. 
+# 
+# This book was interesting. The back cover said, quote, "George Hara Williams was undermined by Tommy Douglas and M.J. Coldwell just as Saskatchewan's CCF was on the threshold of power." As a Saskatchewanian, I had grown up hearing stories about Tommy Douglas, the so called "Greatest Canadian" who had introduced universal healthcare and won five consecutive elections on a Social Democratic platform in backwater, conservative Saskatchewan. 
+# 
+# So who was this "George Hara Williams" and what did good old Tommy do to him? I bought the book and devoured it for the next week or so. Turns out, George Williams had played a decisive role in rallying Saskatchewan farmers to the CCF(SS). This was shocking news considering how forgotten Williams is nowadays. 
+# 
 # And that made me think about all the other stories that have been lost to time. How much of my province's history has been wiped clean off the slate in popular consciousness, only remaining alive in tedious through thorough academic papers and old books? That thought stayed with me for quite a while. 
-
-# In the end, I decided that I might make my own dedication to my province in the form of a mod for Autumn's SDAAH. Though I did try my best, much of the mod is rather shoddily built, both functionality-wise and software-wise. My only experience with coding prior was with simple C++ Arduinos and rudimentary Python from a 10-level Computer Science Course way back when. In spite of this, this mod makes me quite proud. Really, this is a loveletter to my home province and I hope that this mod helps keep Saskatchewan's rich political history alive and accessible. 
-
+# 
+# In the end, I decided that I might make my own dedication to my province as a mod for Autumn Chen's SDAAH. Though I did try my best, much of the mod is rather shoddily built, both functionality-wise and software-wise. My only experience with coding prior was with C++ and rudimentary Python. In spite of this, this mod makes me quite proud. Really, this is a loveletter to my home province and I hope that this mod helps keep Saskatchewan's rich political history alive and accessible. 
+# 
 # I hope you will enjoy In the Prairie Sun as much as I have. 
+
+@how_realistic
+
+While extensive research was done for this setting, the mod is not to be taken as an accurate depiction of Saskatchewan. Several viable paths in this game are very unlikely to have occured. This includes the formation of a true Unity Front against the Liberals. Such an effort did exist but ultimately failed to make a breakthrough or last. The CCF(SS) leadership viewed it as a mechanism for the Communists to infiltrate legitimate parties, Social Credit believed it had already won the election beforehand, and the Conservatives under Diefenbaker saw Unity only as a last resort. 
+
+The mod also gives great liberties to the player. It is unlikely that a manufacturing industry not focused on agriculture could have ever sprung up in Saskatchewan. Winnipeg to the East was already a major manufacturing center with comparisons to Chicago and the National government would always favour Ontario and Quebec for heavy manufacturing. There is also the fact that Joe Phelp's State Manufacturing ventures were executed without a centralized planning authority like all other historical CCF economic policies. 

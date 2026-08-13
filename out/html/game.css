@@ -265,6 +265,18 @@ img.inline-img.icon {
   right: 0.4em;
 }
 
+#top_tools_container {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px ridge #9c8c64;
+  padding: 10px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
 .stats_qualities {
   text-align: center;
   text-indent: 0;

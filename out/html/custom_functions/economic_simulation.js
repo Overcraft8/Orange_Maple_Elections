@@ -9,7 +9,9 @@
 
 window.calculate_corporate_tax = function() {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities; 
-}
+    
+    for (region of Q.region_names)
+};
 
 
 window.calculate_income_tax = function() {

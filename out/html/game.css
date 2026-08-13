@@ -277,6 +277,14 @@ img.inline-img.icon {
   color: #ffffff;
 }
 
+.top_button {
+  width: 50px;
+	height: 40px;
+	transform: skew(20deg);
+  background-color: inherit; 
+  border: 1px solid #f1c40f;
+}
+
 .stats_qualities {
   text-align: center;
   text-indent: 0;

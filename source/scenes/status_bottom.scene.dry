@@ -51,7 +51,7 @@ on-display: {!
 
 <div style="display: flex;">
 
-<div id="sk_map_main" style="display:flex; flex-direction: column; margin:auto; border: 3px solid #3B3B3B;">
+<div id="sk_map_main" style="display:flex; flex-direction: column; margin:auto; border: 3px solid #3B3B3B; background-image: url(img/Saskatchewan_grid_map2.jpg)">
 
   <text x="425" y="900" text-anchor="middle" font-size="40" fill="#333">Click on districts to view specific information</text>
   

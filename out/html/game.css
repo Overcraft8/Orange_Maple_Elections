@@ -268,21 +268,28 @@ img.inline-img.icon {
 #top_tools_container {
   position: fixed;
   top: 15px;
-  right: 15px;
+  margin-right: -15px; 
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.8);
   border: 2px ridge #9c8c64;
-  padding: 10px;
-  border-radius: 4px;
   color: #ffffff;
+  transform: skew(20deg);
+  width: 400px; 
+  height: 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center; 
+  padding: 0; 
 }
 
 .top_button {
-  width: 50px;
-	height: 40px;
-	transform: skew(20deg);
+  width: 36px; 
+  height: 36px; 
+  box-sizing: border-box;
   background-color: inherit; 
   border: 1px solid #f1c40f;
+  cursor: pointer;
 }
 
 .stats_qualities {

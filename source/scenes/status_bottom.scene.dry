@@ -84,6 +84,9 @@ Demographics
 </div>
 
 {!<div style='justify-content: center; text-align: center;'>!}
+
+Major Industries
+
 [+ region_economy +]
 {!</div>!}
 

@@ -270,13 +270,14 @@ img.inline-img.icon {
   top: 15px;
   margin-right: -15px; 
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #2b3a26 !important;
   border: 2px ridge #9c8c64;
   color: #ffffff;
   transform: skew(20deg);
-  width: 400px; 
-  height: 60px;
+  width: 50vh;
+  height: 10vh;
   box-sizing: border-box;
+  font-size: clamp(12px, 2.5vh, 180px);
 
   display: flex;
   align-items: center; 
@@ -284,10 +285,9 @@ img.inline-img.icon {
 }
 
 .top_button {
-  width: 112px; 
-  height: 56px; 
+  width: 20vh;
+  height: 10vh; 
   box-sizing: border-box;
-  background-color: inherit; 
   border: 1px solid #f1c40f;
   cursor: pointer;
   text-align: center; 
@@ -295,6 +295,10 @@ img.inline-img.icon {
   display: flex; 
   justify-content: center; 
   align-items: center; 
+}
+
+.top_button:hover {
+  background-color: #3d5f32;
 }
 
 .stats_qualities {

@@ -31,18 +31,20 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #d6c944; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #467a3f; 
+  border: 1px solid #cca142;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #644e19; 
 }
+
 body.dark-mode {
   --bg-color: #000;
   --border-color: #fff;

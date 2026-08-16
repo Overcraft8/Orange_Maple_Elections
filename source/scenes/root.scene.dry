@@ -889,7 +889,6 @@ for (var c of Q.classes) {
 Q.region_name;
 Q.region_economy;
 Q.region_demographic;
-Q.region_seats; 
 Q.region_situation;
 
 

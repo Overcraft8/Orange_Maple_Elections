@@ -302,7 +302,7 @@ img.inline-img.icon {
   background-color: #3d5f32;
 }
 
-.top_button:active {
+.top_button.active {
   background-color: #3d5f32;
   border: 3px solid #f1c40f;
 }

@@ -549,7 +549,7 @@ div.blank-card {
   color: #c58766;
   -webkit-text-stroke: 0.15px #ffffff;
 }
-
+/* 
 .card-tooltip {
   position: absolute;
   visibility: hidden;
@@ -562,7 +562,7 @@ div.blank-card {
   background-color: var(--content-bg-color);
   left: 105%;
 }
-
+*/
 .card-img {
   height: 150px;
   width: 120px;
@@ -820,10 +820,8 @@ div.tooltip {
   left: 50%;
   margin-bottom: 8px; 
   
-  /* Applies the precise pixel nudge calculated by JS */
   margin-left: var(--tt-shift, 0px);
   
-  /* Centers natively, purely handles the float-up animation */
   transform: translateX(-50%) translateY(5px); 
 
   font-family: Franklin Gothic Medium, Arial;
@@ -879,7 +877,7 @@ div.tooltip {
    /* Starting state */
    opacity: 0;
    transform-origin: bottom center;
-   transform: translate(-50%, -80%); /* slightly lower */
+   transform: translate(-50%, -80%);
  
    /* Animation */
    transition: opacity 0.15s ease-out, transform 0.15s ease-out;
@@ -891,7 +889,7 @@ div.tooltip {
  .mytooltip:hover .mytooltiptext,
  .mytooltip .mytooltiptext:hover {
    opacity: 1;
-   transform: translate(-50%, -100%); /* slide upward into place */
+   transform: translate(-50%, -100%);
  }
  
  .bar {
@@ -922,7 +920,6 @@ div.tooltip {
     justify-content: center;
     font-family: sans-serif;
 }
-
 
 
 /* Table styling */
@@ -1003,14 +1000,6 @@ a.status_panel_info {
   margin-bottom: 2em;
   position: relative;
   text-align: center;
-}
-
-
-
-.rotated-district {
-  transform: rotate(180deg);
-  transform-origin: center; /* This keeps it from flying off-screen */
-  transform-box: fill-box;   /* Ensures the 'center' is the shape itself */
 }
 
 .district { fill: #d6ab46; stroke: #000000; stroke-width: 2px; }

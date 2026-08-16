@@ -295,6 +295,7 @@ img.inline-img.icon {
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  line-height: 1.2; 
 }
 
 .top_button:hover {

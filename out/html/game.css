@@ -307,6 +307,12 @@ img.inline-img.icon {
   border: 3px solid #f1c40f;
 }
 
+#stats_bottom_bar.tools {
+  width: 100%;
+  max-width: calc(100% - 2em);
+  box-sizing: border-box;
+}
+
 .stats_qualities {
   text-align: center;
   text-indent: 0;

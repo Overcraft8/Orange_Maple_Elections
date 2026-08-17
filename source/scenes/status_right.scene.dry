@@ -118,7 +118,7 @@ if (window && window.customgeneratemultibar) {
       "#333333", 
       factionColors, 
       "faction_strength_bar", 
-      ['The Reformist Wing', 'The Managerial Wing', 'The Agrarian Populists', 'The True Socialist Wing']
+      ['The Reformist Wing', 'The Managerial Wing', 'The Agrarians', 'The True Socialist Wing']
   );
 }
 

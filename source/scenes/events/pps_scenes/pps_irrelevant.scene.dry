@@ -19,7 +19,7 @@ on-departure: {!
     Q.southwest_d_pps_seats -= 1; 
     Q.southwest_d_cps_seats += 1;
 
-    window.updateBar(left);
+    window.updateBar('left');
 !}
 
 = The Progressives fall out of relevance

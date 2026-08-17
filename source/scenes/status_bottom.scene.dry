@@ -51,7 +51,7 @@ on-display: {!
 
 <div style="display: flex;">
 
-<div id="sk_map_main" style="display:flex; flex-direction: column; width: 50%; margin:auto; border: 3px solid #3B3B3B;">
+<div id="sk_map_main" style="display:flex; flex-direction: column; width: 40em; margin:auto; border: 3px solid #3B3B3B;">
 
   <text x="425" y="900" text-anchor="middle" font-size="40" fill="#333">Click on districts to view specific information</text>
   
@@ -71,7 +71,7 @@ on-display: {!
   </div>
 </div>
 
-<div id='region_info_display_scene' style="margin-right: 2em; width: 50%;">
+<div id='region_info_display_scene' style="margin-right: 2em; 30em;">
 
 = [+ region_name +]
 

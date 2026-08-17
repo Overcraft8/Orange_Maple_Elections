@@ -70,6 +70,12 @@ bank.png
 
 credit_union.jpg
 
+// -----------------------------------
+//  Reddit
+// -----------------------------------
+
+progressive_poster.jpg - https://www.reddit.com/r/Kaiserreich/comments/m65rio/help_reclaim_our_future_canadian_progressive/
+
 
 
 stacked bar graph (thanks maybe): https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html

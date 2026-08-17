@@ -5,7 +5,22 @@ view-if: year = 1932 and month = 3
 priority: 2
 max-visits: 1
 face-image: img/Melfort_Market.jpg
-on-departure: pps_seats -= 5; ccf_ss_seats += 1; lps_seats += 1; cps_seats += 3;
+on-departure: {! 
+    Q.pps_seats -= 5; 
+    Q.ccf_ss_seats += 1; 
+    Q.lps_seats += 1;
+    Q.cps_seats += 3; 
+
+    Q.central_d_pps_seats -= 2;
+    Q.central_d_ccf_ss_seats += 1; 
+    Q.central_d_lps_seats += 1; 
+    Q.southeast_d_pps_seats -= 2; 
+    Q.southeast_d_cps_seats += 2; 
+    Q.southwest_d_pps_seats -= 1; 
+    Q.southwest_d_cps_seats += 1;
+
+    window.updateBar(left);
+!}
 
 = The Progressives fall out of relevance
 

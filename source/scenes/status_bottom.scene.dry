@@ -91,7 +91,7 @@ Major Industries
 <div style="text-align: center; ">
 Legislative Representation:
 <br>
-<svg id="region_seats" style="width: 15em; height: 10em;"> </svg>
+<svg id="region_seats" width="220" height="130"> </svg>
 </div>
 
 [+ region_situation +]

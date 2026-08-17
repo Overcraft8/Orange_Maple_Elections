@@ -1025,10 +1025,10 @@ Q.catholics_other = 6;
 
 Q.ccf_ss_seats = 0;
 Q.cp_s_seats = 0;
-Q.pps_seats = 6;
-Q.lps_seats = 24;
-Q.cps_seats = 28;
-Q.other_seats = 5;
+Q.pps_seats = 5;
+Q.lps_seats = 28;
+Q.cps_seats = 24;
+Q.other_seats = 6;
 Q.scps_seats = 0;
 
 

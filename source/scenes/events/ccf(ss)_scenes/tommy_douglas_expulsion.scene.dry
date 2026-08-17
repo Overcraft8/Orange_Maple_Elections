@@ -4,7 +4,7 @@ tags: event
 view-if: year = 1932 and month = 2
 priority: 2
 max-visits: 1
-face-image: img/DouglasTommy.jpg
+face-image: img/portraits/DouglasTommy.jpg
 
 = A CCF-Socred Candidate?
 

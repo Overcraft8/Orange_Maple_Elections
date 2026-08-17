@@ -4,8 +4,40 @@ tags: event
 view-if: year = 1932 and month = 3
 priority: 2
 max-visits: 1
-face-image: img/Melfort_Market.jpg
-on-departure: {! 
+face-image: img/graphics/progressive_poster.jpg
+
+= The Progressives flailing
+
+The Progressive Party of Saskatchewan, a coalition partner of Anderson's Cooperative Coalition faces a difficult headwind with the UFC(SS)'s decision to back a new Farmer-Labour Party rather than align with the existing parties. Itself a self-proclaimed voice for the farmers, it seems the PPS' days are numbered. 
+
+There are various currents within the party. Some seek to join the Conservatives and continue managing the Depression. Others see the FLP as the reincarnation of original prairie revolt against the established parties. Still some seek to join the Liberals. 
+
+- @pps_merge: Can we merge with the Progressives? 
+- @pps_cancel: The Progressives didn't get anywhere anyway
+
+@pps_merge
+subtitle: We would be incorporating non-socialists into the party
+
+= PPS Negotations
+
+The PPS is concerned about our socialist platform. We must make concessions to entice the party into a merger. 
+
+- @remove_use_lease: Abandon Use-lease
+- @abandon_socialism: Remove all mentions of Socialism from our platform
+- @support_cooperative_coalition: Continue supporting the Cooperative Coalition
+
+@remove_use_lease
+subtitle: This was a policy approved by the UFC(SS)!
+
+@abandon_socialism
+
+@support_cooperative_coalition
+subtitle: Anderson's government seems destined to fall however...
+
+
+
+@pps_cancel 
+on-arrival: {! 
     Q.pps_seats -= 5; 
     Q.ccf_ss_seats += 1; 
     Q.lps_seats += 1;
@@ -22,10 +54,6 @@ on-departure: {!
     window.updateBar('left');
 !}
 
-= The Progressives fall out of relevance
-
-The Progressive Party of Saskatchewan, once a key coalition partner of the Anderson government, has formally disbanded. Initially a leading voice of rural discontent, the party's appeal has been greatly diminished by the decision of the UFC(SS) to form its own political party. The Progressive MLAs have been left astray. 
-
- MLA Jacob Benson has chosen to join our party and sit as a Farmer-Labour representative and has chosen to continue supporting the Cooperative Coalition. Through him, we can finally exercise our weight in government. MLA Charles Agar has chosen to sit with the Grits. The remaining 3 MLAs have either joined the Conservative party or have retired from politics. 
+ MLA Jacob Benson has chosen to join our party, sitting as a Farmer-Labour representative and has chosen to continue supporting the Cooperative Coalition. MLA Charles Agar has chosen to sit with the Grits. The remaining 3 MLAs have either joined the Conservative party or have retired from politics. 
 
  With the Progressives now out the picture, rural Saskatchewan seems ripe for the taking by our party. 

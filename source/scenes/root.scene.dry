@@ -1326,25 +1326,12 @@ This game is a total conversion mod of Autumn Chen's great game - Social Democra
 
 For more information on the politics and government of Saskatchewan, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1932_easy: Begin (easy difficulty)
-- @1932_main: Begin (normal difficulty)
+- @1932_main: Begin (Arcade Mode)
 - @1932_hard: Begin (hard difficulty)
 - @1932_historical: Begin (historical mode)
 
-@1932_easy
-on-arrival: {!
-  Q.difficulty = -1;
-  Q.resources = 4;
-  Q.dues = 3;
-  Q.ufc_strength = 35.00;
-  Q.cp_s_relation = 29;
-  Q.pps_relation = 54;
-  Q.cps_relation = 49;
-  Q.treasury = 15;
-!}
-go-to: 1932_main
-
 @1932_hard
+subtitle: A more realistic experience
 on-arrival: {!
   Q.difficulty = 1;
   Q.resources = 0;
@@ -1383,6 +1370,7 @@ this.state.disableSaves = true;
 go-to: 1932_main
 
 @1932_main
+subtitle: More paths and freedom - Intended way to play 
 audio: shuffle music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0

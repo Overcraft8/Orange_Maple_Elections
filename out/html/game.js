@@ -732,6 +732,18 @@ window.onload = function() {
   window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
 };
 
+window.bottom_panel_display = function() {
+    var bottom_panel = document.getElementById('bottom_panel');
+    var bottom_panel_display = bottom_panel.style.display;
+
+    if (bottom_panel_display == 'flex') {
+        bottom_panel.style.display = 'none'
+    }
+    else {
+        bottom_panel.style.display = 'flex'
+    }
+};
+
 
 
 

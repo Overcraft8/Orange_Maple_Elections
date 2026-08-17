@@ -674,6 +674,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;   /* horizontally centers children */
+  font-family: Verdana, Arial;
 }
   
   #content {

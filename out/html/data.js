@@ -4,6 +4,10 @@ const tooltipList = [{
     explanationText: "<img src=img/CCF_logo.jpg>The Cooperative Commonwealth Federation (Saskatchewan Section)"
 }, 
 {
+    searchString: "FLP",
+    explanationText: "The Farmer-Labour Party"
+}, 
+{
     searchString: "CP(S)", 
     explanationText: "The Communist Party (Saskatchewan)"
 },
@@ -83,6 +87,10 @@ const tooltipList = [{
 const colourList = [{
     // For organizations + parties
         word: "CCF(SS)",
+        style: "color: #D26E28; font-weight: bold;"
+    },
+    {
+        word: "FLP",
         style: "color: #D26E28; font-weight: bold;"
     },
     {

@@ -1346,6 +1346,8 @@ on-arrival: {!
   Q.cps_relation = 31;
   Q.treasury = 5;
 !}
+choose-if: 1 = 2
+unavailable-subtitle: WIP!
 go-to: 1932_main
 
 @1932_historical
@@ -1366,7 +1368,8 @@ Q.cps_relation = 31;
 Q.treasury = 12;
 this.state.disableSaves = true;
 !}
-
+choose-if: 1 = 2
+unavailable-subtitle: WIP!
 go-to: 1932_main
 
 @1932_main

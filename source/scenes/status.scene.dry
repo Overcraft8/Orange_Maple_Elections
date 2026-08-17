@@ -17,6 +17,74 @@ if (Q.economic_growth) {
 }
 !}
 on-display: {!
+
+
+    data = [
+    {
+        "id": "ccf_ss",
+        "legend": "CCF(SS)",
+        "name": "CCF(SS)",
+        "seats": Q.ccf_ss_seats
+    },
+    {
+        "id": "cp_s",
+        "legend": "CP(S)",
+        "name": "CP(S)",
+        "seats": Q.cp_s_seats
+    }
+    ];
+    if (Q.sapd_formed && Q.sapd_r) {
+        data.push({
+                "id": "sapd",
+                "legend": "SAPD",
+                "name": "SAPD",
+                "seats": Math.round(Q.sapd_r * 0.6),
+                });
+    }
+
+    data = data.concat([
+        {
+            "id": "lps",
+            "legend": "LPS",
+            "name": "LPS",
+            "seats": Q.lps_seats
+        },
+        {
+            "id": "pps",
+            "legend": "PPS",
+            "name": "PPS",
+            "seats": Q.pps_seats
+        },
+        {
+            "id": "cps",
+            "legend": "CPS",
+            "name": "CPS",
+            "seats": Q.cps_seats
+        },
+        {
+            "id": "other",
+            "legend": "Other",
+            "name": "Other",
+            "seats": Q.other_seats
+        },
+        {
+            "id": "scps",
+            "legend": "SCPS",
+            "name": "SCPS",
+            "seats": Q.scps_seats
+            /* "seats": Math.round(Q.scps_r * 0.6), */
+        },
+    ]);
+
+    data = data.filter(p => p.seats > 0);
+
+    console.log("Seat totals by party:");
+    for (var party of Q.parties) {
+        console.log(party, Q[party+'_seats']);
+    }
+
+    Q.parliament_diagram = data;
+
     if (d3 && window && Q.started) {
         var data = Q.parliament_diagram;
         var screenWidth = document.getElementById('qualities').offsetWidth;

@@ -6,7 +6,6 @@ view-if: ccym_timer <= 0
 card-image: img/ccym_handbook.jpg
 on-arrival: month_actions += 1; ccym_timer += 6; 
 max-visits: 6
-subtitle: The CCF's youth wing
 
 = The CCYM
 

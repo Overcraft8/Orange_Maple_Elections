@@ -18,7 +18,7 @@ on-arrival: {!
     content.style.maxWidth = '100em';
     content.style.width = '100em;';
 
-!}; 
+!} 
 
 = Fine time
 

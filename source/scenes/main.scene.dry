@@ -45,9 +45,9 @@ max-cards: 6
 [? if year = 1932 and month = 4 : The Alberta Social Credit Party wins a majority in the provincial legislature. Our family in the Alberta CCF are deeply disturbed by the usurpation of what could've been a CCF stronghold. Aberhart's SCPS has already won over the the farmers of Albert. Is it possible the party could become just as infectious in Saskatchewan? ?]
 
 - @party
+- @govt_two
 - @govt
 - @programme
-- @govt_two
 - #advisor
 # - @shuffle_leadership_pinned
 

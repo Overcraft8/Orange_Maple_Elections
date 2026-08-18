@@ -14,7 +14,7 @@ on-arrival: {!
 
     left_sidebar.style.display = 'none'; 
     right_sidebar.style.display = 'none';
-    mid_panel.style.margin = '';
+    mid_panel.style.margin = '0 0';
 
     content.style.maxWidth = '100em';
     content.style.width = '50em';
@@ -44,6 +44,8 @@ on-departure: {!
 </div>
 
 <div >
+
+- @return
 
 @crown_corps_options 
 

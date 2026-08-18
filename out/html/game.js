@@ -557,6 +557,12 @@ window.changeTabBottom = function(newTab, tabId) {
 // "Region" Configurations
 // ==========================================
 const BAR_CONFIG = {
+    center: {
+        containerId: 'mid_panel',
+        targetId: 'content',
+        starting_scene: 'government_options',
+        isLeft: false
+    },
     left: {
         containerId: 'stats_sidebar',
         targetId: 'qualities',
@@ -597,7 +603,7 @@ window.updateBar = function(regionKey) {
     var scene = dendryUI.game.scenes[sceneId];
     if (!scene) return;
 
-    // Run status logic if processing the left main sidebar
+    // Run status on arrival if the left main sidebar
     if (config.isLeft) {
         var statusScene = dendryUI.game.scenes["status"];
         if (statusScene) dendryUI.dendryEngine._runActions(statusScene.onArrival);
@@ -608,13 +614,12 @@ window.updateBar = function(regionKey) {
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     var htmlContent = dendryUI.contentToHTML.convert(displayContent);
 
-    // Sanitize HTML to prevent script execution errors
     var tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
     $(targetSelector).html(tempDiv.innerHTML);
 
-    // Run display hooks so D3 charts, SVGs, and dynamic UI initialize
+    // Run display so D3 charts, SVGs, and dynamic UI initialize
     dendryUI.dendryEngine._runActions(scene.onDisplay);
 
     // if (config.isLeft)... for just the left status if too slow
@@ -656,12 +661,12 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         // Clear rendered HTML from the sidebar
         $('#' + config.targetId).empty();
 
-        // Reset prev_tab_id so clicking it next time re-opens it cleanly
+        // Reset prev_tab_id so clicking it next time re-opens it
         window.prev_tab_id = null;
         return;
     }
 
-    // Process button classes independently rather than using mutually exclusive else-ifs
+    // Process button classes independently
     if (tabButton.classList.contains('status_tab_button')) {
         for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
     } 
@@ -686,7 +691,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         }
     }
 
-    // Unconditionally add the active state to the clicked button
+    // add the active state to the clicked button
     tabButton.classList.add('active');
 
     // Save state globally and update UI

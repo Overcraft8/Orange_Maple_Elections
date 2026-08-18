@@ -33,13 +33,16 @@ on-departure: {!
     content.style.width = '26em;';
 !}
 
-<div id="government_options_panel">
-= Government 
+<div id="government_options_top_panel" class='tab_container'>
 
-<div id='crown_corps_button'>
-    <div id='saskpower_options'></div>
+<div id='crown_corps_button' class='tab_button' onclick='window.ChangeTab('('center', 'government_options.crown_corps_options', 'crown_corps_button')')'></div>
+
+<div id='ministries_button' class='tab_button'></div>
+
 </div>
 
-<div id='ministries_button'>
-    <div id='agriculture_options'></div>
-</div>
+<div >
+
+@crown_corps_options 
+
+= Got into Crown corps options

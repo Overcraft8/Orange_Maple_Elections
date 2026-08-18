@@ -1,0 +1,45 @@
+title: Government
+new-page: true
+is-card: true
+tags: govtwo, programme
+view-if: 1 = 1
+card-image: img/Saskatchewan_Legislature.jpg
+on-arrival: {!
+    var mid_panel = document.getElementById('mid_panel');
+    var content = document.getElementById('content');
+    var tools = document.getElementById('tools_wrapper'); 
+
+    var left_sidebar = document.getElementById('stats_sidebar'); 
+    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+
+    left_sidebar.style.display = 'none'; 
+    right_sidebar.style.display = 'none';
+
+    content.style.maxWidth = '100em';
+    content.style.width = '100em;';
+!} 
+on-departure: {!
+    var mid_panel = document.getElementById('mid_panel');
+    var content = document.getElementById('content');
+    var tools = document.getElementById('tools_wrapper'); 
+
+    var left_sidebar = document.getElementById('stats_sidebar'); 
+    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+
+    left_sidebar.style.display = ''; 
+    right_sidebar.style.display = '';
+
+    content.style.maxWidth = '26em';
+    content.style.width = '26em;';
+!}
+
+<div id="government_options_panel">
+= Government 
+
+<div id='crown_corps_button'>
+    <div id='saskpower_options'></div>
+</div>
+
+<div id='ministries_button'>
+    <div id='agriculture_options'></div>
+</div>

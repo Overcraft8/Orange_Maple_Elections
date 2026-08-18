@@ -20,6 +20,7 @@ max-cards: 6
 
 - @party
 - @govt
+- @govt_two
 - @programme
 - #advisor
 # - @shuffle_leadership_pinned

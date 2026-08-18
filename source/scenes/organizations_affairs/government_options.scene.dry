@@ -14,9 +14,10 @@ on-arrival: {!
 
     left_sidebar.style.display = 'none'; 
     right_sidebar.style.display = 'none';
+    mid_panel.style.margin = '';
 
     content.style.maxWidth = '100em';
-    content.style.width = '100em;';
+    content.style.width = '50em';
 !} 
 on-departure: {!
     var mid_panel = document.getElementById('mid_panel');
@@ -28,9 +29,10 @@ on-departure: {!
 
     left_sidebar.style.display = ''; 
     right_sidebar.style.display = '';
+    mid_panel.style.margin = '0 23em';
 
     content.style.maxWidth = '26em';
-    content.style.width = '26em;';
+    content.style.width = '26em';
 !}
 
 <div id="government_options_top_panel" class='tab_container'>
@@ -44,6 +46,12 @@ on-departure: {!
 <div >
 
 @crown_corps_options 
+
+<div class='tab_container'>
+<div id='back_crowns' class='tab_button' onclick="window.ChangeTab('center', 'government_options', 'back_crowns');">Back</div>
+</div>
+
+
 
 = Got into Crown corps options
 

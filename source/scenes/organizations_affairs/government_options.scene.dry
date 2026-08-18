@@ -35,9 +35,9 @@ on-departure: {!
 
 <div id="government_options_top_panel" class='tab_container'>
 
-<div id='crown_corps_button' class='tab_button' onclick='window.ChangeTab('('center', 'government_options.crown_corps_options', 'crown_corps_button')')'></div>
+<div id='crown_corps_button' class='tab_button' onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
 
-<div id='ministries_button' class='tab_button'></div>
+<div id='ministries_button' class='tab_button'>Ministries</div>
 
 </div>
 
@@ -46,3 +46,7 @@ on-departure: {!
 @crown_corps_options 
 
 = Got into Crown corps options
+
+@ministries_options 
+
+= GOt into Ministries options

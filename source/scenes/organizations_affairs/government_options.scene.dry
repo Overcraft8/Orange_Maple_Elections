@@ -45,7 +45,7 @@ on-departure: {!
 
 <div >
 
-- @return
+<ul class="choices"><li><a href="#" data-choice="0">Back to main</a></li></ul>
 
 @crown_corps_options 
 
@@ -53,9 +53,14 @@ on-departure: {!
 <div id='back_crowns' class='tab_button' onclick="window.ChangeTab('center', 'government_options', 'back_crowns');">Back</div>
 </div>
 
-
-
 = Got into Crown corps options
+
+<div id='crown_corps_panel'>
+
+    <div id="saskpower_panel" style='border: 1px solid #000000; width: 8em; height: 20em;'>
+        <div>SaskPower</div>
+    </div>
+</div>
 
 @ministries_options 
 

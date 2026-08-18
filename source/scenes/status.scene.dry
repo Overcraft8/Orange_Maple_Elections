@@ -78,11 +78,6 @@ on-display: {!
 
     data = data.filter(p => p.seats > 0);
 
-    console.log("Seat totals by party:");
-    for (var party of Q.parties) {
-        console.log(party, Q[party+'_seats']);
-    }
-
     Q.parliament_diagram = data;
 
     if (d3 && window && Q.started) {

@@ -2,8 +2,6 @@ title: Government
 new-page: true
 is-card: true
 view-if: 1 = 1
-card-image: img/Saskatchewan_Legislature.jpg
-tags: govt_test
 on-arrival: {!
     var mid_panel = document.getElementById('mid_panel');
     var content = document.getElementById('content');
@@ -19,3 +17,5 @@ on-arrival: {!
     content.style.width = '100em;';
 
 !}
+card-image: img/Saskatchewan_Legislature.jpg
+tags: govtwo

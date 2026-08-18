@@ -47,6 +47,7 @@ max-cards: 6
 - @party
 - @govt
 - @programme
+- @govt_two
 - #advisor
 # - @shuffle_leadership_pinned
 
@@ -75,7 +76,6 @@ is-deck: true
 @govt_two
 title: Government Test 
 card-image: img/Saskatchewan_Legislature.jpg
-view-if: time >= 1
 is-deck: true
 
 - #govtwo

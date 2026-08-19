@@ -165,12 +165,8 @@ on-arrival: {!
 
         <div id='saskpower_stats' class='gov_stats'>
             <div>Electrification: [+ electrification +]%</div>
-            <div> Market Share: [+ electrification_pie_chart +]
-                
-            </div>
+            <div> Market Share: [+ electrification_pie_chart +]</div>
         </div>
-
-        <div>
 
     </div>
 
@@ -180,11 +176,8 @@ on-arrival: {!
 
         <div id='saskpower_tel' class='gov_stats'>
             <div>Telecoms: [+ electrification +]%</div>
-            <div> Market Share: [+ telecoms_pie_chart +]
-            </div>
+            <div> Market Share: [+ telecoms_pie_chart +]</div>
         </div>
-
-        <div>
 
     </div>
 

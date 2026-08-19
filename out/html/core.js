@@ -1432,7 +1432,7 @@
                     numChoosable = data.numChoosable;
                 }
                 // CHANGED BELOW MARIO MARIO LUIGI WALUIGI ADDED && FOR CENTER PANEL 
-                if (numChoosable === 0 && !this.state.sceneId.startsWith('government_options')) {
+                if (numChoosable === 0) {
                     // We have no choosable options, so add the default option (NB:
                     // this may take us over the max-choices limit).
                     var root = this.state.rootSceneId;

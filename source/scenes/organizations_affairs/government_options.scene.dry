@@ -37,11 +37,18 @@ on-departure: {!
 
 <div id="government_options_top_panel" class='tab_container'>
 
-<div id='crown_corps_button' class='tab_button' onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
+    <div id='crown_corps_button' class='tab_button' style="cursor: pointer;" onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
 
-<div id='ministries_button' class='tab_button'>Ministries</div>
+    <div id='ministries_button' style="cursor: pointer;" class='tab_button'>Ministries</div>
+
+    <ul class="choices">
+        <a href="#" data-choice="0">
+            <div id="ministries_button" class="tab_button" style="position: absolute; right: 1.2em;">Back</div>
+         </a>
+    </ul>
 
 </div>
+
 
 <div >
 

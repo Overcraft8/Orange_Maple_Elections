@@ -105,7 +105,7 @@ on-arrival: {!
                             align-items: center; 
                             justify-content: center; 
                             text-align: center; 
-                            background-image: url('img/${imageName}'); 
+                            <!-- background-image: url('img/${imageName}'); -->
                             background-size: cover; 
                             background-position: center;
                             padding: 16px;
@@ -185,7 +185,7 @@ on-arrival: {!
             </div>
         </div>
     </div>
-    
+
 </div>
 
 @ministries_options 

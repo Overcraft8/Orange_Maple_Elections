@@ -112,7 +112,9 @@ window.economy_images = {
     'Agricultural Marketing' : 'grain_elevator.jpg',
     'Finance' : 'bank.png',
     'Government' : 'Saskatchewan_Legislature.jpg', 
-    'Foresty' : 'placeholder'
+    'Foresty' : 'placeholder',
+    'electricity' : 'powerhouse.jpg',
+    'telecoms' : 'telecom_lines.jpg'
 };
 
 

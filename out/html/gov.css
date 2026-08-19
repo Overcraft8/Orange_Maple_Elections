@@ -1,6 +1,5 @@
 .gov_panel {
-    flex: 1 1 200px;
-    max-width: 100%;
+    width: 200px;
     box-sizing: border-box; 
     overflow: hidden;       
     padding: 16px;

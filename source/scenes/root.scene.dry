@@ -931,6 +931,9 @@ Q.economic_data = {
     'electricity' : {
         // format being [[private, cooperative, state], total contribution]
         'marketshare' : [[0.8, 0, 0.2], 5]
+    },
+    'telecoms' : {
+        'marketshare' : [[0.9, 0, 0.1], 4]
     }
 };
 
@@ -944,10 +947,16 @@ Q.crown_corps = {
         'revenue' : 4, 
         'expenses' : 2, 
         'marketshare' : Q.economic_data['electricity'].marketshare[0][2]
+    },
+    'sasktel' : {
+        'revenue' : 6, 
+        'expenses' : 3, 
+        'marketshare' : Q.economic_data['telecoms'].marketshare[0][2]
     }
 };
 
 Q.electrification_pie_chart = 0;
+Q.telecoms_pie_chart = 0;
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////

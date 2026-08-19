@@ -68,71 +68,85 @@ on-departure: {!
 @crown_corps_options 
 on-arrival: {!
     if (1 == 1) {
-
-        var sectorName = 'electricity'; // Define this so the UI knows what to call it!
-        var districtData = Q.economic_data[sectorName]; 
-        
-        // districtData is { 'marketshare' : [[0.8, 0, 0.2], 5] }
-
+        // Start the master container for all Crown cards
         var containerHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
 
-        // Check if the data exists, then grab the array
-        if (districtData && districtData.marketshare) {
-            var sectorData = districtData.marketshare; // Points to [[0.8, 0, 0.2], 5]
-        
-            if (Array.isArray(sectorData) && sectorData.length === 2 && Array.isArray(sectorData[0]) && typeof sectorData[1] === 'number') {
-                var ownership = sectorData[0]; // [private, cooperative, state] ratios
-                var contribution = sectorData[1]; // economic contribution value
+        // Loop through Crown corporations defined in the pairs dictionary
+        for (var crown_id in Q.crown_economic_pairs) {
+            
+            var sectorName = Q.crown_economic_pairs[crown_id]; // e.g., 'electricity', 'telecoms'
+            var districtData = Q.economic_data[sectorName]; 
 
-                var privateShare = Math.round(ownership[0] * 100);
-                var coopShare = Math.round(ownership[1] * 100);
-                var stateShare = Math.round(ownership[2] * 100);
+            // Only proceed if data exists for it
+            if (districtData && districtData.marketshare) {
+                var sectorData = districtData.marketshare; 
+            
+                if (Array.isArray(sectorData)) {
+                    
+                    var ownership = sectorData[0]; // [private, cooperative, state] ratios
+                    var contribution = sectorData[1]; // economic contribution
 
-                // Calculate cumulative percentage stops
-                var stop1 = privateShare;
-                var stop2 = privateShare + coopShare;
-                var tooltipText = `Private (Blue): ${privateShare}%\nCo-op (Yellow): ${coopShare}%\nState (Orange): ${stateShare}%`;
+                    var privateShare = Math.round(ownership[0] * 100);
+                    var coopShare = Math.round(ownership[1] * 100);
+                    var stateShare = Math.round(ownership[2] * 100);
 
-                var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
+                    var stop1 = privateShare;
+                    var stop2 = privateShare + coopShare;
+                    var tooltipText = `Private (Blue): ${privateShare}%\nCo-op (Yellow): ${coopShare}%\nCrown (Orange): ${stateShare}%`;
 
-                containerHtml += `
-                    <div class="project_container" style="
-                        position: relative; 
-                        display: flex; 
-                        flex-direction: column; 
-                        align-items: center; 
-                        justify-content: center; 
-                        text-align: center; 
-                        background-image: url('img/${imageName}'); 
-                        background-size: cover; 
-                        background-position: center;
-                        padding: 16px;
-                        min-width: 80px;
-                        color: #ffffff;
-                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-                        border: 2px ridge #9c8c64;
-                        border-radius: 4px;
-                    ">
-                        <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
-                            <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f;">${sectorName}</span>
-                            <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
-                            <figure class="pie_chart" data-tooltip="${tooltipText}" style="
-                                background: conic-gradient(
-                                    rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
-                                    rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 
-                                    rgba(222, 157, 103, 0.9) ${stop2}% 100%
-                                );">
-                            </figure>
+                    var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
+
+                    // Generate the specific card for this sector
+                    var cardHtml = `
+                        <div class="project_container" style="
+                            position: relative; 
+                            display: flex; 
+                            flex-direction: column; 
+                            align-items: center; 
+                            justify-content: center; 
+                            text-align: center; 
+                            background-image: url('img/${imageName}'); 
+                            background-size: cover; 
+                            background-position: center;
+                            padding: 16px;
+                            min-width: 80px;
+                            color: #ffffff;
+                            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+                            border: 2px ridge #9c8c64;
+                            border-radius: 4px;
+                        ">
+                            <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f; text-transform: capitalize;">${sectorName}</span>
+                                <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
+                                <figure class="pie_chart" data-tooltip="${tooltipText}" style="
+                                    background: conic-gradient(
+                                        rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
+                                        rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 
+                                        rgba(222, 157, 103, 0.9) ${stop2}% 100%
+                                    );">
+                                </figure>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+
+                    // Add this card to the master container
+                    containerHtml += cardHtml;
+
+                    // Save the individual card to Q variables
+                    var varName = (sectorName === 'electricity') ? 'electrification_pie_chart' : sectorName + '_pie_chart';
+                    
+                    // FIX: Assign cardHtml to both variables (not containerHtml)
+                    Q[crown_id + '_pie_chart'] = cardHtml;
+                    Q[varName] = cardHtml;
+                }
             }
         }
         
-        // Close the flex container
+        // Close the master flex container
         containerHtml += '</div>';
-
-        Q.electrification_pie_chart = containerHtml;
+        
+        // Save the full combined container to a Q variable so you can display it all at once
+        Q.all_crown_cards_html = containerHtml;
     }
 !}
 
@@ -142,7 +156,7 @@ on-arrival: {!
 
 = The Crown Corporations
 
-<div style="font-size: 0.8em;">(Updated Annually)</div>
+<div style="font-size: 0.8em; text-align: center;">(Updated Annually)</div>
 
 <div id='crown_corps_panel'>
 
@@ -159,6 +173,22 @@ on-arrival: {!
         <div>
 
     </div>
+
+
+    <div id="sasktel_panel" class="gov_panel">
+        <div class="h1_gov">SaskTel</div>
+
+        <div id='saskpower_tel' class='gov_stats'>
+            <div>Telecoms: [+ electrification +]%</div>
+            <div> Market Share: [+ telecoms_pie_chart +]
+            </div>
+        </div>
+
+        <div>
+
+    </div>
+
+
 </div>
 
 @ministries_options 

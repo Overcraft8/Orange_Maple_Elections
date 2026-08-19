@@ -37,18 +37,11 @@ on-departure: {!
 
 <div id="government_options_top_panel" class='tab_container'>
 
-    <ul class="choices choices_button" style="right: 1.2em;">
-        <li>
-            <a href="#" data-choice="0">
-                <div id='crown_corps_button' class='tab_button' style="cursor: pointer;">Crown Corporations</div>
-            </a>
-        </li>
-    </ul>
-
+    <div id='crown_corps_button' class='tab_button' style="cursor: pointer;" onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
 
     <div id='ministries_button' style="cursor: pointer;" class='tab_button'>Ministries</div>
 
-    <ul class="choices choices_button" style="right: 1.2em;">
+    <ul class="choices" style="position: absolute; right: 1.2em; top: 1em; border-radius: 0; border: 0px solid #000000; padding: 0;">
         <li>
             <a href="#" data-choice="0">
                 <div id="ministries_button" class="tab_button">Back</div>
@@ -71,9 +64,6 @@ on-departure: {!
 
 <ul class="choices"><li><a href="#" data-choice="0">Back to main</a></li></ul>
 
-- @crown_corps_options: How about the Crown Corps?
-- @ministries_options: How about the Ministries?
-
 @crown_corps_options 
 
 <div class='tab_container'>
@@ -84,17 +74,15 @@ on-departure: {!
 
 <div id='crown_corps_panel'>
 
-    <div id="saskpower_panel" style='border: 1px solid #cee356; width: 8em; height: 20em;'>
-        <div> 
-        = SaskPower
-        </div>
+    <div id="saskpower_panel" class="gov_panel" style='border: 1px solid #cee356; width: 8em; height: 20em;'>
+        <div class="h1_gov">SaskPower</div>
+
+        <div>Percentage of </div>
 
         <div>
 
     </div>
 </div>
-
-<div id='crown_corps_button' class='tab_button' style="cursor: pointer;" onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
 
 @ministries_options 
 

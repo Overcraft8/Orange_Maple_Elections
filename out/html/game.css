@@ -200,13 +200,6 @@ ul.choices li:last-child {
 ul.choices a {
   text-decoration: none;
 }
-.choices_bar {
-  position: absolute; 
-  top: 1em; 
-  border-radius: 0; 
-  border: 0px solid #000000; 
-  padding: 0;
-}
 blockquote {
   margin: 1em 2em;
 }

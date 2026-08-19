@@ -41,7 +41,7 @@ on-departure: {!
 
     <div id='ministries_button' style="cursor: pointer;" class='tab_button'>Ministries</div>
 
-    <ul class="choices" style="position: absolute; right: 1.2em; border-radius: 0; border: 0px solid #000000; ">
+    <ul class="choices" style="position: absolute; right: 1.2em; top: 1em; border-radius: 0; border: 0px solid #000000; padding: 0;">
         <li>
             <a href="#" data-choice="0">
                 <div id="ministries_button" class="tab_button">Back</div>
@@ -67,15 +67,20 @@ on-departure: {!
 @crown_corps_options 
 
 <div class='tab_container'>
-<div id='back_crowns' class='tab_button' onclick="window.ChangeTab('center', 'government_options', 'back_crowns');">Back</div>
+    <div id='back_crowns' class='tab_button' onclick="window.ChangeTab('center', 'government_options', 'back_crowns');">Back</div>
 </div>
 
-= Got into Crown corps options
+= The Crown Corporations
 
 <div id='crown_corps_panel'>
 
-    <div id="saskpower_panel" style='border: 1px solid #000000; width: 8em; height: 20em;'>
-        <div>SaskPower</div>
+    <div id="saskpower_panel" style='border: 1px solid #cee356; width: 8em; height: 20em;'>
+        <div> 
+        = SaskPower
+        </div>
+
+        <div>
+
     </div>
 </div>
 

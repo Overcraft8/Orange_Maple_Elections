@@ -136,7 +136,7 @@ on-arrival: {!
                     // var varName = (sectorName === 'electricity') ? 'electrification_pie_chart' : sectorName + '_pie_chart';
                     
                     // FIX: Assign cardHtml to both variables (not containerHtml)
-                    Q[crown_id + '_pie_chart'] = cardHtml;
+                    Q[sectorName + '_pie_chart'] = cardHtml;
                     // Q[varName] = cardHtml;
                 }
             }
@@ -179,8 +179,8 @@ on-arrival: {!
             <div> Market Share: [+ telecoms_pie_chart +]</div>
         </div>
 
-    </div>
 
+    </div>
 
 </div>
 

@@ -360,6 +360,7 @@ img.inline-img.icon {
   border: ridge;
   border-color: #9c8c64;
   padding: 7px;
+  cursor: pointer; 
 }
 
 .dark-mode .tab_button, .dark-mode .status_tab_button{

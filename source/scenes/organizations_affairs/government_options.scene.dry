@@ -41,16 +41,20 @@ on-departure: {!
 
     <div id='ministries_button' style="cursor: pointer;" class='tab_button'>Ministries</div>
 
-    <ul class="choices">
-        <a href="#" data-choice="0">
-            <div id="ministries_button" class="tab_button" style="position: absolute; right: 1.2em;">Back</div>
-         </a>
-    </ul>
+    <ul class="choices"><li><a href="#" data-choice="0"><div id="ministries_button" class="tab_button" style="position: absolute; right: 1.2em;">Back</div></a></li></ul>
 
 </div>
 
 
 <div >
+
+<!-- 
+    <ul class="choices">
+        <a href="#" data-choice="0">
+            <div id="ministries_button" class="tab_button" style="position: absolute; right: 1.2em;">Back</div>
+         </a>
+    </ul>
+    -->
 
 <ul class="choices"><li><a href="#" data-choice="0">Back to main</a></li></ul>
 

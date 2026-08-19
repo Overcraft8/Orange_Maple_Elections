@@ -60,11 +60,81 @@ on-departure: {!
             <div id="ministries_button" class="tab_button" style="position: absolute; right: 1.2em;">Back</div>
          </a>
     </ul>
-    -->
+    
 
 <ul class="choices"><li><a href="#" data-choice="0">Back to main</a></li></ul>
+-->
 
 @crown_corps_options 
+on-arrival: {!
+    if (1 == 1) {
+
+        var sectorName = 'electricity'; // Define this so the UI knows what to call it!
+        var districtData = Q.economic_data[sectorName]; 
+        
+        // districtData is { 'marketshare' : [[0.8, 0, 0.2], 5] }
+
+        var containerHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
+
+        // Check if the data exists, then grab the array
+        if (districtData && districtData.marketshare) {
+            var sectorData = districtData.marketshare; // Points to [[0.8, 0, 0.2], 5]
+        
+            if (Array.isArray(sectorData) && sectorData.length === 2 && Array.isArray(sectorData[0]) && typeof sectorData[1] === 'number') {
+                var ownership = sectorData[0]; // [private, cooperative, state] ratios
+                var contribution = sectorData[1]; // economic contribution value
+
+                var privateShare = Math.round(ownership[0] * 100);
+                var coopShare = Math.round(ownership[1] * 100);
+                var stateShare = Math.round(ownership[2] * 100);
+
+                // Calculate cumulative percentage stops
+                var stop1 = privateShare;
+                var stop2 = privateShare + coopShare;
+                var tooltipText = `Private (Blue): ${privateShare}%\nCo-op (Yellow): ${coopShare}%\nState (Orange): ${stateShare}%`;
+
+                var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
+
+                containerHtml += `
+                    <div class="project_container" style="
+                        position: relative; 
+                        display: flex; 
+                        flex-direction: column; 
+                        align-items: center; 
+                        justify-content: center; 
+                        text-align: center; 
+                        background-image: url('img/${imageName}'); 
+                        background-size: cover; 
+                        background-position: center;
+                        padding: 16px;
+                        min-width: 80px;
+                        color: #ffffff;
+                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+                        border: 2px ridge #9c8c64;
+                        border-radius: 4px;
+                    ">
+                        <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f;">${sectorName}</span>
+                            <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
+                            <figure class="pie_chart" data-tooltip="${tooltipText}" style="
+                                background: conic-gradient(
+                                    rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
+                                    rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 
+                                    rgba(222, 157, 103, 0.9) ${stop2}% 100%
+                                );">
+                            </figure>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Close the flex container
+        containerHtml += '</div>';
+
+        Q.electrification_pie_chart = containerHtml;
+    }
+!}
 
 <div class='tab_container'>
     <div id='back_crowns' class='tab_button' onclick="window.ChangeTab('center', 'government_options', 'back_crowns');">Back</div>
@@ -72,12 +142,19 @@ on-departure: {!
 
 = The Crown Corporations
 
+<div style="font-size: 0.8em;">(Updated Annually)</div>
+
 <div id='crown_corps_panel'>
 
-    <div id="saskpower_panel" class="gov_panel" style='border: 1px solid #cee356; width: 8em; height: 20em;'>
+    <div id="saskpower_panel" class="gov_panel">
         <div class="h1_gov">SaskPower</div>
 
-        <div>Percentage of </div>
+        <div id='saskpower_stats' class='gov_stats'>
+            <div>Electrification: [+ electrification +]%</div>
+            <div> Market Share: [+ electrification_pie_chart +]
+                
+            </div>
+        </div>
 
         <div>
 

@@ -25,6 +25,7 @@ Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
 Q.year = 1932;
+Q.prev_year = 1931;
 Q.month = 1;
 // how many actions have been taken this month?
 Q.month_actions = 0;
@@ -507,11 +508,11 @@ Q.healthcarequality = "Basic";
 Q.rural_poverty = (10).toFixed(1);
 //  
 //                   Farmers living standards
-// Farmers Access to electricity
-Q.farmers_electrification = 5;
-// Farmers Access to sanitation
-Q.farmers_sanitation = 3;
-Q.farmers_telephone = 20;
+// Access to electricity
+Q.electrification = 5;
+// Access to sanitation
+Q.rural_sanitation = 3;
+Q.rural_telephone = 20;
 
 //                 Foreign Relations
 // Relations with the UFUL
@@ -918,6 +919,35 @@ Q.southeast_d_pps_seats = 2;
 Q.prince_albert_d_lps_seats = 1; 
 Q.moose_jaw_d_cps_seats = 2;
 
+
+//--------------------------------------------------------------
+/////////////////////////////////////////////////////////////////
+//                Dynamic Economy Data                         //
+/////////////////////////////////////////////////////////////////
+//---------------------------------------------------------------
+
+
+Q.economic_data = {
+    'electricity' : {
+        // format being [[private, cooperative, state], total contribution]
+        'marketshare' : [[0.8, 0, 0.2], 5]
+    }
+};
+
+Q.crown_economic_pairs = {
+    'saskpower' : 'electricity', 
+    'sasktel' : 'telecoms'
+};
+
+Q.crown_corps = {
+    'saskpower' : {
+        'revenue' : 4, 
+        'expenses' : 2, 
+        'marketshare' : Q.economic_data['electricity'].marketshare[0][2]
+    }
+};
+
+Q.electrification_pie_chart = 0;
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////

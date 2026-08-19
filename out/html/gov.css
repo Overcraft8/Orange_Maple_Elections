@@ -1,0 +1,24 @@
+.gov_panel {
+    border: 2px groove #bd8234; 
+    width: 8em; 
+    height: 20em;
+    display: flex; 
+    flex-direction: column; 
+    text-align: center;
+    justify-content: center; 
+    
+};
+
+.h1_gov {
+    font-size: 1.1em; 
+    font-weight: bold; 
+};
+
+.gov_stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border: 1px solid #dcd6cd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+};

@@ -320,11 +320,11 @@ Road length: [+ road_length +] km
 = Rural Standards
 
 
-Farmers Electrification: [+ farmers_electrification +]%
+Farmers Electrification: [+ electrification +]%
 
-Farmers Sanitation Access: [+ farmers_sanitation +]%
+Farmers Sanitation Access: [+ rural_sanitation +]%
 
-Farmers Telephone Access: [+ farmers_telephone +]%
+Farmers Telephone Access: [+ rural_telephone +]%
 
 = Tax Rates 
 

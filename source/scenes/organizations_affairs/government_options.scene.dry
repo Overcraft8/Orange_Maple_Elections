@@ -158,6 +158,7 @@ on-arrival: {!
 
 <div style="font-size: 0.8em; text-align: center;">(Updated Annually)</div>
 
+
 <div id='crown_corps_panel'>
 
     <div id="saskpower_panel" class="gov_panel">
@@ -165,7 +166,7 @@ on-arrival: {!
 
         <div id='saskpower_stats' class='gov_stats'>
             <div>Electrification: [+ electrification +]%</div>
-            <div> Market Share: [+ electrification_pie_chart +]</div>
+            <div> Market Share: [+ electricity_pie_chart +]</div>
         </div>
 
     </div>
@@ -178,8 +179,6 @@ on-arrival: {!
             <div>Telecoms: [+ electrification +]%</div>
             <div> Market Share: [+ telecoms_pie_chart +]</div>
         </div>
-
-
     </div>
 
 </div>

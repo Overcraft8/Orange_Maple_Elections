@@ -1,33 +1,41 @@
-#crown_corps_panel {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: 100%;
+/* 1. Ensure the parent panel constrains all child content */
+.gov_panel {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* Crucial: includes padding inside the width so it doesn't push past borders */
+    overflow: hidden;       /* Clips anything that accidentally tries to escape */
+    padding: 16px;
+    margin-bottom: 1em;
+    background: rgba(0, 0, 0, 0.05); /* Optional styling backdrop */
+    border: 1px solid #9c8c64;
+    border-radius: 4px;
 }
 
-.gov_panel {
-    border: 5px groove #bd8234; 
-    width: 8em; 
-    height: 20em;
-    display: flex; 
-    flex-direction: column; 
-    text-align: center;
-    justify-content: center; 
-    
-};
-
-.h1_gov {
-    font-size: 1.1em; 
-    font-weight: bold; 
-};
-
+/* 2. Constrain the stats container layout */
 .gov_stats {
     display: flex;
-    justify-content: space-between;
-    padding: 0.75rem;
-    border: 1px solid #dcd6cd;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-};
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 0.5rem;
+}
+
+/* 3. Force the generated card/project container to be fully responsive */
+.gov_stats .project_container, 
+#crown_corps_panel .project_container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex: 1 1 auto; /* Allows it to shrink or grow fluidly */
+}
+
+/* 4. Keep the pie chart graphic centered and scaled safely */
+.pie_chart {
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+    border-radius: 50%;
+    margin: 8px auto 0 auto;
+    box-sizing: border-box;
+}

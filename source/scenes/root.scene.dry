@@ -510,6 +510,7 @@ Q.rural_poverty = (10).toFixed(1);
 //                   Farmers living standards
 // Access to electricity
 Q.electrification = 5;
+Q.telecoms = 10;
 // Access to sanitation
 Q.rural_sanitation = 3;
 Q.rural_telephone = 20;

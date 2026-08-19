@@ -133,11 +133,11 @@ on-arrival: {!
                     containerHtml += cardHtml;
 
                     // Save the individual card to Q variables
-                    var varName = (sectorName === 'electricity') ? 'electrification_pie_chart' : sectorName + '_pie_chart';
+                    // var varName = (sectorName === 'electricity') ? 'electrification_pie_chart' : sectorName + '_pie_chart';
                     
                     // FIX: Assign cardHtml to both variables (not containerHtml)
                     Q[crown_id + '_pie_chart'] = cardHtml;
-                    Q[varName] = cardHtml;
+                    // Q[varName] = cardHtml;
                 }
             }
         }

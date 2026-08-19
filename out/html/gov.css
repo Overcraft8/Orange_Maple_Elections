@@ -1,3 +1,12 @@
+#crown_corps_panel {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 .gov_panel {
     border: 5px groove #bd8234; 
     width: 8em; 

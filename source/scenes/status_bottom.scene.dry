@@ -21,7 +21,8 @@ on-display: {!
       "id": party,
       "legend": name,
       "name": name,
-      "seats": Q[Q.current_region_id + '_' + party + '_seats'] || 0
+      "seats": Q[Q.current_region_id + '_' + party + '_seats'] || 0,
+      "bench": Q[party + '_in_government']
     });
   }
 

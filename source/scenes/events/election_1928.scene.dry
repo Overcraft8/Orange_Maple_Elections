@@ -421,10 +421,18 @@ on-departure: scps_urgency = 1 if (scps_urgency == 0 and scps_r >= 15)
 on-display: {!
 data = [
     {
+        "id": "ccf_ss",
+        "legend": "CCF(SS)",
+        "name": "CCF(SS)",
+        "seats": Q.ccf_ss_seats,
+        "bench": Q.ccf_ss_in_government
+    },
+    {
         "id": "cp_s",
         "legend": "CP(S)",
         "name": "CP(S)",
-        "seats": Q.cp_s_seats
+        "seats": Q.cp_s_seats,
+        "bench": Q.cp_s_in_government
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -433,45 +441,45 @@ if (Q.sapd_formed && Q.sapd_r) {
             "legend": "SAPD",
             "name": "SAPD",
             "seats": Math.round(Q.sapd_r * 0.6),
+            "bench": 0
             });
 }
 
 data = data.concat([
     {
-        "id": "ccf_ss",
-        "legend": "CCF(SS)",
-        "name": "CCF(SS)",
-        "seats": Q.ccf_ss_seats
-    },
-    {
         "id": "lps",
         "legend": "LPS",
         "name": "LPS",
-        "seats": Q.lps_seats
+        "seats": Q.lps_seats,
+        "bench": Q.lps_in_government
     },
     {
         "id": "pps",
         "legend": "PPS",
         "name": "PPS",
-        "seats": Q.pps_seats
+        "seats": Q.pps_seats, 
+        "bench": Q.pps_in_government
     },
     {
         "id": "cps",
         "legend": "CPS",
         "name": "CPS",
-        "seats": Q.cps_seats
+        "seats": Q.cps_seats, 
+        "bench": Q.cps_in_government
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Q.other_seats
+        "seats": Q.other_seats, 
+        "bench": Q.other_in_government
     },
     {
         "id": "scps",
         "legend": "SCPS",
         "name": "SCPS",
-        "seats": Q.scps_seats
+        "seats": Q.scps_seats, 
+        "bench": Q.scps_in_government
         /* "seats": Math.round(Q.scps_r * 0.6), */
     },
 ]);

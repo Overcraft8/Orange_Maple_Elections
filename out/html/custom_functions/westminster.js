@@ -91,7 +91,7 @@ window.westminster = function(container_id, forming_government) {
             var bench = party.bench; 
 
             // 0 Indicating Opposition
-            if (bench == 0) {
+            if (bench == "0") {
                 bench = 'O'
 
                 // Now this is the loop to change base circles to coloured party circles

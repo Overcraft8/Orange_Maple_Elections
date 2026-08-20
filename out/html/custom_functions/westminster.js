@@ -109,7 +109,7 @@ window.westminster = function(container_id, forming_government) {
                 // Now this is the loop to change base circles to coloured party circles
                 for (var s = 0; s < seat_count; s++) {
                     var selected_circle = document.getElementById(bench + gov_count); 
-                    selected_circle.classList.add('seats.' + party_name); 
+                    selected_circle.classList.add('seats ' + party_name); 
                     gov_count += 1;
                 };
             };

@@ -1,10 +1,12 @@
-window.westminster = function(container_id) {
+window.westminster = function(container_id, forming_government) {
     // container_id has to be an svg for this to work????
+    // forming_government planned to be boolean indicating whether loading initial seat counts or actual government formation
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
     var house_length = 10; // How much seats in each row?
     var house_width = 3; // how many rows?
+    var seats = 50;
     var container = document.getElementById(container_id);
 
     container.innerHTML = ''; //This removes all html inside the westminster parliament container
@@ -13,12 +15,27 @@ window.westminster = function(container_id) {
     // Basically just find the data variable in root scene that holds party info like legend, id, seats - declare Q[any_var_name_really] = data right after data has appended all parties and then place it here
     // you'd also probably have to do same with data var inside election_1928 scene
 
+    var practice_svg = `<svg width="40" height="40" style="vertical-align: middle;">
+        <circle cx="20" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>
+    </svg>` //This loads an svg with an orange circle
 
-    var base_circle = `<svg width="40" height="40" style="vertical-align: middle;">
-        <circle cx="20" cy="20" r="16" stroke="black" stroke-width="3" fill="orange"></circle>
-    </svg>`
+    var base_circle = `<circle cx="40" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`
+    // The orange circle in question
 
-    container.innerHTML = base_circle
+    var x = 10; 
+    var y = 5; 
+
+    for (var i = 0; i < seats; i++) {
+
+        x += 10; 
+        y += 5; 
+
+        var calc_circle = `<circle cx="${x}" cy="${y}" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`
+
+        container.innerHTML += base_circle
+    }
+
+    container.innerHTML += base_circle
 
 
 

@@ -24,19 +24,25 @@ window.westminster = function(container_id, forming_government) {
 
     var x = 10; 
     var y = 5; 
+    var seats_in_row = 0;
 
     for (var i = 0; i < seats; i++) {
-        if (1 == 1) {
+        if (seats_in_row <= house_width) {
             y += 10; 
         }
+
         else {
-            x = 20; 
+            x += 20; 
             y = 5;
+            seats_in_row = 0;
         }
 
         var calc_circle = `<circle cx="${x}" cy="${y}" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
 
         container.innerHTML += calc_circle;
+
+        seats_in_row += 3;
+        
     }
 
     container.innerHTML += base_circle

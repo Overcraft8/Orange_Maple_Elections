@@ -6,14 +6,14 @@ window.westminster = function(container_id, forming_government) {
 
     var house_length = 10; // How much seats in each row?
     var house_width = 3; // how many rows?
-    var seats = 50;
+    var seats = 55;
     var container = document.getElementById(container_id);
 
     container.innerHTML = ''; //This removes all html inside the westminster parliament container
 
     var data = Q.parliament_diagram; // Retrieving data (Might not be applicable to base game)
     // Basically just find the data variable in root scene that holds party info like legend, id, seats - declare Q[any_var_name_really] = data right after data has appended all parties and then place it here
-    // you'd also probably have to do same with data var inside election_1928 scene
+    // you'd also probably have to do same with data var inside election_1928 scene if you want it to update with elections
 
     var practice_svg = `<svg width="40" height="40" style="vertical-align: middle;">
         <circle cx="20" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>
@@ -22,8 +22,9 @@ window.westminster = function(container_id, forming_government) {
     var base_circle = `<circle cx="40" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
     // The orange circle in question
 
+    // Base settings for opposition seats
     var x = 10; 
-    var y = 5; 
+    var y = 15; 
     var id_number = 0;
     var seats_in_row = 0;
 
@@ -47,6 +48,7 @@ window.westminster = function(container_id, forming_government) {
         container.innerHTML += calc_circle;
     }
 
+    // Base settings for government seats
     var x = 10; 
     var y = 70; 
     var id_number = 0;
@@ -73,20 +75,28 @@ window.westminster = function(container_id, forming_government) {
     }
 
 
-
     // container.innerHTML += base_circle
 
+    // For now, this will be for displaying parliament
+    /*
+    if (!forming_government) {
+        for (var i = 0; i < data.length; i++) {
+            var party = data[i]; // Calling index and returns party as the party's dictionary info
+            var partyName = party.name; // Calling index property essentially
+            var seatCount = party.seats;
+            var bench = party.bench; 
 
 
 
+            console.log(partyName + ": " + seatCount + " seats");
+        };
+    }; // This may be useful later
 
-    for (var i = 0; i < data.length; i++) {
-        var party = data[i]; // Calling index
-        var partyName = party.name; // Calling index property essentially
-        var seatCount = party.seats;
-
-        console.log(partyName + ": " + seatCount + " seats");
-    };
+    if (!forming_government) {
+        for (var party of Q.parties) {
+            var party_name = data[]
+        }
+    }*/
 
 
 

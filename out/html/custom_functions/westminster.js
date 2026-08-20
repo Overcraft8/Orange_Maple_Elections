@@ -24,6 +24,7 @@ window.westminster = function(container_id, forming_government) {
 
     var x = 10; 
     var y = 5; 
+    var id_number = 0;
     var seats_in_row = 0;
 
     for (var i = 0; i < seats; i++) {
@@ -33,16 +34,19 @@ window.westminster = function(container_id, forming_government) {
 
         else {
             x += 20; 
-            y = 5;
+            y = 15;
             seats_in_row = 0;
         }
 
-        var calc_circle = `<circle cx="${x}" cy="${y}" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
+        id_number += 1;
+
+        var id = O + id_number
+
+        var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" r="6" fill="tan"></circle>`;
 
         container.innerHTML += calc_circle;
 
         seats_in_row += 3;
-        
     }
 
     container.innerHTML += base_circle

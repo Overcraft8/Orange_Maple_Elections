@@ -97,7 +97,7 @@ window.westminster = function(container_id, forming_government) {
                 for (var s = 0; s < seat_count; s++) {
                     var selected_circle = document.getElementById(bench + opp_count); 
                     console.log(bench + opp_count)
-                    selected_circle.classList.add('seats.' + party_name); 
+                    selected_circle.classList.add('seat ' + party_name); 
                     opp_count += 1;
                 };
             }

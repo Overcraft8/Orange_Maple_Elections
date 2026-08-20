@@ -43,7 +43,7 @@ window.westminster = function(container_id, forming_government) {
 
         var id = 'O' + id_number;
 
-        var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" r="6" fill="tan"></circle>`;
+        var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" display="none" r="6" fill="tan"></circle>`;
 
         container.innerHTML += calc_circle;
     }
@@ -69,7 +69,7 @@ window.westminster = function(container_id, forming_government) {
 
         var id = 'G' + id_number;
 
-        var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" r="6" fill="tan"></circle>`;
+        var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" display="none" r="6" fill="tan"></circle>`;
 
         container.innerHTML += calc_circle;
     }
@@ -99,6 +99,7 @@ window.westminster = function(container_id, forming_government) {
                     var selected_circle = document.getElementById(bench + opp_count); 
                     console.log(bench + opp_count)
                     selected_circle.classList.add('seat', party_id); 
+                    selected_circle.style.display = 'block';
                     opp_count += 1;
                 };
             }
@@ -110,7 +111,8 @@ window.westminster = function(container_id, forming_government) {
                 // Now this is the loop to change base circles to coloured party circles
                 for (var s = 0; s < seat_count; s++) {
                     var selected_circle = document.getElementById(bench + gov_count); 
-                    selected_circle.classList.add('seat', party_id); 
+                    selected_circle.classList.add('seat', party_id);
+                    selected_circle.style.display = 'block'; 
                     gov_count += 1;
                 };
             };
@@ -122,6 +124,9 @@ window.westminster = function(container_id, forming_government) {
             console.log(party_name + ": " + seat_count + " seats");
         };
     }; 
+
+
+    for ()
 
 
 

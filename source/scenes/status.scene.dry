@@ -99,7 +99,7 @@ on-display: {!
         d3.select("#legislative_status").datum(data).call(legislative_status);
 }
 
-window.westminster('westminster_legislature');
+window.westminster('westminster_legislature', false);
 
 
 !}

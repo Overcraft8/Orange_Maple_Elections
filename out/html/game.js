@@ -586,7 +586,13 @@ const BAR_CONFIG = {
         targetId: 'region_info_display_scene', 
         starting_scene: '', 
         isLeft: false
-    }
+    }, 
+    crown_corps: {
+        containerId: 'mid_panel',
+        targetId: 'crown_corps_actions',
+        starting_scene: 'government_options',
+        isLeft: false
+    },
 };
 
 // ==========================================

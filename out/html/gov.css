@@ -6,7 +6,7 @@
     margin-bottom: 1em;
     margin-right: 1em; 
     background: rgba(0, 0, 0, 0.05); 
-    border: 1px solid #9c8c64;
+    border: 3px solid #9c8c64;
     border-radius: 4px;
 }
 
@@ -21,6 +21,12 @@
     display: flex; 
     flex-direction: row;
     overflow-x: scroll; 
+}
+
+#crown_corps_actions {
+    display: flex; 
+    flex-direction: column; 
+    border: 3px solid black;
 }
 
 .gov_stats {

@@ -242,9 +242,6 @@ if (Q.month_actions >= 1) {
     Q.month_actions = 0;
     Q.month += 1;
     if (Q.month >= 8) {
-        window.dendryUI.dendryEngine.goToScene('economic_annual');
-        window.dendryUI.dendryEngine.goToScene('party_stats_annual');
-        window.dendryUI.dendryEngine.goToScene('population_distribution_annual');
         Q.month = 1;
         Q.year += 1;
         if (Q.historical_mode) {

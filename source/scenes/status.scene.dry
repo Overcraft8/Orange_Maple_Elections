@@ -98,6 +98,10 @@ on-display: {!
         legislative_status.exit.toCenter(false).bigToSmall(false);
         d3.select("#legislative_status").datum(data).call(legislative_status);
 }
+
+window.westminster('westminster_legislature');
+
+
 !}
 
 <button class="status_tab_button" id="budget_tab" onclick="window.ChangeTab('left', 'status.budget', 'budget_tab');">Budget</button>
@@ -180,6 +184,11 @@ Assembly composition:
 Budget: [+ treasury +] 
 
 Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_election_year +]
+
+
+
+
+<div id='westminster_legislature'></div>
 
 
 
@@ -480,10 +489,6 @@ Q.tax_list = [
         { name: "Upper Brackets", val: Q.upper_tax_rates }
     ];
 
-    // Pass the list to your function
-    // Q.tax_display_html = window.get_taxes(Q.tax_list);
-    //Q.calculated_taxes = window.get_taxes_final(Q.tax_list);
-    //Q.final_taxes = window.calculate_income_tax();
 
 !}
 

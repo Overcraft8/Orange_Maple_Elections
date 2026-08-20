@@ -47,7 +47,7 @@ window.westminster = function(container_id, forming_government) {
 
         container.innerHTML += calc_circle;
 
-        seats_in_row += 3;
+        // seats_in_row += 3; //I must've been hallucinating to put this here
     }
 
     // container.innerHTML += base_circle

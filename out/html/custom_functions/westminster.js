@@ -26,9 +26,13 @@ window.westminster = function(container_id, forming_government) {
     var y = 5; 
 
     for (var i = 0; i < seats; i++) {
-
-        x += 10; 
-        y += 5; 
+        if (1 == 1) {
+            y += 10; 
+        }
+        else {
+            x = 20; 
+            y = 5;
+        }
 
         var calc_circle = `<circle cx="${x}" cy="${y}" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
 

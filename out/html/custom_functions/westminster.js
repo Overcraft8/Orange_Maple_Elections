@@ -126,8 +126,5 @@ window.westminster = function(container_id, forming_government) {
     }; 
 
 
-    for ()
-
-
 
 }

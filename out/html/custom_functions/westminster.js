@@ -27,27 +27,52 @@ window.westminster = function(container_id, forming_government) {
     var id_number = 0;
     var seats_in_row = 0;
 
+    // These are opposition benches
     for (var i = 0; i < seats; i++) {
         if (seats_in_row >= house_width) {
-            y += 10; 
-            seats_in_row += 1;
-        }
-
-        else {
             x += 15; 
             y = 15;
             seats_in_row = 0;
         }
 
+        y += 10; 
+        seats_in_row += 1;
+
         id_number += 1;
 
-        var id = 'O' + id_number
+        var id = 'O' + id_number;
 
         var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" r="6" fill="tan"></circle>`;
 
         container.innerHTML += calc_circle;
-
     }
+
+    var x = 10; 
+    var y = 40; 
+    var id_number = 0;
+    var seats_in_row = 0;
+
+    // These are government benches
+    for (var i = 0; i < seats; i++) {
+        if (seats_in_row >= house_width) {
+            x += 15; 
+            y = 15;
+            seats_in_row = 0;
+        }
+
+        y += 10; 
+        seats_in_row += 1;
+
+        id_number += 1;
+
+        var id = 'G' + id_number;
+
+        var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" r="6" fill="tan"></circle>`;
+
+        container.innerHTML += calc_circle;
+    }
+
+
 
     // container.innerHTML += base_circle
 

@@ -24,7 +24,7 @@ window.westminster = function(container_id, forming_government) {
 
     // Base settings for opposition seats
     var x = 10; 
-    var y = 45; 
+    var y = 60; 
     var id_number = 0;
     var seats_in_row = 0;
 

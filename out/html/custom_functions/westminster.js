@@ -30,10 +30,11 @@ window.westminster = function(container_id, forming_government) {
     for (var i = 0; i < seats; i++) {
         if (seats_in_row < house_width) {
             y += 10; 
+            seats_in_row += 1;
         }
 
         else {
-            x += 20; 
+            x += 15; 
             y = 15;
             seats_in_row = 0;
         }
@@ -49,7 +50,7 @@ window.westminster = function(container_id, forming_government) {
         seats_in_row += 3;
     }
 
-    container.innerHTML += base_circle
+    // container.innerHTML += base_circle
 
 
 

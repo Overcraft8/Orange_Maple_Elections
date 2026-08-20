@@ -48,7 +48,7 @@ window.westminster = function(container_id, forming_government) {
     }
 
     var x = 10; 
-    var y = 40; 
+    var y = 70; 
     var id_number = 0;
     var seats_in_row = 0;
 
@@ -56,7 +56,7 @@ window.westminster = function(container_id, forming_government) {
     for (var i = 0; i < seats; i++) {
         if (seats_in_row >= house_width) {
             x += 15; 
-            y = 15;
+            y = 70;
             seats_in_row = 0;
         }
 

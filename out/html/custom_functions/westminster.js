@@ -87,6 +87,7 @@ window.westminster = function(container_id, forming_government) {
             var party = data[i]; // Calling index and returns party as the party's dictionary info
             var party_name = party.name; // Calling index property essentially
             var seat_count = party.seats;
+            var party_id = party.id;
             var bench = party.bench; 
 
             // 0 Indicating Opposition
@@ -97,7 +98,7 @@ window.westminster = function(container_id, forming_government) {
                 for (var s = 0; s < seat_count; s++) {
                     var selected_circle = document.getElementById(bench + opp_count); 
                     console.log(bench + opp_count)
-                    selected_circle.classList.add('seat ' + party_name); 
+                    selected_circle.classList.add('seat.' + party_id); 
                     opp_count += 1;
                 };
             }
@@ -109,7 +110,7 @@ window.westminster = function(container_id, forming_government) {
                 // Now this is the loop to change base circles to coloured party circles
                 for (var s = 0; s < seat_count; s++) {
                     var selected_circle = document.getElementById(bench + gov_count); 
-                    selected_circle.classList.add('seats ' + party_name); 
+                    selected_circle.classList.add('seats.' + party_id); 
                     gov_count += 1;
                 };
             };

@@ -322,12 +322,6 @@ Q.prime_minister = "Richard Bennett (CPC)";
 Q.premier = "James Anderson";
 Q.premier_img = 'AndersonJames.jpg';
 Q.premier_party = 'CPS';
-Q.ccf_ss_in_government = 0;
-Q.pps_in_government = 0;
-Q.lps_in_government = 0;
-Q.cps_in_government = 1;
-Q.scps_in_government = 0;
-Q.cp_s_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = CCF(SS) + PPS + LPS

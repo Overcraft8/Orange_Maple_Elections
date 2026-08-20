@@ -6,7 +6,7 @@ window.westminster = function(container_id, forming_government) {
 
     var house_length = 10; // How much seats in each row?
     var house_width = 3; // how many rows?
-    var seats = 55;
+    var seats = 70;
     var container = document.getElementById(container_id);
 
     container.innerHTML = ''; //This removes all html inside the westminster parliament container

@@ -188,7 +188,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 
 
-<div id='westminster_legislature'></div>
+<svg id='westminster_legislature' width="300" height="100"></svg>
 
 
 

@@ -17,9 +17,9 @@ window.westminster = function(container_id, forming_government) {
 
     var practice_svg = `<svg width="40" height="40" style="vertical-align: middle;">
         <circle cx="20" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>
-    </svg>` //This loads an svg with an orange circle
+    </svg>`; //This loads an svg with an orange circle
 
-    var base_circle = `<circle cx="40" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`
+    var base_circle = `<circle cx="40" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
     // The orange circle in question
 
     var x = 10; 
@@ -30,9 +30,9 @@ window.westminster = function(container_id, forming_government) {
         x += 10; 
         y += 5; 
 
-        var calc_circle = `<circle cx="${x}" cy="${y}" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`
+        var calc_circle = `<circle cx="${x}" cy="${y}" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
 
-        container.innerHTML += base_circle
+        container.innerHTML += calc_circle;
     }
 
     container.innerHTML += base_circle
@@ -47,7 +47,7 @@ window.westminster = function(container_id, forming_government) {
         var seatCount = party.seats;
 
         console.log(partyName + ": " + seatCount + " seats");
-    }
+    };
 
 
 

@@ -39,11 +39,11 @@ window.westminster = function(container_id, forming_government) {
         if (Q[party + '_in_government']) {
             var old_party_seats = party_seats;
             party_seats = Q[party + '_seats']; 
-            governing_parties_list.append([party, party_seats])
+            governing_parties_list.push([party, party_seats]);
 
             if (old_party_seats < party_seats) {
-                var speaker_party = party
-            }
+                var speaker_party = party;
+            };
         }
     };
 
@@ -52,7 +52,7 @@ window.westminster = function(container_id, forming_government) {
     speaker_entry.seats -= 1;
     
 
-    container.innerHTML += soth
+    container.innerHTML += soth;
 
     // Base settings for opposition seats
     var x = 20; 

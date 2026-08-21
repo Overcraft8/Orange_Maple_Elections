@@ -23,12 +23,8 @@ on-arrival: {!
     content.style.maxWidth = '100em';
     content.style.width = '50em';
 
-    var williams = document.createElement('div'); 
-    williams.id = 'GHW';
-    williams.classList.add('face-image'); 
-    williams.style.position = 'absolute'; 
-    williams.style.left = 0;
-    mid_panel.appendChild(williams);
+    var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
+    mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
 
 !} 
 on-departure: {!

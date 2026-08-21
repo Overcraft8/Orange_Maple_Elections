@@ -1076,6 +1076,8 @@ Q.cps_seats = 24;
 Q.other_seats = 6;
 Q.scps_seats = 0;
 
+Q.largest_party = 'cps'
+
 
 
 Q.ccf_ss_r = 0;
@@ -1516,6 +1518,8 @@ In the poor and largely inaccessible north, dominated demographically by First N
 
 
 @Information
+
+Credits to LBJ's Force Ghost for the idea behind the Westminster parliament diagram
 
 - @why_the_name : What does 'Prairie Lily' mean?
 - @why_saskatchewan : Why Saskatchewan? 

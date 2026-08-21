@@ -4,6 +4,8 @@ window.westminster = function(container_id, forming_government) {
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
+    var brit_mode = false; 
+
     var house_length = 10; // How much seats in each row?
     var house_width = 3; // how many rows?
     var seats = 70;
@@ -22,8 +24,38 @@ window.westminster = function(container_id, forming_government) {
     var base_circle = `<circle cx="40" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
     // The orange circle in question
 
+    var soth = `<circle id="soth" cx="5" cy="65" r="6"></circle>`;
+
+    var governing_parties_list = [];
+
+    // Let's find out who's the soth...
+    // For now, this will give SOTH to the largest party in government
+
+    // Selecting parties in government and storing seat counts
+
+    var party_seats = 0;
+
+    for (var party of Q.parties) {
+        if (Q[party + '_in_government']) {
+            var old_party_seats = party_seats;
+            party_seats = Q[party + '_seats']; 
+            governing_parties_list.append([party, party_seats])
+
+            if (old_party_seats < party_seats) {
+                var speaker_party = party
+            }
+        }
+    };
+
+    // This finds the speaker party in the data var and subtracts one seat for the SOTH
+    var speaker_entry = data.find(p => p.id == speaker_party);
+    speaker_entry.seats -= 1;
+    
+
+    container.innerHTML += soth
+
     // Base settings for opposition seats
-    var x = 10; 
+    var x = 20; 
     var y = 60; 
     var id_number = 0;
     var seats_in_row = 0;
@@ -49,7 +81,7 @@ window.westminster = function(container_id, forming_government) {
     }
 
     // Base settings for government seats
-    var x = 10; 
+    var x = 20; 
     var y = 70; 
     var id_number = 0;
     var seats_in_row = 0;
@@ -97,7 +129,6 @@ window.westminster = function(container_id, forming_government) {
                 // Now this is the loop to change base circles to coloured party circles
                 for (var s = 0; s < seat_count; s++) {
                     var selected_circle = document.getElementById(bench + opp_count); 
-                    console.log(bench + opp_count)
                     selected_circle.classList.add('seat', party_id); 
                     selected_circle.style.display = 'block';
                     opp_count += 1;
@@ -117,12 +148,35 @@ window.westminster = function(container_id, forming_government) {
                 };
             };
 
-
-
-            
-
-            console.log(party_name + ": " + seat_count + " seats");
+            console.log(party_name + ": " + seat_count + " seats"); //Just for testing purposes
         };
+/*
+        if (!brit_mode) {
+            for (party of Q.parties) {
+                if (Q.largest_party == party) {
+                    if (Q[party + '_in_government']) {
+                        var soth_dot = document.getElementById('soth'); // These snippets get soth circle 
+                        soth_dot.classList.add('seat', party);          // Color of largest party (will be changed to be more interactive)
+
+                        for (var i; i < seats; i++) { // This will remove the extra delegate from the SOTH party
+                            var extra_delegate_selected_for_annihilation = document.getElementById('G' + i); 
+                            // Wait is this necessary
+                        }
+                        
+
+                        break;
+                    }
+                }
+            }
+        };
+
+        if (brit_mode) { // Just makes SOTH an independent 
+            var soth_dot = document.getElementById('soth'); 
+            soth_dot.classList.add('seat', 'other');
+        }
+*/
+
+
     }; 
 
 

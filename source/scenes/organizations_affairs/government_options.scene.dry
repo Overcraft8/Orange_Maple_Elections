@@ -33,12 +33,13 @@ on-departure: {!
 
     left_sidebar.style.display = ''; 
     right_sidebar.style.display = '';
-    mid_panel.style.margin = Q.old_mid_panel_margin
-    // 0 23em
 
-    content.style.maxWidth = Q.contentmaxWidth;
-    content.style.width = Q.contentwidth; 
-    // 26em both
+    // Restore original panel margin
+    mid_panel.style.margin = Q.old_mid_panel_margin;
+
+    // Clear the inline overrides entirely so media queries take back control
+    content.style.maxWidth = '';
+    content.style.width = '';
 !}
 
 <div id="government_options_top_panel" class='tab_container'>

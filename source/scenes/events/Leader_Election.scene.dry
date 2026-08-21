@@ -5,43 +5,7 @@ tags: event
 view-if: year = 1942 and month = 2
 max-visits: 1
 face-image: img/CCF_Convention.jpg
-on-arrival: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
 
-    var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
-
-    Q.old_mid_panel_margin = mid_panel.style.margin;
-    Q.contentmaxWidth = content.style.maxWidth; 
-    Q.contentwidth = content.style.width; 
-
-    left_sidebar.style.display = 'none'; 
-    right_sidebar.style.display = 'none';
-    mid_panel.style.margin = '0 0';
-
-    content.style.maxWidth = '100em';
-    content.style.width = '50em';
-!} 
-on-departure: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
-
-    var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
-
-    left_sidebar.style.display = ''; 
-    right_sidebar.style.display = '';
-
-    // Restore original panel margin
-    mid_panel.style.margin = Q.old_mid_panel_margin;
-
-    // Clear the inline overrides entirely so media queries take back control
-    content.style.maxWidth = '';
-    content.style.width = '';
-!}
 
 = Selection of our President
 

@@ -130,7 +130,7 @@ window.region_info_display = function(region_id) {
         for (const [sectorName, sectorData] of Object.entries(economy_sectors)) {
             console.log(`Sector: ${sectorName}`);
             
-            if (Array.isArray(sectorData) && sectorData.length === 2 && Array.isArray(sectorData[0]) && typeof sectorData[1] === 'number') {
+            if (Array.isArray(sectorData)) {
                 var ownership = sectorData[0]; // [private, cooperative, state] ratios
                 var contribution = sectorData[1]; // economic contribution value
 

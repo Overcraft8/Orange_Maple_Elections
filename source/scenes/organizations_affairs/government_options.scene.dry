@@ -12,6 +12,10 @@ on-arrival: {!
     var left_sidebar = document.getElementById('stats_sidebar'); 
     var right_sidebar = document.getElementById('stats_sidebar_right'); 
 
+    Q.old_mid_panel_margin = mid_panel.style.margin;
+    Q.contentmaxWidth = content.style.maxWidth; 
+    Q.contentwidth = content.style.width; 
+
     left_sidebar.style.display = 'none'; 
     right_sidebar.style.display = 'none';
     mid_panel.style.margin = '0 0';
@@ -29,10 +33,12 @@ on-departure: {!
 
     left_sidebar.style.display = ''; 
     right_sidebar.style.display = '';
-    mid_panel.style.margin = '0 23em';
+    mid_panel.style.margin = Q.old_mid_panel_margin
+    // 0 23em
 
-    content.style.maxWidth = '26em';
-    content.style.width = '26em';
+    content.style.maxWidth = Q.contentmaxWidth;
+    content.style.width = Q.contentwidth; 
+    // 26em both
 !}
 
 <div id="government_options_top_panel" class='tab_container'>

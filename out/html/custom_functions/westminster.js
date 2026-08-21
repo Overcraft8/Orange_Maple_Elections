@@ -23,7 +23,7 @@ window.westminster = function(container_id, forming_government) {
     var base_circle = `<circle cx="40" cy="20" r="6" stroke="black" stroke-width="3" fill="orange"></circle>`;
     // The orange circle in question
 
-    var soth = `<circle id="soth" cx="5" cy="65" r="6"></circle>`;
+    var soth = `<circle id="soth" cx="15" cy="65" r="6"></circle>`;
 
     var governing_parties_list = [];
 
@@ -58,7 +58,7 @@ window.westminster = function(container_id, forming_government) {
     container.innerHTML += soth;
 
     // Base settings for opposition seats
-    var x = 20; 
+    var x = 40; 
     var y = 60; 
     var id_number = 0;
     var seats_in_row = 0;
@@ -84,7 +84,7 @@ window.westminster = function(container_id, forming_government) {
     }
 
     // Base settings for government seats
-    var x = 20; 
+    var x = 40; 
     var y = 70; 
     var id_number = 0;
     var seats_in_row = 0;

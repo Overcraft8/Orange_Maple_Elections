@@ -11,7 +11,7 @@ window.westminster = function(container_id, forming_government) {
     var data = Q.parliament_diagram; // This may not be applicable to base game
     // If you are seeking to use this function yourself, find all instances of the data variable (1 in root, 1 in 1928_election scene, and possibly 1 in post_event) and then make Q.parliament_diagram equal to it. 
     
-    var parties_list = Q.parties;
+    var parties_list = Q.parties || ['ccf_ss', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other']; ;
 
     var soth = `<circle id="soth" cx="15" cy="65" r="6"></circle>`; // This is the speaker of the house circle and it's cords
 

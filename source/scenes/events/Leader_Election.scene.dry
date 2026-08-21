@@ -2,7 +2,8 @@ title: CCF(SS) President Election
 new-page: true
 subtitle: Who will lead our party?
 tags: event
-view-if: year = 1932 and month = 1
+view-if: year = 1932 and month = 2
+priority: 1000
 max-visits: 1
 face-image: img/CCF_Convention.jpg
 on-arrival: {!

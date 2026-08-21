@@ -7,6 +7,18 @@ priority: 1000
 max-visits: 1
 face-image: img/CCF_Convention.jpg
 on-arrival: {!
+!} 
+on-departure: {!
+    var mid_panel = document.getElementById('mid_panel');
+    var content = document.getElementById('content');
+    var tools = document.getElementById('tools_wrapper'); 
+
+    var left_sidebar = document.getElementById('stats_sidebar'); 
+    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+
+!}
+
+<script>
     var mid_panel = document.getElementById('mid_panel');
     var content = document.getElementById('content');
     var tools = document.getElementById('tools_wrapper'); 
@@ -24,29 +36,16 @@ on-arrival: {!
     right_qualities.innerHTML = '';
 
     var qualities_leader = `<div style="display: flex; flex-direction: column;">
-    <div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>
-    <div id="Phelps" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"></div>
-    <div id="Brockelbank" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"></div>
+    <div id="GHW" class="face-figure" ><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>
+    <div id="Phelps" class="face-figure" ><img class="face-img" src="img/portraits/PhelpsJoe.jpg"></div>
+    <div id="Brockelbank" class="face-figure" ><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"></div>
     </div>`
 
     qualities.innerHTML = qualities_leader;
 
-
-
-
     // var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
     // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
-
-!} 
-on-departure: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
-
-    var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
-
-!}
+</script>
 
 = Selection of our President
 

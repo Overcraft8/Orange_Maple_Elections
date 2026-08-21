@@ -1,14 +1,22 @@
 window.westminster = function(container_id, forming_government) {
-    // container_id has to be an svg for this to work????
-    // forming_government planned to be boolean indicating whether loading initial seat counts or actual government formation
+    // container_id has to be an svg for this to work
+    // forming_government is a boolean indicating whether loading initial seat counts or actual government formation
+    // If any UK modders are looking at this, this function does not automatically scale the svg to fit inside proportions like the parliament d3 does (not yet anyway)
 
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-    var brit_mode = false; 
+    var brit_mode = false; // Right now, this only handles whether speaker is non-affiliated or still a party member in the House
 
     var house_width = 3; // how many rows?
     var seats = 70;
     var container = document.getElementById(container_id);
+
+    // This is the svg we're going to fill
+    container.innerHTML = `<svg viewBox="0 0 400 150" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" id="house_svg"></svg>`;
+
+    // Then grab that inner SVG element to append your circles into
+    var svg_container = document.getElementById('house_svg');
+
 
     container.innerHTML = ''; //This removes all html inside the westminster parliament container
 
@@ -55,7 +63,7 @@ window.westminster = function(container_id, forming_government) {
     speaker_entry.seats -= 1;
     
 
-    container.innerHTML += soth;
+    house_svg.innerHTML += soth;
 
     // Base settings for opposition seats
     var x = 40; 
@@ -80,7 +88,7 @@ window.westminster = function(container_id, forming_government) {
 
         var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" display="none" r="6" fill="tan"></circle>`;
 
-        container.innerHTML += calc_circle;
+        house_svg.innerHTML += calc_circle;
     }
 
     // Base settings for government seats
@@ -106,11 +114,8 @@ window.westminster = function(container_id, forming_government) {
 
         var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" display="none" r="6" fill="tan"></circle>`;
 
-        container.innerHTML += calc_circle;
+        house_svg.innerHTML += calc_circle;
     }
-
-
-    // container.innerHTML += base_circle
 
     // For now, this will be for displaying parliament, not creating a new government
     if (!forming_government) {

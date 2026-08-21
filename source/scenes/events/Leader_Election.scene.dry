@@ -6,8 +6,6 @@ view-if: year = 1932 and month = 2
 priority: 1000
 max-visits: 1
 face-image: img/CCF_Convention.jpg
-on-arrival: {!
-!} 
 on-departure: {!
     var mid_panel = document.getElementById('mid_panel');
     var content = document.getElementById('content');

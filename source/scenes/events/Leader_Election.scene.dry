@@ -14,17 +14,28 @@ on-arrival: {!
     var left_sidebar = document.getElementById('stats_sidebar'); 
     var right_sidebar = document.getElementById('stats_sidebar_right'); 
 
-    Q.old_mid_panel_margin = mid_panel.style.margin;
+    var qualities = document.getElementById('qualities');
+    var right_qualities = document.getElementById('qualities_left');
 
-    left_sidebar.style.display = 'none'; 
-    right_sidebar.style.display = 'none';
-    mid_panel.style.margin = '0 0';
+    Q.qualities_storage = qualities.innerHTML;
+    Q.qualities_right_storage = right_qualities.innerHTML;
 
-    content.style.maxWidth = '100em';
-    content.style.width = '50em';
+    qualities.innerHTML = '';
+    right_qualities.innerHTML = '';
 
-    var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
-    mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
+    var qualities_leader = `<div style="display: flex; flex-direction: column;">
+    <div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>
+    <div id="Phelps" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"></div>
+    <div id="Brockelbank" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"></div>
+    </div>`
+
+    qualities.innerHTML = qualities_leader;
+
+
+
+
+    // var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
+    // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
 
 !} 
 on-departure: {!
@@ -35,15 +46,6 @@ on-departure: {!
     var left_sidebar = document.getElementById('stats_sidebar'); 
     var right_sidebar = document.getElementById('stats_sidebar_right'); 
 
-    left_sidebar.style.display = ''; 
-    right_sidebar.style.display = '';
-
-    // Restore original panel margin
-    mid_panel.style.margin = Q.old_mid_panel_margin;
-
-    // Clear the inline overrides entirely so media queries take back control
-    content.style.maxWidth = '';
-    content.style.width = '';
 !}
 
 = Selection of our President

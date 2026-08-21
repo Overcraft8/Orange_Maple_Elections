@@ -132,27 +132,27 @@ window.westminster = function(container_id, forming_government) {
         var gov_count = 1;
         var opp_count = 1;
 
-        for (party in opposition_parties_list) {
+        for (var party of opposition_parties_list) {
             var seats_to_add = party[1]; 
             var party_id = party[0];
             for (var s = 0; s < seats_to_add; s++) {
-                    var selected_circle = document.getElementById(bench + opp_count); 
+                    var selected_circle = document.getElementById('O' + opp_count); 
                     selected_circle.classList.add('seat', party_id); 
                     selected_circle.style.display = 'block';
                     opp_count += 1;
             }
-        }
+        };
 
-        for (party in governing_parties_list) {
-            var seats_to_add = party[1]; 
-            var party_id = party[0];
+        for (var party of governing_parties_list) {
+            seats_to_add = party[1]; 
+            party_id = party[0];
             for (var s = 0; s < seats_to_add; s++) {
-                    var selected_circle = document.getElementById(bench + gov_count); 
+                    selected_circle = document.getElementById('G' + gov_count); 
                     selected_circle.classList.add('seat', party_id); 
                     selected_circle.style.display = 'block';
-                    opp_count += 1;
+                    gov_count += 1;
             }
-        }
+        };
 
 /*
         for (var i = 0; i < data.length; i++) {

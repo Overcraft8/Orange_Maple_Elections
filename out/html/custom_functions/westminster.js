@@ -11,13 +11,6 @@ window.westminster = function(container_id, forming_government) {
     var seats = 70;
     var container = document.getElementById(container_id);
 
-    // This is the svg we're going to fill
-    container.innerHTML = `<svg viewBox="0 0 400 150" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" id="house_svg"></svg>`;
-
-    // Then grab that inner SVG element to append your circles into
-    var svg_container = document.getElementById('house_svg');
-
-
     container.innerHTML = ''; //This removes all html inside the westminster parliament container
 
     var data = Q.parliament_diagram; // Retrieving data (Might not be applicable to base game)
@@ -63,7 +56,7 @@ window.westminster = function(container_id, forming_government) {
     speaker_entry.seats -= 1;
     
 
-    house_svg.innerHTML += soth;
+    container.innerHTML += soth;
 
     // Base settings for opposition seats
     var x = 40; 
@@ -88,7 +81,7 @@ window.westminster = function(container_id, forming_government) {
 
         var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" display="none" r="6" fill="tan"></circle>`;
 
-        house_svg.innerHTML += calc_circle;
+        container.innerHTML += calc_circle;
     }
 
     // Base settings for government seats
@@ -114,7 +107,7 @@ window.westminster = function(container_id, forming_government) {
 
         var calc_circle = `<circle id="${id}" cx="${x}" cy="${y}" display="none" r="6" fill="tan"></circle>`;
 
-        house_svg.innerHTML += calc_circle;
+        container.innerHTML += calc_circle;
     }
 
     // For now, this will be for displaying parliament, not creating a new government

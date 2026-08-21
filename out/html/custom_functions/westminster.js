@@ -6,7 +6,6 @@ window.westminster = function(container_id, forming_government) {
 
     var brit_mode = false; 
 
-    var house_length = 10; // How much seats in each row?
     var house_width = 3; // how many rows?
     var seats = 70;
     var container = document.getElementById(container_id);
@@ -31,10 +30,9 @@ window.westminster = function(container_id, forming_government) {
     // Let's find out who's the soth...
     // For now, this will give SOTH to the largest party in government
 
-    // Selecting parties in government and storing seat counts
-
     var party_seats = 0;
 
+    // Lets get seats for government parties and hand speaker to the largest
     for (var party of Q.parties) {
         if (Q[party + '_in_government']) {
             var old_party_seats = party_seats;
@@ -46,6 +44,11 @@ window.westminster = function(container_id, forming_government) {
             };
         }
     };
+
+    // This will color the Speaker with their party
+    if (!brit_mode) {
+        soth = `<circle id="soth" class="seat ${speaker_party}" cx="5" cy="65" r="6"></circle>`;
+    }
 
     // This finds the speaker party in the data var and subtracts one seat for the SOTH
     var speaker_entry = data.find(p => p.id == speaker_party);

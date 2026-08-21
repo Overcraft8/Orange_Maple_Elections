@@ -13,8 +13,6 @@ on-arrival: {!
     var right_sidebar = document.getElementById('stats_sidebar_right'); 
 
     Q.old_mid_panel_margin = mid_panel.style.margin;
-    Q.contentmaxWidth = content.style.maxWidth; 
-    Q.contentwidth = content.style.width; 
 
     left_sidebar.style.display = 'none'; 
     right_sidebar.style.display = 'none';

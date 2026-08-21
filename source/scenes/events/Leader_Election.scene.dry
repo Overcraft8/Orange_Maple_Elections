@@ -2,10 +2,53 @@ title: CCF(SS) President Election
 new-page: true
 subtitle: Who will lead our party?
 tags: event
-view-if: year = 1942 and month = 2
+view-if: year = 1932 and month = 2
 max-visits: 1
 face-image: img/CCF_Convention.jpg
+on-arrival: {!
+    var mid_panel = document.getElementById('mid_panel');
+    var content = document.getElementById('content');
+    var tools = document.getElementById('tools_wrapper'); 
 
+    var left_sidebar = document.getElementById('stats_sidebar'); 
+    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+
+    Q.old_mid_panel_margin = mid_panel.style.margin;
+
+    left_sidebar.style.display = 'none'; 
+    right_sidebar.style.display = 'none';
+    mid_panel.style.margin = '0 0';
+
+    content.style.maxWidth = '100em';
+    content.style.width = '50em';
+
+    var williams = document.createElement('div'); 
+    williams.id = 'GHW';
+    williams.classList.add('face-image'); 
+    williams.style.position = 'absolute'; 
+    williams.style.left = 0;
+
+
+
+!} 
+on-departure: {!
+    var mid_panel = document.getElementById('mid_panel');
+    var content = document.getElementById('content');
+    var tools = document.getElementById('tools_wrapper'); 
+
+    var left_sidebar = document.getElementById('stats_sidebar'); 
+    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+
+    left_sidebar.style.display = ''; 
+    right_sidebar.style.display = '';
+
+    // Restore original panel margin
+    mid_panel.style.margin = Q.old_mid_panel_margin;
+
+    // Clear the inline overrides entirely so media queries take back control
+    content.style.maxWidth = '';
+    content.style.width = '';
+!}
 
 = Selection of our President
 

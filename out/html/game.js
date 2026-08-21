@@ -375,7 +375,7 @@ function applyWholesome(str) {
         dendryUI.dendryEngine._runActions(scene.onArrival);
         var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
         var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-        // Sanitize HTML to prevent script execution errors
+        // clean HTML to prevent script execution errors
         var tempDiv = document.createElement('div');
         tempDiv.innerHTML = htmlContent;
         // Remove any script tags
@@ -390,7 +390,7 @@ function applyWholesome(str) {
     dendryUI.dendryEngine._runActions(scene.onArrival);
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // Sanitize HTML to prevent script execution errors
+    // clean HTML to prevent script execution errors
     var tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
     // Remove any script tags
@@ -404,7 +404,7 @@ function applyWholesome(str) {
     dendryUI.dendryEngine._runActions(scene.onArrival);
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
     var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // Sanitize HTML to prevent script execution errors
+    // clean HTML to prevent script execution errors
     var tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
     // Remove any script tags

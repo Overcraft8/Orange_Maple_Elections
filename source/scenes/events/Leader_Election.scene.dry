@@ -6,17 +6,7 @@ view-if: year = 1932 and month = 2
 priority: 1000
 max-visits: 1
 face-image: img/CCF_Convention.jpg
-on-departure: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
-
-    var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
-
-!}
-
-<script>
+on-display: {!
     var mid_panel = document.getElementById('mid_panel');
     var content = document.getElementById('content');
     var tools = document.getElementById('tools_wrapper'); 
@@ -43,7 +33,16 @@ on-departure: {!
 
     // var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
     // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
-</script>
+!} 
+on-departure: {!
+    var mid_panel = document.getElementById('mid_panel');
+    var content = document.getElementById('content');
+    var tools = document.getElementById('tools_wrapper'); 
+
+    var left_sidebar = document.getElementById('stats_sidebar'); 
+    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+
+!}
 
 = Selection of our President
 

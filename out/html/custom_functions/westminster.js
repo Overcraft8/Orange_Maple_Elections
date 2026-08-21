@@ -47,7 +47,7 @@ window.westminster = function(container_id, forming_government) {
 
     // This will color the Speaker with their party
     if (!brit_mode) {
-        soth = `<circle id="soth" class="seat ${speaker_party}" cx="5" cy="65" r="6"></circle>`;
+        soth = `<circle id="soth" class="seat ${speaker_party}" cx="15" cy="65" r="6"></circle>`;
     }
 
     // This finds the speaker party in the data var and subtracts one seat for the SOTH
@@ -84,10 +84,10 @@ window.westminster = function(container_id, forming_government) {
     }
 
     // Base settings for government seats
-    var x = 40; 
-    var y = 70; 
-    var id_number = 0;
-    var seats_in_row = 0;
+    x = 40; 
+    y = 70; 
+    id_number = 0;
+    seats_in_row = 0;
 
     // These are government benches
     for (var i = 0; i < seats; i++) {

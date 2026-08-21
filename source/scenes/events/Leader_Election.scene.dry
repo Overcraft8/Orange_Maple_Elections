@@ -15,7 +15,7 @@ on-display: {!
     var right_sidebar = document.getElementById('stats_sidebar_right'); 
 
     var qualities = document.getElementById('qualities');
-    var right_qualities = document.getElementById('qualities_left');
+    var right_qualities = document.getElementById('qualities_right');
 
     Q.qualities_storage = qualities.innerHTML;
     Q.qualities_right_storage = right_qualities.innerHTML;

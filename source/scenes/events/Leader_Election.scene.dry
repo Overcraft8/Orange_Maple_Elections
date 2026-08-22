@@ -47,8 +47,13 @@ on-display: {!
             allTabContainers[i].style.display = 'none';
     }
     for (let i = 0; i < allTabContainers_right.length; i++) {
-            allTabContainers[i].style.display = 'none';
+            allTabContainers_right[i].style.display = 'none';
     }
+
+    var styleOverride = document.createElement('style');
+    styleOverride.id = 'hide_tabs_override';
+    styleOverride.innerHTML = '.status_tab_container { display: none !important; }';
+    document.head.appendChild(styleOverride);
 
     // var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
     // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
@@ -74,7 +79,12 @@ on-departure: {!
             allTabContainers[i].style.display = '';
     }
     for (let i = 0; i < allTabContainers_right.length; i++) {
-            allTabContainers[i].style.display = '';
+            allTabContainers_right[i].style.display = '';
+    }
+
+    var styleOverride = document.getElementById('hide_tabs_override');
+    if (styleOverride) {
+        styleOverride.remove();
     }
 
 !}

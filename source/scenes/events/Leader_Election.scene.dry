@@ -20,8 +20,8 @@ on-display: {!
     Q.left_sidebar_storage = left_sidebar.innerHTML;
     Q.right_sidebar_storage = right_sidebar.innerHTML;
 
-    left_sidebar.innerHTML = '';
-    right_sidebar.innerHTML = '';
+    // left_sidebar.innerHTML = '';
+    // right_sidebar.innerHTML = '';
 
     var qualities_leader = `<h1>The Williams Faction</h1>
     <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
@@ -54,8 +54,8 @@ on-departure: {!
     var qualities = document.getElementById('qualities');
     var right_qualities = document.getElementById('qualities_right');
 
-    Q.left_sidebar_storage = left_sidebar.innerHTML;
-    Q.right_sidebar_storage = right_sidebar.innerHTML;
+    left_sidebar.innerHTML = Q.left_sidebar_storage;
+    right_sidebar.innerHTML = Q.right_sidebar_storage;
 
 !}
 

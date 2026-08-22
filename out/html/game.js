@@ -639,9 +639,10 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         window.alert('Polls are not available in historical mode.');
         return;
     }
-    
+
+    var config = Bar_Config[regionKey];
+
     if (tabId != 'none') {
-        var config = Bar_Config[regionKey];
         var container = document.getElementById(config.containerId);
         var tabButton = document.getElementById(tabId);
         if (!container || !tabButton) return;

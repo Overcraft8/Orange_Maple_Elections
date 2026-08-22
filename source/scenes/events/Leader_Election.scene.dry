@@ -24,17 +24,22 @@ on-display: {!
     right_qualities.innerHTML = '';
 
     var qualities_leader = `<h1>The Williams Faction</h1>
-    <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
-    <div id="GHW" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"><span class="card-caption">George Williams</span></div>
-    <div id="Phelps" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"><span class="card-caption">Joe Phelps</span></div>
-    <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"><span class="card-caption">John Brockelbank</span></div>
+    <div style="display: flex; flex-direction: row;">
+        <div>George Williams is a former president of the UFC(SS) and on the left-wing of the party. It was Williams who </div>
+        <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
+            <div id="GHW" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"><span class="card-caption">George Williams</span></div>
+            <div id="Phelps" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"><span class="card-caption">Joe Phelps</span></div>
+            <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"><span class="card-caption">John Brockelbank</span></div>
+        </div>
     </div>`
 
      var right_qualities_leader = `<h1>The Coldwell Faction</h1>
-    <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
-    <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
-    <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
-    <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
+     <div>Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat.</div>
+        <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
+            <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
+            <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
+            <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
+        </div>
     </div>`
 
     qualities.innerHTML = qualities_leader;
@@ -49,11 +54,6 @@ on-display: {!
     for (let i = 0; i < allTabContainers_right.length; i++) {
             allTabContainers_right[i].style.display = 'none';
     }
-
-    var styleOverride = document.createElement('style');
-    styleOverride.id = 'hide_tabs_override';
-    styleOverride.innerHTML = '.status_tab_container { display: none !important; }';
-    document.head.appendChild(styleOverride);
 
     // var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
     // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
@@ -72,6 +72,8 @@ on-departure: {!
     qualities.innerHTML = Q.qualities_storage; 
     right_qualities.innerHTML = Q.right_qualities_storage; 
 
+    window.ChangeTab('left', 'Leader_Election.GeorgeWilliamsinfo', 'none');
+
     var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
     var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
     
@@ -82,20 +84,14 @@ on-departure: {!
             allTabContainers_right[i].style.display = '';
     }
 
-    var styleOverride = document.getElementById('hide_tabs_override');
-    if (styleOverride) {
-        styleOverride.remove();
-    }
-
 !}
 
 = Selection of our President
 
 The time has come for the CCF(SS) to select a President. Five distinguished party members have been nominated though 3 have already declined to run. That leaves 2, George Williams and Major James Coldwell. 
 
-George Williams is the architect behind the Saskatchewan farmers's entrance into politics. Having served as President of the UFC(SS), he steered the organization against endorsing the disorganized and ineffective PPS, instead attempting to create his own Farmer's party. He is a radical agrarian socialist and does not back away from criticizing Capitalism for the plight of the workers and farmers. 
+We must pick wisely...
 
-Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat. 
 
 - @GeorgeWilliams: George Williams will surely lead the CCF(SS) to victory.
 - @Coldwell: Coldwell will surely lead the CCF(SS) to victory. 
@@ -113,4 +109,18 @@ face-image: img/portraits/ColdwellMajorJames.jpg
 Coldwell will lead us to victory!
 
 
+@GeorgeWilliamsinfo
 
+= The Williams Faction
+
+<div style="display: flex; flex-direction: row;">
+    <div>George Williams is a former president of the UFC(SS) and on the left-wing of the party. 
+    Williams led the UFC(SS) into provincial politics on a socialist programme and was the architect behind the controversial "use-lease" policy, a program that would: 
+    A: Disallow the sale of crown lands in favour of a use-lease
+    B: Provide an option for farmers to  </div>
+    <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
+        <div id="GHW" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"><span class="card-caption">George Williams</span></div>
+        <div id="Phelps" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"><span class="card-caption">Joe Phelps</span></div>
+        <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"><span class="card-caption">John Brockelbank</span></div>
+    </div>
+</div>

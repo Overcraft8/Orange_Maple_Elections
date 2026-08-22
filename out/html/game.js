@@ -648,58 +648,58 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
     var tabButtons = container.getElementsByClassName('tab_button');
     var statusButtons = container.getElementsByClassName('status_tab_button');
     var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
+    if (tabId != 'none') {
+        // -------------------------------------------------------------
+        // Close if the clicked tab is already active
+        // -------------------------------------------------------------
+        if (window.prev_tab_id === tabId || tabButton.classList.contains('active')) {
+            tabButton.classList.remove('active');
 
-    // -------------------------------------------------------------
-    // Close if the clicked tab is already active
-    // -------------------------------------------------------------
-    if (window.prev_tab_id === tabId || tabButton.classList.contains('active')) {
-        tabButton.classList.remove('active');
+            // Hide nested sub-tab containers if applicable
+            var allTabContainers = container.getElementsByClassName('status_tab_container');
+            for (let i = 0; i < allTabContainers.length; i++) {
+                allTabContainers[i].style.display = 'none';
+            }
 
-        // Hide nested sub-tab containers if applicable
-        var allTabContainers = container.getElementsByClassName('status_tab_container');
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
+            // Reset state variables
+            window[config.starting_scene] = 'empty';
+
+            // Clear rendered HTML from the sidebar
+            $('#' + config.targetId).empty();
+
+            // Reset prev_tab_id so clicking it next time re-opens it
+            window.prev_tab_id = null;
+            return;
         }
 
-        // Reset state variables
-        window[config.starting_scene] = 'empty';
+        // Process button classes independently
+        if (tabButton.classList.contains('status_tab_button')) {
+            for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
+        } 
+        
+        if (tabButton.classList.contains('status_panel_card')) {
+            for (let i = 0; i < statusPanelCards.length; i++) statusPanelCards[i].classList.remove('active');
+        } 
+        
+        if (tabButton.classList.contains('tab_button')) {
+            for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
 
-        // Clear rendered HTML from the sidebar
-        $('#' + config.targetId).empty();
+            // Reset visibility of sub tab containers inside this region
+            var allTabContainers = container.getElementsByClassName('status_tab_container');
+            for (let i = 0; i < allTabContainers.length; i++) {
+                allTabContainers[i].style.display = 'none';
+            }
 
-        // Reset prev_tab_id so clicking it next time re-opens it
-        window.prev_tab_id = null;
-        return;
-    }
-
-    // Process button classes independently
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) statusButtons[i].classList.remove('active');
-    } 
-    
-    if (tabButton.classList.contains('status_panel_card')) {
-        for (let i = 0; i < statusPanelCards.length; i++) statusPanelCards[i].classList.remove('active');
-    } 
-    
-    if (tabButton.classList.contains('tab_button')) {
-        for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
-
-        // Reset visibility of sub tab containers inside this region
-        var allTabContainers = container.getElementsByClassName('status_tab_container');
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
+            var baseId = tabId.replace('_tab', '');
+            var targetContainer = document.getElementById(baseId + '_tabs');
+            if (targetContainer) {
+                targetContainer.style.display = 'flex';
+            }
         }
-
-        var baseId = tabId.replace('_tab', '');
-        var targetContainer = document.getElementById(baseId + '_tabs');
-        if (targetContainer) {
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    // add the active state to the clicked button
-    tabButton.classList.add('active');
-
+        
+        // add the active state to the clicked button
+        tabButton.classList.add('active');
+    };
     // Save state globally and update UI
     window[config.starting_scene] = newTab;
     window.updateBar(regionKey);

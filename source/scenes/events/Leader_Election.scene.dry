@@ -70,12 +70,15 @@ Coldwell will lead us to victory!
 = The Williams Faction
 
 <div style="display: flex; flex-direction: row; text-align: left; ">
-    George Williams is a former president of the UFC(SS) and on the left-wing of the party. 
-    Williams led the UFC(SS) into provincial politics on a socialist programme and was the architect behind the controversial "use-lease" policy, a program that would: 
+    <div>
+    George Williams is a former president of the UFC(SS) and on the left-wing of the party. Williams led the UFC(SS) into provincial politics on a socialist programme and was the architect behind the controversial "use-lease" policy, a program that would: 
 
     A: Disallow the sale of crown lands in favour of a use-lease
 
-    B: Provide an option for farmers to 
+    B: Provide an option for land-owning farmers to enter the use-lease program
+
+    Williams has faced controversy over his visit to the Soviet Union, returning with approval for its largely state-managed agricultural sector (nonetheless, he seeks a different path for Saskatchewan agriculture). It is guaranteed that this history will be pounced upon by the Liberals and almost certainly prove too contentious for any Conservative-CCF electoral alliance, even with the relatively open James Anderson leading. 
+    </div>
     <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
         <div id="GHW" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"><span class="card-caption">George Williams</span></div>
         <div id="Phelps" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"><span class="card-caption">Joe Phelps</span></div>
@@ -87,7 +90,11 @@ Coldwell will lead us to victory!
 
 = The Coldwell Faction
 <div style="display: flex; flex-direction: row; text-align: left; ">
-    Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat.
+    <div>
+    Major James Coldwell is the moderate former leader of the ILP and former PPS member. He has political and governing experience, having served as a Regina City Councillor in the past, and has been active in the teacher's unions. 
+    
+    As a middle-class professional, it is likely that he will be able to expand the party's appeal into the cities. While he is on the right-wing of the party, he remains avowedly against an electoral pact with the Conservatives. 
+    </div>
     <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
         <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
         <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>

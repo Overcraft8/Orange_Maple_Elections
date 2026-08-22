@@ -556,7 +556,7 @@ window.changeTabBottom = function(newTab, tabId) {
 // ==========================================
 // "Region" Configurations
 // ==========================================
-const BAR_CONFIG = {
+const Bar_Config = {
     center: {
         containerId: 'mid_panel',
         targetId: 'content',
@@ -599,7 +599,7 @@ const BAR_CONFIG = {
 // Update W/ Unified Content 
 // ==========================================
 window.updateBar = function(regionKey) {
-    var config = BAR_CONFIG[regionKey];
+    var config = Bar_Config[regionKey];
     if (!config) return;
 
     var targetSelector = '#' + config.targetId;
@@ -639,16 +639,17 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
         window.alert('Polls are not available in historical mode.');
         return;
     }
-
-    var config = BAR_CONFIG[regionKey];
-    var container = document.getElementById(config.containerId);
-    var tabButton = document.getElementById(tabId);
-    if (!container || !tabButton) return;
-
-    var tabButtons = container.getElementsByClassName('tab_button');
-    var statusButtons = container.getElementsByClassName('status_tab_button');
-    var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
+    
     if (tabId != 'none') {
+        var config = Bar_Config[regionKey];
+        var container = document.getElementById(config.containerId);
+        var tabButton = document.getElementById(tabId);
+        if (!container || !tabButton) return;
+
+        var tabButtons = container.getElementsByClassName('tab_button');
+        var statusButtons = container.getElementsByClassName('status_tab_button');
+        var statusPanelCards = container.getElementsByClassName('status_panel_card_image');
+
         // -------------------------------------------------------------
         // Close if the clicked tab is already active
         // -------------------------------------------------------------

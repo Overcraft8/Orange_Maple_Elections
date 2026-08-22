@@ -45,8 +45,8 @@ on-display: {!
     // qualities.innerHTML = qualities_leader;
     // right_qualities.innerHTML = right_qualities_leader;
 
-    window.ChangeTab('left', 'Leader_Election.GeorgeWilliamsinfo', 'none');
-    window.ChangeTab('right', 'Leader_Election.MJColdwellinfo', 'none');
+    window.ChangeTab('left', 'Leader_Election.GHW', 'none');
+    window.ChangeTab('right', 'Leader_Election.MJC', 'none');
 
     var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
     var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
@@ -110,7 +110,7 @@ face-image: img/portraits/ColdwellMajorJames.jpg
 Coldwell will lead us to victory!
 
 
-@GeorgeWilliamsinfo
+@GHW
 
 = The Williams Faction
 
@@ -126,13 +126,14 @@ Coldwell will lead us to victory!
     </div>
 </div>
 
-@MJColdwellinfo
+@MJC
 
 = The Coldwell Faction
-<div>Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat.</div>
-   <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
-       <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
-       <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
-       <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
-   </div>
-/div>`
+<div style="display: flex; flex-direction: row;">
+    <div>Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat.</div>
+    <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
+        <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
+        <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
+        <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
+    </div>
+</div>

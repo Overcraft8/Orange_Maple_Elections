@@ -88,24 +88,24 @@ data = data.concat([
 
     Q.parliament_diagram = data;
 
-    if (d3 && window && Q.started) {
-        var data = Q.parliament_diagram;
-        var screenWidth = document.getElementById('qualities').offsetWidth;
-/* Old dimensions 250 and 120 */
-        var width = Math.max(Math.min(screenWidth , 200), 90);
-        var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
-        var height = width * heightRatio;
-
-        document.getElementById("legislative_status").style.height = height + "px";
-
-        var legislative_status = d3.parliament();
-        legislative_status.width(width);
-        legislative_status.height(height);
-        legislative_status.innerRadiusCoef(0.4);
-        legislative_status.enter.fromCenter(false).smallToBig(false);
-        legislative_status.exit.toCenter(false).bigToSmall(false);
-        d3.select("#legislative_status").datum(data).call(legislative_status);
-}
+//     if (d3 && window && Q.started) {
+//         var data = Q.parliament_diagram;
+//         var screenWidth = document.getElementById('qualities').offsetWidth;
+// /* Old dimensions 250 and 120 */
+//         var width = Math.max(Math.min(screenWidth , 200), 90);
+//         var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+//         var height = width * heightRatio;
+// 
+//         document.getElementById("legislative_status").style.height = height + "px";
+// 
+//         var legislative_status = d3.parliament();
+//         legislative_status.width(width);
+//         legislative_status.height(height);
+//         legislative_status.innerRadiusCoef(0.4);
+//         legislative_status.enter.fromCenter(false).smallToBig(false);
+//         legislative_status.exit.toCenter(false).bigToSmall(false);
+//         d3.select("#legislative_status").datum(data).call(legislative_status);
+// }
 
 window.westminster('westminster_legislature', false);
 
@@ -169,7 +169,11 @@ window.westminster('westminster_legislature', false);
 
 Assembly composition:
 
-<div>{!<svg id="legislative_status" style="width: 200px; height: 100px;"> </svg>!}</div>
+# <div>{!<svg id="legislative_status" style="width: 200px; height: 100px;"> </svg>!}</div>
+
+<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+<svg id='westminster_legislature' viewBox="-80 0 400 150" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" ></svg>
+</div>
 
 <div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22
@@ -192,12 +196,6 @@ Assembly composition:
 Budget: [+ treasury +] 
 
 Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_election_year +]
-
-
-
-<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-<svg id='westminster_legislature' viewBox="-80 0 400 150" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" ></svg>
-</div>
 
 
 

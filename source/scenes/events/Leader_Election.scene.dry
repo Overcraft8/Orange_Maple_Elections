@@ -7,43 +7,46 @@ priority: 1000
 max-visits: 1
 face-image: img/CCF_Convention.jpg
 on-display: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
-
+    // var mid_panel = document.getElementById('mid_panel');
+    // var content = document.getElementById('content');
+    // var tools = document.getElementById('tools_wrapper'); 
+// 
     var left_sidebar = document.getElementById('stats_sidebar'); 
     var right_sidebar = document.getElementById('stats_sidebar_right'); 
+// 
+    // var qualities = document.getElementById('qualities');
+    // var right_qualities = document.getElementById('qualities_right');
+// 
+    // Q.qualities_storage = qualities.innerHTML;
+    // Q.right_qualities_storage = right_qualities.innerHTML;
+// 
+    // qualities.innerHTML = '';
+    // right_qualities.innerHTML = '';
+// 
+    // var qualities_leader = `<h1>The Williams Faction</h1>
+    // <div style="display: flex; flex-direction: row;">
+    //     <div>George Williams is a former president of the UFC(SS) and on the left-wing of the party. It was Williams who </div>
+    //     <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
+    //         <div id="GHW" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"><span class="card-caption">George Williams</span></div>
+    //         <div id="Phelps" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"><span class="card-caption">Joe Phelps</span></div>
+    //         <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"><span class="card-caption">John Brockelbank</span></div>
+    //     </div>
+    // </div>`
+// 
+    //  var right_qualities_leader = `<h1>The Coldwell Faction</h1>
+    //  <div>Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat.</div>
+    //     <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
+    //         <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
+    //         <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
+    //         <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
+    //     </div>
+    // </div>`
+// 
+    // qualities.innerHTML = qualities_leader;
+    // right_qualities.innerHTML = right_qualities_leader;
 
-    var qualities = document.getElementById('qualities');
-    var right_qualities = document.getElementById('qualities_right');
-
-    Q.qualities_storage = qualities.innerHTML;
-    Q.right_qualities_storage = right_qualities.innerHTML;
-
-    qualities.innerHTML = '';
-    right_qualities.innerHTML = '';
-
-    var qualities_leader = `<h1>The Williams Faction</h1>
-    <div style="display: flex; flex-direction: row;">
-        <div>George Williams is a former president of the UFC(SS) and on the left-wing of the party. It was Williams who </div>
-        <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
-            <div id="GHW" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"><span class="card-caption">George Williams</span></div>
-            <div id="Phelps" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"><span class="card-caption">Joe Phelps</span></div>
-            <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"><span class="card-caption">John Brockelbank</span></div>
-        </div>
-    </div>`
-
-     var right_qualities_leader = `<h1>The Coldwell Faction</h1>
-     <div>Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat.</div>
-        <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
-            <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
-            <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
-            <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
-        </div>
-    </div>`
-
-    qualities.innerHTML = qualities_leader;
-    right_qualities.innerHTML = right_qualities_leader;
+    window.ChangeTab('left', 'Leader_Election.GeorgeWilliamsinfo', 'none');
+    window.ChangeTab('right', 'Leader_Election.MJColdwellinfo', 'none');
 
     var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
     var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
@@ -59,20 +62,18 @@ on-display: {!
     // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
 !} 
 on-departure: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
-
+    // var mid_panel = document.getElementById('mid_panel');
+    // var content = document.getElementById('content');
+    // var tools = document.getElementById('tools_wrapper'); 
+// 
     var left_sidebar = document.getElementById('stats_sidebar'); 
     var right_sidebar = document.getElementById('stats_sidebar_right');
-
-    var qualities = document.getElementById('qualities');
-    var right_qualities = document.getElementById('qualities_right');
-
-    qualities.innerHTML = Q.qualities_storage; 
-    right_qualities.innerHTML = Q.right_qualities_storage; 
-
-    window.ChangeTab('left', 'Leader_Election.GeorgeWilliamsinfo', 'none');
+// 
+    // var qualities = document.getElementById('qualities');
+    // var right_qualities = document.getElementById('qualities_right');
+// 
+    // qualities.innerHTML = Q.qualities_storage; 
+    // right_qualities.innerHTML = Q.right_qualities_storage; 
 
     var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
     var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
@@ -124,3 +125,14 @@ Coldwell will lead us to victory!
         <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"><span class="card-caption">John Brockelbank</span></div>
     </div>
 </div>
+
+@MJColdwellinfo
+
+= The Coldwell Faction
+<div>Major James Coldwell is the moderate former leader of the ILP and founder of the urban wing of the PPS. As a school principal, he championed teacher's labour rights. Coldwell is a strong public speaker and would be able to draw large crowds in the cities. He holds a grudge against Williams for not endorsing the PPS, contributing to an embarrassing election defeat.</div>
+   <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
+       <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
+       <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
+       <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
+   </div>
+/div>`

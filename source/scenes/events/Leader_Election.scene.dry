@@ -40,8 +40,8 @@ on-display: {!
     qualities.innerHTML = qualities_leader;
     right_qualities.innerHTML = right_qualities_leader;
 
-    var allTabContainers = left_sidebar.getElementsByClassName('status_tab_container');
-    var allTabContainers_right = right_sidebar.getElementsByClassName('status_tab_container');
+    var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
+    var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
     
     for (let i = 0; i < allTabContainers.length; i++) {
             allTabContainers[i].style.display = 'none';
@@ -72,8 +72,8 @@ on-departure: {!
     qualities.innerHTML = Q.qualities_storage; 
     right_qualities.innerHTML = Q.right_qualities_storage; 
 
-    var allTabContainers = left_sidebar.getElementsByClassName('status_tab_container');
-    var allTabContainers_right = right_sidebar.getElementsByClassName('status_tab_container');
+    var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
+    var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
     
     for (let i = 0; i < allTabContainers.length; i++) {
             allTabContainers[i].style.display = '';

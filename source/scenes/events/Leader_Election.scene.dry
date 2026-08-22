@@ -37,8 +37,8 @@ on-display: {!
     <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"></div>
     </div>`
 
-    qualities.innerHTML = qualities_leader;
-    right_qualities.innerHTML = right_qualities_leader;
+    left_sidebar.innerHTML = qualities_leader;
+    right_sidebar.innerHTML = right_qualities_leader;
 
     // var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
     // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);

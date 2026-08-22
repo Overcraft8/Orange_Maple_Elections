@@ -27,18 +27,28 @@ on-display: {!
     <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
     <div id="GHW" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"><span class="card-caption">George Williams</span></div>
     <div id="Phelps" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg"><span class="card-caption">Joe Phelps</span></div>
-    <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"></div>
+    <div id="Brockelbank" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg"><span class="card-caption">John Brockelbank</span></div>
     </div>`
 
      var right_qualities_leader = `<h1>The Coldwell Faction</h1>
     <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;">
-    <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"></div>
-    <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"></div>
-    <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"></div>
+    <div id="MJC" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg"><span class="card-caption">Major James Coldwell</span></div>
+    <div id="Douglas" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/DouglasTommy.jpg"><span class="card-caption">Tommy Douglas</span></div>
+    <div id="Fines" class="face-figure" style="display: flex; flex-direction: column;"><img class="face-img" src="img/portraits/FinesClarence.jpg"><span class="card-caption">Clarence Fines</span></div>
     </div>`
 
     qualities.innerHTML = qualities_leader;
     right_qualities.innerHTML = right_qualities_leader;
+
+    var allTabContainers = left_sidebar.getElementsByClassName('status_tab_container');
+    var allTabContainers_right = right_sidebar.getElementsByClassName('status_tab_container');
+    
+    for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = 'none';
+    }
+    for (let i = 0; i < allTabContainers_right.length; i++) {
+            allTabContainers[i].style.display = 'none';
+    }
 
     // var williamsHTML = `<div id="GHW" class="face-figure" style="position: absolute; left: 0px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg"></div>`;
     // mid_panel.insertAdjacentHTML('beforeend', williamsHTML);
@@ -56,6 +66,16 @@ on-departure: {!
 
     qualities.innerHTML = Q.qualities_storage; 
     right_qualities.innerHTML = Q.right_qualities_storage; 
+
+    var allTabContainers = left_sidebar.getElementsByClassName('status_tab_container');
+    var allTabContainers_right = right_sidebar.getElementsByClassName('status_tab_container');
+    
+    for (let i = 0; i < allTabContainers.length; i++) {
+            allTabContainers[i].style.display = '';
+    }
+    for (let i = 0; i < allTabContainers_right.length; i++) {
+            allTabContainers[i].style.display = '';
+    }
 
 !}
 

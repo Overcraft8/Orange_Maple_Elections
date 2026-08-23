@@ -73,16 +73,16 @@ on-departure: {!
 @crown_corps_options 
 on-arrival: {!
     if (1 == 1) {
-        // Start the master container for all Crown cards
+        // Start the container for all Crown cards
         var containerHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
 
-        // Loop through Crown corporations defined in the pairs dictionary
+        // Loop through Crown corps in the pairs dictionary
         for (var crown_id in Q.crown_economic_pairs) {
             
-            var sectorName = Q.crown_economic_pairs[crown_id]; // e.g., 'electricity', 'telecoms'
+            var sectorName = Q.crown_economic_pairs[crown_id]; // ex., 'electricity', 'telecoms'
             var districtData = Q.economic_data[sectorName]; 
 
-            // Only proceed if data exists for it
+            // Check for the data
             if (districtData && districtData.marketshare) {
                 var sectorData = districtData.marketshare; 
             
@@ -101,7 +101,7 @@ on-arrival: {!
 
                     var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
 
-                    // Generate the specific card for this sector
+                    // This is the "market share" graphic
                     var cardHtml = `
                         <div class="project_container" style="
                             position: relative; 
@@ -134,15 +134,9 @@ on-arrival: {!
                         </div>
                     `;
 
-                    // Add this card to the master container
                     containerHtml += cardHtml;
 
-                    // Save the individual card to Q variables
-                    // var varName = (sectorName === 'electricity') ? 'electrification_pie_chart' : sectorName + '_pie_chart';
-                    
-                    // FIX: Assign cardHtml to both variables (not containerHtml)
                     Q[sectorName + '_pie_chart'] = cardHtml;
-                    // Q[varName] = cardHtml;
                 }
             }
         }
@@ -173,7 +167,7 @@ on-arrival: {!
             <div>Electrification: [+ electrification +]%</div>
             <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps_actions', 'saskpower_choices', 'saskpower_options');">Saskpower Actions</div>
+                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'saskpower_choices', 'saskpower_options');">Saskpower Actions</div>
             </div>
         </div>
     </div>
@@ -186,7 +180,7 @@ on-arrival: {!
             <div>Telecoms Access: [+ telecoms +]%</div>
             <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps_actions', 'sasktel_choices', 'sasktel_options');">SaskTel Actions</div>
+                <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'sasktel_choices', 'sasktel_options');">SaskTel Actions</div>
             </div>
         </div>
     </div>

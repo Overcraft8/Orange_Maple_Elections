@@ -192,6 +192,7 @@ on-arrival: {!
 </div>
 
 @saskpower_choices
+is-card: true
 
 = SaskPower
 

@@ -167,7 +167,7 @@ on-arrival: {!
             <div>Electrification: [+ electrification +]%</div>
             <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'saskpower_choices', 'saskpower_options');">Saskpower Actions</div>
+                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'government_options.saskpower_choices', 'saskpower_options');">Saskpower Actions</div>
             </div>
         </div>
     </div>
@@ -180,7 +180,7 @@ on-arrival: {!
             <div>Telecoms Access: [+ telecoms +]%</div>
             <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'sasktel_choices', 'sasktel_options');">SaskTel Actions</div>
+                <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'government_options.sasktel_choices', 'sasktel_options');">SaskTel Actions</div>
             </div>
         </div>
     </div>

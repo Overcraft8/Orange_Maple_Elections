@@ -596,7 +596,7 @@ const Bar_Config = {
 };
 
 // ==========================================
-// Update W/ Unified Content 
+// Update for Unified thingies
 // ==========================================
 window.updateBar = function(regionKey) {
     var config = Bar_Config[regionKey];
@@ -614,7 +614,6 @@ window.updateBar = function(regionKey) {
         var statusScene = dendryUI.game.scenes["status"];
         if (statusScene) dendryUI.dendryEngine._runActions(statusScene.onArrival);
     }
-    console.log('2.5');
 
     dendryUI.dendryEngine._runActions(scene.onArrival);
 
@@ -626,12 +625,8 @@ window.updateBar = function(regionKey) {
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
     $(targetSelector).html(tempDiv.innerHTML);
 
-    console.log("HTML being injected:", htmlContent); // ADD THIS
-    console.log('3');
-
-    // Run display so D3 charts, SVGs, and dynamic UI initialize
+    // Run display so D3 loads (if applicable)
     dendryUI.dendryEngine._runActions(scene.onDisplay);
-    console.log('4');
 
     // if (config.isLeft)... for just the left status if too slow
 };
@@ -713,7 +708,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
 };
 
 // ==========================================
-// Backwards Compatibility
+// This is just for any leftovers
 // ==========================================
 window.updateSidebar      = function() { window.updateBar('left'); };
 window.updateSidebarRight = function() { window.updateBar('right'); };
@@ -722,8 +717,6 @@ window.updateBottomBar    = function() { window.updateBar('bottom'); };
 window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newTab, tabId); };
 window.changeTabRight  = function(newTab, tabId) { window.ChangeTab('right', newTab, tabId); };
 window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', newTab, tabId); };
-
-
 
 
 window.onDisplayContent = function() {

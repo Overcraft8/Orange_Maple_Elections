@@ -40,6 +40,8 @@ on-departure: {!
     window.ChangeTab('left', 'status', 'party_tab');
     window.ChangeTab('right', 'status_right', 'main_tab');
 
+    console.log("hello");
+
 !}
 
 = Selection of our President

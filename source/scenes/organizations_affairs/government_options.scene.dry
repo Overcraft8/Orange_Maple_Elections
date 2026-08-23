@@ -194,7 +194,6 @@ on-arrival: {!
 @saskpower_choices
 new-page: true
 is-card: true
-tags: party_affairs
 card-image: img/CCYM_Sings.jpg
 
 = SaskPower

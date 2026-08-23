@@ -188,7 +188,7 @@ on-arrival: {!
 </div>
 
 
-<div id="crown_corps_actions">
+<div id="crown_corps_actions" style="border: 5px solid red; min-height: 100px; background-color: white; color: black; padding: 20px;">
 </div>
 
 @saskpower_choices

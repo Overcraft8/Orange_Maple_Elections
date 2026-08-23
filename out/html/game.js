@@ -600,14 +600,14 @@ const Bar_Config = {
 // ==========================================
 window.updateBar = function(regionKey) {
     var config = Bar_Config[regionKey];
-    if (!config) return "1";
+    if (!config) return;
 
     var targetSelector = '#' + config.targetId;
     $(targetSelector).empty();
 
     var sceneId = window[config.starting_scene];
     var scene = dendryUI.game.scenes[sceneId];
-    if (!scene) return "2";
+    if (!scene) return;
 
     // Run status on arrival if the left main sidebar
     if (config.isLeft) {
@@ -626,6 +626,7 @@ window.updateBar = function(regionKey) {
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
     $(targetSelector).html(tempDiv.innerHTML);
 
+    console.log("HTML being injected:", htmlContent); // ADD THIS
     console.log('3');
 
     // Run display so D3 charts, SVGs, and dynamic UI initialize

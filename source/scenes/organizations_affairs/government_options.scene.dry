@@ -188,14 +188,42 @@ on-arrival: {!
 </div>
 
 
-<div id="crown_corps_actions" style="border: 5px solid red; min-height: 100px; background-color: white; color: black; padding: 20px;">
+<div id="crown_corps_actions">
 </div>
 
 @saskpower_choices
 
 = SaskPower
 
-flavor text here
+SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, purchasing independently-owned electrical utilities. 
+
+- @saskpower_monopoly: Grant SaskPower a Monopoly on Power
+- @power_buyout: Buy Out Electrical Utilities Companies
+- @power_sellout: Sell Parts of SaskPower to Private Companies
+- @electrical_coop_sellout: Use SaskPower assets to establish Electrical Sector Worker's Cooperatives
+- @rural_electrification: Expand Access to Electricity
+
+
+@saskpower_monopoly
+subtitle: -5 budget, 100% Market Share
+view-if: 1 = 1
+choose-if: budget >= 20
+
+@power_buyout
+subtitle: -1 budget, +10% Market Share
+choose-if: budget >= 1 
+
+@power_sellout
+subtitle: +1 budget, -10% Market Share
+on-arrival: budget += 1
+
+@electrical_coop_sellout
+subtitle: -10% Market Share, +1 budget
+
+
+@rural_electrification
+subtitle: -1 budget
+choose-if: budget >= 1
 
 
 @ministries_options 

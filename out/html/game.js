@@ -588,7 +588,7 @@ const Bar_Config = {
         isLeft: false
     }, 
     crown_corps: {
-        containerId: 'mid_panel',
+        containerId: 'content',
         targetId: 'crown_corps_actions',
         starting_scene: 'government_options',
         isLeft: false

@@ -188,11 +188,14 @@ on-arrival: {!
 </div>
 
 
-<div id="crown_corps_actions">
+<div id="crown_corps_actions" style="padding: 2em;">
 </div>
 
 @saskpower_choices
+new-page: true
 is-card: true
+tags: party_affairs
+card-image: img/CCYM_Sings.jpg
 
 = SaskPower
 

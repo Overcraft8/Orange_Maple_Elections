@@ -590,7 +590,7 @@ const Bar_Config = {
     crown_corps: {
         containerId: 'content',
         targetId: 'crown_corps_actions',
-        starting_scene: 'government_options',
+        starting_scene: 'crown_corps_options',
         isLeft: false
     },
 };
@@ -600,20 +600,21 @@ const Bar_Config = {
 // ==========================================
 window.updateBar = function(regionKey) {
     var config = Bar_Config[regionKey];
-    if (!config) return;
+    if (!config) return "1";
 
     var targetSelector = '#' + config.targetId;
     $(targetSelector).empty();
 
     var sceneId = window[config.starting_scene];
     var scene = dendryUI.game.scenes[sceneId];
-    if (!scene) return;
+    if (!scene) return "2";
 
     // Run status on arrival if the left main sidebar
     if (config.isLeft) {
         var statusScene = dendryUI.game.scenes["status"];
         if (statusScene) dendryUI.dendryEngine._runActions(statusScene.onArrival);
     }
+    console.log('2.5');
 
     dendryUI.dendryEngine._runActions(scene.onArrival);
 
@@ -625,8 +626,11 @@ window.updateBar = function(regionKey) {
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
     $(targetSelector).html(tempDiv.innerHTML);
 
+    console.log('3');
+
     // Run display so D3 charts, SVGs, and dynamic UI initialize
     dendryUI.dendryEngine._runActions(scene.onDisplay);
+    console.log('4');
 
     // if (config.isLeft)... for just the left status if too slow
 };

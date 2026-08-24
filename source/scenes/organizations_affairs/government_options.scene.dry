@@ -22,22 +22,24 @@ on-arrival: {!
     content.style.width = '50em';
 !} 
 on-departure: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
+    var Scene = window.dendryUI.dendryEngine.state.toSceneId || '';
+    
+    if (!Scene.startsWith('government_options')) {
+        var mid_panel = document.getElementById('mid_panel');
+        var content = document.getElementById('content');
+        var left_sidebar = document.getElementById('stats_sidebar'); 
+        var right_sidebar = document.getElementById('stats_sidebar_right'); 
 
-    var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+        if (left_sidebar) left_sidebar.style.display = ''; 
+        if (right_sidebar) right_sidebar.style.display = '';
 
-    left_sidebar.style.display = ''; 
-    right_sidebar.style.display = '';
+        if (mid_panel) mid_panel.style.margin = Q.old_mid_panel_margin;
 
-    // Restore original panel margin
-    mid_panel.style.margin = Q.old_mid_panel_margin;
-
-    // Clear the inline overrides entirely so media queries take back control
-    content.style.maxWidth = '';
-    content.style.width = '';
+        if (content) {
+            content.style.maxWidth = '';
+            content.style.width = '';
+        }
+    }
 !}
 
 <div id="government_options_top_panel" class='tab_container'>
@@ -203,6 +205,7 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 - @power_sellout: Sell Parts of SaskPower to Private Companies
 - @electrical_coop_sellout: Use SaskPower assets to establish Electrical Sector Worker's Cooperatives
 - @rural_electrification: Expand Access to Electricity
+- @return: Return
 
 
 @saskpower_monopoly

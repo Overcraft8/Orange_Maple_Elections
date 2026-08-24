@@ -1,0 +1,25 @@
+title: Exit Government scene
+on-arrival: {!
+    var Scene = window.dendryUI.dendryEngine.state.sceneId || '';
+    // console.log(Scene);
+    
+    console.log("got into this");
+    var mid_panel = document.getElementById('mid_panel');
+    var content = document.getElementById('content');
+    var left_sidebar = document.getElementById('stats_sidebar'); 
+    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+
+    if (left_sidebar) left_sidebar.style.display = ''; 
+    if (right_sidebar) right_sidebar.style.display = '';
+
+    if (mid_panel) mid_panel.style.margin = Q.old_mid_panel_margin;
+
+    if (content) {
+        content.style.maxWidth = '';
+        content.style.width = '';
+    }
+!}
+
+# This scene is just to restore the previous HTML elements to their standard styling
+
+go-to: main

@@ -20,39 +20,15 @@ on-arrival: {!
 
     content.style.maxWidth = '100em';
     content.style.width = '50em';
-!} 
-on-departure: {!
-    var Scene = window.dendryUI.dendryEngine.state.sceneId || '';
-    // console.log(Scene);
-    
-    if (!Scene.startsWith('government_options')) {
-        console.log("got into this");
-        var mid_panel = document.getElementById('mid_panel');
-        var content = document.getElementById('content');
-        var left_sidebar = document.getElementById('stats_sidebar'); 
-        var right_sidebar = document.getElementById('stats_sidebar_right'); 
-
-        if (left_sidebar) left_sidebar.style.display = ''; 
-        if (right_sidebar) right_sidebar.style.display = '';
-
-        if (mid_panel) mid_panel.style.margin = Q.old_mid_panel_margin;
-
-        if (content) {
-            content.style.maxWidth = '';
-            content.style.width = '';
-        }
-    }
-    console.log("Didn't get into this");
 !}
 
 <div id="government_options_top_panel" class='tab_container'>
 
-    <div id='crown_corps_button' class='tab_button' style="cursor: pointer;" onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
+    <div id='crown_corps_button' class='tab_button'  onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
 
-    <div id='ministries_button' style="cursor: pointer;" class='tab_button'>Ministries</div>
+    <div id='ministries_button' class='tab_button'>Ministries</div>
 
-    <div id="ministries_button" style="position: absolute; right: 1.2em; top: 1em; border-radius: 0; border: 0px solid #000000; padding: 0;" class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('main');">Back</div>
-
+    <div id="back_gov_button"  class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('main');">Back</div>
 
 </div>
 
@@ -206,22 +182,27 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 subtitle: -5 budget, 100% Market Share
 view-if: 1 = 1
 choose-if: budget >= 20
+go-to: exit_gov
 
 @power_buyout
 subtitle: -1 budget, +10% Market Share
 choose-if: budget >= 1 
+go-to: exit_gov
 
 @power_sellout
 subtitle: +1 budget, -10% Market Share
 on-arrival: budget += 1
+go-to: exit_gov
 
 @electrical_coop_sellout
 subtitle: -10% Market Share, +1 budget
+go-to: exit_gov
 
 
 @rural_electrification
 subtitle: -1 budget
 choose-if: budget >= 1
+go-to: exit_gov
 
 @sasktel_choices
 

@@ -19,7 +19,6 @@ on-arrival: {!
         content.style.width = '';
     }
 !}
+go-to: main
 
 # This scene is just to restore the previous HTML elements to their standard styling
-
-go-to: main

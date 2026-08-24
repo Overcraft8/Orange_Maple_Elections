@@ -28,7 +28,7 @@ on-arrival: {!
 
     <div id='ministries_button' class='tab_button'>Ministries</div>
 
-    <div id="back_gov_button"  class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('main');">Back</div>
+    <div id="back_gov_button"  class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('exit_gov');">Back</div>
 
 </div>
 

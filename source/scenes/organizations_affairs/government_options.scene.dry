@@ -71,8 +71,6 @@ on-departure: {!
 -->
 
 @crown_corps_options 
-is-hand: true
-max-cards: 12
 on-arrival: {!
     if (1 == 1) {
         // Start the container for all Crown cards
@@ -174,7 +172,7 @@ on-arrival: {!
         </div>
     </div>
 
-
+<!--
     <div id="sasktel_panel" class="gov_panel">
         <div class="h1_gov">SaskTel</div>
 
@@ -186,6 +184,7 @@ on-arrival: {!
             </div>
         </div>
     </div>
+-->
 
 </div>
 

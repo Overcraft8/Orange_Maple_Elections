@@ -1,7 +1,7 @@
 title: Government
 new-page: true
 is-card: true
-tags: govtwo, programme
+tags: govtwo
 view-if: 1 = 1
 card-image: img/Saskatchewan_Legislature.jpg
 on-arrival: {!
@@ -23,7 +23,7 @@ on-arrival: {!
 !} 
 on-departure: {!
     var Scene = window.dendryUI.dendryEngine.state.sceneId || '';
-    console.log(Scene);
+    // console.log(Scene);
     
     if (!Scene.startsWith('government_options')) {
         console.log("got into this");
@@ -177,7 +177,7 @@ on-arrival: {!
         </div>
     </div>
 
-<!--
+
     <div id="sasktel_panel" class="gov_panel">
         <div class="h1_gov">SaskTel</div>
 
@@ -189,7 +189,7 @@ on-arrival: {!
             </div>
         </div>
     </div>
--->
+
 
 </div>
 

@@ -18,6 +18,7 @@ on-arrival: {!
         content.style.maxWidth = '';
         content.style.width = '';
     }
+    window.changeTab('center', 'main', 'none');
 !}
 go-to: main
 

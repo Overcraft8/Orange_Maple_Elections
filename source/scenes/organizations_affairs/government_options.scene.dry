@@ -51,13 +51,8 @@ on-departure: {!
 
     <div id='ministries_button' style="cursor: pointer;" class='tab_button'>Ministries</div>
 
-    <ul class="choices" style="position: absolute; right: 1.2em; top: 1em; border-radius: 0; border: 0px solid #000000; padding: 0;">
-        <li>
-            <a href="#" data-choice="0">
-                <div id="ministries_button" class="tab_button">Back</div>
-            </a>
-        </li>
-    </ul>
+    <div id="ministries_button" style="position: absolute; right: 1.2em; top: 1em; border-radius: 0; border: 0px solid #000000; padding: 0;" class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('main');">Back</div>
+
 
 </div>
 

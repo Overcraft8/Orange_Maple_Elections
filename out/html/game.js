@@ -627,7 +627,7 @@ window.updateBar = function(regionKey) {
     var tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
     tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $(targetSelector).html(tempDiv.innerHTML);
+    $(target).html(tempDiv.innerHTML);
 
     // Run display so D3 loads (if applicable)
     dendryUI.dendryEngine._runActions(scene.onDisplay);

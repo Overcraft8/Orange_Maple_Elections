@@ -193,9 +193,6 @@ on-arrival: {!
 </div>
 
 @saskpower_choices
-new-page: true
-is-card: true
-card-image: img/CCYM_Sings.jpg
 
 = SaskPower
 

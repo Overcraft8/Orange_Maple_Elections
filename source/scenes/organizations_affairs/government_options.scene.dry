@@ -167,7 +167,7 @@ on-arrival: {!
             <div>Electrification: [+ electrification +]%</div>
             <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene(government_options.saskpower_choices);">Saskpower Actions</div>
+                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.saskpower_choices');">Saskpower Actions</div>
             </div>
         </div>
     </div>

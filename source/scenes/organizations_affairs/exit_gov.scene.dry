@@ -18,7 +18,10 @@ on-arrival: {!
         content.style.maxWidth = '';
         content.style.width = '';
     }
+!}
+on-departure: {!
     window.changeTab('center', 'main', 'none');
+    content.innerHTML = ''; // Just erasing everything in content now...
 !}
 go-to: main
 

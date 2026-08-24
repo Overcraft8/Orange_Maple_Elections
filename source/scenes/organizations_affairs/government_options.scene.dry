@@ -47,6 +47,7 @@ on-arrival: {!
 -->
 
 @crown_corps_options 
+new-page: true
 on-arrival: {!
     if (1 == 1) {
         // Start the container for all Crown cards
@@ -178,7 +179,6 @@ on-arrival: {!
 </div>
 
 @saskpower_choices
-new-page: true
 
 = SaskPower
 

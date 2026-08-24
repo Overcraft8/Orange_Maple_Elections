@@ -667,10 +667,10 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
                 allTabContainers[i].style.display = 'none';
             }
 
-            // Reset state variables
-            window[config.starting_scene] = 'empty';
+            // Reset scene var
+            window[config.starting_scene] = null;
 
-            // Clear rendered HTML from the sidebar
+            // Clear HTML from the sidebar
             $('#' + config.targetId).empty();
 
             // Reset prev_tab_id so clicking it next time re-opens it

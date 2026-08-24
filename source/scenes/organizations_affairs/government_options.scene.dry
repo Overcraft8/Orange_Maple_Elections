@@ -40,6 +40,8 @@ on-departure: {!
     content.style.width = '';
 !}
 
+- #party_affairs
+
 <div id="government_options_top_panel" class='tab_container'>
 
     <div id='crown_corps_button' class='tab_button' style="cursor: pointer;" onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
@@ -169,9 +171,8 @@ on-arrival: {!
             <div>Electrification: [+ electrification +]%</div>
             <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'government_options.saskpower_choices', 'saskpower_options');">Saskpower Actions</div>
+                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('economy');">Saskpower Actions</div>
             </div>
-            <div><a class="card" href="#" card-id="saskpower_choices" title="SaskPower Actions"><img class="card-img" src="img/poultry_catalogue.jpg"></a></div>
         </div>
     </div>
 
@@ -193,16 +194,6 @@ on-arrival: {!
 
 <div id="crown_corps_actions" style="padding: 2em;">
 </div>
-
-- @crown_corporations
-
-@crown_corporations
-title: Government Affairs
-view-if: time >= 6
-card-image: img/Saskatchewan_Legislature.jpg
-is-deck: true
-
-- #party_affairs
 
 @saskpower_choices
 new-page: true

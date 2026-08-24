@@ -1431,7 +1431,7 @@
                     choiceOutput = data.choices;
                     numChoosable = data.numChoosable;
                 }
-                // CHANGED BELOW MARIO MARIO LUIGI WALUIGI ADDED && FOR CENTER PANEL 
+
                 if (numChoosable === 0) {
                     // We have no choosable options, so add the default option (NB:
                     // this may take us over the max-choices limit).
@@ -2667,45 +2667,45 @@
             }
             ;
 
-            o.prototype._registerEvents = function() {
-                var e = this;
-
-                // Route Choice Clicks through #content
-                this.$content.on("click", "ul.choices li a", function(n) {
-                    n.preventDefault();
-                    n.stopPropagation();
-                    var i = parseInt($(this).attr("data-choice"));
-                    return e.dendryEngine.choose(i), !1;
+            BrowserUserInterface.prototype._registerEvents = function() {
+                var that = this;
+                this.$content.on('click', 'ul.choices li a', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    var choice = parseInt($(this).attr('data-choice'));
+                    that.dendryEngine.choose(choice);
+                    return false;
                 });
-
-                this.$content.on("click", "ul.choices li", function(e) {
-                    return e.preventDefault(), e.stopPropagation(), $("a", this).click(), !1;
+                this.$content.on('click', 'ul.choices li', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    $('a', this).click();
+                    return false;
                 });
-
-                // Route Deck Clicks through #content
-                this.$content.on("click", "ul.decks li a", function(n) {
-                    n.preventDefault();
-                    n.stopPropagation();
-                    var i = $(this).attr("card-id");
-                    return e.dendryEngine.drawCard(i), !1;
+                // dendrynexus - onclick for decks and cards
+                this.$content.on('click', 'ul.decks li a', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    var choice = $(this).attr('card-id');
+                    that.dendryEngine.drawCard(choice);
+                    return false;
                 });
-
-                // Route Hand Clicks through #content
-                this.$content.on("click", "ul.hand li a", function(n) {
-                    n.preventDefault();
-                    n.stopPropagation();
-                    var i = $(this).attr("card-id");
-                    return e.dendryEngine.playCard(i), !1;
+                this.$content.on('click', 'ul.hand li a', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    var choice = $(this).attr('card-id');
+                    that.dendryEngine.playCard(choice);
+                    return false;
                 });
-
-                // Route Pinned Card Clicks through #content
-                this.$content.on("click", "ul.pinned-cards li a", function(n) {
-                    n.preventDefault();
-                    n.stopPropagation();
-                    var i = $(this).attr("card-id");
-                    return e.dendryEngine.playPinnedCard(i), !1;
+                this.$content.on('click', 'ul.pinned-cards li a', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    var choice = $(this).attr('card-id');
+                    that.dendryEngine.playPinnedCard(choice);
+                    return false;
                 });
-            };
+            }
+            ;
 
             // ------------------------------------------------------------------------
             // Run when loaded.
@@ -2839,13 +2839,3 @@
     }
     , {}]
 }, {}, [2]);
-
-$(function() {
-    i.convertJSONToGame(window.game.compiled, function(e, n) {
-        if (e) throw e;
-        // Instantiate UI targeting only the #content element
-        var i = new o(n, $("#content")); 
-        if (window.dendryUI = i, void 0 !== window.dendryModifyUI && window.dendryModifyUI(i)) return;
-        i.dendryEngine.beginGame();
-    });
-});

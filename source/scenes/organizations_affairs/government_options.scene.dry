@@ -161,10 +161,24 @@ on-arrival: {!
         </div>
     </div>
 
+[? if stc : 
+    <div id="sasktel_panel" class="gov_panel">
+        <div class="h1_gov">STC</div>
+
+        <div id='saskpower_tel' class='gov_stats'>
+            <div>STC Annual Ridership: <span style="color: #23ca4200">60,000</span></div>
+            <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
+            <div class='tab_container'>
+                <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.sasktel_choices');">SaskTel Actions</div>
+            </div>
+        </div>
+    </div>
+?]
 
 </div>
 
 @saskpower_choices
+new-page: true
 
 = SaskPower
 

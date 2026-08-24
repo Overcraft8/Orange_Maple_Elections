@@ -185,16 +185,12 @@ on-arrival: {!
             <div>Telecoms Access: [+ telecoms +]%</div>
             <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.ChangeTab('crown_corps', 'government_options.sasktel_choices', 'sasktel_options');">SaskTel Actions</div>
+                <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.sasktel_choices');">SaskTel Actions</div>
             </div>
         </div>
     </div>
 -->
 
-</div>
-
-
-<div id="crown_corps_actions" style="padding: 2em;">
 </div>
 
 @saskpower_choices
@@ -231,6 +227,14 @@ subtitle: -10% Market Share, +1 budget
 @rural_electrification
 subtitle: -1 budget
 choose-if: budget >= 1
+
+@sasktel_choices
+
+= SaskTel
+
+Sasktel flavor text
+
+- @return_gov: Return 
 
 
 @ministries_options 

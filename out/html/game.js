@@ -587,12 +587,6 @@ const Bar_Config = {
         starting_scene: '', 
         isLeft: false
     }, 
-    crown_corps: {
-        containerId: 'content',
-        targetId: 'crown_corps_actions',
-        starting_scene: 'crown_corps_options',
-        isLeft: false
-    },
 };
 
 

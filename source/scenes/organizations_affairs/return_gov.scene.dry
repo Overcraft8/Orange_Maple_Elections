@@ -1,3 +1,5 @@
 title: Return to gov
 view-if: 1 = 1
-go-to: government_options
+on-arrival: {!
+    window.dendryUI.dendryEngine.goToScene('government_options');
+!}

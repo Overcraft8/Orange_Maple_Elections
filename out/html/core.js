@@ -1,1830 +1,2851 @@
 
-function e(t, n, i) {
-    function o(a, c) {
-        if (!n[a]) {
-            if (!t[a]) {
-                var s = "function" == typeof require && require;
-                if (!c && s)
-                    return s(a, !0);
-                if (r)
-                    return r(a, !0);
-                var d = new Error("Cannot find module '" + a + "'");
-                throw d.code = "MODULE_NOT_FOUND",
-                d
+(function e(t, n, r) {
+    function s(o, u) {
+        if (!n[o]) {
+            if (!t[o]) {
+                var a = typeof require == "function" && require;
+                if (!u && a)
+                    return a(o, !0);
+                if (i)
+                    return i(o, !0);
+                var f = new Error("Cannot find module '" + o + "'");
+                throw f.code = "MODULE_NOT_FOUND",
+                f
             }
-            var p = n[a] = {
+            var l = n[o] = {
                 exports: {}
             };
-            t[a][0].call(p.exports, (function(e) {
-                var n = t[a][1][e];
-                return o(n || e)
-            }
-            ), p, p.exports, e, t, n, i)
+            t[o][0].call(l.exports, function(e) {
+                var n = t[o][1][e];
+                return s(n ? n : e)
+            }, l, l.exports, e, t, n, r)
         }
-        return n[a].exports
+        return n[o].exports
     }
-    for (var r = "function" == typeof require && require, a = 0; a < i.length; a++)
-        o(i[a]);
-    return o
-}({
-    1: [function(e, t, n) {
-        !function() {
-            "use strict";
-            var e = function(e) {
-                if (!e)
-                    throw new Error("Assertion failed.")
-            }
-              , n = function(e, t) {
-                for (var n = 0; n < e.length; ++n)
-                    t(e[n])
-            }
-              , i = function(e, t) {
-                for (var n in e)
-                    t(n, e[n])
-            }
-              , o = function() {
-                for (var e = {}, t = 0; t < arguments.length; ++t) {
-                    var n = arguments[t];
-                    for (var i in n)
-                        e[i] = n[i]
+    var i = typeof require == "function" && require;
+    for (var o = 0; o < r.length; o++)
+        s(r[o]);
+    return s
+}
+)({
+    1: [function(require, module, exports) {
+        /* dendry
+ * http://github.com/idmillington/dendry
+ *
+ * MIT License
+ */
+        /*jshint indent:2 */
+        (function() {
+            'use strict';
+
+            // To avoid the need to include any utility libraries when this is
+            // used in a browser, define some helper functions we'd normally
+            // rely on libraries for.
+
+            var assert = function(mustBeTrue) {
+                /* istanbul ignore if */
+                if (!mustBeTrue) {
+                    throw new Error('Assertion failed.');
                 }
-                return e
-            }
-              , r = function(e) {
-                e = e.trim();
-                var t = new Function("state","Q",e);
-                return t.source = e,
-                t
-            }
-              , a = function(e, t, i) {
-                void 0 !== e && n(e, (function(e) {
-                    try {
-                        e.call(t, i, i.qualities)
-                    } catch (e) {
-                        console.log("Error:", e)
+            };
+
+            var each = function(array, fn) {
+                for (var i = 0; i < array.length; ++i) {
+                    fn(array[i]);
+                }
+            };
+
+            var objEach = function(obj, fn) {
+                for (var key in obj) {
+                    fn(key, obj[key]);
+                }
+            };
+
+            var merge = function() {
+                var result = {};
+                for (var i = 0; i < arguments.length; ++i) {
+                    var obj = arguments[i];
+                    for (var key in obj) {
+                        result[key] = obj[key];
                     }
                 }
-                ))
-            }
-              , c = function(e, t, n, i) {
-                var o = t;
-                if (void 0 === e)
-                    return o;
-                try {
-                    o = !!e.call(n, i, i.qualities)
-                } catch (e) {
-                    console.log("Error:", e)
+                return result;
+            };
+
+            // Credit: Taken from Lodash (MIT License). See CREDITS.
+            var isObject = function(value) {
+                var type = typeof value;
+                return type === 'function' || (value && type === 'object') || false;
+            };
+
+            var makeFunctionFromSource = function(source) {
+                source = source.trim();
+                /*jshint -W054 */
+                var fn = new Function('state','Q',source);
+                /*jshint +W054 */
+                fn.source = source;
+                return fn;
+            };
+
+            var runActions = function(actions, context, state) {
+                if (actions === undefined) {
+                    return;
                 }
-                return o
-            }
-              , s = function(e, t, n, i) {
-                var o = t;
-                if (void 0 === e)
-                    return o;
-                try {
-                    o = e.call(n, i, i.qualities)
-                } catch (t) {
-                    console.log("Error in expression", e, ":", t)
+                each(actions, function(fn) {
+                    try {
+                        fn.call(context, state, state.qualities);
+                    } catch (err) {
+                        // Ignore errors. TODO: Log them somehow?
+                        console.log('Error:', err);
+                    }
+                });
+            };
+
+            var runPredicate = function(predicate, default_, context, state) {
+                var result = default_;
+                if (predicate === undefined) {
+                    return result;
                 }
-                return o
-            }
-              , d = function(e) {
+                try {
+                    result = !!predicate.call(context, state, state.qualities);
+                } catch (err) {
+                    // Ignore errors. TODO: Log them somehow?
+                    console.log('Error:', err);
+                }
+                return result;
+            };
+
+            var runExpression = function(expression, default_, context, state) {
+                var result = default_;
+                if (expression === undefined) {
+                    return result;
+                }
+                try {
+                    result = expression.call(context, state, state.qualities);
+                } catch (err) {
+                    // Ignore errors. TODO: Log them somehow?
+                    console.log('Error in expression', expression, ':', err);
+                }
+                return result;
+            };
+
+            var convertJSONToGame = function(json, callback) {
+                var reviver = function(key, value) {
+                    if (isObject(value) && value.$code !== undefined) {
+                        return makeFunctionFromSource(value.$code);
+                    } else {
+                        return value;
+                    }
+                };
+
+                try {
+                    var game = JSON.parse(json, reviver);
+                    return callback(null, game);
+                } catch (err) {
+                    return callback(err);
+                }
+            };
+
+            var simpleContent = function(text) {
                 return [{
-                    type: "paragraph",
-                    content: e
-                }]
-            }
-              , p = function(e) {
-                return Math.floor(e) === e && e >= 0 && e <= 12 ? ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"][e] : e.toString()
-            }
-              , l = function(e) {
-                if (!(Math.floor(e) === e && e >= 0))
-                    return e.toString();
-                if (e <= 12)
-                    return ["zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"][e];
-                if (e = e.toString(),
-                /1[0-9]$/.test(e))
-                    return e + "th";
-                switch (e.substr(e.length - 1, 1)) {
-                case "1":
-                    return e + "st";
-                case "2":
-                    return e + "nd";
-                case "3":
-                    return e + "rd";
-                default:
-                    return e + "th"
+                    type: 'paragraph',
+                    content: text
+                }];
+            };
+
+            var getCardinalNumber = function(value) {
+                if (Math.floor(value) === value && value >= 0 && value <= 12) {
+                    // Integer, so use word.
+                    return ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'][value];
+                } else {
+                    return value.toString();
                 }
-            }
-              , _ = function(e) {
-                if (Math.floor(e) !== e)
-                    return e.toString();
-                if (e > 3)
-                    return "superb+" + (e - 3);
-                if (e < -3)
-                    return "terrible" + (e + 3);
-                switch (e) {
-                case 3:
-                    return "superb";
-                case 2:
-                    return "great";
-                case 1:
-                    return "good";
-                case 0:
-                    return "fair";
-                case -1:
-                    return "mediocre";
-                case -2:
-                    return "poor";
-                case -3:
-                    return "terrible"
+            };
+
+            var getOrdinalNumber = function(value) {
+                if (Math.floor(value) === value && value >= 0) {
+                    if (value <= 12) {
+                        return ['zeroth', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth'][value];
+                    } else {
+                        value = value.toString();
+                        if (/1[0-9]$/.test(value)) {
+                            return value + 'th';
+                        } else {
+                            var last = value.substr(value.length - 1, 1);
+                            switch (last) {
+                            case '1':
+                                return value + 'st';
+                            case '2':
+                                return value + 'nd';
+                            case '3':
+                                return value + 'rd';
+                            default:
+                                return value + 'th';
+                            }
+                        }
+                    }
+                } else {
+                    return value.toString();
                 }
-            }
-              , h = function(e, t) {
-                for (var n = 0; n < t.content.length; ++n) {
-                    var i = t.content[n]
-                      , o = i.min
-                      , r = i.max;
-                    if ((void 0 === o || o <= e) && (void 0 === r || r >= e))
-                        return void 0 !== i.output ? i.output : e.toString()
+            };
+
+            var getFudgeDisplay = function(value) {
+                if (Math.floor(value) === value) {
+                    if (value > 3) {
+                        return 'superb+' + (value - 3);
+                    } else if (value < -3) {
+                        return 'terrible' + (value + 3);
+                    } else {
+                        switch (value) {
+                        case 3:
+                            return 'superb';
+                        case 2:
+                            return 'great';
+                        case 1:
+                            return 'good';
+                        case 0:
+                            return 'fair';
+                        case -1:
+                            return 'mediocre';
+                        case -2:
+                            return 'poor';
+                        case -3:
+                            return 'terrible';
+                        }
+                    }
+                } else {
+                    return value.toString();
                 }
-                return e.toString()
-            }
-              , u = function(e, t, n, i) {
-                n || (n = .6),
-                n > 1 && (n /= 100);
-                var o = n * (e / t);
-                return o > 1 && (o = 1),
-                o
-            }
-              , g = function(e, t, n) {
-                n || (n = .1),
-                n > 1 && (n /= 100);
-                var i = (e - t) * n + .5;
-                return i > 1 ? i = 1 : i < n && (i = n),
-                i
-            }
-              , y = function(e) {
-                return e <= .1 ? "almost impossible" : e <= .3 ? "high-risk" : e <= .4 ? "tough" : e <= .5 ? "very chancy" : e <= .6 ? "chancy" : e <= .7 ? "modest" : e <= .8 ? "very modest" : e <= .9 ? "low risk" : "straightforward"
-            }
-              , m = function() {};
-            m.prototype.beginGame = function() {}
-            ,
-            m.prototype.displayContent = function(e, t) {}
-            ,
-            m.prototype.displayDecks = function(e) {}
-            ,
-            m.prototype.displayHand = function(e) {}
-            ,
-            m.prototype.displayPinnedCards = function(e) {}
-            ,
-            m.prototype.displayChoices = function(e) {}
-            ,
-            m.prototype.displayGameOver = function() {
-                this.displayContent(d("Game Over"))
-            }
-            ,
-            m.prototype.removeChoices = function() {}
-            ,
-            m.prototype.beginOutput = function() {}
-            ,
-            m.prototype.endOutput = function() {}
-            ,
-            m.prototype.newPage = function() {}
-            ,
-            m.prototype.setStyle = function(e) {}
-            ,
-            m.prototype.signal = function(e) {}
-            ,
-            m.prototype.setBg = function(e) {}
-            ,
-            m.prototype.setSprites = function(e) {}
-            ,
-            m.prototype.setSpriteStyle = function(e, t) {}
-            ,
-            m.prototype.audio = function(e) {}
-            ,
-            m.makeParentOf = function(e) {
-                e.prototype = new m,
-                e.constructor = e
+            };
+
+            var getUserQDisplay = function(value, qdisplay) {
+                for (var i = 0; i < qdisplay.content.length; ++i) {
+                    var case_ = qdisplay.content[i];
+                    var min = case_.min;
+                    var max = case_.max;
+                    if ((min === undefined || min <= value) && (max === undefined || max >= value)) {
+                        if (case_.output !== undefined) {
+                            return case_.output;
+                        } else {
+                            return value.toString();
+                        }
+                    }
+                }
+                return value.toString();
+            };
+
+            // broad difficulty from https://fallenlondon.wiki/wiki/Broad_difficulty
+
+            var calculateBroadDifficulty = function(quality, difficulty, scaler, random) {
+                if (!scaler) {
+                    scaler = 0.6;
+                }
+                if (scaler > 1) {
+                    scaler = scaler / 100;
+                }
+                var success_prob = scaler * (quality / difficulty);
+                if (success_prob > 1) {
+                    success_prob = 1;
+                }
+                return success_prob;
+            };
+
+            // narrow difficulty from https://fallenlondon.wiki/wiki/Narrow_difficulty
+            var calculateNarrowDifficulty = function(quality, difficulty, increment) {
+                if (!increment) {
+                    increment = 0.1;
+                }
+                if (increment > 1) {
+                    increment = increment / 100;
+                }
+                var success_prob = (quality - difficulty) * increment + 0.5;
+                if (success_prob > 1) {
+                    success_prob = 1;
+                } else if (success_prob < increment) {
+                    success_prob = increment;
+                }
+                return success_prob;
+            };
+
+            // this function actually does the roll for success.
+            var rollDifficulty = function(success_prob, random) {
+                var rn;
+                if (random) {
+                    rn = random.random();
+
+                } else {
+                    rn = Math.random();
+                }
+                if (rn < success_prob) {
+                    return true;
+                }
+                return false;
+            };
+
+            // use the storynexus adjectives
+            var displayDifficulty = function(success_prob) {
+                if (success_prob <= 0.1) {
+                    return "almost impossible";
+                } else if (success_prob <= 0.3) {
+                    return "high-risk";
+                } else if (success_prob <= 0.4) {
+                    return "tough";
+                } else if (success_prob <= 0.5) {
+                    return "very chancy";
+                } else if (success_prob <= 0.6) {
+                    return "chancy";
+                } else if (success_prob <= 0.7) {
+                    return "modest";
+                } else if (success_prob <= 0.8) {
+                    return "very modest";
+                } else if (success_prob <= 0.9) {
+                    return "low risk";
+                } else {
+                    return "straightforward";
+                }
+            };
+
+            // ------------------------------------------------------------------------
+
+            // Objects with this interface are passed to a game state to have it
+            // display content.
+            var UserInterface = function() {};
+            UserInterface.prototype.beginGame = function() {}
+            ;
+            UserInterface.prototype.displayContent = function(paragraphs, faceImage) {}
+            ;
+            // these are the dendrynexus display functions
+            // displays the decks
+            UserInterface.prototype.displayDecks = function(decks) {}
+            ;
+            // displays cards in hand
+            UserInterface.prototype.displayHand = function(hand) {}
+            ;
+            // displays pinned cards (these are basically an alternate way of displaying choices)
+            UserInterface.prototype.displayPinnedCards = function(cards) {}
+            ;
+
+            UserInterface.prototype.displayChoices = function(choices) {}
+            ;
+            UserInterface.prototype.displayGameOver = function() {
+                this.displayContent(simpleContent('Game Over'));
             }
             ;
-            var v = function(e, t) {
-                this.ui = e,
-                this.game = t
+            UserInterface.prototype.removeChoices = function() {}
+            ;
+            // Called when the player makes a choice and new content is about to be
+            // added (i.e. isn't called between output when the next scene is arrived
+            // at via go-to).
+            UserInterface.prototype.beginOutput = function() {}
+            ;
+            UserInterface.prototype.endOutput = function() {}
+            ;
+            UserInterface.prototype.newPage = function() {}
+            ;
+            UserInterface.prototype.setStyle = function(style) {}
+            ;
+            UserInterface.prototype.signal = function(data) {}
+            ;
+            UserInterface.prototype.setBg = function(img) {}
+            ;
+            UserInterface.prototype.setSprites = function(data) {}
+            ;
+            UserInterface.prototype.setSpriteStyle = function(loc, style) {}
+            ;
+            UserInterface.prototype.audio = function(audio) {}
+            ;
+            // Not part of the UI, but allows us to simply subclass.
+            UserInterface.makeParentOf = function(OtherConstructor) {
+                OtherConstructor.prototype = new UserInterface();
+                OtherConstructor.constructor = OtherConstructor;
+            }
+            ;
+
+            // ------------------------------------------------------------------------
+
+            // An engine is given a user interface, the game and the current
+            // game state (can be omitted). It is responsible for the logic of
+            // the game.
+            var DendryEngine = function(ui, game) {
+                this.ui = ui;
+                this.game = game;
             };
-            v.prototype.displayGameOver = function() {
-                return this.ui.displayGameOver(),
-                this
+
+            DendryEngine.prototype.displayGameOver = function() {
+                this.ui.displayGameOver();
+                return this;
             }
-            ,
-            v.prototype.displayChoices = function() {
-                var t = this.getCurrentChoices();
-                e(t);
-                var n = this.getCurrentScene();
-                if (n.isHand) {
-                    var i = []
-                      , o = [];
-                    for (var r of t) {
-                        var a = this.game.scenes[r.id];
-                        a.isDeck ? (this._drawFromDeck(r.id) ? r.canChoose = !0 : (r.canChoose = !1,
-                        r.subtitle = r.unavailableSubtitle || "No cards available from deck."),
-                        r.isDeck = !0,
-                        r.image = a.cardImage,
-                        i.push(r)) : a.isPinnedCard && (r.isDeck = !1,
-                        r.image = a.cardImage,
-                        o.push(r))
+            ;
+
+            DendryEngine.prototype.displayChoices = function() {
+                // TODO: dendrynexus - if the current scene is a hand, display the decks, hand, and pinned cards.
+                var choices = this.getCurrentChoices();
+                assert(choices);
+                var scene = this.getCurrentScene();
+                if (scene.isHand) {
+                    // separate choices into decks and pinned cards
+                    var decks = [];
+                    var pinnedCards = [];
+                    for (var c of choices) {
+                        var choiceScene = this.game.scenes[c.id];
+                        if (choiceScene.isDeck) {
+                            // if the deck has
+                            if (!this._drawFromDeck(c.id)) {
+                                c.canChoose = false;
+                                c.subtitle = c.unavailableSubtitle || "No cards available from deck.";
+                            } else {
+                                c.canChoose = true;
+                            }
+                            c.isDeck = true;
+                            c.image = choiceScene.cardImage;
+                            decks.push(c);
+                        } else if (choiceScene.isPinnedCard) {
+                            c.isDeck = false;
+                            c.image = choiceScene.cardImage;
+                            pinnedCards.push(c);
+                        }
                     }
-                    this.state.currentHands[this.state.sceneId] || (this.state.currentHands[this.state.sceneId] = []);
-                    var c = this.state.currentHands[this.state.sceneId]
-                      , s = {};
-                    for (var d of c)
-                        s[d.id] = d;
-                    s = this.__filterViewable(s);
-                    for (var p = 0; p < c.length; p++)
-                        for (; c[p] && !s[c[p].id]; )
-                            c.splice(p, 1);
-                    this.ui.displayDecks(i),
-                    this.ui.displayHand(c, n.maxCards),
-                    this.ui.displayPinnedCards(o)
-                } else
-                    this.state.enableTranscript && this.transcript.push(t),
-                    this.ui.displayChoices(t);
-                return this
-            }
-            ,
-            v.prototype.displaySceneContent = function(t) {
-                var n = this.getCurrentScene();
-                e(n);
-                var i = null;
-                n.faceImage && (i = n.faceImage);
-                var o = n.signal || this.game.sceneSignal;
-                if (void 0 !== o && this.ui.signal({
-                    signal: o,
-                    event: "scene-display",
-                    id: this.state.sceneId
-                }),
-                t ? (this.ui.newPage(),
-                this.ui.displayContent(this.state.tempCurrentContent, i),
-                this.state.currentContent = this.state.tempCurrentContent.slice()) : n.newPage && (this.ui.newPage(),
-                this.state.currentContent = []),
-                this.ui.setStyle(n.style),
-                this.ui.removeChoices(),
-                void 0 !== n.content && !t) {
-                    var r = this._makeDisplayContent(n.content, !0);
-                    this.state.enableTranscript && (this.transcript = this.transcript.concat(r)),
-                    this.state.currentContent = this.state.currentContent.concat(r),
-                    this.ui.displayContent(r, i)
+                    if (!this.state.currentHands[this.state.sceneId]) {
+                        this.state.currentHands[this.state.sceneId] = [];
+                    }
+                    var currentHand = this.state.currentHands[this.state.sceneId];
+                    // TODO: check the viewIf/chooseIf conditions for all cards in the current hand, and filter them if they no longer work...
+                    var handIds = {};
+                    for (var card of currentHand) {
+                        handIds[card.id] = card;
+                    }
+                    handIds = this.__filterViewable(handIds);
+                    for (var i = 0; i < currentHand.length; i++) {
+                        while (currentHand[i] && !handIds[currentHand[i].id]) {
+                            currentHand.splice(i, 1);
+                        }
+                    }
+                    this.ui.displayDecks(decks);
+                    this.ui.displayHand(currentHand, scene.maxCards);
+                    this.ui.displayPinnedCards(pinnedCards);
+                } else {
+                    if (this.state.enableTranscript) {
+                        this.transcript.push(choices);
+                    }
+                    this.ui.displayChoices(choices);
                 }
-                return this._runActions(n.onDisplay),
-                this
+                return this;
             }
-            ,
-            v.prototype.choose = function(t) {
-                var n = this.choiceCache;
-                if (e(n),
-                n.length <= t)
-                    throw new Error("No choice at index " + t + ", only " + n.length + " choices are available.");
-                var i = n[t];
-                if (!i.canChoose)
-                    throw new Error("Attempted to choose index " + t + ", but that choice is unavailable.");
-                var o = i.id;
-                return this.state.enableTranscript && this.transcript.push("> " + i.title),
-                delete this.choiceCache,
-                this.goToScene(o),
-                this
-            }
-            ,
-            v.prototype.chooseSceneId = function(e) {
-                return delete this.choiceCache,
-                this.goToScene(id),
-                this
-            }
-            ,
-            v.prototype.drawCard = function(t) {
-                var n = this.state.sceneId
-                  , i = this.getCurrentScene();
-                e(i);
-                var o = this.state.currentHands[n];
-                if (i.maxCards <= o.length)
-                    return {
-                        id: null,
-                        title: "no_space_in_hand"
-                    };
-                var r = this._drawFromDeck(t);
-                if (!r)
-                    return {
-                        id: null,
-                        title: "no_card_in_deck"
-                    };
-                this.state.lastDrawnCard = r;
-                var a = this.game.scenes[r.id].cardImage;
-                return r.image = a,
-                this.state.currentHands[n].push(r),
-                this.ui.displayHand(this.state.currentHands[n], i.maxCards),
-                r
-            }
-            ,
-            v.prototype.playCard = function(e) {
-                for (var t = this.state.sceneId, n = this.state.currentHands[t], i = 0; i < n.length; i++)
-                    if (n[i].id == e) {
-                        n.splice(i, 1);
-                        break
+            ;
+
+            DendryEngine.prototype.displaySceneContent = function(restorePage) {
+                var scene = this.getCurrentScene();
+                assert(scene);
+                // TODO: displaying images
+                var faceImage = null;
+                if (scene.faceImage) {
+                    faceImage = scene.faceImage;
+                }
+                var sceneSignal = scene.signal || this.game.sceneSignal;
+                if (sceneSignal !== undefined) {
+                    this.ui.signal({
+                        signal: sceneSignal,
+                        event: 'scene-display',
+                        id: this.state.sceneId
+                    });
+                }
+                if (restorePage) {
+                    this.ui.newPage();
+                    this.ui.displayContent(this.state.tempCurrentContent, faceImage);
+                    this.state.currentContent = this.state.tempCurrentContent.slice();
+                } else if (scene.newPage) {
+                    this.ui.newPage();
+                    this.state.currentContent = [];
+                }
+                this.ui.setStyle(scene.style);
+                this.ui.removeChoices();
+
+                if (scene.content !== undefined && !restorePage) {
+                    var displayContent = this._makeDisplayContent(scene.content, true);
+                    if (this.state.enableTranscript) {
+                        this.transcript = this.transcript.concat(displayContent);
                     }
-                this.state.lastPlayedCard = this.game.scenes[e],
-                delete this.choiceCache,
-                this.goToScene(e)
+                    this.state.currentContent = this.state.currentContent.concat(displayContent);
+                    this.ui.displayContent(displayContent, faceImage);
+                }
+                this._runActions(scene.onDisplay);
+
+                return this;
             }
-            ,
-            v.prototype.playPinnedCard = function(e) {
-                delete this.choiceCache,
-                this.goToScene(e)
+            ;
+
+            DendryEngine.prototype.choose = function(choiceIndex) {
+                var choices = this.choiceCache;
+
+                // Check for valid choice.
+                assert(choices);
+                if (choices.length <= choiceIndex) {
+                    throw new Error('No choice at index ' + choiceIndex + ', only ' + choices.length + ' choices are available.');
+                }
+
+                // Commit the choice.
+                var choice = choices[choiceIndex];
+                if (!choice.canChoose) {
+                    throw new Error('Attempted to choose index ' + choiceIndex + ', but ' + 'that choice is unavailable.');
+                }
+
+                var id = choice.id;
+                if (this.state.enableTranscript) {
+                    this.transcript.push('> ' + choice.title);
+                }
+
+                delete this.choiceCache;
+                this.goToScene(id);
+
+                return this;
             }
-            ,
-            v.prototype.goToScene = function(e) {
-                this.state.sceneIdsSinceGoTo = [],
-                this.ui.beginOutput(),
-                this.__changeScene(e),
-                this.ui.endOutput()
+            ;
+
+            DendryEngine.prototype.chooseSceneId = function(sceneId) {
+                delete this.choiceCache;
+                this.goToScene(id);
+
+                return this;
             }
-            ,
-            v.prototype.beginGame = function(e) {
-                this.random = e ? f.fromSeeds(e) : f.fromUnique(),
+            ;
+
+            // TODO: dendrynexus - draw card
+            DendryEngine.prototype.drawCard = function(deckId) {
+                var currentSceneId = this.state.sceneId;
+                var scene = this.getCurrentScene();
+                assert(scene);
+
+                var currentHand = this.state.currentHands[currentSceneId];
+                // return a message saying that there are too many cards
+                if (scene.maxCards <= currentHand.length) {
+                    return {
+                        id: null,
+                        title: 'no_space_in_hand'
+                    };
+                }
+                // get an available card from deckId
+                // card is {id: id, title: title}
+                var card = this._drawFromDeck(deckId);
+                // distinguish between the "no space left in hand" and "no card in deck" situations?
+                if (!card) {
+                    return {
+                        id: null,
+                        title: 'no_card_in_deck'
+                    };
+                }
+                this.state.lastDrawnCard = card;
+                var image = this.game.scenes[card.id].cardImage;
+                card.image = image;
+                this.state.currentHands[currentSceneId].push(card);
+
+                // display the hand
+                this.ui.displayHand(this.state.currentHands[currentSceneId], scene.maxCards);
+                return card;
+            }
+            ;
+
+            // dendrynexus - play a card (remove it from the current hand)
+            // should this be the code for pinned cards as well?
+            DendryEngine.prototype.playCard = function(cardId) {
+                var currentSceneId = this.state.sceneId;
+                var currentHand = this.state.currentHands[currentSceneId];
+                // remove card from hand
+                for (var i = 0; i < currentHand.length; i++) {
+                    if (currentHand[i].id == cardId) {
+                        currentHand.splice(i, 1);
+                        break;
+                    }
+                }
+                this.state.lastPlayedCard = this.game.scenes[cardId];
+                delete this.choiceCache;
+                this.goToScene(cardId);
+            }
+            ;
+
+            DendryEngine.prototype.playPinnedCard = function(cardId) {
+                delete this.choiceCache;
+                this.goToScene(cardId);
+            }
+            ;
+
+            DendryEngine.prototype.goToScene = function(id) {
+                this.state.sceneIdsSinceGoTo = [];
+                this.ui.beginOutput();
+                this.__changeScene(id);
+                this.ui.endOutput();
+            }
+            ;
+
+            DendryEngine.prototype.beginGame = function(rndSeeds) {
+                this.random = rndSeeds ? Random.fromSeeds(rndSeeds) : Random.fromUnique();
                 this.state = {
                     sceneId: null,
                     sceneIdsSinceGoTo: [],
-                    rootSceneId: this.game.rootScene || this.game.firstScene || "root",
-                    gameOver: !1,
+                    rootSceneId: this.game.rootScene || this.game.firstScene || 'root',
+                    gameOver: false,
                     visits: {},
                     qualities: {},
                     currentRandomState: null,
                     currentContent: [],
+                    // tempCurrentContent is used for when the
+                    // player visits the stats or settings pages in order to remember
+                    // where the previous page was?
                     tempCurrentContent: [],
+                    // prevSpecialSceneId is only set when visiting scene tagged with
+                    // isSpecial = true, and is the scene before the special scene.
                     prevSpecialSceneId: null,
                     prevSceneId: null,
+                    // every time a top-level scene changes,
+                    // this record the last-visited qualified id within that scene.
                     prevTopSceneId: null,
+                    // jumpScene is defined within a scene file, indicating the scene that
+                    // @jumpScene will go to. Basically it's used to make subroutines.
                     jumpSceneId: null,
+                    // achievements is a dict of all the current achievements.
+                    // persist achievements in the browser through localstorage?
                     achievements: {},
+                    // current background image
                     bg: null,
+                    // sceneStack is used for goSub
                     sceneStack: [],
-                    justReturned: !1,
-                    justReturnedStart: !1,
-                    justReturnedEnd: !1,
+                    // true if just popped out of a returnScene
+                    justReturned: false,
+                    // just returned from a goSubStart
+                    justReturnedStart: false,
+                    // just returned from a goSubEnd
+                    justReturnedEnd: false,
+                    // sprites is a mapping from location to file
                     sprites: {},
+                    // dendrynexus stuff
+                    // mapping from sceneId to list of sceneIds - indicating the current hand in each of those scenes.
                     currentHands: {},
+                    // last drawn card
                     lastDrawnCard: null,
                     lastPlayedCard: null,
-                    enableTranscript: !1,
-                    disableSaves: !1
-                },
-                this.transcript = [],
-                this._setUpQualities(),
-                this._loadAchievements(),
+
+                    enableTranscript: false,
+                    // whether or not to disable saves
+                    disableSaves: false,
+                };
+                // TODO: transcript
+                this.transcript = [];
+
+                this._setUpQualities();
+                this._loadAchievements();
+
                 this.ui.beginGame();
-                var t = this.game.firstScene || this.state.rootSceneId;
-                return this.goToScene(t),
-                this
-            }
-            ,
-            v.prototype._loadAchievements = function() {
-                if ("undefined" != typeof localStorage && localStorage[this.game.title + "_achievements"])
-                    for (var e in this.state.achievements = JSON.parse(localStorage[this.game.title + "_achievements"]),
-                    this.state.achievements)
-                        this.state.qualities["achievement_" + e] = 1
-            }
-            ,
-            v.prototype.gameOver = function() {
-                return this.state.gameOver = !0,
-                this.displayGameOver(),
-                this
-            }
-            ,
-            v.prototype.isGameOver = function() {
-                return this.state.gameOver
-            }
-            ,
-            v.prototype.getCurrentScene = function() {
-                var t = this.game.scenes[this.state.sceneId];
-                return e(void 0 !== t),
-                t
-            }
-            ,
-            v.prototype.getCurrentChoices = function() {
-                return this.choiceCache
-            }
-            ,
-            v.prototype.setState = function(e) {
-                if (this.state = e,
-                this._setUpQualities(),
-                this.random = f.fromState(this.state.currentRandomState),
-                this._loadAchievements(),
-                this.isGameOver())
-                    this.displayGameOver();
-                else {
-                    var t = this.getCurrentScene();
-                    this.choiceCache = this._compileChoices(t),
-                    this.ui.newPage(),
-                    this.ui.removeChoices(),
-                    this.ui.displayContent(this.state.currentContent),
-                    this.displayChoices(),
-                    this.ui.setSprites(this.state.sprites),
-                    this.ui.setBg(this.state.bg)
-                }
-                return this
-            }
-            ,
-            v.prototype.getExportableState = function() {
-                return this.state
-            }
-            ,
-            v.prototype._getQDisplay = function(t, n) {
-                switch (n) {
-                case "cardinal":
-                case "number":
-                    return p(t);
-                case "ordinal":
-                    return l(t);
-                case "fudge":
-                    return _(t);
-                default:
-                    var i = this.game.qdisplays[n];
-                    return e(void 0 !== i),
-                    h(t, i)
-                }
-            }
-            ,
-            v.prototype._evaluateStateDependencies = function(t) {
-                for (var n = [], i = 0; i < t.length; ++i) {
-                    var o, r = t[i], a = r.fn;
-                    if ("insert" === r.type)
-                        o = this._runExpression(a),
-                        o = r.qdisplay ? this._getQDisplay(o, r.qdisplay) : o.toString();
-                    else
-                        e("predicate" === r.type),
-                        o = this._runPredicate(a);
-                    void 0 !== o.stateDependencies && (o = this._makeDisplayContent(o, !1)),
-                    n.push(o)
-                }
-                return n
-            }
-            ,
-            v.prototype._mergeStateEvalsInArray = function(e, t) {
-                Array.isArray(e) || (e = [e]);
-                for (var n = [], i = 0; i < e.length; ++i)
-                    n = n.concat(this._mergeStateEvals(e[i], t));
-                return n
-            }
-            ,
-            v.prototype._mergeStateEvals = function(e, t) {
-                if (void 0 === e.type)
-                    return [e];
-                var n;
-                switch (e.type) {
-                case "conditional":
-                    n = t[e.predicate] ? this._mergeStateEvalsInArray(e.content, t) : [];
-                    break;
-                case "insert":
-                    n = t[e.insert];
-                    break;
-                default:
-                    var i = {
-                        type: e.type
-                    };
-                    i.content = this._mergeStateEvalsInArray(e.content, t),
-                    n = [i]
-                }
-                return n
-            }
-            ,
-            v.prototype._makeDisplayContent = function(e, t) {
-                if (void 0 === e.content)
-                    return Array.isArray(e) ? e : t ? [{
-                        type: "paragraph",
-                        content: e
-                    }] : [e];
-                if (void 0 === e.stateDependencies && void 0 !== e.type)
-                    return [e];
-                var n = e.stateDependencies
-                  , i = e.content;
-                if (n && n.length > 0) {
-                    var o = this._evaluateStateDependencies(n);
-                    Array.isArray(i) || (i = [i]),
-                    i = this._mergeStateEvalsInArray(i, o)
-                }
-                return i
-            }
-            ,
-            v.prototype._setUpQualities = function() {
-                var e = this._qualitiesAccessorsPrivate = {}
-                  , t = this.state.qualities
-                  , n = this;
-                i(this.game.qualities, (function(i, o) {
-                    var r = o.min
-                      , a = o.max
-                      , c = o.signal || n.game.qualitySignal
-                      , s = o.isValid;
-                    (void 0 !== r || void 0 !== a || void 0 !== c || void 0 !== s) && (void 0 !== t[i] && (e[i] = t[i]),
-                    t.__defineGetter__(i, (function() {
-                        return e[i]
-                    }
-                    )),
-                    t.__defineSetter__(i, (function(t) {
-                        void 0 !== r && t < r && (t = r),
-                        void 0 !== a && t > a && (t = a);
-                        var o = e[i];
-                        if (e[i] = t,
-                        n._runPredicate(s, !0) || (e[i] = t = o),
-                        void 0 !== c && t !== o) {
-                            var d = {
-                                signal: c,
-                                event: "quality-change",
-                                id: i,
-                                now: t
-                            };
-                            void 0 !== o && (d.was = o),
-                            n.ui.signal(d)
-                        }
-                    }
-                    ))),
-                    void 0 !== o.initial && void 0 === t[i] && (t[i] = o.initial)
-                }
-                ))
-            }
-            ,
-            v.prototype._runActions = function(e) {
-                a(e, this, this.state)
-            }
-            ,
-            v.prototype._runPredicate = function(e, t) {
-                return c(e, t, this, this.state)
-            }
-            ,
-            v.prototype._runExpression = function(e, t) {
-                return s(e, t, this, this.state)
-            }
-            ,
-            v.prototype.__changeScene = function(t) {
-                this.state.justReturned && (this.state.justReturned = !1);
-                var n = null
-                  , i = !1;
-                "prevScene" == t ? (this.prevSceneId,
-                n = this.game.scenes[this.state.prevSceneId],
-                t = this.state.prevSceneId,
-                e(n)) : "prevTopScene" == t ? (n = this.game.scenes[this.state.prevTopSceneId],
-                t = this.state.prevTopSceneId,
-                e(n)) : "jumpScene" == t ? (n = this.game.scenes[this.state.jumpSceneId],
-                t = this.state.jumpSceneId,
-                e(n)) : "backSpecialScene" === t ? (n = this.game.scenes[this.state.prevSpecialSceneId],
-                t = this.state.prevSpecialSceneId,
-                i = !0,
-                e(n),
-                this.state.prevSpecialSceneId = null) : (n = this.game.scenes[t],
-                e(n));
-                var o = this.state.sceneId
-                  , r = this.game.scenes[o];
-                if (o) {
-                    this.state.prevSceneId = o,
-                    r.newPage && (this.state.prevTopSceneId = o),
-                    n.isSpecial && null === this.state.prevSpecialSceneId && (this.state.tempCurrentContent = this.state.currentContent.slice(),
-                    this.state.prevSpecialSceneId = o);
-                    var a = this.getCurrentScene();
-                    this._runActions(a.onDeparture);
-                    var c = a.signal || this.game.sceneSignal;
-                    void 0 !== c && this.ui.signal({
-                        signal: c,
-                        event: "scene-departure",
-                        id: this.state.sceneId,
-                        to: t
-                    })
-                }
-                if (this.state.sceneId = t,
-                this.state.sceneIdsSinceGoTo.push(t),
-                n.setRoot && (this.state.rootSceneId = t),
-                n.setJump && (this.state.jumpSceneId = n.setJump),
-                void 0 !== n.countVisitsMax && (void 0 === this.state.visits[t] ? this.state.visits[t] = 1 : this.state.visits[t] < n.countVisitsMax && this.state.visits[t]++),
-                !i && !this.state.justReturned && (this._runActions(n.onArrival),
-                n.call)) {
-                    var s = this.game.scenes[n.call];
-                    this._runActions(s.onArrival)
-                }
-                var d = n.signal || this.game.sceneSignal;
-                if (void 0 !== d) {
-                    var p = {
-                        signal: d,
-                        event: "scene-arrival",
-                        id: t
-                    };
-                    o && (p.from = o),
-                    this.ui.signal(p)
-                }
-                this.state.currentRandomState = this.random.getState(),
-                this.displaySceneContent(i),
-                n.setBg && (this.state.bg = n.setBg,
-                this.ui.setBg(n.setBg)),
-                n.setSprites && (this.state.sprites = n.setSprites,
-                this.ui.setSprites(n.setSprites)),
-                n.audio && this.ui.audio(n.audio),
-                n.setTopLeftStyle && this.ui.setSpriteStyle("topLeft", n.setTopLeftStyle),
-                n.setTopRightStyle && this.ui.setSpriteStyle("topRight", n.setTopRightStyle),
-                n.setBottomLeftStyle && this.ui.setSpriteStyle("bottomLeft", n.setBottomLeftStyle),
-                n.setBottomRightStyle && this.ui.setSpriteStyle("bottomRight", n.setBottomRightStyle),
-                n.achievement && this.achieve(n.achievement);
-                var l = !1;
-                if (!0 === n.gameOver)
-                    l = !0,
-                    this.gameOver();
-                else if (n.goSubEnd && !this.state.justReturnedEnd)
-                    for (var _ = [], h = 0; h < n.goSub.length; ++h) {
-                        var y = n.goSub[h];
-                        (void 0 === y.predicate || this._runPredicate(y.predicate)) && _.push(y.id)
-                    }
-                else if (n.goTo) {
-                    for (var m = [], v = 0; v < n.goTo.length; ++v) {
-                        var f = n.goTo[v];
-                        (void 0 === f.predicate || this._runPredicate(f.predicate)) && m.push(f.id)
-                    }
-                    if (1 === m.length)
-                        l = !0,
-                        this.__changeScene(m[0]);
-                    else if (m.length > 1) {
-                        var b = m[this.random.uint32() % m.length];
-                        l = !0,
-                        this.__changeScene(b)
-                    }
-                } else if (n.goToRef) {
-                    for (var w = [], Q = 0; Q < n.goToRef.length; ++Q) {
-                        var A = n.goToRef[Q];
-                        (void 0 === A.predicate || this._runPredicate(A.predicate)) && w.push(A.id)
-                    }
-                    if (1 === w.length)
-                        l = !0,
-                        this.__changeScene(this.state.qualities[w[0]]);
-                    else if (w.length > 1) {
-                        var K = w[this.random.uint32() % w.length];
-                        l = !0,
-                        this.__changeScene(this.state.qualities[K])
-                    }
-                }
-                var k, x, P, D = !1;
-                if (n.checkQuality && n.broadDifficulty && n.checkSuccessGoTo && n.checkFailureGoTo) {
-                    var C = .6;
-                    n.difficultyScaler && (C = n.difficultyScaler),
-                    k = u(this.state.qualities[n.checkQuality] || 0, n.broadDifficulty, C),
-                    D = !0
-                } else if (n.checkQuality && n.narrowDifficulty && n.checkSuccessGoTo && n.checkFailureGoTo) {
-                    var S = .1;
-                    n.difficultyIncrement && (S = n.difficultyIncrement),
-                    k = g(this.state.qualities[n.checkQuality] || 0, n.narrowDifficulty, S),
-                    D = !0
-                }
-                D && (x = k,
-                l = !0,
-                ((P = this.random) ? P.random() : Math.random()) < x ? this.__changeScene(n.checkSuccessGoTo) : this.__changeScene(n.checkFailureGoTo)),
-                l || (this.choiceCache = this._compileChoices(n),
-                null === this.choiceCache ? !1 !== n.gameOver && this.gameOver() : this.displayChoices())
-            }
-            ,
-            v.prototype.achieve = function(e) {
-                this.state.achievements[e] = 1,
-                this.state.qualities["achievement_" + e] = 1,
-                this.state.qualities["game_achievement_" + e] = 1,
-                "undefined" != typeof localStorage && (localStorage[this.game.title + "_achievements"] = JSON.stringify(this.state.achievements))
-            }
-            ,
-            v.prototype.__getChoiceSelectionData = function(e) {
-                var t = [];
-                for (var n in e) {
-                    var i = this.game.scenes[n]
-                      , o = e[n];
-                    o.order = o.order || i.order || 0,
-                    o.priority = o.priority || i.priority || 1,
-                    void 0 === o.frequency && (o.frequency = i.frequency,
-                    void 0 === o.frequency && (o.frequency = 100)),
-                    i.frequencyVar && (o.frequency = this.runExpression(i.frequencyVar)),
-                    o.selectionPriority = 0,
-                    t.push(o)
-                }
-                return t
-            }
-            ,
-            v.prototype.__filterViewable = function(e) {
-                var t = {};
-                for (var n in e) {
-                    var i = this.game.scenes[n]
-                      , o = i.maxVisits;
-                    if (void 0 !== o)
-                        if ((this.state.visits[n] || 0) >= o)
-                            continue;
-                    if (void 0 !== i.maxVisitsVar)
-                        if (o = this._runExpression(i.maxVisitsVar),
-                        (this.state.visits[n] || 0) >= o)
-                            continue;
-                    this._runPredicate(i.viewIf, !0) && (t[n] = e[n])
-                }
-                return t
-            }
-            ,
-            v.prototype.__getChoiceIdsFromOptions = function(t) {
-                var r = this
-                  , a = {};
-                return n(t, (function(t) {
-                    if (r._runPredicate(t.viewIf, !0))
-                        if ("@" === t.id.substr(0, 1)) {
-                            var n = t.id.substring(1)
-                              , c = o(t, {
-                                id: n
-                            });
-                            a[n] = c
-                        } else {
-                            e("#" === t.id.substr(0, 1));
-                            var s = r.game.tagLookup[t.id.substring(1)];
-                            i(s, (function(e) {
-                                void 0 === a[e] && (a[e] = o(t, {
-                                    id: e
-                                }))
-                            }
-                            ))
-                        }
-                }
-                )),
-                a
-            }
-            ,
-            v.prototype.__filterByPriority = function(t, i, o) {
-                e(null === i || null === o || o >= i);
-                var r, a, c = this, s = [], d = [];
-                t.sort((function(e, t) {
-                    return t.priority - e.priority
-                }
-                ));
-                for (var p = 0; p < t.length; ++p) {
-                    if ((r = t[p]).priority !== a) {
-                        if (void 0 !== a && (null === i || p >= i))
-                            break;
-                        s.push.apply(s, d),
-                        d = [],
-                        a = r.priority
-                    }
-                    d.push(r)
-                }
-                var l = s.length
-                  , _ = l + d.length;
-                if (null === o || o >= _)
-                    s.push.apply(s, d);
-                else {
-                    n(d, (function(e) {
-                        null === e.frequency ? e.selectionPriority = 0 : e.selectionPriority = c.random.random() / e.frequency
-                    }
-                    )),
-                    d.sort((function(e, t) {
-                        return e.selectionPriority - t.selectionPriority
-                    }
-                    ));
-                    var h = o - l
-                      , u = d.slice(0, h);
-                    s.push.apply(s, u)
-                }
-                return s
-            }
-            ,
-            v.prototype.__getChoiceDisplayData = function(t) {
-                for (var n = [], i = 0, o = 0; o < t.length; ++o) {
-                    var r = t[o]
-                      , a = this.game.scenes[r.id]
-                      , c = !0;
-                    r.chooseIf && (c = this._runPredicate(r.chooseIf, !0)),
-                    c && a.chooseIf && (c = this._runPredicate(a.chooseIf, !0));
-                    var s = r.title || a.title;
-                    e(s);
-                    var d = null;
-                    c || (d = r.unavailableSubtitle || a.unavailableSubtitle),
-                    d || (d = r.subtitle || a.subtitle);
-                    var p, l = {
-                        id: r.id,
-                        canChoose: c,
-                        title: this._makeDisplayContent(s, !1)
-                    };
-                    if (d && (l.subtitle = this._makeDisplayContent(d, !1)),
-                    a.checkQuality && a.broadDifficulty && a.checkSuccessGoTo && a.checkFailureGoTo) {
-                        var _ = .6;
-                        a.difficultyScaler && (_ = a.difficultyScaler),
-                        p = u(this.state.qualities[a.checkQuality] || 0, a.broadDifficulty, _),
-                        l.checkQuality = a.checkQuality,
-                        l.successProb = p,
-                        l.difficulty = y(p)
-                    } else if (a.checkQuality && a.narrowDifficulty && a.checkSuccessGoTo && a.checkFailureGoTo) {
-                        var h = .1;
-                        a.difficultyIncrement && (h = a.difficultyIncrement),
-                        p = g(this.state.qualities[a.checkQuality] || 0, a.narrowDifficulty, h),
-                        l.checkQuality = a.checkQuality,
-                        l.successProb = p,
-                        l.difficulty = y(p)
-                    }
-                    n.push(l),
-                    c && ++i
-                }
-                return {
-                    choices: n,
-                    numChoosable: i
-                }
-            }
-            ,
-            v.prototype._compileChoices = function(t) {
-                e(t);
-                var n = t.options
-                  , i = []
-                  , o = 0;
-                if (void 0 !== n) {
-                    var r = this.__getChoiceIdsFromOptions(n);
-                    r = this.__filterViewable(r);
-                    var a = this.__getChoiceSelectionData(r)
-                      , c = t.minChoices || null
-                      , s = t.maxChoices || null;
-                    (a = this.__filterByPriority(a, c, s)).sort((function(e, t) {
-                        return e.order - t.order
-                    }
-                    ));
-                    var d = this.__getChoiceDisplayData(a);
-                    i = d.choices,
-                    o = d.numChoosable
-                }
-                if (0 === o) {
-                    var p = this.state.rootSceneId;
-                    if (p !== this.state.sceneId) {
-                        var l = this.game.scenes[p].chooseIf;
-                        l && !this._runPredicate(l, !0) || (i.push({
-                            id: p,
-                            title: "Continue...",
-                            canChoose: !0
-                        }),
-                        ++o)
-                    }
-                }
-                return o > 0 ? i : null
-            }
-            ,
-            v.prototype._drawFromDeck = function(e) {
-                var t = this.game.scenes[e]
-                  , n = this._compileChoices(t);
-                if (!n)
-                    return null;
-                var i = []
-                  , o = this.state.currentHands[this.state.sceneId];
-                for (var r of (o || (o = []),
-                o = o.map((e => e.id)),
-                n)) {
-                    var a = this.game.scenes[r.id];
-                    r.canChoose && a.isCard && o.indexOf(r.id) < 0 && i.push(r)
-                }
-                return i ? i[this.random.uint32() % i.length] : null
+
+                var id = this.game.firstScene || this.state.rootSceneId;
+                this.goToScene(id);
+
+                return this;
             }
             ;
-            var f = function(e, t, n, i, o) {
+
+            DendryEngine.prototype._loadAchievements = function() {
+                if (typeof localStorage !== 'undefined') {
+                    if (localStorage[this.game.title + '_achievements']) {
+                        this.state.achievements = JSON.parse(localStorage[this.game.title + '_achievements']);
+                        // add a special quality named 'achievement_'
+                        for (var achievement in this.state.achievements) {
+                            this.state.qualities['achievement_' + achievement] = 1;
+                        }
+                    }
+                }
+            }
+            ;
+
+            DendryEngine.prototype.gameOver = function() {
+                this.state.gameOver = true;
+                this.displayGameOver();
+                return this;
+            }
+            ;
+
+            DendryEngine.prototype.isGameOver = function() {
+                return this.state.gameOver;
+            }
+            ;
+
+            DendryEngine.prototype.getCurrentScene = function() {
+                var scene = this.game.scenes[this.state.sceneId];
+                assert(scene !== undefined);
+                return scene;
+            }
+            ;
+
+            // Returns the choices for the current scene. Choices are objects
+            // with an id and a title property, not to be confused with the
+            // option objects in a scene (though options are used to generate
+            // choices). Choices are compiled from the options belonging to the
+            // current scene.
+            DendryEngine.prototype.getCurrentChoices = function() {
+                return this.choiceCache;
+            }
+            ;
+
+            // Sets the current state of the engine from an exportable state.
+            DendryEngine.prototype.setState = function(state) {
+                // Set the state.
+                this.state = state;
+                this._setUpQualities();
+                this.random = Random.fromState(this.state.currentRandomState);
+                this._loadAchievements();
+
+                // Display the current state.
+                if (this.isGameOver()) {
+                    this.displayGameOver();
+                } else {
+                    var scene = this.getCurrentScene();
+                    this.choiceCache = this._compileChoices(scene);
+                    this.ui.newPage();
+                    this.ui.removeChoices();
+                    this.ui.displayContent(this.state.currentContent);
+                    this.displayChoices();
+                    this.ui.setSprites(this.state.sprites);
+                    this.ui.setBg(this.state.bg);
+                }
+                return this;
+            }
+            ;
+
+            // Returns a data structure for exporting without any accessors or
+            // complex classes.
+            DendryEngine.prototype.getExportableState = function() {
+                // Because we only have complex state in the qualities (they have
+                // accessors), and because we save with JSON (which calls
+                // accessors correctly), we don't have to worry about giving the
+                // actual state. Note that, if you want to keep this object, however,
+                // you want to clone it somehow (turning it to and from json,
+                // for example), otherwise it will change as the engine updates.
+                return this.state;
+            }
+            ;
+
+            // ------------------------------------------------------------------------
+
+            DendryEngine.prototype._getQDisplay = function(value, qDisplayId) {
+                switch (qDisplayId) {
+                case 'cardinal':
+                case 'number':
+                    return getCardinalNumber(value);
+                case 'ordinal':
+                    return getOrdinalNumber(value);
+                case 'fudge':
+                    return getFudgeDisplay(value);
+                default:
+                    var qdisplay = this.game.qdisplays[qDisplayId];
+                    assert(qdisplay !== undefined);
+                    return getUserQDisplay(value, qdisplay);
+                }
+            }
+            ;
+
+            DendryEngine.prototype._evaluateStateDependencies = function(defs) {
+                var result = [];
+
+                for (var i = 0; i < defs.length; ++i) {
+                    var value;
+                    var def = defs[i];
+                    var fn = def.fn;
+                    switch (def.type) {
+                    case 'insert':
+                        value = this._runExpression(fn);
+                        if (def.qdisplay) {
+                            value = this._getQDisplay(value, def.qdisplay);
+                        } else {
+                            value = value.toString();
+                        }
+                        break;
+
+                    default:
+                        assert(def.type === 'predicate');
+                        value = this._runPredicate(fn);
+                        break;
+                    }
+
+                    // Recurse the resolution into the resulting value, if needed.
+                    if (value.stateDependencies !== undefined) {
+                        // We have to resolve the nested state dependencies.
+                        value = this._makeDisplayContent(value, false);
+                    }
+                    result.push(value);
+                }
+                return result;
+            }
+            ;
+
+            DendryEngine.prototype._mergeStateEvalsInArray = function(array, evals) {
+                if (!Array.isArray(array)) {
+                    array = [array];
+                }
+                var result = [];
+                for (var i = 0; i < array.length; ++i) {
+                    result = result.concat(this._mergeStateEvals(array[i], evals));
+                }
+                return result;
+            }
+            ;
+
+            DendryEngine.prototype._mergeStateEvals = function(content, evals) {
+                if (content.type === undefined) {
+                    return [content];
+                }
+
+                var result;
+                switch (content.type) {
+                case 'conditional':
+                    if (evals[content.predicate]) {
+                        result = this._mergeStateEvalsInArray(content.content, evals);
+                    } else {
+                        result = [];
+                    }
+                    break;
+                case 'insert':
+                    result = evals[content.insert];
+                    break;
+                default:
+                    var newE = {
+                        type: content.type
+                    };
+                    newE.content = this._mergeStateEvalsInArray(content.content, evals);
+                    result = [newE];
+                    break;
+                }
+                return result;
+            }
+            ;
+
+            DendryEngine.prototype._makeDisplayContent = function(content, useParas) {
+                // Raw content can just be returned.
+                if (content.content === undefined) {
+                    if (Array.isArray(content)) {
+                        return content;
+                    } else if (useParas) {
+                        return [{
+                            type: 'paragraph',
+                            content: content
+                        }];
+                    } else {
+                        return [content];
+                    }
+                } else if (content.stateDependencies === undefined && content.type !== undefined) {
+                    return [content];
+                }
+
+                // Merge in dependencies if we have them
+                var stateDepDefs = content.stateDependencies;
+                var displayContent = content.content;
+                if (stateDepDefs && stateDepDefs.length > 0) {
+                    var evals = this._evaluateStateDependencies(stateDepDefs);
+                    if (!Array.isArray(displayContent)) {
+                        displayContent = [displayContent];
+                    }
+                    displayContent = this._mergeStateEvalsInArray(displayContent, evals);
+                }
+                return displayContent;
+            }
+            ;
+
+            DendryEngine.prototype._setUpQualities = function() {
+                var _Q = this._qualitiesAccessorsPrivate = {};
+                var Q = this.state.qualities;
+                var that = this;
+                objEach(this.game.qualities, function(id, quality) {
+                    var min = quality.min;
+                    var max = quality.max;
+                    var signal = quality.signal || that.game.qualitySignal;
+                    var predicate = quality.isValid;
+                    var needsAccessors = (min !== undefined || max !== undefined || signal !== undefined || predicate !== undefined);
+                    if (needsAccessors) {
+                        if (Q[id] !== undefined) {
+                            _Q[id] = Q[id];
+                        }
+                        Q.__defineGetter__(id, function() {
+                            return _Q[id];
+                        });
+                        Q.__defineSetter__(id, function(value) {
+                            if (min !== undefined && value < min) {
+                                value = min;
+                            }
+                            if (max !== undefined && value > max) {
+                                value = max;
+                            }
+                            var was = _Q[id];
+                            _Q[id] = value;
+
+                            // Check if the new value is not allowed.
+                            if (!that._runPredicate(predicate, true)) {
+                                // Reverse the change.
+                                _Q[id] = value = was;
+                            }
+
+                            // Signal after the change is made.
+                            if (signal !== undefined && value !== was) {
+                                var signalObj = {
+                                    signal: signal,
+                                    event: 'quality-change',
+                                    id: id,
+                                    now: value
+                                };
+                                if (was !== undefined) {
+                                    signalObj.was = was;
+                                }
+                                that.ui.signal(signalObj);
+                            }
+                        });
+                    }
+                    if (quality.initial !== undefined && Q[id] === undefined) {
+                        Q[id] = quality.initial;
+                    }
+                });
+            }
+            ;
+
+            DendryEngine.prototype._runActions = function(actions) {
+                runActions(actions, this, this.state);
+            }
+            ;
+
+            DendryEngine.prototype._runPredicate = function(predicate, default_) {
+                return runPredicate(predicate, default_, this, this.state);
+            }
+            ;
+
+            DendryEngine.prototype._runExpression = function(expression, default_) {
+                return runExpression(expression, default_, this, this.state);
+            }
+            ;
+
+            DendryEngine.prototype.__changeScene = function(id) {
+                if (this.state.justReturned) {
+                    this.state.justReturned = false;
+                }
+                var scene = null;
+                var restorePage = false;
+                // if id is 'prevScene', go to the previous scene.
+                if (id == 'prevScene') {
+                    if (this.prevSceneId === null) {// this really only comes up on the very first scene of the game.
+                    }
+                    scene = this.game.scenes[this.state.prevSceneId];
+                    id = this.state.prevSceneId;
+                    assert(scene);
+                } else if (id == 'prevTopScene') {
+                    scene = this.game.scenes[this.state.prevTopSceneId];
+                    id = this.state.prevTopSceneId;
+                    assert(scene);
+                } else if (id == 'jumpScene') {
+                    scene = this.game.scenes[this.state.jumpSceneId];
+                    id = this.state.jumpSceneId;
+                    assert(scene);
+                } else if (id === 'backSpecialScene') {
+                    scene = this.game.scenes[this.state.prevSpecialSceneId];
+                    id = this.state.prevSpecialSceneId;
+                    restorePage = true;
+                    assert(scene);
+                    // if prevSpecialSceneId is null, this indicates that
+                    // we're not within a specialScene, and we can set a jump point.
+                    this.state.prevSpecialSceneId = null;
+                } else {
+                    scene = this.game.scenes[id];
+                    assert(scene);
+                }
+
+                // Leave previous scene.
+                var fromId = this.state.sceneId;
+                var lastScene = this.game.scenes[fromId];
+                if (!!fromId) {
+                    this.state.prevSceneId = fromId;
+                    if (lastScene.newPage) {
+                        this.state.prevTopSceneId = fromId;
+                    }
+                    if (scene.isSpecial && this.state.prevSpecialSceneId === null) {
+                        this.state.tempCurrentContent = this.state.currentContent.slice();
+                        this.state.prevSpecialSceneId = fromId;
+                    }
+                    var from = this.getCurrentScene();
+                    this._runActions(from.onDeparture);
+                    var fromSignal = from.signal || this.game.sceneSignal;
+                    if (fromSignal !== undefined) {
+                        this.ui.signal({
+                            signal: fromSignal,
+                            event: 'scene-departure',
+                            id: this.state.sceneId,
+                            'to': id
+                        });
+                    }
+                }
+
+                // Arrive at current scene.
+                this.state.sceneId = id;
+                this.state.sceneIdsSinceGoTo.push(id);
+
+                if (scene.setRoot) {
+                    this.state.rootSceneId = id;
+                }
+                if (scene.setJump) {
+                    this.state.jumpSceneId = scene.setJump;
+                }
+
+                if (scene.countVisitsMax !== undefined) {
+                    if (this.state.visits[id] === undefined) {
+                        this.state.visits[id] = 1;
+                    } else if (this.state.visits[id] < scene.countVisitsMax) {
+                        this.state.visits[id]++;
+                    }
+                }
+
+                if (!restorePage && !this.state.justReturned) {
+                    // If we go back from a special scene (e.g. the stats page),
+                    // we probably don't want to run the scene actions again.
+                    this._runActions(scene.onArrival);
+                    // TODO: After running onArrival, we should run call if call has
+                    if (scene.call) {
+                        var callScene = this.game.scenes[scene.call];
+                        this._runActions(callScene.onArrival);
+                    }
+                }
+                var sceneSignal = scene.signal || this.game.sceneSignal;
+                if (sceneSignal !== undefined) {
+                    var signal = {
+                        signal: sceneSignal,
+                        event: 'scene-arrival',
+                        id: id
+                    };
+                    if (!!fromId) {
+                        signal.from = fromId;
+                    }
+                    this.ui.signal(signal);
+                }
+
+                // We're done with any code that might generate random numbers
+                // (except go-to, which will recurse into this method anyway), so we
+                // can store the seed which can be used to replay the behavior
+                // from here.
+                this.state.currentRandomState = this.random.getState();
+                //if (!this.state.justReturned) {
+                // if the state has just returned from a goSub, we don't display
+                // the content?
+                // TODO: i'm not sure what the best logic for this is...
+                // Maybe the text pre-gosub should be displayed only after the goSub?
+                this.displaySceneContent(restorePage);
+                //}
+                // display background
+                if (scene.setBg) {
+                    this.state.bg = scene.setBg;
+                    this.ui.setBg(scene.setBg);
+                }
+                if (scene.setSprites) {
+                    this.state.sprites = scene.setSprites;
+                    this.ui.setSprites(scene.setSprites);
+                }
+                if (scene.audio) {
+                    this.ui.audio(scene.audio);
+                }
+                // TODO: there has got to be a better way of doing this.
+                if (scene.setTopLeftStyle) {
+                    this.ui.setSpriteStyle('topLeft', scene.setTopLeftStyle);
+                }
+                if (scene.setTopRightStyle) {
+                    this.ui.setSpriteStyle('topRight', scene.setTopRightStyle);
+                }
+                if (scene.setBottomLeftStyle) {
+                    this.ui.setSpriteStyle('bottomLeft', scene.setBottomLeftStyle);
+                }
+                if (scene.setBottomRightStyle) {
+                    this.ui.setSpriteStyle('bottomRight', scene.setBottomRightStyle);
+                }
+                // update achievement
+                if (scene.achievement) {
+                    this.achieve(scene.achievement);
+
+                }
+
+                // Check if we have any reason to leave the scene, or end the game.
+                var done = false;
+                if (scene.gameOver === true) {
+                    done = true;
+                    this.gameOver();
+                } else if (scene.goSubEnd && !this.state.justReturnedEnd) {
+                    // goSub
+                    var validSubs = [];
+                    for (var s1 = 0; s1 < scene.goSub.length; ++s1) {
+                        var sub = scene.goSub[s1];
+                        if (sub.predicate === undefined || this._runPredicate(sub.predicate)) {
+                            validSubs.push(sub.id);
+                        }
+                    }
+                } else if (scene.goTo) {
+                    // Find all valid gotos.
+                    var validGoToIds = [];
+                    for (var i = 0; i < scene.goTo.length; ++i) {
+                        var goTo = scene.goTo[i];
+                        if (goTo.predicate === undefined || this._runPredicate(goTo.predicate)) {
+                            validGoToIds.push(goTo.id);
+                        }
+                    }
+                    if (validGoToIds.length === 1) {
+                        done = true;
+                        this.__changeScene(validGoToIds[0]);
+                    } else if (validGoToIds.length > 1) {
+                        var randomNumber = this.random.uint32();
+                        var choice = randomNumber % validGoToIds.length;
+                        var chosenGoToId = validGoToIds[choice];
+                        done = true;
+                        this.__changeScene(chosenGoToId);
+                    }
+                } else if (scene.goToRef) {
+                    // do some gotoref
+                    var validRefs = [];
+                    for (var s = 0; s < scene.goToRef.length; ++s) {
+                        var ref = scene.goToRef[s];
+                        if (ref.predicate === undefined || this._runPredicate(ref.predicate)) {
+                            validRefs.push(ref.id);
+                        }
+                    }
+                    if (validRefs.length === 1) {
+                        done = true;
+                        this.__changeScene(this.state.qualities[validRefs[0]]);
+                    } else if (validRefs.length > 1) {
+                        var c = this.random.uint32() % validRefs.length;
+                        var chosenRef = validRefs[c];
+                        done = true;
+                        this.__changeScene(this.state.qualities[chosenRef]);
+                    }
+                }
+
+                // dendrynexus: calculate checks
+                // WHAT IF scenes have gotos and checks. huh. don't do that. Let's just say that is undefined behavior.
+                var hasCheck = false;
+                var successProb, isSuccess;
+                if (scene.checkQuality && scene.broadDifficulty && scene.checkSuccessGoTo && scene.checkFailureGoTo) {
+                    var scaler = 0.6;
+                    if (scene.difficultyScaler) {
+                        scaler = scene.difficultyScaler;
+                    }
+                    successProb = calculateBroadDifficulty(this.state.qualities[scene.checkQuality] || 0, scene.broadDifficulty, scaler);
+                    hasCheck = true;
+                } else if (scene.checkQuality && scene.narrowDifficulty && scene.checkSuccessGoTo && scene.checkFailureGoTo) {
+                    var increment = 0.1;
+                    if (scene.difficultyIncrement) {
+                        increment = scene.difficultyIncrement;
+                    }
+                    successProb = calculateNarrowDifficulty(this.state.qualities[scene.checkQuality] || 0, scene.narrowDifficulty, increment);
+                    hasCheck = true;
+                }
+                if (hasCheck) {
+                    isSuccess = rollDifficulty(successProb, this.random);
+                    // logic for changing the scene on success/failure of the check
+                    done = true;
+                    if (isSuccess) {
+                        this.__changeScene(scene.checkSuccessGoTo);
+                    } else {
+                        this.__changeScene(scene.checkFailureGoTo);
+                    }
+                }
+
+                // If we've not ended, nor found a valid go-to, then we try choices.
+                if (!done) {
+                    this.choiceCache = this._compileChoices(scene);
+                    if (this.choiceCache === null) {
+                        // Explicitly disallowing game over keeps us stuck here.
+                        if (scene.gameOver !== false) {
+                            this.gameOver();
+                        }
+                    } else {
+                        this.displayChoices();
+                    }
+                }
+            }
+            ;
+
+            DendryEngine.prototype.achieve = function(achievementName) {
+                this.state.achievements[achievementName] = 1;
+                // add a special quality named 'achievement_'
+                this.state.qualities['achievement_' + achievementName] = 1;
+                // add a new quality indicating that the achievement has been done for the current game
+                this.state.qualities['game_achievement_' + achievementName] = 1;
+                // set localStorage for achievement
+                if (typeof localStorage !== 'undefined') {
+                    localStorage[this.game.title + '_achievements'] = JSON.stringify(this.state.achievements);
+                }
+            }
+            ;
+
+            DendryEngine.prototype.__getChoiceSelectionData = function(idToInfoMap) {
+                var result = [];
+                for (var id in idToInfoMap) {
+                    var optionScene = this.game.scenes[id];
+                    var optionInfo = idToInfoMap[id];
+
+                    optionInfo.order = optionInfo.order || optionScene.order || 0;
+                    optionInfo.priority = optionInfo.priority || optionScene.priority || 1;
+                    // Because 'null' is a valid frequency, we can't use || to do this.
+                    if (optionInfo.frequency === undefined) {
+                        optionInfo.frequency = optionScene.frequency;
+                        if (optionInfo.frequency === undefined) {
+                            optionInfo.frequency = 100;
+                        }
+                    }
+                    // get variable frequencies
+                    if (optionScene.frequencyVar) {
+                        optionInfo.frequency = this.runExpression(optionScene.frequencyVar);
+                    }
+                    optionInfo.selectionPriority = 0;
+                    // Used by __filterByPriority
+
+                    result.push(optionInfo);
+                }
+                return result;
+            }
+            ;
+
+            DendryEngine.prototype.__filterViewable = function(idToInfoMap) {
+                var result = {};
+                for (var id in idToInfoMap) {
+                    var thisScene = this.game.scenes[id];
+
+                    // This id fails if it is past its max visits.
+                    var maxVisits = thisScene.maxVisits;
+                    if (maxVisits !== undefined) {
+                        var visits = this.state.visits[id] || 0;
+                        if (visits >= maxVisits) {
+                            continue;
+                        }
+                    }
+                    if (thisScene.maxVisitsVar !== undefined) {
+                        maxVisits = this._runExpression(thisScene.maxVisitsVar);
+                        var v2 = this.state.visits[id] || 0;
+                        if (v2 >= maxVisits) {
+                            continue;
+                        }
+                    }
+
+                    // Fiter out scenes that can't be viewed.
+                    var canView = this._runPredicate(thisScene.viewIf, true);
+                    if (!canView) {
+                        continue;
+                    }
+
+                    // It passes otherwise.
+                    result[id] = idToInfoMap[id];
+                }
+                return result;
+            }
+            ;
+
+            DendryEngine.prototype.__getChoiceIdsFromOptions = function(options) {
+                var that = this;
+
+                var choices = {};
+                each(options, function(option) {
+                    // Filter out options that can't be viewed.
+                    if (!that._runPredicate(option.viewIf, true)) {
+                        return;
+                    }
+
+                    if (option.id.substr(0, 1) === '@') {
+                        // This is an id, use it.
+                        var trimmedId = option.id.substring(1);
+                        var choice = merge(option, {
+                            id: trimmedId
+                        });
+                        choices[trimmedId] = choice;
+                    } else {
+                        assert(option.id.substr(0, 1) === '#');
+                        // This is a tag, add all matching ids.
+                        var ids = that.game.tagLookup[option.id.substring(1)];
+                        objEach(ids, function(id) {
+                            if (choices[id] === undefined) {
+                                choices[id] = merge(option, {
+                                    id: id
+                                });
+                            }
+                        });
+                    }
+                });
+                return choices;
+            }
+            ;
+
+            // Code based on Undum (MIT License). See CREDITS.
+            DendryEngine.prototype.__filterByPriority = function(choices, minChoices, maxChoices) {
+                assert(minChoices === null || maxChoices === null || maxChoices >= minChoices);
+                var that = this;
+
+                var committed = [];
+                var candidates = [];
+                var choice;
+
+                // Work in descending priority order.
+                choices.sort(function(a, b) {
+                    return b.priority - a.priority;
+                });
+
+                // First phase: we make sure we have at least our minimum number
+                // of choices, and that we consider the minimum possible number of
+                // priorities to reach that minimum.
+                var lastPriority;
+                for (var i = 0; i < choices.length; ++i) {
+                    choice = choices[i];
+                    if (choice.priority !== lastPriority) {
+                        if (lastPriority !== undefined) {
+                            // Priority has decreased, use the candidates if there are enough.
+                            if (minChoices === null || i >= minChoices) {
+                                break;
+                            }
+                        }
+
+                        // We're going on, so commit our current candidates.
+                        committed.push.apply(committed, candidates);
+                        candidates = [];
+                        lastPriority = choice.priority;
+                    }
+                    candidates.push(choice);
+                }
+
+                // Second phase: we commit as many candidates as we can without
+                // exceeding our maximum.
+                // TODO: think about tag choices vs builtin choices
+                var committedChoices = committed.length;
+                var totalChoices = committedChoices + candidates.length;
+                if (maxChoices === null || maxChoices >= totalChoices) {
+                    // We can use all the candidates without exceeding our maximum.
+                    committed.push.apply(committed, candidates);
+                } else {
+                    // Take a subset of the candidates, using their relative frequency.
+                    each(candidates, function(choice) {
+                        if (choice.frequency === null) {
+                            choice.selectionPriority = 0;
+                            // Always choose.
+                        } else {
+                            choice.selectionPriority = that.random.random() / choice.frequency;
+                        }
+                    });
+                    candidates.sort(function(a, b) {
+                        return a.selectionPriority - b.selectionPriority;
+                    });
+                    var extraChoices = maxChoices - committedChoices;
+                    var chosen = candidates.slice(0, extraChoices);
+                    committed.push.apply(committed, chosen);
+                }
+
+                return committed;
+            }
+            ;
+
+            DendryEngine.prototype.__getChoiceDisplayData = function(choicesSelected) {
+                var choiceOutput = [];
+                var numChoosable = 0;
+
+                for (var i = 0; i < choicesSelected.length; ++i) {
+                    var choice = choicesSelected[i];
+                    var choiceScene = this.game.scenes[choice.id];
+
+                    // Figure out if this choice can be chosen.
+                    var canChoose = true;
+                    if (choice.chooseIf) {
+                        canChoose = this._runPredicate(choice.chooseIf, true);
+                    }
+                    if (canChoose && choiceScene.chooseIf) {
+                        canChoose = this._runPredicate(choiceScene.chooseIf, true);
+                    }
+
+                    var title = choice.title || choiceScene.title;
+                    assert(title);
+
+                    var subtitle = null;
+                    if (!canChoose) {
+                        subtitle = choice.unavailableSubtitle || choiceScene.unavailableSubtitle;
+                    }
+                    if (!subtitle) {
+                        subtitle = choice.subtitle || choiceScene.subtitle;
+                    }
+
+                    var finalChoice = {
+                        id: choice.id,
+                        canChoose: canChoose,
+                        title: this._makeDisplayContent(title, false)
+                    };
+                    if (subtitle) {
+                        finalChoice.subtitle = this._makeDisplayContent(subtitle, false);
+                    }
+                    // dendrynexus - add success/failure probabilities, and challenges.
+                    var successProb;
+                    if (choiceScene.checkQuality && choiceScene.broadDifficulty && choiceScene.checkSuccessGoTo && choiceScene.checkFailureGoTo) {
+                        var scaler = 0.6;
+                        if (choiceScene.difficultyScaler) {
+                            scaler = choiceScene.difficultyScaler;
+                        }
+                        successProb = calculateBroadDifficulty(this.state.qualities[choiceScene.checkQuality] || 0, choiceScene.broadDifficulty, scaler);
+                        finalChoice.checkQuality = choiceScene.checkQuality;
+                        finalChoice.successProb = successProb;
+                        finalChoice.difficulty = displayDifficulty(successProb);
+                    } else if (choiceScene.checkQuality && choiceScene.narrowDifficulty && choiceScene.checkSuccessGoTo && choiceScene.checkFailureGoTo) {
+                        var increment = 0.1;
+                        if (choiceScene.difficultyIncrement) {
+                            increment = choiceScene.difficultyIncrement;
+                        }
+                        successProb = calculateNarrowDifficulty(this.state.qualities[choiceScene.checkQuality] || 0, choiceScene.narrowDifficulty, increment);
+                        finalChoice.checkQuality = choiceScene.checkQuality;
+                        finalChoice.successProb = successProb;
+                        finalChoice.difficulty = displayDifficulty(successProb);
+                    }
+
+                    choiceOutput.push(finalChoice);
+                    if (canChoose) {
+                        ++numChoosable;
+                    }
+                }
+
+                return {
+                    choices: choiceOutput,
+                    numChoosable: numChoosable
+                };
+            }
+            ;
+
+            DendryEngine.prototype._compileChoices = function(scene) {
+                assert(scene);
+
+                var options = scene.options;
+                var choiceOutput = [];
+                var numChoosable = 0;
+                if (options !== undefined) {
+
+                    var choiceIds = this.__getChoiceIdsFromOptions(options);
+                    choiceIds = this.__filterViewable(choiceIds);
+
+                    var validChoiceData = this.__getChoiceSelectionData(choiceIds);
+                    var minChoices = scene.minChoices || null;
+                    var maxChoices = scene.maxChoices || null;
+                    validChoiceData = this.__filterByPriority(validChoiceData, minChoices, maxChoices);
+
+                    // Sort the result into display order.
+                    validChoiceData.sort(function(a, b) {
+                        return a.order - b.order;
+                    });
+
+                    // Now we've chosen our selection, get the final displayable data.
+                    var data = this.__getChoiceDisplayData(validChoiceData);
+                    choiceOutput = data.choices;
+                    numChoosable = data.numChoosable;
+                }
+                // CHANGED BELOW MARIO MARIO LUIGI WALUIGI ADDED && FOR CENTER PANEL 
+                if (numChoosable === 0) {
+                    // We have no choosable options, so add the default option (NB:
+                    // this may take us over the max-choices limit).
+                    var root = this.state.rootSceneId;
+                    if (root !== this.state.sceneId) {
+                        var rootSceneChoose = this.game.scenes[root].chooseIf;
+                        if (!rootSceneChoose || this._runPredicate(rootSceneChoose, true)) {
+                            choiceOutput.push({
+                                id: root,
+                                title: 'Continue...',
+                                canChoose: true
+                            });
+                            ++numChoosable;
+                        }
+                    }
+                }
+                if (numChoosable > 0) {
+                    return choiceOutput;
+                } else {
+                    return null;
+                }
+            }
+            ;
+
+            // dendrynexus - this returns a single available card from the given deck, formatted as an object of the type {id: id, title: title}
+            DendryEngine.prototype._drawFromDeck = function(deckId) {
+                var scene = this.game.scenes[deckId];
+                var viewableScenes = this._compileChoices(scene);
+                if (!viewableScenes) {
+                    return null;
+                }
+                var choosableScenes = [];
+                var currentHand = this.state.currentHands[this.state.sceneId];
+                if (!currentHand) {
+                    currentHand = [];
+                }
+                currentHand = currentHand.map( (x) => x.id);
+                for (var x of viewableScenes) {
+                    var choiceScene = this.game.scenes[x.id];
+                    // filter for whether the card is in the hand
+                    if (x.canChoose && choiceScene.isCard && currentHand.indexOf(x.id) < 0) {
+                        choosableScenes.push(x);
+                    }
+                }
+                if (!choosableScenes) {
+                    return null;
+                }
+                var randomNumber = this.random.uint32();
+                var choice = randomNumber % choosableScenes.length;
+                // this.state.currentRandomState = this.random.getState();
+                return choosableScenes[choice];
+            }
+            ;
+
+            // ------------------------------------------------------------------------
+
+            // Marsaglia, George (July 2003). 'Xorshift RNGs'.
+            // Journal of Statistical Software 8 (14).
+            var Random = function(v, w, x, y, z) {
                 this.getState = function() {
-                    return [e, t, n, i, o]
+                    return [v, w, x, y, z];
                 }
                 ;
-                this.uint32 = function() {
-                    var r, a, c, s, d = (n ^ n >>> 7) >>> 0;
-                    return n = i,
-                    i = o,
-                    o = t,
-                    t = e,
-                    ((((r = i + i + 1) >> 16 & 65535) * (s = 65535 & (a = e = e ^ e << 6 ^ (d ^ d << 13) >>> 0)) + (c = 65535 & r) * (a >> 16 & 65535) & 65535) << 16 >>> 0) + c * s >>> 0
-                }
-                ,
-                this.random = function() {
-                    return 2.3283064365386963e-10 * this.uint32()
-                }
-            }
-              , b = 1;
-            f.fromUnique = function() {
-                var e = (new Date).getTime();
-                return f.fromSeeds([e, b++])
-            }
-            ,
-            f.fromTime = function() {
-                return f.fromSeeds([(new Date).getTime()])
-            }
-            ,
-            f.fromSeeds = function(e) {
-                for (var t = 886756453, n = 88675123, i = 123456789, o = 362436069, r = 521288629, a = function(e) {
-                    e = e.toString();
-                    for (var t = 4022871197, n = 0; n < e.length; n++) {
-                        var i = .02519603282416938 * (t += e.charCodeAt(n));
-                        i -= t = i >>> 0,
-                        t = (i *= t) >>> 0,
-                        t += 4294967296 * (i -= t)
-                    }
-                    return 2.3283064365386963e-10 * (t >>> 0)
-                }, c = 0; c < e.length; c++) {
-                    var s = 4294967296 * a(e[c]);
-                    t ^= s,
-                    n ^= s,
-                    i ^= s,
-                    o ^= s,
-                    r ^= s
-                }
-                return new f(t,n,i,o,r)
-            }
-            ,
-            f.fromState = function(e) {
-                return new f(e[0],e[1],e[2],e[3],e[4])
-            }
-            ,
-            t.exports = {
-                makeFunctionFromSource: r,
-                runActions: a,
-                runPredicate: c,
-                runExpression: s,
-                convertJSONToGame: function(e, t) {
-                    try {
-                        return t(null, JSON.parse(e, (function(e, t) {
-                            return function(e) {
-                                var t = typeof e;
-                                return "function" === t || e && "object" === t || !1
-                            }(t) && void 0 !== t.$code ? r(t.$code) : t
-                        }
-                        )))
-                    } catch (e) {
-                        return t(e)
-                    }
-                },
-                simpleContent: d,
-                getCardinalNumber: p,
-                getOrdinalNumber: l,
-                getUserQDisplay: h,
-                getFudgeDisplay: _,
-                DendryEngine: v,
-                UserInterface: m,
-                NullUserInterface: m,
-                Random: f
-            }
-        }()
-    }
-    , {}],
-    2: [function(e, t, n) {
-        !function(t) {
-            "use strict";
-            var n = e("./content/html")
-              , i = e("../engine")
-              , o = function(e, t) {
-                this.game = e,
-                this.$content = t,
-                this._registerEvents(),
-                this.dendryEngine = new i.DendryEngine(this,e),
-                this.base_settings = {
-                    disable_bg: !1,
-                    animate: !1,
-                    animate_bg: !0,
-                    disable_audio: !1,
-                    show_portraits: !0
-                },
-                this.disable_bg = !1,
-                this.animate = !1,
-                this.animate_bg = !0,
-                this.disable_audio = !1,
-                this.show_portraits = !0,
-                this.fade_time = 600,
-                this.bg_fade_out_time = 200,
-                this.bg_fade_in_time = 1e3,
-                this.sound_fade_time = 2e3,
-                this.contentToHTML = n,
-                this.spriteLocs = {
-                    topLeft: 1,
-                    topRight: 1,
-                    bottomLeft: 1,
-                    bottomRight: 1
-                },
-                this.currentAudio = null,
-                this.currentAudioURL = "",
-                this.audioQueue = [],
-                this.audioPlaylist = [],
-                this.onNewPage = !1,
-                this.save_prefix = e.title + "_" + e.author + "_save",
-                this.max_slots = 8,
-                this.DateOptions = {
-                    hour: "numeric",
-                    minute: "numeric",
-                    second: "numeric",
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric"
-                }
-            };
-            i.UserInterface.makeParentOf(o),
-            o.prototype.loadGame = function(e) {
-                var t = this;
-                e.endsWith(".json") || (e.endsWith("/") ? e += "game.json" : e += "/game.json"),
-                fetch(e).then((e => e.text())).then((e => {
-                    game = i.convertJSONToGame(e, (function(e, t) {
-                        if (e)
-                            throw e;
-                        return t
-                    }
-                    )),
-                    t.game = game,
-                    t.dendryEngine = new i.DendryEngine(t,game),
-                    t.dendryEngine.beginGame()
-                }
-                )).catch((e => console.log(e)))
-            }
-            ,
-            o.prototype.displayContent = function(e, i) {
-                var o = t(n.convert(e));
-                if (i && this.show_portraits && !this.disable_bg) {
-                    console.log(i);
-                    var r = document.createElement("div");
-                    r.className = "face-figure";
-                    var a = new Image;
-                    a.className = "face-img",
-                    r.appendChild(a),
-                    o.splice(1, 0, r),
-                    a.src = i
-                }
-                this.animate ? (o.fadeIn(this.fade_time),
-                this.$content.append(o)) : this.$content.append(o),
-                o.focus(),
-                window && window.onDisplayContent && window.onDisplayContent()
-            }
-            ,
-            o.prototype.displayGameOver = function() {
-                var e = t("<p>").text(this.getGameOverMsg()).addClass("game-over");
-                this.animate ? (e.fadeIn(this.fade_time),
-                this.$content.append(e)) : this.$content.append(e),
-                e.focus()
-            }
-            ,
-            o.prototype.displayChoices = function(e) {
-                for (var i = t("<ul>").addClass("choices"), o = 0; o < e.length; ++o) {
-                    var r = e[o]
-                      , a = n.convertLine(r.title)
-                      , c = "";
-                    void 0 !== r.subtitle && (c = n.convertLine(r.subtitle));
-                    var s = t("<li>")
-                      , d = s;
-                    r.canChoose ? (d = t("<a>").attr({
-                        href: "#",
-                        "data-choice": o
-                    }),
-                    s.html(d)) : d.addClass("unavailable"),
-                    d.html(a),
-                    r.checkQuality && r.difficulty && void 0 !== r.successProb && (c && (c += "<br>"),
-                    c += "Check: " + r.checkQuality + "<br>",
-                    c += "Difficulty: " + r.difficulty + " (" + Math.floor(100 * r.successProb) + "%)"),
-                    c && s.append(t("<div>").addClass("subtitle").html(c)),
-                    i.append(s)
-                }
-                this.animate ? (i.fadeIn(this.fade_time),
-                this.$content.append(i)) : this.$content.append(i),
-                i.focus(),
-                this.onNewPage && (this.onNewPage = !1,
-                window && window.onNewPage && window.onNewPage())
-            }
-            ,
-            o.prototype.newPage = function() {
-                if (this.animate) {
-                    this.$content;
-                    this.$content.empty(),
-                    this.$content.children().fadeOut(this.fade_time, (function() {}
-                    ))
-                } else
-                    this.$content.empty();
-                this.onNewPage = !0
-            }
-            ,
-            o.prototype.setStyle = function(e) {
-                this.$content.removeClass(),
-                void 0 !== e && this.$content.addClass(e)
-            }
-            ,
-            o.prototype.removeChoices = function() {
-                t(".choices", this.$content).remove(),
-                t(".hidden", this.$content).remove()
-            }
-            ,
-            o.prototype.beginOutput = function() {
-                t("#read-marker", this.$content).remove(),
-                this.$content.append(t("<hr>").attr("id", "read-marker"))
-            }
-            ,
-            o.prototype.endOutput = function() {
-                var e = t("#read-marker");
-                this.animate && (e.length > 0 ? t("html, body").animate({
-                    scrollTop: e.offset().top
-                }, this.fade_time) : t("html, body").animate({
-                    scrollTop: 0
-                }, this.fade_time))
-            }
-            ,
-            o.prototype.signal = function(e) {
-                console.log(e);
-                var t = e.signal
-                  , n = e.event
-                  , i = e.id;
-                window && window.handleSignal && window.handleSignal(t, n, i)
-            }
-            ,
-            o.prototype.displayHand = function(e, n) {
-                if (window && window.displayHand)
-                    return window.displayHand(e, n),
-                    null;
-                var i = "Hand - click a card to play.";
-                window.handDescription && (i = window.handDescription),
-                this.dendryEngine.state.qualities.handDescription && (i = this.dendryEngine.state.qualities.handDescription);
-                var o = t(".hand")
-                  , r = !1;
-                0 == o.length ? (o = t("<ul>").addClass("hand"),
-                this.$content.append(t("<hr>")),
-                this.$content.append(t("<p>").addClass("hand-description").text(i))) : (o.empty(),
-                r = !0);
-                for (var a = 0; a < n; a++) {
-                    var c = t("<li>").addClass("card-in-hand");
-                    if (e[a]) {
-                        var s = e[a]
-                          , d = t("<a>").addClass("card").attr({
-                            href: "#",
-                            "card-id": s.id,
-                            title: s.title
-                        })
-                          , p = t("<span>").addClass("card-caption").text(s.title);
-                        if (s.image) {
-                            var l = t("<img>").addClass("card-img").attr({
-                                src: s.image
-                            });
-                            d.append(l)
-                        }
-                        if (s.subtitle) {
-                            var _ = t("<span>").addClass("card-tooltip").text(s.subtitle);
-                            d.append(_)
-                        }
-                        c.append(d),
-                        c.append(p),
-                        o.append(c)
-                    } else {
-                        var h = t("<div>").addClass("blank-card");
-                        c.append(h)
-                    }
-                    o.append(c)
-                }
-                r || this.$content.append(o)
-            }
-            ,
-            o.prototype.displayDecks = function(e) {
-                if (window && window.displayDecks)
-                    return window.displayDecks(e),
-                    null;
-                var n = "Decks - click a deck to draw a card.";
-                window.deckDescription && (n = window.deckDescription),
-                this.dendryEngine.state.qualities.deckDescription && (n = this.dendryEngine.state.qualities.deckDescription),
-                this.$content.append(t("<hr>")),
-                this.$content.append(t("<p>").addClass("deck-description").text(n));
-                var i = t("<ul>").addClass("decks");
-                for (var o of e) {
-                    var r = t("<li>").addClass("deck")
-                      , a = t("<a>").addClass("card").attr({
-                        href: "#",
-                        "card-id": o.id,
-                        title: o.title
-                    })
-                      , c = t("<span>").addClass("card-caption").text(o.title);
-                    if (o.image) {
-                        var s = t("<img>").addClass("card-img").attr({
-                            src: o.image
-                        });
-                        a.append(s)
-                    }
-                    if (o.subtitle) {
-                        var d = t("<span>").addClass("card-tooltip").text(o.subtitle);
-                        a.append(d)
-                    }
-                    o.canChoose || (r = r.addClass("unavailable-card")),
-                    r.append(a),
-                    r.append(c),
-                    i.append(r)
-                }
-                this.$content.append(i)
-            }
-            ,
-            o.prototype.displayPinnedCards = function(e) {
-                if (0 == e.length)
-                    return null;
-                if (window && window.displayPinnedCards)
-                    return window.displayPinnedCards(e),
-                    null;
-                var n = "Pinned cards - click a card to play.";
-                window.pinnedCardsDescription && (n = window.pinnedCardsDescription),
-                this.dendryEngine.state.qualities.pinnedCardsDescription && (n = this.dendryEngine.state.qualities.pinnedCardsDescription),
-                this.$content.append(t("<hr>")),
-                this.$content.append(t("<p>").addClass("pinned-text-description").text(n));
-                var i = t("<ul>").addClass("pinned-cards");
-                for (var o of e) {
-                    var r = t("<li>").addClass("pinned-card")
-                      , a = t("<a>").addClass("card").attr({
-                        href: "#",
-                        "card-id": o.id,
-                        title: o.title
-                    })
-                      , c = t("<span>").addClass("card-caption").text(o.title);
-                    if (o.image) {
-                        var s = t("<img>").addClass("card-img").attr({
-                            src: o.image
-                        });
-                        a.append(s)
-                    }
-                    if (o.subtitle) {
-                        var d = t("<span>").addClass("card-tooltip").text(o.subtitle);
-                        a.append(d)
-                    }
-                    r.append(a),
-                    r.append(c),
-                    i.append(r)
-                }
-                this.$content.append(i)
-            }
-            ,
-            o.prototype.setBg = function(e) {
-                this.disable_bg ? (t("#bg1").addClass("content_hidden"),
-                t("#bg1").removeClass("content_visible"),
-                t("#bg1").css("background-image", "none")) : e && "none" != e && "null" != e ? e.startsWith("#") || e.startsWith("rgba(") || e.startsWith("rgb(") ? this.animate_bg ? (t("#bg1").fadeOut(this.bg_fade_out_time, (function() {
-                    t("#bg1").css("background-image", "none"),
-                    t("#bg1").css("background-color", e)
-                }
-                )),
-                t("#bg1").fadeIn(this.bg_fade_in_time, (function() {
-                    t("#bg2").css("background-image", "none")
-                }
-                )),
-                console.log("changing background color " + e)) : (t("#bg1").css("background-image", "none"),
-                t("#bg1").css("bacground-color", e)) : e.startsWith("linear-gradient(") ? this.animate_bg ? (t("#bg1").fadeOut(this.bg_fade_out_time, (function() {
-                    t("#bg1").css("background-image", e)
-                }
-                )),
-                t("#bg1").fadeIn(this.bg_fade_in_time, (function() {
-                    t("#bg2").css("background-image", e)
-                }
-                )),
-                console.log("changing background gradient " + e)) : t("#bg1").css("background-image", e) : this.animate_bg ? (t("#bg1").fadeOut(this.bg_fade_out_time, (function() {
-                    t("#bg1").css("background-image", 'url("' + e + '")')
-                }
-                )),
-                t("#bg1").fadeIn(this.bg_fade_in_time, (function() {
-                    t("#bg2").css("background-image", t("#bg1").css("background-image"))
-                }
-                ))) : t("#bg1").css("background-image", 'url("' + e + '")') : this.animate_bg ? (t("#bg1").addClass("content_hidden"),
-                t("#bg1").removeClass("content_visible"),
-                setTimeout((function() {
-                    t("#bg1").css("background-image", "none"),
-                    t("#bg1").removeClass("content_hidden"),
-                    t("#bg1").addClass("content_visible")
-                }
-                ), 100)) : t("#bg1").css("background-image", "none")
-            }
-            ,
-            o.prototype.setSprites = function(e) {
-                if (window && window.setSprites)
-                    window.setSprites(e);
-                else {
-                    if (!this.show_portraits || "none" == e || "clear" == e)
-                        return t("#topLeftSprite").children().fadeOut(this.fade_time, (function() {
-                            t("#topLeftSprite").empty()
-                        }
-                        )),
-                        t("#topRightSprite").children().fadeOut(this.fade_time, (function() {
-                            t("#topRightSprite").empty()
-                        }
-                        )),
-                        t("#bottomLeftSprite").children().fadeOut(this.fade_time, (function() {
-                            t("#bottomLeftSprite").empty()
-                        }
-                        )),
-                        void t("#bottomRightSprite").children().fadeOut(this.fade_time, (function() {
-                            t("#bottomRightSprite").empty()
-                        }
-                        ));
-                    if (e instanceof Array)
-                        for (var n = 0; n < e.length; n++) {
-                            var i = e[n][0]
-                              , o = e[n][1];
-                            this.setSprite(i, o)
-                        }
-                    else if (e)
-                        for (var r in Object.keys(e))
-                            sprites.push([r, e[r]])
-                }
-            }
-            ,
-            o.prototype.setSprite = function(e, n) {
-                if (this.show_portraits)
-                    if (window && window.setSprite)
-                        window.setSprite(e, n);
-                    else {
-                        var i;
-                        if ("topleft" == (e = e.toLowerCase()) ? i = t("#topLeftSprite") : "topright" == e ? i = t("#topRightSprite") : "bottomleft" == e ? i = t("#bottomLeftSprite") : "bottomright" == e && (i = t("#bottomRightSprite")),
-                        "none" == n || "clear" == n)
-                            return delete this.dendryEngine.state.sprites[e],
-                            void i.fadeOut(this.fade_time, (function() {
-                                i.empty()
-                            }
-                            ));
-                        this.dendryEngine.state.sprites[e] = n,
-                        i.fadeOut(this.fade_time, (function() {
-                            i.emtpy();
-                            var e = new Image;
-                            e.src = n,
-                            i.append(e),
-                            console.log("fadeIn"),
-                            i.fadeIn(this.fade_time)
-                        }
-                        ))
-                    }
-            }
-            ,
-            o.prototype.setSpriteStyle = function(e, n) {
-                if (window && window.setSpriteStyle)
-                    window.setSpriteStyle(e, n);
-                else {
-                    var i;
-                    if ("topleft" == e)
-                        i = t("#topLeftSprite");
-                    else if ("topright" == e)
-                        i = t("#topRightSprite");
-                    else if ("bottomleft" == e)
-                        i = t("#bottomLeftSprite");
-                    else {
-                        if ("bottomright" != e)
-                            return;
-                        i = t("#bottomRightSprite")
-                    }
-                    i.css(n)
-                }
-            }
-            ,
-            o.prototype.audio = function(e) {
-                if (this.disable_audio)
-                    this.currentAudio && (this.currentAudio.pause(),
-                    this.currentAudio.loop = !1);
-                else {
-                    var n = e.split(" ")
-                      , i = []
-                      , o = !1
-                      , r = !1
-                      , a = !1
-                      , c = !1
-                      , s = !1;
-                    for (var d of n)
-                        "loop" == d ? o = !0 : "queue" == d ? r = !0 : "nofade" == d ? a = !0 : "shuffle" == d ? c = !0 : "clear" == d ? s = !0 : i.push(d);
-                    s && (this.audioPlaylist = []),
-                    (i.length >= 1 || c) && (this.audioPlaylist = this.audioPlaylist.concat(i));
-                    var p = i[0]
-                      , l = this.currentAudio
-                      , _ = this.sound_fade_time
-                      , h = this.audioPlaylist;
-                    if ("null" == p || "none" == p)
-                        this.currentAudio && (t(l).animate({
-                            volume: 0
-                        }, this.sound_fade_time, (function() {
-                            l.pause()
-                        }
-                        )),
-                        this.currentAudio.loop = !1);
-                    else {
-                        if (console.log("new audio:", p, "current audio:", this.currentAudioURL),
-                        this.currentAudio && (this.currentAudioURL == p || r || c))
-                            if (l.ended || l.paused)
-                                this.currentAudioURL = p,
-                                l.src = p,
-                                console.log("Fading in new audio"),
-                                l.volume = 0,
-                                l.play(),
-                                t(l).animate({
-                                    volume: 1
-                                }, _),
-                                this.currentAudio.onended = function() {
-                                    var e;
-                                    if (r)
-                                        e = u.pop(),
-                                        console.log("playing from queue");
-                                    else if (c) {
-                                        var n = Math.floor(Math.random() * h.length);
-                                        e = h[n],
-                                        console.log("playing from playlist")
-                                    }
-                                    e && (l.src = e,
-                                    console.log("Now playing", e),
-                                    l.play(),
-                                    t(l).animate({
-                                        volume: 1
-                                    }, _),
-                                    window.dendryUI.currentAudioURL = e)
-                                }
-                                ;
-                            else {
-                                console.log("adding music to queue"),
-                                this.audioQueue.push(p);
-                                var u = this.audioQueue;
-                                this.currentAudio.onended = function() {
-                                    var e;
-                                    if (r)
-                                        e = u.pop(),
-                                        console.log("playing from queue");
-                                    else if (c) {
-                                        var n = Math.floor(Math.random() * h.length);
-                                        e = h[n],
-                                        console.log("playing from playlist")
-                                    }
-                                    e && (l.src = e,
-                                    console.log("Now playing", e),
-                                    l.play(),
-                                    t(l).animate({
-                                        volume: 1
-                                    }, _),
-                                    window.dendryUI.currentAudioURL = e)
-                                }
-                            }
-                        else
-                            this.currentAudio ? (this.currentAudioURL = p,
-                            console.log("currentAudio present,  fading out current audio"),
-                            l.onended = function() {}
-                            ,
-                            a ? (l.pause(),
-                            l.src = p,
-                            l.play()) : t(l).animate({
-                                volume: 0
-                            }, this.sound_fade_time, (function() {
-                                console.log(l),
-                                l.src = p,
-                                console.log("Fading in new audio"),
-                                l.play(),
-                                t(l).animate({
-                                    volume: 1
-                                }, _)
-                            }
-                            ))) : this.currentAudio || (this.currentAudio = new Audio(p),
-                            this.currentAudio.volume = 0,
-                            this.currentAudio.play(),
-                            t(this.currentAudio).animate({
-                                volume: 1
-                            }, this.sound_fade_time),
-                            l = this.currentAudio,
-                            c && (this.currentAudio.onended = function() {
-                                var e = Math.floor(Math.random() * h.length)
-                                  , n = h[e];
-                                n && (l.src = n,
-                                console.log("playing from shuffle"),
-                                console.log("Now playing", n),
-                                l.play(),
-                                t(l).animate({
-                                    volume: 1
-                                }, _),
-                                window.dendryUI.currentAudioURL = n)
-                            }
-                            ));
-                        this.currentAudio.loop = !!o
-                    }
-                }
-            }
-            ,
-            o.prototype.saveSettings = function() {
-                "undefined" != typeof localStorage && (localStorage[this.game.title + "_animate"] = this.animate,
-                localStorage[this.game.title + "_disable_bg"] = this.disable_bg,
-                localStorage[this.game.title + "_animate_bg"] = this.animate_bg,
-                localStorage[this.game.title + "_show_portraits"] = this.show_portraits,
-                localStorage[this.game.title + "_disable_audio"] = this.disable_audio)
-            }
-            ,
-            o.prototype.loadSettings = function(e) {
-                var t = {
-                    animate: !1,
-                    disable_bg: !1,
-                    animate_bg: !0,
-                    show_portraits: !0,
-                    disable_audio: !1
+                var uint32Multiply = function(a, b) {
+                    var aHigh = (a >> 16) & 0xffff;
+                    var aLow = a & 0xffff;
+                    var bHigh = (b >> 16) & 0xffff;
+                    var bLow = b & 0xffff;
+                    var prodHigh = ((aHigh * bLow) + (aLow * bHigh)) & 0xffff;
+                    return ((prodHigh << 16) >>> 0) + (aLow * bLow);
                 };
-                if ("undefined" != typeof localStorage)
-                    for (var n in t)
-                        if (t.hasOwnProperty(n)) {
-                            var i = this.game.title + "_" + n;
-                            i in localStorage ? this[n] = "false" != localStorage[i] : e && e.hasOwnProperty(n) ? this[n] = e[n] : this[n] = t[n]
-                        }
-            }
-            ,
-            o.prototype.toggle_audio = function(e) {
-                e ? (this.disable_audio = !1,
-                this.currentAudio && this.currentAudio.play()) : (this.currentAudio && (this.currentAudio.pause(),
-                this.currentAudio.loop = !1),
-                this.disable_audio = !0)
-            }
-            ,
-            o.prototype.autosave = function() {
-                var e = localStorage[this.save_prefix + "_a0"];
-                e && (localStorage[this.save_prefix + "_a1"] = e,
-                localStorage[this.save_prefix + "_timestamp_a1"] = localStorage[this.save_prefix + "_timestamp_a0"]);
-                var t = "a0"
-                  , n = JSON.stringify(this.dendryEngine.getExportableState());
-                localStorage[this.save_prefix + "_" + t] = n;
-                var i = this.dendryEngine.state.sceneId
-                  , o = new Date(Date.now());
-                o = i + "\n(" + o.toLocaleString(void 0, this.DateOptions) + ")",
-                localStorage[this.save_prefix + "_timestamp_" + t] = o,
-                this.populateSaveSlots(t + 1, 2)
-            }
-            ,
-            o.prototype.quickSave = function() {
-                var e = JSON.stringify(this.dendryEngine.getExportableState());
-                localStorage[this.save_prefix + "_q"] = e,
-                window.alert("Saved.")
-            }
-            ,
-            o.prototype.saveSlot = function(e) {
-                var t = JSON.stringify(this.dendryEngine.getExportableState());
-                localStorage[this.save_prefix + "_" + e] = t;
-                var n = this.dendryEngine.state.sceneId
-                  , i = new Date(Date.now());
-                i = n + "\n(" + i.toLocaleString(void 0, this.DateOptions) + ")",
-                localStorage[this.save_prefix + "_timestamp_" + e] = i,
-                this.populateSaveSlots(e + 1, 2)
-            }
-            ,
-            o.prototype.quickLoad = function() {
-                if (localStorage[this.save_prefix + "_q"]) {
-                    var e = localStorage[this.save_prefix + "_q"];
-                    this.dendryEngine.setState(JSON.parse(e)),
-                    window.alert("Loaded.")
-                } else
-                    window.alert("No save available.")
-            }
-            ,
-            o.prototype.loadSlot = function(e) {
-                if (localStorage[this.save_prefix + "_" + e]) {
-                    var t = localStorage[this.save_prefix + "_" + e];
-                    this.dendryEngine.setState(JSON.parse(t)),
-                    this.hideSaveSlots(),
-                    window.alert("Loaded.")
-                } else
-                    window.alert("No save available.")
-            }
-            ,
-            o.prototype.deleteSlot = function(e) {
-                localStorage[this.save_prefix + "_" + e] ? (localStorage[this.save_prefix + "_" + e] = "",
-                localStorage[this.save_prefix + "_timestamp_" + e] = "",
-                this.populateSaveSlots(e + 1, 2)) : window.alert("No save available.")
-            }
-            ,
-            o.prototype.exportSlot = function(e) {
-                if (localStorage[this.save_prefix + "_" + e]) {
-                    var t = localStorage[this.save_prefix + "_" + e]
-                      , n = document.createElement("a")
-                      , i = new Blob([t],{
-                        type: "text/plain"
-                    });
-                    n.href = URL.createObjectURL(i),
-                    n.download = "save.txt",
-                    n.click()
-                } else
-                    window.alert("No save available.")
-            }
-            ,
-            o.prototype.importSave = function(e) {
-                var t = this;
-                var n = document.getElementById(e)
-                  , i = new FileReader
-                  , o = n.files[0];
-                console.log(n.files),
-                i.onload = function(e) {
-                    var n = e.target.result;
-                    t.dendryEngine.setState(JSON.parse(n)),
-                    t.hideSaveSlots(),
-                    window.alert("Loaded.")
+                this.uint32 = function() {
+                    var t = (x ^ (x >>> 7)) >>> 0;
+                    x = y;
+                    y = z;
+                    z = w;
+                    w = v;
+                    v = (v ^ (v << 6)) ^ (t ^ (t << 13)) >>> 0;
+                    return uint32Multiply((y + y + 1), v) >>> 0;
                 }
-                ,
-                i.readAsText(o)
-            }
-            ,
-            o.prototype.populateSaveSlots = function(e, t) {
-                var n = this;
-                function i(e) {
-                    var t = document.getElementById("save_info_" + e)
-                      , i = document.getElementById("save_button_" + e)
-                      , o = document.getElementById("delete_button_" + e);
-                    if (localStorage[n.save_prefix + "_" + e]) {
-                        var r = localStorage[n.save_prefix + "_timestamp_" + e];
-                        t.textContent = r,
-                        i.textContent = "Load",
-                        i.onclick = function(e) {
-                            return function(t) {
-                                n.loadSlot(e)
-                            }
-                        }(e),
-                        o.onclick = function(e) {
-                            return function(t) {
-                                n.deleteSlot(e)
-                            }
-                        }(e)
-                    } else
-                        i.textContent = "Save",
-                        t.textContent = "Empty",
-                        i.onclick = function(e) {
-                            return function(t) {
-                                n.saveSlot(e)
-                            }
-                        }(e);
-                    try {
-                        var a = document.getElementById("export_button_" + e);
-                        localStorage[n.save_prefix + "_" + e] && (a.onclick = function(e) {
-                            return function(t) {
-                                n.exportSlot(e)
-                            }
-                        }(e))
-                    } catch (e) {}
+                ;
+                this.random = function() {
+                    return this.uint32() * 2.3283064365386963e-10;
                 }
-                for (var o = 0; o < e; o++)
-                    i(o);
-                for (o = 0; o < t; o++)
-                    i("a" + o)
-            }
-            ,
-            o.prototype.showSaveSlots = function() {
-                if (this.dendryEngine.state.disableSaves)
-                    window.alert("Saving and loading is currently disabled.");
-                else {
-                    var e = document.getElementById("save");
-                    e.style.display = "block",
-                    this.populateSaveSlots(this.max_slots, 2);
-                    var t = this;
-                    e.onclick || (e.onclick = function(e) {
-                        e.target == document.getElementById("save") && t.hideSaveSlots()
-                    }
-                    )
-                }
-            }
-            ,
-            o.prototype.hideSaveSlots = function() {
-                document.getElementById("save").style.display = "none"
-            }
-            ,
-            o.prototype.setOption = function(e, t) {
-                this[e] = t,
-                this.saveSettings()
-            }
-            ,
-            o.prototype.populateOptions = function() {
-                var e = this.disable_bg
-                  , n = this.animate
-                  , i = this.animate_bg;
-                e ? t("#backgrounds_no")[0].checked = !0 : t("#backgrounds_yes")[0].checked = !0,
-                n ? t("#animate_yes")[0].checked = !0 : t("#animate_no")[0].checked = !0,
-                i ? t("#animate_bg_yes")[0].checked = !0 : t("#animate_bg_no")[0].checked = !0
-            }
-            ,
-            o.prototype.showOptions = function() {
-                var e = document.getElementById("options");
-                this.populateOptions(),
-                e.style.display = "block",
-                e.onclick || (e.onclick = function(e) {
-                    e.target == document.getElementById("options") && this.hideOptions()
-                }
-                )
-            }
-            ,
-            o.prototype.getGameOverMsg = function() {
-                return "Game Over (reload to read again)"
-            }
-            ,
-            o.prototype._registerEvents = function() {
-                var e = this;
-                this.$content.on("click", "ul.choices li a", (function(n) {
-                    n.preventDefault(),
-                    n.stopPropagation();
-                    var i = parseInt(t(this).attr("data-choice"));
-                    return e.dendryEngine.choose(i),
-                    !1
-                }
-                )),
-                this.$content.on("click", "ul.choices li", (function(e) {
-                    return e.preventDefault(),
-                    e.stopPropagation(),
-                    t("a", this).click(),
-                    !1
-                }
-                )),
-                this.$content.on("click", "ul.decks li a", (function(n) {
-                    n.preventDefault(),
-                    n.stopPropagation();
-                    var i = t(this).attr("card-id");
-                    return e.dendryEngine.drawCard(i),
-                    !1
-                }
-                )),
-                this.$content.on("click", "ul.hand li a", (function(n) {
-                    n.preventDefault(),
-                    n.stopPropagation();
-                    var i = t(this).attr("card-id");
-                    return e.dendryEngine.playCard(i),
-                    !1
-                }
-                )),
-                this.$content.on("click", "ul.pinned-cards li a", (function(n) {
-                    n.preventDefault(),
-                    n.stopPropagation();
-                    var i = t(this).attr("card-id");
-                    return e.dendryEngine.playPinnedCard(i),
-                    !1
-                }
-                ))
+                ;
+            };
+
+            var __next = 1;
+            Random.fromUnique = function() {
+                var seed = new Date().getTime();
+                return Random.fromSeeds([seed, __next++]);
             }
             ;
-            t((function() {
-                i.convertJSONToGame(window.game.compiled, (function(e, n) {
-                    if (e)
-                        throw e;
-                    var i = new o(n,t("#content"));
-                    if ((window.dendryUI = i,
-                    void 0 !== window.dendryModifyUI) && window.dendryModifyUI(i))
-                        return;
-                    i.dendryEngine.beginGame()
-                }
-                ))
+
+            Random.fromTime = function() {
+                return Random.fromSeeds([new Date().getTime()]);
             }
-            ))
-        }(jQuery)
+            ;
+
+            Random.fromSeeds = function(seeds) {
+                var v = 886756453;
+                var w = 88675123;
+                var x = 123456789;
+                var y = 362436069;
+                var z = 521288629;
+
+                // The seed hashing function is based on Mash 0.9 (MIT License).
+                // See CREDITS.
+                var hashSeed = function(data) {
+                    data = data.toString();
+                    var n = 0xefc8249d;
+                    for (var i = 0; i < data.length; i++) {
+                        n += data.charCodeAt(i);
+                        var h = 0.02519603282416938 * n;
+                        n = h >>> 0;
+                        h -= n;
+                        h *= n;
+                        n = h >>> 0;
+                        h -= n;
+                        n += h * 0x100000000;
+                    }
+                    return (n >>> 0) * 2.3283064365386963e-10;
+                };
+
+                for (var i = 0; i < seeds.length; i++) {
+                    var hashedSeed = hashSeed(seeds[i]) * 0x100000000;
+                    v ^= hashedSeed;
+                    w ^= hashedSeed;
+                    x ^= hashedSeed;
+                    y ^= hashedSeed;
+                    z ^= hashedSeed;
+                }
+                return new Random(v,w,x,y,z);
+            }
+            ;
+
+            Random.fromState = function(state) {
+                return new Random(state[0],state[1],state[2],state[3],state[4]);
+            }
+            ;
+
+            // ------------------------------------------------------------------------
+
+            module.exports = {
+                makeFunctionFromSource: makeFunctionFromSource,
+                runActions: runActions,
+                runPredicate: runPredicate,
+                runExpression: runExpression,
+                convertJSONToGame: convertJSONToGame,
+                simpleContent: simpleContent,
+
+                getCardinalNumber: getCardinalNumber,
+                getOrdinalNumber: getOrdinalNumber,
+                getUserQDisplay: getUserQDisplay,
+                getFudgeDisplay: getFudgeDisplay,
+
+                DendryEngine: DendryEngine,
+                UserInterface: UserInterface,
+                NullUserInterface: UserInterface,
+
+                Random: Random
+            };
+        }());
+
+    }
+    , {}],
+    2: [function(require, module, exports) {
+        /* dendry
+ * http://github.com/idmillington/dendry
+ *
+ * MIT License
+ */
+        /*jshint indent:2 */
+        (function($) {
+            'use strict';
+
+            var contentToHTML = require('./content/html');
+            var engine = require('../engine');
+
+            var BrowserUserInterface = function(game, $content) {
+                this.game = game;
+                this.$content = $content;
+                this._registerEvents();
+
+                this.dendryEngine = new engine.DendryEngine(this,game);
+                // TODO: refactor how the settings work - move it all within a single object
+                this.base_settings = {
+                    'disable_bg': false,
+                    'animate': false,
+                    'animate_bg': true,
+                    'disable_audio': false,
+                    'show_portraits': true
+                };
+                this.disable_bg = false;
+                this.animate = false;
+                this.animate_bg = true;
+                this.disable_audio = false;
+                // backgrounds and portraits are 100% optional, and most games will not use them.
+                this.show_portraits = true;
+                this.fade_time = 600;
+                this.bg_fade_out_time = 200;
+                this.bg_fade_in_time = 1000;
+                this.sound_fade_time = 2000;
+                this.contentToHTML = contentToHTML;
+
+                // sprites
+                this.spriteLocs = {
+                    'topLeft': 1,
+                    'topRight': 1,
+                    'bottomLeft': 1,
+                    'bottomRight': 1
+                };
+                // current HTMLAudioElement
+                this.currentAudio = null;
+                // current audio url
+                this.currentAudioURL = '';
+                this.audioQueue = [];
+                // playlist is used for shuffling...
+                this.audioPlaylist = [];
+                // flag for determining if we're on a new page, up until the first choice.
+                this.onNewPage = false;
+
+                // for saving
+                this.save_prefix = game.title + '_' + game.author + '_save';
+                this.max_slots = 8;
+                // max save slots
+                this.DateOptions = {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                };
+            };
+            engine.UserInterface.makeParentOf(BrowserUserInterface);
+
+            // ------------------------------------------------------------------------
+            // Main API
+
+            //load a game as a json file from a url, and then run the game...
+            BrowserUserInterface.prototype.loadGame = function(url) {
+                var that = this;
+                if (!url.endsWith('.json')) {
+                    if (url.endsWith('/')) {
+                        url = url + 'game.json';
+                    } else {
+                        url = url + '/game.json';
+                    }
+                }
+                fetch(url).then(response => response.text()).then(json => {
+                    game = engine.convertJSONToGame(json, function(err, game) {
+                        if (err) {
+                            throw err;
+                        }
+                        return game;
+                    });
+                    that.game = game;
+                    that.dendryEngine = new engine.DendryEngine(that,game);
+                    that.dendryEngine.beginGame();
+                }
+                ).catch(err => console.log(err));
+            }
+            ;
+
+            BrowserUserInterface.prototype.displayContent = function(paragraphs, faceImage) {
+                var $html = $(contentToHTML.convert(paragraphs));
+                // TODO: maybe face image visibility should be controlled by a different setting?
+                var hasImage = false;
+                if (faceImage && this.show_portraits && !this.disable_bg) {
+                    hasImage = true;
+                    // convert faceImage into an html object
+                    console.log(faceImage);
+                    //var cardEl = $('<div>').addClass('face-figure');
+                    var cardEl = document.createElement('div');
+                    cardEl.className = "face-figure";
+                    //var $image = $('<img>').addClass('face-img').attr({src : faceImage});
+                    var image = new Image();
+                    image.className = "face-img";
+                    cardEl.appendChild(image);
+                    $html.splice(1, 0, cardEl);
+                    image.src = faceImage;
+                    /*
+        if (!this.animate) {
+            var that = this;
+            image.onload = function() {
+                that.$content.append($html);
+                console.log('image loaded');
+            };
+            image.src = faceImage;
+        }
+        */
+                }
+                if (this.animate) {
+                    $html.fadeIn(this.fade_time);
+                    this.$content.append($html);
+                } else {
+                    if (!hasImage) {
+                        this.$content.append($html);
+                    } else {
+                        this.$content.append($html);
+                    }
+                }
+                $html.focus();
+                // allow user to add custom stuff on display content (for sidebar in this case)
+                if (window && window.onDisplayContent) {
+                    window.onDisplayContent();
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.displayGameOver = function() {
+                var $p = $('<p>').text(this.getGameOverMsg()).addClass('game-over');
+                if (this.animate) {
+                    $p.fadeIn(this.fade_time);
+                    this.$content.append($p);
+                } else {
+                    this.$content.append($p);
+                }
+                $p.focus();
+            }
+            ;
+
+            BrowserUserInterface.prototype.displayChoices = function(choices) {
+                var $ul = $('<ul>').addClass('choices');
+                for (var i = 0; i < choices.length; ++i) {
+                    var choice = choices[i];
+
+                    var title = contentToHTML.convertLine(choice.title);
+                    var subtitle = "";
+                    if (choice.subtitle !== undefined) {
+                        subtitle = contentToHTML.convertLine(choice.subtitle);
+                    }
+
+                    var $li = $('<li>');
+                    var $titleHolder = $li;
+                    if (choice.canChoose) {
+                        $titleHolder = $('<a>').attr({
+                            href: '#',
+                            'data-choice': i
+                        });
+                        $li.html($titleHolder);
+                    } else {
+                        $titleHolder.addClass('unavailable');
+                    }
+                    $titleHolder.html(title);
+                    if (choice.checkQuality && choice.difficulty && choice.successProb !== undefined) {
+                        if (subtitle) {
+                            subtitle += '<br>';
+                        }
+                        subtitle += 'Check: ' + choice.checkQuality + '<br>';
+                        subtitle += 'Difficulty: ' + choice.difficulty + ' (' + Math.floor(choice.successProb * 100) + '%)';
+                    }
+                    if (subtitle) {
+                        $li.append($('<div>').addClass('subtitle').html(subtitle));
+                    }
+
+                    $ul.append($li);
+                }
+                if (this.animate) {
+                    $ul.fadeIn(this.fade_time);
+                    this.$content.append($ul);
+                } else {
+                    this.$content.append($ul);
+                }
+                $ul.focus();
+                if (this.onNewPage) {
+                    this.onNewPage = false;
+                    if (window && window.onNewPage) {
+                        window.onNewPage();
+                    }
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.newPage = function() {
+                if (this.animate) {
+                    var $content = this.$content;
+                    this.$content.empty();
+                    this.$content.children().fadeOut(this.fade_time, function() {});
+                } else {
+                    this.$content.empty();
+                }
+                this.onNewPage = true;
+
+            }
+            ;
+
+            BrowserUserInterface.prototype.setStyle = function(style) {
+                this.$content.removeClass();
+                if (style !== undefined) {
+                    this.$content.addClass(style);
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.removeChoices = function() {
+                $('.choices', this.$content).remove();
+                $('.hidden', this.$content).remove();
+            }
+            ;
+
+            BrowserUserInterface.prototype.beginOutput = function() {
+                $("#read-marker", this.$content).remove();
+                this.$content.append($('<hr>').attr('id', 'read-marker'));
+            }
+            ;
+
+            BrowserUserInterface.prototype.endOutput = function() {
+                var $marker = $("#read-marker");
+                if (this.animate) {
+                    if ($marker.length > 0) {
+                        $('html, body').animate({
+                            scrollTop: $marker.offset().top
+                        }, this.fade_time);
+                    } else {
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, this.fade_time);
+                    }
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.signal = function(data) {
+                // TODO: implement signals - signals contain signal, event, and id
+                console.log(data);
+                var signal = data.signal;
+                var event = data.event;
+                // scene-arrival, scene-display, scene-departure, quality-change
+                var scene_id = data.id;
+                // TODO: handle this in the game.js for each specific game
+                if (window && window.handleSignal) {
+                    window.handleSignal(signal, event, scene_id);
+                }
+            }
+            ;
+
+            // dendrynexus displays
+            // displays the hand.
+            BrowserUserInterface.prototype.displayHand = function(hand, maxCards) {
+                if (window && window.displayHand) {
+                    window.displayHand(hand, maxCards);
+                    return null;
+                }
+                var handDescription = 'Hand - click a card to play.';
+                if (window.handDescription) {
+                    handDescription = window.handDescription;
+                }
+                if (this.dendryEngine.state.qualities.handDescription) {
+                    handDescription = this.dendryEngine.state.qualities.handDescription;
+                }
+                var $handEl = $('.hand');
+                var hasOldHand = false;
+                if ($handEl.length == 0) {
+                    $handEl = $('<ul>').addClass('hand');
+                    this.$content.append($('<hr>'));
+                    this.$content.append($('<p>').addClass('hand-description').text(handDescription));
+                } else {
+                    $handEl.empty();
+                    hasOldHand = true;
+                }
+                // display the hand
+                for (var i = 0; i < maxCards; i++) {
+                    var $cardEl = $('<li>').addClass('card-in-hand');
+                    if (hand[i]) {
+                        var card = hand[i];
+                        // create an <a> element, with an image nested inside.
+                        var $cardLink = $('<a>').addClass('card').attr({
+                            href: '#',
+                            'card-id': card.id,
+                            title: card.title
+                        });
+                        var $title = $('<span>').addClass('card-caption').text(card.title);
+                        // if there is an image, set the image; otherwise, set image to a gradient?
+                        if (card.image) {
+                            var $cardImage = $('<img>').addClass('card-img').attr({
+                                src: card.image
+                            });
+                            $cardLink.append($cardImage);
+                        } else {}
+                        if (card.subtitle) {
+                            var $cardSubtitle = $('<span>').addClass('card-tooltip').text(card.subtitle);
+                            $cardLink.append($cardSubtitle);
+                        }
+                        $cardEl.append($cardLink);
+                        $cardEl.append($title);
+                        $handEl.append($cardEl);
+                    } else {
+                        var $blankCardDiv = $('<div>').addClass('blank-card');
+                        $cardEl.append($blankCardDiv);
+                    }
+                    $handEl.append($cardEl);
+                }
+                if (!hasOldHand) {
+                    this.$content.append($handEl);
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.displayDecks = function(decks) {
+                if (window && window.displayDecks) {
+                    window.displayDecks(decks);
+                    return null;
+                }
+                var deckDescription = 'Decks - click a deck to draw a card.';
+                if (window.deckDescription) {
+                    deckDescription = window.deckDescription;
+                }
+                if (this.dendryEngine.state.qualities.deckDescription) {
+                    deckDescription = this.dendryEngine.state.qualities.deckDescription;
+                }
+                this.$content.append($('<hr>'));
+                this.$content.append($('<p>').addClass('deck-description').text(deckDescription));
+                var $decksEl = $('<ul>').addClass('decks');
+                for (var deck of decks) {
+                    var $deckEl = $('<li>').addClass('deck');
+                    // create an <a> element, with an image nested inside.
+                    var $deckLink = $('<a>').addClass('card').attr({
+                        href: '#',
+                        'card-id': deck.id,
+                        title: deck.title
+                    });
+                    var $title = $('<span>').addClass('card-caption').text(deck.title);
+                    // if there is an image, set the image; otherwise, set image to a gradient?
+                    if (deck.image) {
+                        var $deckImage = $('<img>').addClass('card-img').attr({
+                            src: deck.image
+                        });
+                        $deckLink.append($deckImage);
+                    } else {// TODO: set alternative background for $deckLink to a gradient
+                    }
+                    if (deck.subtitle) {
+                        // if there's a subtitle, create a tooltip
+                        var $deckSubtitle = $('<span>').addClass('card-tooltip').text(deck.subtitle);
+                        $deckLink.append($deckSubtitle);
+                    }
+                    if (!deck.canChoose) {
+                        $deckEl = $deckEl.addClass('unavailable-card');
+                    }
+                    $deckEl.append($deckLink);
+                    $deckEl.append($title);
+                    $decksEl.append($deckEl);
+                }
+                this.$content.append($decksEl);
+            }
+            ;
+
+            // displays pinned cards for dendrynexus
+            BrowserUserInterface.prototype.displayPinnedCards = function(cards) {
+                if (cards.length == 0) {
+                    return null;
+                }
+                if (window && window.displayPinnedCards) {
+                    window.displayPinnedCards(cards);
+                    return null;
+                }
+                var pinnedCardsDescription = 'Pinned cards - click a card to play.';
+                if (window.pinnedCardsDescription) {
+                    pinnedCardsDescription = window.pinnedCardsDescription;
+                }
+                if (this.dendryEngine.state.qualities.pinnedCardsDescription) {
+                    pinnedCardsDescription = this.dendryEngine.state.qualities.pinnedCardsDescription;
+                }
+                this.$content.append($('<hr>'));
+                this.$content.append($('<p>').addClass('pinned-text-description').text(pinnedCardsDescription));
+                var $cardsEl = $('<ul>').addClass('pinned-cards');
+                for (var card of cards) {
+                    var $cardEl = $('<li>').addClass('pinned-card');
+                    // create an <a> element, with an image nested inside.
+                    var $cardLink = $('<a>').addClass('card').attr({
+                        href: '#',
+                        'card-id': card.id,
+                        title: card.title
+                    });
+                    var $title = $('<span>').addClass('card-caption').text(card.title);
+                    // if there is an image, set the image; otherwise, set image to a gradient?
+                    if (card.image) {
+                        var $cardImage = $('<img>').addClass('card-img').attr({
+                            src: card.image
+                        });
+                        $cardLink.append($cardImage);
+                    } else {}
+                    if (card.subtitle) {
+                        var $cardSubtitle = $('<span>').addClass('card-tooltip').text(card.subtitle);
+                        $cardLink.append($cardSubtitle);
+                    }
+                    $cardEl.append($cardLink);
+                    $cardEl.append($title);
+                    $cardsEl.append($cardEl);
+                }
+                this.$content.append($cardsEl);
+            }
+            ;
+
+            // visual extensions
+
+            BrowserUserInterface.prototype.setBg = function(image_url) {
+                if (this.disable_bg) {
+                    $('#bg1').addClass('content_hidden');
+                    $('#bg1').removeClass('content_visible');
+                    $('#bg1').css('background-image', 'none');
+                } else if (!image_url || image_url == 'none' || image_url == 'null') {
+                    if (this.animate_bg) {
+                        $('#bg1').addClass('content_hidden');
+                        $('#bg1').removeClass('content_visible');
+                        setTimeout(function() {
+                            $('#bg1').css('background-image', 'none');
+                            $('#bg1').removeClass('content_hidden');
+                            $('#bg1').addClass('content_visible');
+                        }, 100);
+                    } else {
+                        $('#bg1').css('background-image', 'none');
+                    }
+                } else if (image_url.startsWith('#') || image_url.startsWith('rgba(') || image_url.startsWith('rgb(')) {
+                    if (this.animate_bg) {
+                        $('#bg1').fadeOut(this.bg_fade_out_time, function() {
+                            $('#bg1').css('background-image', 'none');
+                            $('#bg1').css('background-color', image_url);
+                        });
+                        $('#bg1').fadeIn(this.bg_fade_in_time, function() {
+                            $('#bg2').css('background-image', 'none');
+                        });
+                        console.log('changing background color ' + image_url);
+                    } else {
+                        $('#bg1').css('background-image', 'none');
+                        $('#bg1').css('bacground-color', image_url);
+                    }
+                } else if (image_url.startsWith('linear-gradient(')) {
+                    if (this.animate_bg) {
+                        $('#bg1').fadeOut(this.bg_fade_out_time, function() {
+                            $('#bg1').css('background-image', image_url);
+                        });
+                        $('#bg1').fadeIn(this.bg_fade_in_time, function() {
+                            $('#bg2').css('background-image', image_url);
+                        });
+                        console.log('changing background gradient ' + image_url);
+                    } else {
+                        $('#bg1').css('background-image', image_url);
+                    }
+                } else {
+                    if (this.animate_bg) {
+                        $('#bg1').fadeOut(this.bg_fade_out_time, function() {
+                            $('#bg1').css('background-image', 'url("' + image_url + '")');
+                        });
+                        $('#bg1').fadeIn(this.bg_fade_in_time, function() {
+                            $('#bg2').css('background-image', $('#bg1').css('background-image'));
+                        });
+                    } else {
+                        $('#bg1').css('background-image', 'url("' + image_url + '")');
+                    }
+                }
+            }
+            ;
+
+            // set sprites given data
+            // data is a list of two-element lists, where the first element is location
+            // (one of topLeft, topRight, bottomLeft, bottomRight)
+            // and the second element is the sprite.
+            BrowserUserInterface.prototype.setSprites = function(data) {
+                if (window && window.setSprites) {
+                    window.setSprites(data);
+                    return;
+                }
+                if (!this.show_portraits || data == 'none' || data == 'clear') {
+                    $('#topLeftSprite').children().fadeOut(this.fade_time, function() {
+                        $('#topLeftSprite').empty();
+                    });
+                    $('#topRightSprite').children().fadeOut(this.fade_time, function() {
+                        $('#topRightSprite').empty();
+                    });
+                    $('#bottomLeftSprite').children().fadeOut(this.fade_time, function() {
+                        $('#bottomLeftSprite').empty();
+                    });
+                    $('#bottomRightSprite').children().fadeOut(this.fade_time, function() {
+                        $('#bottomRightSprite').empty();
+                    });
+                    return;
+                } else {
+                    if (data instanceof Array) {
+                        for (var i = 0; i < data.length; i++) {
+                            var loc = data[i][0];
+                            var img = data[i][1];
+                            this.setSprite(loc, img);
+                        }
+                    } else if (data) {
+                        for (var key in Object.keys(data)) {
+                            sprites.push([key, data[key]]);
+                        }
+                    }
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.setSprite = function(loc, img) {
+                if (!this.show_portraits) {
+                    return;
+                }
+                if (window && window.setSprite) {
+                    window.setSprite(loc, img);
+                    return;
+                }
+                loc = loc.toLowerCase();
+                var targetSprite;
+                if (loc == 'topleft') {
+                    targetSprite = $('#topLeftSprite');
+                } else if (loc == 'topright') {
+                    targetSprite = $('#topRightSprite');
+                } else if (loc == 'bottomleft') {
+                    targetSprite = $('#bottomLeftSprite');
+                } else if (loc == 'bottomright') {
+                    targetSprite = $('#bottomRightSprite');
+                }
+                //targetSprite.empty();
+                if (img == 'none' || img == 'clear') {
+                    delete this.dendryEngine.state.sprites[loc];
+                    targetSprite.fadeOut(this.fade_time, function() {
+                        targetSprite.empty();
+                    });
+                    return;
+                } else {
+                    this.dendryEngine.state.sprites[loc] = img;
+                    targetSprite.fadeOut(this.fade_time, function() {
+                        targetSprite.emtpy();
+                        var image = new Image();
+                        image.src = img;
+                        targetSprite.append(image);
+                        console.log('fadeIn');
+                        targetSprite.fadeIn(this.fade_time);
+                    });
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.setSpriteStyle = function(loc, style) {
+                if (window && window.setSpriteStyle) {
+                    window.setSpriteStyle(loc, style);
+                    return;
+                }
+                var targetSprite;
+                if (loc == 'topleft') {
+                    targetSprite = $('#topLeftSprite');
+                } else if (loc == 'topright') {
+                    targetSprite = $('#topRightSprite');
+                } else if (loc == 'bottomleft') {
+                    targetSprite = $('#bottomLeftSprite');
+                } else if (loc == 'bottomright') {
+                    targetSprite = $('#bottomRightSprite');
+                } else {
+                    return;
+                }
+                targetSprite.css(style);
+            }
+            ;
+
+            // play audio with js
+            // audio is a space-separated string with at least one entry.
+            // the first entry will be a file url.
+            // the second-nth entries are words describing how the file will be played:
+            // 'queue' for playing the music next after the current audio ends
+            // 'loop' if this music will loop indefinitely.
+            // 'nofade' if the sound will be played instantly without a fadein or fadeout.
+            // TODO: have a list of audio files...
+            BrowserUserInterface.prototype.audio = function(audio) {
+                if (this.disable_audio) {
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                        this.currentAudio.loop = false;
+                    }
+                    return;
+                }
+                var audioData = audio.split(' ');
+                var audioFiles = [];
+                var isLoop = false;
+                var isQueue = false;
+                var noFade = false;
+                var isShuffle = false;
+                var isClear = false;
+                for (var name of audioData) {
+                    if (name == 'loop') {
+                        isLoop = true;
+                    } else if (name == 'queue') {
+                        isQueue = true;
+                    } else if (name == 'nofade') {
+                        noFade = true;
+                    } else if (name == 'shuffle') {
+                        isShuffle = true;
+                    } else if (name == 'clear') {
+                        isClear = true;
+                    } else {
+                        audioFiles.push(name);
+                    }
+                }
+                if (isClear) {
+                    this.audioPlaylist = [];
+                }
+                if (audioFiles.length >= 1 || isShuffle) {
+                    this.audioPlaylist = this.audioPlaylist.concat(audioFiles);
+                }
+                var audioFile = audioFiles[0];
+                var currentAudio = this.currentAudio;
+                var fadeTime = this.sound_fade_time;
+                var loopCurrent = false;
+                var playlist = this.audioPlaylist;
+                // stop playing
+                if (audioFile == 'null' || audioFile == 'none') {
+                    if (this.currentAudio) {
+                        $(currentAudio).animate({
+                            volume: 0
+                        }, this.sound_fade_time, function() {
+                            currentAudio.pause();
+                        });
+                        this.currentAudio.loop = false;
+                    }
+                } else {
+                    // fadeout current audio, then fade-in new audio
+                    console.log('new audio:', audioFile, 'current audio:', this.currentAudioURL);
+                    if (this.currentAudio && (this.currentAudioURL == audioFile || isQueue || isShuffle)) {
+                        if (!currentAudio.ended && !currentAudio.paused) {
+                            console.log('adding music to queue');
+                            this.audioQueue.push(audioFile);
+                            var audioQueue = this.audioQueue;
+                            this.currentAudio.onended = function() {
+                                var newAudio;
+                                if (isQueue) {
+                                    newAudio = audioQueue.pop();
+                                    console.log('playing from queue');
+                                } else if (isShuffle) {
+                                    var index = Math.floor(Math.random() * playlist.length);
+                                    newAudio = playlist[index];
+                                    console.log('playing from playlist');
+                                }
+                                if (newAudio) {
+                                    currentAudio.src = newAudio;
+                                    console.log('Now playing', newAudio);
+                                    currentAudio.play();
+                                    $(currentAudio).animate({
+                                        volume: 1
+                                    }, fadeTime);
+                                    window.dendryUI.currentAudioURL = newAudio;
+                                }
+                            }
+                            ;
+                        } else {
+                            this.currentAudioURL = audioFile;
+                            currentAudio.src = audioFile;
+                            console.log('Fading in new audio');
+                            currentAudio.volume = 0;
+                            currentAudio.play();
+                            $(currentAudio).animate({
+                                volume: 1
+                            }, fadeTime);
+                            this.currentAudio.onended = function() {
+                                var newAudio;
+                                if (isQueue) {
+                                    newAudio = audioQueue.pop();
+                                    console.log('playing from queue');
+                                } else if (isShuffle) {
+                                    var index = Math.floor(Math.random() * playlist.length);
+                                    newAudio = playlist[index];
+                                    console.log('playing from playlist');
+                                }
+                                if (newAudio) {
+                                    currentAudio.src = newAudio;
+                                    console.log('Now playing', newAudio);
+                                    currentAudio.play();
+                                    $(currentAudio).animate({
+                                        volume: 1
+                                    }, fadeTime);
+                                    window.dendryUI.currentAudioURL = newAudio;
+                                }
+                            }
+                            ;
+                        }
+                    } else if (this.currentAudio) {
+                        // not queue or shuffle, so we stop playing the current audio.
+                        this.currentAudioURL = audioFile;
+                        console.log('currentAudio present,  fading out current audio');
+                        // reset the current audio function
+                        currentAudio.onended = function() {}
+                        ;
+                        if (noFade) {
+                            currentAudio.pause();
+                            currentAudio.src = audioFile;
+                            currentAudio.play();
+                        } else {
+                            $(currentAudio).animate({
+                                volume: 0
+                            }, this.sound_fade_time, function() {
+                                console.log(currentAudio);
+                                currentAudio.src = audioFile;
+                                console.log('Fading in new audio');
+                                currentAudio.play();
+                                $(currentAudio).animate({
+                                    volume: 1
+                                }, fadeTime);
+                            });
+                        }
+                    } else if (!this.currentAudio) {
+                        this.currentAudio = new Audio(audioFile);
+                        this.currentAudio.volume = 0;
+                        this.currentAudio.play();
+                        $(this.currentAudio).animate({
+                            volume: 1
+                        }, this.sound_fade_time);
+                        currentAudio = this.currentAudio;
+                        if (isShuffle) {
+                            this.currentAudio.onended = function() {
+                                var index = Math.floor(Math.random() * playlist.length);
+                                var newAudio = playlist[index];
+                                if (newAudio) {
+                                    currentAudio.src = newAudio;
+                                    console.log('playing from shuffle');
+                                    console.log('Now playing', newAudio);
+                                    currentAudio.play();
+                                    $(currentAudio).animate({
+                                        volume: 1
+                                    }, fadeTime);
+                                    // asdkfl;;sajd;lkjafdsdsaf;kjldjsfa;kl
+                                    window.dendryUI.currentAudioURL = newAudio;
+                                }
+                            }
+                            ;
+                        }
+                    }
+                    if (isLoop) {
+                        this.currentAudio.loop = true;
+                    } else {
+                        this.currentAudio.loop = false;
+                    }
+                    // https://stackoverflow.com/questions/7451508/html5-audio-playback-with-fade-in-and-fade-out
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.saveSettings = function() {
+                if (typeof localStorage !== 'undefined') {
+                    localStorage[this.game.title + '_animate'] = this.animate;
+                    localStorage[this.game.title + '_disable_bg'] = this.disable_bg;
+                    localStorage[this.game.title + '_animate_bg'] = this.animate_bg;
+                    localStorage[this.game.title + '_show_portraits'] = this.show_portraits;
+                    localStorage[this.game.title + '_disable_audio'] = this.disable_audio;
+                }
+            }
+            ;
+
+            // TODO: this could be much cleaner...
+            BrowserUserInterface.prototype.loadSettings = function(defaultSettings) {
+                var defaults = {
+                    animate: false,
+                    disable_bg: false,
+                    animate_bg: true,
+                    show_portraits: true,
+                    disable_audio: false
+                };
+                if (typeof localStorage !== 'undefined') {
+                    for (var prop in defaults) {
+                        if (defaults.hasOwnProperty(prop)) {
+                            var lsKey = this.game.title + '_' + prop;
+                            if (lsKey in localStorage) {
+                                this[prop] = localStorage[lsKey] != 'false';
+                            } else {
+                                if (defaultSettings && defaultSettings.hasOwnProperty(prop)) {
+                                    this[prop] = defaultSettings[prop];
+                                } else {
+                                    this[prop] = defaults[prop];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.toggle_audio = function(enable_audio) {
+                if (enable_audio) {
+                    this.disable_audio = false;
+                    if (this.currentAudio) {
+                        this.currentAudio.play();
+                    }
+                } else {
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                        this.currentAudio.loop = false;
+                    }
+                    this.disable_audio = true;
+                }
+            }
+            ;
+
+            // save functions
+            BrowserUserInterface.prototype.autosave = function() {
+                var oldData = localStorage[this.save_prefix + '_a0'];
+                if (oldData) {
+                    localStorage[this.save_prefix + '_a1'] = oldData;
+                    localStorage[this.save_prefix + '_timestamp_a1'] = localStorage[this.save_prefix + '_timestamp_a0'];
+                }
+                var slot = 'a0';
+                var saveString = JSON.stringify(this.dendryEngine.getExportableState());
+                localStorage[this.save_prefix + '_' + slot] = saveString;
+                var scene = this.dendryEngine.state.sceneId;
+                var date = new Date(Date.now());
+                date = scene + '\n(' + date.toLocaleString(undefined, this.DateOptions) + ')';
+                localStorage[this.save_prefix + '_timestamp_' + slot] = date;
+                this.populateSaveSlots(slot + 1, 2);
+            }
+            ;
+
+            BrowserUserInterface.prototype.quickSave = function() {
+                var saveString = JSON.stringify(this.dendryEngine.getExportableState());
+                localStorage[this.save_prefix + '_q'] = saveString;
+                window.alert('Saved.');
+            }
+            ;
+
+            BrowserUserInterface.prototype.saveSlot = function(slot) {
+                var saveString = JSON.stringify(this.dendryEngine.getExportableState());
+                localStorage[this.save_prefix + '_' + slot] = saveString;
+                var scene = this.dendryEngine.state.sceneId;
+                var date = new Date(Date.now());
+                date = scene + '\n(' + date.toLocaleString(undefined, this.DateOptions) + ')';
+                localStorage[this.save_prefix + '_timestamp_' + slot] = date;
+                this.populateSaveSlots(slot + 1, 2);
+            }
+            ;
+
+            BrowserUserInterface.prototype.quickLoad = function() {
+                if (localStorage[this.save_prefix + '_q']) {
+                    var saveString = localStorage[this.save_prefix + '_q'];
+                    this.dendryEngine.setState(JSON.parse(saveString));
+                    window.alert('Loaded.');
+                } else {
+                    window.alert('No save available.');
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.loadSlot = function(slot) {
+                if (localStorage[this.save_prefix + '_' + slot]) {
+                    var saveString = localStorage[this.save_prefix + '_' + slot];
+                    this.dendryEngine.setState(JSON.parse(saveString));
+                    this.hideSaveSlots();
+                    window.alert('Loaded.');
+                } else {
+                    window.alert('No save available.');
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.deleteSlot = function(slot) {
+                if (localStorage[this.save_prefix + '_' + slot]) {
+                    localStorage[this.save_prefix + '_' + slot] = '';
+                    localStorage[this.save_prefix + '_timestamp_' + slot] = '';
+                    this.populateSaveSlots(slot + 1, 2);
+                } else {
+                    window.alert('No save available.');
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.exportSlot = function(slot) {
+                if (localStorage[this.save_prefix + '_' + slot]) {
+                    var data = localStorage[this.save_prefix + '_' + slot];
+                    var a = document.createElement("a");
+                    var file = new Blob([data],{
+                        type: 'text/plain'
+                    });
+                    a.href = URL.createObjectURL(file);
+                    a.download = 'save.txt';
+                    a.click();
+                } else {
+                    window.alert('No save available.');
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.importSave = function(doc_id) {
+                var that = this;
+                function onFileLoad(e) {
+                    var data = e.target.result;
+                    that.dendryEngine.setState(JSON.parse(data));
+                    that.hideSaveSlots();
+                    window.alert('Loaded.');
+                }
+                var uploader = document.getElementById(doc_id);
+                var reader = new FileReader();
+                var file = uploader.files[0];
+                console.log(uploader.files);
+                reader.onload = onFileLoad;
+                reader.readAsText(file);
+            }
+            ;
+
+            BrowserUserInterface.prototype.populateSaveSlots = function(max_slots, max_auto_slots) {
+                // this fills in the save information
+                var that = this;
+                function createLoadListener(i) {
+                    return function(evt) {
+                        that.loadSlot(i);
+                    }
+                    ;
+                }
+                function createSaveListener(i) {
+                    return function(evt) {
+                        that.saveSlot(i);
+                    }
+                    ;
+                }
+                function createDeleteListener(i) {
+                    return function(evt) {
+                        that.deleteSlot(i);
+                    }
+                    ;
+                }
+                function createExportListener(i) {
+                    return function(evt) {
+                        that.exportSlot(i);
+                    }
+                    ;
+                }
+                function populateSlot(id) {
+                    var save_element = document.getElementById('save_info_' + id);
+                    var save_button = document.getElementById('save_button_' + id);
+                    var delete_button = document.getElementById('delete_button_' + id);
+                    if (localStorage[that.save_prefix + '_' + id]) {
+                        var timestamp = localStorage[that.save_prefix + '_timestamp_' + id];
+                        save_element.textContent = timestamp;
+                        save_button.textContent = "Load";
+                        save_button.onclick = createLoadListener(id);
+                        delete_button.onclick = createDeleteListener(id);
+                    } else {
+                        save_button.textContent = "Save";
+                        save_element.textContent = "Empty";
+                        save_button.onclick = createSaveListener(id);
+                    }
+                    try {
+                        var export_button = document.getElementById('export_button_' + id);
+                        if (localStorage[that.save_prefix + '_' + id]) {
+                            export_button.onclick = createExportListener(id);
+                        }
+                    } catch (error) {}
+
+                }
+                for (var i = 0; i < max_slots; i++) {
+                    populateSlot(i);
+                }
+                for (i = 0; i < max_auto_slots; i++) {
+                    populateSlot('a' + i);
+                }
+
+            }
+            ;
+
+            BrowserUserInterface.prototype.showSaveSlots = function() {
+                if (this.dendryEngine.state.disableSaves) {
+                    window.alert('Saving and loading is currently disabled.');
+                    return;
+                }
+                var save_element = document.getElementById('save');
+                save_element.style.display = 'block';
+                this.populateSaveSlots(this.max_slots, 2);
+                var that = this;
+                if (!save_element.onclick) {
+                    save_element.onclick = function(evt) {
+                        var target = evt.target;
+                        var save_element = document.getElementById('save');
+                        if (target == save_element) {
+                            that.hideSaveSlots();
+                        }
+                    }
+                    ;
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.hideSaveSlots = function() {
+                var save_element = document.getElementById('save');
+                save_element.style.display = 'none';
+            }
+            ;
+
+            // functions for dealing with options
+            BrowserUserInterface.prototype.setOption = function(option, toggle) {
+                this[option] = toggle;
+                this.saveSettings();
+            }
+            ;
+
+            BrowserUserInterface.prototype.populateOptions = function() {
+                var disable_bg = this.disable_bg;
+                var animate = this.animate;
+                var animate_bg = this.animate_bg;
+                if (disable_bg) {
+                    $('#backgrounds_no')[0].checked = true;
+                } else {
+                    $('#backgrounds_yes')[0].checked = true;
+                }
+                if (animate) {
+                    $('#animate_yes')[0].checked = true;
+                } else {
+                    $('#animate_no')[0].checked = true;
+                }
+                if (animate_bg) {
+                    $('#animate_bg_yes')[0].checked = true;
+                } else {
+                    $('#animate_bg_no')[0].checked = true;
+                }
+            }
+            ;
+
+            BrowserUserInterface.prototype.showOptions = function() {
+                var save_element = document.getElementById('options');
+                this.populateOptions();
+                save_element.style.display = "block";
+                if (!save_element.onclick) {
+                    save_element.onclick = function(evt) {
+                        var target = evt.target;
+                        var save_element = document.getElementById('options');
+                        if (target == save_element) {
+                            this.hideOptions();
+                        }
+                    }
+                    ;
+                }
+            }
+            ;
+
+            // ------------------------------------------------------------------------
+            // Additional methods
+
+            BrowserUserInterface.prototype.getGameOverMsg = function() {
+                return 'Game Over (reload to read again)';
+            }
+            ;
+
+            o.prototype._registerEvents = function() {
+                var e = this;
+
+                // Route Choice Clicks through #content
+                this.$content.on("click", "ul.choices li a", function(n) {
+                    n.preventDefault();
+                    n.stopPropagation();
+                    var i = parseInt($(this).attr("data-choice"));
+                    return e.dendryEngine.choose(i), !1;
+                });
+
+                this.$content.on("click", "ul.choices li", function(e) {
+                    return e.preventDefault(), e.stopPropagation(), $("a", this).click(), !1;
+                });
+
+                // Route Deck Clicks through #content
+                this.$content.on("click", "ul.decks li a", function(n) {
+                    n.preventDefault();
+                    n.stopPropagation();
+                    var i = $(this).attr("card-id");
+                    return e.dendryEngine.drawCard(i), !1;
+                });
+
+                // Route Hand Clicks through #content
+                this.$content.on("click", "ul.hand li a", function(n) {
+                    n.preventDefault();
+                    n.stopPropagation();
+                    var i = $(this).attr("card-id");
+                    return e.dendryEngine.playCard(i), !1;
+                });
+
+                // Route Pinned Card Clicks through #content
+                this.$content.on("click", "ul.pinned-cards li a", function(n) {
+                    n.preventDefault();
+                    n.stopPropagation();
+                    var i = $(this).attr("card-id");
+                    return e.dendryEngine.playPinnedCard(i), !1;
+                });
+            };
+
+            // ------------------------------------------------------------------------
+            // Run when loaded.
+
+            var main = function() {
+                engine.convertJSONToGame(window.game.compiled, function(err, game) {
+                    if (err) {
+                        throw err;
+                    }
+
+                    var ui = new BrowserUserInterface(game,$('#content'));
+                    window.dendryUI = ui;
+                    // Allow the ui system to be customized before use.
+                    if (window.dendryModifyUI !== undefined) {
+                        // If it returns true, then we don't need to begin the game.
+                        var dontStart = window.dendryModifyUI(ui);
+                        if (dontStart) {
+                            return;
+                        }
+                    }
+                    ui.dendryEngine.beginGame();
+                });
+            };
+            $(main);
+
+        }(jQuery));
+
     }
     , {
         "../engine": 1,
         "./content/html": 3
     }],
-    3: [function(e, t, n) {
-        !function() {
-            "use strict";
-            var e = function(e) {
-                if (void 0 === e.type)
-                    return "undefined" != typeof window && window.displayText && (e = window.displayText(e)),
-                    e;
-                switch (e.type) {
-                case "emphasis-1":
-                    return "<em>" + n(e.content) + "</em>";
-                case "emphasis-2":
-                    return "<strong>" + n(e.content) + "</strong>";
-                case "emphasis-3":
-                    return "<code>" + n(e.content) + "</code>";
-                case "hidden":
-                    return '<span class="hidden">' + n(e.content) + "</span>";
-                case "line-break":
-                    return "<br>";
-                case "magic":
-                    return e.content;
-                case "insert":
-                case "conditional":
-                    throw new Error(e.type + " should have been evaluated by now.")
-                }
-            }
-              , n = function(t) {
-                if (Array.isArray(t)) {
-                    for (var n = [], i = 0; i < t.length; ++i) {
-                        var o = t[i];
-                        n.push(e(o))
+    3: [function(require, module, exports) {
+        /* dendry
+ * http://github.com/idmillington/dendry
+ *
+ * MIT License
+ */
+        /*jshint indent:2 */
+        (function() {
+            'use strict';
+
+            var _contentObjectToHTML = function(contentObj) {
+                if (contentObj.type === undefined) {
+                    // if the game defines the function window.displayText, then that function is called to format the text.
+                    // this is used for game-specific formatting.
+                    if (typeof (window) !== "undefined" && window.displayText) {
+                        contentObj = window.displayText(contentObj);
                     }
-                    return n.join("")
+                    return contentObj;
+                } else {
+                    switch (contentObj.type) {
+                    case 'emphasis-1':
+                        return '<em>' + _contentToHTML(contentObj.content) + '</em>';
+                    case 'emphasis-2':
+                        return '<strong>' + _contentToHTML(contentObj.content) + '</strong>';
+                    case 'emphasis-3':
+                        return '<code>' + _contentToHTML(contentObj.content) + '</code>';
+                    case 'hidden':
+                        return '<span class="hidden">' + _contentToHTML(contentObj.content) + '</span>';
+                    case 'line-break':
+                        return '<br>';
+
+                        // We can't handle elements that require state-dependency.
+                        // raw html for magic
+                    case 'magic':
+                        return contentObj.content;
+                    case 'insert':
+                        /* falls through */
+                    case 'conditional':
+                        throw new Error(contentObj.type + ' should have been evaluated by now.');
+                    }
                 }
-                return e(t)
             };
-            t.exports = {
-                convert: function(e) {
-                    for (var t = [], i = 0; i < e.length; ++i) {
-                        var o = e[i];
-                        switch (o.type) {
-                        case "heading":
-                            t.push("<h1>"),
-                            t.push(n(o.content)),
-                            t.push("</h1>");
-                            break;
-                        case "paragraph":
-                            t.push("<p>"),
-                            t.push(n(o.content)),
-                            t.push("</p>");
-                            break;
-                        case "quotation":
-                            t.push("<blockquote>"),
-                            t.push(n(o.content)),
-                            t.push("</blockquote>");
-                            break;
-                        case "attribution":
-                            t.push('<blockquote class="attribution">'),
-                            t.push(n(o.content)),
-                            t.push("</blockquote>");
-                            break;
-                        case "magic":
-                            t.push(o.content);
-                            break;
-                        case "hrule":
-                            t.push("<hr>")
-                        }
+
+            var _contentToHTML = function(content) {
+                if (Array.isArray(content)) {
+                    var result = [];
+                    for (var i = 0; i < content.length; ++i) {
+                        var contentObj = content[i];
+                        result.push(_contentObjectToHTML(contentObj));
                     }
-                    return t.join("")
-                },
-                convertLine: n
-            }
-        }()
+                    return result.join('');
+                } else {
+                    return _contentObjectToHTML(content);
+                }
+            };
+
+            var _paragraphsToHTML = function(paragraphs) {
+                var result = [];
+                for (var i = 0; i < paragraphs.length; ++i) {
+                    var paragraph = paragraphs[i];
+                    switch (paragraph.type) {
+                    case 'heading':
+                        result.push('<h1>');
+                        result.push(_contentToHTML(paragraph.content));
+                        result.push('</h1>');
+                        break;
+                    case 'paragraph':
+                        result.push('<p>');
+                        result.push(_contentToHTML(paragraph.content));
+                        result.push('</p>');
+                        break;
+                    case 'quotation':
+                        result.push('<blockquote>');
+                        result.push(_contentToHTML(paragraph.content));
+                        result.push('</blockquote>');
+                        break;
+                    case 'attribution':
+                        result.push('<blockquote class="attribution">');
+                        result.push(_contentToHTML(paragraph.content));
+                        result.push('</blockquote>');
+                        break;
+                    case 'magic':
+                        result.push(paragraph.content);
+                        break;
+                    case 'hrule':
+                        result.push('<hr>');
+                        break;
+                    }
+                }
+                return result.join('');
+            };
+
+            module.exports = {
+                convert: _paragraphsToHTML,
+                convertLine: _contentToHTML
+            };
+        }());
+
     }
     , {}]
 }, {}, [2]);
+
+$(function() {
+    i.convertJSONToGame(window.game.compiled, function(e, n) {
+        if (e) throw e;
+        // Instantiate UI targeting only the #content element
+        var i = new o(n, $("#content")); 
+        if (window.dendryUI = i, void 0 !== window.dendryModifyUI && window.dendryModifyUI(i)) return;
+        i.dendryEngine.beginGame();
+    });
+});

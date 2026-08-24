@@ -600,14 +600,13 @@ const Bar_Config = {
 // ==========================================
 window.updateBar = function(regionKey) {
     var config = Bar_Config[regionKey];
-    if (!config) return;
 
     var targetSelector = '#' + config.targetId;
     $(targetSelector).empty();
 
     var sceneId = window[config.starting_scene];
     var scene = dendryUI.game.scenes[sceneId];
-    if (!scene) return;
+    console.log(scene);
 
     // Run status on arrival if the left main sidebar
     if (config.isLeft) {

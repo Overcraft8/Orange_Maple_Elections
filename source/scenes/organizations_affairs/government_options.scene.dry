@@ -194,7 +194,15 @@ on-arrival: {!
 <div id="crown_corps_actions" style="padding: 2em;">
 </div>
 
-- @govt
+- @crown_corporations
+
+@crown_corporations
+title: Government Affairs
+view-if: time >= 6
+card-image: img/Saskatchewan_Legislature.jpg
+is-deck: true
+
+- #govt_two
 
 @saskpower_choices
 new-page: true

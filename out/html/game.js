@@ -595,11 +595,13 @@ const Bar_Config = {
     },
 };
 
+
 // ==========================================
 // Update for Unified thingies
 // ==========================================
 window.updateBar = function(regionKey) {
     var config = Bar_Config[regionKey];
+    if (!config) return;
 
     var targetSelector = '#' + config.targetId;
     $(targetSelector).empty();
@@ -608,11 +610,14 @@ window.updateBar = function(regionKey) {
     var scene = dendryUI.game.scenes[sceneId];
     console.log(scene);
 
+    if (!scene) return;
+
     // Run status on arrival if the left main sidebar
     if (config.isLeft) {
         var statusScene = dendryUI.game.scenes["status"];
         if (statusScene) dendryUI.dendryEngine._runActions(statusScene.onArrival);
     }
+
 
     dendryUI.dendryEngine._runActions(scene.onArrival);
 

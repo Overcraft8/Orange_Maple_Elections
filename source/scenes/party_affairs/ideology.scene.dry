@@ -19,7 +19,6 @@ The CCF(SS) is torn between many different ideological currents. What should be 
 - @managerial: Our main goal should be to exercise Democratic Socialism in government where we can. 
 - @labour: We should work with the trade unions to improve the lives of workers.
 - @reform: We should attempt to limit our excesses to improve our electability. 
-- @test: The secret Missing Option
 - @easy_discard
 
 @class_struggle
@@ -84,30 +83,3 @@ The Reformist wing is most in favour of loose cooperation or even an electoral a
 on-arrival: true_socialist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; managerial_dissent += 5
 
 We have changed ideologies. Many in the party feel unmoored.
-
-@test
-set-bg: img/weyburn_street.jpg
-is-hand: true
-max-cards: 6
-
-# Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
-
-- @here
-- @there
-- #advisor
-# - @shuffle_leadership_pinned
-
-@here
-title: Party Affairs
-card-image: img/all_join_ccf.jpg
-is-deck: true
-
-- #party_affairs
-
-@there
-title: Government Affairs
-view-if: time >= 6
-card-image: img/Saskatchewan_Legislature.jpg
-is-deck: true
-
-- #govt_affairs

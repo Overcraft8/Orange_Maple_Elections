@@ -603,12 +603,12 @@ window.updateBar = function(regionKey) {
     var config = Bar_Config[regionKey];
     if (!config) return;
 
-    var targetSelector = '#' + config.targetId;
-    $(targetSelector).empty();
+    var target = '#' + config.targetId;
+    $(target).empty();
 
     var sceneId = window[config.starting_scene];
     var scene = dendryUI.game.scenes[sceneId];
-    console.log(scene);
+    // console.log(scene);
 
     if (!scene) return;
 

@@ -23,8 +23,10 @@ on-arrival: {!
 !} 
 on-departure: {!
     var Scene = window.dendryUI.dendryEngine.state.toSceneId || '';
+    console.log(Scene);
     
     if (!Scene.startsWith('government_options')) {
+        console.log("got into this");
         var mid_panel = document.getElementById('mid_panel');
         var content = document.getElementById('content');
         var left_sidebar = document.getElementById('stats_sidebar'); 
@@ -40,6 +42,7 @@ on-departure: {!
             content.style.width = '';
         }
     }
+    console.log("Didn't get into this");
 !}
 
 <div id="government_options_top_panel" class='tab_container'>

@@ -161,7 +161,7 @@ on-arrival: {!
         </div>
     </div>
 
-[? if stc = 1: 
+
     <div id="sasktel_panel" class="gov_panel">
         <div class="h1_gov">STC</div>
 
@@ -173,7 +173,7 @@ on-arrival: {!
             </div>
         </div>
     </div>
-?]
+
 
 </div>
 

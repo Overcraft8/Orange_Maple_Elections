@@ -22,7 +22,7 @@ on-arrival: {!
     content.style.width = '50em';
 !} 
 on-departure: {!
-    var Scene = window.dendryUI.dendryEngine.state.toSceneId || '';
+    var Scene = window.dendryUI.dendryEngine.state.sceneId || '';
     console.log(Scene);
     
     if (!Scene.startsWith('government_options')) {

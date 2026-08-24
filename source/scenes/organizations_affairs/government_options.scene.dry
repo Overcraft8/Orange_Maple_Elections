@@ -40,8 +40,6 @@ on-departure: {!
     content.style.width = '';
 !}
 
-- #party_affairs
-
 <div id="government_options_top_panel" class='tab_container'>
 
     <div id='crown_corps_button' class='tab_button' style="cursor: pointer;" onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>

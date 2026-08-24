@@ -202,7 +202,7 @@ view-if: time >= 6
 card-image: img/Saskatchewan_Legislature.jpg
 is-deck: true
 
-- #govt_two
+- #party_affairs
 
 @saskpower_choices
 new-page: true

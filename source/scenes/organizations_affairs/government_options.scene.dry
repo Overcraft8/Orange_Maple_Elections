@@ -177,10 +177,12 @@ on-arrival: {!
         </div>
     </div>
 
-
 </div>
 
-- @return_gov: Return 
+
+- @return_gov: Return
+- @saskpower_choices: SaskPower?
+
 
 @saskpower_choices
 

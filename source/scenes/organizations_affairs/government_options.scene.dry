@@ -178,7 +178,6 @@ on-arrival: {!
 
 
 - @return_gov: Return
-- @saskpower_choices: SaskPower?
 
 
 @saskpower_choices

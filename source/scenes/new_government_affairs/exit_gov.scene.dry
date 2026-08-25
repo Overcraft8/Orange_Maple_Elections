@@ -1,8 +1,6 @@
 title: Exit Government scene
-on-departure: {!
-
-    
-// This scene is just to restore the previous HTML elements to their standard styling hopefully
+on-arrival: {!
+    // This scene is just to restore the previous HTML elements to their standard styling hopefully
     var Scene = window.dendryUI.dendryEngine.state.sceneId || '';
     // console.log(Scene);
     
@@ -21,8 +19,10 @@ on-departure: {!
         content.style.maxWidth = '';
         content.style.width = '';
     }
-
+!}
+on-departure: {!
 
     // window.changeTab('center', 'main', 'none');
     window.dendryUI.dendryEngine.goToScene('main');
 !}
+go-to: main

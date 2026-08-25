@@ -28,7 +28,7 @@ go-to: exit_gov
 
 @power_buyout
 subtitle: -1 budget, +10% Market Share
-choose-if: budget >= 1 and economic_data.electricity.marketshare[0] >= 0.1
+choose-if: budget >= 1 and economic_data[electricity][marketshare][0] >= 0.1
 on-arrival: {!
     var market_info = Q.economic_data.electricity.marketshare; 
     market_info[0] -= 0.1;

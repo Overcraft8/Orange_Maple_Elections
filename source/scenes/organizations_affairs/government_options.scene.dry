@@ -24,16 +24,13 @@ on-arrival: {!
 
 <div id="government_options_top_panel" class='tab_container'>
 
-    <div id='crown_corps_button' class='tab_button'  onclick="window.ChangeTab('center', 'government_options.crown_corps_options', 'crown_corps_button');">Crown Corporations</div>
+    <div id='crown_corps_button' class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.crown_corps_options');">Crown Corporations</div>
 
     <div id='ministries_button' class='tab_button'>Ministries</div>
 
     <div id="back_gov_button"  class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('exit_gov');">Back</div>
 
 </div>
-
-
-<div >
 
 <!-- 
     <ul class="choices">

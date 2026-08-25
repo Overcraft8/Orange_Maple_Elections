@@ -88,7 +88,7 @@ on-arrival: {!
                         ">
                             <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                 <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f; text-transform: capitalize;">${sectorName}</span>
-                                <!-- <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span> -->
+                                <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
                                 <figure class="pie_chart" data-tooltip="${tooltipText}" style="
                                     background: conic-gradient(
                                         rgba(90, 90, 209, 0.9) 0% ${stop1}%, 

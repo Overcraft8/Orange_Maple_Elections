@@ -14,27 +14,57 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 
 
 @saskpower_monopoly
-subtitle: -5 budget, 100% Market Share
+subtitle: -8 budget, 100% Market Share, Increased Capital Flight
 view-if: 1 = 1
-choose-if: budget >= 20
+choose-if: budget >= 8
+on-arrival: {!
+    var market_info = Q.economic_data.electricity.marketshare; 
+    market_info[0] = 0; 
+    market_info[1] = 0; 
+    market_info[2] = 1;
+    Q.budget -= 8; 
+!}
 go-to: exit_gov
 
 @power_buyout
 subtitle: -1 budget, +10% Market Share
-choose-if: budget >= 1 
+choose-if: budget >= 1; economic_data.electricity.marketshare[0] >= 0.1
+on-arrival: {!
+    var market_info = Q.economic_data.electricity.marketshare; 
+    market_info[0] -= 0.1;
+    market_info[2] += 0.1;
+    Q.budget -= 1;
+!}
 go-to: exit_gov
 
 @power_sellout
 subtitle: +1 budget, -10% Market Share
-on-arrival: budget += 1
+choose-if: economic_data.electricity.marketshare[2] >= 0.1
+on-arrival: {! 
+    var market_info = Q.economic_data.electricity.marketshare; 
+    market_info[0] -= 0.1;
+    market_info[2] += 0.1;
+    Q.budget += 1;
+!}
 go-to: exit_gov
 
 @electrical_coop_sellout
-subtitle: -10% Market Share
+subtitle: -10% Market Share, +10% Co-op Market Share
+choose-if: economic_data.electricity.marketshare[2] >= 0.1
+on-arrival: {!
+    var market_info = Q.economic_data.electricity.marketshare; 
+    market_info[2] -= 0.1;
+    market_info[1] += 0.1;
+!}
 go-to: exit_gov
 
 
 @rural_electrification
 subtitle: -1 budget
 choose-if: budget >= 1
+on-arrival: {!
+    var electricity = Q.economic_data.electricity
+    // This increases economic contribution
+    electricity[1] += 1;
+!}
 go-to: exit_gov

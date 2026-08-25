@@ -43,6 +43,8 @@ on-arrival: {!
 <ul class="choices"><li><a href="#" data-choice="0">Back to main</a></li></ul>
 -->
 
+- @exit_gov: Continue
+
 @crown_corps_options 
 new-page: true
 on-arrival: {!
@@ -121,6 +123,27 @@ on-arrival: {!
         // Save the full combined container to a Q variable so you can display it all at once
         Q.all_crown_cards_html = containerHtml;
     }
+/* 
+    for (crown of Q.crown_corps) {
+        var marketshare = crown.marketshare; 
+        var Name = crown.Name;
+        var mission = crown.mission;
+        var sector = Q.crown_economic_pairs[crown];
+        var crown_element = `<div id="${crown + '_panel'}" class="gov_panel">
+        <div class="h1_gov">${Name}</div>
+
+        <div id='${crown + '_stats'}' class='gov_stats'>
+            <div>: ${mission}[+ ${sector} : electrification +]</div>
+            <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
+            <div class='tab_container'>
+                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.saskpower_choices');">Saskpower Actions</div>
+            </div>
+        </div>
+    </div>`
+    }
+*/
+
+
 !}
 
 <!--
@@ -129,7 +152,7 @@ on-arrival: {!
 </div>
 -->
 
-= The Crown Corporations
+<h1 style="margin: 0 0 0 0;">The Crown Corporations</h1>
 
 <div style="font-size: 0.8em; text-align: center;">(Updated Annually)</div>
 
@@ -166,7 +189,7 @@ on-arrival: {!
         <div class="h1_gov">STC</div>
 
         <div id='stc_stats' class='gov_stats'>
-            <div>STC Annual Ridership: [+ state_transport : stc +]</div>
+            <div>STC Ridership: [+ state_transport : stc +]</div>
             <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
             <div class='tab_container'>
                 <div id='stc_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.stc_choices');">STC Actions</div>

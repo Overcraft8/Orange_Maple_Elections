@@ -49,9 +49,8 @@
     box-sizing: border-box;
 }
 
-/* Ensures the market share section sits neatly at the bottom */
+
 .market_share_wrapper {
     margin-top: auto;
-    padding-top: 10px;
     box-sizing: border-box;
 }

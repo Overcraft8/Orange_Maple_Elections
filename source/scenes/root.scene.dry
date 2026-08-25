@@ -937,29 +937,49 @@ Q.economic_data = {
     },
     'telecoms' : {
         'marketshare' : [[0.9, 0, 0.1], 4]
-    }
+    },
+    'transport' : {
+        'marketshare' : [[1, 0, 0], 2]
+    }, 
 };
 
 Q.crown_economic_pairs = {
     'saskpower' : 'electricity', 
-    'sasktel' : 'telecoms'
+    'sasktel' : 'telecoms',
+    'stc' : 'transport'
 };
 
 Q.crown_corps = {
     'saskpower' : {
         'revenue' : 4, 
         'expenses' : 2, 
-        'marketshare' : Q.economic_data['electricity'].marketshare[0][2]
+        // marketshare indices pointing to state ownership
+        'marketshare' : Q.economic_data['electricity'].marketshare[0][2],
+        'Name' : 'SaskPower',
+        'mission' : 'Electrification',
+        'qdisplay' : 'electrification'
     },
     'sasktel' : {
         'revenue' : 6, 
         'expenses' : 3, 
-        'marketshare' : Q.economic_data['telecoms'].marketshare[0][2]
+        'marketshare' : Q.economic_data['telecoms'].marketshare[0][2], 
+        'Name' : 'SaskTel',
+        'mission' : 'Telecom Access',
+        'qdisplay' : 'telecom'
+    },
+    'stc' : {
+        'revenue' : 3, 
+        'expenses' : 4, 
+        'marketshare' : Q.economic_data['stc'].marketshare[0][2], 
+        'Name' : 'STC', 
+        'mission' : 'STC Ridership',
+        'qdisplay' : 'stc'
     }
 };
 
 Q.electrification_pie_chart = 0;
 Q.telecoms_pie_chart = 0;
+Q.transport_pie_chart = 0;
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////

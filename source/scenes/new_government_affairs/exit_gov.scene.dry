@@ -20,9 +20,3 @@ on-arrival: {!
         content.style.width = '';
     }
 !}
-on-departure: {!
-
-    // window.changeTab('center', 'main', 'none');
-    window.dendryUI.dendryEngine.goToScene('main');
-!}
-go-to: main

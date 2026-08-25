@@ -32,18 +32,7 @@ on-arrival: {!
 
 </div>
 
-<!-- 
-    <ul class="choices">
-        <a href="#" data-choice="0">
-            <div id="ministries_button" class="tab_button" style="position: absolute; right: 1.2em;">Back</div>
-         </a>
-    </ul>
-    
-
-<ul class="choices"><li><a href="#" data-choice="0">Back to main</a></li></ul>
--->
-
-- @exit_gov: Continue
+- @exit_gov: Exit Government Affairs
 
 @crown_corps_options 
 new-page: true

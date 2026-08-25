@@ -62,6 +62,7 @@ island_falls_plant.jpg https://archive.org/details/PC011107
 sask_farming.jpg
 grain_elevator.jpg
 bank.png
+regina_trolleybus.jpg
 
 
 // -----------------------------------

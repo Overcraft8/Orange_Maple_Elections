@@ -38,6 +38,10 @@ window.westminster = function(container_id, forming_government) {
         }
     };
 
+    // This removes one seat from the SOTH party
+    var gov_spk_entry = governing_parties_list.find(p => p[0] == speaker_party);
+    if (gov_spk_entry) gov_spk_entry[1] -= 1;
+
     // Now let's get seats and id for opposition parties
     for (var party of parties_list) {
         if (!Q[party + '_in_government']) {
@@ -51,15 +55,6 @@ window.westminster = function(container_id, forming_government) {
     // This will color the Speaker with their party
     if (!brit_mode && speaker_party) {
         soth = `<circle id="soth" class="seat ${speaker_party}" cx="15" cy="65" r="6"></circle>`;
-    }
-
-    // This finds the speaker party in the data var and subtracts one seat for the SOTH
-    if (data && speaker_party) {
-        var speaker_entry = data.find(p => p.id == speaker_party);
-        if (speaker_entry) {
-            speaker_entry.seats -= 1;
-            console.log(speaker_entry.seats)
-        }
     }
 
     // We will build all the circles in a string first, then append them all at once.

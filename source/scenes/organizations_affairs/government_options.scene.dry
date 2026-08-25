@@ -211,7 +211,7 @@ on-arrival: budget += 1
 go-to: exit_gov
 
 @electrical_coop_sellout
-subtitle: -10% Market Share, +1 budget
+subtitle: -10% Market Share
 go-to: exit_gov
 
 

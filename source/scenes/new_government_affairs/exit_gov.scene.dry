@@ -20,3 +20,5 @@ on-arrival: {!
         content.style.width = '';
     }
 !}
+
+- @main: Return to Main

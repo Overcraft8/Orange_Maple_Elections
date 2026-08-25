@@ -1,0 +1,7 @@
+
+(..0) <span style='color: #c71313;'>[+ electrification +]%</span>
+(0..20) <span style='color: #c76d13;'>[+ electrification +]%</span>
+(20..40) <span style='color: #a79302;'>[+ electrification +]%</span>
+(40..60) <span style='color: #768513;'>[+ electrification +]%</span>
+(60..80) <span style='color: #528415;'>[+ electrification +]%</span>
+(80..) <span style='color: #10630e;'>[+ electrification +]%</span>

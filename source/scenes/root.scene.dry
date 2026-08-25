@@ -513,9 +513,6 @@ Q.healthcarequality = "Basic";
 Q.rural_poverty = (10).toFixed(1);
 //  
 //                   Farmers living standards
-// Access to electricity
-Q.electrification = 5;
-Q.telecoms = 10;
 // Access to sanitation
 Q.rural_sanitation = 3;
 Q.rural_telephone = 20;
@@ -1124,6 +1121,14 @@ Q.old_sapd_r = 0;
 Q.stc = 1; 
 Q.sasktel = 1; 
 Q.saskpower = 1; 
+
+
+
+
+// Access to electricity
+Q.state_transport = 0;
+Q.electrification = 5;
+Q.telecoms = 10;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

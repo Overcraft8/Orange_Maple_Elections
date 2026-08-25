@@ -1,0 +1,7 @@
+
+(..0) <span style='color: #c71313;'>[+ telecoms +]%</span>
+(0..20) <span style='color: #c76d13;'>[+ telecoms +]%</span>
+(20..40) <span style='color: #a79302;'>[+ telecoms +]%</span>
+(40..60) <span style='color: #768513;'>[+ telecoms +]%</span>
+(60..80) <span style='color: #528415;'>[+ telecoms +]%</span>
+(80..) <span style='color: #10630e;'>[+ telecoms +]%</span>

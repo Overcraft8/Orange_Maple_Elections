@@ -189,7 +189,7 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 - @power_sellout: Sell Parts of SaskPower to Private Companies
 - @electrical_coop_sellout: Use SaskPower assets to establish Electrical Sector Worker's Cooperatives
 - @rural_electrification: Expand Access to Electricity
-- @return_gov: Return 
+- @return_crown: Return 
 
 
 @saskpower_monopoly

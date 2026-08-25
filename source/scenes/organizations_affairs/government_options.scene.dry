@@ -169,7 +169,7 @@ on-arrival: {!
             <div>STC Annual Ridership: [+ state_transport : stc +]</div>
             <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
             <div class='tab_container'>
-                <div id='stc_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.sasktel_choices');">STC Actions</div>
+                <div id='stc_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.stc_choices');">STC Actions</div>
             </div>
         </div>
     </div>
@@ -239,4 +239,8 @@ STC flavour text
 
 @ministries_options 
 
-= GOt into Ministries options
+= The Ministries
+
+WIP!
+
+    

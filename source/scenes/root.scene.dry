@@ -953,7 +953,6 @@ Q.crown_corps = {
     'saskpower' : {
         'revenue' : 4, 
         'expenses' : 2, 
-        // marketshare indices pointing to state ownership
         'marketshare' : Q.economic_data['electricity'].marketshare[0][2],
         'Name' : 'SaskPower',
         'mission' : 'Electrification',
@@ -970,7 +969,7 @@ Q.crown_corps = {
     'stc' : {
         'revenue' : 3, 
         'expenses' : 4, 
-        'marketshare' : Q.economic_data['stc'].marketshare[0][2], 
+        'marketshare' : Q.economic_data['transport'].marketshare[0][2], 
         'Name' : 'STC', 
         'mission' : 'STC Ridership',
         'qdisplay' : 'stc'

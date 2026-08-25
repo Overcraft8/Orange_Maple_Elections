@@ -56,11 +56,11 @@ on-arrival: {!
         for (var crown_id in Q.crown_economic_pairs) {
             
             var sectorName = Q.crown_economic_pairs[crown_id]; // ex., 'electricity', 'telecoms'
-            var districtData = Q.economic_data[sectorName]; 
+            var SectorData = Q.economic_data[sectorName]; 
 
             // Check for the data
-            if (districtData && districtData.marketshare) {
-                var sectorData = districtData.marketshare; 
+            if (SectorData && SectorData.marketshare) {
+                var sectorData = SectorData.marketshare; 
             
                 if (Array.isArray(sectorData)) {
                     

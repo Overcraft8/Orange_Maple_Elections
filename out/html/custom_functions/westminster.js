@@ -58,6 +58,7 @@ window.westminster = function(container_id, forming_government) {
         var speaker_entry = data.find(p => p.id == speaker_party);
         if (speaker_entry) {
             speaker_entry.seats -= 1;
+            console.log(speaker_entry.seats)
         }
     }
 

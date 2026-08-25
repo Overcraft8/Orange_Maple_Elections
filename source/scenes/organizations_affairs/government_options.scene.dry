@@ -140,7 +140,7 @@ on-arrival: {!
         <div class="h1_gov">SaskPower</div>
 
         <div id='saskpower_stats' class='gov_stats'>
-            <div>Electrification: [+ electrification : electrification +]%</div>
+            <div>Electrification: [+ electrification : electrification +]</div>
             <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
             <div class='tab_container'>
                 <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.saskpower_choices');">Saskpower Actions</div>
@@ -153,7 +153,7 @@ on-arrival: {!
         <div class="h1_gov">SaskTel</div>
 
         <div id='saskpower_tel' class='gov_stats'>
-            <div>Telecoms Access: [+ telecoms : telecom +]%</div>
+            <div>Telecoms Access: [+ telecoms : telecom +]</div>
             <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
             <div class='tab_container'>
                 <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.sasktel_choices');">SaskTel Actions</div>
@@ -227,6 +227,14 @@ go-to: exit_gov
 Sasktel flavor text
 
 - @return_crown: Return 
+
+@stc_Choices
+
+= Saskatchewan Transportation Company
+
+STC flavour text 
+
+- @return_crown: Return
 
 
 @ministries_options 

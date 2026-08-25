@@ -1,7 +1,7 @@
 
-(..0) <span style='color: #c71313;'>[+ state_transport +]%</span>
-(0..20) <span style='color: #c76d13;'>[+ state_transport +]%</span>
-(20..40) <span style='color: #a79302;'>[+ state_transport +]%</span>
-(40..60) <span style='color: #768513;'>[+ state_transport +]%</span>
-(60..80) <span style='color: #528415;'>[+ state_transport +]%</span>
-(80..) <span style='color: #10630e;'>[+ state_transport +]%</span>
+(..0) <span style='color: #c71313;'>Very Low</span>
+(0..20) <span style='color: #c76d13;'>Low</span>
+(20..40) <span style='color: #a79302;'>Middling</span>
+(40..60) <span style='color: #768513;'>Solid</span>
+(60..80) <span style='color: #528415;'>Respectable</span>
+(80..) <span style='color: #10630e;'>Superb</span>

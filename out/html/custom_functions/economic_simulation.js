@@ -54,7 +54,8 @@ window.economy_images = {
     'Government' : 'Saskatchewan_Legislature.jpg', 
     'Foresty' : 'placeholder',
     'electricity' : 'powerhouse.jpg',
-    'telecoms' : 'telecom_lines.jpg'
+    'telecoms' : 'telecom_lines.jpg', 
+    'transport' : 'regina_trolleybus.jpg'
 };
 
 

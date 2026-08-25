@@ -22,7 +22,8 @@ on-arrival: {!
     content.style.width = '50em';
 !}
 
-<div id="government_options_top_panel" class='tab_container'>
+
+<div id="government_options_top_panel" style="display: flex;" class='tab_container'>
 
     <div id='crown_corps_button' class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.crown_corps_options');">Crown Corporations</div>
 

@@ -46,72 +46,63 @@ on-arrival: {!
         for (var crown_id in Q.crown_economic_pairs) {
             
             var sectorName = Q.crown_economic_pairs[crown_id]; // ex., 'electricity', 'telecoms'
-            var SectorData = Q.economic_data[sectorName]; 
+            var sectorData = Q.economic_data[sectorName]; 
 
-            // Check for the data
-            if (SectorData && SectorData.marketshare) {
-                var sectorData = SectorData.marketshare; 
-            
-                if (Array.isArray(sectorData)) {
-                    
-                    var ownership = sectorData[0]; // [private, cooperative, state] ratios
-                    var contribution = sectorData[1]; // economic contribution
+            // Check for the data object and its properties
+            if (sectorData && sectorData.marketshare) {
+                var marketshare = sectorData.marketshare; 
+                var contribution = sectorData.contribution; 
 
-                    var privateShare = Math.round(ownership[0] * 100);
-                    var coopShare = Math.round(ownership[1] * 100);
-                    var stateShare = Math.round(ownership[2] * 100);
+                var privateShare = Math.round(marketshare.private * 100);
+                var coopShare = Math.round(marketshare.coop * 100);
+                var stateShare = Math.round(marketshare.state * 100);
 
-                    var stop1 = privateShare;
-                    var stop2 = privateShare + coopShare;
-                    var tooltipText = `Private (Blue): ${privateShare}%\nCo-op (Yellow): ${coopShare}%\nCrown (Orange): ${stateShare}%`;
+                var stop1 = privateShare;
+                var stop2 = privateShare + coopShare;
+                var tooltipText = `Private (Blue): ${privateShare}%\nCo-op (Yellow): ${coopShare}%\nCrown (Orange): ${stateShare}%`;
 
-                    var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
+                var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
 
-                    // This is the "market share" graphic
-                    var cardHtml = `
-                        <div class="project_container" style="
-                            position: relative; 
-                            display: flex; 
-                            flex-direction: column; 
-                            align-items: center; 
-                            justify-content: center; 
-                            text-align: center; 
-                            background-image: url('img/${imageName}');
-                            background-size: cover; 
-                            background-position: center;
-                            padding: 16px;
-                            min-width: 80px;
-                            color: #ffffff;
-                            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-                            border: 2px ridge #9c8c64;
-                            border-radius: 4px;
-                        ">
-                            <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
-                                <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f; text-transform: capitalize;">${sectorName}</span>
-                                <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
-                                <figure class="pie_chart" data-tooltip="${tooltipText}" style="
-                                    background: conic-gradient(
-                                        rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
-                                        rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 
-                                        rgba(222, 157, 103, 0.9) ${stop2}% 100%
-                                    );">
-                                </figure>
-                            </div>
+                // This is the "market share" graphic
+                var cardHtml = `
+                    <div class="project_container" style="
+                        position: relative; 
+                        display: flex; 
+                        flex-direction: column; 
+                        align-items: center; 
+                        justify-content: center; 
+                        text-align: center; 
+                        background-image: url('img/${imageName}');
+                        background-size: cover; 
+                        background-position: center;
+                        padding: 16px;
+                        min-width: 80px;
+                        color: #ffffff;
+                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+                        border: 2px ridge #9c8c64;
+                        border-radius: 4px;
+                    ">
+                        <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                            <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f; text-transform: capitalize;">${sectorName}</span>
+                            <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
+                            <figure class="pie_chart" data-tooltip="${tooltipText}" style="
+                                background: conic-gradient(
+                                    rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
+                                    rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 
+                                    rgba(222, 157, 103, 0.9) ${stop2}% 100%
+                                );">
+                            </figure>
                         </div>
-                    `;
+                    </div>
+                `;
 
-                    containerHtml += cardHtml;
-
-                    Q[sectorName + '_pie_chart'] = cardHtml;
-                }
+                containerHtml += cardHtml;
+                Q[sectorName + '_pie_chart'] = cardHtml;
             }
         }
         
-        // Close the master flex container
         containerHtml += '</div>';
-        
-        // Save the full combined container to a Q variable so you can display it all at once
-        Q.all_crown_cards_html = containerHtml;
+        Q.crown_corps_container = containerHtml;
     }
 /* 
     for (crown of Q.crown_corps) {

@@ -21,7 +21,7 @@ on-arrival: {!
         content.style.width = '';
     }
 
-    // button_container.remove();
+    button_container.style.display = 'none';
 !}
 
 - @main: Return to Main

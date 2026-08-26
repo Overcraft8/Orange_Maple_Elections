@@ -937,7 +937,8 @@ Q.economic_data = {
             'coop': 0,
             'state': 0.2
         },
-        'contribution' : 5
+        'contribution' : 5,  // Contribution measuring economic scale
+        'business_climate' : 89 // Business Climate being warmness to private enterprise
     },
     'telecoms' : {
         'marketshare' : {
@@ -945,7 +946,8 @@ Q.economic_data = {
             'coop': 0,
             'state': 0.1
         },
-        'contribution' : 4
+        'contribution' : 4, 
+        'business_climate' : 95
     },
     'transport' : {
         'marketshare' : {
@@ -953,7 +955,8 @@ Q.economic_data = {
             'coop': 0,
             'state': 0
         },
-        'contribution' : 2
+        'contribution' : 2, 
+        'business_climate' : 100
     }, 
 };
 
@@ -963,32 +966,37 @@ Q.crown_economic_pairs = {
     'stc' : 'transport'
 };
 
-Q.crown_corps = {
-    'saskpower' : {
-        'revenue' : 4, 
-        'expenses' : 2, 
-        'marketshare' : Q.economic_data.electricity.marketshare.state,
-        'Name' : 'SaskPower',
-        'mission' : 'Electrification',
-        'qdisplay' : 'electrification'
+
+Q.saskpower = {
+    'revenue' : {
+        'rates' : 4
     },
-    'sasktel' : {
-        'revenue' : 6, 
-        'expenses' : 3, 
-        'marketshare' : Q.economic_data.telecoms.marketshare.state, 
-        'Name' : 'SaskTel',
-        'mission' : 'Telecom Access',
-        'qdisplay' : 'telecom'
+    'expenses' : {
+        'admin' : 3, 
+        'maintenance' : 1
     },
-    'stc' : {
-        'revenue' : 3, 
-        'expenses' : 4, 
-        'marketshare' : Q.economic_data.transport.marketshare.state, 
-        'Name' : 'STC', 
-        'mission' : 'STC Ridership',
-        'qdisplay' : 'stc'
-    }
-};
+    'marketshare' : Q.economic_data.electricity.marketshare.state,
+    'Name' : 'SaskPower',
+    'mission' : 'Electrification',
+    'qdisplay' : 'electrification'
+},
+Q.sasktel =  {
+    'revenue' : 6, 
+    'expenses' : 3, 
+    'marketshare' : Q.economic_data.telecoms.marketshare.state, 
+    'Name' : 'SaskTel',
+    'mission' : 'Telecom Access',
+    'qdisplay' : 'telecom'
+},
+Q.stc = {
+    'revenue' : 3, 
+    'expenses' : 4, 
+    'marketshare' : Q.economic_data.transport.marketshare.state, 
+    'Name' : 'STC', 
+    'mission' : 'STC Ridership',
+    'qdisplay' : 'stc'
+}
+
 
 Q.electrification_pie_chart = 0;
 Q.telecoms_pie_chart = 0;

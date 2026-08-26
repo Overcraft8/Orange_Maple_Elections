@@ -23,6 +23,7 @@ on-arrival: {!
     market_info.coop = 0; 
     market_info.state = 1;
     Q.treasury -= 8; 
+    Q.economic_data.electricity.business_climate - 100;
 !}
 go-to: exit_gov
 
@@ -65,5 +66,29 @@ choose-if: treasury >= 1
 on-arrival: {!
     Q.economic_data.electricity.contribution += 1;
     // This increases economic contribution
+!}
+go-to: exit_gov
+
+@saskpower_rates
+
+We can set the rates for SaskPower.
+
+- @lower_saskpower_rates: Lower SaskPower Rates
+- @raise_saskpower_rates: Raise SaskPower Rates
+- @prevScene: Return
+
+@lower_saskpower_rates
+on-arrival: {!
+    if (Q.saskpower_revenue.rates > 0) {
+        Q.saskpower.revenue.rates -= 1;
+    }
+!}
+go-to: exit_gov
+
+@raise_saskpower_rates
+on-arrival: {!
+    if (Q.saskpower_revenue.rates > 0) {
+        Q.saskpower.revenue.rates -= 1;
+    }
 !}
 go-to: exit_gov

@@ -1,0 +1,7 @@
+
+(..0) <span style='color: #28c713;'>Very Low</span>
+(0..1) <span style='color: #76c713;'>Low</span>
+(1..2) <span style='color: #a2a702;'>Middling</span>
+(2..3) <span style='color: #855613;'>Solid</span>
+(3..4) <span style='color: #841715;'>Respectable</span>
+(4..) <span style='color: #630e0e;'>Superb</span>

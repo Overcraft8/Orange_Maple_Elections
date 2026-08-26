@@ -183,14 +183,6 @@ on-arrival: {!
 
 - @return_gov: Return to Government Options
 
-@sasktel_choices
-
-= SaskTel
-
-Sasktel flavor text
-
-- @return_crown: Return 
-
 @stc_Choices
 
 = Saskatchewan Transportation Company

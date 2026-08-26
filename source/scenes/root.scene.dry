@@ -929,17 +929,31 @@ Q.moose_jaw_d_cps_seats = 2;
 /////////////////////////////////////////////////////////////////
 //---------------------------------------------------------------
 
-
+// Now this is an object *sigh*
 Q.economic_data = {
     'electricity' : {
-        // format being [[private, cooperative, state], total contribution]
-        'marketshare' : [[0.8, 0, 0.2], 5]
+        'marketshare' : {
+            'private': 0.8,
+            'coop': 0,
+            'state': 0.2
+        },
+        'contribution' : 5
     },
     'telecoms' : {
-        'marketshare' : [[0.9, 0, 0.1], 4]
+        'marketshare' : {
+            'private': 0.9,
+            'coop': 0,
+            'state': 0.1
+        },
+        'contribution' : 4
     },
     'transport' : {
-        'marketshare' : [[1, 0, 0], 2]
+        'marketshare' : {
+            'private': 1,
+            'coop': 0,
+            'state': 0
+        },
+        'contribution' : 2
     }, 
 };
 

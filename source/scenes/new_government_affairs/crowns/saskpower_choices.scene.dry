@@ -5,12 +5,16 @@ subtitle: Saskatchewan Power Corporation
 
 SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, purchasing independently-owned electrical utilities. 
 
+Current Rate: [+ saskpower.revenue.rates : saskpower_rates +]
+
+Electrification Progress: [+ electrification : electrification +]
+
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies
 - @power_sellout: Sell Parts of SaskPower to Private Companies
 - @electrical_coop_sellout: Use SaskPower assets to establish Electrical Sector Worker's Cooperatives
 - @rural_electrification: Expand Access to Electricity
-- @saskpower_rates: Set the Rates
+- @saskpower_rates: Set the Rate
 - @return_crown: Return 
 
 

@@ -19,6 +19,7 @@ on-arrival: {!
     if (content) {
         content.style.maxWidth = '';
         content.style.width = '';
+        content.innerHTML = '';
     }
 
     button_container.style.display = 'none';

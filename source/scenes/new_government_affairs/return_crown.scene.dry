@@ -1,2 +1,5 @@
 title: Return to Crowns
-go-to: government_options.crown_corps_options
+view-if: 1 = 1
+on-arrival: {!
+    window.dendryUI.dendryEngine.goToScene('government_options');
+!}

@@ -43,7 +43,7 @@ choose-if: economic_data.electricity.marketshare.state >= 0.1
 on-arrival: {! 
     var market_info = Q.economic_data.electricity.marketshare; 
     market_info.state -= 0.1;
-    market_info.coop += 0.1;
+    market_info.private += 0.1;
     Q.budget += 1;
 !}
 go-to: exit_gov
@@ -63,8 +63,7 @@ go-to: exit_gov
 subtitle: -1 budget
 choose-if: budget >= 1
 on-arrival: {!
-    var electricity = Q.economic_data.electricity
+    Q.economic_data.electricity.contribution += 1;
     // This increases economic contribution
-    electricity[1] += 1;
 !}
 go-to: exit_gov

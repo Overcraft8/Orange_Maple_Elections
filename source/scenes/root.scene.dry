@@ -933,29 +933,30 @@ Q.moose_jaw_d_cps_seats = 2;
 Q.economic_data = {
     'electricity' : {
         'marketshare' : {
-            'private': 80,
-            'cooperative': 0,
-            'state': 20     
+            'private': 0.8,
+            'coop': 0,
+            'state': 0.2
         },
         'contribution' : 5
     },
     'telecoms' : {
         'marketshare' : {
-            'private': 90,  
-            'cooperative': 0,
-            'state': 10     
+            'private': 0.9,
+            'coop': 0,
+            'state': 0.1
         },
         'contribution' : 4
     },
     'transport' : {
         'marketshare' : {
-            'private': 100, 
-            'cooperative': 0,
+            'private': 1,
+            'coop': 0,
             'state': 0
         },
         'contribution' : 2
     }, 
 };
+
 Q.crown_economic_pairs = {
     'saskpower' : 'electricity', 
     'sasktel' : 'telecoms',

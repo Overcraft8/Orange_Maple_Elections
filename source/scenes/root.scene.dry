@@ -967,7 +967,7 @@ Q.crown_corps = {
     'saskpower' : {
         'revenue' : 4, 
         'expenses' : 2, 
-        'marketshare' : Q.economic_data['electricity'].marketshare[0][2],
+        'marketshare' : Q.economic_data.electricity.marketshare.state,
         'Name' : 'SaskPower',
         'mission' : 'Electrification',
         'qdisplay' : 'electrification'
@@ -975,7 +975,7 @@ Q.crown_corps = {
     'sasktel' : {
         'revenue' : 6, 
         'expenses' : 3, 
-        'marketshare' : Q.economic_data['telecoms'].marketshare[0][2], 
+        'marketshare' : Q.economic_data.telecoms.marketshare.state, 
         'Name' : 'SaskTel',
         'mission' : 'Telecom Access',
         'qdisplay' : 'telecom'
@@ -983,7 +983,7 @@ Q.crown_corps = {
     'stc' : {
         'revenue' : 3, 
         'expenses' : 4, 
-        'marketshare' : Q.economic_data['transport'].marketshare[0][2], 
+        'marketshare' : Q.economic_data.transport.marketshare.state, 
         'Name' : 'STC', 
         'mission' : 'STC Ridership',
         'qdisplay' : 'stc'

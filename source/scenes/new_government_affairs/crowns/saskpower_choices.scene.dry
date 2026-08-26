@@ -21,7 +21,7 @@ on-arrival: {!
     var market_info = Q.economic_data.electricity.marketshare; 
     market_info.private = 0; 
     market_info.coop = 0; 
-    market_info.state = 1;
+    market_info.state = 100;
     Q.budget -= 8; 
 !}
 go-to: exit_gov
@@ -31,30 +31,30 @@ subtitle: -1 budget, +10% Market Share
 choose-if: budget >= 1
 on-arrival: {!
     var market_info = Q.economic_data.electricity.marketshare; 
-    market_info.private -= 0.1;
-    market_info.state += 0.1;
+    market_info.private -= 10;
+    market_info.state += 10;
     Q.budget -= 1;
 !}
 go-to: exit_gov
 
 @power_sellout
 subtitle: +1 budget, -10% Market Share
-choose-if: economic_data.electricity.marketshare.state >= 0.1
+choose-if: economic_data.electricity.marketshare.state >= 10
 on-arrival: {! 
     var market_info = Q.economic_data.electricity.marketshare; 
-    market_info.state -= 0.1;
-    market_info.coop += 0.1;
+    market_info.private += 10;
+    market_info.state -= 10;
     Q.budget += 1;
 !}
 go-to: exit_gov
 
 @electrical_coop_sellout
 subtitle: -10% Market Share, +10% Co-op Market Share
-choose-if: economic_data.electricity.marketshare.state >= 0.1
+choose-if: economic_data.electricity.marketshare.state >= 10
 on-arrival: {!
     var market_info = Q.economic_data.electricity.marketshare; 
-    market_info.state -= 0.1;
-    market_info.coop += 0.1;
+    market_info.state -= 10;
+    market_info.cooperative += 10;
 !}
 go-to: exit_gov
 

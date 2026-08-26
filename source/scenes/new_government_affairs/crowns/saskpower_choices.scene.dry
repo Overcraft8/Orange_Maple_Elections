@@ -39,7 +39,7 @@ go-to: exit_gov
 
 @power_sellout
 subtitle: +1 budget, -10% Market Share
-choose-if: economic_data.electricity.marketshare[2] >= 0.1
+choose-if: economic_data.electricity.marketshare >= 0.1
 on-arrival: {! 
     var market_info = Q.economic_data.electricity.marketshare; 
     market_info[0] -= 0.1;
@@ -50,7 +50,7 @@ go-to: exit_gov
 
 @electrical_coop_sellout
 subtitle: -10% Market Share, +10% Co-op Market Share
-choose-if: economic_data.electricity.marketshare[2] >= 0.1
+choose-if: economic_data.electricity.marketshare >= 0.1
 on-arrival: {!
     var market_info = Q.economic_data.electricity.marketshare; 
     market_info[2] -= 0.1;

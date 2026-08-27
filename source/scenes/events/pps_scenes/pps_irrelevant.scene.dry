@@ -5,6 +5,11 @@ view-if: year = 1932 and month = 3
 priority: 2
 max-visits: 1
 face-image: img/graphics/progressive_poster.jpg
+on-arrival: {!
+    Q.support_cooperative_coalition = 0;
+    Q.lost_use_lease = 0;
+    Q.abandon_socialism = 0;
+!}
 
 = The Progressives flailing
 
@@ -30,16 +35,16 @@ The PPS is concerned about our socialist platform. We must make concessions to e
 - @pps_cancel: They ask too much of us
 
 @remove_use_lease
-on-arrival: reformist_strength += 20; reformist_dissent -= 20
+on-arrival: reformist_strength += 20; reformist_dissent -= 20; lost_use_lease = 1; ufc_relations -= 20; farmers_ccf_ss -= 15
 subtitle: This was a policy approved by the UFC(SS)!
 go-to: pps_merge_yes
 
 @abandon_socialism
-on-arrival: reformist_strength += 30; reformist_dissent -= 30
+on-arrival: reformist_strength += 30; reformist_dissent -= 30; abandon_socialism = 1; fc_relations -= 30; farmers_ccf_ss -= 10
 go-to: pps_merge_yes
 
 @support_cooperative_coalition
-on-arrival: reformist_strength += 10; reformist_dissent -= 10
+on-arrival: reformist_strength += 10; reformist_dissent -= 10; support_cooperative_coalition = 1; ufc_relations -= 15; farmers_ccf_ss -= 10
 subtitle: Anderson's government seems destined to fall however...
 go-to: pps_merge_yes
 
@@ -80,6 +85,16 @@ on-arrival: {!
     Q.southeast_d_ccf_ss_seats += 2; 
     Q.southwest_d_pps_seats -= 1; 
     Q.southwest_d_ccf_ss_seats += 1;
-    window.updateBar('left');
     Q.ccf_ss_name = 'PFLP';
+    window.updateBar('left');
 !}
+
+The influx of Progressives into our party dilutes our socialist origins. The more moderate wing of our party is satisfied and believes that our move to the right will allow us to maneuver around the inevitable red-baiting we will receive in the 1934 General Election. 
+
+The left wing of the party, representing much of the leadership however, is cautious that such a swing right-wards will lead to us becoming no better than the UFA in Alberta, an anti-establishment government that gradually lost it's radical elements until it was hardly recognizable. 
+
+[? if support_cooperative_coalition : Our decision to support the Cooperative Coalition is heavily controversial. Many believe Anderson's government to be a sinking ship that the PFLP has just waded onto. However, we can now influence Anderson's government from within. ?]
+
+[? if lost_use_lease : Our decision to abandon our use-lease platform is demoralizing for the UFC(SS) which had enthusiastically paraded the programme as a new path for Saskatchewan farmers. Our relations with them have deterioriated slightly though they remain affiliated with us. ?]
+
+[? if abandon_socialism : Our decision to abandon all notions of Socialism are disheartening to our radical membership. Many of them had sought a radical alternative to the PPS, not a fusion of our two parties. Already, there are clamours for the UFC(SS) to disaffiliate with us and seek a different political path without us. ?]

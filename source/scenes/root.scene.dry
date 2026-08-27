@@ -183,7 +183,7 @@ Q.ccf_ss_party_leader = "M.J. Coldwell";
 Q.ccf_ss_party_leader_img = "ColdwellMajorJames.jpg";
 Q.ccf_ss_president = "None";
 Q.ccf_ss_president_img = "ColdwellMajorJames.jpg";
-Q.ccf_ss_name = '[+ ccf_ss_name +]';
+Q.ccf_ss_name = 'FLP';
 
 
 Q.cp_s_leader = "None";

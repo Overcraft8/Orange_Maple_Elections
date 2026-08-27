@@ -65,6 +65,11 @@ const tooltipList = [{
     searchString: "CPC", 
     explanationText: "The Conservative Party of Canada"
 },
+// Other Provincial Parties
+{
+    searchString: "UFA", 
+    explanationText: "The United Farmers of Alberta"
+},
 // Below organizations
 {
     searchString: "KKK", 
@@ -174,6 +179,11 @@ const colourList = [{
     {
         word: "CCL", 
         style: "color: #b33a3a; font-weight: bold;"
+    },
+    // Other provincial parties: 
+    {
+        word: "UFA",
+        style: "color: #86a71b; font-weight: bold;"
     },
     // Below this for states of qdisplays
     /*

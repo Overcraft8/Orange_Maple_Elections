@@ -21,31 +21,31 @@ We can spend resources to aid the individual wings in their fight against the fo
 @manitoba_ccf_relations
 subtitle: A more moderate, pragmatic direction
 choose-if: resources >= 1
-on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources - 1;
+on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources -= 1;
 
 The Manitoba CCF is a more moderate wing of the CCF, attempting to balance the demands of labour and farmers. 
 
 @bc_ccf_relations
 subtitle: The BC wing is more Marxist than the others
 choose-if: resources >= 1
-on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources - 1;
+on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1;
 
 The British Columbia CCF is a more radical wing of the CCF, partly split by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of Canada and various Labour parties. 
 
 @alberta_ccf_relations
 subtitle: We could learn the tricks of Agrarian Populism
 choose-if: resources >= 1
-on-arrival: ccf_a_relation += 5; ccf_a_strength += 5; resources - 1;
+on-arrival: ccf_a_relation += 5; ccf_a_strength += 5; resources -= 1;
 
 @ontario_ccf_relations
 choose-if: resources >= 1
-on-arrival: ccf_on_relation += 5; ccf_on_strength += 5; resources - 1;
+on-arrival: ccf_on_relation += 5; ccf_on_strength += 5; resources -= 1;
 
 The Ontario CCF retains the most potential of the provincial wings, our representative in the largest province. However, it is deeply divided between the UFO (United Farmers of Ontario) and it's labour sections... 
 
 @national_ccf_relations
 choose-if: resources >= 1
-on-arrival: ccf_nat_relation += 5; ccf_nat_strength += 5; resources - 1;
+on-arrival: ccf_nat_relation += 5; ccf_nat_strength += 5; resources -= 1;
 
 The National CCF is the key to the future. While our provincial wings may well do good for themselves at the subnational level, true change can only occur once we hold Ottawa in the palms of our hands. 
 

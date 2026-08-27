@@ -213,7 +213,7 @@ Q.bennett_enabled = 0;
 // Does the [+ ccf_ss_name +] lead in City Police?
 Q.ccf_ss_prussia = 1;
 // Options: ccf_ss, lps, cps, scps
-Q.city_government = ccf_ss_name;
+Q.city_government = "ccf_ss";
 
 // The state of the country
 

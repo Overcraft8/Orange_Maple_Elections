@@ -180,8 +180,7 @@ on-arrival: {!
 
 </div>
 
-
-- @return_gov: Return to Government Options
+- @government_options: Return to Government Options
 
 @stc_Choices
 

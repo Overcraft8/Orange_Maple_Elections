@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: party_disunity_timer = 0 and (dissent >= 0.3 or (managerial_dissent > 30 and not moderates_resign) or (agrarian_dissent > 30 and not agrarians_resign) or (true_socialist_dissent > 30 and not sapd_formed) or (labour_dissent > 30 and not unions_independent) or (neorevisionist_dissent > 30 and neorevisionism))
 on-arrival: month_actions += 1; party_disunity_timer = 4
-card-image: img/Assemblysfraktion_der_CCF(SS).jpg
+card-image: img/Assemblysfraktion_der_[+ ccf_ss_name +].jpg
 frequency: 200
 tags: party_affairs
 

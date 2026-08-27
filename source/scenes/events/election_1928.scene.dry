@@ -314,8 +314,8 @@ for (var party of Q.parties) {
 }
 
 
-// The largest party can only be the CCF(SS), LPS, CPS, or SCPS.
-Q.largest_party = 'CCF(SS)';
+// The largest party can only be the [+ ccf_ss_name +], LPS, CPS, or SCPS.
+Q.largest_party = Q.ccf_ss_name;
 
 if (Q.lps_seats >= Q.ccf_ss_seats && Q.lps_seats >= Q.cps_seats && Q.lps_seats >= Q.scps_seats) {
     Q.largest_party = 'LPS';
@@ -422,8 +422,8 @@ on-display: {!
 data = [
     {
         "id": "ccf_ss",
-        "legend": "CCF(SS)",
-        "name": "CCF(SS)",
+        "legend": "[+ ccf_ss_name +]",
+        "name": "[+ ccf_ss_name +]",
         "seats": Q.ccf_ss_seats,
         "bench": Q.ccf_ss_in_government
     },
@@ -524,7 +524,7 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td><td>Seat Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **CCF(SS):** {!</td><td>!} **[+ ccf_ss_votes +]%** {!</td><td>!} **[+ ccf_ss_vote_change +]** {!</td><td>!}  **[+ ccf_ss_seats +]** {!</td><td>!}  **[+ seats_change_ccf_ss +]**{!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **[+ ccf_ss_name +]:** {!</td><td>!} **[+ ccf_ss_votes +]%** {!</td><td>!} **[+ ccf_ss_vote_change +]** {!</td><td>!}  **[+ ccf_ss_seats +]** {!</td><td>!}  **[+ seats_change_ccf_ss +]**{!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ sapd_vote_change +] {!</td><td>!} [+ seat_change_sapd +]{!</td></tr>!} ?]
 
@@ -551,7 +551,7 @@ go-to: coalition_menu
             {!<th>District</th>!}
             {!<th>Seats</th>!}
             {!<th>CP(S)</th>!}
-            {!<th>CCF(SS)</th>!}
+            {!<th>[+ ccf_ss_name +]</th>!}
             {!<th>PPS</th>!}
             {!<th>LPS</th>!}
             {!<th>CPS</th>!}
@@ -653,9 +653,9 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Liberal-CCF Coalition (CCF(SS) + LPS): [+ lps_coalition +]%
+Liberal-CCF Coalition ([+ ccf_ss_name +] + LPS): [+ lps_coalition +]%
 
-Progressive-CCF Coalition (CCF(SS) + PPS): [+ pps_coalition +]%
+Progressive-CCF Coalition ([+ ccf_ss_name +] + PPS): [+ pps_coalition +]%
 
 Bourgeois Coalition (PPS + LPS + CPS + Others): [+ bourgeois_coalition +]%
 
@@ -691,10 +691,10 @@ There are some potential coalition arrangements.
 
 @ccf_ss_majority
 title: We have achieved a majority!
-subtitle: CCF(SS) ([+ ccf_ss_seats +])
-unavailable-subtitle: CCF(SS) ([+ ccf_ss_seats +]) We do not have enough support.
+subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +])
+unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +]) We do not have enough support.
 view-if: ccf_ss_seats >= 28 
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
 
@@ -707,10 +707,10 @@ go-to: ministries
 
 @ccf_ss_minority
 title: Could we rule in a minority?
-subtitle: CCF(SS) ([+ ccf_ss_seats +])
-unavailable-subtitle: CCF(SS) ([+ ccf_ss_seats +]) We do not have enough support.
-view-if: ccf_ss_seats <= 28 and largest_party = 'CCF(SS)'
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +])
+unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +]) We do not have enough support.
+view-if: ccf_ss_seats <= 28 and largest_party = ccf_ss_name
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
 
@@ -725,10 +725,10 @@ go-to: ministries
 
 @lps_coalition
 title: Will the Liberals coalition with us?
-subtitle: LPS + CCF(SS) ([+ lps_coalition +])
-unavailable-subtitle: CCF(SS) ([+ ccf_ss_r +]) We do not have enough support.
+subtitle: LPS + [+ ccf_ss_name +] ([+ lps_coalition +])
+unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_r +]) We do not have enough support.
 view-if: lps_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The LPS has demanded that we keep schools good. 
 
@@ -752,10 +752,10 @@ We have failed to convince the Liberals to coalition with us.
 
 @grand_coalition
 title: Could we coalition with the Liberals, Conservatives, and Progressives?
-subtitle: LPS + CPS + PPS + CCF(SS) ([+ grand_coalition +])
-unavailable-subtitle: CCF(SS) ([+ ccf_ss_r +]) We do not have enough support.
+subtitle: LPS + CPS + PPS + [+ ccf_ss_name +] ([+ grand_coalition +])
+unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_r +]) We do not have enough support.
 view-if: grand_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = "CCF(SS)"; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = "CCF(SS)"; foreign_minister = "Williams"; interior_minister_party = "CCF(SS)"; interior_minister = "Brockelbank"; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"; economic_minister_party = "CCF(SS)"; economic_minister = "Schmidt"; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 go-to: ministries
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
@@ -767,12 +767,12 @@ The work of the Party has finally borne fruition! We can now rule unhindered by 
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: CCF(SS) + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
-unavailable-subtitle: CCF(SS) + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_s_relation < 50 : We do not have adequate relations with the CP(S). ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+subtitle: [+ ccf_ss_name +] + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
+unavailable-subtitle: [+ ccf_ss_name +] + CP(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cp_s_relation < 50 : We do not have adequate relations with the CP(S). ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 28
 choose-if: (cp_s_relation >= 50 or (cp_s_party_leader == "Conciliators" and cp_s_relation >= 40)) and communist_coalition >= 3
 
-There are enough votes for a CCF(SS) + CP(S) coalition government, if such a thing were actually possible.
+There are enough votes for a [+ ccf_ss_name +] + CP(S) coalition government, if such a thing were actually possible.
 
 The far-right might attempt a coup, if such a coalition were formed.
 
@@ -822,22 +822,22 @@ go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: ccf_ss_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = "CCF(SS)"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_s_relation += 10
+on-arrival: ccf_ss_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = ccf_ss_name; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_s_relation += 10
 go-to: left_coalition_no_civil_war
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the CCF(SS), CP(S), and Prime Minister [+ prime_minister +], is George Hara Williams, who belongs to the agrarian faction of the CCF(SS), but was acceptable to the left due to his previous membership in the left-wing anti-war UCCF(SS).
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the [+ ccf_ss_name +], CP(S), and Prime Minister [+ prime_minister +], is George Hara Williams, who belongs to the agrarian faction of the [+ ccf_ss_name +], but was acceptable to the left due to his previous membership in the left-wing anti-war U[+ ccf_ss_name +].
 
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
-on-arrival: cp_s_goals_seen = 0; foreign_minister_party = "CCF(SS)"; interior_minister_party = "CCF(SS)"; justice_minister_party = "CCF(SS)"; labour_minister_party = "CCF(SS)"; rcmp_minister_party = "CCF(SS)"; economic_minister_party = "CCF(SS)"; finance_minister_party = "CCF(SS)"; agriculture_minister_party = "CCF(SS)"; rcmp_loyalty -= 0.05
+on-arrival: cp_s_goals_seen = 0; foreign_minister_party = ccf_ss_name; interior_minister_party = ccf_ss_name; justice_minister_party = ccf_ss_name; labour_minister_party = ccf_ss_name; rcmp_minister_party = ccf_ss_name; economic_minister_party = ccf_ss_name; finance_minister_party = ccf_ss_name; agriculture_minister_party = ccf_ss_name; rcmp_loyalty -= 0.05
 
 In response to the CP(S)'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
 The CP(S) has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
 
-Whatever their reasoning is, the CCF(SS) has control over the ministries of government.
+Whatever their reasoning is, the [+ ccf_ss_name +] has control over the ministries of government.
 
 @left_coalition_civil_war
 on-arrival: rcmp_loyalty += 0.1
@@ -927,7 +927,7 @@ The people's faith in democracy is shaken by this ordeal. Of course, the SCPSs a
 title: Tommy Douglas for Premier
 view-if: douglas_dead = 0
 subtitle: Douglas is popular within the party, and is the preferred candidate of the PPS and other parties.
-on-arrival: ccf_ss_in_government = 1; premier = "Douglas"; premier_party = "CCF(SS)"; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_ss_in_government = 1; premier = "Douglas"; premier_party = ccf_ss_name; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 Douglas's appointment as premier is approved by all our potential allies.
@@ -936,7 +936,7 @@ Douglas's appointment as premier is approved by all our potential allies.
 title: Major James Coldwell for Premier
 view-if: douglas_dead = 1
 subtitle: Major James Coldwell is a party leader, but can he also be premier?
-on-arrival: ccf_ss_in_government = 1; premier = "Coldwell"; premier_party = "CCF(SS)"; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_ss_in_government = 1; premier = "Coldwell"; premier_party = ccf_ss_name; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 Major James Coldwell's appointment as premier is approved by our potential allies.
@@ -955,7 +955,7 @@ The PPS party has significant qualms about appointing J. S. Woodsworth as premie
 @woodsworth_2
 subtitle: J. S. Woodsworth will be Premier.
 view-if: not historical_mode
-on-arrival: ccf_ss_in_government = 1; premier = "JS Woodsworth"; premier_party = "CCF(SS)"; leverage -= 10; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_ss_in_government = 1; premier = "JS Woodsworth"; premier_party = ccf_ss_name; leverage -= 10; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 We have promised to let the PPS have more influence in the government in response to the appointment of J. S. Woodsworth as premier.
@@ -1054,8 +1054,8 @@ subtitle: A new ministry to oversee the cooperatives.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: cooperatives_minister_party != "CCF(SS)"
-on-arrival: leverage -= 5; cooperatives_minister_party = "CCF(SS)"; cooperatives_minister = "Carlyle"
+view-if: cooperatives_minister_party != ccf_ss_name
+on-arrival: leverage -= 5; cooperatives_minister_party = ccf_ss_name; cooperatives_minister = "Carlyle"
 go-to: ministries
 
 @education
@@ -1064,8 +1064,8 @@ subtitle: Saskatchewan has many issues in education, and we should be in a posit
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: education_minister_party != "CCF(SS)"
-on-arrival: leverage -= 5; education_minister_party = "CCF(SS)"; education_minister = "Carlyle"
+view-if: education_minister_party != ccf_ss_name
+on-arrival: leverage -= 5; education_minister_party = ccf_ss_name; education_minister = "Carlyle"
 go-to: ministries
 
 @mineral_resoures
@@ -1074,8 +1074,8 @@ subtitle: Saskatchewan has many untapped natural resources that we could use to 
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: mineral_resources_minister_party != "CCF(SS)"
-on-arrival: leverage -= 5; mineral_resources_minister_party = "CCF(SS)"; mineral_resources_minister = "Carlyle"
+view-if: mineral_resources_minister_party != ccf_ss_name
+on-arrival: leverage -= 5; mineral_resources_minister_party = ccf_ss_name; mineral_resources_minister = "Carlyle"
 go-to: ministries
 
 @municipal
@@ -1084,8 +1084,8 @@ subtitle: We can utilize relations with the municipalities to develop the provin
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: municipal_minister_party != "CCF(SS)"
-on-arrival: leverage -= 5; municipal_minister_party = "CCF(SS)"; municipal_minister = "Carlyle"
+view-if: municipal_minister_party != ccf_ss_name
+on-arrival: leverage -= 5; municipal_minister_party = ccf_ss_name; municipal_minister = "Carlyle"
 go-to: ministries
 
 @transportation
@@ -1094,8 +1094,8 @@ subtitle: Saskatchewan is a large province, and transportation is a key issue.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: transportation_minister_party != "CCF(SS)"
-on-arrival: leverage -= 5; transportation_minister_party = "CCF(SS)"; transportation_minister = "Carlyle"
+view-if: transportation_minister_party != ccf_ss_name
+on-arrival: leverage -= 5; transportation_minister_party = ccf_ss_name; transportation_minister = "Carlyle"
 go-to: ministries
 
 @telephones_telegraphs
@@ -1104,8 +1104,8 @@ subtitle: Saskatchewan has an undeveloped telecommunications infrastructure, and
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: telephones_telegraphs_minister_party != "CCF(SS)"
-on-arrival: leverage -= 5; telephones_telegraphs_minister_party = "CCF(SS)"; telephones_telegraphs_minister = "Carlyle"
+view-if: telephones_telegraphs_minister_party != ccf_ss_name
+on-arrival: leverage -= 5; telephones_telegraphs_minister_party = ccf_ss_name; telephones_telegraphs_minister = "Carlyle"
 go-to: ministries
 
 
@@ -1118,11 +1118,11 @@ subtitle: Taking the Labour Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: labour_minister_party != "CCF(SS)"
-on-arrival: leverage -= 5; labour_minister_party = "CCF(SS)"; labour_minister = "Carlyle"
+view-if: labour_minister_party != ccf_ss_name
+on-arrival: leverage -= 5; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"
 go-to: ministries
 
-Carlyle King of the CCF(SS) has been appointed labour minister.
+Carlyle King of the [+ ccf_ss_name +] has been appointed labour minister.
 
 @finance
 title: Finance Ministry
@@ -1130,11 +1130,11 @@ subtitle: The Finance Ministry controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: finance_minister_party != "CCF(SS)"
-on-arrival: leverage -= 10; finance_minister_party = "CCF(SS)"; finance_minister = "Nicholson"
+view-if: finance_minister_party != ccf_ss_name
+on-arrival: leverage -= 10; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"
 go-to: ministries
 
-Alexander Nicholson of the CCF(SS) has been appointed Finance Minister.
+Alexander Nicholson of the [+ ccf_ss_name +] has been appointed Finance Minister.
 
 
 @justice
@@ -1143,19 +1143,19 @@ subtitle: The Justice Ministry controls the courts.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: justice_minister_party != "CCF(SS)"
-on-arrival: leverage -= 10; justice_minister_party = "CCF(SS)"; justice_minister = "Underhill"
+view-if: justice_minister_party != ccf_ss_name
+on-arrival: leverage -= 10; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"
 go-to: ministries
 
-Frank Underhill of the CCF(SS) has been appointed Justice Minister.
+Frank Underhill of the [+ ccf_ss_name +] has been appointed Justice Minister.
 
 @agriculture
 title: Agricultural Ministry
 subtitle: This is not our usual domain.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 10 
-view-if: agriculture_minister_party != "CCF(SS)"
-on-arrival: leverage -= 10; agriculture_minister_party = "CCF(SS)"; agriculture_minister = "Wright"
+view-if: agriculture_minister_party != ccf_ss_name
+on-arrival: leverage -= 10; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"
 go-to: ministries
 tags: mins_1928
 
@@ -1169,11 +1169,11 @@ subtitle: The Ministry responsible for the armed forces is not typically our dom
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 15 
-view-if: rcmp_minister_party != "CCF(SS)"
-on-arrival: leverage -= 15; rcmp_minister_party = "CCF(SS)"; rcmp_minister = "Leber"
+view-if: rcmp_minister_party != ccf_ss_name
+on-arrival: leverage -= 15; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"
 go-to: ministries
 
-Julius Leber of the CCF(SS) has been appointed RCMP Minister.
+Julius Leber of the [+ ccf_ss_name +] has been appointed RCMP Minister.
 
 
 
@@ -1186,56 +1186,56 @@ This coalition arrangement is tolerable to all.
 
 @drop_labour
 title: Drop the Labour Ministry.
-view-if: labour_minister_party = "CCF(SS)"
+view-if: labour_minister_party = ccf_ss_name
 on-arrival: labour_minister_party = "PPS"; labour_minister = "Stegerwald"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_interior
 title: Drop the Interior Ministry.
-view-if: interior_minister_party = "CCF(SS)"
+view-if: interior_minister_party = ccf_ss_name
 on-arrival: interior_minister_party = "PPS"; interior_minister = "Wirth"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_finance
 title: Drop the Finance Ministry.
-view-if: finance_minister_party = "CCF(SS)"
+view-if: finance_minister_party = ccf_ss_name
 on-arrival: finance_minister_party = "CPS"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "PPS" if in_lps_coalition or in_unity_government; finance_minister = "Köhler" if in_lps_coalition or in_unity_government
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
-view-if: economic_minister_party = "CCF(SS)"
+view-if: economic_minister_party = ccf_ss_name
 on-arrival: economic_minister_party = "CPS"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = lps_name if in_lps_coalition or in_unity_government; economic_minister = "Dietrich" if in_lps_coalition or in_unity_government;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_justice
 title: Drop the Justice Ministry.
-view-if: justice_minister_party = "CCF(SS)"
+view-if: justice_minister_party = ccf_ss_name
 on-arrival: justice_minister_party = lps_name; justice_minister = "Koch-Weser"; leverage += 10;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_foreign
 title: Drop the Foreign Ministry.
-view-if: foreign_minister_party = "CCF(SS)"
+view-if: foreign_minister_party = ccf_ss_name
 on-arrival: foreign_minister_party = "CPS"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "PPS" if in_lps_coalition or in_unity_government; foreign_minister = "Wirth" if in_lps_coalition or in_unity_government;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
-view-if: agriculture_minister_party = "CCF(SS)"
+view-if: agriculture_minister_party = ccf_ss_name
 on-arrival: agriculture_minister_party = lps_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "PPS" if in_lps_coalition; agriculture_minister = "Hermes" if in_lps_coalition
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_rcmp
 title: Drop the RCMP Ministry.
-view-if: rcmp_minister_party = "CCF(SS)"
+view-if: rcmp_minister_party = ccf_ss_name
 on-arrival: rcmp_minister_party = "I"; rcmp_minister = "Groener"; leverage += 15;
 tags: drop_mins_1928
 go-to: ministries

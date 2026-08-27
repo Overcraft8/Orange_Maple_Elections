@@ -9,9 +9,9 @@ tags: party_affairs, antifascism
 
 = The Iron Front
 
-The Iron Front is our new antifascist coordination front, consisting of the CCF(SS), the trade unions, and the UFC(SS). How should we use the Iron Front?
+The Iron Front is our new antifascist coordination front, consisting of the [+ ccf_ss_name +], the trade unions, and the UFC(SS). How should we use the Iron Front?
 
-[? if workers_ccf_ss < 45 or workers_ccf_ss < workers_scps or workers_ccf_ss < workers_cp_s : Unfortunately, the Iron Front's effectiveness is dragged down by the CCF(SS)'s unpopularity, as the CCF(SS) is no longer the dominant party among the workers. Many UFC(SS) members have left, and many workers are not interested. ?]
+[? if workers_ccf_ss < 45 or workers_ccf_ss < workers_scps or workers_ccf_ss < workers_cp_s : Unfortunately, the Iron Front's effectiveness is dragged down by the [+ ccf_ss_name +]'s unpopularity, as the [+ ccf_ss_name +] is no longer the dominant party among the workers. Many UFC(SS) members have left, and many workers are not interested. ?]
 
 - @defense: Rally for defense against the fascists with the UFC(SS).
 - @pacifism: Rally for pacifism, against nationalism and war.
@@ -46,7 +46,7 @@ unavailable-subtitle: The economic crisis is largely over now, and the public is
 view-if: wtb_adopted == 1
 on-arrival: workers_ccf_ss += 8*(1-dissent); unemployed_ccf_ss += 8*(1-dissent); new_middle_ccf_ss += 5*(1-dissent); old_middle_ccf_ss += 3*(1-dissent); farmers_ccf_ss += 3*(1-dissent);
 
-The WTB-Plan is the rallying point for the entire CCF(SS) and its affiliated organizations, including the Iron Front.
+The WTB-Plan is the rallying point for the entire [+ ccf_ss_name +] and its affiliated organizations, including the Iron Front.
 
 @antisemitism
 title: Rally against antisemitism and in defense of Jewish Germans.

@@ -6,7 +6,7 @@ view-if: neorevisionism > 0 and peoples_party_support >= 3 and peoples_party = 0
 on-arrival: peoples_party_timer = 6
 tags: party_affairs
 max-visits: 4
-#subtitle: Can the CCF(SS) move beyond the working class?
+#subtitle: Can the [+ ccf_ss_name +] move beyond the working class?
 
 = Building a People's Party
 

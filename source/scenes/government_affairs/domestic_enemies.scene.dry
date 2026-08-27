@@ -1,6 +1,6 @@
 title: Investigating Domestic Enemies
 on-arrival: month_actions += 1
-view-if: ccf_ss_in_government = 1 and interior_minister_party = "CCF(SS)"
+view-if: ccf_ss_in_government = 1 and interior_minister_party = ccf_ss_name
 #card-image: img/portraits/BrockelbankJohn.jpg
 #is-card: true
 #new-page: true

@@ -10,9 +10,9 @@ max-visits: 6
 
 = UFC (SS)
 
-The *UFC (SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the CCF(SS) and LPS, and [+ lps_name +], but by far the largest component is with the CCF(SS).
+The *UFC (SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the [+ ccf_ss_name +] and LPS, and [+ lps_name +], but by far the largest component is with the [+ ccf_ss_name +].
 
-[? if workers_ccf_ss < 46 or workers_ccf_ss < workers_scp or workers_ccf_ss < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the CCF(SS) is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_ccf_ss < 46 or workers_ccf_ss < workers_scp or workers_ccf_ss < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the [+ ccf_ss_name +] is no longer the dominant party among the workers. Many of its members have left. ?]
 
 - @militant: Fund more military-style training and equipment for the UFC (SS).
 - @militant_2: Use our existing resources to support more training for the UFC (SS).

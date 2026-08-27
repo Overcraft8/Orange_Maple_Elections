@@ -7,7 +7,7 @@ view-if: williams_advisor = 1
 
 = George Hara Williams
 
-George Hara Williams is the serving President of the CCF(SS). He is a farmers by trade and was a key figure in activating agrarian socialism across Saskatchewan. 
+George Hara Williams is the serving President of the [+ ccf_ss_name +]. He is a farmers by trade and was a key figure in activating agrarian socialism across Saskatchewan. 
 
 - @williams_international
 - @williams_foreign
@@ -26,8 +26,8 @@ go-to: international_relations
 @williams_foreign
 title: Foreign Policy
 subtitle: As Foreign Minister, Williams can set our foreign policy.
-unavailable-subtitle: [? if not ccf_ss_in_government: The CCF(SS) is not in government. ?] [? if foreign_minister_party != "CCF(SS)" : The CCF(SS) does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and ccf_ss_in_government and foreign_minister_party == "CCF(SS)"
+unavailable-subtitle: [? if not ccf_ss_in_government: The [+ ccf_ss_name +] is not in government. ?] [? if foreign_minister_party != ccf_ss_name : The [+ ccf_ss_name +] does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and ccf_ss_in_government and foreign_minister_party == ccf_ss_name
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
 go-to: foreign_policy
 

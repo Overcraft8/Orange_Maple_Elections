@@ -8,7 +8,7 @@ card-image: img/ccym_handbook.jpg
 
 = Party Organizations
 
-In addition to being a political party, the CCF(SS) is a social world onto itself, with a vast array of associated organizations which serve the social needs of their members from cradle to grave.
+In addition to being a political party, the [+ ccf_ss_name +] is a social world onto itself, with a vast array of associated organizations which serve the social needs of their members from cradle to grave.
 
 - @ufc_rel: Improve relations with the UFC(SS)
 - @sta_rel: Improve relations with the Teacher's union
@@ -50,7 +50,7 @@ unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; worker_ccf_ss += 1; labour_strength += 3; ccl_aff_prog += 1
 
-It is not enough for the CCF(SS) to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
+It is not enough for the [+ ccf_ss_name +] to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
 
 [? if ful_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
 

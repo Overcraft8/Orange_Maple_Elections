@@ -18,7 +18,7 @@ Tommy Douglas is a minister hailing from Saskatchewan. He is known for his skill
 title: Negotiating with the Coalition
 subtitle: Douglas can improve our relationships with our coalition partners.
 choose-if: advisor_action_timer <= 0 and ccf_ss_in_government = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government: The CCF(SS) is not in government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government: The [+ ccf_ss_name +] is not in government. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if ccf_ss_in_government = 1 and coalition_dissent > 0; pps_relation += 5; lps_relation += 5; cps_relation += 5
 
 We have improved our relations with the PPS, [+ lps_name +], and CPS, and reduced tensions with the coalition.
@@ -27,7 +27,7 @@ We have improved our relations with the PPS, [+ lps_name +], and CPS, and reduce
 @toleration
 title: Defending Toleration
 subtitle: Douglas supports the toleration arrangement with the bourgeois parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_toleration: The CCF(SS) is not in toleration. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_toleration: The [+ ccf_ss_name +] is not in toleration. ?]
 choose-if: ccf_ss_in_government = 0 and ccf_ss_toleration = 1 and advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; true_socialist_dissent -= 8; neorevisionist_dissent -= 8; agrarian_dissent -= 5;
 

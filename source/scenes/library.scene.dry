@@ -356,8 +356,8 @@ if (Q.sapd_formed && Q.sapd_r) {
 data = data.concat([
     {
         "id": "ccf_ss",
-        "legend": "CCF(SS)",
-        "name": "CCF(SS)",
+        "legend": Q.ccf_ss_name,
+        "name": Q.ccf_ss_name,
         "seats": Q.ccf_ss_seats
     },
     {

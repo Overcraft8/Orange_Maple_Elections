@@ -9,7 +9,7 @@ card-image: img/Farmer_Labour_News.jpg
 
 = Media
 
-[? if media_power >= 3: The CCF(SS) has little media presence and we are susceptible to the larger parties' monopoly on news...?]
+[? if media_power >= 3: The [+ ccf_ss_name +] has little media presence and we are susceptible to the larger parties' monopoly on news...?]
 
 - @establishing
 - @commercial

@@ -23,7 +23,7 @@ We can choose to focus on strengthening certain riding organizations which will 
 @urban_orgs
 title: Focus on the urban riding organizations
 
-The CCF(SS) is not particularly strong in the urban ridings, owing to our deep ties with the agrarian movement. 
+The [+ ccf_ss_name +] is not particularly strong in the urban ridings, owing to our deep ties with the agrarian movement. 
 
 - @decrease_urban_ridings: Decrease funding in the urban ridings
 - @increase_urban_ridings: Increase funding in the urban ridings
@@ -62,5 +62,5 @@ on-arrival: resources +=2; ccf_ss_southeast_d_orgs += 0.10;
 @rural_orgs
 title: Focus on the rural riding organizations
 
-The CCF(SS) is the strongest in the rural ridings, owing to our deep ties with the agrarian movement. 
+The [+ ccf_ss_name +] is the strongest in the rural ridings, owing to our deep ties with the agrarian movement. 
 

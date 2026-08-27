@@ -10,12 +10,12 @@ max-visits: 12
 
 = Inter-Party Relationships
 
-The CCF(SS) cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Liberal-CCF Coalition of the CCF(SS) and LPS,  parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The [+ ccf_ss_name +] cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Liberal-CCF Coalition of the [+ ccf_ss_name +] and LPS,  parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
 - @liberals: Strengthen our bonds with the Liberal Party.
 - @social_credit: Strengthen our bonds with the Social Credit Party.
 - @cp_s: Work towards repairing relationships with the Communist Party.
-- @ccf_ss_alone: The CCF(SS) can stand alone for now.
+- @ccf_ss_alone: The [+ ccf_ss_name +] can stand alone for now.
 - @easy_discard
 
 
@@ -33,7 +33,7 @@ The communists are suspicious of our overtures, especially the Stalinist leaders
 
 @cp_s_rectification_of_history
 
-One stumbling block for our relations with the CP(S) is our history of conflict, dating back to 1918 and 1919. The CP(S) is especially contemptuous of Gustav Noske, the CCF(SS) "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP(S) revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two CCF(SS)-turned-CP(S) leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the CP(S) is our history of conflict, dating back to 1918 and 1919. The CP(S) is especially contemptuous of Gustav Noske, the [+ ccf_ss_name +] "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP(S) revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two [+ ccf_ss_name +]-turned-CP(S) leaders who were killed during the suppression of the uprising.
 
 For further improvements in CP(S) relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 

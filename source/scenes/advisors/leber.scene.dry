@@ -7,7 +7,7 @@ new-page: true
 
 = Julius Leber
 
-Leber is a former army officer who turned against the military leaders of the Kapp Putsch in 1920, helping us put down the army's attempted coup. He is in favor of expanded democracy and building a broad popular base for the CCF(SS).
+Leber is a former army officer who turned against the military leaders of the Kapp Putsch in 1920, helping us put down the army's attempted coup. He is in favor of expanded democracy and building a broad popular base for the [+ ccf_ss_name +].
 
 - @democratic_rally
 - @military_affairs
@@ -28,8 +28,8 @@ Leber helps us to rally the people in defense of democracy.
 @military_affairs
 title: Military affairs
 subtitle: We can set our military policy.
-choose-if: advisor_action_timer == 0 and ccf_ss_in_government and rcmp_minister_party == "CCF(SS)"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government : The CCF(SS) is not in government. ?][? if rcmp_minister_party != "CCF(SS)": The CCF(SS) does not have the RCMP ministry. ?]
+choose-if: advisor_action_timer == 0 and ccf_ss_in_government and rcmp_minister_party == ccf_ss_name
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government : The [+ ccf_ss_name +] is not in government. ?][? if rcmp_minister_party != ccf_ss_name: The [+ ccf_ss_name +] does not have the RCMP ministry. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: military_policy
 

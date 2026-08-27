@@ -1,4 +1,4 @@
-title: CCF(SS) President
+title: [+ ccf_ss_name +] President
 new-page: true
 is-special: true
 tags: event
@@ -13,7 +13,7 @@ view-if: 2 = 1
 
 <p style="text-align: center; margin-bottom: 0;">[+ ccf_ss_president +]</p>
 
-The President of the CCF(SS) is the highest-ranking official within the party and the chief of the executive. The President is responsible for setting the overall direction of the party as well as it's funding and relationship with the Riding Associations. 
+The President of the [+ ccf_ss_name +] is the highest-ranking official within the party and the chief of the executive. The President is responsible for setting the overall direction of the party as well as it's funding and relationship with the Riding Associations. 
 
 [? if ccf_ss_president = "George Hara Williams" : George Hara Williams is a farmers by trade and de facto leader of the Agrarian wing of the party. ?]
 

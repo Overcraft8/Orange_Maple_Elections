@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: fiscal_policy_timer += 6; month_actions += 1
-view-if: ccf_ss_in_government = 1 and finance_minister_party = "CCF(SS)" and fiscal_policy_timer = 0
+view-if: ccf_ss_in_government = 1 and finance_minister_party = ccf_ss_name and fiscal_policy_timer = 0
 card-image: img/portraits/NicholsonAlexander.jpg
 go-to: fiscal_menu
 #subtitle: Issues of taxation, budget, and tariffs.

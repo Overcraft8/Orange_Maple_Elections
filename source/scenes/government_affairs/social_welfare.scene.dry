@@ -8,7 +8,7 @@ card-image: img/portraits/LucasLouise.jpg
 
 = Social Welfare Policy
 
-The social welfare program, including unemployment insurance, healthcare, and old-age care, is the proudest achievement of the CCF(SS) in our time in government. There is continuous pressure to dismantle the welfare system[? if black_thursday_seen = 1 :, especially given the economic crisis ?].
+The social welfare program, including unemployment insurance, healthcare, and old-age care, is the proudest achievement of the [+ ccf_ss_name +] in our time in government. There is continuous pressure to dismantle the welfare system[? if black_thursday_seen = 1 :, especially given the economic crisis ?].
 
 - @reduce_spending: Reduce spending on welfare.
 - @increase_spending_pre_depression: Increase spending on welfare.

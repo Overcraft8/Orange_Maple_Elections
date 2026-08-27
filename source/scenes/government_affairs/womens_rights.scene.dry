@@ -2,7 +2,7 @@ title: Women's Rights
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-view-if: ccf_ss_in_government = 1 and womens_rights_timer = 0 and premier_party == "CCF(SS)"
+view-if: ccf_ss_in_government = 1 and womens_rights_timer = 0 and premier_party == ccf_ss_name
 on-arrival: womens_rights_timer += 10; month_actions += 1
 card-image: img/portraits/EliasonFrank.jpg
 frequency: 50

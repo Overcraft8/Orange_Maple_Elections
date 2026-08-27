@@ -2,14 +2,14 @@ title: Agricultural Policy
 new-page: true
 is-card: true
 on-arrival: agricultural_policy_timer += 6; month_actions += 1
-view-if: ccf_ss_in_government = 1 and (agriculture_minister_party = "CCF(SS)") and agricultural_policy_timer == 0
+view-if: ccf_ss_in_government = 1 and (agriculture_minister_party = ccf_ss_name) and agricultural_policy_timer == 0
 card-image: img/portraits/WrightPercy.jpg
 tags: govt_affairs, cabinet
 #subtitle: Issues of farmers financing, grain purchasing, and land reform.
 
 = Agricultural Policy
 
-While agricultural policy has historically not been the domain of the CCF(SS), there is much need for policy in this area. Our urban constituencies hope for cheaper and more stable food supplies, while small farmers need economic relief. There is also the movement for land reform, to break up the large aristocratic estates and redistribute land to peasants.
+While agricultural policy has historically not been the domain of the [+ ccf_ss_name +], there is much need for policy in this area. Our urban constituencies hope for cheaper and more stable food supplies, while small farmers need economic relief. There is also the movement for land reform, to break up the large aristocratic estates and redistribute land to peasants.
 
 - @land_reform
 - @agricultural_finance

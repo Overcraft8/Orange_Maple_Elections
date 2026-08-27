@@ -1,4 +1,4 @@
-title: The CCF(SS)
+title: The [+ ccf_ss_name +]
 new-page: true
 is-special: true
 
@@ -51,7 +51,7 @@ Membership Change: [+ membership_change_trend +][+ membership_change_display +]
 
 @partyaffiliates
 
-= Party Affiliates of the CCF(SS)
+= Party Affiliates of the [+ ccf_ss_name +]
 
 [? if 1 == 1 : 
 <span style="color: #c32222;">**CCYM**</span> 
@@ -94,7 +94,7 @@ on-arrival: {!
 if (window && window.customgeneratebar) {
   window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#32c732", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
   window.customgeneratebar(Q.labour_dissent, "#091f43", "#347fef", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
-  window.customgeneratebar(Q.managerial_dissent, "#793f15", "#d26e28", "managerial_bar_dissent", 'The moderate wing of the CCF(SS)');
+  window.customgeneratebar(Q.managerial_dissent, "#793f15", "#d26e28", "managerial_bar_dissent", 'The moderate wing of our party');
   window.customgeneratebar(Q.true_socialist_dissent, "#1f0303", "#c32222", "true_socialist_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
  }
 

@@ -1,4 +1,4 @@
-title: CCF(SS) President Election
+title: [+ ccf_ss_name +] President Election
 new-page: true
 subtitle: Who will lead our party?
 tags: event
@@ -46,13 +46,13 @@ on-departure: {!
 
 = Selection of our President
 
-The time has come for the CCF(SS) to select a President. Five distinguished party members have been nominated though 3 have already declined to run. That leaves 2, George Williams and Major James Coldwell. 
+The time has come for the [+ ccf_ss_name +] to select a President. Five distinguished party members have been nominated though 3 have already declined to run. That leaves 2, George Williams and Major James Coldwell. 
 
 We must pick wisely...
 
 
-- @GeorgeWilliams: George Williams will surely lead the CCF(SS) to victory.
-- @Coldwell: Coldwell will surely lead the CCF(SS) to victory. 
+- @GeorgeWilliams: George Williams will surely lead the [+ ccf_ss_name +] to victory.
+- @Coldwell: Coldwell will surely lead the [+ ccf_ss_name +] to victory. 
 
 @GeorgeWilliams 
 on-arrival: farmers_ccf_ss += 4; agrarian_strength += 4; agrarian_dissent -= 4; ccf_ss_president = "George Hara Williams"; ccf_ss_president_img = "WilliamsHaraGeorge.jpg"

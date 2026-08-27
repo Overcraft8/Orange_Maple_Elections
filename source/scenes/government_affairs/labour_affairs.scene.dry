@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: labour_affairs_timer = 6; month_actions += 1; labour_affairs_seen = 1
-view-if: ccf_ss_in_government = 1 and labour_minister_party = "CCF(SS)" and labour_affairs_timer = 0 and strike_term_seen = 0
+view-if: ccf_ss_in_government = 1 and labour_minister_party = ccf_ss_name and labour_affairs_timer = 0 and strike_term_seen = 0
 card-image: img/portraits/KingCarlyle.jpg
 #subtitle: Addressing labour unrest and strikes.
 
@@ -21,7 +21,7 @@ The industrial Ruhr region is aflame with labour unrest. The employers have star
 subtitle: Popular among the workers, this will alienate the bourgeoisie.
 on-arrival: labour_dissent -= 5; true_socialist_dissent -= 5; workers_ccf_ss += 6*(1-dissent); coalition_dissent += 1; cps_relation -= 4; capital_strike_progress += 1 if cps_relation <= 30; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; labour_goal_completed += 1; inflation += 0.1; pro_labour += 1; strike_term_seen += 1; economic_growth -= 0.1;
 
-Supporting labour is always popular in the CCF(SS), although many of our coalition partners represent employers, and they are less enthused.
+Supporting labour is always popular in the [+ ccf_ss_name +], although many of our coalition partners represent employers, and they are less enthused.
 
 @support_employers
 subtitle: Popular among the bourgeoisie, much less so among the workers.

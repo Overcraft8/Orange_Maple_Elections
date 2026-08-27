@@ -1,7 +1,7 @@
 title: Education & Science
 new-page: true
 is-card: true
-view-if: ccf_ss_in_government and ccf_ss_prussia and premier_party = "CCF(SS)" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
+view-if: ccf_ss_in_government and ccf_ss_prussia and premier_party = ccf_ss_name and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
 on-arrival: education_science_timer += 9; month_actions += 1
 card-image: img/portraits/EinsteinAlbert.jpg
 go-to: ed_menu
@@ -43,7 +43,7 @@ view-if: not last_advisor_action
 
 @increase_science
 title: Increase funding for scientific research.
-choose-if: economic_minister_party = "CCF(SS)"
+choose-if: economic_minister_party = ccf_ss_name
 unavailable-subtitle: This requires the Economic Ministry.
 
 Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the Saskatchewanian Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
@@ -87,7 +87,7 @@ choose-if: science_funding >= 1
 unavailable-subtitle: We have not funded science.
 on-arrival: treasury += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_ccf_ss -= 5; workers_ccf_ss -= 2; lps_relation -= 5; unemployed += 0.3
 
-We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the CCF(SS).
+We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the [+ ccf_ss_name +].
 
 
 @structure
@@ -120,7 +120,7 @@ go-to: vote_of_no_confidence.vonc_menu if in_lps_coalition or in_grand_coalition
 
 # instant VONC from zentrum
 
-The CCF(SS), [+ lps_name +], CPS, and CP(S) vote in favor of secular education, overcoming the opposition of the religiously-oriented PPS Party and SCPS. We have funded secular community schools to replace some previous denominational schools.
+The [+ ccf_ss_name +], [+ lps_name +], CPS, and CP(S) vote in favor of secular education, overcoming the opposition of the religiously-oriented PPS Party and SCPS. We have funded secular community schools to replace some previous denominational schools.
 
 [? if in_lps_coalition or in_grand_coalition or in_unity_government: Of course, the PPS Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
 

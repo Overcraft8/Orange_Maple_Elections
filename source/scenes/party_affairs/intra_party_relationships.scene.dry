@@ -8,7 +8,7 @@ card-image: img/CCF/ccf_bc_poster.jpg
 
 = Intra-Party Relations
 
-The Cooperative Commonwealth Federation is a collective, formed by various provincial wings and an overlying National wing. Each is distinct in it's own way so our relationship with each provides leverage at the national level and information we could use in our own fight.  
+The Cooperative Commonwealth Federation is a collective, formed by various provincial wings and an overlaying National wing. Each is distinct in it's own way so our relationship with each provides leverage at the national level and information we could use in our own fight.  
 
 We can spend resources to aid the individual wings in their fight against the forces of establishment. 
 
@@ -45,7 +45,6 @@ The True Socialist faction is invigorated by our attempts to court these coastsi
 Our relations with the British Columbia CCF have warmed slightly. 
 
 @alberta_ccf_relations
-subtitle: We could learn the tricks of Agrarian Populism
 choose-if: resources >= 1
 on-arrival: {! 
 Q.ccf_a_relation += 5; 
@@ -60,7 +59,6 @@ Q.resources -= 1;
 Our relations with the Alberta CCF have warmed slightly. 
 
 @ontario_ccf_relations
-subtitle: The largest province is needed
 choose-if: resources >= 1
 on-arrival: ccf_on_relation += 5; ccf_on_strength += 5; resources -= 1;
 

@@ -30,12 +30,18 @@ The PPS is concerned about our socialist platform. We must make concessions to e
 - @pps_cancel: They ask too much of us
 
 @remove_use_lease
+on-arrival: reformist_strength += 20; reformist_dissent -= 20
 subtitle: This was a policy approved by the UFC(SS)!
+go-to: pps_merge_yes
 
 @abandon_socialism
+on-arrival: reformist_strength += 30; reformist_dissent -= 30
+go-to: pps_merge_yes
 
 @support_cooperative_coalition
+on-arrival: reformist_strength += 10; reformist_dissent -= 10
 subtitle: Anderson's government seems destined to fall however...
+go-to: pps_merge_yes
 
 
 
@@ -60,3 +66,19 @@ on-arrival: {!
  MLA Jacob Benson has chosen to join our party, sitting as a Farmer-Labour representative and has chosen to continue supporting the Cooperative Coalition. MLA Charles Agar has chosen to sit with the Grits. The remaining 3 MLAs have either joined the Conservative party or have retired from politics. 
 
  With the Progressives now out the picture, rural Saskatchewan seems ripe for the taking by our party. 
+
+@pps_merge_yes
+on-arrival: {!
+    Q.pps_seats -= 5; 
+    Q.ccf_ss_seats += 4; 
+    Q.lps_seats += 1; 
+
+    Q.central_d_pps_seats -= 2; 
+    Q.central_d_ccf_ss_seats += 1; 
+    Q.central_d_lps_seats += 1; 
+    Q.southeast_d_pps_seats -= 2; 
+    Q.southeast_d_ccf_ss_seats += 2; 
+    Q.southwest_d_pps_seats -= 1; 
+    Q.southwest_d_ccf_ss_seats += 1;
+    window.updateBar('left');
+!}

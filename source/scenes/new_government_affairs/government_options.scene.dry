@@ -138,7 +138,7 @@ on-arrival: {!
 <div style="font-size: 0.8em; text-align: center;">(Updated Annually)</div>
 
 
-<div id='crown_corps_panel'>
+<div id='crown_corps_panel' style="display: flex;">
 
     <div id="saskpower_panel" class="gov_panel">
         <div class="h1_gov">SaskPower</div>

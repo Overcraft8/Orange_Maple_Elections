@@ -210,11 +210,11 @@ go-to: menu
 Current relations: [+ pps_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**LPS** - *Liberal Party* (The Grits) - a center-left big tent liberal party. They have historically maintained close ties with organized farmers, Catholics, and Francophones, a coalition that has kept them in power for all but the preceding three years. 
+**LPS** - *Liberal Party* (The Grits) - a big tent liberal party. They have historically maintained close ties with organized farmers, Catholics, and Francophones, a coalition that has kept them in power for all but the preceding three years. 
 
 Current relations: [+ lps_relation : relationships +]
 
-**CPS** - *Conservative Party* (The Tories) - a centre-right big tent conservative party, mainly supported by the more affluent farmers and the old middle class. Under Anderson's leadership, they have adopted a strong nativist stance but also a more interventionist economic policy. 
+**CPS** - *Conservative Party* (The Tories) - a big tent conservative party. Under Anderson's leadership, they have adopted a strong nativist stance but also a more interventionist economic policy. 
 
 Current relations: [+ cps_relation : relationships +]
 

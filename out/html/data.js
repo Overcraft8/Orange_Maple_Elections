@@ -1,7 +1,8 @@
 const tooltipList = [{
     // for organizations and parties
     searchString: "CCF(SS)",
-    explanationText: "<img src=img/CCF_logo.jpg>The Cooperative Commonwealth Federation (Saskatchewan Section)"
+    explanationText: "The Cooperative Commonwealth Federation (Saskatchewan Section)"
+    // <img src=img/CCF_logo.jpg>
 }, 
 {
     searchString: "FLP",

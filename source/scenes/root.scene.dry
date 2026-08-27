@@ -127,6 +127,12 @@ Q.ccf_wings = ['ccf_m', 'ccf_a', 'ccf_bc', 'ccf_on', 'ccf_nat'];
 
 
 
+// We'll let 1 be a coalition and 2 be full majority
+Q.ccf_m_government = 0;
+Q.ccf_bc_government = 0; 
+Q.ccf_a_government = 0;
+Q.ccf_on_government = 0; 
+Q.ccf_nat_government = 0;
 
 
 

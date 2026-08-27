@@ -160,6 +160,20 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 
 
+@intraparty
+
+British Columbia CCF Status: [+ ccf_bc_government : provincial_government +]
+
+Manitoba CCF Status: [+ ccf_m_government : provincial_government +]
+
+Ontario CCF Status: [+ ccf_on_government : provincial_government +]
+
+Alberta CCF Status: [+ ccf_a_government : provincial_government +]
+
+--- 
+
+Federal CCF Status: [+ ccf_nat_government : provincial_government +]
+
 @general_map
 
 = Regional Map

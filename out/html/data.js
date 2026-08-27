@@ -9,6 +9,10 @@ const tooltipList = [{
     explanationText: "The Farmer-Labour Party"
 }, 
 {
+    searchString: "CCF",
+    explanationText: "Cooperative Commonwealth Federation"
+}, 
+{
     searchString: "PFLP",
     explanationText: "The Progressive Farmer-Labour Party"
 }, 
@@ -101,6 +105,10 @@ const colourList = [{
     },
     {
         word: "FLP",
+        style: "color: #D26E28; font-weight: bold;"
+    },
+    {
+        word: "CCF",
         style: "color: #D26E28; font-weight: bold;"
     },
     {

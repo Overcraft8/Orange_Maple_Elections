@@ -170,17 +170,23 @@ British Columbia CCF Status: [+ ccf_bc_government : provincial_government +]
 
 British Columbia CCF Relations: [+ ccf_bc_relation : relationships +]
 
+<div class="horizontal_line"></div>
+
 Manitoba CCF Status: [+ ccf_m_government : provincial_government +]
 
 Manitoba CCF Relations: [+ ccf_m_relation : relationships +]
+
+<div class="horizontal_line"></div>
 
 Ontario CCF Status: [+ ccf_on_government : provincial_government +]
 
 Ontario CCF Relations: [+ ccf_on_relation : relationships +]
 
+<div class="horizontal_line"></div>
+
 Alberta CCF Status: [+ ccf_a_government : provincial_government +]
 
-Alberta CCF Relations : [+ ccf_a_relation : provincial_government +]
+Alberta CCF Relations : [+ ccf_a_relation : relationships +]
 
 <div class="horizontal_line"></div>
 

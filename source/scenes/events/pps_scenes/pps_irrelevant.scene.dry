@@ -81,4 +81,5 @@ on-arrival: {!
     Q.southwest_d_pps_seats -= 1; 
     Q.southwest_d_ccf_ss_seats += 1;
     window.updateBar('left');
+    Q.ccf_ss_name = 'PFLP';
 !}

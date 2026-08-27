@@ -12,21 +12,25 @@ The Cooperative Commonwealth Federation is a collective, formed by various provi
 
 We can spend resources to aid the individual wings in their fight against the forces of establishment. 
 
-- @manitoba_ccf_relations: Send aid to the more pragmatic Manitoba CCF
-- @bc_ccf_relations: Help the Marxist-infused BC wing
-- @alberta_ccf_relations: Provide resources for our prairie cousins, the Alberta CCF
-- @ontario_ccf_relations: The Ontario wing has the most potential of all of us, send aid there
-- @national_ccf_relations: The fight must be waged at the Federal level, send help to Ottawa
+To whom should we send aid?
+
+- @manitoba_ccf_relations: The Manitoba CCF
+- @bc_ccf_relations: The BC CCF
+- @alberta_ccf_relations: The Alberta CCF
+- @ontario_ccf_relations: The Ontario CCF
+- @national_ccf_relations: The National CCF
+- @skip_intraparty_relations: The other wings must wait...
+- @return: Return
 
 @manitoba_ccf_relations
-subtitle: A more moderate, pragmatic direction
+subtitle: They are notably more pragmatic and moderate...
 choose-if: resources >= 1
 on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources -= 1;
 
 The Manitoba CCF is a more moderate wing of the CCF, attempting to balance the demands of labour and farmers. 
 
 @bc_ccf_relations
-subtitle: The BC wing is more Marxist than the others
+subtitle: The BC wing has a Marxist-flavour to it
 choose-if: resources >= 1
 on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1;
 
@@ -50,3 +54,6 @@ on-arrival: ccf_nat_relation += 5; ccf_nat_strength += 5; resources -= 1;
 The National CCF is the key to the future. While our provincial wings may well do good for themselves at the subnational level, true change can only occur once we hold Ottawa in the palms of our hands. 
 
 Our relations with the National CCF have warmed slightly. 
+
+@skip_intraparty_relations
+subtitle: Skip this card

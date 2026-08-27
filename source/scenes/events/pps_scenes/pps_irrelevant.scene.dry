@@ -32,7 +32,7 @@ The PPS is concerned about our socialist platform. We must make concessions to e
 - @remove_use_lease: Abandon Use-lease
 - @abandon_socialism: Remove all mentions of Socialism from our platform
 - @support_cooperative_coalition: Continue supporting the Cooperative Coalition
-- @pps_cancel: They ask too much of us
+- @pps_cancel: The PPS asks too much of us
 
 @remove_use_lease
 on-arrival: reformist_strength += 20; reformist_dissent -= 20; lost_use_lease = 1; ufc_relations -= 20; farmers_ccf_ss -= 15
@@ -40,14 +40,13 @@ subtitle: This was a policy approved by the UFC(SS)!
 go-to: pps_merge_yes
 
 @abandon_socialism
-on-arrival: reformist_strength += 30; reformist_dissent -= 30; abandon_socialism = 1; fc_relations -= 30; farmers_ccf_ss -= 10
+on-arrival: reformist_strength += 30; reformist_dissent -= 30; abandon_socialism = 1; ufc_relations -= 30; farmers_ccf_ss -= 10
 go-to: pps_merge_yes
 
 @support_cooperative_coalition
 on-arrival: reformist_strength += 10; reformist_dissent -= 10; support_cooperative_coalition = 1; ufc_relations -= 15; farmers_ccf_ss -= 10
 subtitle: Anderson's government seems destined to fall however...
 go-to: pps_merge_yes
-
 
 
 @pps_cancel 
@@ -68,7 +67,7 @@ on-arrival: {!
     window.updateBar('left');
 !}
 
- MLA Jacob Benson has chosen to join our party, sitting as a Farmer-Labour representative and has chosen to continue supporting the Cooperative Coalition. MLA Charles Agar has chosen to sit with the Grits. The remaining 3 MLAs have either joined the Conservative party or have retired from politics. 
+ MLA Jacob Benson has chosen to join our party while continuing to support the Cooperative Coalition. MLA Charles Agar has chosen to sit with the Grits. The remaining 3 MLAs have either joined the Conservative party or have retired from politics. 
 
  With the Progressives now out the picture, rural Saskatchewan seems ripe for the taking by our party. 
 

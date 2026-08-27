@@ -172,8 +172,6 @@ Ontario CCF Status: [+ ccf_on_government : provincial_government +]
 
 Alberta CCF Status: [+ ccf_a_government : provincial_government +]
 
---- 
-
 Federal CCF Status: [+ ccf_nat_government : provincial_government +]
 
 @general_map

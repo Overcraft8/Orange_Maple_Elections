@@ -160,7 +160,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 
 
-@intraparty
+@intraparty_status
 new-page: True
 is-special: True
 

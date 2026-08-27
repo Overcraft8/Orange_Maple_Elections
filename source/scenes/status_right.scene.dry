@@ -164,15 +164,29 @@ Internal dissent: [+ dissent_percent : dissent +]
 new-page: True
 is-special: True
 
+= CCF Wings
+
 British Columbia CCF Status: [+ ccf_bc_government : provincial_government +]
+
+British Columbia CCF Relations: [+ ccf_bc_relation : relationships +]
 
 Manitoba CCF Status: [+ ccf_m_government : provincial_government +]
 
+Manitoba CCF Relations: [+ ccf_m_relation : relationships +]
+
 Ontario CCF Status: [+ ccf_on_government : provincial_government +]
+
+Ontario CCF Relations: [+ ccf_on_relation : relationships +]
 
 Alberta CCF Status: [+ ccf_a_government : provincial_government +]
 
+Alberta CCF Relations : [+ ccf_a_relation : provincial_government +]
+
+<div class="horizontal_line"></div>
+
 Federal CCF Status: [+ ccf_nat_government : provincial_government +]
+
+Federal CCF Relations: [+ ccf_nat_relation : provincial_government +]
 
 @general_map
 

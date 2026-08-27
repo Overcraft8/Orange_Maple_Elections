@@ -14,9 +14,9 @@ We can spend resources to aid the individual wings in their fight against the fo
 
 To whom should we send aid?
 
-- @manitoba_ccf_relations: The Manitoba CCF
-- @bc_ccf_relations: The BC CCF
-- @alberta_ccf_relations: The Alberta CCF
+- @manitoba_ccf_relations: The Manitoban CCF requires our help most
+- @bc_ccf_relations: Let's see about the British Columbia CCF
+- @alberta_ccf_relations: Our Prairie sisters, the CCF of Alberta
 - @ontario_ccf_relations: The Ontario CCF
 - @national_ccf_relations: The National CCF
 - @skip_intraparty_relations: The other wings must wait...
@@ -25,33 +25,56 @@ To whom should we send aid?
 @manitoba_ccf_relations
 subtitle: They are notably more pragmatic and moderate...
 choose-if: resources >= 1
-on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources -= 1;
+on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources -= 1; reformist_strength += 5; reformist_dissent -= 10; true_socialist_dissent += 5
 
-The Manitoba CCF is a more moderate wing of the CCF, attempting to balance the demands of labour and farmers. 
+The Manitoba CCF is a more moderate wing of the CCF and in somewhat of a fusion with the provincial ILP party. It remains to be seen which of the two will become the dominant force of the democratic left in Manitoba. 
+
+The moderates within our party are satisfied by our attempts to court the pragmatic Manitoban party. 
+
+Our relations with the Manitoba CCF have warmed slightly. 
 
 @bc_ccf_relations
-subtitle: The BC wing has a Marxist-flavour to it
+subtitle: Our friends past the Rockies have a Marxist flavour to them
 choose-if: resources >= 1
-on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1;
+on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1; true_socialist_strength += 8; true_socialist_dissent -= 10; reformist_dissent += 10
 
 The British Columbia CCF is a more radical wing of the CCF, partly split by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of Canada and various Labour parties. 
+
+The True Socialist faction is invigorated by our attempts to court these coastside radicals.
+
+Our relations with the British Columbia CCF have warmed slightly. 
 
 @alberta_ccf_relations
 subtitle: We could learn the tricks of Agrarian Populism
 choose-if: resources >= 1
-on-arrival: ccf_a_relation += 5; ccf_a_strength += 5; resources -= 1;
+on-arrival: {! 
+Q.ccf_a_relation += 5; 
+Q.ccf_a_strength += 5; 
+Q.resources -= 1; 
+!}
+
+[? if year >= 1935 : The Alberta wing is struggling to remove the Social Credit Party from power. Even with our aid, it is unlikely that they will ever amount to more than a dozen MLAs. ?]
+
+[? if year < 1935 : The Alberta wing is one of our prairie sisters, it too borne from primarily rural discontent with the establishment parties.  ?]
+
+Our relations with the Alberta CCF have warmed slightly. 
 
 @ontario_ccf_relations
+subtitle: The largest province is needed
 choose-if: resources >= 1
 on-arrival: ccf_on_relation += 5; ccf_on_strength += 5; resources -= 1;
 
-The Ontario CCF retains the most potential of the provincial wings, our representative in the largest province. However, it is deeply divided between the UFO (United Farmers of Ontario) and it's labour sections... 
+The Ontario CCF retains the most potential of the provincial wings, our representative in the largest province. However, it is deeply divided between the UFO (United Farmers of Ontario) and it's labour sections who seem unable to wrestle their differences. 
+
+The old line parties retain considerable interest in Ontario and so the province seems unlikely to harbor any path for the CCF.
+
+Our relations with the Ontario CCF have warmed slightly. 
 
 @national_ccf_relations
 choose-if: resources >= 1
 on-arrival: ccf_nat_relation += 5; ccf_nat_strength += 5; resources -= 1;
 
-The National CCF is the key to the future. While our provincial wings may well do good for themselves at the subnational level, true change can only occur once we hold Ottawa in the palms of our hands. 
+The National CCF is the key to the future. While our provincial wings may well do good for themselves at the subnational level, fundamental change can only occur once we hold Ottawa in the palms of our hands. 
 
 Our relations with the National CCF have warmed slightly. 
 

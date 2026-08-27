@@ -111,6 +111,24 @@ Q.students_strength = 0;
 Q.students_radicalism = 30;
 
 
+Q.ccf_m_strength = 10; 
+Q.ccf_bc_strength = 30; 
+Q.ccf_a_strength = 5; 
+Q.ccf_on_strength = 15; 
+Q.ccf_nat_strength = 5;
+
+Q.ccf_m_relation = 30; 
+Q.ccf_bc_relation = 60; 
+Q.ccf_a_relation = 50; 
+Q.ccf_on_relation = 30; 
+Q.ccf_nat_relation = 40
+
+Q.ccf_wings = ['ccf_m', 'ccf_a', 'ccf_bc', 'ccf_on', 'ccf_nat']; 
+
+
+
+
+
 
 // secret events...
 Q.unions_independent = 0;
@@ -1203,6 +1221,7 @@ Q.timers = ['advisor_action', 'confronting_scps', 'crisis_program',
             // New party ones
 
             'organizations_relations', 'riding_orgs', 'recruitment',
+            'intra_party_relations',
 
 
 
@@ -1246,6 +1265,7 @@ Q.enemies_timer = 0;
 Q.party_organizations_timer =  0;
 Q.organizations_relations_timer = 0;
 Q.recruitment_timer = 0;
+Q.intra_party_relations_timer = 0;
 
 
 

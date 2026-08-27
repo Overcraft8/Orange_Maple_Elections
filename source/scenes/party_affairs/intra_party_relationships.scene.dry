@@ -1,0 +1,52 @@
+title: Intra-Party Relationships
+new-page: true
+view-if: year <= 1932 and intra_party_relations_timer <= 0
+tags: party_affairs
+is-card: true
+on-arrival: month_actions += 1; intra_party_relations_timer = 4;
+card-image: img/CCF/ccf_bc_poster.jpg
+
+= Intra-Party Relations
+
+The Cooperative Commonwealth Federation is a collective, formed by various provincial wings and an overlying National wing. Each is distinct in it's own way so our relationship with each provides leverage at the national level and information we could use in our own fight.  
+
+We can spend resources to aid the individual wings in their fight against the forces of establishment. 
+
+- @manitoba_ccf_relations: Send aid to the more pragmatic Manitoba CCF
+- @bc_ccf_relations: Help the Marxist-infused BC wing
+- @alberta_ccf_relations: Provide resources for our prairie cousins, the Alberta CCF
+- @ontario_ccf_relations: The Ontario wing has the most potential of all of us, send aid there
+- @national_ccf_relations: The fight must be waged at the Federal level, send help to Ottawa
+
+@manitoba_ccf_relations
+subtitle: A more moderate, pragmatic direction
+choose-if: resources >= 1
+on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources - 1;
+
+The Manitoba CCF is a more moderate wing of the CCF, attempting to balance the demands of labour and farmers. 
+
+@bc_ccf_relations
+subtitle: The BC wing is more Marxist than the others
+choose-if: resources >= 1
+on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources - 1;
+
+The British Columbia CCF is a more radical wing of the CCF, partly split by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of Canada and various Labour parties. 
+
+@alberta_ccf_relations
+subtitle: We could learn the tricks of Agrarian Populism
+choose-if: resources >= 1
+on-arrival: ccf_a_relation += 5; ccf_a_strength += 5; resources - 1;
+
+@ontario_ccf_relations
+choose-if: resources >= 1
+on-arrival: ccf_on_relation += 5; ccf_on_strength += 5; resources - 1;
+
+The Ontario CCF retains the most potential of the provincial wings, our representative in the largest province. However, it is deeply divided between the UFO (United Farmers of Ontario) and it's labour sections... 
+
+@national_ccf_relations
+choose-if: resources >= 1
+on-arrival: ccf_nat_relation += 5; ccf_nat_strength += 5; resources - 1;
+
+The National CCF is the key to the future. While our provincial wings may well do good for themselves at the subnational level, true change can only occur once we hold Ottawa in the palms of our hands. 
+
+Our relations with the National CCF have warmed slightly. 

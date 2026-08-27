@@ -14,7 +14,7 @@ Electrification Progress: [+ electrification : electrification +]
 - @power_sellout: Sell Parts of SaskPower to Private Companies
 - @electrical_coop_sellout: Use SaskPower assets to establish Electrical Sector Worker's Cooperatives
 - @rural_electrification: Expand Access to Electricity
-- @saskpower_rates: Set the Rate
+- @saskpower_rates: Set the Electricity Rates
 - @prevScene: Return 
 
 

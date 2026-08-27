@@ -161,6 +161,8 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 
 @intraparty
+new-page: True
+is-special: True
 
 British Columbia CCF Status: [+ ccf_bc_government : provincial_government +]
 

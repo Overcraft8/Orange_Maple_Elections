@@ -1,7 +1,7 @@
 title: A Fall from Grace
 subtitle: The End of Anderson
 tags: event
-view-if: year = 1932 and month = 2
+view-if: year = 1934 and month = 8
 priority: 2
 max-visits: 1
 face-image: img/portraits/AndersonJames.jpg

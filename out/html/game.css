@@ -71,7 +71,7 @@ body.dark-mode .tools {
 }
 header, #content, footer {
   color: var(--text-color);
-  max-width: 26em;
+  max-width: 450px;
   margin: 0 auto;
   overflow: auto;
 }
@@ -235,7 +235,7 @@ img.inline-img.icon {
 
 /* This is mostly copied from undum. */
 #mid_panel {
-  margin: 0 23em;
+  margin: 0 380px;
 }
 #page {
   margin: 0 auto;
@@ -254,7 +254,7 @@ img.inline-img.icon {
   border: outset;
   border-color: #cfb678;
   padding: 0.6em;
-  width: 22em;
+  width: 350px;
   color: var(--text-color);
   background-color: var(--sidebar-bg-color);
 }
@@ -444,7 +444,6 @@ img.inline-img.icon {
   background-color: var(--hover-color);
   border: 2px solid var(--htext-color);
 }
-
 
 .overlay {
     background: rgba(0,0,0,0.7);

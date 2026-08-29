@@ -14,7 +14,8 @@ Electrification Progress: [+ electrification : electrification +]
 - @power_sellout: Sell Parts of SaskPower to Private Companies
 - @electrical_coop_sellout: Use SaskPower assets to establish Electrical Sector Worker's Cooperatives
 - @rural_electrification: Expand Access to Electricity
-- @saskpower_rates: Set the Electricity Rates
+- @raise_saskpower_rates: Raise Electricity Rates
+- @lower_saskpower_rates: Lower Electricity Rates
 - @prevScene: Return 
 
 
@@ -74,26 +75,28 @@ on-arrival: {!
 !}
 go-to: exit_gov
 
-@saskpower_rates
-
-We can set the rates for SaskPower.
-
-- @lower_saskpower_rates: Lower SaskPower Rates
-- @raise_saskpower_rates: Raise SaskPower Rates
-- @prevScene: Return
-
 @lower_saskpower_rates
 on-arrival: {!
-    if (Q.saskpower_revenue.rates > 0) {
-        Q.saskpower.revenue.rates -= 1;
-    }
+    if (Q.saskpower.revenue.rates > 0) {
+        Q.saskpower.revenue.rates -= 1
+    };
+
+    for (var c of Q.classes) {
+        Q[c + '_ccf_ss'] += 1
+    };
 !}
+subtitle: -1 SaskPower revenue
 go-to: exit_gov
 
 @raise_saskpower_rates
 on-arrival: {!
-    if (Q.saskpower_revenue.rates > 0) {
-        Q.saskpower.revenue.rates -= 1;
-    }
+    if (Q.saskpower.revenue.rates > 0) {
+        Q.saskpower.revenue.rates -= 1
+    };
+
+    for (var c of Q.classes) {
+        Q[c + '_ccf_ss'] -= 2
+    };
 !}
+subtitle: +1 SaskPower revenue
 go-to: exit_gov

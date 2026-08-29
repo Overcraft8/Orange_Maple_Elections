@@ -1,0 +1,63 @@
+title: Anderson negotiates with the PFLP
+subtitle: The Premier is desperate
+tags: event
+view-if: year = 1932 and month = 3 and ccf_ss_name == 'PFLP'
+priority: 1
+max-visits: 1
+face-image: img/portraits/AndersonJames.jpg
+
+= Anderson's Bargaining
+
+The governing Cooperative Coalition of James Anderson has been unpopular since the onset of the drought and economic crisis. Anderson recognizes that his party will receive the brunt of the electorate's grievances once the General Election rolls around. In light of this, he seeks to extend the government's life through to the maximum five year term - 1934. 
+
+The disappearance of the PPS has put a stop to his plans. Anderson hopes that we will take a concession from him in exchange for our vote in Non-Confidence motions. It was he after all, that had established the unlikely alliance of Progressives, Conservatives, and Independents that ousted the Liberals from power. 
+
+
+
+Anderson's government is widely suspected of maintaining ties with the Ku Klux Klan. His aggressive bans on French instruction and religious garb in public schools have deeply alienated our immigrant, Catholic, and minority supporters.
+
+We may do well to promote a certain piece of legislation to prove our ability to make change to the Saskatchewan people. On the other hand, it may come across as collaborating with the most disliked Premier in our history. 
+
+- @anderson_farmers_debt_moratorium: Get him to establish a long-term moratorium on farm foreclosures and debt
+- @anderson_labour_legislation: Get Anderson to expand Labour Legislation
+- @anderson_public_works: Can we get Anderson to expand his public works projects?
+- @anderson_ministry: Let's enter government with a ministry of our choosing
+- @leave_anderson: Let's not get wracked up with Anderson right now
+
+@anderson_farmers_debt_moratorium
+subtitle: This pleases our farmer base
+on-arrival: farmers_ccf_ss += 5; reformist_strength += 5; true_socialist_strength -= 5; reformist_dissent += 5; true_socialist_dissent += 15; unemployed -= 2; economic_growth -= 2
+
+The Debt Moratorium Act has passed successfully, giving our farmer base a relief from the constant hounding of the banks. Such a 'radical' policy will likely drive investment away from the province for quite some time, if ever the status quo returns to the Prairies again. 
+
+Many of our immigrant and Catholic base are disgusted at our compromise with Anderson's government. Even some in the leadership question whether is was right to achieve this legislation at the cost of aligning ourselves with the Premier. 
+
+@anderson_labour_legislation
+subtitle: This expands our labour support
+on-arrival: workers_ccf_ss += 10; reformist_strength += 5; true_socialist_strength -=5; reformist_dissent += 5; true_socialist_dissent += 15; unemployed += 2; economic_growth -= 2
+
+Anderson's government passes new labour legislation strengthening union rights, raising the minimum wage, and reducing work hours. While this proves beneficial to those workers who can maintain their jobs, the increase in worker's rights reduces the margins of small businesses, forcing many workers onto the streets. 
+
+Many of our immigrant and Catholic base are disgusted at our compromise with Anderson's government. Even some in the leadership question whether is was right to achieve this legislation at the cost of aligning ourselves with the Premier. 
+
+It is a Pyrrhic victory at the very least. 
+
+@anderson_public_works
+unavailable-subtitle: The Province has virtually nothing in the treasury
+choose-if: 1 == 2
+
+# Sorry WTB fans
+
+@anderson_ministry
+on-arrival: leverage = 10; ccf_ss_in_government = 1
+go-to: ministries
+
+Many of our immigrant and Catholic base are disgusted at our compromise with Anderson's government. Even some in the leadership question whether is was right to achieve this legislation at the cost of aligning ourselves with the Premier. 
+
+@leave_anderson
+unavailable-subtitle: We promised the Progressives we'd support Anderson
+choose-if: support_cooperative_coalition == 0
+
+Anderson is disappointed. Perhaps he had thought that our merger would incline us to ally with him. Nonetheless, his government is a set of dominos awaiting that first tap. 
+
+The Cooperative Coalition is no more and the CPS will soon face the cumulative anger of the Saskatchewan people at the polls. 

@@ -207,10 +207,11 @@ function getPartyIdeology(party, Q) {
             if (Q.lps_ideology === "Centrism") return '<span style="color: #b97a7a;">Centrist</span> (Centrism)';
             return 'Unknown';
         case 'CPS': 
-            if (Q.cps_ideology === "Conservatism") return '<span style="color: #2464c4;">Centre - Centre Right</span> (Conservatism)';
-            if (Q.cps_ideology === "Social Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Social Conservatism)';
+            if (Q.cps_ideology === "Classical Conservatism") return '<span style="color: #2464c4;">Centre - Right Wing</span> (Conservatism)';
+            if (Q.cps_ideology === "Conservatism") return '<span style="color: #2464c4;">Centre - Right Wing</span> (Conservatism)';
             if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #b97a7a;">Centre Right</span> (Paternalistic Conservatism)';
-            if (Q.cps_ideology === "Conservative Populist") return '<span style="color: #b97a7a;">Right Wing</span> (Populist conservatism))';
+            if (Q.cps_ideology === "Nativist Conservatism") return '<span style="color: #8b3a3a;">Right Wing</span> (Nativist Conservatism)';
+            if (Q.cps_ideology === "Conservative Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Populist conservatism))';
             return 'Unknown';
         case 'SCPS': 
             if (Q.scps_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';

@@ -192,7 +192,7 @@ Alberta CCF Relations : [+ ccf_a_relation : relationships +]
 
 Federal CCF Status: [+ ccf_nat_government : provincial_government +]
 
-Federal CCF Relations: [+ ccf_nat_relation : provincial_government +]
+Federal CCF Relations: [+ ccf_nat_relation : relationships +]
 
 @general_map
 

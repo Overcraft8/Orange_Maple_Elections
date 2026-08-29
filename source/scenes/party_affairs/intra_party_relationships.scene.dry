@@ -8,19 +8,16 @@ card-image: img/CCF/ccf_bc_poster.jpg
 
 = Intra-Party Relations
 
-The Cooperative Commonwealth Federation is a collective, formed by various provincial wings and an overlaying National wing. Each is distinct in it's own way so our relationship with each provides leverage at the national level of the CCF and information we could use in our own fight.  
-
-We can spend resources to aid the individual wings in their fight against the forces of establishment. 
+The Cooperative Commonwealth Federation is a collective, formed by various provincial wings and an overlaying National wing. Each is distinct in it's own way so our relationship with each provides leverage at the national level of the CCF and information we could use in our own fight. We may spend resources in this endeavour. 
 
 To whom should we send aid?
 
 - @manitoba_ccf_relations: The pragmatic Manitoba wing will give us insight into the matters of electoral negotiating
 - @alberta_ccf_relations: The Alberta wing requires our help the most
-- @bc_ccf_relations: Let's see about the British Columbia wing; their Marxist tendencies could serve as an inspiration to us
-- @ontario_ccf_relations: The Ontario wing of Canada's largest province
+- @bc_ccf_relations: Let's help the British Columbia wing; their Marxist tendencies could serve as an inspiration to us
 - @national_ccf_relations: True change can occur only at the Federal level - send aid to Ottawa
 - @skip_intraparty_relations: Let's not send aid right now
-- @return: Return
+- @easy_discard
 
 @manitoba_ccf_relations
 subtitle: -1 resources
@@ -38,7 +35,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1; true_socialist_strength += 8; true_socialist_dissent -= 10; reformist_dissent += 10
 
-The British Columbia CCF is a more radical wing of the CCF, partly split by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of Canada and various Labour parties. 
+The British Columbia CCF is a more radical wing of the CCF, influenced by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of British Columbia and various provincial Labour parties. 
 
 The True Socialist faction is invigorated by our attempts to court these coastside radicals.
 
@@ -55,20 +52,9 @@ Q.resources -= 1;
 
 [? if year >= 1935 : The Alberta wing is struggling to remove the Social Credit Party from power. Even with our aid, it is unlikely that they will ever amount to more than a half dozen MLAs. ?]
 
-[? if year < 1935 : The Alberta wing is one of our prairie sisters, it too borne from primarily rural discontent with the establishment parties. ?]
+[? if year < 1935 : The Alberta wing is one of our prairie sisters, it too borne from primarily rural discontent with the establishment parties. It is currently composed of the governing UFA and the DLP. ?]
 
 The Alberta wing is thankful for our aid.
-
-@ontario_ccf_relations
-subtitle: -1 resources
-choose-if: resources >= 1
-on-arrival: ccf_on_relation += 5; ccf_on_strength += 5; resources -= 1;
-
-The Ontario CCF retains the most potential of the provincial wings as our representative in the largest province. However, it is deeply divided between the UFO (United Farmers of Ontario) and it's labour sections who seem unable to wrestle their differences. 
-
-The old line parties retain considerable interest in keeping Ontario and so the province seems unlikely to harbor any path for the CCF. 
-
-The Ontario wing is thankful for our aid.
 
 @national_ccf_relations
 subtitle: -1 resources
@@ -80,4 +66,3 @@ The National CCF is the key to the future. While our provincial wings may well d
 The Federal wing is thankful for our aid.
 
 @skip_intraparty_relations
-subtitle: Skip this card

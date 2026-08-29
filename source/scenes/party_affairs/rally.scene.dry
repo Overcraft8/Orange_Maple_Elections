@@ -88,12 +88,12 @@ Spreading the gospel of a true Cooperative Commonwealth increases general suppor
 @welfare
 on-arrival: workers_ccf_ss += 3*(1-dissent); workers_ccf_ss += 3*(1-dissent) if welfare > 0; unemployed_ccf_ss += 3*(1-dissent) if welfare > 0; unemployed_ccf_ss += 4*(1-dissent) if welfare > 1; managerial_strength += 3; managerial_dissent -= 3; labour_dissent -= 3;
 
-Speaking of a strong welfare state certainly agitates the workers and farmers who have been downtrodden by the lack of an adequate relief program. 
+Speaking of a strong welfare state certainly inspires the workers and farmers who have been downtrodden by the lack of an adequate relief program. 
 
 @blame_old_line
-on-arrival: workers_ccf_ss += 23*(1-dissent); farmers_ccf_ss += 33*(1-dissent); new_middle_ccf_ss += 23*(1-dissent)
+on-arrival: workers_cps -= 2; workers_lps -= 2; farmers_cps -= 2; farmers_lps -= 2; new_middle_cps -= 2; new_middle_lps -= 2; cps_relation -= 5
 
-Blaming the old parties certainly invokes anger among the populace. 
+Blaming the old parties increases support for new parties like ours. 
 
 @pacifism
 view-if: year >= 1939 and year <= 1945

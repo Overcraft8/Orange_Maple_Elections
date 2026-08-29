@@ -257,7 +257,13 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     }
 
     //  Always initialize
-    let result = baseTooltip.explanationText;
+    if (baseTooltip.explanationText) {
+        var result = baseTooltip.explanationText;
+    }
+
+    if (baseTooltip.detailedText) {
+        result += '<span style="display: block; margin-top: 6px; margin-bottom: 6px; font-size: 0.8em; white-space: normal; line-height: 1.3;">' + baseTooltip.detailedText + '</span>';
+    }
 
     const ideologyKey = ideologyMap[searchString];
 

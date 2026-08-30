@@ -93,7 +93,7 @@ const tooltipList = [{
 {
     searchString: "KKK", 
     explanationText: "The Ku Klux Klan.",
-    detiledText: "The Knights of the Ku Klux Klan entered the province in 1926, an import from the United States. American Klansmen left with the treasury in 1927 but by then, the movement had grown popular enough to warrant local leadership. They have primarily railed against the 'unassimilable' immigrants coming from Central and Eastern Europe, and against the Catholic Church. While KKK membership includes members of all old parties, the Conservatives and Progressives raised issues of immigration and education that drew upon prejudicies raised by the KKK in the 1929 election and the KKK has praised Anderson's policies towards those two areas."
+    detailedText: "The Knights of the Ku Klux Klan entered the province in 1926, an import from the United States. American Klansmen left with the treasury in 1927 but by then, the movement had grown popular enough to warrant local leadership. They have primarily railed against the 'unassimilable' immigrants coming from Central and Eastern Europe, and against the Catholic Church. While KKK membership includes members of all old parties, the Conservatives and Progressives raised issues of immigration and education that drew upon prejudicies raised by the KKK in the 1929 election and the KKK has praised Anderson's policies towards those two areas."
 },
 {
     searchString: "STA", 
@@ -210,11 +210,23 @@ const colourList = [{
         style: "color: #86a71b; font-weight: bold;"
     },
     {
+        word: "United Farmers of Alberta",
+        style: "color: #86a71b; font-weight: bold;"
+    },
+    {
         word: "DLP",
         style: "color: #a7391b; font-weight: bold;"
     },
     {
-        word: "SPC",
+        word: "Dominion Labor Party",
+        style: "color: #a7391b; font-weight: bold;"
+    },
+    {
+        word: "SPBC",
+        style: "color: #a7391b; font-weight: bold;"
+    },
+    {
+        word: "Socialist Party of British Columbia",
         style: "color: #a7391b; font-weight: bold;"
     },
     // Below this for states of qdisplays

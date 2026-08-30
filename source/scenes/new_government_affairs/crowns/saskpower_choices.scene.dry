@@ -1,5 +1,12 @@
 title: SaskPower
 subtitle: Saskatchewan Power Corporation
+on-arrival: {!
+    Q.saskpower_revenue_display = 0;
+    var revenue = Q.saskpower.revenue
+    for (var val of Object.values(revenue)) {
+        Q.saskpower_revenue_display += val;
+    };
+!}
 
 = SaskPower
 
@@ -9,7 +16,17 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 
 Electrification Progress: [+ electrification : electrification +]
 
-SaskPower Revenue: [+ saskpower.revenue +]
+<div style="display: flex; flex-direction: row;">
+    <div class="gov_panel">
+        Rates: [+ saskpower.revenue.rates +]
+        = SaskPower Revenue: [+ Q.saskpower_revenue_display +]
+    </div>
+    <div class="gov_panel">
+        Administration: [+ saskpower.expenses.admin +]
+        Maintenance: [+ saskpower.expenses.maintenance +]
+        = SaskPower Expenses: [+ Q.saskpower_revenue_display +]
+    </div>
+</div>
 
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies

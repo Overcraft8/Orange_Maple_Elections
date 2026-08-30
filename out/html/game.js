@@ -333,8 +333,9 @@ function applyWholesome(str) {
                 //return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
                 var tooltipContent = getDynamicTooltipContent(match, tooltip);
 
-                // NEW UNIFIED VERSION:
-                return `<span class='tooltip' style='${style}; cursor: pointer;' onclick='var dt = this.querySelector(".detailed-text"); if(dt) dt.style.display = dt.style.display === "none" ? "block" : "none"; event.stopPropagation();'>${innerText}<span class='tooltip-text'>${tooltipContent}</span></span>`;
+                // New version:
+                return `<span class="tooltip" style="${style}; cursor: pointer;" onclick="var dt = this.querySelector('.detailed-text'); if(dt) { dt.style.display = (dt.style.display === 'none' || dt.style.display === '') ? 'block' : 'none'; } event.stopPropagation();">${innerText}<span class="tooltip-text">${tooltipContent}</span></span>`;
+            } else if (colour) {
             } else if (colour) {
                 return `<span style='${style}'>${innerText}</span>`;
             }

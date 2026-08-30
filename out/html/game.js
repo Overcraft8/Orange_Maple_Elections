@@ -308,7 +308,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 function applyWholesome(str) {
     const allWords = new Set([
         ...tooltipList.flatMap(t => Array.isArray(t.searchString) ? t.searchString : [t.searchString]),
-        ...colourList.map(c => c.word)
+        ...colourList.flatMap(c => Array.isArray(c.word) ? c.word : [c.word])
     ]);
 
     const words = [...allWords].map(escapeRegex);
@@ -323,7 +323,12 @@ function applyWholesome(str) {
                     ? t.searchString.includes(match) 
                     : t.searchString === match
             );
-            const colour = colourList.find(c => c.word === match);
+            
+            const colour = colourList.find(c => 
+                Array.isArray(c.word) 
+                    ? c.word.includes(match) 
+                    : c.word === match
+            );
 
             let style = colour ? colour.style : '';
             let innerText = match;

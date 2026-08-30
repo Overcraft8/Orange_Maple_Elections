@@ -91,7 +91,7 @@ const tooltipList = [{
 },*/
 // Below organizations
 {
-    searchString: "KKK", 
+    searchString: ['KKK', 'Ku Klux Klan'], 
     explanationText: "The Ku Klux Klan.",
     detailedText: "The Knights of the Ku Klux Klan entered the province in 1926, an import from the United States. American Klansmen left with the treasury in 1927 but by then, the movement had grown popular enough to warrant local leadership. They have primarily railed against the 'unassimilable' immigrants coming from Central and Eastern Europe, and against the Catholic Church. While KKK membership includes members of all old parties, the Conservatives and Progressives raised issues of immigration and education that drew upon prejudicies raised by the KKK in the 1929 election and the KKK has praised Anderson's policies towards those two areas."
 },
@@ -116,19 +116,19 @@ const tooltipList = [{
 
 const colourList = [{
     // For organizations + parties
-        word: "CCF(SS)",
+        word: ['CCF(SS)', 'Cooperative Commonwealth Federation (Saskatchewan Section)'],
         style: "color: #D26E28; font-weight: bold;"
     },
     {
-        word: "FLP",
+        word: ['FLP', 'Farmer-Labour Party'],
         style: "color: #D26E28; font-weight: bold;"
     },
     {
-        word: "CCF",
+        word: ['CCF', 'Cooperative Commonwealth Federation'],
         style: "color: #D26E28; font-weight: bold;"
     },
     {
-        word: "PFLP",
+        word: ['PFLP', 'Progressive Farmer-Labour Party'],
         style: "color: #D26E28; font-weight: bold;"
     },
     {
@@ -185,11 +185,7 @@ const colourList = [{
         style: "color: #920c0c; font-weight: bold;"
     },
     {
-        word: "Ku Klux Klan", 
-        style: "color: #626262; font-weight: bold;"
-    },
-    {
-        word: "KKK", 
+        word: ['KKK', 'Ku Klux Klan'], 
         style: "color: #626262; font-weight: bold;"
     },
     {
@@ -206,27 +202,15 @@ const colourList = [{
     },
     // Other provincial parties: 
     {
-        word: "UFA",
+        word: ['UFA', 'United Farmers of Alberta'],
         style: "color: #86a71b; font-weight: bold;"
     },
     {
-        word: "United Farmers of Alberta",
-        style: "color: #86a71b; font-weight: bold;"
-    },
-    {
-        word: "DLP",
+        word: ['DLP', 'Dominion Labor Party'],
         style: "color: #a7391b; font-weight: bold;"
     },
     {
-        word: "Dominion Labor Party",
-        style: "color: #a7391b; font-weight: bold;"
-    },
-    {
-        word: "SPBC",
-        style: "color: #a7391b; font-weight: bold;"
-    },
-    {
-        word: "Socialist Party of British Columbia",
+        word: ['SPBC', 'Socialist Party of British Columbia'],
         style: "color: #a7391b; font-weight: bold;"
     },
     // Below this for states of qdisplays

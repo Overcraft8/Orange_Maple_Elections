@@ -80,15 +80,15 @@ const tooltipList = [{
     detailedText: "The Dominion Labor Party is of the old labor tradition in Canada and formed in Alberta. It has had limited electoral success in Alberta but is clearly overshadowed by the rising CCF."
 },
 {
-    searchString: "SPBC", 
+    searchString: ["SPBC", "Socialist Party of British Columbia"], 
     explanationText: "The Socialist Party of British Columbia",
     detailedText: "The Socialist Party of British Columbia is an old Socialist Party that achieved limited electoral success in British Columbia and has contributed to the province's long-standing labor and socialist tradition."
-},
+},/*
 {
     searchString: "Socialist Party of British Columbia", 
     explanationText: "The Socialist Party of British Columbia",
     detailedText: "The Socialist Party of British Columbia is an old Socialist Party that achieved limited electoral success in British Columbia and has contributed to the province's long-standing labor and socialist tradition."
-},
+},*/
 // Below organizations
 {
     searchString: "KKK", 

@@ -307,7 +307,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
 
 function applyWholesome(str) {
     const allWords = new Set([
-        ...tooltipList.map(t => t.searchString),
+        ...tooltipList.flatMap(t => Array.isArray(t.searchString) ? t.searchString : [t.searchString]),
         ...colourList.map(c => c.word)
     ]);
 
@@ -318,7 +318,11 @@ function applyWholesome(str) {
         if (segment.startsWith('<')) return segment;
 
         return segment.replace(regex, (match) => {
-            const tooltip = tooltipList.find(t => t.searchString === match);
+            const tooltip = tooltipList.find(t => 
+                Array.isArray(t.searchString) 
+                    ? t.searchString.includes(match) 
+                    : t.searchString === match
+            );
             const colour = colourList.find(c => c.word === match);
 
             let style = colour ? colour.style : '';
@@ -328,16 +332,11 @@ function applyWholesome(str) {
                 innerText = `<img src="${colour.img}" class="p_icon" alt="">${innerText}`;
             }
 
-            if (tooltip) { // MARIO
-                //var tooltipContent = getDynamicTooltipContent(match, tooltip);
-                //return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
+            if (tooltip) {
                 var tooltipContent = getDynamicTooltipContent(match, tooltip);
-
-                // New version:
                 return createDetailedText(innerText, tooltipContent, style);
             } else if (colour) {
-            } else if (colour) {
-                return `<span style='${style}'>${innerText}</span>`;
+                return `<span style="${style}">${innerText}</span>`;
             }
 
             return match;

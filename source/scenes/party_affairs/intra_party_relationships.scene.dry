@@ -35,7 +35,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1; true_socialist_strength += 8; true_socialist_dissent -= 10; reformist_dissent += 10
 
-The British Columbia CCF is a more radical wing of the CCF, influenced by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of British Columbia and various provincial Labour parties. 
+The British Columbia CCF is a more radical wing of the CCF, influenced by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of British Columbia (SPBC) and various provincial Labour parties. 
 
 The True Socialist faction is invigorated by our attempts to court these coastside radicals.
 

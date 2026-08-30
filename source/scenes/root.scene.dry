@@ -1001,7 +1001,8 @@ Q.saskpower = {
     'Name' : 'SaskPower',
     'mission' : 'Electrification',
     'qdisplay' : 'electrification'
-},
+};
+
 Q.sasktel =  {
     'revenue' : 6, 
     'expenses' : 3, 
@@ -1009,7 +1010,8 @@ Q.sasktel =  {
     'Name' : 'SaskTel',
     'mission' : 'Telecom Access',
     'qdisplay' : 'telecom'
-},
+}; 
+
 Q.stc = {
     'revenue' : 3, 
     'expenses' : 4, 
@@ -1017,7 +1019,7 @@ Q.stc = {
     'Name' : 'STC', 
     'mission' : 'STC Ridership',
     'qdisplay' : 'stc'
-}
+};
 
 
 Q.electrification_pie_chart = 0;

@@ -9,6 +9,8 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 
 Electrification Progress: [+ electrification : electrification +]
 
+SaskPower Revenue: [+ saskpower.revenue +]
+
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies
 - @power_sellout: Sell Parts of SaskPower to Private Companies

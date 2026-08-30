@@ -838,6 +838,7 @@ div.tooltip {
   
   transform: translateX(-50%) translateY(5px); 
 
+  text-indent: 0;
   font-family: Franklin Gothic Medium, Arial;
   color: #3b1f0a;
   text-align: center;

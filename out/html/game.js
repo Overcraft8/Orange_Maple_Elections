@@ -334,7 +334,7 @@ function applyWholesome(str) {
                 var tooltipContent = getDynamicTooltipContent(match, tooltip);
 
                 // New version:
-                return `<span class="tooltip" style="${style}; cursor: pointer;" onclick="var dt = this.querySelector('.detailed-text'); if(dt) { dt.style.display = (dt.style.display === 'none' || dt.style.display === '') ? 'block' : 'none'; } event.stopPropagation();">${innerText}<span class="tooltip-text">${tooltipContent}</span></span>`;
+                return createDetailedText(innerText, tooltipContent, style);
             } else if (colour) {
             } else if (colour) {
                 return `<span style='${style}'>${innerText}</span>`;
@@ -343,6 +343,19 @@ function applyWholesome(str) {
             return match;
         });
     });
+}
+
+function createDetailedText(innerText, tooltipContent, style) {
+    return `<span class="tooltip" style="${style}; cursor: pointer; transition: background-color 0.2s;" onclick="
+        var dt = this.querySelector('.detailed-text');
+        if(dt) {
+            var isOpen = dt.style.display === 'block';
+            dt.style.display = isOpen ? 'none' : 'block';
+            
+            this.style.textDecoration = isOpen ? 'none' : 'underline dotted';
+        }
+        event.stopPropagation();
+    ">${innerText}<span class="tooltip-text">${tooltipContent}</span></span>`;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -84,10 +84,16 @@ const tooltipList = [{
     explanationText: "The Socialist Party of British Columbia",
     detailedText: "The Socialist Party of British Columbia is an old Socialist Party that achieved limited electoral success in British Columbia and has contributed to the province's long-standing labor and socialist tradition."
 },
+{
+    searchString: "Socialist Party of British Columbia", 
+    explanationText: "The Socialist Party of British Columbia",
+    detailedText: "The Socialist Party of British Columbia is an old Socialist Party that achieved limited electoral success in British Columbia and has contributed to the province's long-standing labor and socialist tradition."
+},
 // Below organizations
 {
     searchString: "KKK", 
-    explanationText: "The Ku Klux Klan."
+    explanationText: "The Ku Klux Klan.",
+    detiledText: "The Knights of the Ku Klux Klan entered the province in 1926, an import from the United States. American Klansmen left with the treasury in 1927 but by then, the movement had grown popular enough to warrant local leadership. They have primarily railed against the 'unassimilable' immigrants coming from Central and Eastern Europe, and against the Catholic Church. While KKK membership includes members of all old parties, the Conservatives and Progressives raised issues of immigration and education that drew upon prejudicies raised by the KKK in the 1929 election and the KKK has praised Anderson's policies towards those two areas."
 },
 {
     searchString: "STA", 

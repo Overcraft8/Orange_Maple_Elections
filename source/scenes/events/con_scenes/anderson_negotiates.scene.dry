@@ -20,7 +20,7 @@ We may do well to promote a certain piece of legislation to prove our ability to
 
 - @anderson_farmers_debt_moratorium: Get him to establish a long-term moratorium on farm foreclosures and debt
 - @anderson_labour_legislation: Get Anderson to expand Labour Legislation
-- @anderson_public_works: Can we get Anderson to expand his public works projects?
+- @anderson_public_works: Can we get Anderson to expand public works projects?
 - @anderson_ministry: Let's enter government with a ministry of our choosing
 - @leave_anderson: Let's not get wracked up with Anderson right now
 
@@ -49,7 +49,11 @@ choose-if: 1 == 2
 # Sorry WTB fans
 
 @anderson_ministry
-on-arrival: leverage = 10; ccf_ss_in_government = 1
+on-arrival: {! 
+Q.leverage = 6; 
+Q.ccf_ss_in_government = 1 
+Q.window.updateBar('left');
+!}
 go-to: election_1928.ministries
 
 Many of our immigrant and Catholic base are disgusted at our compromise with Anderson's government. Even some in the leadership question whether is was right to achieve this legislation at the cost of aligning ourselves with the Premier. 

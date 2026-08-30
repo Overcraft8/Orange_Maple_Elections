@@ -85,9 +85,7 @@ on-arrival: {!
     Q.southwest_d_pps_seats -= 1; 
     Q.southwest_d_ccf_ss_seats += 1;
     Q.ccf_ss_name = 'PFLP';
-    Q.ccf_ss_in_government = 1;
     Q.pps_in_government = 0;
-    window.updateBar('left');
 !}
 
 The influx of Progressives into our party dilutes our socialist origins. The more moderate wing of our party is satisfied and believes that our move to the right will allow us to maneuver around the inevitable red-baiting we will receive in the next General Election. 

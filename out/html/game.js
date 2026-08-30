@@ -262,7 +262,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     }
 
     if (baseTooltip.detailedText) {
-        result += '<span style="display: block; margin-top: 6px; margin-bottom: 6px; font-size: 0.8em; white-space: normal; line-height: 1.3;">' + baseTooltip.detailedText + '</span>';
+        result += '<span class="detailed-text" style="display: none; margin-top: 6px; margin-bottom: 6px; font-size: 0.8em; white-space: normal; line-height: 1.3;">' + baseTooltip.detailedText + '</span>';
     }
 
     const ideologyKey = ideologyMap[searchString];
@@ -334,7 +334,7 @@ function applyWholesome(str) {
                 var tooltipContent = getDynamicTooltipContent(match, tooltip);
 
                 // NEW UNIFIED VERSION:
-                return `<span class='tooltip' style='${style}'>${innerText}<span class='tooltip-text'>${tooltipContent}</span></span>`;
+                return `<span class='tooltip' style='${style}; cursor: pointer;' onclick='var dt = this.querySelector(".detailed-text"); if(dt) dt.style.display = dt.style.display === "none" ? "block" : "none"; event.stopPropagation();'>${innerText}<span class='tooltip-text'>${tooltipContent}</span></span>`;
             } else if (colour) {
                 return `<span style='${style}'>${innerText}</span>`;
             }

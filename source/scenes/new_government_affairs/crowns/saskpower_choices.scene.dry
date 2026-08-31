@@ -31,7 +31,6 @@ Electrification Progress: [+ electrification : electrification +]
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies
 - @power_sellout: Sell Parts of SaskPower to Private Companies
-- @electrical_coop_sellout: Use SaskPower assets to establish Electrical Sector Worker's Cooperatives
 - @rural_electrification: Expand Access to Electricity
 - @raise_saskpower_rates: Raise Electricity Rates
 - @lower_saskpower_rates: Lower Electricity Rates

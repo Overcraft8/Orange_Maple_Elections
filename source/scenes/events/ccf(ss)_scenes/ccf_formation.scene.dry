@@ -1,0 +1,31 @@
+title: Birth of a Party
+tags: event
+view-if: year = 1932 and month = 5
+priority: 2
+max-visits: 1
+
+In Calgary, a meeting is set to be held, consisting of various labour, farmer, and socialist organizations to discuss the formation of a new Dominion-wide movement dedicated to social and economic planning. 
+
+- @attend_ccf_formation: We send delegates representing the UFC(SS) and the Saskatchewan ILP
+
+@attend_ccf_formation 
+face-image: img/portraits/ccf_founding.jpg
+
+= The New Face of Socialism
+
+The meeting is fruitful. Representatives from the: 
+
+Socialist Party of Canada
+
+United Farmers of Alberta
+
+Dominion Labor Party
+
+Canadian Labour Party
+
+United Farmers of Canada (Saskatchewan Section)
+
+Independent Labour Party
+
+Canadian Brotherhood of Railway Employees
+

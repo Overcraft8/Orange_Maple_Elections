@@ -62,7 +62,8 @@ const tooltipList = [{
 },
 {
     searchString: "Cooperative Coalition", 
-    explanationText: "A coalition of Conservatives, Progressives, and Independents"
+    explanationText: "A coalition of Conservatives, Progressives, and Independents",
+    detailedText: "The Cooperative Coalition was an effort by Premier James Anderson to unite the anti-Liberal forces of the province against the governing Liberals."
 },
 //Federal parties
 {
@@ -71,11 +72,11 @@ const tooltipList = [{
 },
 // Other Provincial Parties
 {
-    searchString: "UFA", 
+    searchString: ['UFA', 'United Farmers of Alberta'], 
     explanationText: "The United Farmers of Alberta"
 },
 {
-    searchString: "DLP", 
+    searchString: ['DLP', 'Dominion Labor Party'], 
     explanationText: "The Dominion Labor Party", 
     detailedText: "The Dominion Labor Party is of the old labor tradition in Canada and formed in Alberta. It has had limited electoral success in Alberta but is clearly overshadowed by the rising CCF."
 },
@@ -83,7 +84,12 @@ const tooltipList = [{
     searchString: ["SPBC", "Socialist Party of British Columbia"], 
     explanationText: "The Socialist Party of British Columbia",
     detailedText: "The Socialist Party of British Columbia is an old Socialist Party that achieved limited electoral success in British Columbia and has contributed to the province's long-standing labor and socialist tradition."
-},/*
+},
+{
+    searchString: ['ASCP', 'Alberta Social Credit Party'], 
+    explanationText: "Alberta Social Credit Party"
+},
+/*
 {
     searchString: "Socialist Party of British Columbia", 
     explanationText: "The Socialist Party of British Columbia",
@@ -149,7 +155,7 @@ const colourList = [{
     },
     {
         word: "SCPS", 
-        style: "color: #50E23D; font-weight: bold;"
+        style: "color: #49be39; font-weight: bold;"
     },
     // Federal Parties
     {
@@ -212,6 +218,10 @@ const colourList = [{
     {
         word: ['SPBC', 'Socialist Party of British Columbia'],
         style: "color: #a7391b; font-weight: bold;"
+    },
+    {
+        word: ['ASCP', 'Alberta Social Credit Party'],
+        style: "color: #49be39; font-weight: bold;"
     },
     // Below this for states of qdisplays
     /*

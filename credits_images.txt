@@ -63,6 +63,7 @@ sask_farming.jpg
 grain_elevator.jpg
 bank.png
 regina_trolleybus.jpg
+ccf_founding.jpg https://commons.wikimedia.org/wiki/File:CooperativeCommonwealthFederationFoundingMeeting.jpg
 
 
 // -----------------------------------

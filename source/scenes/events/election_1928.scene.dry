@@ -538,7 +538,7 @@ go-to: coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Ind: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ other_vote_change +] {!</td><td>!} [+ other_seats +] {!</td><td>!} [+ seats_change_other +]  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ scps_vote_change +] {!</td><td>!} [+ scps_seats +] {!</td><td>!} [+ seats_change_scps +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#49be39'> </div> !} SCPS: {!</td><td>!} [+ scps_votes +]% {!</td><td>!} [+ scps_vote_change +] {!</td><td>!} [+ scps_seats +] {!</td><td>!} [+ seats_change_scps +] {!</td></tr>!}
 
 {!</table>!}
 

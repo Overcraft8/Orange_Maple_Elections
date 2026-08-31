@@ -11,12 +11,12 @@ if (Q.advisor_action_timer <= 0) {
 }
 !}
 max-cards: 6
-
+ 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1932 and month = 2 : The Anderson government buckles down on it's policy of retrenchment.?]
+[? if year = 1932 and month = 2 : The Anderson government buckles down on it's policy of retrenchment, their options limited by the Federal government and Saskatchewan business. ?]
 
-[? if year = 1932 and month = 4 : The Alberta Social Credit Party wins a majority in the provincial legislature. Our family in the Alberta CCF are deeply disturbed by the usurpation of what could've been a CCF stronghold. Aberhart's SCPS has already won over the the farmers of Albert. Is it possible the party could become just as infectious in Saskatchewan? ?]
+[? if year = 1935 and month = 4 : In Alberta, the CCF(SS) affiliated DLP and UFA have lost all their seats to the upstart ASCP which now forms a Majority Government. ?]
 
 - @party
 - @govt

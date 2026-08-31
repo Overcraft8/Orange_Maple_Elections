@@ -413,7 +413,7 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'ccf_ss': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'ccf_ss': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#49be39', 'other': '#a0a0a0', 'sapd': '#c40000'},
             {'ccf_ss': 'CCF(SS)', 'cp_s': 'CP(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
@@ -426,7 +426,7 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'ccf_ss': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#50E23D', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'ccf_ss': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#49be39', 'other': '#a0a0a0', 'sapd': '#c40000'},
             {'ccf_ss': 'CCF(SS)', 'cp_s': 'CP(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
@@ -463,7 +463,7 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_seats +] % {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#50E23D'> </div></td><td>!} SCPS: {!</td><td>!} [+ scps_seats +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#49be39'> </div></td><td>!} SCPS: {!</td><td>!} [+ scps_seats +]% {!</td></tr>!}
 
 = Election history
 

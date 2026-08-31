@@ -305,6 +305,8 @@ Q.cps_politlean = 13;
 Q.scps_ideology = "Social Credit";
 Q.scps_politlean = 16;
 
+Q.cp_s_unity_front = 0
+
 
 
 Q.ccf_ss_in_government = 0; 
@@ -316,7 +318,9 @@ Q.lps_in_government = 0;
 Q.scps_in_government = 0; 
 
 
+Q.fptp = 1;
 
+Q.alberta_premier = 'Brownlee'
 
 //--------------------------------------
 // Starting Party Seats by District   //

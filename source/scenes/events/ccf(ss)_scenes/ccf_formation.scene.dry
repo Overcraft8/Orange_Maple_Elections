@@ -4,28 +4,32 @@ view-if: year = 1932 and month = 5
 priority: 2
 max-visits: 1
 
-In Calgary, a meeting is set to be held, consisting of various labour, farmer, and socialist organizations to discuss the formation of a new Dominion-wide movement dedicated to social and economic planning. 
+In the city of Calgary, there are rumblings that a new Dominion-spanning party is soon to be formed by delegates of Labour, Farmer, and Socialist organizations. 
 
-- @attend_ccf_formation: We send delegates representing the UFC(SS) and the Saskatchewan ILP
+The Left of Canadian politics has historically been fraught with division and isolation. The Federal Progressives failed miserably to mount a united front against the two old-line parties and consequently lost relevance. Out of its ashes sprung the Farmer's Parties but then still, they remain divided along Provincial lines. 
+
+The Labour movement is doing even worse. The TLC has been noncommittal at best to the Labour and Socialist parties. And what few Leftist parties exist are divided geographically and ideologically. Without a united front, success is scarce.  
+
+The Meeting is set to establish the basis of the party before a future convention is called to lay out a specific programme. 
+
+Delegates from the UFC(SS) and our ILP members have been invited to the meeting. Now, we must establish what exactly we will ask for...
+
+- @ccf_name: What name will we advocate for the new party?
+- @ccf_policy: Do we seek a more radical or more reformist route for the party?
+
+@ccf_name
+on-arrival: ccf_name_passed = 1
+view-if: ccf_name_passed = 0
+
+The name of the new party is very important. It could be a symbol of our 
+
+- @attend_ccf_formation: We send delegates representing the UFC(SS) and the former Saskatchewan ILP
 
 @attend_ccf_formation 
-face-image: img/portraits/ccf_founding.jpg
+face-image: img/ccf_founding.jpg
 
 = The New Face of Socialism
 
-The meeting is fruitful. Representatives from the: 
+The meeting is fruitful, bringing together various progressive groups interested in profound economic and social change and includes the -> Socialist Party of Canada (Primarily of BC), United Farmers of Alberta (Alberta), Dominion Labor Party (Alberta), Canadian Labour Party (Primarily Alberta), United Farmers of Canada (Saskatchewan Section), Independent Labour Party (Manitoba), and the Canadian Brotherhood of Railway Employees.
 
-Socialist Party of Canada
-
-United Farmers of Alberta
-
-Dominion Labor Party
-
-Canadian Labour Party
-
-United Farmers of Canada (Saskatchewan Section)
-
-Independent Labour Party
-
-Canadian Brotherhood of Railway Employees
-
+The organizations have agreed to a 

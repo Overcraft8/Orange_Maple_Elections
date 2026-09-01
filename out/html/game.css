@@ -179,6 +179,12 @@ ul.choices {
 ul.choices li {
   border-bottom: 1px solid #876;
   padding: 0.5em;
+  
+  background-image: linear-gradient(to right, var(--link-hover-color), var(--link-hover-color));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%; 
+  transition: background-size 0.25s ease-out;
 }
 ul.choices li div.subtitle {
   font-size: 0.9em;
@@ -190,8 +196,8 @@ ul.choices li.unavailable {
   background-color: var(--unavailable-bg-color) !important;
   cursor: default !important;
 }
-ul.choices li:hover {
-  background-color: var(--link-hover-color);
+ul.choices li:not(.unavailable):hover {
+  background-size: 100% 100%;
   cursor: pointer;
 }
 ul.choices li:last-child {
@@ -522,7 +528,7 @@ a.card:hover {
    z-index: 999;
   filter: brightness(105%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  transform: translate(-5px,-5px)
+  transform: translate(-6px,-6px) rotate(-2deg);
 }
 
 div.blank-card {

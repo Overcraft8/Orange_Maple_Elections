@@ -522,11 +522,99 @@ Q.tax_list = [
 
 
 
-@polls
+Your code got tangled because it was a "Frankenstein" snippet: it was trying to loop through political parties (Q.parties), but the HTML and variables inside the loop were still hardcoded for your economic market share pie chart (sectorData, privateShare, window.economy_images).
 
+Because Dendry builds this HTML before it renders to the screen, you cannot extract colors from CSS classes (like .seat.ccf) to use in an inline conic-gradient. Instead, we need to define the party colors in a JavaScript object, calculate the percentage for each party dynamically, and build the gradient string.
+
+Here is the completely fixed and functioning code:
+
+JavaScript
+@polls
+on-arrival: {!
+    var containerHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
+
+    // 1. Define your party colors here to feed the inline pie chart.
+    // Update these hex codes to match your specific CSS theme colors.
+    var partyColors = {
+        'ccf_ss': '#D26E28',
+        'cp_s': '#920c0c',  
+        'pps':'#7e741ab3', 
+        'lps': '#BE0028',     
+        'cps': '#0055A5',
+        'scps': '#49be39', 
+        'other':'#909090', 
+        'sapd': '#C40000'
+    };
+
+    // 2. Calculate total votes to ensure the pie chart adds up to 100%
+    var totalVotes = 0;
+    for (var party of Q.parties) {
+        totalVotes += (Q[party + '_votes'] || 0);
+    }
+
+    // 3. Build the dynamic pie chart slices and tooltips
+    var tooltipLines = [];
+    var gradientStops = [];
+    var currentStop = 0;
+
+    for (var party of Q.parties) {
+        var votes = Q[party + '_votes'] || 0;
+
+        var share = Math.round((votes / totalVotes) * 100);
+        var nextStop = currentStop + share;
+        
+        var color = partyColors[party]; 
+        gradientStops.push(`${color} ${currentStop}% ${nextStop}%`);
+        
+        tooltipLines.push(`${party.toUpperCase()}: ${share}%`);
+
+        currentStop = nextStop; 
+    }
+
+    var tooltipText = tooltipLines.join('\\n');
+    var gradientString = gradientStops.join(', ');
+
+    // 4. Construct the HTML card
+    var cardHtml = `
+        <div class="project_container" style="
+            position: relative; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            background-color: #2c2c2c;
+            padding: 16px;
+            min-width: 140px;
+            color: #ffffff;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            border: 2px ridge #9c8c64;
+            border-radius: 4px;
+        ">
+            <span style="font-size: 14px; font-weight: bold; margin-bottom: 10px; display: block; color: #f1c40f;">Polling Breakdown</span>
+            <figure class="pie_chart" data-tooltip="${tooltipText}" style="
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: conic-gradient(${gradientString});
+            ">
+            </figure>
+        </div>
+    `;
+
+    containerHtml += cardHtml;
+    containerHtml += '</div>';
+    
+    // Save to your display variable
+    Q.general_polling = containerHtml;
+!}
 = Overall Polls
 
 # {!<div id="overall-polls-chart" style="width: 90%; height: 200px; justify-content: center;"></div>!}
+
+[+ general_polling +]
+
+
 
 
 =                                  Urban Polling

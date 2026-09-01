@@ -55,13 +55,13 @@ We must pick wisely...
 - @Coldwell: Coldwell will surely lead the [+ ccf_ss_name +] to victory. 
 
 @GeorgeWilliams 
-on-arrival: farmers_ccf_ss += 4; agrarian_strength += 4; agrarian_dissent -= 4; ccf_ss_president = "George Hara Williams"; ccf_ss_president_img = "WilliamsHaraGeorge.jpg"
+on-arrival: farmers_ccf_ss += 4; agrarian_strength += 4; agrarian_dissent -= 4; ccf_ss_president = "George Williams"; ccf_ss_president_img = "WilliamsHaraGeorge.jpg"
 face-image: img/portraits/WilliamsHaraGeorge.jpg
 
 Williams will lead us to victory!
 
 @Coldwell
-on-arrival: workers_ccf_ss += 4; labour_strength += 4; labour_dissent -= 4; ccf_ss_president = "Major James Coldwell"; ccf_ss_president_img = "ColdwellMajorJames.jpg"
+on-arrival: workers_ccf_ss += 4; labour_strength += 4; labour_dissent -= 4; ccf_ss_president = "MJ Coldwell"; ccf_ss_president_img = "ColdwellMajorJames.jpg"
 face-image: img/portraits/ColdwellMajorJames.jpg
 
 Coldwell will lead us to victory!

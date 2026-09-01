@@ -51,6 +51,32 @@ if (Q.pro_republic >= 100) {
 // }
 
 
+// calculate support for each of the parties
+var total_support = 0; 
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        if (Q.old_demographics) { 
+            party_support += Q[c]*Q[c+'_'+party];
+        } else  { 
+            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
+        } 
+    }
+    Q[party + '_support'] = party_support;
+    total_support += party_support; 
+};
+
+// 2. normalize support (fraction)
+for (var party of Q.parties) {
+    Q[party+'_normalized'] = Q[party + '_support']/total_support;
+    Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
+    Q[party+'_votes_display'] = Math.round(Q[party+'_normalized']*100);
+};
+
+
+
+
+
 // set faction strength/dissent to 0
 for (var c of Q.factions) {
     if (Q[c+'_dissent'] < 0) {

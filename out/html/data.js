@@ -42,23 +42,23 @@ const tooltipList = [{
 },
 {
     searchString: "UFPA",
-    explanationText: "The United Farmers Political Association."
+    explanationText: "The United Farmers Political Association"
 },
 {
     searchString: "CCYM",
-    explanationText: "The Cooperative Commonwealth Youth Movement."
+    explanationText: "The Cooperative Commonwealth Youth Movement"
 },
 {
     searchString: "ILP",
-    explanationText: "The Independent Labour Party."
+    explanationText: "The Independent Labour Party"
 },
 {
     searchString: "FUL",
-    explanationText: "The Farmer's Unity League."
+    explanationText: "The Farmer's Unity League"
 },
 {
     searchString: "WUL",
-    explanationText: "The Worker's Unity League. "
+    explanationText: "The Worker's Unity League "
 },
 {
     searchString: "Cooperative Coalition", 
@@ -98,24 +98,24 @@ const tooltipList = [{
 // Below organizations
 {
     searchString: ['KKK', 'Ku Klux Klan'], 
-    explanationText: "The Ku Klux Klan.",
+    explanationText: "The Ku Klux Klan",
     detailedText: "The Knights of the Ku Klux Klan entered the province in 1926, an import from the United States. American Klansmen left with the treasury in 1927 but by then, the movement had grown popular enough to warrant local leadership. They have primarily railed against the 'unassimilable' immigrants coming from Central and Eastern Europe, and against the Catholic Church. While KKK membership includes members of all old parties, the Conservatives and Progressives raised issues of immigration and education that drew upon prejudicies raised by the KKK in the 1929 election and the KKK has praised Anderson's policies towards those two areas."
 },
 {
     searchString: "STA", 
-    explanationText: "The Saskatchewan Teacher's Alliance. "
+    explanationText: "The Saskatchewan Teacher's Alliance "
 },
 {
     searchString: "TLC", 
-    explanationText: "The Trades and Labour Congress of Canada. "
+    explanationText: "The Trades and Labour Congress of Canada "
 },
 {
     searchString: "CCL", 
-    explanationText: "The Canadian Congress of Labour. "
+    explanationText: "The Canadian Congress of Labour "
 },
 {
     searchString: "Res. Workers", 
-    explanationText: "Resource workers (lumber, mining, etc.)"
+    explanationText: "Workers in the Resouce industry (lumber, mining, etc.)"
 },
 ];
 

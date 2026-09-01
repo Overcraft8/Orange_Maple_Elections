@@ -608,6 +608,7 @@ on-arrival: {!
     // Save to your display variable
     Q.general_polling = containerHtml;
 !}
+
 = Overall Polls
 
 # {!<div id="overall-polls-chart" style="width: 90%; height: 200px; justify-content: center;"></div>!}

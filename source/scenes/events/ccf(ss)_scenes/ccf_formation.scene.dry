@@ -23,6 +23,8 @@ view-if: ccf_name_passed = 0
 
 The name of the new party is very important. It could be a symbol of our 
 
+@ccf_policy
+
 - @attend_ccf_formation: We send delegates representing the UFC(SS) and the former Saskatchewan ILP
 
 @attend_ccf_formation 

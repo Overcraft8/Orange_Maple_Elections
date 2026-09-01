@@ -164,27 +164,27 @@ go-to: menu
 
 **Projected election results** (if the election were to be held now):
 
-CCF(SS): [+ ccf_ss_votes +]%
+CCF(SS): [+ ccf_ss_polls +]%
 
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
+[? if sapd_formed: SAPD: [+ sapd_polls +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
-PPS: [+ pps_votes +]%
+PPS: [+ pps_polls +]%
 
 # 1928: 10, 1930: 13
-CP(S): [+ cp_s_votes +]%
+CP(S): [+ cp_s_polls +]%
 
 # 1928: 5, 1930: 4 (as DstP)
-[+ lps_name +]: [+ lps_votes +]%
+[+ lps_name +]: [+ lps_polls +]%
 
 # 1928: 9, 1930: 5
-CPS: [+ cps_votes +]%
+CPS: [+ cps_polls +]%
 
 # 1928: 14, 1930: 7
-SCPS: [+ scps_votes +]%
+SCPS: [+ scps_polls +]%
 
 # 1928: 9, 1930: 10
-Others: [+ other_votes +]%
+Others: [+ other_polls +]%
 
 **Detailed results for each demographic**
 

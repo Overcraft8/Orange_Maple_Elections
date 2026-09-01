@@ -8,13 +8,13 @@ go-to: election_algorithm
 @post_election
 on-arrival: {!
 // set congress proportion to votes
-Q.ccf_ss_r = Q.ccf_ss_votes;
-Q.pps_r = Q.pps_votes;
-Q.cp_s_r = Q.cp_s_votes;
-Q.lps_r = Q.lps_votes;
-Q.cps_r = Q.cps_votes;
-Q.scps_r = Q.scps_votes;
-Q.other_r = Q.other_votes;
+Q.ccf_ss_r = Q.ccf_ss_polls;
+Q.pps_r = Q.pps_polls;
+Q.cp_s_r = Q.cp_s_polls;
+Q.lps_r = Q.lps_polls;
+Q.cps_r = Q.cps_polls;
+Q.scps_r = Q.scps_polls;
+Q.other_r = Q.other_polls;
 
 // The largest party can only be the CCF(SS), LPS, CPS, or SCPS.
 Q.largest_party = 'CCF(SS)';

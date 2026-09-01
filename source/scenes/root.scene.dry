@@ -1053,13 +1053,13 @@ Q.transport_pie_chart = 0;
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
 
-Q.ccf_ss_old_votes = 0;
-Q.cp_s_old_votes = 0;
-Q.cps_old_votes = 0;
-Q.lps_old_votes = 0;
-Q.scps_old_votes = 0;
-Q.pps_old_votes = 0;
-Q.other_old_votes = 0;
+Q.ccf_ss_old_polls = 0;
+Q.cp_s_old_polls = 0;
+Q.cps_old_polls = 0;
+Q.lps_old_polls = 0;
+Q.scps_old_polls = 0;
+Q.pps_old_polls = 0;
+Q.other_old_polls = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -1166,6 +1166,32 @@ Q.old_other_r = 9;
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+
+
+// calculate support for each of the parties
+var total_support = 0; 
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        if (Q.old_demographics) { 
+            party_support += Q[c]*Q[c+'_'+party];
+        } else  { 
+            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
+        } 
+    }
+    Q[party + '_support'] = party_support;
+    total_support += party_support; 
+};
+
+// 2. normalize support (fraction)
+for (var party of Q.parties) {
+    Q[party+'_normalized'] = Q[party + '_support']/total_support;
+    Q[party+'_polls'] = Math.round(Q[party+'_normalized']*100);
+    Q[party+'_polls_display'] = Math.round(Q[party+'_normalized']*100);
+};
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -518,17 +518,6 @@ Q.tax_list = [
 </div>
 
 
-
-
-
-
-Your code got tangled because it was a "Frankenstein" snippet: it was trying to loop through political parties (Q.parties), but the HTML and variables inside the loop were still hardcoded for your economic market share pie chart (sectorData, privateShare, window.economy_images).
-
-Because Dendry builds this HTML before it renders to the screen, you cannot extract colors from CSS classes (like .seat.ccf) to use in an inline conic-gradient. Instead, we need to define the party colors in a JavaScript object, calculate the percentage for each party dynamically, and build the gradient string.
-
-Here is the completely fixed and functioning code:
-
-JavaScript
 @polls
 on-arrival: {!
     var containerHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
@@ -549,7 +538,7 @@ on-arrival: {!
     // 2. Calculate total votes to ensure the pie chart adds up to 100%
     var totalVotes = 0;
     for (var party of Q.parties) {
-        totalVotes += (Q[party + '_votes'] || 0);
+        totalVotes += (Q[party + '_polls'] || 0);
     }
 
     // 3. Build the dynamic pie chart slices and tooltips
@@ -558,7 +547,7 @@ on-arrival: {!
     var currentStop = 0;
 
     for (var party of Q.parties) {
-        var votes = Q[party + '_votes'] || 0;
+        var votes = Q[party + '_polls'] || 0;
 
         var share = Math.round((votes / totalVotes) * 100);
         var nextStop = currentStop + share;
@@ -571,7 +560,7 @@ on-arrival: {!
         currentStop = nextStop; 
     }
 
-    var tooltipText = tooltipLines.join('\\n');
+    var tooltipText = tooltipLines.join('\n');
     var gradientString = gradientStops.join(', ');
 
     // 4. Construct the HTML card

@@ -26,16 +26,16 @@ if (Q.pro_republic >= 100) {
  // re-calculate party support
  // calculate normalized class voting for the achievements
  for (var c of Q.classes) {
-     var class_votes = 0;
+     var class_polls = 0;
      for (var party of Q.parties) {
          if (Q[c+'_'+party] < 0) {
              Q[c+'_'+party] = 0;
          }
-         class_votes += Q[c+'_'+party];
+         class_polls += Q[c+'_'+party];
      }
      for (var party of Q.parties) {
-         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
-         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
+         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_polls;
+         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_polls);
      }
  }
 
@@ -45,9 +45,9 @@ if (Q.pro_republic >= 100) {
 // // 2. normalize support (fraction)
 // for (var party of Q.parties) {
 //     Q[party+'_normalized'] = Q[party + '_support']/total_support;
-//     Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10
-//     Q[party+'_votes'] = Q[party+'_votes_dec'];
-//     Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+//     Q[party+'_polls_dec'] = Math.round(Q[party+'_normalized']*1000)/10
+//     Q[party+'_polls'] = Q[party+'_polls_dec'];
+//     Q[party + '_polls_disp'] = Q[party+'_polls_dec'].toFixed(1);
 // }
 
 
@@ -69,8 +69,8 @@ for (var party of Q.parties) {
 // 2. normalize support (fraction)
 for (var party of Q.parties) {
     Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
-    Q[party+'_votes_display'] = Math.round(Q[party+'_normalized']*100);
+    Q[party+'_polls'] = Math.round(Q[party+'_normalized']*100);
+    Q[party+'_polls_display'] = Math.round(Q[party+'_normalized']*100);
 };
 
 
@@ -421,7 +421,7 @@ if (Q.month_actions >= 1) {
 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce CCF(SS) support...
-    if (Q.pro_republic < (Q.ccf_ss_votes + Q.lps_votes + Q.pps_votes - 3)) {
+    if (Q.pro_republic < (Q.ccf_ss_polls + Q.lps_polls + Q.pps_polls - 3)) {
         if (Q.new_middle_ccf_ss > 0) {
             Q.new_middle_ccf_ss -= 5/12;
         }

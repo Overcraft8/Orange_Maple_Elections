@@ -564,7 +564,7 @@ on-arrival: {!
     var gradientString = gradientStops.join(', ');
 
     // 4. Construct the HTML card
-    var cardHtml = `
+    /*var cardHtml = `
         <div class="project_container" style="
             position: relative; 
             display: flex; 
@@ -589,6 +589,16 @@ on-arrival: {!
             ">
             </figure>
         </div>
+    `;*/
+    var cardHtml = `
+        <span style="font-size: 14px; font-weight: bold; margin-bottom: 10px; display: block; color: #f1c40f;">Polling Breakdown</span>
+        <figure class="pie_chart" data-tooltip="${tooltipText}" style="
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: conic-gradient(${gradientString});
+        ">
+        </figure>
     `;
 
     containerHtml += cardHtml;

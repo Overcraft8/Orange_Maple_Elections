@@ -16,6 +16,31 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 
 Electrification Progress: [+ electrification : electrification +]
 
+<div class="gov_panel" style="margin-bottom: 15px;">
+        <h1 style="font-size: 1.2em; margin-top: 0;">Operational Dashboard</h1>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <div style="flex: 1; min-width: 140px;">
+                <strong>Generation Mix:</strong><br>
+                Fossil Fuels: <span style="color: #888;">85%</span><br>
+                Hydroelectric: <span style="color: #2980b9;">10%</span><br>
+                Renewables: <span style="color: #27ae60;">5%</span>
+            </div>
+            <div style="flex: 1; min-width: 140px;">
+                <strong>Infrastructure:</strong><br>
+                Grid Stability: <span style="color: #c76d13;">Strained</span><br>
+                Rural Coverage: <span style="color: #c71313;">Poor</span><br>
+                Emissions: <span style="color: #c71313;">High</span>
+            </div>
+            <div style="flex: 1; min-width: 140px;">
+                <strong>Public Mandate:</strong><br>
+                Approval: <span style="color: #f1c40f;">62%</span><br>
+                Affordability Index: <span style="color: #c76d13;">Moderate</span>
+            </div>
+        </div>
+    </div>
+    
+    <p></p>
+
 <div style="display: flex; flex-direction: row;">
     <div class="gov_panel">
         Rates: [+ saskpower.revenue.rates +]

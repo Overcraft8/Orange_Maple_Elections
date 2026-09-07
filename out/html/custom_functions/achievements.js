@@ -25,40 +25,38 @@ window.achievements_list = {
 }
 
 window.achievements_loader = function(container) {
-
   var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+  if (!Q) return;
 
-  var achievements = window.achievements_list.achievements; 
+  var achievements = window.achievements_list.achievements;
+  var display = "";
 
+  // Build the complete markup string
   for (var achievement of achievements) {
     var lock_state = Q[achievement.id] ? '--unlocked' : '--locked';
 
-    Q.achievement_set = `<div class="achievement achievement${lock_state}" style="display:flex">
-                            <div class="achievement-image achievement-image${lock_state}">
-                              <img src=${achievement.image} style="width:100%;height:100%;object-fit:cover;">
-                              </div>
-                              <div class="achievement-body">
-                                <div class="achievement-title achievement-title${lock_state}">
-                                  <span> ${achievement.name} </span>
-                              </div>
-                              <div class="achievement-description achievement-description${lock_state}">${achievement.description}</div>
-                            </div>
-                          </div>`
-
-    container += Q.achievement_set;
-
+    display += `<div class="achievement achievement${lock_state}" style="display:flex">
+      <div class="achievement-image achievement-image${lock_state}">
+        <img src="${achievement.image}" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="achievement-body">
+        <div class="achievement-title achievement-title${lock_state}">
+          <span>${achievement.name}</span>
+        </div>
+        <div class="achievement-description achievement-description${lock_state}">
+          ${achievement.description}
+        </div>
+      </div>
+    </div>`;
+    console.log("w");
   }
 
+  Q.achievement_set = display;
 
-  // Starting state for container of achievement
-  //Q.achievement_base = `<div class="achievement achievement--locked" style="display: flex">`
+  // Render to DOM target if an element or selector was supplied
 
-
-
-
-
-
-
-  //if (container.startsWith('Q.')) {}
-
-}
+  if (container.startsWith('Q.')) {
+    console.log('y');
+    container = Q.achievement_set;
+  };
+};

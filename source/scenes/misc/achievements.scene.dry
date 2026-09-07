@@ -3,8 +3,9 @@ view-if: achievement_game_completed == 1
 tags: endings
 go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 on-arrival: {!
-    1 += 1;
+    window.achievements_loader(Q.achievements_display);
 !}
 
-= Completed Achievements
+= Achievements
 
+[+ achievements_display +]

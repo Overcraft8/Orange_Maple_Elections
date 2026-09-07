@@ -6,13 +6,16 @@ on-arrival: {!
     for (var val of Object.values(revenue)) {
         Q.saskpower_revenue_display += val;
     };
+
+    
+
 !}
 
 = SaskPower
 
 SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, purchasing independently-owned electrical utilities. 
 
-# Current Rate: [+ saskpower.revenue.rates : saskpower_rates +]
+Current Rate: [+ saskpower.revenue.rates : saskpower_rates +]
 
 Electrification Progress: [+ electrification : electrification +]
 

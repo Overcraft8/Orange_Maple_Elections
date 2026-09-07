@@ -54,3 +54,68 @@
     margin-top: auto;
     box-sizing: border-box;
 }
+
+
+
+
+/* Below are achievements */
+
+/* Achievement display */
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 10px;
+  border-top: 2px solid var(--card-bg-color);
+}
+.achievement--locked {
+  border-top: 2px solid var(--card-bg-color);
+}
+.achievement--unlocked {
+  border-top: 2px solid rgba(220,150,0,.5);
+} 
+
+.achievement-image {
+  flex-shrink: 0;
+  width: 90px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-image--unlocked {
+  background: #2a2030;
+  box-shadow: 0 0 0 1px rgba(220,150,0,.4), 0 0 14px rgba(220,150,0,.5), 0 0 28px rgba(220,150,0,.2);
+}
+
+.achievement-image--locked {
+  background: #1c1c24;
+  filter: grayscale(1);
+  opacity: .4;
+}
+
+.achievement-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.achievement-title {
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "UbuntuCustom", system-ui, -apple-system, BlinkMacSystemFont,
+  Ubuntu, Cantarell, sans-serif;
+}
+
+.achievement-title--unlocked { color: var(--text-color); }
+.achievement-title--locked   { color: var(--text-color); opacity: 0.8; }
+
+.achievement-description {
+  font-size: 0.85em;
+}

@@ -14,7 +14,7 @@ go-to: start_menu_2
 - @start: Start game
 - @election_simulation: Election simulation
 - @credits: Credits
-- @game_over.achievements
+- @achievements: Achievements
 - @intro_to_sask: Saskatchewan: A Political History (by yours truly)
 - @Information: Information
 

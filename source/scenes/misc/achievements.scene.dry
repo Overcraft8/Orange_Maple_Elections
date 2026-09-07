@@ -1,5 +1,4 @@
 title: Achievements
-view-if: achievement_game_completed == 1
 tags: endings
 on-arrival: {!
     window.achievements_loader(Q.achievements_display);

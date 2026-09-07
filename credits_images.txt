@@ -64,6 +64,7 @@ grain_elevator.jpg
 bank.png
 regina_trolleybus.jpg
 ccf_founding.jpg https://commons.wikimedia.org/wiki/File:CooperativeCommonwealthFederationFoundingMeeting.jpg
+diefenbaker_john_old.png https://commons.wikimedia.org/w/index.php?search=John+Diefenbaker&title=Special%3AMediaSearch&type=image
 
 
 // -----------------------------------

@@ -1,7 +1,7 @@
 title: Achievements
 tags: endings
 on-arrival: {!
-    window.achievements_loader(Q.achievements_display);
+    window.achievements_loader('achievements_display');
 !}
 
 = Achievements

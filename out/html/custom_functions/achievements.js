@@ -51,12 +51,9 @@ window.achievements_loader = function(container) {
     console.log("w");
   }
 
-  Q.achievement_set = display;
-
-  // Render to DOM target if an element or selector was supplied
-
-  if (container.startsWith('Q.')) {
-    console.log('y');
-    container = Q.achievement_set;
-  };
+  if (container) {
+    Q[container] = display;
+  }
+  
+  //Q.achievement_set = display;
 };

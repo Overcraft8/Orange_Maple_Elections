@@ -7,7 +7,9 @@ on-arrival: {!
         Q.saskpower_revenue_display += val;
     };
 
-    
+    Q.private_share = Q.economic_data.electricity.private;
+    Q.monopoly_cost = Math.round(Q.private_share*10, 2);
+
 
 !}
 
@@ -19,30 +21,30 @@ Current Rate: [+ saskpower.revenue.rates : saskpower_rates +]
 
 Electrification Progress: [+ electrification : electrification +]
 
-<div class="gov_panel" style="margin-bottom: 15px;">
-        <h1 style="font-size: 1.2em; margin-top: 0;">Operational Dashboard</h1>
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-            <div style="flex: 1; min-width: 140px;">
-                <strong>Generation Mix:</strong><br>
-                Fossil Fuels: <span style="color: #888;">85%</span><br>
-                Hydroelectric: <span style="color: #2980b9;">10%</span><br>
-                Renewables: <span style="color: #27ae60;">5%</span>
-            </div>
-            <div style="flex: 1; min-width: 140px;">
-                <strong>Infrastructure:</strong><br>
-                Grid Stability: <span style="color: #c76d13;">Strained</span><br>
-                Rural Coverage: <span style="color: #c71313;">Poor</span><br>
-                Emissions: <span style="color: #c71313;">High</span>
-            </div>
-            <div style="flex: 1; min-width: 140px;">
-                <strong>Public Mandate:</strong><br>
-                Approval: <span style="color: #f1c40f;">62%</span><br>
-                Affordability Index: <span style="color: #c76d13;">Moderate</span>
-            </div>
-        </div>
-    </div>
-    
-    <p></p>
+# <div class="gov_panel" style="margin-bottom: 15px;">
+#         <h1 style="font-size: 1.2em; margin-top: 0;">Operational Dashboard</h1>
+#         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+#             <div style="flex: 1; min-width: 140px;">
+#                 <strong>Generation Mix:</strong><br>
+#                 Fossil Fuels: <span style="color: #888;">85%</span><br>
+#                 Hydroelectric: <span style="color: #2980b9;">10%</span><br>
+#                 Renewables: <span style="color: #27ae60;">5%</span>
+#             </div>
+#             <div style="flex: 1; min-width: 140px;">
+#                 <strong>Infrastructure:</strong><br>
+#                 Grid Stability: <span style="color: #c76d13;">Strained</span><br>
+#                 Rural Coverage: <span style="color: #c71313;">Poor</span><br>
+#                 Emissions: <span style="color: #c71313;">High</span>
+#             </div>
+#             <div style="flex: 1; min-width: 140px;">
+#                 <strong>Public Mandate:</strong><br>
+#                 Approval: <span style="color: #f1c40f;">62%</span><br>
+#                 Affordability Index: <span style="color: #c76d13;">Moderate</span>
+#             </div>
+#         </div>
+#     </div>
+#     
+#     <p></p>
 
 <div style="display: flex; flex-direction: row;">
     <div class="gov_panel">
@@ -62,11 +64,11 @@ Electrification Progress: [+ electrification : electrification +]
 - @rural_electrification: Expand Access to Electricity
 - @raise_saskpower_rates: Raise Electricity Rates
 - @lower_saskpower_rates: Lower Electricity Rates
-- @prevScene: Return 
+- @government_options.crown_corps_options: Return 
 
 
 @saskpower_monopoly
-subtitle: -8 budget, 100% Market Share, Increased Capital Flight
+subtitle: -[+ monopoly_cost +] budget, 100% Market Share, Increased Capital Flight
 view-if: 1 = 1
 choose-if: treasury >= 8
 on-arrival: {!
@@ -74,7 +76,7 @@ on-arrival: {!
     market_info.private = 0; 
     market_info.coop = 0; 
     market_info.state = 1;
-    Q.treasury -= 8; 
+    Q.treasury -= Q.monopoly_cost; 
     Q.economic_data.electricity.business_climate -= 100;
 !}
 go-to: exit_gov

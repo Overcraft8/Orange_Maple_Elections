@@ -1221,6 +1221,7 @@ for (var party of Q.parties) {
 
 
 // Access to electricity
+
 Q.state_transport = 0;
 Q.electrification = 5;
 Q.telecoms = 10;
@@ -1554,7 +1555,7 @@ unavailable-subtitle: WIP!
 go-to: 1932_main
 
 @1932_main
-subtitle: More paths and freedom - Intended way to play 
+subtitle: More freedom, Intended way to Play - Less historical
 audio: shuffle music/CoveredWagonDays.mp3 music/WhiteRiverStomp.mp3 music/CoaxingthePiano.mp3 music/OCanadaColdstreamGuards.mp3 music/COURAGE.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0

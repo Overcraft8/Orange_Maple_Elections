@@ -176,6 +176,7 @@ ul.choices {
   border-radius: 4px;
   clear: left;
 }
+
 ul.choices li {
   font-size: 1em;
   border-bottom: 1px solid #876;
@@ -185,41 +186,51 @@ ul.choices li {
   position: relative;
   overflow: visible;
 }
-ul.choices li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 0;
-  background: var(--link-hover-color);
-  z-index: 0;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+@media (hover: hover) and (pointer: fine) {
+  ul.choices li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--link-hover-color);
+    z-index: 0;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ul.choices li:hover::before {
+    width: 100%;
+  }
 }
-ul.choices li:hover::before {
-  width: 100%;
-}
+
 ul.choices li div.subtitle {
   margin-left: 2em;
   font-style: italic;
   position: relative;
   z-index: 1;
 }
+
 ul.choices li.unavailable {
   color: var(--unavailable-color);
   background-color: var(--unavailable-bg-color) !important;
   cursor: default !important;
 }
+
 ul.choices li:hover {
   cursor: pointer;
 }
+
 ul.choices li > * {
   position: relative;
   z-index: 1;
 }
+
 ul.choices li:last-child {
   border-bottom: none;
 }
+
 ul.choices a {
   text-decoration: none;
 }

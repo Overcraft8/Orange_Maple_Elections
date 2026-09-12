@@ -60,26 +60,27 @@
 
 /* Below are achievements */
 
-/* Achievement display */
-
 .achievement {
+  background: var(--tab-color);
+  --tab-color: #efe0b9;
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 14px 10px;
-  border-top: 2px solid var(--card-bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
 }
 .achievement--locked {
-  border-top: 2px solid var(--card-bg-color);
+  border-top: 2px solid var(--border-color);
 }
 .achievement--unlocked {
-  border-top: 2px solid rgba(220,150,0,.5);
+  border-top: 2px solid var(--border-color);
 } 
 
 .achievement-image {
   flex-shrink: 0;
   width: 90px;
-  height: 60px;
+  height: 90px;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -88,12 +89,12 @@
 }
 
 .achievement-image--unlocked {
-  background: #2a2030;
+  background: var(--tab-color);
   box-shadow: 0 0 0 1px rgba(220,150,0,.4), 0 0 14px rgba(220,150,0,.5), 0 0 28px rgba(220,150,0,.2);
 }
 
 .achievement-image--locked {
-  background: #1c1c24;
+  background: var(--tab-color);
   filter: grayscale(1);
   opacity: .4;
 }
@@ -104,7 +105,7 @@
 }
 
 .achievement-title {
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 700;
   margin-bottom: 4px;
   display: flex;

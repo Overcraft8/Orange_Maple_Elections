@@ -886,7 +886,7 @@ for (var region in Q.district_demography) {
 }
 
 Q.total_population = 0;
-
+/* 
 // Get "total population"
 for (var c of Q.classes) {
     Q[c + '_total_population'] = 0;
@@ -908,7 +908,7 @@ for (var c of Q.classes) {
     }
     console.log(c + ' population percent: ' + Q[c + '_population_percent']);
 }
-
+*/
 
 
 

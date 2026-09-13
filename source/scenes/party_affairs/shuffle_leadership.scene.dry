@@ -333,7 +333,7 @@ George Hara Williams is now an advisor.
 
 @add_cll
 title: CLL
-subtitle: <img src="img/protests/regina_riot_protest.jpg" class="face-image">The CLL is an alliance of Social Democrats and Communists contesting Municipal Politics.  {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Police Affairs ?]
+subtitle: <img src="img/protests/regina_riot_protest.jpg" class="face-image"><span>The CLL is an alliance of Social Democrats and Communists contesting Municipal Politics. <br> Actions - Urban Bulwark, Police Affairs <span>  {!<br><br>!}
 is-card: true
 card-image: img/protests/regina_riot_protest.jpg
 tags: labour_advisor

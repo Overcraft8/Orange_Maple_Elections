@@ -53,6 +53,10 @@ const tooltipList = [{
     explanationText: "The Independent Labour Party"
 },
 {
+    searchString: "ILP(S)",
+    explanationText: "The Independent Labour Party (Saskatchewan)"
+},
+{
     searchString: "FUL",
     explanationText: "The Farmer's Unity League"
 },
@@ -176,6 +180,10 @@ const colourList = [{
     },
     {
         word: "ILP",
+        style: "color: #b06262; font-weight: bold;"
+    },
+    {
+        word: "ILP(S)",
         style: "color: #b06262; font-weight: bold;"
     },
     {

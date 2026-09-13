@@ -1,0 +1,25 @@
+title: The United Farmers of Canada (Saskatchewan Section)
+is-pinned-card: true
+tags: advisor, agrarian
+card-image: img/williams_speech.jpg
+view-if: ufc_advisor = 1
+new-page: true
+
+= The United Farmers of Canada (Saskatchewan Section) 
+
+The UFC(SS) is a farmer's educational organization. In 1932, it's political wing, the UFPA, merged with the ILP(S) to form the FLP. 
+
+[? if ufc_militancy >= 0.50 : The UFC(SS)'s Left Wing is currently in power. ?]
+
+[? if ufc_militancy <> 0.50 : The UFC(SS)'s Right Wing is currently in power. ?]
+
+- @ufc_relations: Improve relations with the UFC(SS)
+- @ufc_organizing: Organize Farmers for the [+ ccf_ss_name +]
+- @root: Return to main
+
+
+@ufc_relations
+
+@ufc_organizing
+
+@ufc_mi

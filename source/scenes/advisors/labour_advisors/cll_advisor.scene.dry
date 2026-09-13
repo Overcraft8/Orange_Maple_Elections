@@ -15,17 +15,15 @@ The Civic Labor League is a Municipal Party fielding candidates in Regina[? if c
 
 Civic Labor League Strength: [+ cll_strength : strength +]
 
-- @city_bulwark
-- @cll_aid: Send aid to the CLL
+- @cll_governance: Attempt to direct CLL Policy
+- @cll_politics: Root out Communist influence in the CLL
+- @cll_aid: Provide resources for the CLL
 - @root: Return to main
 
-@city_bulwark
-title: Urban Bulwark
-subtitle: Brockelbank has influence over Urban politics.
-choose-if: advisor_action_timer <= 0 and ccf_ss_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_prussia : The [+ ccf_ss_name +] is not in control of City Police. ?]
-on-arrival: advisor_action_timer = 6; city_affairs_timer -= 6; last_advisor_action = 1
-go-to: city_affairs
+
+@cll_governance
+
+@cll_politics
 
 
 @cll_aid

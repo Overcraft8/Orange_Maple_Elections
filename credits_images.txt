@@ -96,6 +96,16 @@ Sask_CCL.jpg - https://www.esask.uregina.ca/entry/saskatchewan_federation_of_lab
 regina_riot_protest.jpg  -https://www.esask.uregina.ca/entry/labour.html
 
 
+// ------------------------------------
+// Winnipeg Free Press
+// ------------------------------------
+
+williams_speech.jpg - https://www.winnipegfreepress.com/arts-and-life/entertainment/books/2018/05/26/from-plowing-to-politics
+
+
+
+
+
 
 stacked bar graph (thanks maybe): https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html
 

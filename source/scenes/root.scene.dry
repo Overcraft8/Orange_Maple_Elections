@@ -590,7 +590,7 @@ Q.ufc_influence = 60;
 Q.ufc_relations = 70;
 Q.ufc_affiliated = 1;
 Q.ufc_strength = 35.00;
-Q.ufc_militancy = 0.30;
+Q.ufc_militancy = 0.70;
 
 Q.sta_affiliated = 0;
 Q.sta_strength = 5.00;
@@ -1360,7 +1360,7 @@ Q.march_on_berlin_timer = 0;
 Q.coldwell_advisor = 1; // Major James Coldwell
 Q.douglas_advisor = 0; // Tommy Douglas
 Q.douglas_dead = 0;
-Q.nicholson_advisor = 0; // Alexander Nicholson
+Q.ufc_advisor = 0; // United Farmers of Canada (Saskatchewan Section)
 
 // left advisors
 Q.jamieson_advisor = 0; // Laura Jamieson
@@ -1579,11 +1579,11 @@ The only break in Liberal dominance was the 1929 election, wherein a coalition o
 
 The Great Depression hit Saskatchewan the hardest of all the provinces, especially the farmers who observed a 90% decrease in income per capita. Thousands filed into the cities looking for work only to be turned away by what little non-agricultural industry and retail existed. 
 
-This struggle brewed a strong localized form of socialism, more impacted by British Fabianism and the Social Gospel than Marxism. From this brew sprouted the FLP, a merger of the UFPA [the political arm of the UFC(SS)] and the ILP, a miniscule urban socialist party whose leadership was dominated by middle class professionals rather than trade unionists. Accordingly, the early FLP was dominated by its agrarian wing and saw little electoral success in urban reas. One core policy aim of the party was the use-lease system, wherein farmers would have the option of leasing their land to the government for a guaranteed price, allowing them to pay off their debts and avoid foreclosure. Under use-lease, provincially administered Crown Land could only be leased if used for agricultural purposes. 
+This struggle brewed a strong localized form of socialism, more impacted by British Fabianism and the Social Gospel than Marxism. From this brew sprouted the FLP, a merger of the UFPA [the political arm of the UFC(SS)] and the ILP(S), a miniscule urban socialist party whose leadership was dominated by middle class professionals rather than trade unionists. Accordingly, the early FLP was dominated by its agrarian wing and saw little electoral success in urban reas. One core policy aim of the party was the use-lease system, wherein farmers would have the option of leasing their land to the government for a guaranteed price, allowing them to pay off their debts and avoid foreclosure. Under use-lease, provincially administered Crown Land could only be leased if used for agricultural purposes. 
 
 In the 1934 Provincial Election, the Cooperative Coalition was ousted from power, losing every single seat. Attributed to this defeat was the fall of the KKK in Saskatchewan, a subtle supporter of Anderson's nativist campaign, the collapse of the provincial Progressive Party organization, and perhaps most contributory; the start of the Great Depression. The Liberals were once again in power, opposed by only 5 FLP MLAs, all elected in rural ridings. 
 
-The results of this election were disappointing to everybody but the LPS. The Conservatives, unbeknownst to them at the time, had seen their last major electoral success for the next 50 years. The [+ ccf_ss_name +] was also disappointed in their disappointing seat count, attributed to their presiding leader, MJ Coldwell's lack of appeal to the party's farmer base and the confusing use-lease policy which was attacked as communistic by the Liberals. Coldwell came from the ILP side of the party and accordingly, Saskatchewan farmers were wholly unenthusiastic about an urban teacher leading the foremost farmers political party. Coldwell left for Federal politics in 1935, replaced by George Williams, former president of the UFC(SS) and a farmer himself.
+The results of this election were disappointing to everybody but the LPS. The Conservatives, unbeknownst to them at the time, had seen their last major electoral success for the next 50 years. The [+ ccf_ss_name +] was also disappointed in their disappointing seat count, attributed to their presiding leader, MJ Coldwell's lack of appeal to the party's farmer base and the confusing use-lease policy which was attacked as communistic by the Liberals. Coldwell came from the ILP(S) side of the party and accordingly, Saskatchewan farmers were wholly unenthusiastic about an urban teacher leading the foremost farmers political party. Coldwell left for Federal politics in 1935, replaced by George Williams, former president of the UFC(SS) and a farmer himself.
 
 The 1934 election indicated a brief return to the typical Liberal dominance in Saskatchewan. However, the seed of socialism had been planted and was soon to blossom. 
 

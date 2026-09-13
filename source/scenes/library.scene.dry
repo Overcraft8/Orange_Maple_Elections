@@ -63,7 +63,7 @@ go-to: menu
 
 **1932**: The Cooperative Coalition now resorts to retrenchment, observing the shattering rise in the provincial deficit. 
 
-**1932**: The CCF(SS) is formed by a merger of the ILP and the UFC(SS)'s political apparatus. 
+**1932**: The CCF(SS) is formed by a merger of the ILP(S) and the UFC(SS)'s political apparatus. 
 
 @curr_gov
 go-to: cabinet if ccf_ss_in_government; menu if not ccf_ss_in_government

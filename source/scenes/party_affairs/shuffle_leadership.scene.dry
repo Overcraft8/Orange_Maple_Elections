@@ -33,14 +33,14 @@ go-to: root
 tags: remove_advisor
 
 
-@remove_nicholson
-title: Remove Nicholson
-view-if: nicholson_advisor = 1
-on-arrival: nicholson_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
+@remove_ufc_ss
+title: Remove the UFC(SS)
+view-if: ufc_advisor = 1
+on-arrival: ufc_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Nicholson has been removed as an advisor. The Agrarian faction disapproves.
+The UFC(SS) has been removed as an advisor. The Agrarian faction disapproves.
 
 @remove_coldwell
 title: Remove Coldwell
@@ -332,8 +332,8 @@ tags: agrarian_advisor
 George Hara Williams is now an advisor.
 
 @add_cll
-title: CLL
-subtitle: <img src="img/protests/regina_riot_protest.jpg" class="face-image"><span>The CLL is an alliance of Social Democrats and Communists contesting Municipal Politics. <br> Actions - Urban Bulwark, Police Affairs <span>  {!<br><br>!}
+title: Civic Labor League
+subtitle: <img src="img/protests/regina_riot_protest.jpg" class="face-image"><span>The CLL is an alliance of Social Democrats and Communists contesting Municipal Politics.</span>  {!<br><br>!}
 is-card: true
 card-image: img/protests/regina_riot_protest.jpg
 tags: labour_advisor
@@ -343,17 +343,17 @@ go-to: advisor_menu
 
 CLL is now an advisor.
 
-@add_nicholson
-title: Alexander Nicholson
-subtitle: Alexander Nicholson was a United Church preacher and farmers. He is now a [+ ccf_ss_name +] organizer and provincial candidate. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+@add_ufc_ss
+title: The United Farmers of Canada (Saskatchewan Section)
+subtitle: <img src="img/williams_speech.jpg" class="face-image"><span>The UFC(SS) is a farmer's educational organization and one of the founders of our party.</span>{!<br><br>!}
 is-card: true
-card-image: img/portraits/NicholsonAlexander.jpg
+card-image: img/williams_speech.jpg
 tags: agrarian_advisor
-view-if: nicholson_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
-on-arrival: nicholson_advisor = 1; n_advisors += 1
+view-if: ufc_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: ufc_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Alexander Nicholson is now an advisor.
+The UFC(SS) is now an advisor. 
 
 @add_wright
 title: Percy Wright

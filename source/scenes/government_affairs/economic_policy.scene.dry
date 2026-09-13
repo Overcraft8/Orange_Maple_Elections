@@ -115,13 +115,13 @@ Unfortunately, we do not have the budget to begin buying out industrial faciliti
 
 @nationalize_deficit_1
 title: Take a budget deficit to fund the nationalization program.
-choose-if: true_socialist_strength > managerial_strength + agrarian_strength or forsey_advisor == 1
-subtitle: [? if forsey_advisor: Forsey can bring us around to supporting a budget deficit. ?]
-unavailable-subtitle: [? if true_socialist_strength <= managerial_strength + agrarian_strength: The party does not yet support budget deficits for this purpose. ?] [? if not forsey_advisor : Perhaps bringing on an advisor might help make this action palatable? ?]
+choose-if: true_socialist_strength > managerial_strength + agrarian_strength or ccym_advisor == 1
+subtitle: [? if ccym_advisor: Forsey can bring us around to supporting a budget deficit. ?]
+unavailable-subtitle: [? if true_socialist_strength <= managerial_strength + agrarian_strength: The party does not yet support budget deficits for this purpose. ?] [? if not ccym_advisor : Perhaps bringing on an advisor might help make this action palatable? ?]
 on-arrival: nationalization_progress += 1; capital_strike_progress += 3; unemployed -= 3 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; treasury -= nationalize_budget; works_program += 1; workers_ccf_ss += 8*(1-dissent); unemployed_ccf_ss += 5*(1-dissent); coalition_dissent += 2; cps_relation -= 6; pps_relation -= 4; new_middle_ccf_ss -= 3; old_middle_ccf_ss -= 3; economy_goal_completed += 1; inflation += 3; economic_growth += 2 if economic_growth < 5;
 achievement: wirtschaftspolitik
 
-[? if forsey_advisor: Most of the party, even on the left, are opposed to budget deficits for any purpose, with the exception of Eugene Forsey. While he did not originally support the left's "transformational" plan, he has come around, and has persuaded the party and the Finance Ministry to support budget deficits in limited cases, for the purpose of exiting from the depression. ?]
+[? if ccym_advisor: Most of the party, even on the left, are opposed to budget deficits for any purpose, with the exception of Eugene Forsey. While he did not originally support the left's "transformational" plan, he has come around, and has persuaded the party and the Finance Ministry to support budget deficits in limited cases, for the purpose of exiting from the depression. ?]
 
 [? if nationalization_progress == 1 : We have begun purchasing idling enterprises from the capitalists[? if works_councils >= 1: , and running them in coordination with empowered works councils ?]. By keeping production going, we can stave off the rising unemployment. ?]
 

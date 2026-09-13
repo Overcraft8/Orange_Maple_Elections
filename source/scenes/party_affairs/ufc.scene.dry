@@ -18,7 +18,6 @@ The *UFC (SS) * is a mass organization for the defense of the Republic against t
 - @militant_2: Use our existing resources to support more training for the UFC (SS).
 - @same: Keep the UFC (SS) as it is.
 - @cut_rb: Cut funding for the UFC (SS).
-- @women_rb
 - @easy_discard
 - @cancel_advisor_action
 
@@ -55,16 +54,6 @@ on-arrival: resources += 1; ufc_strength -= 100; ufc_militancy -= 0.05; left_str
 
 Cutting resources to the UFC (SS) causes a drop in the membership, and leads some would-be members to join the Communists instead.
 
-
-@women_rb
-title: Allow women to join the UFC (SS).
-subtitle: -1 resources - This might cause a backlash from existing members.
-choose-if: resources > 0
-view-if: womens_rights >= 4 and jamieson_advisor == 1 and iron_front_formed == 1
-on-arrival: resources -= 1; ufc_militancy *= 0.85; ufc_strength += 400; women_in_rb = 1; ufc_militancy += 0.05 if repealed_175; ufc_militancy += 0.04 if trans_rights; ufc_militancy += 0.02 if reformed_183;
-go-to: homosexual if trans_rights or repealed_175 or reformed_183
-max-visits: 1
-achievement: women_ufc
 
 The suggestion to allow women into the UFC (SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
 

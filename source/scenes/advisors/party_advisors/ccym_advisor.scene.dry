@@ -1,20 +1,17 @@
-title: CCYM
-new-page: true
-is-card: true
-tags: party_affairs
-view-if: ccym_timer <= 0 
-card-image: img/ccym_handbook.jpg
-on-arrival: month_actions += 1; ccym_timer += 6; 
-max-visits: 6
+title: The CCYM
+is-pinned-card: true
+tags: advisor, party
+card-image: img/organizations/ccym_handbook.jpg
+view-if: ccym_advisor = 1
+new-page: true 
 
-= The CCYM
+= The Cooperative Commonwealth Youth Movement
 
-The CCYM is the the youth corps of the CCF. It is populated by young radicals, many of whom intersperse freely with their cousins in the Communist youth organization. 
+The CCYM is the the youth corps of the CCF. It is populated by young radicals, many of whom intersperse freely with their cousins in the Communist youth organizations. 
 
 - @songs: Let us sing songs in rich, urban, neighbourhoods. 
 - @same: The CCYM is doing fine right now. 
 - @pamphlets: Spread informational pamphlets. 
-- @women_rb
 - @easy_discard
 - @cancel_advisor_action
 
@@ -38,17 +35,6 @@ subtitle: -2 resources
 on-arrival: resources -= 2; socialism += 2; farmers_ccf_ss += 1; worker_ccf_ss += 1; unemployed_ccf_ss += 1; new_middle_ccf_ss += 1; labour_radicalism -= 1;
 
 Spreading pamphlets increases awareness of the benefits of socialism and helps everyone get a better grasp of what we stand for. 
-
-
-@women_rb
-title: Allow women to join the CCYM
-subtitle: -1 resources - This might cause a backlash from existing members.
-choose-if: resources > 0
-view-if: womens_rights >= 4 and jamieson_advisor == 1 and iron_front_formed == 1
-on-arrival: resources -= 1; ufc_militancy *= 0.85; ufc_strength += 400; women_in_rb = 1; ufc_militancy += 0.05 if repealed_175; ufc_militancy += 0.04 if trans_rights; ufc_militancy += 0.02 if reformed_183;
-go-to: homosexual if trans_rights or repealed_175 or reformed_183
-max-visits: 1
-achievement: women_ufc
 
 The suggestion to allow women into the UFC(SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
 

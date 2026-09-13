@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: agrarian_advisor, left_advisor, managerial_advisor, labour_advisor, neorev_advisor, nonfactional_advisor 
+tags: agrarian_advisor, left_advisor, managerial_advisor, labour_advisor, neorev_advisor, party_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -130,24 +130,24 @@ go-to: rm_main
 
 Phelps has been removed as an advisor. The Agrarian faction disapproves.
 
-@remove_carlyle
-title: Remove Carlyle
-view-if: carlyle_advisor = 1
+@remove_ccf_wc
+title: Remove the Women's Clubs
+view-if: ccf_wc_advisor = 1
 tags: remove_advisor
-on-arrival: carlyle_advisor = 0; labour_dissent += 3; n_advisors -= 1
+on-arrival: ccf_wc_advisor = 0; labour_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Carlyle has been removed as an advisor. The Labour faction disapproves.
+The Women's Clubs has been removed as an advisor. The Labour faction disapproves.
 
 
-@remove_forsey
-title: Remove Forsey
-view-if: forsey_advisor = 1
+@remove_ccym
+title: Remove the CCYM
+view-if: ccym_advisor = 1
 tags: remove_advisor
-on-arrival: forsey_advisor = 0; n_advisors -= 1
+on-arrival: ccym_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Forsey has been removed as an advisor. 
+The CCYM has been removed as an advisor. 
 
 # left
 
@@ -229,9 +229,9 @@ go-to: rm_main
 Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
 
 
-## nonfactional
+## party
 
-# tbh I'm not sure if Wright should be a moderate or nonfactional. same for spry. they were vaguely moderate-aligned but had pretty different ideas from the other moderates here. so they're non-factional.
+# tbh I'm not sure if Wright should be a moderate or party. same for spry. they were vaguely moderate-aligned but had pretty different ideas from the other moderates here. so they're non-factional.
 
 @remove_wright
 title: Remove Wright
@@ -274,7 +274,7 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: agrarian_advisor, left_advisor, managerial_advisor, labour_advisor, neorev_advisor, nonfactional_advisor
+tags: agrarian_advisor, left_advisor, managerial_advisor, labour_advisor, neorev_advisor, party_advisor
 frequency: 1
 
 
@@ -283,7 +283,7 @@ frequency: 1
 - @moderate: Add Moderates
 - @labour: Add Labour
 - @neorev: Add Neorevisionists
-- @nonfactional: Add non-factional advisors
+- @party: Add Party advisors
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
 
@@ -312,10 +312,10 @@ view-if: neorevisionism > 0 and n_advisors < 3
 
 - #neorev_advisor
 
-@nonfactional
+@party
 view-if: n_advisors < 3
 
-- #nonfactional_advisor
+- #party_advisor
 
 #                                 Agrarians
 
@@ -333,7 +333,7 @@ George Hara Williams is now an advisor.
 
 @add_cll
 title: Civic Labor League
-subtitle: <img src="img/protests/regina_riot_protest.jpg" class="face-image"><span>The CLL is an alliance of Social Democrats and Communists contesting Municipal Politics.</span>  {!<br><br>!}
+subtitle: <img src="img/protests/regina_riot_protest.jpg" class="face-image"><span>The CLL is an alliance of Social Democrats and Communists contesting Municipal Politics.</span>{!<br><br>!}
 is-card: true
 card-image: img/protests/regina_riot_protest.jpg
 tags: labour_advisor
@@ -521,32 +521,32 @@ go-to: advisor_menu
 
 Joe Phelps is now an advisor.
 
-@add_carlyle
-title: Carlyle King
-subtitle: Carlyle King is a professor at Usask and a principled pacifist.  {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labour Rights ?]
+@add_ccf_wc
+title: CCF Women's Clubs
+subtitle: <img src="img/organizations/women_grain_growers.jpg" class="face-figure"><span>The CCF(SS) always aims to provide for women as well as men.</span><br><br>
 is-card: true
-card-image: img/portraits/KingCarlyle.jpg
-tags: labour_advisor
-view-if: carlyle_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: carlyle_advisor = 1; n_advisors += 1; labour_dissent += 3
+card-image: img/organizations/women_grain_growers.jpg
+tags: party_advisor
+view-if: ccf_wc_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: ccf_wc_advisor = 1; n_advisors += 1; labour_dissent += 3
 go-to: advisor_menu
 
-Carlyle King is now an advisor.
+The Women's Clubs is now an advisor.
 
 
-# Nonfactional advisors
+# party advisors
 
-@add_forsey
-title: Eugene Forsey
-subtitle: Eugene Forsey is lecterur on economics and political science. He is a convert from the CPS and member of the LSR. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
+@add_ccym
+title: The CCYM
+subtitle: <img src="img/organizations/ccym_handbook.jpg" class="face-image"><span>The CCYM is the youth wing of the CCF</span>{!<br><br>!}
 is-card: true
-card-image: img/portraits/ForseyEugene.jpg
-view-if: forsey_advisor = 0 and n_advisors < 3
-on-arrival: forsey_advisor = 1; n_advisors += 1; 
+card-image: img/organizations/ccym_handbook.jpg
+view-if: ccym_advisor = 0 and n_advisors < 3
+on-arrival: ccym_advisor = 1; n_advisors += 1; 
 go-to: advisor_menu
-tags: nonfactional_advisor
+tags: party_advisor
 
-Eugene Forsey is now an advisor.
+The CCYM is now an advisor. 
 
 @add_underhill
 title: Frank Underhill
@@ -556,7 +556,7 @@ card-image: img/portraits/UnderhillFrank.jpg
 view-if: underhill_advisor = 0 and n_advisors < 3
 on-arrival: underhill_advisor = 1; n_advisors += 1
 go-to: advisor_menu
-tags: nonfactional_advisor
+tags: party_advisor
 
 Frank Underhill is now an advisor.
 
@@ -569,7 +569,7 @@ card-image: img/portraits/SpryGraham.jpg
 view-if: spry_advisor = 0 and n_advisors < 3
 on-arrival: spry_advisor = 1; n_advisors += 1
 go-to: advisor_menu
-tags: nonfactional_advisor
+tags: party_advisor
 
 Graham Spry is now an advisor.
 

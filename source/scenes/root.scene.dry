@@ -1382,8 +1382,7 @@ Q.wright_advisor = 0; // Percy Wright
 // Labour advisors
 Q.heaps_advisor = 0; // Albert Heaps
 Q.phelps_advisor = 0; // Joe Phelps
-Q.forsey_advisor = 0; // Eugene Forsey (post-1930)
-Q.carlyle_advisor = 0; // Carlyle King
+Q.ccf_wc = 0; // Carlyle King
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
@@ -1391,10 +1390,10 @@ Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
 Q.leber_advisor = 0; // Julius Leber (post-1930)
 Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 
-// Nonfactional advisors
+// party advisors
 Q.underhill_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
-
+Q.ccym_advisor = 0; // CCYM
 
 
 
@@ -1495,7 +1494,7 @@ Q.parliament_diagram = data;
 
 
 // --------------------------------------------------------------------
-//                          FUNCTIONS
+//                            NEWS
 // --------------------------------------------------------------------
 
 Q.generic_news = {

@@ -344,6 +344,23 @@ const colourList = [{
         word: "Very High", 
         style: "color: #e0572a; font-weight: bold;"
     },
+    // Ideologies
+    {
+        word: ['Social Democrat', 'Democratic Socialist'], 
+        style: "color: #e0452a; font-weight: bold;"
+    },
+    {
+        word: 'Communist', 
+        style: "color: #861a1a; font-weight: bold;"
+    },
+    {
+        word: 'Liberal', 
+        style: "color: #BE0028; font-weight: bold;"
+    },
+    {
+        word: 'Conservative', 
+        style: "color: #0055A5; font-weight: bold;"
+    },
 ];
 
 

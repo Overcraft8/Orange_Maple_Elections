@@ -22,11 +22,14 @@ Civic Labor League Strength: [+ cll_strength : strength +]
 
 
 @cll_governance
+choose-if: cll_in_government = 1
 
 @cll_politics
+subtitle: -1 resources
 
 
 @cll_aid
+subtitle: -1 resources
 choose-if: resources >= 1
 on-arrival: cll_strength += 10; resources -= 1
 

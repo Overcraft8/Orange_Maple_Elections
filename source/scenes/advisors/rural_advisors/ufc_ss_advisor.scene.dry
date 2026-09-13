@@ -11,7 +11,7 @@ The UFC(SS) is a farmer's educational organization. In 1932, it's political wing
 
 [? if ufc_militancy >= 0.50 : The UFC(SS)'s Left Wing is currently in power. ?]
 
-[? if ufc_militancy <> 0.50 : The UFC(SS)'s Right Wing is currently in power. ?]
+[? if ufc_militancy < 0.50 : The UFC(SS)'s Right Wing is currently in power. ?]
 
 - @ufc_relations: Improve relations with the UFC(SS)
 - @ufc_organizing: Organize Farmers for the [+ ccf_ss_name +]

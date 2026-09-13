@@ -71,7 +71,7 @@ body.dark-mode .tools {
 }
 header, #content, footer {
   color: var(--text-color);
-  max-width: 450px;
+  width: 500px;
   margin: 0 auto;
   overflow: auto;
 }
@@ -304,6 +304,7 @@ img.inline-img.icon {
   left: 0;
   right: 0;
   margin: 0 auto;
+  pointer-events: none;
 }
 
 .tools {
@@ -313,6 +314,7 @@ img.inline-img.icon {
   width: 300px;
   color: var(--text-color);
   background-color: var(--sidebar-bg-color);
+  pointer-events: auto;
 }
 .tools.left {
   float: left;

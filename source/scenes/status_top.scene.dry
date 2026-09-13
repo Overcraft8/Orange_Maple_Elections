@@ -2,6 +2,8 @@ title: The [+ ccf_ss_name +]
 new-page: true
 is-special: true
 
+= [+ ccf_ss_name +]
+
 
 <div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
@@ -15,7 +17,6 @@ is-special: true
 <div>
 
   <style>
-    /* Target this specific table by its ID */
     #status_right_table tr:nth-child(even) { 
         color: #F2D3A8; 
         border: 4px none;
@@ -34,13 +35,13 @@ is-special: true
         </td>
     </tr>
     <tr>
-        <td>Internal dissent: [+ dissent_percent : dissent +]</td>
+        <td colspan="2">Internal dissent: [+ dissent_percent : dissent +]</td>
     </tr>
     <tr>
-        <td>Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]</td>
+        <td colspan="2">Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]</td>
     </tr>
     <tr>
-        <td>Riding Association Strength: [+ riding_associations : p_riding_associations +]</td>
+        <td colspan="2">Riding Association Strength: [+ riding_associations : strength +]</td>
     </tr>
 
   </table>

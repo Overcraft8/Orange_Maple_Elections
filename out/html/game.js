@@ -553,7 +553,6 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
 // ==========================================
 window.updateSidebar      = function() { window.updateBar('left'); };
 window.updateSidebarRight = function() { window.updateBar('right'); };
-window.updateSidebarRight = function() { window.updateBar('top'); };
 window.updateBottomBar    = function() { window.updateBar('bottom'); };
 
 window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newTab, tabId); };
@@ -563,7 +562,7 @@ window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', ne
 
 window.onDisplayContent = function() {
     window.changeTab('left', 'status', 'main_tab');
-    window.changeTab('right', 'status_right', 'party_tab');
+    window.changeTab('right', 'status_right', 'status_top');
     window.changeTab('bottom', 'status_bottom', 'map_tab');
     window.updateBar('left');
     window.updateBar('right');

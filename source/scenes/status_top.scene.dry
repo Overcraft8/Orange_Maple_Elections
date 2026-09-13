@@ -2,14 +2,14 @@ title: The [+ ccf_ss_name +]
 new-page: true
 is-special: true
 
-= [+ ccf_ss_name +]
+= The [+ ccf_ss_name +]
 
 
 <div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
   <span>
   <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-    <span class="card-caption">Party Leader: [+ ccf_ss_party_leader +]</span>
+    <span class="card-caption" style="font-size: 1.3em;">Party Leader: [+ ccf_ss_party_leader +]</span>
   </span>
 
 </div>
@@ -18,7 +18,6 @@ is-special: true
 
   <style>
     #status_right_table tr:nth-child(even) { 
-        color: #F2D3A8; 
         border: 4px none;
     }
   </style>
@@ -35,13 +34,13 @@ is-special: true
         </td>
     </tr>
     <tr>
-        <td colspan="2">Internal dissent: [+ dissent_percent : dissent +]</td>
+        <td colspan="2" style="font-size: 1.2em;">Internal dissent: [+ dissent_percent : dissent +]</td>
     </tr>
     <tr>
-        <td colspan="2">Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]</td>
+        <td colspan="2" style="font-size: 1.2em;">Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]</td>
     </tr>
     <tr>
-        <td colspan="2">Riding Association Strength: [+ riding_associations : strength +]</td>
+        <td colspan="2" style="font-size: 1.2em;">Riding Association Strength: [+ riding_associations : strength +]</td>
     </tr>
 
   </table>

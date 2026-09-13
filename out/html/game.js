@@ -407,8 +407,8 @@ const Bar_Config = {
         isLeft: true //isLeft for refreshing the page
     },
     right: {
-        containerId: 'stats_sidebar_right',
-        targetId: 'qualities_right',
+        containerId: 'news_frame',
+        targetId: 'news_qualities',
         starting_scene: 'statusTabRight',
         isLeft: false
     },

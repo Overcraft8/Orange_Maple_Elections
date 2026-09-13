@@ -17,7 +17,7 @@ body {
   font-weight: bold;
   background-color: var(--bg-color);
   padding: 0;
-  line-height: 110%;
+  line-height: 130%;
   --button-bg-color: #bba993;
   --button-border-color: #876;
   --bgBack-color: rgba(0,0,0,0.2);

@@ -2,4 +2,10 @@ title: News
 new-page: true
 is-special: true
 
-This is the news page
+<span style="font-family: Times New Roman;">
+
+= News
+
+</span>
+
+[+ news_display +]

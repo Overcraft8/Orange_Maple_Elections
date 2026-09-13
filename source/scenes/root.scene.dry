@@ -1493,6 +1493,23 @@ Q.parliament_diagram = data;
 
 
 
+
+// --------------------------------------------------------------------
+//                          FUNCTIONS
+// --------------------------------------------------------------------
+
+Q.news_refresh = function(event) {
+
+    Q.news_display = ``;
+
+    var info = event.info; 
+
+    Q.news_display += `<br><br><div>${info}</div>`
+
+  }
+
+
+
 !}
 set-bg: img/weyburn_street.jpg
 new-page: true

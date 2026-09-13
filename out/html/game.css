@@ -187,6 +187,28 @@ ul.choices li {
   overflow: visible;
 }
 
+ul.choices li .subtitle:has(> img) {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+ul.choices li .subtitle:has(> img) > img {
+    flex-shrink: 0;
+    display: block;
+    margin: 0 !important;
+    width: 100px !important;
+    height: 125px !important;
+    object-fit: cover;
+    border: 1px solid #999;
+}
+
+ul.choices li .subtitle:has(> img) > span {
+    flex: 1;
+    min-width: 0;
+}
+
 @media (hover: hover) and (pointer: fine) {
   ul.choices li::before {
     content: "";

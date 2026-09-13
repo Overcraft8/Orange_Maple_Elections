@@ -1349,7 +1349,10 @@
                     }
                     if (canChoose && choiceScene.chooseIf) {
                         canChoose = this._runPredicate(choiceScene.chooseIf, true);
-                    }
+                    } /* MARIO WALUIGI
+                    if (choice.choice-img) {
+                        var choice_img =  `<div class="face-figure"><img class="face-img" src="img/${choice.choice-img}"></div>`
+                    } */
 
                     var title = choice.title || choiceScene.title;
                     assert(title);

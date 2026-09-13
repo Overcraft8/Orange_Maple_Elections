@@ -1504,9 +1504,11 @@ Q.news_refresh = function(event) {
 
     var info = event.info; 
 
-    Q.news_display += `<br><br><div>${info}</div>`
+    Q.news_display += `<div>${info}</div>`
 
-  }
+};
+
+Q.news_refresh(Q.active_news.depression.start);
 
 
 
@@ -1579,10 +1581,6 @@ new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1932
-
-It is a dire time for Saskatchewan. The province is wracked by extreme drought the likes of which has never been seen before on the Canadian prairies. Two thirds of farmers have already been forced to rely on relief. 
-
-The 
 
 @intro_to_sask
 

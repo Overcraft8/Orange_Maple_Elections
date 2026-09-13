@@ -390,196 +390,8 @@ function createDetailedText(innerText, tooltipContent, style) {
     }
   };
 
-
-/* 
-  window.updateSidebar = function () {
-        $('#qualities').empty();
-        var statusScene = dendryUI.game.scenes["status"];
-        var scene = dendryUI.game.scenes[window.statusTab];
-        dendryUI.dendryEngine._runActions(statusScene.onArrival);
-        dendryUI.dendryEngine._runActions(scene.onArrival);
-        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-        var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-        // clean HTML to prevent script execution errors
-        var tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlContent;
-        // Remove any script tags
-        tempDiv.querySelectorAll('script').forEach(script => script.remove());
-        $('#qualities').html(tempDiv.innerHTML);
-        dendryUI.dendryEngine._runActions(scene.onDisplay);
-    };
-
-    window.updateSidebarRight = function() {
-    $('#qualities_right').empty();
-    var scene = dendryUI.game.scenes[window.statusTabRight];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // clean HTML to prevent script execution errors
-    var tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    // Remove any script tags
-    tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $('#qualities_right').html(tempDiv.innerHTML);
-  };
-
-    window.updateBottomBar = function() {
-    $('#bottom_holder').empty();
-    var scene = dendryUI.game.scenes[window.statusTabBottom];
-    dendryUI.dendryEngine._runActions(scene.onArrival);
-    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    var htmlContent = dendryUI.contentToHTML.convert(displayContent);
-    // clean HTML to prevent script execution errors
-    var tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    // Remove any script tags
-    tempDiv.querySelectorAll('script').forEach(script => script.remove());
-    $('#bottom_holder').html(tempDiv.innerHTML);
-  };
-
-  window.changeTab = function(newTab, tabId) {
-    if (tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-        window.alert('Polls are not available in historical mode.');
-        return;
-    }
-
-    const leftsidebar = document.getElementById('stats_sidebar'); 
-
-    const tabButton = document.getElementById(tabId);
-    const tabButtons = leftsidebar.getElementsByClassName('tab_button');
-
-    const statusButtons = document.getElementsByClassName('status_tab_button');
-    const statusPanelCards = document.getElementsByClassName('status_panel_card_image');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Sub Tab Images (nested inside sub tab scenes)
-    else if (tabButton.classList.contains('status_panel_card')) {
-        for (let i = 0; i < statusPanelCards.length; i++) {
-            statusPanelCards[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else if (tabButton.classList.contains('tab_button')) {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = document.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTab = newTab;
-    window.updateSidebar();
-};
-
-    window.changeTabRight = function(newTab, tabId) {
-    const tabButton = document.getElementById(tabId);
-    const rightSidebar = document.getElementById('stats_sidebar_right');
-
-    const tabButtons = rightSidebar.getElementsByClassName('tab_button');
-    const statusButtons = rightSidebar.getElementsByClassName('status_tab_button');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = rightSidebar.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTabRight = newTab;
-
-    window.updateSidebarRight();
-};
-
-window.changeTabBottom = function(newTab, tabId) {
-    const tabButton = document.getElementById(tabId);
-    const bottombar = document.getElementById('bottom_bar');
-
-    const tabButtons = bottombar.getElementsByClassName('tab_button');
-    const statusButtons = bottombar.getElementsByClassName('status_tab_button');
-
-    // Sub tabs (status)
-    if (tabButton.classList.contains('status_tab_button')) {
-        for (let i = 0; i < statusButtons.length; i++) {
-            statusButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-    }
-
-    // Main tab
-    else {
-        for (let i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove('active');
-        }
-        tabButton.classList.add('active');
-
-        // Handle sub tabs
-        const allTabContainers = bottom_bar.getElementsByClassName('status_tab_container');
-
-        for (let i = 0; i < allTabContainers.length; i++) {
-            allTabContainers[i].style.display = 'none';
-        }
-
-        const baseId = tabId.replace('_tab', '');
-        const targetContainer = document.getElementById(baseId + '_tabs');
-
-        if (targetContainer) { //WARIO
-            targetContainer.style.display = 'flex';
-        }
-    }
-
-    window.statusTabBottom = newTab;
-
-    window.updateBottomBar();
-}
-*/
-
 // ==========================================
-// "Region" Configurations
+// "Regions"
 // ==========================================
 const Bar_Config = {
     center: {
@@ -609,7 +421,7 @@ const Bar_Config = {
     top: {
         containerId: 'topbar',
         targetId: 'qualities_top',
-        starting_scene: 'statusTabRight',
+        starting_scene: 'statusTabTop',
         isLeft: false
     },
     district: {
@@ -762,6 +574,7 @@ window.onDisplayContent = function() {
 window.justLoaded = true;
 window.statusTab = "status";
 window.statusTabRight = "status_right";
+window.statusTabTop = 'status_top'
 window.dendryModifyUI = main;
 console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 

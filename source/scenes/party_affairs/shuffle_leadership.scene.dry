@@ -341,7 +341,7 @@ view-if: cll_advisor = 0 and n_advisors < 3 and labour_resign = 0
 on-arrival: cll_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
-CLL is now an advisor.
+The CLL is now an advisor.
 
 @add_ufc_ss
 title: The United Farmers of Canada (Saskatchewan Section)

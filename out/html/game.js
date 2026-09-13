@@ -606,6 +606,12 @@ const Bar_Config = {
         starting_scene: 'statusTabBottom',
         isLeft: false
     }, 
+    top: {
+        containerId: 'topbar',
+        targetId: 'qualities_top',
+        starting_scene: 'statusTabRight',
+        isLeft: false
+    },
     district: {
         containerId: 'region_info_display_scene', 
         targetId: 'region_info_display_scene', 
@@ -735,6 +741,7 @@ window.ChangeTab = function(regionKey, newTab, tabId) {
 // ==========================================
 window.updateSidebar      = function() { window.updateBar('left'); };
 window.updateSidebarRight = function() { window.updateBar('right'); };
+window.updateSidebarRight = function() { window.updateBar('top'); };
 window.updateBottomBar    = function() { window.updateBar('bottom'); };
 
 window.changeTab       = function(newTab, tabId) { window.ChangeTab('left', newTab, tabId); };
@@ -748,6 +755,7 @@ window.onDisplayContent = function() {
     window.changeTab('bottom', 'status_bottom', 'map_tab');
     window.updateBar('left');
     window.updateBar('right');
+    window.updateBar('top');
     window.updateBar('bottom');
 };
 

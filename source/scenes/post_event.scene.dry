@@ -616,6 +616,7 @@ if (this.ui && this.ui.show_portraits) {
 
 window.updateBar('right');
 window.updateBar('left');
+window.updateBar('top');
 window.updateBar('bottom');
 
 !}

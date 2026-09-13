@@ -17,7 +17,7 @@ body {
   font-weight: bold;
   background-color: var(--bg-color);
   padding: 0;
-  line-height: 130%;
+  line-height: 110%;
   --button-bg-color: #bba993;
   --button-border-color: #876;
   --bgBack-color: rgba(0,0,0,0.2);
@@ -310,7 +310,7 @@ img.inline-img.icon {
   border: outset;
   border-color: #cfb678;
   padding: 0.6em;
-  width: 350px;
+  width: 300px;
   color: var(--text-color);
   background-color: var(--sidebar-bg-color);
 }
@@ -415,7 +415,7 @@ img.inline-img.icon {
   color: var(--text-color);
   border: ridge;
   border-color: #9c8c64;
-  padding: 7px;
+  padding: 5px;
   cursor: pointer; 
 }
 
@@ -452,12 +452,12 @@ img.inline-img.icon {
 /* For tab buttons nested inside scenes */
 .status_tab_button {
   font-family: "Minion Pro", Georgia, serif;
-  font-size: 12px;
+  font-size: 0.7em;
   background-color: var(--tab-color);
   color: var(--text-color);
   border: ridge;
   border-color: #9c8c64;
-  padding: 8px;
+  padding: 5px;
 }
 
 .status_tab_button.active {

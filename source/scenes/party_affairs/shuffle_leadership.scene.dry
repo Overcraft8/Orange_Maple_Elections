@@ -73,14 +73,14 @@ Williams has been removed as an advisor. The Agrarian faction disapproves.
 # moderates
 
 
-@remove_ccl
-title: Remove the CCL
+@remove_cll
+title: Remove the CLL
 view-if: cll_advisor = 1
 tags: remove_advisor
 on-arrival: cll_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-The CCL has been removed from our Organizational Priorities. 
+The CLL has been removed from our Organizational Priorities. 
 
 @remove_woodsworth
 title: Remove J. S. Woodsworth
@@ -331,9 +331,9 @@ tags: agrarian_advisor
 
 George Hara Williams is now an advisor.
 
-@add_ccl
-title: CCL
-subtitle: The CCL is a Municipal Party and coalition of Social Democrats and Communists.  {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Police Affairs ?]
+@add_cll
+title: CLL
+subtitle: The CLL is a Municipal Party and coalition of Social Democrats and Communists.  {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Police Affairs ?]
 is-card: true
 card-image: img/protests/regina_riot_protest.jpg
 tags: agrarian_advisor
@@ -341,7 +341,7 @@ view-if: cll_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
 on-arrival: cll_advisor = 1; n_advisors += 1; agrarian_strength += 5
 go-to: advisor_menu
 
-CCL is now an advisor.
+CLL is now an advisor.
 
 @add_nicholson
 title: Alexander Nicholson

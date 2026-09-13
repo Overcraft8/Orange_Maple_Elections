@@ -114,6 +114,10 @@ const tooltipList = [{
     explanationText: "The Canadian Congress of Labour "
 },
 {
+    searchString: "CLL", 
+    explanationText: "The Civic Labor League"
+},
+{
     searchString: "Res. Workers", 
     explanationText: "Workers in the Resouce industry (lumber, mining, etc.)"
 },
@@ -205,6 +209,10 @@ const colourList = [{
     {
         word: "CCL", 
         style: "color: #b33a3a; font-weight: bold;"
+    },
+    {
+        word: "CLL", 
+        style: "color: #ad472a; font-weight: bold;"
     },
     // Other provincial parties: 
     {

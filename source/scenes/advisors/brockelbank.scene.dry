@@ -11,12 +11,12 @@ The Civic Labor League is a Municipal Party fielding candidates in Regina[? if c
 
 [? if cll_in_government = 1 : Currently, the CLL is in government and we can use our ties with them to advance our policy goals. ?]
 
-[? if cll_in_government = 0 : The CCL is out of government right now, unfortunately. We may send aid their way to improve their electoral success. ?]
+[? if cll_in_government = 0 : The CLL is out of government right now, unfortunately. We may send aid their way to improve their electoral success. ?]
 
-Civic Labor League Strength: [+ ccl_strength : strength +]
+Civic Labor League Strength: [+ cll_strength : strength +]
 
 - @city_bulwark
-- @ccl_aid: Send aid to the CCL
+- @cll_aid: Send aid to the CLL
 - @root: Return to main
 
 @city_bulwark
@@ -28,9 +28,9 @@ on-arrival: advisor_action_timer = 6; city_affairs_timer -= 6; last_advisor_acti
 go-to: city_affairs
 
 
-@ccl_aid
+@cll_aid
 choose-if: resources >= 1
-on-arrival: ccl_strength += 10; resources -= 1
+on-arrival: cll_strength += 10; resources -= 1
 
-The CCL is grateful for our aid. 
+The CLL is grateful for our aid. 
 

@@ -1,0 +1,14 @@
+title: Historical Elections
+new-page: true
+
+= Historical Elections
+
+- @1934_hist: 1934 Saskatchewan General Election
+
+@1934_hist
+new-page: true
+on-arrival: {!
+    window.loadElectionData();
+!}
+
+[+ hist_table +]

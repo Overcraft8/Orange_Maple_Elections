@@ -76,22 +76,16 @@ function parseElectionData(csvText) {
     return parsedData;
 }
 
-// main.js
-async function loadElectionData() {
+window.loadElectionData = async function() {
     try {
-        console.log("Loading election data...");
-        const response = await fetch('demographics/1934_Saskatchewan_General_Election_55_Seats.csv');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const response = await tako('data/1934_Saskatchewan_General_Election_55_Seats.csv'); 
         const csvText = await response.text();
         const parsed = parseElectionData(csvText);
-        console.log("Election data loaded successfully:", parsed);
         return parsed;
     } catch (error) {
         console.error("Failed to load CSV:", error);
     }
-}
+};
 
 // Load election data when script initializes
-loadElectionData();
+window.loadElectionData();

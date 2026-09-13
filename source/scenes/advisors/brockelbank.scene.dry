@@ -1,16 +1,22 @@
-title: John Brockelbank
+title: Civic Labor League
 is-pinned-card: true
-tags: advisor, agrarian
-card-image: img/portraits/BrockelbankJohn.jpg
-view-if: brockelbank_advisor = 1
+tags: advisor, labour
+card-image: img/protests/regina_riot_protest.jpg
+view-if: cll_advisor = 1
 new-page: true 
 
-= John Brockelbank
+= Civic Labor League
 
-John Brockelbank is a militant from the UFC(SS) and was active in it's wheat pool campaign. He is fiercely loyal to George Williams. 
+The Civic Labor League is a Municipal Party fielding candidates in Regina[? if cll_expanded = 1 : and Saskatoon?]. It is formed by a coalition of Social Democrats and Communists, unified by a support for urban Labour. 
+
+[? if cll_in_government = 1 : Currently, the CLL is in government and we can use our ties with them to advance our policy goals. ?]
+
+[? if cll_in_government = 0 : The CCL is out of government right now, unfortunately. We may send aid their way to improve their electoral success. ?]
+
+Civic Labor League Strength: [+ ccl_strength : strength +]
 
 - @city_bulwark
-- @police_affairs
+- @ccl_aid: Send aid to the CCL
 - @root: Return to main
 
 @city_bulwark
@@ -22,11 +28,9 @@ on-arrival: advisor_action_timer = 6; city_affairs_timer -= 6; last_advisor_acti
 go-to: city_affairs
 
 
-@police_affairs
-title: Police affairs 
-subtitle: We can set our police policy. 
-choose-if: advisor_action_timer == 0 and ccf_ss_in_government and interior_minister_party == ccf_ss_name
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government : The [+ ccf_ss_name +] is not in government. ?][? if interior_minister_party != ccf_ss_name: The [+ ccf_ss_name +] does not have the Interior ministry. ?]
-on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
-go-to: police
+@ccl_aid
+choose-if: resources >= 1
+on-arrival: ccl_strength += 10; resources -= 1
+
+The CCL is grateful for our aid. 
 

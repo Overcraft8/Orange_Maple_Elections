@@ -73,14 +73,14 @@ Williams has been removed as an advisor. The Agrarian faction disapproves.
 # moderates
 
 
-@remove_brockelbank
-title: Remove Brockelbank
-view-if: brockelbank_advisor = 1
+@remove_ccl
+title: Remove the CCL
+view-if: cll_advisor = 1
 tags: remove_advisor
-on-arrival: brockelbank_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
+on-arrival: cll_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Brockelbank has been removed as an advisor. The Agrarian faction disapproves.
+The CCL has been removed from our Organizational Priorities. 
 
 @remove_woodsworth
 title: Remove J. S. Woodsworth
@@ -331,17 +331,17 @@ tags: agrarian_advisor
 
 George Hara Williams is now an advisor.
 
-@add_brockelbank
-title: John Brockelbank
-subtitle: John Brockelbank is a militant from the UFC(SS) and was active in it's wheat pool campaign. He is fiercely loyal to George Williams.  {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Police Affairs ?]
+@add_ccl
+title: CCL
+subtitle: The CCL is a Municipal Party and coalition of Social Democrats and Communists.  {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Police Affairs ?]
 is-card: true
-card-image: img/portraits/BrockelbankJohn.jpg
+card-image: img/protests/regina_riot_protest.jpg
 tags: agrarian_advisor
-view-if: brockelbank_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
-on-arrival: brockelbank_advisor = 1; n_advisors += 1; agrarian_strength += 5
+view-if: cll_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: cll_advisor = 1; n_advisors += 1; agrarian_strength += 5
 go-to: advisor_menu
 
-John Brockelbank is now an advisor.
+CCL is now an advisor.
 
 @add_nicholson
 title: Alexander Nicholson

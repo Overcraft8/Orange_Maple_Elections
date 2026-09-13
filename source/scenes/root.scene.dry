@@ -574,15 +574,11 @@ Q.George_Williams_Dead = 0;
 
 
 
-// Saskatchewan Organizations
-
-Q.ufc_aff_prog = 5;
-Q.tlc_aff_prog = 0;
-Q.ccl_aff_prog = 0; 
-Q.sta_aff_prog = 0;
-
-
-
+// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
+//                               Saskatchewan Organizations
+// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
 
 
 Q.ccym_influence = 25;
@@ -605,6 +601,7 @@ Q.tlc_relations = 40;
 Q.tlc_militancy = 0.20;
 Q.tlc_strength = 30.00;
 
+Q.ccl_in_government = 0;
 Q.ccl_relations = 0;
 Q.ccl_militancy = 0.20;
 Q.ccl_strength = 20.00;
@@ -1373,7 +1370,7 @@ Q.eliason_advisor = 1; // Frank Eliason
 Q.williams_advisor = 1; // George Hara Williams
 
 // Moderate advisors
-Q.brockelbank_advisor = 0; // John Brockelbank
+Q.cll_advisor = 0; // CCL
 Q.woodsworth_advisor = 0; // JS_Woodsworth
 Q.lucas_advisor = 0; // Louise Lucas
 Q.wright_advisor = 0; // Percy Wright
@@ -1615,7 +1612,7 @@ Patterson's returned Liberal government continued to pursue a typical Liberal ag
 
 The onset of World War 2 divided both the Saskatchewan and Federal CCF. William's pro-war leadership was challenged by the pacifist Carlyle King though the contest proved unsuccessful for the young King. Williams would draw much ire from the Federal CCF leader J.S. Woodsworth, a stout anti-war pacifist. 
 
-In 1940, George Williams volunteered for the army and left the province to serve in Europe. In 1942, his leadership was contested by a young Federal MP named Tommy Douglas. Douglas was a veteran of the party, having joined from the ILP in 1930 as a protégé of Coldwell and had served as a Federal CCF MP since 1935. With Williams unable to campaign, John Brockelbank, a close Williamite ally, ran instead. However, Douglas' charisma and oratory proved too irresistible for the party base and Douglas was elected as the new leader of the [+ ccf_ss_name +]. 
+In 1940, George Williams volunteered for the army and left the province to serve in Europe. In 1942, his leadership was contested by a young Federal MP named Tommy Douglas. Douglas was a veteran of the party, having joined from the ILP in 1930 as a protégé of Coldwell and had served as a Federal CCF MP since 1935. With Williams unable to campaign, CCL, a close Williamite ally, ran instead. However, Douglas' charisma and oratory proved too irresistible for the party base and Douglas was elected as the new leader of the [+ ccf_ss_name +]. 
 
 Douglas focused the party on grassroots organization, expanding party membership from about 4,000 in 1939 to 24,000 by 1944. Douglas also signalled a more pragmatic approach to socialism, realizing the constraints of a socialist provincial government within the Canadian federation. 
 
@@ -1636,7 +1633,7 @@ Douglas’ Administration quickly got to work at a breakneck pace. Saskatchewan 
 
 These services would not come cheap. Joe Phelps, Minister of Resources and Development went about establishing Crown Corporations at a disorienting speed. The province expropriated a Box Factory in Prince Albert following a labour dispute. A sodium sulphate plant was acquired in 1946. The province founded new Crowns in the Wool, Leather, and Clay industries. Most of these ventures would prove unpopular, however. 
 
-Douglas’ tenure however, also marked a period of moderation. The left flank of the [+ ccf_ss_name +] found itself weakening. In 1945, George Williams, now Minister for Agriculture died of cancer. Joe Phelps lost his seat in 1948 and the Douglas government would choose not to rerun him, believing his state-industrial endeavours had partially been responsible for reducing the Douglas government to a slim 4 seat majority. John Brockelbank would replace Phelps though by this time, he had moderated somewhat from his Williamite days and would never commit to state-industrialized planning in the same manner. 
+Douglas’ tenure however, also marked a period of moderation. The left flank of the [+ ccf_ss_name +] found itself weakening. In 1945, George Williams, now Minister for Agriculture died of cancer. Joe Phelps lost his seat in 1948 and the Douglas government would choose not to rerun him, believing his state-industrial endeavours had partially been responsible for reducing the Douglas government to a slim 4 seat majority. CCL would replace Phelps though by this time, he had moderated somewhat from his Williamite days and would never commit to state-industrialized planning in the same manner. 
 
 In the poor and largely inaccessible north, dominated demographically by First Nations and Metis, the Douglas government attempted even stronger government intervention. SaskAir attempted to develop a monopoly over northern commercial flying but ultimately failed. 
 

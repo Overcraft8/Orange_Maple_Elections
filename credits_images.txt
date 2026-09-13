@@ -88,6 +88,14 @@ progressive_poster.jpg - https://www.reddit.com/r/Kaiserreich/comments/m65rio/he
 telecom_lines.jpg - https://www.insulators.info/pictures/?id=675207949
 
 
+// ------------------------------------
+// Usask
+// ------------------------------------
+
+Sask_CCL.jpg - https://www.esask.uregina.ca/entry/saskatchewan_federation_of_labour_sfl.html
+regina_riot_protest.jpg  -https://www.esask.uregina.ca/entry/labour.html
+
+
 
 stacked bar graph (thanks maybe): https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html
 

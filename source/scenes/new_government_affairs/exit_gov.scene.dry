@@ -17,8 +17,8 @@ on-arrival: {!
     if (mid_panel) mid_panel.style.margin = Q.old_mid_panel_margin;
 
     if (content) {
-        content.style.maxWidth = '';
-        content.style.width = '';
+        content.style.maxWidth = Q.old_content_maxWidth;
+        content.style.width = Q.old_content_width;
         content.innerHTML = '';
     }
 

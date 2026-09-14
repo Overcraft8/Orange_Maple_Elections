@@ -2,49 +2,13 @@ title: The [+ ccf_ss_name +]
 new-page: true
 is-special: true
 
-= The [+ ccf_ss_name +]
-
-
 <div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
   <span>
   <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+  <hr>
     <span class="card-caption" style="font-size: 1.3em;">Party Leader: [+ ccf_ss_party_leader +]</span>
   </span>
-
-</div>
-
-<div>
-
-  <style>
-    #status_right_table tr:nth-child(even) { 
-        border: 4px none;
-    }
-  </style>
-
-  <table id='status_right_table' class='generic-table'>
-
-    <tr>
-        <td>Resources available: [+ resources +]</td>
-        <td>Annual Party Dues: [+ dues +]</td>
-    </tr>
-    <tr>
-        <td>Membership: [+ membership +]</td>
-        <td>Membership Change: [+ membership_change_trend +][+ membership_change_display +]<br><div style='font-size: 0.8em;'>(Updated annually)</div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" style="font-size: 1.2em;">Internal dissent: [+ dissent_percent : dissent +]</td>
-    </tr>
-    <tr>
-        <td colspan="2" style="font-size: 1.2em;">Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]</td>
-    </tr>
-    <tr>
-        <td colspan="2" style="font-size: 1.2em;">Riding Association Strength: [+ riding_associations : strength +]</td>
-    </tr>
-
-  </table>
-</div>
 
 </div>
 
@@ -361,3 +325,41 @@ Federal CCF Relations: [+ ccf_nat_relation : relationships +]
 
 </div>
 !}
+
+@party_information
+new-page: true
+is-special: true
+
+<div>
+
+  <style>
+    #status_right_table tr:nth-child(even) { 
+        border: 4px none;
+    }
+  </style>
+
+  <table id='status_right_table' class='generic-table'>
+
+    <tr>
+        <td>Resources available: [+ resources +]</td>
+        <td>Annual Party Dues: [+ dues +]</td>
+    </tr>
+    <tr>
+        <td>Membership: [+ membership +]</td>
+        <td>Membership Change: [+ membership_change_trend +][+ membership_change_display +]<br><div style='font-size: 0.8em;'>(Updated annually)</div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="font-size: 1.2em;">Internal dissent: [+ dissent_percent : dissent +]</td>
+    </tr>
+    <tr>
+        <td colspan="2" style="font-size: 1.2em;">Party Bureaucracy: [+ party_bureaucracy : p_bureaucracy +]</td>
+    </tr>
+    <tr>
+        <td colspan="2" style="font-size: 1.2em;">Riding Association Strength: [+ riding_associations : strength +]</td>
+    </tr>
+
+  </table>
+</div>
+
+</div>

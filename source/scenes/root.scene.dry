@@ -1515,7 +1515,7 @@ Q.news_refresh = function(event) {
 
     Q.news_display = ``;
 
-    var info = event.info; 
+    var info = `<hr>${event.info}`; 
 
     Q.news_display += `<div>${info}</div>`
 

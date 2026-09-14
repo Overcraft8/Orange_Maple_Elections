@@ -71,7 +71,8 @@ body.dark-mode .tools {
 }
 header, #content, footer {
   color: var(--text-color);
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
   overflow: auto;
 }
@@ -762,8 +763,8 @@ img {
   }
   #mid_panel {
     font-size: 0.7em;
-    width: 100%;
-      margin: 0 1.2em;
+    width: auto;
+    margin: 0 1.2em;
   }
 
   /* cards are smaller on mobile */

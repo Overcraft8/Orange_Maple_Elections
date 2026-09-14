@@ -18,7 +18,7 @@ Civic Labor League Strength: [+ cll_strength : strength +]
 - @cll_governance: Attempt to direct CLL Policy
 - @cll_politics: Root out Communist influence in the CLL
 - @cll_aid: Provide resources for the CLL
-- @root: Return to main
+- @easy_discard
 
 
 @cll_governance

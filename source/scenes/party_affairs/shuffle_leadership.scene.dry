@@ -354,7 +354,7 @@ go-to: advisor_menu
 The UFC(SS) is now an advisor. 
 
 @add_pool
-title: The Wheat Pool
+title: The Saskatchewan Wheat Pool
 subtitle: <img src="img/organizations/pool_elevator.jpg"><span>The Wheat Pool is a farmer's cooperative that markets grain produced by it's members.</span>{!<br><br>!}
 is-card: true
 card-image: img/organizations/pool_elevator.jpg
@@ -485,7 +485,7 @@ Clarence Fines is now an advisor.
 
 @add_rcwu
 title: Relief Camp Worker's Union
-subtitle: <img src="img/williams_speech.jpg" class="face-image"><span>RCWU is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the [+ ccf_ss_name +].</span> {!<br><br>!}
+subtitle: <img src="img/williams_speech.jpg" class="face-image"><span>The RWCU is a militant union for the workers of Bennett's relief camps. It has close links to the Communist movement.</span> {!<br><br>!}
 is-card: true
 card-image: img/organizations/ReliefWorkHighway.jpg
 tags: labour_advisor

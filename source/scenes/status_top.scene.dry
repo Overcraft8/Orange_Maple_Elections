@@ -2,15 +2,12 @@ title: The [+ ccf_ss_name +]
 new-page: true
 is-special: true
 
-<div style="display:flex; gap:1em; justify-content: center; text-align: center">
 
-  <span>
+  <span style="margin-bottom: 0;">
   <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  <div class="horizontal_line"></div>
+  <div class="horizontal_line" style="border-top: 10px dotted #dcb682; width: 50%;"></div>
     <span class="card-caption" style="font-size: 1.3em;">Party Leader: [+ ccf_ss_party_leader +]</span>
   </span>
-
-</div>
 
 @partyaffiliates
 

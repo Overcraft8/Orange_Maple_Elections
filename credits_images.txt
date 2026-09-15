@@ -67,6 +67,7 @@ ccf_founding.jpg https://commons.wikimedia.org/wiki/File:CooperativeCommonwealth
 diefenbaker_john_old.png https://commons.wikimedia.org/w/index.php?search=John+Diefenbaker&title=Special%3AMediaSearch&type=image
 women_grain_growers.jpg - https://commons.wikimedia.org/w/index.php?search=saskatchewan+women+&title=Special%3AMediaSearch&type=image
 ReliefWorkHighway.jpg - https://commons.wikimedia.org/wiki/File:ReliefWorkHighway.jpg
+WheatPool_logo.jpg - https://commons.wikimedia.org/wiki/File:SaskatchewanWheatPool.svg
 
 // -----------------------------------
 //  https://www.prairie-towns.com/

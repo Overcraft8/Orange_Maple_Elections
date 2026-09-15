@@ -2,21 +2,21 @@ title: The Relief Camp Worker's Union
 is-pinned-card: true
 tags: advisor, labour
 card-image: img/portraits/ReliefWorkHighway.jpg
-view-if: rwcu_advisor = 1
+view-if: rcwu_advisor = 1
 new-page: true 
 
 = Relief Camp Worker's Union
 
-The RWCU is a union consisting of various worker's employed in Bennett's relief camps. The grueling hours and little pay have led many to join the RWCU, seeking a more compensatory work program and even economic transformation. 
+The RCWU is a union consisting of various worker's employed in Bennett's relief camps. The grueling hours and little pay have led many to join the RCWU, seeking a more compensatory work program and even economic transformation. 
 
-The RWCU contains links to the Communist Party. 
+The RCWU contains links to the Communist Party. 
 
-- @rwcu_aid: Send Relief supplies and Legal aid
-- @rwcu_communists: Court the Communists inside the RWCU
+- @rcwu_aid: Send Relief supplies and Legal aid
+- @rcwu_communists: Court the Communists inside the RCWU
 - @root: Return to main
 
-@rwcu_aid
-title: RWCU Aid
+@rcwu_aid
+title: RCWU Aid
 subtitle: Improve our standing among the workers.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
@@ -24,9 +24,9 @@ on-arrival: advisor_action_timer = 6; workers_ccf_ss += 4*(1-dissent);
 
 We have increased our organizing among the workers.
 
-@rwcu_communists
+@rcwu_communists
 title: Courting the Communists
-subtitle: The RWCU is Communist-backed
+subtitle: The RCWU is Communist-backed
 choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
 on-arrival: advisor_action_timer = 6; reformist_dissent += 10; managerial_dissent += 7

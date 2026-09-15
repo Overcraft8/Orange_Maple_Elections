@@ -1,13 +1,13 @@
-title: Percy Wright
+title: The Wheat Pool
 is-pinned-card: true
 tags: advisor, agrarian
-card-image: img/portraits/WrightPercy.jpg
-view-if: wright_advisor = 1
+card-image: img/organizations/WheatPool_logo.jpgPercy.jpg
+view-if: pool_advisor = 1
 new-page: true 
 
-= Percy Wright
+= The Wheat Pool
 
-Percy Wright is a farmers by trade and a candidate in the Melfort riding. 
+The Wheat Pool is a farmers by trade and a candidate in the Melfort riding. 
 
 - @agriculture
 - @farmers_campaign

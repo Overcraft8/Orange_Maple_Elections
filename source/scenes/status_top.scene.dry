@@ -6,7 +6,7 @@ is-special: true
 
   <span>
   <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
-  <hr>
+  <div class="horizontal_line"></div>
     <span class="card-caption" style="font-size: 1.3em;">Party Leader: [+ ccf_ss_party_leader +]</span>
   </span>
 
@@ -326,7 +326,7 @@ Federal CCF Relations: [+ ccf_nat_relation : relationships +]
 </div>
 !}
 
-@party_information
+@party_status
 new-page: true
 is-special: true
 

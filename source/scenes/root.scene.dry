@@ -1377,10 +1377,10 @@ Q.williams_advisor = 1; // George Hara Williams
 Q.cll_advisor = 0; // Civic Labor League
 Q.woodsworth_advisor = 0; // JS_Woodsworth
 Q.lucas_advisor = 0; // Louise Lucas
-Q.wright_advisor = 0; // Percy Wright
+Q.pool_advisor = 0; // The Wheat Pool
 
 // Labour advisors
-Q.rwcu_advisor = 0; // Relief Camp Worker's Union
+Q.rcwu_advisor = 0; // Relief Camp Worker's Union
 Q.phelps_advisor = 0; // Joe Phelps
 Q.ccf_wc = 0; // CCF Women's Clubs
 

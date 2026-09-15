@@ -112,14 +112,14 @@ Eliason has been removed as an advisor. The Agrarian faction disapproves.
 
 # labour
 
-@remove_rwcu
-title: Remove the RWCU
-view-if: rwcu_advisor = 1
+@remove_rcwu
+title: Remove the RCWU
+view-if: rcwu_advisor = 1
 tags: remove_advisor
-on-arrival: rwcu_advisor = 0; labour_dissent += 5; n_advisors -= 1
+on-arrival: rcwu_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-The RWCU has been removed as an advisor. The Labour faction disapproves.
+The RCWU has been removed as an advisor. The Labour faction disapproves.
 
 @remove_phelps
 title: Remove Phelps
@@ -231,16 +231,14 @@ Schumacher has been removed as an advisor. The Neorevisionist faction disapprove
 
 ## party
 
-# tbh I'm not sure if Wright should be a moderate or party. same for spry. they were vaguely moderate-aligned but had pretty different ideas from the other moderates here. so they're non-factional.
-
-@remove_wright
-title: Remove Wright
-view-if: wright_advisor = 1
+@remove_pool
+title: Remove the Pool
+view-if: pool_advisor = 1
 tags: remove_advisor
-on-arrival: wright_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
+on-arrival: pool_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Wright has been removed as an advisor. The Agrarian faction disapproves.
+The Wheat Pool has been removed as an advisor. The Agrarian faction disapproves.
 
 @remove_spry
 title: Remove Spry
@@ -355,17 +353,17 @@ go-to: advisor_menu
 
 The UFC(SS) is now an advisor. 
 
-@add_wright
-title: Percy Wright
-subtitle: Percy Wright is a farmers by trade and a candidate in the Melfort riding. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Farmers Campaigning, Addressing the Economic Crisis ?]
+@add_pool
+title: The Wheat Pool
+subtitle: <img src="img/organizations/WheatPool_logo.jpg"><span>The Wheat Pool is a farmer's cooperative that markets grain produced by it's members.</span>{!<br><br>!}
 is-card: true
-card-image: img/portraits/WrightPercy.jpg
-view-if: wright_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
-on-arrival: wright_advisor = 1; n_advisors += 1
+card-image: img/organizations/WheatPool_logo.jpgPercy.jpg
+view-if: pool_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
+on-arrival: pool_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: agrarian_advisor
 
-Percy Wright is now an advisor.
+The Wheat Pool is now an advisor.
 
 @add_eliason
 title: Frank Eliason
@@ -485,17 +483,17 @@ tags: labour_advisor
 
 Clarence Fines is now an advisor.
 
-@add_rwcu
-title: RWCU
-subtitle: RWCU is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the [+ ccf_ss_name +]. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+@add_rcwu
+title: Relief Camp Worker's Union
+subtitle: <img src="img/williams_speech.jpg" class="face-image"><span>RCWU is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the [+ ccf_ss_name +].</span> {!<br><br>!}
 is-card: true
 card-image: img/organizations/ReliefWorkHighway.jpg
 tags: labour_advisor
-view-if: rwcu_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: rwcu_advisor = 1; n_advisors += 1; labour_dissent += 5
+view-if: rcwu_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: rcwu_advisor = 1; n_advisors += 1; labour_dissent += 5
 go-to: advisor_menu
 
-RWCU is now an advisor.
+RCWU is now an advisor.
 
 @add_douglas
 title: Tommy Douglas

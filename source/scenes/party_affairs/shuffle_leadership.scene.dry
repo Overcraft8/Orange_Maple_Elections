@@ -112,14 +112,14 @@ Eliason has been removed as an advisor. The Agrarian faction disapproves.
 
 # labour
 
-@remove_heaps
-title: Remove Heaps
-view-if: heaps_advisor = 1
+@remove_rwcu
+title: Remove the RWCU
+view-if: rwcu_advisor = 1
 tags: remove_advisor
-on-arrival: heaps_advisor = 0; labour_dissent += 5; n_advisors -= 1
+on-arrival: rwcu_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Heaps has been removed as an advisor. The Labour faction disapproves.
+The RWCU has been removed as an advisor. The Labour faction disapproves.
 
 @remove_phelps
 title: Remove Phelps
@@ -485,17 +485,17 @@ tags: labour_advisor
 
 Clarence Fines is now an advisor.
 
-@add_heaps
-title: Albert Heaps
-subtitle: Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the [+ ccf_ss_name +]. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+@add_rwcu
+title: RWCU
+subtitle: RWCU is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the [+ ccf_ss_name +]. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/HeapsAA.jpg
+card-image: img/organizations/ReliefWorkHighway.jpg
 tags: labour_advisor
-view-if: heaps_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: heaps_advisor = 1; n_advisors += 1; labour_dissent += 5
+view-if: rwcu_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: rwcu_advisor = 1; n_advisors += 1; labour_dissent += 5
 go-to: advisor_menu
 
-Albert Heaps is now an advisor.
+RWCU is now an advisor.
 
 @add_douglas
 title: Tommy Douglas

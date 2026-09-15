@@ -1374,15 +1374,15 @@ Q.eliason_advisor = 1; // Frank Eliason
 Q.williams_advisor = 1; // George Hara Williams
 
 // Moderate advisors
-Q.cll_advisor = 0; // CLL
+Q.cll_advisor = 0; // Civic Labor League
 Q.woodsworth_advisor = 0; // JS_Woodsworth
 Q.lucas_advisor = 0; // Louise Lucas
 Q.wright_advisor = 0; // Percy Wright
 
 // Labour advisors
-Q.heaps_advisor = 0; // Albert Heaps
+Q.rwcu_advisor = 0; // Relief Camp Worker's Union
 Q.phelps_advisor = 0; // Joe Phelps
-Q.ccf_wc = 0; // Carlyle King
+Q.ccf_wc = 0; // CCF Women's Clubs
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
@@ -1405,12 +1405,6 @@ for (var party of Q.parties) {
         Q[party + '_' + d + '_orgs'] = 0;
     }
 }
-
-
-
-
-
-
 
 
 
@@ -1511,14 +1505,17 @@ Q.active_news = {
     }
 }
 
-Q.news_refresh = function(event) {
+Q.news_refresh = function(event = 0) {
+    if (event) {
+        Q.news_display = ``;
 
-    Q.news_display = ``;
+        var info = `<hr>${event.info}`; 
 
-    var info = `<hr>${event.info}`; 
-
-    Q.news_display += `<div>${info}</div>`
-
+        Q.news_display += `<div>${info}</div>`
+    }
+    else {
+        Q.news_display = ``;
+    }
 };
 
 Q.news_refresh(Q.active_news.depression.start);

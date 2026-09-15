@@ -9,9 +9,10 @@ new-page: true
 
 The CCYM is the the youth corps of the CCF. It is populated by young radicals, many of whom intersperse freely with their cousins in the Communist youth organizations. 
 
-- @songs: Let us sing songs in rich, urban, neighbourhoods. 
-- @same: The CCYM is doing fine right now. 
-- @pamphlets: Spread informational pamphlets. 
+- @songs: Let us sing songs in rich, urban, neighbourhoods.  
+- @pamphlets: Spread informational pamphlets.
+- @ccym_communists: We should address the Communist situation 
+- @same: The CCYM is doing fine right now.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -39,6 +40,23 @@ Spreading pamphlets increases awareness of the benefits of socialism and helps e
 The suggestion to allow women into the UFC(SS) is ridiculed by most, except for Laura Jamieson. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and homosexuals ?].
 
 After allowing women to join, the number of comrades who leave is more than balanced out by the number of radicalized women and others who join. However, many of our departed members were veterans, and many of the new members have no experience with military-style training.
+
+@ccym_communists
+subtitle: The CCYM maintains unofficial links to Communist movements
+
+
+
+- @ccym_close_communists: Stamp down on CCYM-Communist links
+- @ccym_open_communists: We should encourage CCYM-Communist cooperation
+- @prevScene: Return
+
+@ccym_close_communists
+on-arrival: cp_s_relation -= 5; socialism -= 2
+
+@ccym_open_communists
+on-arrival: cp_s_relation += 5; socialism += 2; cps_relation -= 2
+
+The parties on our right are concerned about our courting of the Communists. 
 
 @homosexual
 achievement: anders_als_die_andern

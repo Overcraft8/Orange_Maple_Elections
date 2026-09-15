@@ -1,38 +1,37 @@
-title: Albert Heaps
+title: The Relief Camp Worker's Union
 is-pinned-card: true
 tags: advisor, labour
-card-image: img/portraits/HeapsAA.jpg
-view-if: heaps_advisor = 1
+card-image: img/portraits/ReliefWorkHighway.jpg
+view-if: rwcu_advisor = 1
 new-page: true 
 
-= Albert Heaps
+= Relief Camp Worker's Union
 
-Albert Heaps is one of the leaders of the 1919 Winnipeg General Strike. He is a founding member of the Ginger Group and the [+ ccf_ss_name +].
+The RWCU is a union consisting of various worker's employed in Bennett's relief camps. The grueling hours and little pay have led many to join the RWCU, seeking a more compensatory work program and even economic transformation. 
 
-- @organizing
-- @depression
+The RWCU contains links to the Communist Party. 
+
+- @rwcu_aid: Send Relief supplies and Legal aid
+- @rwcu_communists: Court the Communists inside the RWCU
 - @root: Return to main
 
-# heaps was one of the people who argued for union independence
-#- @union_unity
-
-@organizing
-title: Organizing workers
+@rwcu_aid
+title: RWCU Aid
 subtitle: Improve our standing among the workers.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; workers_ccf_ss += 4*(1-dissent); workers_ccf_ss += 3*(1-dissent) if wtb_adopted == 1; labour_dissent += 2;
+on-arrival: advisor_action_timer = 6; workers_ccf_ss += 4*(1-dissent); 
 
 We have increased our organizing among the workers.
 
-@depression
-title: Addressing the economic crisis
-subtitle: Formulate a plan to get us out of this mess.
+@rwcu_communists
+title: Courting the Communists
+subtitle: The RWCU is Communist-backed
 choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
-on-arrival: advisor_action_timer = 6; wtb_support += 2; agrarian_dissent += 10; labour_dissent += 1
+on-arrival: advisor_action_timer = 6; reformist_dissent += 10; managerial_dissent += 7
 
-The WTB-Plan, standing for its primary supporters Forsey, Tarnow, and Wright, has been adopted as the unions' plan for getting us out of the depression. Heaps canvasses in favor of this policy throughout the party and the unions.
+
 
 @union_unity
 title: Union-party coordination

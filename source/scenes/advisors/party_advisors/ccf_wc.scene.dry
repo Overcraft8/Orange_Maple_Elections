@@ -7,10 +7,13 @@ new-page: true
 
 = Cooperative Commonwealth Women's Clubs
 
-Unlike other CCF wings, the CCF(SS) does not maintain a women's section. Instead, there are various local women's clubs. 
+Unlike other CCF wings, the CCF(SS) does not maintain a women's section. Instead, there are various local women's clubs who gather to discuss social democratic literature and contribute material to the CCF's organ. 
 
-- @establish_womens_section: We should establish a CCF(SS) Women's Section
+Saskatchewan remains a predominantly socially conservative though not decidedly so. Our support for women issues provides an outlet for the rising Feminist movement no matter our party leadership's indifference. 
+
+- @establish_womens_section: We should establish a CCF(SS) Women's Section!
 - @campaign_women: Campaign among Women
+- @women_theory: Have them discuss and spread Social Democratic Theory
 - @easy_discard
 
 @establish_womens_section
@@ -18,3 +21,7 @@ subtitle: Based!
 
 @campaign_women
 subtitle: Based!
+
+@women_theory
+subtitle: Based!
+

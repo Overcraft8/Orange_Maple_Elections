@@ -614,6 +614,8 @@ if (this.ui && this.ui.show_portraits) {
     }
 }
 
+Q.news_refresh();
+
 window.updateBar('right');
 window.updateBar('left');
 window.updateBar('top');

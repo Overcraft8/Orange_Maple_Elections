@@ -1,7 +1,7 @@
 title: The Wheat Pool
 is-pinned-card: true
 tags: advisor, agrarian
-card-image: img/organizations/WheatPool_logo.jpg
+card-image: img/organizations/pool_elevator.jpg
 view-if: pool_advisor = 1
 new-page: true 
 

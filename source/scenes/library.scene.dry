@@ -144,7 +144,7 @@ go-to: menu
 on-arrival: {!
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
-Q.socialism_disp = Math.round(Q.socialism);
+Q.socialism_support_disp = Math.round(Q.socialism_support);
 !}
 view-if: (not historical_mode) or game_over
 set-jump: election_projections

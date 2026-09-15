@@ -228,7 +228,8 @@ Q.city_government = "ccf_ss";
 // nationalism vs internationalism or pacifism or non-nationalism
 Q.nationalism = 60;
 // socialism vs capitalism
-Q.socialism = 40;
+Q.socialism_support = 40;
+Q.cooperative_support = 60; 
 // pro-republic vs anti-republic
 Q.pro_republic = 59;
 

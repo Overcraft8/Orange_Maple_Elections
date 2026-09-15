@@ -320,7 +320,7 @@ Urban police: [+ city_police_strength : strength +]
 
 Urban police loyalty: [+ city_police_loyalty : loyalty +]
 
-Support for Socialism: [+ socialism +]%
+Support for Socialism: [+ socialism_support +]%
 
 
 

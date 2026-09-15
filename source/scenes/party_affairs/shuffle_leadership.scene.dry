@@ -357,7 +357,7 @@ The UFC(SS) is now an advisor.
 title: The Wheat Pool
 subtitle: <img src="img/organizations/WheatPool_logo.jpg"><span>The Wheat Pool is a farmer's cooperative that markets grain produced by it's members.</span>{!<br><br>!}
 is-card: true
-card-image: img/organizations/WheatPool_logo.jpgPercy.jpg
+card-image: img/organizations/WheatPool_logo.jpg
 view-if: pool_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
 on-arrival: pool_advisor = 1; n_advisors += 1
 go-to: advisor_menu

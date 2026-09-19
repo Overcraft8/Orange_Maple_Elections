@@ -33,8 +33,8 @@ on-arrival: {!
   Q.rural_sanit_plat = 0;
 
 
-  Object.keys(Q.ccf_platform).forEach(category => {
-    Object.keys(category).forEach(policy => {
+  Object.values(Q.ccf_platform).forEach(category => {
+    Object.values(category).forEach(policy => {
       if (policy[0] > 0) {
         Q.party_platform += `${policy[1]}<br>`;
       }

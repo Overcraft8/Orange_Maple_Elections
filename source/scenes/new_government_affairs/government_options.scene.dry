@@ -180,6 +180,45 @@ on-arrival: {!
         </div>
     </div>
 
+    <div style="display: flex; background-color: #2c2c2c; border: 2px solid #876; border-radius: 6px; padding: 12px; margin-bottom: 1em; color: #eee; box-shadow: 2px 2px 5px rgba(0,0,0,0.5);">
+    
+    <!-- Left Column: Identity & Icon -->
+    <div style="flex: 1; border-right: 1px solid #555; padding-right: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <!-- You can replace the emoji with a background-image URL like your pie charts -->
+        <div style="width: 48px; height: 48px; background-color: #3d2b1f; border: 1px solid #9c8c64; border-radius: 50%; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+            ⚡
+        </div>
+        <div style="font-weight: bold; color: #f1c40f; font-size: 1.1em;">SaskPower</div>
+        <div style="font-size: 0.8em; font-style: italic; color: #aaa;">Electrical Utilities</div>
+    </div>
+
+    <!-- Right Column: Stats & Data -->
+    <div style="flex: 2; padding-left: 16px; display: flex; flex-direction: column; justify-content: space-evenly;">
+        
+        <!-- Financial Grid -->
+        <div style="display: flex; justify-content: space-between; font-size: 0.9em; margin-bottom: 8px;">
+            <div><span style="color: #aaa;">Revenue:</span> [+ saskpower_revenue_display +]</div>
+            <div><span style="color: #aaa;">Expenses:</span> [+ saskpower_expenses_display +]</div>
+            <!-- Use a conditional text color here if you want green for profit / red for loss -->
+            <div><span style="color: #aaa;">Rates:</span> [+ saskpower.revenue.rates +]</div>
+        </div>
+
+        <!-- Visual Market Share Bar -->
+        <div style="margin-top: 4px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85em; color: #aaa; margin-bottom: 4px;">
+                <span>State Market Share</span>
+                <span>[+ economic_data.electricity.marketshare.state +]%</span>
+            </div>
+            <!-- The Track -->
+            <div style="width: 100%; background-color: #1a1a1a; border-radius: 4px; height: 12px; border: 1px solid #444; overflow: hidden;">
+                <!-- The Fill (Width is dynamically driven by your Dendry variable) -->
+                <div style="width: [+ economic_data.electricity.marketshare.state +]%; background-color: #F19A38; height: 100%;"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 </div>
 
 - @government_options: Return to Government Options

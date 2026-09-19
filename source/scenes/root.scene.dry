@@ -53,6 +53,8 @@ Q.dues = 2;
 
 Q.party_bureaucracy = 0;
 
+Q.party_platform = '';
+
 Q.riding_associations = 0;
 
 

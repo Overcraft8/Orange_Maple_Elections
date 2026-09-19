@@ -7,8 +7,8 @@ new-page: true
 set-bg: img/Towards_The_Dawn.jpg
 go-to: start_menu_2
 on-arrival: {!
-    document.getElementById('mid_panel').style.display = 'none'; 
-    document.getElementById('')
+    // document.getElementById('mid_panel').style.display = 'none'; 
+    // document.getElementById('')
 !}
 
 = Social Democracy: The Prairie Lily

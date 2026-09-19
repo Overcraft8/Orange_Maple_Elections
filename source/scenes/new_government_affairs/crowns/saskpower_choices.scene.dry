@@ -10,7 +10,7 @@ on-arrival: {!
     Q.private_share = Q.economic_data.electricity.private;
     Q.monopoly_cost = Math.round(Q.private_share*10, 2);
 
-
+    Q.saskpower_sheet = window.generate_crown_info(Q.saskpower); 
 !}
 
 = SaskPower
@@ -20,31 +20,6 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 Current Rate: [+ saskpower.revenue.rates : saskpower_rates +]
 
 Electrification Progress: [+ electrification : electrification +]
-
-# <div class="gov_panel" style="margin-bottom: 15px;">
-#         <h1 style="font-size: 1.2em; margin-top: 0;">Operational Dashboard</h1>
-#         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-#             <div style="flex: 1; min-width: 140px;">
-#                 <strong>Generation Mix:</strong><br>
-#                 Fossil Fuels: <span style="color: #888;">85%</span><br>
-#                 Hydroelectric: <span style="color: #2980b9;">10%</span><br>
-#                 Renewables: <span style="color: #27ae60;">5%</span>
-#             </div>
-#             <div style="flex: 1; min-width: 140px;">
-#                 <strong>Infrastructure:</strong><br>
-#                 Grid Stability: <span style="color: #c76d13;">Strained</span><br>
-#                 Rural Coverage: <span style="color: #c71313;">Poor</span><br>
-#                 Emissions: <span style="color: #c71313;">High</span>
-#             </div>
-#             <div style="flex: 1; min-width: 140px;">
-#                 <strong>Public Mandate:</strong><br>
-#                 Approval: <span style="color: #f1c40f;">62%</span><br>
-#                 Affordability Index: <span style="color: #c76d13;">Moderate</span>
-#             </div>
-#         </div>
-#     </div>
-#     
-#     <p></p>
 
 # <div style="display: flex; flex-direction: row;">
 #     <div class="gov_panel">
@@ -58,58 +33,7 @@ Electrification Progress: [+ electrification : electrification +]
 #     </div>
 # </div>
 
-<!-- Financial Ledger Container -->
-<div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 1.5em; width: 100%; box-sizing: border-box;">
-
-    <!-- Revenue Panel -->
-    <div style="flex: 1; min-width: 200px; background: rgba(0, 0, 0, 0.05); border: 3px solid #9c8c64; border-radius: 4px; padding: 12px; box-sizing: border-box;">
-        <div style="background-color: #877b66; border: 2px ridge #6c512e; color: #ffffff; text-align: center; padding: 5px; font-size: 1.2em; margin-bottom: 10px; font-weight: bold;">
-            Revenue
-        </div>
-        
-        <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #9c8c64; padding: 4px 0;">
-            <span>Rates</span>
-            <span>4</span> <!-- You can replace with [+ saskpower.revenue.rates +] -->
-        </div>
-
-        <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
-            <span>Total Revenue</span>
-            <span style="color: #2d662d;">4</span>
-        </div>
-    </div>
-
-    <!-- Expenses Panel -->
-    <div style="flex: 1; min-width: 200px; background: rgba(0, 0, 0, 0.05); border: 3px solid #9c8c64; border-radius: 4px; padding: 12px; box-sizing: border-box;">
-        <div style="background-color: #877b66; border: 2px ridge #6c512e; color: #ffffff; text-align: center; padding: 5px; font-size: 1.2em; margin-bottom: 10px; font-weight: bold;">
-            Expenses
-        </div>
-        
-        <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #9c8c64; padding: 4px 0;">
-            <span>Administration</span>
-            <span>3</span> <!-- You can replace with [+ saskpower.expenses.admin +] -->
-        </div>
-        <div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #9c8c64; padding: 4px 0;">
-            <span>Maintenance</span>
-            <span>1</span> <!-- You can replace with [+ saskpower.expenses.maintenance +] -->
-        </div>
-        
-        <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
-            <span>Total Expenses</span>
-            <span style="color: #841715;">4</span>
-        </div>
-    </div>
-
-</div>
-
-<!-- Net Balance Summary Panel -->
-<div style="background: rgba(0, 0, 0, 0.05); border: 3px solid #9c8c64; border-radius: 4px; padding: 10px 16px; margin-bottom: 1.5em; display: flex; justify-content: space-between; align-items: center;">
-    <span style="font-size: 1.3em; font-weight: bold;">Net Balance (Profit/Loss)</span>
-    
-    <!-- This calls the dynamic color-coded function we built earlier -->
-    <span style="font-size: 1.4em; padding: 4px 16px; background-color: #2c2c2c; border: 2px ridge #6c512e; border-radius: 4px; text-shadow: 1px 1px 2px #000;">
-        [+ saskpower.profit +]
-    </span> 
-</div>
+[+ saskpower_sheet +]
 
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies

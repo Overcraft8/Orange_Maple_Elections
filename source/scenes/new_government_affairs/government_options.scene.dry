@@ -151,7 +151,7 @@ on-arrival: {!
             <div class='tab_container'>
                 <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('saskpower_choices');">Saskpower Actions</div>
             </div>
-            <div id="balance_panel">Balance: [+ saskpower.profit +]</div>
+            <div class="balance_panel">Balance: [+ saskpower.profit +]</div>
         </div>
     </div>
 
@@ -165,7 +165,7 @@ on-arrival: {!
             <div class='tab_container'>
                 <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.sasktel_choices');">SaskTel Actions</div>
             </div>
-            <div id="balance_panel">Balance: [+ sasktel.profit +]</div>
+            <div class="balance_panel">Balance: [+ sasktel.profit +]</div>
         </div>
     </div>
 
@@ -179,7 +179,7 @@ on-arrival: {!
             <div class='tab_container'>
                 <div id='stc_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.stc_choices');">STC Actions</div>
             </div>
-            <div id="balance_panel">Balance: [+ stc.profit +]</div>
+            <div class="balance_panel">Balance: [+ stc.profit +]</div>
         </div>
     </div>
 

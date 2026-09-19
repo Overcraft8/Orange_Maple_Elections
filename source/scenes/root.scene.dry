@@ -1038,6 +1038,10 @@ Q.stc = {
     'qdisplay' : 'stc'
 };
 
+Q.saskpower_balance_sheet = ``;
+Q.sasktel_balance_sheet = ``; 
+Q.stc_balance_sheet = ``; 
+
 
 Q.electrification_pie_chart = 0;
 Q.telecoms_pie_chart = 0;

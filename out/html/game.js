@@ -561,13 +561,13 @@ window.changeTabBottom = function(newTab, tabId) { window.ChangeTab('bottom', ne
 
 
 window.onDisplayContent = function() {
-    window.changeTab('left', 'status', 'main_tab');
-    window.changeTab('right', 'status_right', 'status_top');
-    window.changeTab('bottom', 'status_bottom', 'map_tab');
-    window.updateBar('left');
-    window.updateBar('right');
-    window.updateBar('top');
-    window.updateBar('bottom');
+    // window.changeTab('left', 'status', 'main_tab');
+    // window.changeTab('right', 'status_right', 'status_top');
+    // window.changeTab('bottom', 'status_bottom', 'map_tab');
+    // window.updateBar('left');
+    // window.updateBar('right');
+    // window.updateBar('top');
+    // window.updateBar('bottom');
 };
 
 window.justLoaded = true;

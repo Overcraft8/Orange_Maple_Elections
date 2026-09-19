@@ -15,9 +15,10 @@ if (Q.year == 1932 && Q.month == 1) {
   Q.active_news = {
       depression : {
           start : {
+              unique : [false, false], // First index indicating it's unique, second indicating if it's been called yet
               date : [1, 1932],
               info : 'It is a dire time for Saskatchewan. The province is wracked by extreme drought the likes of which has never been seen before on the Canadian prairies. <br> Two thirds of farmers have already been forced to rely on relief.',
-              condition : Q.started = 1
+              condition : Q.started == 1 && Q.month == 1 && Q.year >= 1932
           }
           
       }
@@ -35,12 +36,25 @@ if (Q.year == 1932 && Q.month == 1) {
           Q.news_display = ``;
       }
   };
+
+  Q.news_activator = function() {
+    for (topic of Q.active_news) {
+      for (event of topic) {
+        if (event.unique[false, false]) {
+          continue;
+        }
+        if (event.condition == true) {
+          Q.news_addition(event);
+        }
+      }
+    }
+  };
 };
 
-Q.news_addition(Q.active_news.depression.start);
+Q.news_activator();
 
 if (document.getelementById('news_title') == null) {
-  var container = document.getelementById('news_frame'); 
+  var container = document.getelementById('news_qualities'); 
   container.innerHTML += `<div style="text-align: center;" id="news_title">
                             <span style="font-family: Times New Roman; font-size: 2.2em; font-weight: bold;">News</span>
                           </div>`;

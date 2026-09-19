@@ -68,6 +68,7 @@ is-deck: true
 - #govt_affairs
 
 @programme 
+view-if: programme_timer <= 0
 title: Party Programme
 card-image: img/Sask_CCF_Programme.jpg
 is-deck: true

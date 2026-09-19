@@ -528,6 +528,8 @@ Q.credit_unions = 3;
 Q.housing_coops = 1;
 Q.factory_coops = 0;
 
+Q.news_display = ``; 
+
 
 
 
@@ -995,6 +997,10 @@ Q.saskpower = {
         'admin' : 3, 
         'maintenance' : 1
     },
+    get profit() {
+        // "this" refers to the Q.saskpower object itself
+        return window.crown_corps_profit(this); 
+    },
     'marketshare' : Q.economic_data.electricity.marketshare.state,
     'Name' : 'SaskPower',
     'mission' : 'Electrification',
@@ -1002,8 +1008,17 @@ Q.saskpower = {
 };
 
 Q.sasktel =  {
-    'revenue' : 6, 
-    'expenses' : 3, 
+    'revenue' : {
+        'rates' : 6
+    },
+    'expenses' : {
+        'admin' : 3, 
+        'maintenance' : 1
+    },
+    get profit() {
+        // "this" refers to the Q.saskpower object itself
+        return window.crown_corps_profit(this); 
+    },
     'marketshare' : Q.economic_data.telecoms.marketshare.state, 
     'Name' : 'SaskTel',
     'mission' : 'Telecom Access',
@@ -1013,6 +1028,10 @@ Q.sasktel =  {
 Q.stc = {
     'revenue' : 3, 
     'expenses' : 4, 
+    get profit() {
+        // "this" refers to the Q.saskpower object itself
+        return window.crown_corps_profit(this); 
+    },
     'marketshare' : Q.economic_data.transport.marketshare.state, 
     'Name' : 'STC', 
     'mission' : 'STC Ridership',

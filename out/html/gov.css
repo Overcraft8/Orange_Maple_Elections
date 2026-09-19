@@ -1,6 +1,7 @@
 .gov_panel {
     width: 200px;
     box-sizing: border-box; 
+    flex-shrink: 0;
     overflow: hidden;       
     padding: 16px;
     margin-bottom: 1em;

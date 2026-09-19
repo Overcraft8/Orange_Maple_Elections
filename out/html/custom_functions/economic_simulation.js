@@ -190,4 +190,26 @@ Q.current_region_id = region_id;
     console.log("eco-sim");
 };
 
+
+window.crown_corps_profit = function(corporation) { 
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
+
+    var total_revenue = 0; 
+    var total_expense = 0; 
+
+    Object.values(corporation.revenue).forEach(revenue => {
+        total_revenue += revenue;  
+    });
+
+    Object.values(corporation.expenses).forEach(expense => {
+        total_expense += expense;  
+    });
+
+    return total_revenue - total_expense; 
+};
+
+
+
+
+
 console.log("got to end of eco simulation");

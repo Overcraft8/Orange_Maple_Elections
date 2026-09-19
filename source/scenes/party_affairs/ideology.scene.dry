@@ -15,10 +15,10 @@ The [+ ccf_ss_name +] is torn between many different ideological currents. What 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
 - @class_struggle: We must maintain a purely Socialist movement, aimed at the creation of a true Cooperative Commonwealth. 
-- @agrarian: The plight of the struggling farmers will be our calling.
 - @managerial: Our main goal should be to exercise Democratic Socialism in government where we can. 
+- @reform: We should attempt to limit our excesses to improve our electability and cards in electoral negotiating. 
+- @agrarian: The plight of the struggling farmers will be our calling.
 - @labour: We should work with the trade unions to improve the lives of workers.
-- @reform: We should attempt to limit our excesses to improve our electability. 
 - @easy_discard
 
 @class_struggle

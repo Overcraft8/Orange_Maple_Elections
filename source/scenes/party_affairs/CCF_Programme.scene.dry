@@ -56,7 +56,7 @@ This is a radical rural policy that would potentially destabilize our agricultur
 
 @yes_use_lease
 title: Yes to use lease!
-on-arrival: agrarian_strength += 5; use_lease_plat += 1; ccf_ss_rural += 4;
+on-arrival: agrarian_strength += 5; ccf_platform.agrarian.use_lease += 1; ccf_ss_rural += 4;
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
 
@@ -73,7 +73,7 @@ This would encroach upon many of the existing wheat pools in Saskatchewan though
 
 @yes_wheat_pool
 title: Yes to the wheat pool!
-on-arrival: agrarian_strength += 3; wheat_pool_plat += 1; ccf_ss_rural += 4
+on-arrival: agrarian_strength += 3; ccf_platform.agrarian.wheat_pool_expansion += 1; ccf_ss_rural += 4
 
 We have chosen to add a provincial wheat pool to our platform. The farmers will surely be enthusiastic. 
 

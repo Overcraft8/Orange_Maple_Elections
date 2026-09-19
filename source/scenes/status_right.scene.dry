@@ -37,8 +37,6 @@ if (Q.year == 1932 && Q.month == 1) {
   };
 };
 
-Q.
-
 Q.news_addition(Q.active_news.depression.start);
 
 if (document.getelementById('news_title') == null) {

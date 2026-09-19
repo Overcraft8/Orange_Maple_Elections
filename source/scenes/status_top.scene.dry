@@ -10,7 +10,7 @@ is-special: true
     <span class="card-caption" style="font-size: 1.3em;">Party Leader: [+ ccf_ss_party_leader +]</span>
   </span>
 
-@programme
+@programme_display
 on-arrival: {!
   if (Q.year == 1932 && Q.month == 1) {
 

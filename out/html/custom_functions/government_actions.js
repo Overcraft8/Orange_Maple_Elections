@@ -14,7 +14,7 @@ window.generate_crown_info = function(crown_info) {
                             Expenses
                         </div>`;
     Object.entries(crown_expense).forEach(([expense_name, expense_cost]) => {
-        var expense_capitalized = expense_name.charAt(0).toUpperCase() + str.slice(1);
+        var expense_capitalized = expense_name.charAt(0).toUpperCase() + expense_name.slice(1);
         expense_list += `<div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #9c8c64; padding: 4px 0;">
                             <span>${expense_capitalized}</span>
                             <span>${expense_cost}</span>
@@ -31,7 +31,7 @@ window.generate_crown_info = function(crown_info) {
                             Revenue
                         </div>`; 
     Object.entries(crown_revenue).forEach(([revenue_name, revenue_cost]) => {
-        var revenue_capitalized = revenue_name.charAt(0).toUpperCase() + str.slice(1);
+        var revenue_capitalized = revenue_name.charAt(0).toUpperCase() + revenue_name.slice(1);
         revenue_list += `<div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #9c8c64; padding: 4px 0;">
                             <span>${revenue_capitalized}</span>
                             <span>${revenue_cost}</span>

@@ -11,6 +11,15 @@
     border-radius: 4px;
 }
 
+.balance_panel {
+  font-size: 1.3em;
+  text-align: center;
+  background-color: #877b66;
+  border: 2px ridge #6c512e;
+  color: #ffffff;
+  padding: 3px; 
+}
+
 .h1_gov {
     text-align: center;
     font-weight: bold; 

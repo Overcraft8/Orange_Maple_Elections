@@ -12,9 +12,11 @@ The governing Cooperative Coalition of James Anderson has been unpopular since t
 
 The disappearance of the PPS has put a stop to his plans. Anderson hopes that we will take a concession from him in exchange for our vote in Non-Confidence motions. It was he after all, that had established the unlikely alliance of Progressives, Conservatives, and Independents that ousted the Liberals from power. 
 
-Anderson's government is widely suspected of maintaining ties with the Ku Klux Klan. His aggressive bans on French instruction and religious garb in public schools have deeply alienated our immigrant, Catholic, and minority supporters.
+Anderson's government is widely suspected of maintaining ties with the Ku Klux Klan. The Klan has commended him for his bans on French instruction and religious garb in public schools though he and his government denies Liberal claims that the policies were a result of KKK-Government collusion.
 
-We may do well to promote a certain piece of legislation to prove our ability to make change to the Saskatchewan people. On the other hand, it may come across as collaborating with the most disliked Premier in our history. 
+On the other hand, Anderson has been open to progressive economic policies, enacting PPS policies such as expanded labour legislation, protection of the Wheat Pool, and removal of partisan influence from the Civil Service. His government has also begun an ambitious highway expansion program though progress has faltered with the onset of the economic crisis. 
+
+We may do well to promote a certain piece of legislation to prove our ability to make change to the Saskatchewan people. On the other hand, we would be collaborating with the most disliked Premier in our history. 
 
 - @anderson_farmers_debt_moratorium: Get Anderson to establish a long-term moratorium on farm foreclosures and debt
 - @anderson_labour_legislation: Get Anderson to Ban Scabs and begin providing Cash Relief
@@ -45,6 +47,7 @@ choose-if: 1 == 2
 # Sorry WTB fans
 
 @anderson_ministry
+subtitle: This would be highly controversial...
 on-arrival: {! 
 Q.leverage = 6; 
 Q.ccf_ss_in_government = 1 

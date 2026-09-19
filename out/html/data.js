@@ -106,6 +106,11 @@ const tooltipList = [{
     detailedText: "The Knights of the Ku Klux Klan entered the province in 1926, an import from the United States. The founding American Klansmen left with the treasury in 1927 but by then, the movement had grown popular enough to warrant local leadership. They have primarily railed against the 'unassimilable' immigrants coming from Central and Eastern Europe, the French, and the Catholic Church. While KKK membership includes members of all old parties, the Conservatives and Progressives raised issues of immigration and education that drew upon prejudicies raised by the KKK in the 1929 election. In addition, the KKK has praised Anderson's ban on religious garb/symbols and French instruction in public schools."
 },
 {
+    searchString: ['Wheat Pool'], 
+    explanationText: "The Wheat Pool",
+    detailedText: ""
+},
+{
     searchString: "STA", 
     explanationText: "The Saskatchewan Teacher's Alliance "
 },
@@ -238,6 +243,11 @@ const colourList = [{
     {
         word: ['ASCP', 'Alberta Social Credit Party'],
         style: "color: #49be39; font-weight: bold;"
+    },
+    // Below Organizations
+    {
+        word: ['Wheat Pool'],
+        style: "color: #babe39; font-weight: bold;"
     },
     // Below this for states of qdisplays
     /*

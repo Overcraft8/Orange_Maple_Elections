@@ -205,7 +205,31 @@ window.crown_corps_profit = function(corporation) {
         total_expense += expense;  
     });
 
-    return total_revenue - total_expense; 
+    var balance = total_revenue - total_expense; 
+
+    var color = "#cccccc";
+    
+    if (balance <= -10) {
+        color = "#ff4d4d";
+    } else if (balance <= -5) {
+        color = "#ff8080";
+    } else if (balance < 0) {
+        color = "#ffb3b3";
+    } else if (balance === 0) {
+        color = "#cccccc";
+    } else if (balance <= 3) {
+        color = "#b3ffb3";
+    } else if (balance <= 8) {
+        color = "#66ff66";
+    } else {
+        color = "#19d119";
+    }
+
+    var displayString = balance > 0 ? `+${balance}` : 
+        balance = 0 ? `${balance}` : `-${balance}`;
+    
+    return `<span style="color: ${color}; font-weight: bold;">${displayString}</span>`;
+
 };
 
 

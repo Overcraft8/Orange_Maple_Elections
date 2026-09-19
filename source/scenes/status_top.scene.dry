@@ -77,18 +77,16 @@ if (window && window.customgeneratemultibar) {
     factionColors.push(Q.faction_colors[faction + '_color']);
   };
 */
-  console.log(strengths);
-  console.log(factionColors);
 
-  var strengths = [Q.moderate_strength, Q.managerial_strength, Q.agrarian_populist_strength, Q.radical_strength];
-  var factionColors = ["#f2ff00", "#d26e28", "#89c520", "#c32222"];
+  var strengths = [Q.moderate_strength, Q.labour_strength, Q.managerial_strength, Q.agrarian_populist_strength, Q.radical_strength];
+  var factionColors = ["#f2ff00", "#2844d2", "#d26e28", "#89c520", "#c32222"];
   
   window.customgeneratemultibar(
       strengths, 
       "#333333", 
       factionColors, 
       "faction_strength_bar", 
-      ['The Moderate Wing', 'The Managerial Wing', 'The Agrarians', 'The Radical Wing']
+      ['The Moderate Wing', 'The Labour Wing', 'The Managerial Wing', 'The Agrarians', 'The Radical Wing']
   );
 }
 

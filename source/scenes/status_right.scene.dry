@@ -38,16 +38,13 @@ if (Q.year == 1932 && Q.month == 1) {
   };
 
   Q.news_activator = function() {
-    for (topic of Q.active_news) {
-      for (event of topic) {
-        if (event.unique[false, false]) {
-          continue;
-        }
-        if (event.condition == true) {
+    Object.keys(Q.active_news).forEach(topic => {
+      Object.keys(topic).forEach(event => {
+        if (event.condition == true && !event.unique[false, false]) {
           Q.news_addition(event);
         }
-      }
-    }
+      })
+    })
   };
 };
 

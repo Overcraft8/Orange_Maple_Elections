@@ -16,8 +16,8 @@ Anderson's government is widely suspected of maintaining ties with the Ku Klux K
 
 We may do well to promote a certain piece of legislation to prove our ability to make change to the Saskatchewan people. On the other hand, it may come across as collaborating with the most disliked Premier in our history. 
 
-- @anderson_farmers_debt_moratorium: Get him to establish a long-term moratorium on farm foreclosures and debt
-- @anderson_labour_legislation: Get Anderson to expand Labour Legislation
+- @anderson_farmers_debt_moratorium: Get Anderson to establish a long-term moratorium on farm foreclosures and debt
+- @anderson_labour_legislation: Get Anderson to Ban Scabs and begin providing Cash Relief
 - @anderson_public_works: Can we get Anderson to expand public works projects?
 - @anderson_ministry: Let's enter government with a ministry of our choosing
 - @leave_anderson: Let's not get wracked up with Anderson right now
@@ -32,13 +32,11 @@ Many of our immigrant and Catholic base are disgusted at our compromise with And
 
 @anderson_labour_legislation
 subtitle: This expands our labour support
-on-arrival: workers_ccf_ss += 10; moderate_strength += 5; radical_strength -=5; moderate_dissent += 5; radical_dissent += 15; unemployed += 2; economic_growth -= 2
+on-arrival: workers_ccf_ss += 10; moderate_strength += 5; radical_strength -=5; unemployed += 2; economic_growth -= 2
 
-Anderson's government passes new labour legislation strengthening union rights, raising the minimum wage, and reducing work hours. While this proves beneficial to those workers who can maintain their jobs, the increase in worker's rights reduces the margins of small businesses, forcing many workers onto the streets. 
+Anderson's government passes new labour legislation banning the use of scabs during collective bargaining negotations. In 1931, scabs had been the final straw for Bienfait Coal Mine workers, resulting in a violent escalation with the RCMP that killed 3 miners. 
 
-Many of our immigrant and Catholic base are disgusted at our compromise with Anderson's government. Even some in the leadership question whether is was right to achieve this legislation at the cost of aligning ourselves with the Premier. 
-
-It is a Pyrrhic victory at the very least. 
+Relief has traditionally been passed through 
 
 @anderson_public_works
 unavailable-subtitle: The Province has virtually nothing in the treasury

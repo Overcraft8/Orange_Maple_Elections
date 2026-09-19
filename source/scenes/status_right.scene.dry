@@ -50,8 +50,8 @@ if (Q.year == 1932 && Q.month == 1) {
 
 Q.news_activator();
 
-if (document.getelementById('news_title') == null) {
-  var container = document.getelementById('news_qualities'); 
+if (document.getElementById('news_title') == null) {
+  var container = document.getElementById('news_qualities'); 
   container.innerHTML += `<div style="text-align: center;" id="news_title">
                             <span style="font-family: Times New Roman; font-size: 2.2em; font-weight: bold;">News</span>
                           </div>`;

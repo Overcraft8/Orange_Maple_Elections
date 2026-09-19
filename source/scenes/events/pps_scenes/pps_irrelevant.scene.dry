@@ -35,16 +35,16 @@ The PPS is concerned about our socialist platform. We must make concessions to e
 - @pps_cancel: The PPS asks too much of us
 
 @remove_use_lease
-on-arrival: reformist_strength += 20; reformist_dissent -= 20; lost_use_lease = 1; ufc_relations -= 20; farmers_ccf_ss -= 15
+on-arrival: moderate_strength += 20; moderate_dissent -= 20; lost_use_lease = 1; ufc_relations -= 20; farmers_ccf_ss -= 15
 subtitle: This was a policy approved by the UFC(SS)!
 go-to: pps_merge_yes
 
 @abandon_socialism
-on-arrival: reformist_strength += 30; reformist_dissent -= 30; abandon_socialism = 1; ufc_relations -= 30; farmers_ccf_ss -= 10
+on-arrival: moderate_strength += 30; moderate_dissent -= 30; abandon_socialism = 1; ufc_relations -= 30; farmers_ccf_ss -= 10
 go-to: pps_merge_yes
 
 @support_cooperative_coalition
-on-arrival: reformist_strength += 10; reformist_dissent -= 10; support_cooperative_coalition = 1; ufc_relations -= 15; farmers_ccf_ss -= 10
+on-arrival: moderate_strength += 10; moderate_dissent -= 10; support_cooperative_coalition = 1; ufc_relations -= 15; farmers_ccf_ss -= 10
 subtitle: Anderson's government seems destined to fall however...
 go-to: pps_merge_yes
 

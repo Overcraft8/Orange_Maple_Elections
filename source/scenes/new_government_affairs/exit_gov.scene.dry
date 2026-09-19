@@ -11,18 +11,16 @@ on-arrival: {!
     var right_sidebar = document.getElementById('news_frame'); 
     var button_container = document.getElementById('government_options_top_panel');
 
-    if (left_sidebar) left_sidebar.style.display = ''; 
-    if (right_sidebar) right_sidebar.style.display = '';
+    left_sidebar.style.display = ''; 
+    right_sidebar.style.display = '';
 
-    if (mid_panel) mid_panel.style.margin = Q.old_mid_panel_margin;
+    mid_panel.style.margin = Q.old_mid_panel_margin;
 
-    if (content) {
-        content.style.maxWidth = Q.old_content_maxWidth;
-        content.style.width = Q.old_content_width;
-        content.innerHTML = '';
-    }
+
+    content.style.maxWidth = '';
+    content.style.width = '';
+    content.innerHTML = '';
 
     button_container.style.display = 'none';
 !}
-
-- @main: Return to Main
+go-to: root

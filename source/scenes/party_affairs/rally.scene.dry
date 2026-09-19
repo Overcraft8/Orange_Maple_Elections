@@ -81,7 +81,7 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @easy_discard
 
 @rally_cooperative_commonwealth
-on-arrival: workers_ccf_ss += 4*(1-dissent); unemployed_ccf_ss += 3*(1-dissent) if true_socialist_strength > managerial_strength; workers_ccf_ss += 4*(1-dissent) if nationalization_progress > 0; unemployed_ccf_ss += 3*(1-dissent) if nationalization_progress > 0; true_socialist_strength += 5; true_socialist_dissent -= 5; old_middle_ccf_ss -= 3; new_middle_ccf_ss -= 2;
+on-arrival: workers_ccf_ss += 4*(1-dissent); unemployed_ccf_ss += 3*(1-dissent) if radical_strength > managerial_strength; workers_ccf_ss += 4*(1-dissent) if nationalization_progress > 0; unemployed_ccf_ss += 3*(1-dissent) if nationalization_progress > 0; radical_strength += 5; radical_dissent -= 5; old_middle_ccf_ss -= 3; new_middle_ccf_ss -= 2;
 
 Spreading the gospel of a true Cooperative Commonwealth increases general support for Socialism, both among farmers and worker alike. 
 

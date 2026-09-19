@@ -29,7 +29,7 @@ title: Defending Toleration
 subtitle: Douglas supports the toleration arrangement with the bourgeois parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_toleration: The [+ ccf_ss_name +] is not in toleration. ?]
 choose-if: ccf_ss_in_government = 0 and ccf_ss_toleration = 1 and advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; true_socialist_dissent -= 8; neorevisionist_dissent -= 8; agrarian_dissent -= 5;
+on-arrival: advisor_action_timer = 6; radical_dissent -= 8; neorevisionist_dissent -= 8; agrarian_dissent -= 5;
 
 We have reduced dissent among the anti-toleration factions. 
 

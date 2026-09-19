@@ -29,7 +29,7 @@ title: Courting the Communists
 subtitle: The RCWU is Communist-backed
 choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
-on-arrival: advisor_action_timer = 6; reformist_dissent += 10; managerial_dissent += 7
+on-arrival: advisor_action_timer = 6; moderate_dissent += 10; managerial_dissent += 7
 
 
 

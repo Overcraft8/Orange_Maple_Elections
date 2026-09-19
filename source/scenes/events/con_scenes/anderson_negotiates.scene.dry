@@ -24,7 +24,7 @@ We may do well to promote a certain piece of legislation to prove our ability to
 
 @anderson_farmers_debt_moratorium
 subtitle: This pleases our farmer base
-on-arrival: farmers_ccf_ss += 5; reformist_strength += 5; true_socialist_strength -= 5; reformist_dissent += 5; true_socialist_dissent += 15; unemployed -= 2; economic_growth -= 2
+on-arrival: farmers_ccf_ss += 5; moderate_strength += 5; radical_strength -= 5; moderate_dissent += 5; radical_dissent += 15; unemployed -= 2; economic_growth -= 2
 
 The Debt Moratorium Act has passed successfully, giving our farmer base a relief from the constant hounding of the banks. Such a 'radical' policy will likely drive investment away from the province for quite some time, if ever the status quo returns to the Prairies again. 
 
@@ -32,7 +32,7 @@ Many of our immigrant and Catholic base are disgusted at our compromise with And
 
 @anderson_labour_legislation
 subtitle: This expands our labour support
-on-arrival: workers_ccf_ss += 10; reformist_strength += 5; true_socialist_strength -=5; reformist_dissent += 5; true_socialist_dissent += 15; unemployed += 2; economic_growth -= 2
+on-arrival: workers_ccf_ss += 10; moderate_strength += 5; radical_strength -=5; moderate_dissent += 5; radical_dissent += 15; unemployed += 2; economic_growth -= 2
 
 Anderson's government passes new labour legislation strengthening union rights, raising the minimum wage, and reducing work hours. While this proves beneficial to those workers who can maintain their jobs, the increase in worker's rights reduces the margins of small businesses, forcing many workers onto the streets. 
 

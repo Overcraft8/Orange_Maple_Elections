@@ -22,6 +22,8 @@ on-display: {!
     for (let i = 0; i < allTabContainers_right.length; i++) {
             allTabContainers_right[i].style.display = 'none';
     }
+
+    document.getElementById('topbar').style.display = 'none';
 !} 
 on-departure: {!
     var left_sidebar = document.getElementById('stats_sidebar'); 
@@ -41,6 +43,8 @@ on-departure: {!
     window.ChangeTab('right', 'status_right', 'main_tab');
 
     console.log("hello");
+
+    document.getElementById('topbar').style.display = '';
 
 !}
 
@@ -75,7 +79,7 @@ Coldwell will lead us to victory!
     <div style="display: flex; flex-direction: column; gap: 10px;">
         <div id="george_william_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">George Williams</span></div>
         <div id="Phelps" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Joe Phelps</span></div>
-        <div id="Brockelbank" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/protests/regina_riot_protest.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">John Brockelbank</span></div>
+        <div id="Brockelbank" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/protests/BrockelbankJohn.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">John Brockelbank</span></div>
     </div>
     <div style="width: 1000px; border: 3px solid tan; padding: 10px;">
     George Williams is a former president of the UFC(SS) and on the left-wing of the party. Williams led the UFC(SS) into provincial politics on a socialist programme and was the architect behind the controversial "use-lease" policy, a program that would: 

@@ -22,14 +22,14 @@ The [+ ccf_ss_name +] is torn between many different ideological currents. What 
 - @easy_discard
 
 @class_struggle
-subtitle: The True Socialists will be pleased. 
+subtitle: The Radicals will be pleased. 
 on-arrival: {!
 if (Q.ideology && Q.ideology != "left") {
     Q.changed = 1;
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; true_socialist_strength += 10; communist_coalition += 1; true_socialist_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_s_relation += 3
+on-departure: ideology = "left"; radical_strength += 10; communist_coalition += 1; radical_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_s_relation += 3
 
 The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
 
@@ -43,7 +43,7 @@ if (Q.ideology && Q.ideology != "agrarian") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "agrarian"; agrarian_strength += 10; agrarian_dissent -= 10; true_socialist_dissent -= 5; managerial_dissent -= 5
+on-departure: ideology = "agrarian"; agrarian_strength += 10; agrarian_dissent -= 10; radical_dissent -= 5; managerial_dissent -= 5
 
 The Agrarian wing of the party seeks to work with the farmers' movement to improve the lives of small farmers. 
 
@@ -68,7 +68,7 @@ on-departure: ideology = "labour"; wtb_support += 1; labour_dissent -= 5; cp_s_r
 The labour wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
 
 @reform
-subtitle: The Reformists will be pleased. 
+subtitle: The Moderates will be pleased. 
 on-arrival: {!
 if (Q.ideology && Q.ideology != "moderate") {
     Q.changed = 1;
@@ -77,9 +77,9 @@ if (Q.ideology && Q.ideology != "moderate") {
 go-to: changed if changed = 1
 on-departure: ideology = "moderate"; managerial_strength += 10; democratization += 1; managerial_dissent -= 5; pps_relation += 5; cps_relation += 5; cp_s_relation -= 8; managerial_plan_support += 1
 
-The Reformist wing is most in favour of loose cooperation or even an electoral alliance with the Cooperative Coalition. Perhaps we could use this to our advantage?
+The Moderate wing is most in favour of loose cooperation or even an electoral alliance with the Cooperative Coalition. Perhaps we could use this to our advantage?
 
 @changed
-on-arrival: true_socialist_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; managerial_dissent += 5
+on-arrival: radical_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; managerial_dissent += 5
 
 We have changed ideologies. Many in the party feel unmoored.

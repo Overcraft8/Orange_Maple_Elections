@@ -398,37 +398,37 @@ const Bar_Config = {
         containerId: 'mid_panel',
         targetId: 'content',
         starting_scene: 'government_options',
-        isLeft: false
+        constant_refresh: false
     },
     left: {
         containerId: 'stats_sidebar',
         targetId: 'qualities',
         starting_scene: 'statusTab',
-        isLeft: true //isLeft for refreshing the page
+        constant_refresh: true //constant_refresh for refreshing the page every turn
     },
     right: {
         containerId: 'news_frame',
         targetId: 'news_qualities',
         starting_scene: 'statusTabRight',
-        isLeft: false
+        constant_refresh: true
     },
     bottom: {
         containerId: 'stats_bottom_bar',
         targetId: 'qualities_bottom',
         starting_scene: 'statusTabBottom',
-        isLeft: false
+        constant_refresh: false
     }, 
     top: {
         containerId: 'topbar',
         targetId: 'qualities_top',
         starting_scene: 'statusTabTop',
-        isLeft: false
+        constant_refresh: false
     },
     district: {
         containerId: 'region_info_display_scene', 
         targetId: 'region_info_display_scene', 
         starting_scene: '', 
-        isLeft: false
+        constant_refresh: false
     }, 
 };
 
@@ -450,7 +450,7 @@ window.updateBar = function(regionKey) {
     if (!scene) return;
 
     // Run status on arrival if the left main sidebar
-    if (config.isLeft) {
+    if (config.constant_refresh) {
         var statusScene = dendryUI.game.scenes["status"];
         if (statusScene) dendryUI.dendryEngine._runActions(statusScene.onArrival);
     }
@@ -469,7 +469,7 @@ window.updateBar = function(regionKey) {
     // Run display so D3 loads (if applicable)
     dendryUI.dendryEngine._runActions(scene.onDisplay);
 
-    // if (config.isLeft)... for just the left status if too slow
+    // if (config.constant_refresh)... for just the left status if too slow
 };
 
 // ==========================================

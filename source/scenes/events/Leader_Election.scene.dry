@@ -8,10 +8,10 @@ max-visits: 1
 face-image: img/CCF_Convention.jpg
 on-display: {!
     var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+    var right_sidebar = document.getElementById('news_frame'); 
 
-    window.ChangeTab('left', 'Leader_Election.GHW', 'none');
-    window.ChangeTab('right', 'Leader_Election.MJC', 'none');
+    window.ChangeTab('left', 'Leader_Election.george_william_leadership_candidacy', 'none');
+    window.ChangeTab('right', 'Leader_Election.major_coldwell_leadership_candidacy', 'none');
 
     var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
     var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
@@ -25,7 +25,7 @@ on-display: {!
 !} 
 on-departure: {!
     var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right');
+    var right_sidebar = document.getElementById('news_frame');
 
     var allTabContainers = left_sidebar.getElementsByClassName('tab_container');
     var allTabContainers_right = right_sidebar.getElementsByClassName('tab_container');
@@ -67,13 +67,13 @@ face-image: img/portraits/ColdwellMajorJames.jpg
 Coldwell will lead us to victory!
 
 
-@GHW
+@george_william_leadership_candidacy
 
 = The Williams Faction
 
 <div style="display: flex; flex-direction: row; text-align: left; gap: 15px;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div id="GHW" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">George Williams</span></div>
+        <div id="george_william_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">George Williams</span></div>
         <div id="Phelps" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Joe Phelps</span></div>
         <div id="Brockelbank" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/protests/regina_riot_protest.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">John Brockelbank</span></div>
     </div>
@@ -88,13 +88,13 @@ Coldwell will lead us to victory!
     </div>
 </div>
 
-@MJC
+@major_coldwell_leadership_candidacy
 
 = The Coldwell Faction
 
 <div style="display: flex; flex-direction: row; text-align: left; gap: 15px;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div id="MJC" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Major James Coldwell</span></div>
+        <div id="major_coldwell_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Major James Coldwell</span></div>
         <div id="Douglas" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/DouglasTommy.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Tommy Douglas</span></div>
         <div id="Fines" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/FinesClarence.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Clarence Fines</span></div>
     </div>

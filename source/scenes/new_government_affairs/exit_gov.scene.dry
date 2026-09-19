@@ -8,7 +8,7 @@ on-arrival: {!
     var mid_panel = document.getElementById('mid_panel');
     var content = document.getElementById('content');
     var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+    var right_sidebar = document.getElementById('news_frame'); 
     var button_container = document.getElementById('government_options_top_panel');
 
     if (left_sidebar) left_sidebar.style.display = ''; 

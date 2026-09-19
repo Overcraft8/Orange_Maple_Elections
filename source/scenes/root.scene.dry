@@ -65,7 +65,7 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['reformist', 'managerial', 'agrarian_populist', 'true_socialist'];
+Q.factions = ['reformist', 'managerial', 'agrarian_populist', 'true_socialist', 'labour'];
 // should this be normalized to 100%?
 
 Q.agrarian_populist_strength = 55;
@@ -79,6 +79,10 @@ Q.managerial_dissent = 5;
 
 Q.reformist_strength = 10;
 Q.reformist_dissent = 20;
+
+Q.labour_dissent = 30;
+Q.labour_strength = 30;
+Q.labour_radicalism = 16;
 
 
 Q.neorevisionist_strength = 0;
@@ -98,10 +102,6 @@ Q.party_demographics = ['labour', 'middle class', 'agrarian', 'students'];
 Q.agrarian_dissent = 0;
 Q.agrarian_strength = 55;
 Q.agrarian_radicalism = 21;
-
-Q.labour_dissent = 30;
-Q.labour_strength = 30;
-Q.labour_radicalism = 16;
 
 Q.middle_class_dissent = 30;
 Q.middle_class_strength = 15;
@@ -1484,42 +1484,6 @@ for (var party of Q.parties) {
 }
 
 Q.parliament_diagram = data;
-
-
-
-
-// --------------------------------------------------------------------
-//                            NEWS
-// --------------------------------------------------------------------
-
-Q.generic_news = {
-    'booming economy' : 'The economy is booming'
-};
-
-Q.active_news = {
-    depression : {
-        start : {
-            date : [1, 1932],
-            info : 'It is a dire time for Saskatchewan. The province is wracked by extreme drought the likes of which has never been seen before on the Canadian prairies. Two thirds of farmers have already been forced to rely on relief.',
-            condition : Q.started = 1
-        }
-    }
-}
-
-Q.news_refresh = function(event = 0) {
-    if (event) {
-        Q.news_display = ``;
-
-        var info = `<hr>${event.info}`; 
-
-        Q.news_display += `<div>${info}</div>`
-    }
-    else {
-        Q.news_display = ``;
-    }
-};
-
-Q.news_refresh(Q.active_news.depression.start);
 
 
 

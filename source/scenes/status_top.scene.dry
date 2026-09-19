@@ -2,9 +2,10 @@ title: The [+ ccf_ss_name +]
 new-page: true
 is-special: true
 
+<br>
 
   <span style="margin-bottom: 0;">
-  <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;border:4px ridge #8B7355;">
+  <img src="img/portraits/[+ ccf_ss_party_leader_img +]" style="width:125px;height:170px;object-fit:cover;object-position:top;margin-top:1em;border:4px ridge #8B7355;">
   <div class="horizontal_line" style="border-top: 10px dotted #dcb682; width: 50%;"></div>
     <span class="card-caption" style="font-size: 1.3em;">Party Leader: [+ ccf_ss_party_leader +]</span>
   </span>
@@ -52,10 +53,10 @@ is-special: True
 on-arrival: {!
 
 if (window && window.customgeneratebar) {
-  window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#32c732", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
-  window.customgeneratebar(Q.labour_dissent, "#091f43", "#347fef", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
-  window.customgeneratebar(Q.managerial_dissent, "#793f15", "#d26e28", "managerial_bar_dissent", 'The moderate wing of our party');
-  window.customgeneratebar(Q.true_socialist_dissent, "#1f0303", "#c32222", "true_socialist_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
+  window.customgeneratebar(Q.agrarian_dissent, "#466d16", "#6ec732", "agrarian_bar_dissent", 'A faction consisting of farmers, primarily representing the small family farm');
+  window.customgeneratebar(Q.labour_dissent, "#091f43", "#34b1ef", "labour_bar_dissent", 'A faction of trade unionists, middle-class professionals, and labour activists, representing the urban workers and lower middle-classes');
+  window.customgeneratebar(Q.managerial_dissent, "#793f15", "#e1712c", "managerial_bar_dissent", 'The moderate wing of our party');
+  window.customgeneratebar(Q.true_socialist_dissent, "#1f0303", "#df2c2c", "true_socialist_bar_dissent", 'A faction of radical socialists. Many of them have ties to Communist organizations');
  }
 
 if (window && window.customgeneratemultibar) {
@@ -102,9 +103,11 @@ if (window && window.customgeneratemultibar) {
 <div id="faction_strength_bar"></div><br>
 </div>
 
+<!-- 
 = Party Demography
 
 <div id='party_demography'></div><br>
+-->
 
 = Faction Dissent
 

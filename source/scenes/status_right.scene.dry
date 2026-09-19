@@ -1,6 +1,44 @@
 title: News
 new-page: true
 is-special: true
+on-arrival: {!
+
+// --------------------------------------------------------------------
+//                            NEWS
+// --------------------------------------------------------------------
+
+if (Q.year == 1932 && Q.month == 1) {
+  Q.generic_news = {
+      'booming economy' : 'The economy is booming'
+  };
+
+  Q.active_news = {
+      depression : {
+          start : {
+              date : [1, 1932],
+              info : 'It is a dire time for Saskatchewan. The province is wracked by extreme drought the likes of which has never been seen before on the Canadian prairies. <br> Two thirds of farmers have already been forced to rely on relief.',
+              condition : Q.started = 1
+          }
+      }
+  }
+
+  Q.news_refresh = function(event = 0) {
+      if (event) {
+          Q.news_display = ``;
+
+          var info = `<hr>${event.info}`; 
+
+          Q.news_display += `<div>${info}</div>`
+      }
+      else {
+          Q.news_display = ``;
+      }
+  };
+};
+
+Q.news_refresh(Q.active_news.depression.start);
+
+!}
 
 <div style="text-align: center;">
   <span style="font-family: Times New Roman; font-size: 2.2em; font-weight: bold;">News</span>

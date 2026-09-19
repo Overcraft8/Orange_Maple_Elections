@@ -10,7 +10,7 @@ on-arrival: {!
     var tools = document.getElementById('tools_wrapper'); 
 
     var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('stats_sidebar_right'); 
+    var right_sidebar = document.getElementById('news_frame'); 
 
     Q.old_mid_panel_margin = mid_panel.style.margin;
     Q.old_content_maxWidth = content.style.maxWidth; 

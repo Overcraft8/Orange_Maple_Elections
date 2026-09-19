@@ -1,7 +1,7 @@
 title: The Relief Camp Worker's Union
 is-pinned-card: true
 tags: advisor, labour
-card-image: img/portraits/ReliefWorkHighway.jpg
+card-image: img/organizations/ReliefWorkHighway.jpg
 view-if: rcwu_advisor = 1
 new-page: true 
 

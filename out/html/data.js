@@ -249,10 +249,6 @@ const colourList = [{
         word: ['Wheat Pool'],
         style: "color: #babe39; font-weight: bold;"
     },
-    {
-        word: ['SaskPower'],
-        style: "color: #beb339; font-weight: bold; text-shadow: -1px -1px 0 #000,"
-    },
     // Below this for states of qdisplays
     /*
     {

@@ -1046,7 +1046,7 @@ Q.sasktel_balance_sheet = ``;
 Q.stc_balance_sheet = ``; 
 
 
-Q.electrification_pie_chart = 0;
+Q.electricity_pie_chart = 0;
 Q.telecoms_pie_chart = 0;
 Q.transport_pie_chart = 0;
 

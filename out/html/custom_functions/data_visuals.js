@@ -34,7 +34,6 @@ function GeneratePieChart(data, container_id = null) {
     var pieChartHtml = `
         <figure class="pie_chart" 
                 data-tooltip="${tooltipText}" 
-                title="${tooltipText}" 
                 style="
                     margin: 0;
                     width: 60px; 

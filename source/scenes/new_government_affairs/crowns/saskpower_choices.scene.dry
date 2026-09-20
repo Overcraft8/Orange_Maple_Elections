@@ -12,14 +12,43 @@ on-arrival: {!
     Q.monopoly_cost = Math.round((Q.private_share + Q.coop_share)*10, 2);
     console.log(Q.monopoly_cost);
 
-    Q.saskpower_sheet = window.generate_crown_info(Q.saskpower); 
+    Q.saskpower_sheet = window.generate_crown_info(Q.saskpower);
+    
+    
+
+
+    var sectorData = Q.economic_data['electricity'];
+
+    var market_shares = sectorData.marketshare; 
+
+    var pieData = {
+        privateSector: { 
+            share: Math.round(market_shares.private * 100), 
+            color: 'rgba(90, 90, 209, 0.9)', 
+            tooltipInfo: 'Private (Blue)' 
+        },
+        cooperative: { 
+            share: Math.round(market_shares.coop * 100), 
+            color: 'rgba(218, 222, 103, 0.9)', 
+            tooltipInfo: 'Co-op (Yellow)' 
+        },
+        crownCorp: { 
+            share: Math.round(market_shares.state * 100), 
+            color: 'rgba(222, 157, 103, 0.9)', 
+            tooltipInfo: 'Crown (Orange)' 
+        }
+    };
+
+    Q[electricity_pie_chart] = window.GeneratePieChart(pieData);
+
+
 !}
 
 = SaskPower
 
 SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, having purchased various independently-owned electrical utilities.
 
-<div id="saskpower_mandate" class="gov_panel" style="width: 100%; background-image: url('img/telecom_lines.jpg');background-size: cover;background-position: center;height:30em;display:flex;flex-direction:row;">
+<div id="saskpower_mandate" class="gov_panel" style="width: 100%; background-image: url('img/telecom_lines.jpg');background-size: cover;background-position: center;height:30em;">
     {!<div class="panel_title" style="font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;">!}The SaskPower Mandate{!</div>!}
     
 #    <div style="display: flex;">
@@ -32,7 +61,7 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 #        </div>
 #    </div>
 
-    <div class="gov_panel" style="display:flex;flex-direction:column;">
+    <div class="gov_panel" style="display:flex;flex-direction:row;">
     <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
             Current SaskPower Electricity Rates
         </span>
@@ -55,7 +84,7 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
             Electricity Market Shares
         </span>
         <span style="border-radius: 4px" class="panel_title">
-            [+ electrification_pie_chart +]
+            [+ electricity_pie_chart +]
         </span>
     </div>
 

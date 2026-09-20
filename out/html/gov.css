@@ -27,8 +27,7 @@
 .revenue_expense_panel {
   flex: 1; 
   min-width: 200px; 
-  background: rgba(0, 0, 0, 0.05); 
-  background-image: url('img/blank_paper.jpg'); 
+  background: linear-gradient( color-mix(in srgb, var(--content-bg-color, #e8dcc3) 70%, transparent), rgba(255, 255, 255, 0.4) ), url('img/blank_paper.jpg') center/cover; 
   background-size: cover; 
   background-position: center; 
   border: 3px solid #9c8c64; 

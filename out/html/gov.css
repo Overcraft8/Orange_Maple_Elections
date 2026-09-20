@@ -50,6 +50,8 @@
   font-size: 1.2em; 
   margin-bottom: 10px; 
   font-weight: bold;
+  display: flex; 
+  justify-content: center;
 }
 
 

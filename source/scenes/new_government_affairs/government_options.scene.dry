@@ -40,6 +40,7 @@ on-arrival: {!
 @crown_corps_options 
 new-page: true
 on-arrival: {!
+    /*
     if (1 == 1) {
         // Start the container for all Crown cards
         var containerHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
@@ -125,6 +126,32 @@ on-arrival: {!
     </div>`
     }
 */
+
+Object.entries(Q.crown_economic_pairs).forEach(([crown, sector]) => {
+    var sector = Q.economic_data[sector];
+
+    var market_shares = sector.marketshare; 
+
+    var pieData = {
+        privateSector: { 
+            share: market_shares.private, 
+            color: 'rgba(90, 90, 209, 0.9)', 
+            tooltipInfo: 'Private (Blue)' 
+        },
+        cooperative: { 
+            share: market_shares.coop, 
+            color: 'rgba(218, 222, 103, 0.9)', 
+            tooltipInfo: 'Co-op (Yellow)' 
+        },
+        crownCorp: { 
+            share: market_shares.state, 
+            color: 'rgba(222, 157, 103, 0.9)', 
+            tooltipInfo: 'Crown (Orange)' 
+        }
+    }
+
+    window.GeneratePieChart([sector + 'pie_chart'], pieData)
+});
 
 
 !}
@@ -240,11 +267,14 @@ is-hand: true
 max-cards: 12
 new-page: true
 
+<div class="tab_container">
+    <div id="back_gov_button"  class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('government_options');">Back</div>
+</div>
+
 = The Ministries
 
 - #ministries
 - @ministries_cards
-- @government_options: Return
 
 @ministries_cards
 title: The Ministries

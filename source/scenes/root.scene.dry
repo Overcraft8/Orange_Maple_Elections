@@ -1003,6 +1003,10 @@ Q.saskpower = {
     'marketshare' : Q.economic_data.electricity.marketshare.state,
     'Name' : 'SaskPower',
     'mission' : 'Electrification',
+    'Power_Sources' : {
+        'Hydro' : 1, 
+        'Coal' : 2
+    },
     'qdisplay' : 'electrification'
 };
 

@@ -4,8 +4,8 @@ window.generate_crown_info = function(crown_info) {
 
     var expense_list = ``;
     var revenue_list = ``;
-    var total_expense = ``; 
-    var total_revenue = ``;
+    var total_expense = 0; 
+    var total_revenue = 0;
 
     var crown_expense = crown_info.expenses; 
     var crown_revenue = crown_info.revenue; 

@@ -47,7 +47,7 @@ window.generate_crown_info = function(crown_info) {
                 <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 1.5em; width: 100%; box-sizing: border-box;">
                 ${Revenue_HTML}${Expenses_HTML}</div>`;
 
-    var Summary_Panel = `<div style="background: rgba(0, 0, 0, 0.05); background-image: url("img/blank_paper.jpg"); border: 3px solid #9c8c64; border-radius: 4px; padding: 10px 16px; margin-bottom: 1.5em; display: flex; justify-content: space-between; align-items: center;">
+    var Summary_Panel = `<div style="background: rgba(0, 0, 0, 0.05); background-image: url('img/blank_paper.jpg'); background-size: cover; background-position: center; border: 3px solid #9c8c64; border-radius: 4px; padding: 10px 16px; margin-bottom: 1.5em; display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-size: 1.3em; font-weight: bold;">Net Return</span>
                     
                     <span style="font-size: 1.4em; padding: 4px 16px; background-color: #2c2c2c; border: 2px ridge #6c512e; border-radius: 4px; text-shadow: 1px 1px 2px #000;">

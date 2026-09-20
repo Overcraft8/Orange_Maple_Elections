@@ -998,7 +998,6 @@ Q.saskpower = {
         'maintenance' : 1
     },
     get profit() {
-        // "this" refers to the Q.saskpower object itself
         return window.crown_corps_profit(this); 
     },
     'marketshare' : Q.economic_data.electricity.marketshare.state,

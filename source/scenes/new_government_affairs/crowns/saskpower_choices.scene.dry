@@ -8,18 +8,27 @@ on-arrival: {!
     };
 
     Q.private_share = Q.economic_data.electricity.private;
-    Q.monopoly_cost = Math.round(Q.private_share*10, 2);
+    Q.coop_share = Q.economic_data.electricity.coop
+    Q.monopoly_cost = Math.round((Q.private_share + Q.coop_share)*10, 2);
+    console.log(Q.monopoly_cost);
 
     Q.saskpower_sheet = window.generate_crown_info(Q.saskpower); 
 !}
 
 = SaskPower
 
-SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, purchasing independently-owned electrical utilities. 
+SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, purchasing independently-owned electrical utilities.
 
-Current Rate: [+ saskpower.revenue.rates : saskpower_rates +]
+<div id="saskpower_mandate" class="gov_panel">
+    <div class="panel_title">The SaskPower Mandate</div>
 
-Electrification Progress: [+ electrification : electrification +]
+    Current Rate: [+ saskpower.revenue.rates : saskpower_rates +]
+
+    Electrification Progress: [+ electrification : electrification +]
+
+
+</div>
+
 
 # <div style="display: flex; flex-direction: row;">
 #     <div class="gov_panel">
@@ -118,7 +127,7 @@ go-to: exit_gov
 @raise_saskpower_rates
 on-arrival: {!
     if (Q.saskpower.revenue.rates > 0) {
-        Q.saskpower.revenue.rates -= 1
+        Q.saskpower.revenue.rates += 1
     };
 
     for (var c of Q.classes) {

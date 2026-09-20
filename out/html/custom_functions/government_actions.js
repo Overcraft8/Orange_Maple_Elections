@@ -4,17 +4,20 @@ window.generate_crown_info = function(crown_info) {
 
     var expense_list = ``;
     var revenue_list = ``;
+    var total_expense = ``; 
+    var total_revenue = ``;
 
     var crown_expense = crown_info.expenses; 
     var crown_revenue = crown_info.revenue; 
 
 
-    var Expenses_HTML = `<div style="flex: 1; min-width: 200px; background: rgba(0, 0, 0, 0.05); border: 3px solid #9c8c64; border-radius: 4px; padding: 12px; box-sizing: border-box;">
-                        <div style="background-color: #877b66; border: 2px ridge #6c512e; color: #ffffff; text-align: center; padding: 5px; font-size: 1.2em; margin-bottom: 10px; font-weight: bold;">
+    var Expenses_HTML = `<div class="revenue_expense_panel">
+                        <div class="panel_title">
                             Expenses
                         </div>`;
     Object.entries(crown_expense).forEach(([expense_name, expense_cost]) => {
         var expense_capitalized = expense_name.charAt(0).toUpperCase() + expense_name.slice(1);
+        total_expense += expense_cost;
         expense_list += `<div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #9c8c64; padding: 4px 0;">
                             <span>${expense_capitalized}</span>
                             <span>${expense_cost}</span>
@@ -22,24 +25,25 @@ window.generate_crown_info = function(crown_info) {
     });
     Expenses_HTML += `${expense_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
                             <span>Total Expenses</span>
-                            <span style="color: #841715;">4</span>
+                            <span style="color: #841715;">${total_expense}</span>
                         </div>
                     </div>`; 
 
-    var Revenue_HTML = `<div style="flex: 1; min-width: 200px; background: rgba(0, 0, 0, 0.05); border: 3px solid #9c8c64; border-radius: 4px; padding: 12px; box-sizing: border-box;">
-                        <div style="background-color: #877b66; border: 2px ridge #6c512e; color: #ffffff; text-align: center; padding: 5px; font-size: 1.2em; margin-bottom: 10px; font-weight: bold;">
+    var Revenue_HTML = `<div class="revenue_expense_panel">
+                        <div class="panel_title">
                             Revenue
                         </div>`; 
-    Object.entries(crown_revenue).forEach(([revenue_name, revenue_cost]) => {
+    Object.entries(crown_revenue).forEach(([revenue_name, revenue_gain]) => {
         var revenue_capitalized = revenue_name.charAt(0).toUpperCase() + revenue_name.slice(1);
+        total_revenue += revenue_gain;
         revenue_list += `<div style="display: flex; justify-content: space-between; border-bottom: 1px dotted #9c8c64; padding: 4px 0;">
                             <span>${revenue_capitalized}</span>
-                            <span>${revenue_cost}</span>
+                            <span>${revenue_gain}</span>
                         </div>`; 
     });
     Revenue_HTML += `${revenue_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
                             <span>Total Revenue</span>
-                            <span style="color: #2d662d;">4</span>
+                            <span style="color: #2d662d;">${total_revenue}</span>
                         </div>
                     </div>`;
 

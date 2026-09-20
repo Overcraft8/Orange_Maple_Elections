@@ -1,12 +1,12 @@
 .gov_panel {
     width: 200px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     flex-shrink: 0;
-    overflow: hidden;       
+    overflow: visible;
     padding: 16px;
     margin-bottom: 1em;
-    margin-right: 1em; 
-    background: var(--content-bg-color);  
+    margin-right: 1em;
+    background: var(--content-bg-color);
     border: 3px solid #9c8c64;
     border-radius: 4px;
 }

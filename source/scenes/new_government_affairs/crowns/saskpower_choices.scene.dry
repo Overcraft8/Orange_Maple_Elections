@@ -44,12 +44,16 @@ on-arrival: {!
 
 !}
 
-= SaskPower
-
-SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, having purchased various independently-owned electrical utilities.
-
 <div id="saskpower_mandate" class="gov_panel" style="width: 100%; background-image: url('img/telecom_lines.jpg');background-size: cover;background-position: center;height:30em;">
-    {!<div class="panel_title" style="font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;">!}The SaskPower Mandate{!</div>!}
+    {!<div class="panel_title" style="font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;">!}
+    
+    The SaskPower Mandate
+
+    <div style="font-size: 1em; font-family: Franklin Gothic Medium; padding: 0.5em;">
+        SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, having purchased various independently-owned electrical utilities.
+    </div>
+    
+    {!</div>!}
     
 #    <div style="display: flex;">
 #        <div class="gov_panel" style="background: var(--content-bg-color);">
@@ -60,32 +64,33 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
 #            Electrification Progress: <br> [+ electrification : electrification +]
 #        </div>
 #    </div>
-
-    <div class="gov_panel" style="display:flex;flex-direction:row;">
-    <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
-            Current SaskPower Electricity Rates
-        </span>
-        <span style="border-radius: 4px" class="panel_title">
-            [+ saskpower.revenue.rates : saskpower_rates +]
-        </span>
-    </div>
-
-    <div class="gov_panel" style="display:flex;flex-direction:column;">
+    <div style="display:flex;flex-direction:row;">
+        <div class="gov_panel" style="display:flex;flex-direction:row;">
         <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
-            Electrification Progress
-        </span>
-        <span style="border-radius: 4px" class="panel_title">
-            [+ electrification : electrification +]
-        </span>
-    </div>
+                Current SaskPower Electricity Rates
+            </span>
+            <span style="border-radius: 4px" class="panel_title">
+                [+ saskpower.revenue.rates : saskpower_rates +]
+            </span>
+        </div>
 
-    <div class="gov_panel" style="display:flex;flex-direction:column;">
-        <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
-            Electricity Market Shares
-        </span>
-        <span style="border-radius: 4px" class="panel_title">
-            [+ electricity_pie_chart +]
-        </span>
+        <div class="gov_panel" style="display:flex;flex-direction:column;">
+            <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
+                Electrification Progress
+            </span>
+            <span style="border-radius: 4px" class="panel_title">
+                [+ electrification : electrification +]
+            </span>
+        </div>
+
+        <div class="gov_panel" style="display:flex;flex-direction:column;">
+            <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
+                Electricity Market Shares
+            </span>
+            <span style="border-radius: 4px" class="panel_title">
+                [+ electricity_pie_chart +]
+            </span>
+        </div>
     </div>
 
 </div>

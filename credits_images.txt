@@ -68,6 +68,7 @@ diefenbaker_john_old.png https://commons.wikimedia.org/w/index.php?search=John+D
 women_grain_growers.jpg - https://commons.wikimedia.org/w/index.php?search=saskatchewan+women+&title=Special%3AMediaSearch&type=image
 ReliefWorkHighway.jpg - https://commons.wikimedia.org/wiki/File:ReliefWorkHighway.jpg
 pool_elevator.jpg - https://commons.wikimedia.org/wiki/File:SaskatchewanWheatPool.svg
+Canada map - https://commons.wikimedia.org/wiki/File:BlankMap-USA-states-Canada-provinces,_HI_closer.svg
 
 // -----------------------------------
 //  https://www.prairie-towns.com/

@@ -44,16 +44,13 @@ on-arrival: {!
 
 !}
 
-SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, having purchased various independently-owned electrical utilities.
-
-
 <div id="saskpower_mandate" class="gov_panel" style="width: 100%; background-image: url('img/telecom_lines.jpg');background-size: cover;background-position: center;height:30em;">
     {!<div class="panel_title" style="font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;">!}
         The SaskPower Mandate
     {!</div>!}
 
-    {!<div style="font-family: Franklin Gothic Medium;background-color: #504c46;border: 2px ridge #6c512e;color: #ffffff; ">!}
-        The SaskPower Mandate
+    {!<div style="font-family: Franklin Gothic Medium;background: var(--content-bg-color);border: 2px ridge #6c512e; ">!}
+        SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, having purchased various independently-owned electrical utilities.
     {!</div>!}
     
 #    <div style="display: flex;">

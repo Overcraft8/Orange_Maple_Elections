@@ -136,17 +136,17 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
 
     var pieData = {
         privateSector: { 
-            share: market_shares.private, 
+            share: Math.round(market_shares.private * 100), 
             color: 'rgba(90, 90, 209, 0.9)', 
             tooltipInfo: 'Private (Blue)' 
         },
         cooperative: { 
-            share: market_shares.coop, 
+            share: Math.round(market_shares.coop * 100), 
             color: 'rgba(218, 222, 103, 0.9)', 
             tooltipInfo: 'Co-op (Yellow)' 
         },
         crownCorp: { 
-            share: market_shares.state, 
+            share: Math.round(market_shares.state * 100), 
             color: 'rgba(222, 157, 103, 0.9)', 
             tooltipInfo: 'Crown (Orange)' 
         }

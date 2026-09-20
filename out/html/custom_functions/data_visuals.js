@@ -1,5 +1,5 @@
 
-function GeneratePieChart(container_id, data) {
+function GeneratePieChart(data, container_id = null) {
     var tooltipParts = [];
     var gradientParts = [];
     var currentStop = 0;
@@ -46,12 +46,16 @@ function GeneratePieChart(container_id, data) {
         </figure>
     `;
 
-    if (container_id.startsWith('Q.')) {
-        container_id = pieChartHtml;
-    }
-    else {
+    if (container_id) {
         var container = document.getElementById(container_id);
-    };
+        if (container) {
+            container.innerHTML = pieChartHtml;
+        } else {
+            console.warn("Container not found: " + container_id);
+        }
+    }
+
+    return pieChartHtml;
 
 };
 

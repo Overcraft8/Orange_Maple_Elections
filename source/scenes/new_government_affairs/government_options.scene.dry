@@ -243,6 +243,11 @@ new-page: true
 = The Ministries
 
 - #ministries
+- @ministries_cards
 - @government_options: Return
 
-    
+@ministries_cards
+card-image: img/Saskatchewan_Legislature.jpg
+is-deck: true
+
+- #ministries

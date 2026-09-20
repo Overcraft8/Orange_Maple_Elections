@@ -127,10 +127,12 @@ on-arrival: {!
     }
 */
 
-Object.entries(Q.crown_economic_pairs).forEach(([crown, sector]) => {
-    var sector = Q.economic_data[sector];
+Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
+    var sectorData = Q.economic_data[sectorName];
 
-    var market_shares = sector.marketshare; 
+    if (!sectorData || !sectorData.marketshare) return; 
+
+    var market_shares = sectorData.marketshare; 
 
     var pieData = {
         privateSector: { 
@@ -148,9 +150,10 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sector]) => {
             color: 'rgba(222, 157, 103, 0.9)', 
             tooltipInfo: 'Crown (Orange)' 
         }
-    }
+    };
 
-    window.GeneratePieChart([sector + 'pie_chart'], pieData)
+    Q[sectorName + '_pie_chart'] = window.GeneratePieChart(pieData); 
+    
 });
 
 

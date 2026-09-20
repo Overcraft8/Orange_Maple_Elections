@@ -23,7 +23,7 @@ max-cards: 6
 - @govt_two
 - @programme
 - #advisor
-# - @shuffle_leadership_pinned
+- @shuffle_leadership_pinned
 
 @main_easy
 set-bg: img/weyburn_street.jpg

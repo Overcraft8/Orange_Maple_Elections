@@ -278,6 +278,7 @@ new-page: true
 
 - #ministries
 - @ministries_cards
+- @labor_ministry
 
 @ministries_cards
 title: The Ministries

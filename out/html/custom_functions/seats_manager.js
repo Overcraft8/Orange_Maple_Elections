@@ -78,7 +78,7 @@ function parseElectionData(csvText) {
 
 window.loadElectionData = async function() {
     try {
-        const response = await fetch('data/1934_Saskatchewan_General_Election_55_Seats.csv'); 
+        const response = await fetch('demographics/1934_Saskatchewan_General_Election_55_Seats.csv'); 
         const csvText = await response.text();
         const parsed = parseElectionData(csvText);
         return parsed;

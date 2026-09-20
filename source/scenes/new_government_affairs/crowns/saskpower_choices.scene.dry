@@ -33,6 +33,8 @@ Electrification Progress: [+ electrification : electrification +]
 #     </div>
 # </div>
 
+<div id="saskpower_">
+
 [+ saskpower_sheet +]
 
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power

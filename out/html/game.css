@@ -420,6 +420,7 @@ img.inline-img.icon {
   border-color: #9c8c64;
   padding: 5px;
   cursor: pointer; 
+  justify-content: center; 
 }
 
 .dark-mode .tab_button, .dark-mode .status_tab_button{

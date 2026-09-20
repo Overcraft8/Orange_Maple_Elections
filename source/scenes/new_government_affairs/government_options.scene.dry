@@ -236,8 +236,16 @@ STC flavour text
 
 
 @ministries_options 
+is-hand: true
+max-cards: 0
+new-page: true
+
+- #ministries
+
 
 = The Ministries
+
+- @government_options: Return
 
 WIP!
 

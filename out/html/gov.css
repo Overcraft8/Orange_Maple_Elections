@@ -6,7 +6,7 @@
     padding: 16px;
     margin-bottom: 1em;
     margin-right: 1em; 
-    background: rgba(0, 0, 0, 0.05); 
+    background: var(--content-bg-color);  
     border: 3px solid #9c8c64;
     border-radius: 4px;
 }
@@ -37,7 +37,7 @@
 }
 
 .panel_title {
-  background-color: #877b66; 
+  background-color: #ab9c82;
   border: 2px ridge #6c512e; 
   color: #ffffff; 
   text-align: center; 

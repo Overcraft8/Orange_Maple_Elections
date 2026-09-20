@@ -40,92 +40,6 @@ on-arrival: {!
 @crown_corps_options 
 new-page: true
 on-arrival: {!
-    /*
-    if (1 == 1) {
-        // Start the container for all Crown cards
-        var containerHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5em; justify-content: center; margin: 0.5em;">';
-
-        // Loop through Crown corps in the pairs dictionary
-        for (var crown_id in Q.crown_economic_pairs) {
-            
-            var sectorName = Q.crown_economic_pairs[crown_id]; // ex., 'electricity', 'telecoms'
-            var sectorData = Q.economic_data[sectorName]; 
-
-            // Check for the data object and its properties
-            if (sectorData && sectorData.marketshare) {
-                var marketshare = sectorData.marketshare; 
-                var contribution = sectorData.contribution; 
-
-                var privateShare = Math.round(marketshare.private * 100);
-                var coopShare = Math.round(marketshare.coop * 100);
-                var stateShare = Math.round(marketshare.state * 100);
-
-                var stop1 = privateShare;
-                var stop2 = privateShare + coopShare;
-                var tooltipText = `Private (Blue): ${privateShare}%\nCo-op (Yellow): ${coopShare}%\nCrown (Orange): ${stateShare}%`;
-
-                var imageName = window.economy_images && window.economy_images[sectorName] ? window.economy_images[sectorName] : 'default.png';
-
-                // This is the "market share" graphic
-                var cardHtml = `
-                    <div class="project_container" style="
-                        position: relative; 
-                        display: flex; 
-                        flex-direction: column; 
-                        align-items: center; 
-                        justify-content: center; 
-                        text-align: center; 
-                        background-image: url('img/${imageName}');
-                        background-size: cover; 
-                        background-position: center;
-                        padding: 16px;
-                        min-width: 80px;
-                        color: #ffffff;
-                        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-                        border: 2px ridge #9c8c64;
-                        border-radius: 4px;
-                    ">
-                        <div style="background-color: rgba(0, 0, 0, 0.6); padding: 6px 10px; border-radius: 3px; width: 100%; display: flex; flex-direction: column; align-items: center;">
-                            <span style="font-size: 14px; font-weight: bold; display: block; color: #f1c40f; text-transform: capitalize;">${sectorName}</span>
-                            <span style="font-size: 13px; display: block;">Contribution: ${contribution}</span>
-                            <figure class="pie_chart" data-tooltip="${tooltipText}" style="
-                                background: conic-gradient(
-                                    rgba(90, 90, 209, 0.9) 0% ${stop1}%, 
-                                    rgba(218, 222, 103, 0.9) ${stop1}% ${stop2}%, 
-                                    rgba(222, 157, 103, 0.9) ${stop2}% 100%
-                                );">
-                            </figure>
-                        </div>
-                    </div>
-                `;
-
-                containerHtml += cardHtml;
-                Q[sectorName + '_pie_chart'] = cardHtml;
-            }
-        }
-        
-        containerHtml += '</div>';
-        Q.crown_corps_container = containerHtml;
-    }
-/* 
-    for (crown of Q.crown_corps) {
-        var marketshare = crown.marketshare; 
-        var Name = crown.Name;
-        var mission = crown.mission;
-        var sector = Q.crown_economic_pairs[crown];
-        var crown_element = `<div id="${crown + '_panel'}" class="gov_panel">
-        <div class="h1_gov">${Name}</div>
-
-        <div id='${crown + '_stats'}' class='gov_stats'>
-            <div>: ${mission}[+ ${sector} : electrification +]</div>
-            <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
-            <div class='tab_container'>
-                <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.saskpower_choices');">Saskpower Actions</div>
-            </div>
-        </div>
-    </div>`
-    }
-*/
 
 Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
     var sectorData = Q.economic_data[sectorName];
@@ -172,8 +86,8 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
 
 <div id='crown_corps_panel' style="display: flex;">
 
-    <div id="saskpower_panel" class="gov_panel">
-        <div class="h1_gov">SaskPower</div>
+    <div id="saskpower_panel" class="gov_panel centered-bg-img" style="background: linear-gradient( color-mix(in srgb, var(--content-bg-color, #e8dcc3) 70%, transparent), rgba(255, 255, 255, 0.4) ), url('img/powerhouse.jpg') center/cover; ">
+        <div class="h1_gov" style="background: var(--content-bg-color);">SaskPower</div>
 
         <div id='saskpower_stats' class='gov_stats'>
             <div>Electrification: [+ electrification : electrification +]</div>
@@ -267,22 +181,16 @@ STC flavour text
 
 @ministries_options 
 is-hand: true
-max-cards: 12
+max-cards: 0
 new-page: true
+on-arrival: {!
+    Q.pinnedCardsDescription = 'Ministries';
+!}
 
 <div class="tab_container">
     <div id="back_gov_button"  class="tab_button" onclick="window.dendryUI.dendryEngine.goToScene('government_options');">Back</div>
 </div>
 
 = The Ministries
-
-- #ministries
-- @ministries_cards
-- @labor_ministry
-
-@ministries_cards
-title: The Ministries
-card-image: img/Saskatchewan_Legislature.jpg
-is-deck: true
 
 - #ministries

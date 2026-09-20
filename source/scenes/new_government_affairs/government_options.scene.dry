@@ -243,9 +243,6 @@ new-page: true
 = The Ministries
 
 - #ministries
-
-WIP!
-
 - @government_options: Return
 
     

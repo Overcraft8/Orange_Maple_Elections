@@ -237,7 +237,7 @@ STC flavour text
 
 @ministries_options 
 is-hand: true
-max-cards: 0
+max-cards: 12
 new-page: true
 
 = The Ministries

@@ -225,8 +225,7 @@ window.crown_corps_profit = function(corporation) {
         color = "#19d119";
     }
 
-    var displayString = balance > 0 ? `+${balance}` : 
-        balance = 0 ? `${balance}` : `-${balance}`;
+    var displayString = balance > 0 ? `+${balance}` : `${balance}`;
     
     return `<span style="color: ${color}; font-weight: bold;">${displayString}</span>`;
 

@@ -23,11 +23,11 @@ SaskPower is the Crown Corporation dealing with power generation and distributio
     {!<div class="panel_title" style="font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;">!}The SaskPower Mandate{!</div>!}
     
     <div style="display: flex;">
-        <div class="net_return_panel" style="background: var(--content-bg-color);">
+        <div class="gov_panel" style="background: var(--content-bg-color);">
             Current SaskPower Electricity Rates: [+ saskpower.revenue.rates : saskpower_rates +]
         </div>
 
-        <div class="net_return_panel" style="background: var(--content-bg-color);">
+        <div class="gov_panel" style="background: var(--content-bg-color);">
             Electrification Progress: [+ electrification : electrification +]
         </div>
     </div>

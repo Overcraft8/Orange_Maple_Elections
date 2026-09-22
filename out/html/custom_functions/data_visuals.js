@@ -265,6 +265,7 @@ window.intraparty_status = function(container) {
         'Liberal' : '#c41616', 
         'Conservative' : '#2440cd', 
         'CCF' : '#bb7f1f', 
+        'Progressive' : '#c0d54bd3',
         'United Farmers' : '#70cb70cb', 
         'Social Credit' : '#158f13ab'
     }
@@ -365,5 +366,7 @@ window.intraparty_status = function(container) {
         container.innerHTML = ''; 
         container = map;
     }
+
+    console.log('got to end of intraparty status');
 
 }

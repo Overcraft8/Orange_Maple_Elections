@@ -115,3 +115,4 @@ window.generate_crown_info = function(crown_info) {
                 </div>`
 
 }
+

@@ -1287,7 +1287,7 @@ Q.canadian_governments = {
         'shorthand' : 'MB'
     }, 
     'AB' : {
-        'government' : 'United Farmers of Alberta', 
+        'government' : 'United Farmers', 
         'ccf_status' : 'opposition', 
         'name' : 'Alberta', 
         'shorthand' : 'AB'

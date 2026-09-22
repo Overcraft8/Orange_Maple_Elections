@@ -275,7 +275,7 @@ window.intraparty_status = function(container, province) {
         var government = province.government;
         var gov_colour = colours.government;
 
-        var map_altered = searchstring('province')
+        var map_altered = searchstring('province', 'ajsd')
     })
 
 }

@@ -3,7 +3,15 @@ new-page: true
 view-if: year <= 1932 and intra_party_relations_timer <= 0
 tags: party_affairs
 is-card: true
-on-arrival: month_actions += 1; intra_party_relations_timer = 4;
+on-arrival: {! 
+Q.month_actions += 1; 
+Q.intra_party_relations_timer = 4; 
+
+
+Q.canada_map_intraparty = window.intraparty_status(Q.canada_map_intraparty);
+
+
+!}
 card-image: img/CCF/ccf_bc_poster.jpg
 
 = Intra-Party Relations

@@ -1268,25 +1268,35 @@ Q.telecoms = 10;
 //---------------------------------------------------------------
 
 Q.canadian_governments = {
-    'CA-QC' : {
+    'QC' : {
         'government' : 'Liberal', 
-        'ccf_status' : 'opposition'
+        'ccf_status' : 'opposition', 
+        'name' : 'Quebec',
+        'shorthand' : 'QC'
     },
-    'CA-ON' : {
+    'ON' : {
         'government' : 'Liberal', 
-        'ccf_status' : 'opposition'
+        'ccf_status' : 'opposition', 
+        'name' : 'Ontario', 
+        'shorthand' : 'ON'
     },
-    'CA-MB' : {
+    'MB' : {
         'government' : 'Progressive', 
-        'ccf_status' : 'opposition'
+        'ccf_status' : 'opposition', 
+        'name' : 'Manitoba', 
+        'shorthand' : 'MB'
     }, 
-    'CA-AB' : {
+    'AB' : {
         'government' : 'United Farmers of Alberta', 
-        'ccf_status' : 'opposition'
+        'ccf_status' : 'opposition', 
+        'name' : 'Alberta', 
+        'shorthand' : 'AB'
     }, 
-    'CA-BC' : {
+    'BC' : {
         'government' : 'Conservative', 
-        'ccf_status' : 'opposition'
+        'ccf_status' : 'opposition', 
+        'name' : 'British_Columbia', 
+        'shorthand' : 'BC'
     }
 };
 
@@ -1638,7 +1648,9 @@ Q.Canada_Base_Map = `
 
 
 
-
+window.updateBar('right');
+window.updateBar('left'); 
+window.updateBar('top');
 
 
 

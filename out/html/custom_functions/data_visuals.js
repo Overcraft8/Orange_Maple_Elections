@@ -265,14 +265,14 @@ window.CCF_provincial_statuses = function(status, cx, cy) {
     else if (status == 2 || status == 'coalition') {
         return `<g>
             <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx}" cy="${cy}" r="15"></circle>
-            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 15}" cy="${cy}" r="15"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 35}" cy="${cy + 10}" r="15"></circle>
         </g>`;
     } 
     else if (status == 3 || status == 'majority') {
         return `<g>
             <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx}" cy="${cy}" r="15"></circle>
-            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 15}" cy="${cy}" r="15"></circle>
-            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 5}" cy="${cy + 15}" r="15"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 35}" cy="${cy + 10}" r="15"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 10}" cy="${cy + 35}" r="15"></circle>
         </g>`;
     }
     return '';

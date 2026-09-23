@@ -1275,7 +1275,7 @@ Q.canadian_governments = {
         'shorthand' : 'QC'
     },
     'ON' : {
-        'government' : 'Liberal', 
+        'government' : 'Conservative',
         'ccf_status' : 'opposition', 
         'name' : 'Ontario', 
         'shorthand' : 'ON'
@@ -1296,10 +1296,35 @@ Q.canadian_governments = {
         'government' : 'Conservative', 
         'ccf_status' : 'opposition', 
         'name' : 'British_Columbia', 
-        'shorthand' : 'BC'
+        'shorthand' : 'BC', 
+        'x' : 300, 
+        'y' : 500
+    }, 
+    'SK' : {
+        'government' : 'Conservative', 
+        'ccf_status' : 'opposition', 
+        'name' : 'Saskatchewan', 
+        'shorthand' : 'SK'
+    }, 
+    'NB' : {
+        'government' : 'Conservative', 
+        'ccf_status' : 'opposition', 
+        'name' : 'New Brunswick', 
+        'shorthand' : 'NB'
+    },
+    'NS' : {
+        'government' : 'Conservative', 
+        'ccf_status' : 'opposition', 
+        'name' : 'Nova Scotia', 
+        'shorthand' : 'NS'
+    },
+    'PEI' : {
+        'government' : 'Conservative', 
+        'ccf_status' : 'opposition', 
+        'name' : 'Prince Edward Island', 
+        'shorthand' : 'PEI'
     }
 };
-
 Q.canada_map_intraparty = '';
 
 

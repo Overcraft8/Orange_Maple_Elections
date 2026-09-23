@@ -1303,7 +1303,7 @@ Q.canadian_governments = {
         'ccf_status' : 'majority', 
         'name' : 'British_Columbia', 
         'shorthand' : 'BC', 
-        'x' : 1100, 
+        'x' : 1090, 
         'y' : 800
     }, 
     'SK' : {

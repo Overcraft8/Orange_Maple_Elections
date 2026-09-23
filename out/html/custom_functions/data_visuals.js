@@ -306,7 +306,7 @@ window.intraparty_status = function() {
         if (province.x && province.y){
             ccf_statuses += window.CCF_provincial_statuses(province.ccf_status, province.x, province.y); 
             console.log("fiashdisd");
-        }
+        };
     });
 
     provColours['SK'] = colours['CCF'];

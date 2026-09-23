@@ -276,7 +276,7 @@ window.intraparty_status = function(container) {
         var province = Q.canadian_governments[key];
         var colour = colours[province.government];
 
-        provColours[province.shorthand + '_color'] = colour;
+        provColours[province.shorthand + '_colour'] = colour;
     });
 
 

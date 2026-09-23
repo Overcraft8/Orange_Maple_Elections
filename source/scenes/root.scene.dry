@@ -1278,33 +1278,41 @@ Q.canadian_governments = {
         'government' : 'Conservative',
         'ccf_status' : 'opposition', 
         'name' : 'Ontario', 
-        'shorthand' : 'ON'
+        'shorthand' : 'ON', 
+        'x' : 1675, 
+        'y' : 1000
     },
     'MB' : {
         'government' : 'Progressive', 
         'ccf_status' : 'opposition', 
         'name' : 'Manitoba', 
-        'shorthand' : 'MB'
+        'shorthand' : 'MB', 
+        'x' : 1475, 
+        'y' : 900
     }, 
     'AB' : {
         'government' : 'United Farmers', 
         'ccf_status' : 'opposition', 
         'name' : 'Alberta', 
-        'shorthand' : 'AB'
+        'shorthand' : 'AB',
+        'x' : 1225, 
+        'y' : 900
     }, 
     'BC' : {
         'government' : 'Conservative', 
         'ccf_status' : 'opposition', 
         'name' : 'British_Columbia', 
         'shorthand' : 'BC', 
-        'x' : 300, 
-        'y' : 500
+        'x' : 1100, 
+        'y' : 800
     }, 
     'SK' : {
         'government' : 'Conservative', 
         'ccf_status' : 'opposition', 
         'name' : 'Saskatchewan', 
-        'shorthand' : 'SK'
+        'shorthand' : 'SK',
+        'x' : 1350, 
+        'y' : 950
     }, 
     'NB' : {
         'government' : 'Conservative', 

@@ -258,23 +258,22 @@ window.CanadaMap = function() {
 
 
 window.CCF_provincial_statuses = function(status, cx, cy) {
-    var style = 'r="6" fill="#ffffff" stroke="#000000" stroke-width="1.5"';
     
-    if (status === 1 || status === 'opposition') {
-        return `<circle style="fill:orange;" cx="15" cy="65" r="6"></circle>`;
+    if (status == 1 || status == 'opposition') {
+        return `<circle style="fill:orange;stroke-width:7px;stroke:black;"" cx="${cx}" cy="${cy}" r="15"></circle>`;
     } 
-    else if (status === 2 || status === 'coalition') {
+    else if (status == 2 || status == 'coalition') {
         return `<div style="display:flex;width:100px;">
-            <circle style="fill:orange;" cx="15" cy="65" r="6"></circle>
-            <circle style="fill:orange;" cx="15" cy="65" r="6"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx}" cy="${cy}" r="15"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 15}" cy="${cy}" r="15"></circle>
         </div
         `;
     } 
-    else if (status === 3 || status === 'majority') {
+    else if (status == 3 || status == 'majority') {
         return `<div style="display:flex;width:100px;">
-            <circle style="fill:orange;" cx="15" cy="65" r="6"></circle>
-            <circle style="fill:orange;" cx="15" cy="65" r="6"></circle>
-            <circle style="fill:orange;" cx="15" cy="65" r="6"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx}" cy="${cy}" r="15"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 15}" cy="${cy}" r="15"></circle>
+            <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 5}" cy="${cy + 15}" r="15"></circle>
         </div 
         `;
     }

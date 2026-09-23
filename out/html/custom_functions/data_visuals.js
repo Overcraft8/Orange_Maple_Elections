@@ -271,9 +271,9 @@ window.intraparty_status = function(container) {
     }
 
     Object.keys(Q.canadian_governments).forEach((key) => {
-    var province = Q.canadian_governments[key];
-    var colour = colours[province.government];
-    Q[province.shorthand + '_colour'] = colour;
+        var province = Q.canadian_governments[key];
+        var colour = colours[province.government];
+        Q[province.shorthand + '_colour'] = colour;
     });
 
 

@@ -1300,6 +1300,8 @@ Q.canadian_governments = {
     }
 };
 
+Q.canada_map_intraparty = '';
+
 
 
 

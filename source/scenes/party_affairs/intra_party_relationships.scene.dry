@@ -8,7 +8,7 @@ Q.month_actions += 1;
 Q.intra_party_relations_timer = 4; 
 
 
-window.intraparty_status(Q.canada_map_intraparty);
+Q.canada_map_intraparty = window.intraparty_status();
 
 
 !}

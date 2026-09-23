@@ -256,7 +256,7 @@ window.CanadaMap = function() {
     </svg>`;
 }
 
-window.intraparty_status = function(container) {
+window.intraparty_status = function() {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
     // var map = window.CanadaMap(); 
@@ -362,14 +362,8 @@ window.intraparty_status = function(container) {
     </g>
     </svg>`;
 
-    if (container.startsWith('Q.')) {
-        container = map;
-    }
-    else {
-        container.innerHTML = ''; 
-        container = map;
-    }
-
     console.log('got to end of intraparty status');
+
+    return map;
 
 }

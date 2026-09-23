@@ -57,7 +57,7 @@ window.generate_crown_info = function(crown_info) {
 
     var Ledger = `<!-- Financial Ledger Container -->
                 <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 1.5em; width: 100%; box-sizing: border-box;">
-                    <div style="width:50%;"
+                    <div style="width:50%;">
                         ${Revenue_HTML}${Expenses_HTML}
                     </div>
                     ${Summary_Panel}

@@ -266,7 +266,7 @@ window.CCF_provincial_statuses = function(status, cx, cy) {
         return `<div style="display:flex;width:100px;">
             <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx}" cy="${cy}" r="15"></circle>
             <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 15}" cy="${cy}" r="15"></circle>
-        </div
+        </div>
         `;
     } 
     else if (status == 3 || status == 'majority') {
@@ -274,7 +274,7 @@ window.CCF_provincial_statuses = function(status, cx, cy) {
             <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx}" cy="${cy}" r="15"></circle>
             <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 15}" cy="${cy}" r="15"></circle>
             <circle style="fill:orange;stroke-width:7px;stroke:black;" cx="${cx + 5}" cy="${cy + 15}" r="15"></circle>
-        </div 
+        </div>
         `;
     }
     return '';

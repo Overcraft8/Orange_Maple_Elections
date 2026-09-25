@@ -7,24 +7,6 @@ on-arrival: {!
 //                            NEWS
 // --------------------------------------------------------------------
 
-if (Q.year == 1932 && Q.month == 1) {
-  Q.generic_news = {
-      'booming economy' : 'The economy is booming'
-  };
-
-  Q.active_news = {
-      depression : {
-          start : {
-              unique : [false, false], // First index indicating it's unique, second indicating if it's been called yet
-              date : [1, 1932],
-              info : 'It is a dire time for Saskatchewan. The province is wracked by extreme drought the likes of which has never been seen before on the Canadian prairies. <br> Two thirds of farmers have already been forced to rely on relief.',
-              condition : Q.started == 1 && Q.month == 1 && Q.year >= 1932
-          }
-          
-      }
-
-  }
-};
 
 window.news_activator();
 

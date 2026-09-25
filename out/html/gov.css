@@ -25,15 +25,16 @@
 }
 
 .revenue_expense_panel {
-  flex: 1; 
-  min-width: 200px; 
-  background: linear-gradient( color-mix(in srgb, var(--content-bg-color, #e8dcc3) 70%, transparent), rgba(255, 255, 255, 0.4) ), url('img/blank_paper.jpg') center/cover; 
-  background-size: cover; 
-  background-position: center; 
-  border: 3px solid #9c8c64; 
+  flex: 1;
+  margin:0.2em;
+  width:18em;
+  background: linear-gradient( color-mix(in srgb, var(--content-bg-color, #e8dcc3) 70%, transparent), rgba(255, 255, 255, 0.4) ), url('img/blank_paper.jpg') center/cover;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #9c8c64;
   border-radius: 4px;
-   padding: 12px; 
-   box-sizing: border-box;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 .centered-bg-img {

@@ -730,29 +730,51 @@ img {
 /* mobile: move the stat box to the top if the screen is too small,
  * and reduce font size slightly. */
 @media screen and (max-width: 560px) {
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: auto;
+  }
+
   body, #page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* horizontally centers children */
-  font-family: Verdana, Arial;
-}
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* horizontally centers children */
+    font-family: Verdana, Arial;
+  }
+
+  #page {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: auto;
+  }
+
   #content {
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
       position: static;
       font-size: 1.2em;
       line-height: 130%;
       padding: 1em 1em 1.5em 1em;
+      overflow-x: auto;
   }
   #qualities {
       font-size: 0.85em;
   }
   #tools_wrapper {
+    width: 100%;
+    max-width: 100vw;
     position: static;
+    overflow-x: auto;
   }
   .tools {
     width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
     margin: 0.4em auto;   /* centers the panel */
     text-align: center;
+    overflow-x: auto;
   }
   .tools.left {
     font-size: 1.4em;
@@ -764,8 +786,10 @@ img {
   }
   #mid_panel {
     font-size: 0.7em;
-    width: auto;
+    width: 100%;
+    max-width: 100vw;
     margin: 0 1.2em;
+    overflow-x: auto;
   }
 
   /* cards are smaller on mobile */

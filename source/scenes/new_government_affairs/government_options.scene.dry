@@ -5,23 +5,28 @@ tags: govtwo
 view-if: 1 = 1
 card-image: img/Saskatchewan_Legislature.jpg
 on-arrival: {!
-    var mid_panel = document.getElementById('mid_panel');
-    var content = document.getElementById('content');
-    var tools = document.getElementById('tools_wrapper'); 
 
-    var left_sidebar = document.getElementById('stats_sidebar'); 
-    var right_sidebar = document.getElementById('news_frame'); 
+    Q.government_panel = function() {
+        var mid_panel = document.getElementById('mid_panel');
+        var content = document.getElementById('content');
+        var tools = document.getElementById('tools_wrapper'); 
 
-    Q.old_mid_panel_margin = mid_panel.style.margin;
-    Q.old_content_maxWidth = content.style.maxWidth; 
-    Q.old_content_width = content.style.width;
+        var left_sidebar = document.getElementById('stats_sidebar'); 
+        var right_sidebar = document.getElementById('news_frame'); 
 
-    left_sidebar.style.display = 'none'; 
-    right_sidebar.style.display = 'none';
-    mid_panel.style.margin = '0 0';
+        Q.old_mid_panel_margin = mid_panel.style.margin;
+        Q.old_content_maxWidth = content.style.maxWidth; 
+        Q.old_content_width = content.style.width;
 
-    content.style.maxWidth = '100em';
-    content.style.width = '50em';
+        left_sidebar.style.display = 'none'; 
+        right_sidebar.style.display = 'none';
+        mid_panel.style.margin = '0 0';
+
+        content.style.maxWidth = '100em';
+        content.style.width = '50em';
+    };
+
+    Q.government_panel();
 !}
 
 

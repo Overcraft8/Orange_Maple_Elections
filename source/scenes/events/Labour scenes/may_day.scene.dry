@@ -1,0 +1,12 @@
+title: May Day Parade Ban
+subtitle: The crowds are getting unruly
+new-page: true
+view-if: year = 1933 and month = 3
+priority: 2
+max-visits: 1
+face-image: img/protests/regina_riot_protest.jpg
+
+
+= May Day Parades Banned
+
+Since the onset of the Depression, Canadian workers have used May Day to protest 

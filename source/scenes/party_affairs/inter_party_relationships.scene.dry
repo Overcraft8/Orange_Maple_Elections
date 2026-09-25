@@ -52,7 +52,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; scps_relation += 2 if scps_party_leader == "Needham"
-go-to: social_credit_op if scps_in_government = 1 and ccf_ss_in_government = 0 and premier != "Needham"; social_credit_coalition if ccf_ss_in_government = 1 and scps_in_government = 1; social_credit_aberhart if alberta_premier = "Aberhart"
+go-to: social_credit_op if scps_in_government = 1 and ccf_in_government = 0 and premier != "Needham"; social_credit_coalition if ccf_in_government = 1 and scps_in_government = 1; social_credit_aberhart if alberta_premier = "Aberhart"
 
 @social_credit_op
 on-arrival: scps_relation += 5*(1 - dissent)

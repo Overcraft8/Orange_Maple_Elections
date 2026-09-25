@@ -20,7 +20,7 @@ title: RCWU Aid
 subtitle: Improve our standing among the workers.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; workers_ccf_ss += 4*(1-dissent); 
+on-arrival: advisor_action_timer = 6; workers_ccf += 4*(1-dissent); 
 
 We have increased our organizing among the workers.
 

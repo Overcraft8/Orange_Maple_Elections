@@ -43,7 +43,7 @@ This is a radical farmers policy that would potentially destabilize our agricult
 
 @yes_use_lease
 title: Yes to use lease!
-on-arrival: agrarian_strength += 5; ccf_platform.agrarian.use_lease += 1; farmers_ccf_ss += 8; lps_relation -= 10; cps_relation -= 15; pps_relation -= 6
+on-arrival: agrarian_strength += 5; ccf_platform.agrarian.use_lease += 1; farmers_ccf += 8; lps_relation -= 10; cps_relation -= 15; pps_relation -= 6
 
 We have chosen to add a use-lease policy to our platform. The farmers will surely be enthusiastic. 
 
@@ -60,7 +60,7 @@ This would encroach upon many of the existing wheat pools in Saskatchewan though
 
 @yes_wheat_pool
 title: Yes to the wheat pool!
-on-arrival: agrarian_strength += 3; ccf_platform.agrarian.wheat_pool_expansion += 1; farmers_ccf_ss += 4; lps_relation -= 6; cps_relation -= 8
+on-arrival: agrarian_strength += 3; ccf_platform.agrarian.wheat_pool_expansion += 1; farmers_ccf += 4; lps_relation -= 6; cps_relation -= 8
 
 We have chosen to add a provincial wheat pool to our platform. The farmers will surely be enthusiastic. 
 
@@ -79,7 +79,7 @@ In doing this, we will also be slightly displeasing the LPS and CPS who both hav
 
 @yes_grain_elevators
 title: Yes to the grain elevators!
-on-arrival: agrarian_strength += 3; ccf_platform.agrarian.grain_elevator_expansion += 1; farmers_ccf_ss += 3; lps_relation -= 4; cps_relation -= 6
+on-arrival: agrarian_strength += 3; ccf_platform.agrarian.grain_elevator_expansion += 1; farmers_ccf += 3; lps_relation -= 4; cps_relation -= 6
 
 We have chosen to add a provincial grain elevator policy to our platform. 
 
@@ -96,4 +96,4 @@ This would have major effects on the supply side, however.
 
 @yes_price_guarantee
 title: Yes to the price guarantee!
-on-arrival: agrarian_strength += 3; ccf_platform.agrarian.price_guarantee_plat += 1; farmers_ccf_ss += 3;
+on-arrival: agrarian_strength += 3; ccf_platform.agrarian.price_guarantee_plat += 1; farmers_ccf += 3;

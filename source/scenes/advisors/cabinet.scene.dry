@@ -2,7 +2,7 @@ title: Cabinet
 is-pinned-card: true
 tags: advisor
 card-image: img/muller_cabinet.jpg
-view-if: difficulty < 0 and ccf_ss_in_government and premier_party = ccf_ss_name
+view-if: difficulty < 0 and ccf_in_government and premier_party = ccf_ss_name
 on-arrival: last_cabinet_action = 1
 new-page: true 
 

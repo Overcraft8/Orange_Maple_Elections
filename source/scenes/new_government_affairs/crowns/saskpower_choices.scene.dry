@@ -7,8 +7,8 @@ on-arrival: {!
         Q.saskpower_revenue_display += val;
     };
 
-    Q.private_share = Q.economic_data.electricity.private;
-    Q.coop_share = Q.economic_data.electricity.coop
+    Q.private_share = Q.economic_data.electricity.marketshare.private;
+    Q.coop_share = Q.economic_data.electricity.marketshare.coop
     Q.monopoly_cost = Math.round((Q.private_share + Q.coop_share)*10, 2);
     console.log(Q.monopoly_cost);
 
@@ -49,7 +49,7 @@ on-arrival: {!
         The SaskPower Mandate
     {!</div>!}
 
-    {!<div style="font-family: Franklin Gothic Medium;background: var(--content-bg-color);border: 2px ridge #6c512e; ">!}
+    {!<div style="font-family: Franklin Gothic Medium;background: var(--content-bg-color);border: 2px ridge #6c512e; padding:0.5em;">!}
         SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, having purchased various independently-owned electrical utilities.
     {!</div>!}
     
@@ -64,7 +64,7 @@ on-arrival: {!
 #    </div>
     <div style="display:flex;flex-direction:row;">
         <div class="gov_panel" style="display:flex;flex-direction:column;">
-        <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
+        <span style="font-weight: bold; font-size: 1.05em; letter-spacing: 0.5px;">
                 Current SaskPower Electricity Rates
             </span>
             <span style="border-radius: 4px" class="panel_title">
@@ -73,7 +73,7 @@ on-arrival: {!
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
-            <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
+            <span style="font-weight: bold; font-size: 1.05em; letter-spacing: 0.5px;">
                 Electrification Progress
             </span>
             <span style="border-radius: 4px" class="panel_title">
@@ -82,7 +82,7 @@ on-arrival: {!
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
-            <span style="font-weight: bold; font-size: 1.05em; color: #2c251a; letter-spacing: 0.5px;">
+            <span style="font-weight: bold; font-size: 1.05em; letter-spacing: 0.5px;">
                 Electricity Market Shares
             </span>
             <span style="border-radius: 4px" class="panel_title">
@@ -182,7 +182,7 @@ on-arrival: {!
     };
 
     for (var c of Q.classes) {
-        Q[c + '_ccf_ss'] += 1
+        Q[c + '_ccf'] += 1
     };
 !}
 subtitle: -1 SaskPower revenue
@@ -195,7 +195,7 @@ on-arrival: {!
     };
 
     for (var c of Q.classes) {
-        Q[c + '_ccf_ss'] -= 2
+        Q[c + '_ccf'] -= 2
     };
 !}
 subtitle: +1 SaskPower revenue

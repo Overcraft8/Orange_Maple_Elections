@@ -316,7 +316,7 @@ Q.cp_s_unity_front = 0
 
 
 
-Q.ccf_ss_in_government = 0; 
+Q.ccf_in_government = 0; 
 Q.cp_s_in_government = 0; 
 Q.pps_in_government = 1; 
 Q.cps_in_government = 1; 
@@ -371,7 +371,7 @@ Q.in_unity_government = 0;
 Q.in_left_front = 0;
 // emergency government containing the [+ ccf_ss_name +]: only prime minister JS_Woodsworth can do this.
 Q.in_emergency_government = 0;
-Q.in_ccf_ss_majority = 0;
+Q.in_ccf_majority = 0;
 Q.grand_coalition_failed = 0;
 // if the [+ ccf_ss_name +] is ruling as part of a minority government
 Q.in_minority_government = 0;
@@ -575,7 +575,7 @@ Q.electoral_threshold = 0;
 // did the [+ ccf_ss_name +] vote against the previous government in a vote of no confidence?
 Q.ccf_ss_no_confidence = 0;
 // was the last [+ ccf_ss_name +] government taken down in a vote of no confidence by right-wing coalition partners?
-Q.no_confidence_against_ccf_ss = 0;
+Q.no_confidence_against_ccf = 0;
 
 
 // Deaths
@@ -1083,7 +1083,7 @@ Q.other_old_polls = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_ccf_ss = 4;
+Q.workers_ccf = 4;
 Q.workers_cp_s = 3;
 Q.workers_pps = 3;
 Q.workers_lps = 43;
@@ -1091,7 +1091,7 @@ Q.workers_cps = 35;
 Q.workers_scps = 0;
 Q.workers_other = 12;
 
-Q.old_middle_ccf_ss = 0;
+Q.old_middle_ccf = 0;
 Q.old_middle_cp_s = 0;
 Q.old_middle_pps = 10;
 Q.old_middle_lps= 38;
@@ -1099,7 +1099,7 @@ Q.old_middle_cps = 49;
 Q.old_middle_scps = 0;
 Q.old_middle_other = 3;
 
-Q.new_middle_ccf_ss = 4;
+Q.new_middle_ccf = 4;
 Q.new_middle_cp_s = 0;
 Q.new_middle_pps = 12;
 Q.new_middle_lps= 44;
@@ -1107,7 +1107,7 @@ Q.new_middle_cps = 38;
 Q.new_middle_scps = 0;
 Q.new_middle_other = 2;
 
-Q.farmers_ccf_ss = 7;
+Q.farmers_ccf = 7;
 Q.farmers_cp_s = 3;
 Q.farmers_pps = 6;
 Q.farmers_lps= 44;
@@ -1115,7 +1115,7 @@ Q.farmers_cps = 37;
 Q.farmers_scps = 0;
 Q.farmers_other = 3;
 
-Q.farmhands_ccf_ss = 4;
+Q.farmhands_ccf = 4;
 Q.farmhands_cp_s = 3;
 Q.farmhands_lps = 39;
 Q.farmhands_pps = 5;
@@ -1123,7 +1123,7 @@ Q.farmhands_cps = 34;
 Q.farmhands_scps = 0;
 Q.farmhands_other = 5;
 
-Q.rural_workers_ccf_ss = 8;
+Q.rural_workers_ccf = 8;
 Q.rural_workers_cp_s = 10;
 Q.rural_workers_lps = 42;
 Q.rural_workers_pps = 7;
@@ -1131,7 +1131,7 @@ Q.rural_workers_cps = 28;
 Q.rural_workers_scps = 0;
 Q.rural_workers_other = 5;
 
-Q.unemployed_ccf_ss = 6;
+Q.unemployed_ccf = 6;
 Q.unemployed_cp_s = 5;
 Q.unemployed_pps = 7;
 Q.unemployed_lps = 43;
@@ -1139,7 +1139,7 @@ Q.unemployed_cps = 32;
 Q.unemployed_scps = 0;
 Q.unemployed_other = 5;
 
-Q.catholics_ccf_ss = 7;
+Q.catholics_ccf = 7;
 Q.catholics_cp_s = 2;
 Q.catholics_pps = 10;
 Q.catholics_lps = 45;
@@ -1175,7 +1175,7 @@ Q.scps_r = 0;
 Q.other_r = 10;
 
 // diff from prev
-Q.old_ccf_ss_r = 26;
+Q.old_ccf_r = 26;
 Q.old_cp_s_r = 9;
 Q.old_pps_r = 17;
 Q.old_lps_r = 6;
@@ -1245,6 +1245,29 @@ for (var party of Q.parties) {
 Q.state_transport = 0;
 Q.electrification = 5;
 Q.telecoms = 10;
+
+
+
+//--------------------------------------------------------------
+/////////////////////////////////////////////////////////////////
+//                Legislation                                  //
+/////////////////////////////////////////////////////////////////
+//---------------------------------------------------------------
+
+
+Q.legislation = {
+    'labour': {
+        'minimum_wage': 2,              // 0: Limited (Female-only/Low), 1: Extended to male workers, 2: Statutory minimum raised, 3: Living wage indexation
+        'union_rights': 2,              // 0: Repressive (Injunctions/Section 98), 1: basic recognition, 2: Mandatory collective bargaining, 3: Closed-shop protections
+        'crown_corps_workers_rep': 0,   // 0: None (State-managed), 1: Advisory worker councils, 2: Direct worker representation on corporate boards
+        'workweek_hours': 1,            // 0: Unregulated (54+ hrs), 1: Mandatory 48-hour cap, 2: Mandatory 40-hour workweek, 3: 35-hour workweek
+        'right_to_strike': 1,           // 0: Banned/Police intervention, 1: Legal after mandatory conciliation, 2: Anti-injunction / Anti-scab protections
+        'workplace_safety': 1,          // 0: Weak factory acts, 1: Mandatory state safety inspections, 2: Workers' Compensation Board expansion
+        'unemployment_insurance': 0     // 0: Direct relief/work camps, 1: Non-contributory provincial relief, 2: Universal mandatory unemployment insurance
+    }
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1528,7 +1551,7 @@ data = [
         "legend": "[+ ccf_ss_name +]",
         "name": "[+ ccf_ss_name +]",
         "seats": Q.ccf_ss_seats,
-        "bench": Q.ccf_ss_in_government
+        "bench": Q.ccf_in_government
     },
     {
         "id": "cp_s",

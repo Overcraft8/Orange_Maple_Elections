@@ -21,15 +21,15 @@ title: Rally for democracy
 subtitle: Rally our party and the Saskatchewanian people to defend democracy and freedom.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; managerial_strength += 3; workers_ccf_ss += 4*(1-dissent) if democratization >= 4; new_middle_ccf_ss += 3*(1-dissent) if democratization >= 4
+on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; managerial_strength += 3; workers_ccf += 4*(1-dissent) if democratization >= 4; new_middle_ccf += 3*(1-dissent) if democratization >= 4
 
 Leber helps us to rally the people in defense of democracy.
 
 @military_affairs
 title: Military affairs
 subtitle: We can set our military policy.
-choose-if: advisor_action_timer == 0 and ccf_ss_in_government and rcmp_minister_party == ccf_ss_name
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government : The [+ ccf_ss_name +] is not in government. ?][? if rcmp_minister_party != ccf_ss_name: The [+ ccf_ss_name +] does not have the RCMP ministry. ?]
+choose-if: advisor_action_timer == 0 and ccf_in_government and rcmp_minister_party == ccf_ss_name
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_in_government : The [+ ccf_ss_name +] is not in government. ?][? if rcmp_minister_party != ccf_ss_name: The [+ ccf_ss_name +] does not have the RCMP ministry. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: military_policy
 

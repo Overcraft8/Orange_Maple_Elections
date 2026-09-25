@@ -12,7 +12,7 @@ max-visits: 6
 
 The *UFC (SS) * is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the [+ ccf_ss_name +] and LPS, and [+ lps_name +], but by far the largest component is with the [+ ccf_ss_name +].
 
-[? if workers_ccf_ss < 46 or workers_ccf_ss < workers_scp or workers_ccf_ss < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the [+ ccf_ss_name +] is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_ccf < 46 or workers_ccf < workers_scp or workers_ccf < workers_cp : The UFC (SS) is having a more difficult time recruiting, as the [+ ccf_ss_name +] is no longer the dominant party among the workers. Many of its members have left. ?]
 
 - @militant: Fund more military-style training and equipment for the UFC (SS).
 - @militant_2: Use our existing resources to support more training for the UFC (SS).
@@ -27,7 +27,7 @@ The *UFC (SS) * is a mass organization for the defense of the Republic against t
 choose-if: resources >= ufc_militarization_cost
 unavailable-subtitle: Not enough resources ([+ ufc_militarization_cost +] needed).
 subtitle: -[+ ufc_militarization_cost +] resources
-on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; left_strength += 2; left_dissent -= 2; moderate_dissent += 5; ccf_ss_militancy += 0.05; workers_ccf_ss += 2*(1-dissent); unemployed_ccf_ss += 2*(1-dissent); pps_relation -= 5 if historical_mode 
+on-arrival: resources -= ufc_militarization_cost; ufc_investment += 1; ufc_strength += 100; ufc_militancy += 0.05; left_strength += 2; left_dissent -= 2; moderate_dissent += 5; ccf_ss_militancy += 0.05; workers_ccf += 2*(1-dissent); unemployed_ccf += 2*(1-dissent); pps_relation -= 5 if historical_mode 
 
 Some in our party decry the increasing militarization of the UFC (SS). They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
 

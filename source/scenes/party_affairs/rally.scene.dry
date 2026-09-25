@@ -81,12 +81,12 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @easy_discard
 
 @rally_cooperative_commonwealth
-on-arrival: workers_ccf_ss += 4*(1-dissent); unemployed_ccf_ss += 3*(1-dissent) if radical_strength > managerial_strength; workers_ccf_ss += 4*(1-dissent) if nationalization_progress > 0; unemployed_ccf_ss += 3*(1-dissent) if nationalization_progress > 0; radical_strength += 5; radical_dissent -= 5; old_middle_ccf_ss -= 3; new_middle_ccf_ss -= 2;
+on-arrival: workers_ccf += 4*(1-dissent); unemployed_ccf += 3*(1-dissent) if radical_strength > managerial_strength; workers_ccf += 4*(1-dissent) if nationalization_progress > 0; unemployed_ccf += 3*(1-dissent) if nationalization_progress > 0; radical_strength += 5; radical_dissent -= 5; old_middle_ccf -= 3; new_middle_ccf -= 2;
 
 Spreading the gospel of a true Cooperative Commonwealth increases general support for Socialism, both among farmers and worker alike. 
 
 @welfare
-on-arrival: workers_ccf_ss += 3*(1-dissent); workers_ccf_ss += 3*(1-dissent) if welfare > 0; unemployed_ccf_ss += 3*(1-dissent) if welfare > 0; unemployed_ccf_ss += 4*(1-dissent) if welfare > 1; managerial_strength += 3; managerial_dissent -= 3; labour_dissent -= 3;
+on-arrival: workers_ccf += 3*(1-dissent); workers_ccf += 3*(1-dissent) if welfare > 0; unemployed_ccf += 3*(1-dissent) if welfare > 0; unemployed_ccf += 4*(1-dissent) if welfare > 1; managerial_strength += 3; managerial_dissent -= 3; labour_dissent -= 3;
 
 Speaking of a strong welfare state certainly inspires the workers and farmers who have been downtrodden by the lack of an adequate relief program. 
 
@@ -97,7 +97,7 @@ Blaming the old parties increases support for new parties like ours.
 
 @pacifism
 view-if: year >= 1939 and year <= 1945
-on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_ccf_ss += 4*(1 - dissent) if pacifism >= 3; unemployed_ccf_ss += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_ccf_ss += 4*(1-dissent) if pacifism >= 3
+on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_ccf += 4*(1 - dissent) if pacifism >= 3; unemployed_ccf += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_ccf += 4*(1-dissent) if pacifism >= 3
 
 Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
 
@@ -108,12 +108,12 @@ Our speakers denounce the military establishment and all the spending entering t
 view-if: wtb_adopted = 1
 choose-if: return_to_normalcy = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
-on-arrival: wtb_support += 1; workers_ccf_ss += 6*(1-dissent); unemployed_ccf_ss += 6*(1-dissent); farmers_ccf_ss += 3*(1-dissent); new_middle_ccf_ss += 3*(1-dissent); old_middle_ccf_ss += 3*(1-dissent);
+on-arrival: wtb_support += 1; workers_ccf += 6*(1-dissent); unemployed_ccf += 6*(1-dissent); farmers_ccf += 3*(1-dissent); new_middle_ccf += 3*(1-dissent); old_middle_ccf += 3*(1-dissent);
 
 The WTB plan has become a popular rallying cry for our party. The workers are eager to go back to work, and that is exactly what the plan promises.
 
 
 @local
-on-arrival: workers_ccf_ss += 3*(1-dissent); old_middle_ccf_ss += 1*(1-dissent); new_middle_ccf_ss += 2*(1-dissent); unemployed_ccf_ss += 3*(1-dissent);
+on-arrival: workers_ccf += 3*(1-dissent); old_middle_ccf += 1*(1-dissent); new_middle_ccf += 2*(1-dissent); unemployed_ccf += 3*(1-dissent);
 
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the people in this moment. 

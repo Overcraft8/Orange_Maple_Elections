@@ -59,13 +59,13 @@ We must pick wisely...
 - @Coldwell: Coldwell will surely lead the [+ ccf_ss_name +] to victory. 
 
 @GeorgeWilliams 
-on-arrival: farmers_ccf_ss += 4; agrarian_strength += 4; agrarian_dissent -= 4; ccf_ss_president = "George Williams"; ccf_ss_president_img = "WilliamsHaraGeorge.jpg"
+on-arrival: farmers_ccf += 4; agrarian_strength += 4; agrarian_dissent -= 4; ccf_ss_president = "George Williams"; ccf_ss_president_img = "WilliamsHaraGeorge.jpg"
 face-image: img/portraits/WilliamsHaraGeorge.jpg
 
 Williams will lead us to victory!
 
 @Coldwell
-on-arrival: workers_ccf_ss += 4; labour_strength += 4; labour_dissent -= 4; ccf_ss_president = "MJ Coldwell"; ccf_ss_president_img = "ColdwellMajorJames.jpg"
+on-arrival: workers_ccf += 4; labour_strength += 4; labour_dissent -= 4; ccf_ss_president = "MJ Coldwell"; ccf_ss_president_img = "ColdwellMajorJames.jpg"
 face-image: img/portraits/ColdwellMajorJames.jpg
 
 Coldwell will lead us to victory!
@@ -77,9 +77,9 @@ Coldwell will lead us to victory!
 
 <div style="display: flex; flex-direction: row; text-align: left; gap: 15px;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div id="george_william_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">George Williams</span></div>
-        <div id="Phelps" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Joe Phelps</span></div>
-        <div id="Brockelbank" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">John Brockelbank</span></div>
+        <div id="george_william_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg" style="width:6em; height: auto;"><span class="card-caption">George Williams</span></div>
+        <div id="Phelps" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg" style="width:6em; height: auto;"><span class="card-caption">Joe Phelps</span></div>
+        <div id="Brockelbank" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg" style="width:6em; height: auto;"><span class="card-caption">John Brockelbank</span></div>
     </div>
     <div style="width: 1000px; border: 3px solid tan; padding: 10px;">
     George Williams is a former president of the UFC(SS) and on the left-wing of the party. Williams led the UFC(SS) into provincial politics on a socialist programme and was the architect behind the controversial "use-lease" policy, a program that would: 
@@ -98,9 +98,9 @@ Coldwell will lead us to victory!
 
 <div style="display: flex; flex-direction: row; text-align: left; gap: 15px;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div id="major_coldwell_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Major James Coldwell</span></div>
-        <div id="Douglas" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/DouglasTommy.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Tommy Douglas</span></div>
-        <div id="Fines" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/FinesClarence.jpg" style="max-width: 140px; height: auto;"><span class="card-caption">Clarence Fines</span></div>
+        <div id="major_coldwell_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg" style="width:6em; height: auto;"><span class="card-caption">Major James Coldwell</span></div>
+        <div id="Douglas" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/DouglasTommy.jpg" style="width:6em; height: auto;"><span class="card-caption">Tommy Douglas</span></div>
+        <div id="Fines" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/FinesClarence.jpg" style="width:6em; height: auto;"><span class="card-caption">Clarence Fines</span></div>
     </div>
     <div style="width: 1000px; border: 3px solid tan; padding: 10px;">
     Major James Coldwell is the moderate former leader of the ILP and former PPS member. He has political and governing experience, having served as a Regina City Councillor in the past, and has been active in the teacher's unions. 

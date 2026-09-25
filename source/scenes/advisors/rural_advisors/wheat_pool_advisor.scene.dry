@@ -17,7 +17,7 @@ The Wheat Pool is a farmer's cooperative that markets grain produced by it's mem
 title: Agricultural Policy
 subtitle: Raises support for Socialism and Cooperatives
 choose-if: advisor_action_timer <= 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_ss_in_government : The [+ ccf_ss_name +] is not in government. ?][? if agriculture_minister_party != ccf_ss_name: The [+ ccf_ss_name +] does not have the Agriculture Ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_in_government : The [+ ccf_ss_name +] is not in government. ?][? if agriculture_minister_party != ccf_ss_name: The [+ ccf_ss_name +] does not have the Agriculture Ministry. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1; socialism_support += 5; cooperative_support += 5
 go-to: agricultural_policy
 
@@ -27,7 +27,7 @@ title: Farmers Campaign
 subtitle: Campaign among the farmer populace
 choose-if: advisor_action_timer == 0 and farmers_policy > 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if farmers_policy == 0 : We have not enacted any farmers policies. ?]
-on-arrival: advisor_action_timer = 6; farmers_ccf_ss += 5*(1-dissent); peoples_party_support += 1
+on-arrival: advisor_action_timer = 6; farmers_ccf += 5*(1-dissent); peoples_party_support += 1
 
 We have increased our campaigning among farmers and the farmers populace.
 

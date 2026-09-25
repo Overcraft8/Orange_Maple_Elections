@@ -68,24 +68,24 @@ for (var c of Q.classes) {
 // Die Rote Fahne - join the CP(S) in the May Day march.
 // Mehrheitspartei - form an CCF(SS) majority government in the Assembly.
 // Panik im Mittelstand - have over 50% of New Middle Class support.
-if (Q.new_middle_ccf_ss_normalized && Q.new_middle_ccf_ss_normalized >= 50) {
+if (Q.new_middle_ccf_normalized && Q.new_middle_ccf_normalized >= 50) {
     this.achieve('panik_im_mittelstand');
 }
 // Bauernrevolution - have over 50% farmers support.
-if (Q.farmers_ccf_ss_normalized && Q.farmers_ccf_ss_normalized >= 50) {
+if (Q.farmers_ccf_normalized && Q.farmers_ccf_normalized >= 50) {
     this.achieve('bauernrevolution');
 }
-if (Q.catholics_ccf_ss_normalized && Q.catholics_ccf_ss_normalized >= 50) {
+if (Q.catholics_ccf_normalized && Q.catholics_ccf_normalized >= 50) {
     this.achieve('katholischer_sozialismus');
 }
-if (Q.workers_ccf_ss_normalized >= 80 && Q.new_middle_ccf_ss_normalized <= 20 && Q.old_middle_ccf_ss_normalized <= 20 && Q.farmers_ccf_ss_normalized <= 20) {
+if (Q.workers_ccf_normalized >= 80 && Q.new_middle_ccf_normalized <= 20 && Q.old_middle_ccf_normalized <= 20 && Q.farmers_ccf_normalized <= 20) {
     this.achieve('klassenkampf');
 }
-if (Q.workers_ccf_ss_normalized >= 40 && Q.new_middle_ccf_ss_normalized >= 40 && Q.old_middle_ccf_ss_normalized >= 40 && Q.farmers_ccf_ss_normalized >= 40) {
+if (Q.workers_ccf_normalized >= 40 && Q.new_middle_ccf_normalized >= 40 && Q.old_middle_ccf_normalized >= 40 && Q.farmers_ccf_normalized >= 40) {
     this.achieve('grosse_volkspartei');
 }
 // Räterepublik - begin the transformation to a socialist economy.
-if (Q.ccf_ss_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democracy >= 3) || (Q.nationalization_progress >= 1 && Q.economic_democracy >= 4))) {
+if (Q.ccf_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democracy >= 3) || (Q.nationalization_progress >= 1 && Q.economic_democracy >= 4))) {
     this.achieve('raterepublik');
 }
 // Polykrise - survive both a fascist coup and a capital strike.
@@ -186,7 +186,7 @@ Albert Einstein, possibly the most famous scientist in the world, has been elect
 
 @ccf_ss_victorious
 title: CCF(SS) still in government
-view-if: ccf_ss_in_government == 1 and premier_party == ccf_ss_name and total_defeat == 0 and long_war == 0
+view-if: ccf_in_government == 1 and premier_party == ccf_ss_name and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 

@@ -41,6 +41,8 @@ on-arrival: {!
 new-page: true
 on-arrival: {!
 
+if (Q.month_actions >= 1) {Q.month_actions = 0};
+
 Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
     var sectorData = Q.economic_data[sectorName];
 
@@ -185,6 +187,7 @@ max-cards: 0
 new-page: true
 on-arrival: {!
     Q.pinnedCardsDescription = 'Ministries';
+    if (Q.month_actions >= 1) {Q.month_actions = 0};
 !}
 
 <div class="tab_container">

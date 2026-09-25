@@ -21,7 +21,7 @@ In addition to being a political party, the [+ ccf_ss_name +] is a social world 
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; farmers_ccf_ss += 1; agrarian_strength += 4;
+on-arrival: resources -= 1; farmers_ccf += 1; agrarian_strength += 4;
 
 The UFC(SS) has a strong presence in Saskatchewan. 
 
@@ -30,7 +30,7 @@ The UFC(SS) has a strong presence in Saskatchewan.
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; new_middle_ccf_ss += 1; labour_radicalism -= 2; labour_strength += 3;
+on-arrival: resources -= 1; new_middle_ccf += 1; labour_radicalism -= 2; labour_strength += 3;
 
 Teachers are the most friendly of the new middle class towards us. It would be good to ensure they have our backs. 
 
@@ -38,7 +38,7 @@ Teachers are the most friendly of the new middle class towards us. It would be g
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; worker_ccf_ss += 1; labour_strength += 4
+on-arrival: resources -= 1; worker_ccf += 1; labour_strength += 4
 
 The TLC has a strong presence in Saskatchewan. 
 
@@ -48,7 +48,7 @@ We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : I
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
-on-arrival: resources -= 1; worker_ccf_ss += 1; labour_strength += 3
+on-arrival: resources -= 1; worker_ccf += 1; labour_strength += 3
 
 It is not enough for the [+ ccf_ss_name +] to solely be a political party. The Worker Singer's League, Worker's Sports, and our schools and libraries are crucial to our members' lives. Funding these organizations makes our members more committed to the party, even when our policies might not be to their liking.
 

@@ -25,7 +25,7 @@ on-display: {!
         "legend": Q.ccf_ss_name,
         "name": Q.ccf_ss_name,
         "seats": Q.ccf_ss_seats,
-        "bench": Q.ccf_ss_in_government
+        "bench": Q.ccf_in_government
     },
     {
         "id": "cp_s",
@@ -129,12 +129,12 @@ window.westminster('westminster_legislature', false);
 
     Government: [+ ruling_government +]
 
-    [+ ccf_ss_name +] position: [? if ccf_ss_toleration : toleration ?][? if ccf_ss_in_government : in government - ?][? if ccf_ss_toleration == 0 and ccf_ss_in_government == 0 and ccf_ss_caretaker == 0 : opposition ?][? if ccf_ss_caretaker : caretaker government ?]
-    [? if in_lps_coalition and ccf_ss_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_ss_in_government: Grand Coalition ?][? if in_unity_government and ccf_ss_in_government: Popular Front ?][? if in_left_front and ccf_ss_in_government: Left Front ?][? if in_ccf_ss_majority and ccf_ss_in_government: [+ ccf_ss_name +] majority ?][? if in_minority_government and ccf_ss_in_government: minority government ?]
+    [+ ccf_ss_name +] position: [? if ccf_ss_toleration : toleration ?][? if ccf_in_government : in government - ?][? if ccf_ss_toleration == 0 and ccf_in_government == 0 and ccf_ss_caretaker == 0 : opposition ?][? if ccf_ss_caretaker : caretaker government ?]
+    [? if in_lps_coalition and ccf_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_in_government: Grand Coalition ?][? if in_unity_government and ccf_in_government: Popular Front ?][? if in_left_front and ccf_in_government: Left Front ?][? if in_ccf_majority and ccf_in_government: [+ ccf_ss_name +] majority ?][? if in_minority_government and ccf_in_government: minority government ?]
 
-    [? if ccf_ss_in_government and not in_ccf_ss_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+    [? if ccf_in_government and not in_ccf_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-    [? if ccf_ss_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
+    [? if ccf_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
 
     Prime Minister: [+ prime_minister +]
 </div> 
@@ -621,10 +621,10 @@ on-arrival: {!
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**[+ ccf_ss_name +]**{!</td>!}
-            {!<td style="background-color: #da8b53; ">!}[+ workers_ccf_ss_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ unemployed_ccf_ss_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ new_middle_ccf_ss_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ old_middle_ccf_ss_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53; ">!}[+ workers_ccf_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ unemployed_ccf_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ new_middle_ccf_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ old_middle_ccf_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}
@@ -683,9 +683,9 @@ on-arrival: {!
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**[+ ccf_ss_name +]**{!</td>!}
-            {!<td style="background-color: #da8b53; ">!}[+ farmers_ccf_ss_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ farmhands_ccf_ss_display +]%{!</td>!}
-            {!<td style="background-color: #da8b53;">!}[+ rural_workers_ccf_ss_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53; ">!}[+ farmers_ccf_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ farmhands_ccf_display +]%{!</td>!}
+            {!<td style="background-color: #da8b53;">!}[+ rural_workers_ccf_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**CP(S)**{!</td>!}

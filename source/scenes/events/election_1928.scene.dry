@@ -357,7 +357,7 @@ Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
 Q.cp_s_coalition_dissent = 0;
-Q.ccf_ss_in_government = 0;
+Q.ccf_in_government = 0;
 Q.in_lps_coalition = 0;
 Q.in_grand_coalition = 0;
 Q.in_left_front = 0;
@@ -425,7 +425,7 @@ data = [
         "legend": "[+ ccf_ss_name +]",
         "name": "[+ ccf_ss_name +]",
         "seats": Q.ccf_ss_seats,
-        "bench": Q.ccf_ss_in_government
+        "bench": Q.ccf_in_government
     },
     {
         "id": "cp_s",
@@ -524,7 +524,7 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td><td>Seat Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **[+ ccf_ss_name +]:** {!</td><td>!} **[+ ccf_ss_polls +]%** {!</td><td>!} **[+ ccf_ss_vote_change +]** {!</td><td>!}  **[+ ccf_ss_seats +]** {!</td><td>!}  **[+ seats_change_ccf_ss +]**{!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **[+ ccf_ss_name +]:** {!</td><td>!} **[+ ccf_ss_polls +]%** {!</td><td>!} **[+ ccf_ss_vote_change +]** {!</td><td>!}  **[+ ccf_ss_seats +]** {!</td><td>!}  **[+ seats_change_ccf +]**{!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ sapd_vote_change +] {!</td><td>!} [+ seat_change_sapd +]{!</td></tr>!} ?]
 
@@ -562,7 +562,7 @@ go-to: coalition_menu
             {!<td>!}**Regina**{!</td>!}
             {!<td>!}[+ regina_d_district_seats +]{!</td>!}
             {!<td>!}[+ regina_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ regina_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ regina_d_pps_seats +]{!</td>!}
             {!<td>!}[+ regina_d_lps_seats +]{!</td>!}
             {!<td>!}[+ regina_d_cps_seats +]{!</td>!}
@@ -573,7 +573,7 @@ go-to: coalition_menu
             {!<td>!}**Saskatoon**{!</td>!}
             {!<td>!}[+ saskatoon_d_district_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_pps_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_lps_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_d_cps_seats +]{!</td>!}
@@ -584,7 +584,7 @@ go-to: coalition_menu
             {!<td>!}**Moose Jaw**{!</td>!}
             {!<td>!}[+ moosejaw_d_district_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_pps_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_lps_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_d_cps_seats +]{!</td>!}
@@ -595,7 +595,7 @@ go-to: coalition_menu
             {!<td>!}**Prince Albert**{!</td>!}
             {!<td>!}[+ princealbert_d_district_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_pps_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_lps_seats +]{!</td>!}
             {!<td>!}[+ princealbert_d_cps_seats +]{!</td>!}
@@ -606,7 +606,7 @@ go-to: coalition_menu
             {!<td>!}**Southwest**{!</td>!}
             {!<td>!}[+ southwest_d_district_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ southwest_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_pps_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_lps_seats +]{!</td>!}
             {!<td>!}[+ southwest_d_cps_seats +]{!</td>!}
@@ -617,7 +617,7 @@ go-to: coalition_menu
             {!<td>!}**Southeast**{!</td>!}
             {!<td>!}[+ southeast_d_district_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ southeast_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_pps_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_lps_seats +]{!</td>!}
             {!<td>!}[+ southeast_d_cps_seats +]{!</td>!}
@@ -628,7 +628,7 @@ go-to: coalition_menu
             {!<td>!}**Central**{!</td>!}
             {!<td>!}[+ central_d_district_seats +]{!</td>!}
             {!<td>!}[+ central_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ central_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ central_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ central_d_pps_seats +]{!</td>!}
             {!<td>!}[+ central_d_lps_seats +]{!</td>!}
             {!<td>!}[+ central_d_cps_seats +]{!</td>!}
@@ -639,7 +639,7 @@ go-to: coalition_menu
             {!<td>!}**North**{!</td>!}
             {!<td>!}[+ north_d_district_seats +]{!</td>!}
             {!<td>!}[+ north_d_cp_s_seats +]{!</td>!}
-            {!<td>!}[+ north_d_ccf_ss_seats +]{!</td>!}
+            {!<td>!}[+ north_d_ccf_seats +]{!</td>!}
             {!<td>!}[+ north_d_pps_seats +]{!</td>!}
             {!<td>!}[+ north_d_lps_seats +]{!</td>!}
             {!<td>!}[+ north_d_cps_seats +]{!</td>!}
@@ -694,7 +694,7 @@ title: We have achieved a majority!
 subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +])
 unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +]) We do not have enough support.
 view-if: ccf_ss_seats >= 28 
-on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
 
@@ -710,7 +710,7 @@ title: Could we rule in a minority?
 subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +])
 unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_seats +]) We do not have enough support.
 view-if: ccf_ss_seats <= 28 and largest_party = ccf_ss_name
-on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
 
@@ -728,7 +728,7 @@ title: Will the Liberals coalition with us?
 subtitle: LPS + [+ ccf_ss_name +] ([+ lps_coalition +])
 unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_r +]) We do not have enough support.
 view-if: lps_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 The LPS has demanded that we keep schools good. 
 
@@ -755,7 +755,7 @@ title: Could we coalition with the Liberals, Conservatives, and Progressives?
 subtitle: LPS + CPS + PPS + [+ ccf_ss_name +] ([+ grand_coalition +])
 unavailable-subtitle: [+ ccf_ss_name +] ([+ ccf_ss_r +]) We do not have enough support.
 view-if: grand_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_ss_in_government = 1; in_ccf_ss_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: premier = "Empty"; premier_party = ccf_ss_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_ss_name; foreign_minister = "Williams"; interior_minister_party = ccf_ss_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_ss_name; justice_minister = "Underhill"; labour_minister_party = ccf_ss_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_ss_name; rcmp_minister = "Leber"; economic_minister_party = ccf_ss_name; economic_minister = "Schmidt"; finance_minister_party = ccf_ss_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_ss_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 go-to: ministries
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
@@ -797,7 +797,7 @@ The CP(S) is still very reluctant to join a coalition, despite grassroots friend
 @tim_buck_premier
 choose-if: prime_minister == "JS Woodsworth" and managerial_strength + neorevisionist_strength < radical_strength
 unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if managerial_strength >= radical_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
-on-arrival: premier = "Tim Buck"; premier_party = "CP(S)"; cp_s_relation = 80; in_left_front = 1; ccf_ss_in_government = 1 
+on-arrival: premier = "Tim Buck"; premier_party = "CP(S)"; cp_s_relation = 80; in_left_front = 1; ccf_in_government = 1 
 
 With great reluctance, Prime Minister [+ prime_minister +] appoints [+ premier +] as premier.
 
@@ -822,7 +822,7 @@ go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: ccf_ss_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = ccf_ss_name; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_s_relation += 10
+on-arrival: ccf_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = ccf_ss_name; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_s_relation += 10
 go-to: left_coalition_no_civil_war
 achievement: einheitsfront
 
@@ -850,14 +850,14 @@ subtitle: CPS + PPS ([+ cooperative_coalition +]%)
 unavailable-subtitle: CPS + PPS ([+ cooperative_coalition +]%)
 view-if: cooperative_coalition >= 50
 choose-if: cooperative_coalition >= 50
-on-arrival: ccf_ss_in_government = 0; ccf_ss_toleration = 0; foreign_minister_party = "CPS"; interior_minister_party = "CPS"; justice_minister_party = "CPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "CPS"; agriculture_minister_party = "CPS"; in_cooperative_coalition = 1;
+on-arrival: ccf_in_government = 0; ccf_ss_toleration = 0; foreign_minister_party = "CPS"; interior_minister_party = "CPS"; justice_minister_party = "CPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "CPS"; agriculture_minister_party = "CPS"; in_cooperative_coalition = 1;
 
 Anderson's Cooperative Coalition has managed to attain another majority. 
 
 - @anderson_premier: Anderson holds steady
 
 @anderson_premier
-on-arrival: premier =  "Anderson"; premier_party = "CPS"; ccf_ss_in_government = 0; in_ccf_ss_majority = 0; 
+on-arrival: premier =  "Anderson"; premier_party = "CPS"; ccf_in_government = 0; in_ccf_majority = 0; 
 
 
 
@@ -876,11 +876,11 @@ if (Q.premier == "Brüning") {
     Q.cps_relation -= 5;
 }
 Q.pro_republic -= 8;
-Q.workers_ccf_ss -= 5;
-Q.new_middle_ccf_ss -= 5;
-Q.old_middle_ccf_ss -= 5;
-Q.farmers_ccf_ss -= 5;
-Q.catholics_ccf_ss -= 3;
+Q.workers_ccf -= 5;
+Q.new_middle_ccf -= 5;
+Q.old_middle_ccf -= 5;
+Q.farmers_ccf -= 5;
+Q.catholics_ccf -= 3;
 Q.new_middle_cps -= 8;
 Q.old_middle_cps -= 8;
 Q.new_middle_lps -= 5;
@@ -893,18 +893,18 @@ Q.farmers_scps += 6;
 Q.unemployed_scps += 5;
 // Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
 if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
-    Q.workers_ccf_ss -= 6;
+    Q.workers_ccf -= 6;
 }
 if (Q.pro_republic < 36) {
     // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Needham and the PPS.
     Q.pps_relation -= 5;
     Q.cps_relation -= 5;
-    Q.workers_ccf_ss *= 0.85;
-    Q.unemployed_ccf_ss -= 2;
-    Q.new_middle_ccf_ss -= 5;
-    Q.old_middle_ccf_ss -= 5;
-    Q.farmers_ccf_ss -= 5;
-    Q.catholics_ccf_ss -= 3;
+    Q.workers_ccf *= 0.85;
+    Q.unemployed_ccf -= 2;
+    Q.new_middle_ccf -= 5;
+    Q.old_middle_ccf -= 5;
+    Q.farmers_ccf -= 5;
+    Q.catholics_ccf -= 3;
     Q.workers_scps += 8;
     Q.old_middle_scps += 8;
     Q.new_middle_scps += 8;
@@ -927,7 +927,7 @@ The people's faith in democracy is shaken by this ordeal. Of course, the SCPSs a
 title: Tommy Douglas for Premier
 view-if: douglas_dead = 0
 subtitle: Douglas is popular within the party, and is the preferred candidate of the PPS and other parties.
-on-arrival: ccf_ss_in_government = 1; premier = "Douglas"; premier_party = ccf_ss_name; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_in_government = 1; premier = "Douglas"; premier_party = ccf_ss_name; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 Douglas's appointment as premier is approved by all our potential allies.
@@ -936,7 +936,7 @@ Douglas's appointment as premier is approved by all our potential allies.
 title: Major James Coldwell for Premier
 view-if: douglas_dead = 1
 subtitle: Major James Coldwell is a party leader, but can he also be premier?
-on-arrival: ccf_ss_in_government = 1; premier = "Coldwell"; premier_party = ccf_ss_name; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_in_government = 1; premier = "Coldwell"; premier_party = ccf_ss_name; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 Major James Coldwell's appointment as premier is approved by our potential allies.
@@ -955,7 +955,7 @@ The PPS party has significant qualms about appointing J. S. Woodsworth as premie
 @woodsworth_2
 subtitle: J. S. Woodsworth will be Premier.
 view-if: not historical_mode
-on-arrival: ccf_ss_in_government = 1; premier = "JS Woodsworth"; premier_party = ccf_ss_name; leverage -= 10; in_grand_coalition = 1 if in_lps_coalition == 0
+on-arrival: ccf_in_government = 1; premier = "JS Woodsworth"; premier_party = ccf_ss_name; leverage -= 10; in_grand_coalition = 1 if in_lps_coalition == 0
 go-to: ministries
 
 We have promised to let the PPS have more influence in the government in response to the appointment of J. S. Woodsworth as premier.
@@ -964,7 +964,7 @@ We have promised to let the PPS have more influence in the government in respons
 @pps_premier
 title: Let the PPS Party have their premier.
 subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: radical_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; ccf_ss_in_government = 1; leverage += 5
+on-arrival: radical_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; ccf_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
@@ -976,7 +976,7 @@ This is highly unexpected, and many in the left and agrarian of our party are cr
 title: Let Joseph Wirth of the PPS Party be premier.
 view-if: pps_party_leader == "Joos"
 subtitle: Wirth is on the left wing of the PPS Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: radical_dissent += 2; pps_relation += 6; lps_relation += 3; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; ccf_ss_in_government = 1; leverage += 5
+on-arrival: radical_dissent += 2; pps_relation += 6; lps_relation += 3; cp_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; ccf_in_government = 1; leverage += 5
 go-to: ministries
 
 
@@ -1014,26 +1014,26 @@ go-to: no_govt_2
 
 
 @no_govt_2
-on-arrival: managerial_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "Anderson"; ccf_ss_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_ccf_ss if right_coalition >= 50 and prime_minister != "JS Woodsworth" and year < 1929; new_elections_ccf_ss if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"
+on-arrival: managerial_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "Anderson"; ccf_in_government = 0; grand_coalition_failed = 1
+go-to: right_coalition_post_ccf if right_coalition >= 50 and prime_minister != "JS Woodsworth" and year < 1929; new_elections_ccf if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"
 
 
-@right_coalition_post_ccf_ss
+@right_coalition_post_ccf
 go-to: right_coalition_2
 
 @right_coalition_2
 unavailable-subtitle: The SCPS is not interested in a coalition with the PPS.
 view-if: right_coalition >= 50
 choose-if: year < 1929
-on-arrival: ccf_ss_in_government = 0; ccf_ss_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCPS"; justice_minister_party = "SCPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCPS"; in_right_coalition = 1;
+on-arrival: ccf_in_government = 0; ccf_ss_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCPS"; justice_minister_party = "SCPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCPS"; in_right_coalition = 1;
 
 Even though the SCPS is very reluctant to participate in such a coalition, they still accede to Prime Minister George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
 
 
 
 
-@new_elections_ccf_ss
-on-arrival: next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year = year + 1 if next_parl_election_month > 12; next_parl_election_month = next_parl_election_month - 12 if next_parl_election_month > 12; new_middle_ccf_ss -= 5; old_middle_ccf_ss -= 5; workers_ccf_ss -= 3; catholics_ccf_ss -= 3; in_election = 1
+@new_elections_ccf
+on-arrival: next_election_time = time+3; next_parl_election_month = month + 3; next_parl_election_year = year; next_parl_election_year = year + 1 if next_parl_election_month > 12; next_parl_election_month = next_parl_election_month - 12 if next_parl_election_month > 12; new_middle_ccf -= 5; old_middle_ccf -= 5; workers_ccf -= 3; catholics_ccf -= 3; in_election = 1
 
 Since the remaining bourgeois and right-wing parties cannot form a tolerable governing agreement, new elections have been called for [+ next_parl_election_month : month +] [+ next_parl_election_year +]. The previous premier has resigned, and has been replaced by Heinrich Brüning, also of the PPS Party, ruling as part of a prime ministerial cabinet. 
 

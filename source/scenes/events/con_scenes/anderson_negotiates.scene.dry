@@ -26,7 +26,7 @@ We may do well to promote a certain piece of legislation to prove our ability to
 
 @anderson_farmers_debt_moratorium
 subtitle: This pleases our farmer base
-on-arrival: farmers_ccf_ss += 5; moderate_strength += 5; radical_strength -= 5; moderate_dissent += 5; radical_dissent += 15; unemployed -= 2; economic_growth -= 2
+on-arrival: farmers_ccf += 5; moderate_strength += 5; radical_strength -= 5; moderate_dissent += 5; radical_dissent += 15; unemployed -= 2; economic_growth -= 2
 
 The Debt Moratorium Act has passed successfully, giving our farmer base a relief from the constant hounding of the banks. Such a 'radical' policy will likely drive investment away from the province for quite some time, if ever the status quo returns to the Prairies again. 
 
@@ -34,7 +34,7 @@ Many of our immigrant and Catholic base are disgusted at our compromise with And
 
 @anderson_labour_legislation
 subtitle: This expands our labour support
-on-arrival: workers_ccf_ss += 10; moderate_strength += 5; radical_strength -=5; unemployed += 2; economic_growth -= 2
+on-arrival: workers_ccf += 10; moderate_strength += 5; radical_strength -=5; unemployed += 2; economic_growth -= 2
 
 Anderson's government passes new labour legislation banning the use of scabs during collective bargaining negotations. In 1931, scabs had been the final straw for Bienfait Coal Mine workers, resulting in a violent escalation with the RCMP that killed 3 miners. 
 
@@ -50,7 +50,7 @@ choose-if: 1 == 2
 subtitle: This would be highly controversial...
 on-arrival: {! 
 Q.leverage = 6; 
-Q.ccf_ss_in_government = 1 
+Q.ccf_in_government = 1 
 Q.window.updateBar('left');
 !}
 go-to: election_1928.ministries

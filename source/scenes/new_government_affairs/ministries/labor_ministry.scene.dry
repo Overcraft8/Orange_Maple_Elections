@@ -3,8 +3,56 @@ new-page: true
 is-card: true
 tags: ministries
 on-arrival: labour_affairs_timer = 6; month_actions += 1; labour_affairs_seen = 1
-view-if: ccf_ss_in_government = 1 and labour_minister_party = ccf_ss_name and labour_affairs_timer = 0 and strike_term_seen = 0
+view-if: ccf_in_government = 1 and labour_minister_party = ccf_ss_name and labour_affairs_timer = 0 and strike_term_seen = 0
 card-image: img/organizations/ReliefWorkHighway.jpg
 is-pinned-card: true
 
+- @labour_legislation: Let us Amend Labour Legislation
+- @favour_labour: Favour Unions in Labour Disputes
+- @favour_business: Favour Business in Labour Disputes
 - @government_options.ministries_options: Return
+
+@favour_labour
+on-arrival: workers_ccf += 3*(1-dissent); 
+
+@favour_business
+subtitle: The right-wing parties will be pleased
+on-arrival: {! 
+Q.old_middle_ccf += 2*(1-(Q.dissent)); 
+
+Q.cps_relation += 3; 
+Q.scps_relation += 2; 
+
+if (Q.ccf_in_government && Q.cps_in_government) {Q.cps_relation += 2}; 
+if (Q.ccf_in_government && Q.scps_in_government) {Q.scps_relation += 1};
+
+Q.cp_s_relation -= 4;
+
+!}
+
+@labour_legislation
+on-arrival: {!
+
+// Minimum Wage: 
+if (Q.minimum_wage == 0) {
+    Q.min_wage_display = `<span color="c22f2f">Minimal</span>`;
+}
+
+!}
+
+= Labour Legislation
+
+Minimum Wage : [? if legislation.labour.minimum_wage = 0 : <span color="#c22f2f">Minimal</span> ?][? if legislation.labour.minimum_wage = 1 : <span color="#c2792f">Basic</span> ?][? if legislation.labour.minimum_wage = 2 : <span color="#8fc22f">Extensive</span> ?][? if legislation.labour.minimum_wage = 3 : <span color="#c22f2f">Living Wage Indexed</span> ?]
+
+Union Rights: [? if legislation.labour.union_rights = 0 : <span color="#c22f2f">Repressive</span>?][? if legislation.labour.union_rights = 1 : <span color="#c2792f">Basic Recognition</span> ?][? if legislation.labour.minimum_wage = 2 : <span color="#8fc22f">Mandatory Collective Bargaining</span> ?][? if legislation.labour.minimum_wage = 3 : <span color="#c22f2f">Closed-Shop Protection</span> ?]
+
+
+
+'labour': {
+        'workweek_hours': 1,            // 0: Unregulated (54+ hrs), 1: Mandatory 48-hour cap, 2: Mandatory 40-hour workweek, 3: 35-hour workweek
+        'right_to_strike': 1,           // 0: Banned/Police intervention, 1: Legal after mandatory conciliation, 2: Anti-injunction / Anti-scab protections
+        'workplace_safety': 1,          // 0: Weak factory acts, 1: Mandatory state safety inspections, 2: Workers' Compensation Board expansion
+        'unemployment_insurance': 0     // 0: Direct relief/work camps, 1: Non-contributory provincial relief, 2: Universal mandatory unemployment insurance
+        'crown_corps_workers_rep': 0,   // 0: None (State-managed), 1: Advisory worker councils, 2: Direct worker representation on corporate boards
+    }
+

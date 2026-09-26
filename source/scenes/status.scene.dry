@@ -322,8 +322,6 @@ Urban police loyalty: [+ city_police_loyalty : loyalty +]
 
 Support for Socialism: [+ socialism_support +]%
 
-
-
 @interior
 
 = Infrastructure
@@ -633,13 +631,6 @@ on-arrival: {!
             {!<td style="background-color: #8a4545;">!}[+ new_middle_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ old_middle_cp_s_display +]%{!</td>!}
         {!</tr>!}
-        [? if pps_exists : {!<tr>!}
-            {!<td>!}**PPS**{!</td>!}
-            {!<td style="background-color: #c8c288; ">!}[+ workers_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ unemployed_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ new_middle_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ old_middle_pps_display +]%{!</td>!} 
-        {!</tr>!} ?]
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
             {!<td style="background-color: #a86a77; ">!}[+ workers_lps_display +]%{!</td>!}
@@ -673,7 +664,7 @@ on-arrival: {!
 
 =                             Rural Polling
 
-{!<div style="width: 100%; max-width: 100%; overflow: visible; font-size: 1.05em; box-sizing: border-box;">!}
+{!<div style="width: 100%; max-width:npm install -g nodemon  100%; overflow: visible; font-size: 1.05em; box-sizing: border-box;">!}
 {!<table style='text-align: center; width: 100%; max-width: 100%;'>!}
         {!<tr>!}
             {!<th>Party</th>!}
@@ -693,12 +684,12 @@ on-arrival: {!
             {!<td style="background-color: #8a4545;">!}[+ farmhands_cp_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ rural_workers_cp_s_display +]%{!</td>!}
         {!</tr>!}
-        [? if pps_exists : {!<tr>!}
+        {!<tr>!}
             {!<td>!}**PPS**{!</td>!}
             {!<td style="background-color: #c8c288; ">!}[+ farmers_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ farmhands_pps_display +]%{!</td>!}
             {!<td style="background-color: #c8c288;">!}[+ rural_workers_pps_display +]%{!</td>!} 
-        {!</tr>!} ?]
+        {!</tr>!} 
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
             {!<td style="background-color: #a86a77; ">!}[+ farmers_lps_display +]%{!</td>!}

@@ -63,8 +63,8 @@ on-arrival: {!
         }
     }
 
-    Q[electricity_pie_chart] = window.GeneratePieChart(electricity_pieData);
-    Q[electricity_sources_pie_chart] = window.GeneratePieChart(sources_pieData);
+    Q['electricity_pie_chart'] = window.GeneratePieChart(electricity_pieData);
+    Q['electricity_sources_pie_chart'] = window.GeneratePieChart(sources_pieData);
 
 
 !}

@@ -11,6 +11,15 @@
     border-radius: 4px;
 }
 
+.main_panel {
+  width: 100%; 
+  background-size: cover;
+  background-position: center;
+}
+
+.gov_panel_title {font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;}
+.gov_text {font-family: Franklin Gothic Medium;background: var(--content-bg-color);border: 2px ridge #6c512e; padding:0.5em;}
+
 .gov_panel::before {
   opacity: 0.25;
 }

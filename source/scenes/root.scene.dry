@@ -982,6 +982,20 @@ Q.economic_data = {
     }, 
 };
 
+// Total amount of natural resources available
+Q.natural_resources = {
+    'electricity' : {
+        'coal' : 10, 
+        'hydro' : 5, 
+        'uranium' : 20, 
+        'natural_gas' : 10
+    }, 
+    'mining' : {
+        'potash' : 400, 
+        'coal' : 10
+    }
+}
+
 Q.crown_economic_pairs = {
     'saskpower' : 'electricity', 
     'sasktel' : 'telecoms',

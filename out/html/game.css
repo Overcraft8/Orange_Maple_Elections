@@ -1,7 +1,6 @@
 html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  touch-action: manipulation;
+  -webkit-text-size-adjust: 90%;
+  -ms-text-size-adjust: 90%;
 }
 
 body {
@@ -34,20 +33,6 @@ body {
   touch-action: manipulation;
 }
 
-button,
-a,
-li,
-.card,
-.status_button,
-.status_button_wide,
-.tab_button,
-.status_tab_button,
-.status_panel_card,
-.district,
-.pie_chart,
-.tooltip {
-  touch-action: manipulation;
-}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -229,26 +214,23 @@ ul.choices li .subtitle:has(> img) > img {
 }
 
 ul.choices li .subtitle:has(> img) > span {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  ul.choices li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    background: var(--link-hover-color);
-    z-index: 0;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+ul.choices li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--link-hover-color);
+  z-index: 0;
+}
 
-  ul.choices li:hover::before {
-    width: 100%;
-  }
+ul.choices li:hover::before {
+  width: 100%;
 }
 
 ul.choices li div.subtitle {
@@ -368,28 +350,7 @@ img.inline-img.icon {
   padding: 0; 
 }
 
-.top_button {
-  width: 20vh;
-  height: 10vh; 
-  box-sizing: border-box;
-  border: 1px solid #f1c40f;
-  cursor: pointer;
-  text-align: center; 
 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  line-height: 1.2; 
-}
-
-.top_button:hover {
-  background-color: #3d5f32;
-}
-
-.top_button.active {
-  background-color: #3d5f32;
-  border: 3px solid #f1c40f;
-}
 
 #stats_bottom_bar.tools {
   width: 100%;

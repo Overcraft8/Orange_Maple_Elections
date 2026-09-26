@@ -1,0 +1,23 @@
+
+(..0) <span style='color: #ff0000'> Nonexistent </span>
+(0..0.5) <span style='color: #ff1a00'> Negligible </span>
+(0.5..1) <span style='color: #ff4000'> Negligible </span>
+(1..1.5) <span style='color: #ff6600'> Negligible </span>
+(1.5..2) <span style='color: #ff8c00'> Negligile </span>
+(2..2.5) <span style='color: #ffb300'> Marginal </span>
+(2.5..3) <span style='color: #ffd900'> Marginal </span>
+(3..3.5) <span style='color: #f2f000'> Marginal </span>
+(3.5..4) <span style='color: #ccff00'> Modest </span>
+(4..4.5) <span style='color: #99ff00'> Modest </span>
+(4.5..5) <span style='color: #66ff00'> Modest </span>
+(5..5.5) <span style='color: #33ff00'> Modest </span>
+(5.5..6) <span style='color: #00ff00'> Substantial </span>
+(6..6.5) <span style='color: #00e600'> Substantial </span>
+(6.5..7) <span style='color: #00cc00'> Substantial </span>
+(7..7.5) <span style='color: #00b300'> Prominent </span>
+(7.5..8) <span style='color: #009900'> Prominent </span>
+(8..8.5) <span style='color: #008000'> Prominent </span>
+(8.5..9) <span style='color: #006600'> Major </span>
+(9..9.5) <span style='color: #004d00'> Major </span>
+(9.5..10) <span style='color: #004600'> Major </span>
+(10..) <span style='color: #004300'> Major </span>

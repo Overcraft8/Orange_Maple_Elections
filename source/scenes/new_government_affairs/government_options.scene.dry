@@ -102,7 +102,7 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
             <div class='tab_container'>
                 <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('saskpower_choices');">Saskpower Actions</div>
             </div>
-            <div class="net_return_panel">Net Return: [+ saskpower.profit +]</div>
+            <div class="net_return_panel">Annual Return: [+ saskpower.profit +]</div>
         </div>
     </div>
 
@@ -116,7 +116,7 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
             <div class='tab_container'>
                 <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.sasktel_choices');">SaskTel Actions</div>
             </div>
-            <div class="net_return_panel">Net Return: [+ sasktel.profit +]</div>
+            <div class="net_return_panel">Annual Return: [+ sasktel.profit +]</div>
         </div>
     </div>
 
@@ -130,7 +130,7 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
             <div class='tab_container'>
                 <div id='stc_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.stc_choices');">STC Actions</div>
             </div>
-            <div class="net_return_panel">Net Return: [+ stc.profit +]</div>
+            <div class="net_return_panel">Annual Return: [+ stc.profit +]</div>
         </div>
     </div>
 

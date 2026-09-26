@@ -1,5 +1,6 @@
 title: SaskPower
 subtitle: Saskatchewan Power Corporation
+new-page: true
 on-arrival: {!
     Q.saskpower_revenue_display = 0;
     var revenue = Q.saskpower.revenue
@@ -14,14 +15,11 @@ on-arrival: {!
 
     Q.saskpower_sheet = window.generate_crown_info(Q.saskpower);
     
-    
-
-
     var sectorData = Q.economic_data['electricity'];
 
     var market_shares = sectorData.marketshare; 
 
-    var pieData = {
+    var electricity_pieData = {
         privateSector: { 
             share: Math.round(market_shares.private * 100), 
             color: 'rgba(90, 90, 209, 0.9)', 
@@ -39,19 +37,38 @@ on-arrival: {!
         }
     };
 
-    Q[electricity_pie_chart] = window.GeneratePieChart(pieData);
+    var sources_final = {};
+    var total_sources = 0;
+
+    for (let source of Object.values(Q.saskpower.Power_sources)) {
+        total_sources += source;
+    }
+
+    for ()
+
+
+    var sources_pieData = {
+        coal : {
+            share: Math.round(sources_final.coal)
+        }
+    }
+
+    Q[electricity_pie_chart] = window.GeneratePieChart(electricity_pieData);
+    Q[electricity_sources_pie_chart] = window.GeneratePieChart(sources_final)
 
 
 !}
 
-<div id="saskpower_mandate" class="gov_panel" style="width: 100%; background-image: url('img/telecom_lines.jpg');background-size: cover;background-position: center;height:30em;">
-    {!<div class="panel_title" style="font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;">!}
-        The SaskPower Mandate
-    {!</div>!}
+<div id="saskpower_mandate" class="gov_panel main_gov_panel" style="background-image: url('img/telecom_lines.jpg');">
+    <div class="panel_title">
+        <span class="gov_panel_title">
+            The SaskPower Mandate
+        </span>
+    </div>
 
-    {!<div style="font-family: Franklin Gothic Medium;background: var(--content-bg-color);border: 2px ridge #6c512e; padding:0.5em;">!}
+    <div class="gov_text">
         SaskPower is the Crown Corporation dealing with power generation and distribution. Formed as the Saskatchewan Power Comission, it has made significant inroads into the private market, having purchased various independently-owned electrical utilities.
-    {!</div>!}
+    </div>
     
 #    <div style="display: flex;">
 #        <div class="gov_panel" style="background: var(--content-bg-color);">
@@ -62,7 +79,7 @@ on-arrival: {!
 #            Electrification Progress: <br> [+ electrification : electrification +]
 #        </div>
 #    </div>
-    <div style="display:flex;flex-direction:row;">
+    <div style="display:flex;flex-direction:row;flex-wrap:wrap">
         <div class="gov_panel" style="display:flex;flex-direction:column;">
         <span style="font-weight: bold; font-size: 1.05em; letter-spacing: 0.5px;">
                 Current SaskPower Electricity Rates
@@ -89,6 +106,15 @@ on-arrival: {!
                 [+ electricity_pie_chart +]
             </span>
         </div>
+
+        <div class="gov_panel" style="display:flex;flex-direction:column;">
+            <span style="font-weight: bold; font-size: 1.05em; letter-spacing: 0.5px;">
+                SaskPower Generation Sources
+            </span>
+            <span style="border-radius: 4px" class="panel_title">
+                [+ electricity_sources_pie_chart +]
+            </span>
+        </div>
     </div>
 
 </div>
@@ -113,6 +139,7 @@ on-arrival: {!
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies
 - @power_sellout: Sell Parts of SaskPower to Private Companies
+- @saskpower_construction: Construct new Power Generation Facilities
 - @rural_electrification: Expand Access to Electricity
 - @raise_saskpower_rates: Raise Electricity Rates
 - @lower_saskpower_rates: Lower Electricity Rates
@@ -120,7 +147,7 @@ on-arrival: {!
 
 
 @saskpower_monopoly
-subtitle: -[+ monopoly_cost +] budget, 100% Market Share, Increased Capital Flight
+subtitle: -[+ monopoly_cost +] budget
 view-if: 1 = 1
 choose-if: treasury >= 8
 on-arrival: {!
@@ -165,6 +192,11 @@ on-arrival: {!
 !}
 go-to: exit_gov
 
+@saskpower_construction
+new-page: true
+
+- @saskpower_choices: Return
+
 
 @rural_electrification
 subtitle: -1 budget
@@ -184,6 +216,7 @@ on-arrival: {!
     for (var c of Q.classes) {
         Q[c + '_ccf'] += 1
     };
+    Q.workers_ccf += 1;
 !}
 subtitle: -1 SaskPower revenue
 go-to: exit_gov

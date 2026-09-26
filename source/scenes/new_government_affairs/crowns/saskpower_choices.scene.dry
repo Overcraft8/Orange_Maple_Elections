@@ -40,7 +40,7 @@ on-arrival: {!
     var sources_final = {};
     var total_sources = 0;
 
-    for (let source of Object.values(Q.saskpower.Power_sources)) {
+    for (let source of Object.values(Q.saskpower.Power_Sources)) {
         total_sources += source;
     }
 
@@ -64,7 +64,7 @@ on-arrival: {!
     }
 
     Q[electricity_pie_chart] = window.GeneratePieChart(electricity_pieData);
-    Q[electricity_sources_pie_chart] = window.GeneratePieChart(sources_pieData)
+    Q[electricity_sources_pie_chart] = window.GeneratePieChart(sources_pieData);
 
 
 !}

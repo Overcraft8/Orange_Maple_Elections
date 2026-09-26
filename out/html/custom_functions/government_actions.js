@@ -23,7 +23,7 @@ window.generate_crown_info = function(crown_info) {
                             <span>${expense_cost}</span>
                         </div>`; 
     });
-    Expenses_HTML += `${expense_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
+    Expenses_HTML += `${expense_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;width:50%;">
                             <span>Total Expenses</span>
                             <span style="color: #bc312f;">${total_expense}</span>
                         </div>
@@ -41,13 +41,13 @@ window.generate_crown_info = function(crown_info) {
                             <span>${revenue_gain}</span>
                         </div>`; 
     });
-    Revenue_HTML += `${revenue_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
+    Revenue_HTML += `${revenue_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;width:50%;">
                             <span>Total Revenue</span>
                             <span style="color: #2d662d;">${total_revenue}</span>
                         </div>
                     </div>`;
 
-    var Summary_Panel = `<div style="background: rgba(0, 0, 0, 0.05); background-image: url('img/blank_paper.jpg'); background-size: cover; background-position: center; border: 3px solid #9c8c64; border-radius: 4px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;">
+    var Summary_Panel = `<div style="background: rgba(0, 0, 0, 0.05); background-image: url('img/blank_paper.jpg'); background-size: cover; background-position: center; border: 3px solid #9c8c64; border-radius: 4px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;width:100%">
                     <span style="font-size: 1.3em; font-weight: bold; margin-right: 0.5em;">Annual Return</span>
                     
                     <span style="font-size: 1.4em; padding: 4px 16px; background-color: #2c2c2c; border: 2px ridge #6c512e; border-radius: 4px; text-shadow: 1px 1px 2px #000;">

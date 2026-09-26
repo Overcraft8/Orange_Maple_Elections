@@ -10,7 +10,7 @@ on-arrival: {!
 
     Q.private_share = Q.economic_data.electricity.marketshare.private;
     Q.coop_share = Q.economic_data.electricity.marketshare.coop
-    Q.monopoly_cost = Math.round((Q.private_share + Q.coop_share)*10, 2);
+    Q.monopoly_cost = Math.round((Q.private_share + Q.coop_share)*10);
     console.log(Q.monopoly_cost);
 
     Q.saskpower_sheet = window.generate_crown_info(Q.saskpower);
@@ -44,20 +44,20 @@ on-arrival: {!
         total_sources += source;
     }
 
-    for (var [source, source_quantity] of Object.entries(Q.saskpower.Power_sources)) {
-        sources_final[source] = Math.round((source_quantity / total_sources) * 100, 2);
+    for (var [source, source_quantity] of Object.entries(Q.saskpower.Power_Sources)) {
+        sources_final[source] = Math.round((source_quantity / total_sources) * 100);
     }
     
 
 
     var sources_pieData = {
         coal : {
-            share: sources_final.coal || 0, 
+            share: sources_final.Coal || 0, 
             color: 'rgba(65, 65, 65, 0.9)', 
             tooltipInfo: 'Coal (Grey)' 
         }, 
         hydro : {
-            share: sources_final.hydro || 0, 
+            share: sources_final.Hydro || 0, 
             color: 'rgba(45, 138, 154, 0.9)', 
             tooltipInfo: 'Hydro (Blue)' 
         }
@@ -69,7 +69,7 @@ on-arrival: {!
 
 !}
 
-<div id="saskpower_mandate" class="gov_panel main_gov_panel" style="background-image: url('img/telecom_lines.jpg');">
+<div id="saskpower_mandate" class="gov_panel main_gov_panel" style="background-image: url('img/telecom_lines.jpg');width:100%;">
     <div class="panel_title">
         <span class="gov_panel_title">
             The SaskPower Mandate

@@ -339,7 +339,6 @@ img.inline-img.icon {
   background-color: #2b3a26 !important;
   border: 2px ridge #9c8c64;
   color: #ffffff;
-  transform: skew(20deg);
   width: 50vh;
   height: 10vh;
   box-sizing: border-box;
@@ -350,7 +349,28 @@ img.inline-img.icon {
   padding: 0; 
 }
 
+.top_button {
+  width: 20vh;
+  height: 10vh; 
+  box-sizing: border-box;
+  border: 1px solid #f1c40f;
+  cursor: pointer;
+  text-align: center; 
 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  line-height: 1.2; 
+}
+
+.top_button:hover {
+  background-color: #3d5f32;
+}
+
+.top_button.active {
+  background-color: #3d5f32;
+  border: 3px solid #f1c40f;
+}
 
 #stats_bottom_bar.tools {
   width: 100%;

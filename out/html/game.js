@@ -196,7 +196,7 @@ function getPartyIdeology(party, Q) {
         case 'CCF(SS)':
             if (Q.ccf_ss_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
             if (Q.ccf_ss_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left</span>  (Social Democracy)';
-            if (Q.ccf_ss_ideology === "Popular Front Socialism") return '<span style="color: #C42424;">Edgy Left Wing</span> (Popular Front Socialism)';
+            if (Q.ccf_ss_ideology === "Progressivism") return '<span style="color: #ecc22a;">Centre Left</span>  (Progressivism)';
             return 'Unknown';
         case 'PPS': 
             if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Agrarian Progressivism)';
@@ -207,17 +207,15 @@ function getPartyIdeology(party, Q) {
             if (Q.lps_ideology === "Centrism") return '<span style="color: #b97a7a;">Centrist</span> (Centrism)';
             return 'Unknown';
         case 'CPS': 
-            if (Q.cps_ideology === "Classical Conservatism") return '<span style="color: #2464c4;">Centre - Right Wing</span> (Conservatism)';
+            if (Q.cps_ideology === "Blue Toryism") return '<span style="color: #2464c4;">Centre - Right Wing</span> (Conservatism)';
             if (Q.cps_ideology === "Conservatism") return '<span style="color: #2464c4;">Centre - Right Wing</span> (Conservatism)';
-            if (Q.cps_ideology === "Paternalistic Conservatism") return '<span style="color: #b97a7a;">Centre Right</span> (Paternalistic Conservatism)';
+            if (Q.cps_ideology === "Red Toryism") return '<span style="color: #b97a7a;">Centre Right</span> (Paternalistic Conservatism)';
             if (Q.cps_ideology === "Nativist Conservatism") return '<span style="color: #8b3a3a;">Right Wing</span> (Nativist Conservatism)';
             if (Q.cps_ideology === "Conservative Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Populist conservatism))';
             return 'Unknown';
         case 'SCPS': 
-            if (Q.scps_ideology === "Social Credit") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
-            if (Q.scps_ideology === "Paternalistic Conservatism") return '<span style="color: #c45724;">Centre Right</span> (Paternalistic Conservatism)';
-            if (Q.scps_ideology === "Left Populism") return '<span style="color: #b97a7a;">Left Wing</span> (Left Populism)';
-            if (Q.scps_ideology === "Right Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
+            if (Q.scps_ideology === "Social Creditism") return '<span style="color: #2464c4;">Centre Right - Right Wing</span> (Social Credit Theory)';
+            if (Q.scps_ideology === "Right Wing Populism") return '<span style="color: #b97a7a;">Right Wing</span> (Right Populism))';
             return 'Unknown';
         // Organizations below
         default: 

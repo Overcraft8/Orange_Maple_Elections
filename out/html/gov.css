@@ -2,8 +2,8 @@
     width: 200px;
     box-sizing: border-box;
     flex-shrink: 0;
-    overflow: visible;
-    padding: 16px;
+    /* overflow: visible; */
+    padding: 13px;
     margin-bottom: 1em;
     margin-right: 1em;
     background: var(--content-bg-color);
@@ -36,7 +36,7 @@
 .revenue_expense_panel {
   flex: 1;
   margin:0.2em;
-  width:18em;
+  width:25em;
   background: linear-gradient( color-mix(in srgb, var(--content-bg-color, #e8dcc3) 70%, transparent), rgba(255, 255, 255, 0.4) ), url('img/blank_paper.jpg') center/cover;
   background-size: cover;
   background-position: center;
@@ -79,6 +79,43 @@
     overflow-x: scroll; 
 }
 
+.gov_stats .project_container, 
+#crown_corps_panel .project_container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex: 1 1 auto; 
+}
+
+.gov_header {
+    background: #504c46;
+    border-bottom: 3px solid #6c512e;
+    padding: 14px 18px 12px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gov_dashboard {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    padding: 0 16px 16px 16px;
+    box-sizing: border-box;
+}
+
+.gov_stat_label {
+    margin-top: auto;
+    padding-top: 8px;
+    color: #6c6255;
+    font-family: Arial, sans-serif;
+    font-size: 0.75em;
+    text-align: center;
+}
+
 .gov_stats {
     display: flex;
     flex-direction: column;
@@ -88,21 +125,36 @@
     gap: 0.5rem;
 }
 
-.gov_stats .project_container, 
-#crown_corps_panel .project_container {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    flex: 1 1 auto; 
-}
+
+/* Pie charts Info */
 
 .pie_chart {
-    width: 50px;
-    height: 50px;
-    max-width: 100%;
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    margin: 0;
     border-radius: 50%;
-    margin: 8px auto 0 auto;
     box-sizing: border-box;
+    border: 2px solid rgba(31, 21, 9, 0.45);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.chart_legend {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.78em;
+
+    color: #504c46;
+}
+
+.chart_legend div {
+    white-space: nowrap;
 }
 
 
@@ -114,6 +166,17 @@
     flex-direction: column;
     align-items: center;
     padding: 0.2em;
+}
+
+.gov_stat_title {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #9c8c64;
+    color: #504c46;
+    font-family: "Franklin Gothic Medium", Arial, sans-serif;
+    font-size: 0.98em;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    text-align: center;
 }
 
 

@@ -92,6 +92,11 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 
         container.innerHTML = barHtml;
     }
+
+    if (typeof window.__customGenerateBarAttempts === 'undefined') {
+        window.__customGenerateBarAttempts = 0;
+    }
+    window.__customGenerateBarAttempts = 0;
     renderBar();
 };
 

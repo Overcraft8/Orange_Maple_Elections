@@ -80,31 +80,31 @@ on-arrival: {!
     <div class="gov_dashboard">
         <div class="gov_panel" style="display:flex;flex-direction:column;">
         <span class="gov_stat_title">Current SaskPower Electricity Rates</span>
-            <div style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">!}
                 [+ saskpower.revenue.rates : saskpower_rates +]
-            </div>
+            {!</div>
             <div class="gov_stat_label">Cost on Consumers</div>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electrification Progress</span>
-            <div style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">!}
                 [+ electrification : electrification +]
-            </div>
+            {!</div>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electricity Market Shares</span>
-            <div style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">!}
                 [+ electricity_pie_chart +]
-            </div>
+            {!</div>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">SaskPower Generation Sources</span>
-            <div style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">!}
                 [+ electricity_sources_pie_chart +]
-            </div>
+            {!</div>!}
             [? if saskpower.Power_Sources.Coal > 0 :
                 <div id="sources_legend">
                     <span class="legend_dot coal"></span> <strong>[+ Coal_share +]%</strong> 
@@ -114,7 +114,7 @@ on-arrival: {!
                 <div id="sources_legend">
                     <span class="legend_dot hydro"></span> <strong>[+ Hydro_share +]%</strong> 
                 </div> 
-            ?]
+            ?]{!
         </div>
     </div>
 

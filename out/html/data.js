@@ -360,6 +360,14 @@ const colourList = [{
         style: "color: #e0452a; font-weight: bold;"
     },
     {
+        word: ['Social Democracy'], 
+        style: "color: #e06a2a; font-weight: bold;"
+    },
+    {
+        word: ['Socialism'], 
+        style: "color: #e0452a; font-weight: bold;"
+    },
+    {
         word: 'Communist', 
         style: "color: #861a1a; font-weight: bold;"
     },

@@ -46,6 +46,7 @@ on-arrival: {!
 
     for (var [source, source_quantity] of Object.entries(Q.saskpower.Power_Sources)) {
         sources_final[source] = Math.round((source_quantity / total_sources) * 100);
+        Q[source + '_share'] = sources_final[source];
     }
     
 
@@ -78,31 +79,41 @@ on-arrival: {!
     <div class="gov_dashboard">
         <div class="gov_panel" style="display:flex;flex-direction:column;">
         <span class="gov_stat_title">Current SaskPower Electricity Rates</span>
-            <span style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">
                 [+ saskpower.revenue.rates : saskpower_rates +]
-            </span>
+            </div>
             <div class="gov_stat_label">Cost on Consumers</div>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electrification Progress</span>
-            <span style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">
                 [+ electrification : electrification +]
-            </span>
+            </div>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electricity Market Shares</span>
-            <span style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">
                 [+ electricity_pie_chart +]
-            </span>
+            </div>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">SaskPower Generation Sources</span>
-            <span style="border-radius: 4px" class="gov_chart_row">
+            <div style="border-radius: 4px" class="gov_chart_row">
                 [+ electricity_sources_pie_chart +]
-            </span>
+            </div>
+            [? if saskpower.Power_Sources.Coal > 0 :
+                <div id="sources_legend">
+                    <span class="legend_dot coal"></span> <strong>[+ Coal_share +]%</strong> 
+                </div> 
+            ?]
+            [? if saskpower.Power_Sources.Hydro > 0 :
+                <div id="sources_legend">
+                    <span class="legend_dot hydro"></span> <strong>[+ Hydro_share +]%</strong> 
+                </div> 
+            ?]
         </div>
     </div>
 

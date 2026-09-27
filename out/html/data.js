@@ -143,7 +143,7 @@ const colourList = [{
         style: "color: #D26E28; font-weight: bold;"
     },
     {
-        word: ['CCF', 'Cooperative Commonwealth Federation'],
+        word: ['CCF', 'Cooperative Commonwealth Federation', 'Cooperative Commonwealth Federation (Farmer-Labour-Socialist)'],
         style: "color: #D26E28; font-weight: bold;"
     },
     {
@@ -364,7 +364,7 @@ const colourList = [{
         style: "color: #e06a2a; font-weight: bold;"
     },
     {
-        word: ['Socialism'], 
+        word: ['Socialism', 'Democratic Socialism'], 
         style: "color: #e0452a; font-weight: bold;"
     },
     {

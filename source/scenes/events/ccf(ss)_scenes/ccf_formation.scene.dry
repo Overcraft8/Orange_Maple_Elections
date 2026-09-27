@@ -1,4 +1,5 @@
 title: Birth of a Party
+subtitle: A Meeting in Calgary
 tags: event
 view-if: year = 1932 and month = 5
 priority: 2
@@ -37,7 +38,7 @@ Our vocalness about an avowedly Socialist name garners us the goodwill of the BC
 While the Saskatchewan and British Columbia blocs form a large delegation, second only to Ontario, the name "Cooperative Commonwealth Federation (Farmer-Labour-Socialist)" is ultimately selected. 
 
 @ccf_name_ccf
-subtitle: Seems like this one is the majority choice
+subtitle: Seems like this is the majority choice
 on-arrival: moderate_strength += 5
 go-to: attend_ccf_formation
 
@@ -50,6 +51,18 @@ face-image: img/CCF_logo.jpg
 
 The meeting is fruitful in establishing the basis of the new Dominion party. A provisional platform has been drafted, though a second national convention in Regina is set for next year to finalize our program and constitution. 
 
-Our delegates leave Calgary united under a single federation, bringing together various progressive groups interested in profound economic and social change: the Socialist Party of Canada (Primarily of BC), United Farmers of Alberta, Dominion Labor Party (Alberta), Canadian Labour Party (Alberta), United Farmers of Canada (Saskatchewan Section), Independent Labour Party (Manitoba), and the Canadian Brotherhood of Railway Employees.
+Our delegates leave Calgary united under a single federation, bringing together various progressive groups interested in profound economic and social change: 
+
+The Socialist Party of Canada (Primarily of BC), 
+
+United Farmers of Alberta, Dominion Labor Party (Alberta), 
+
+Canadian Labour Party (Alberta), 
+
+United Farmers of Canada (Saskatchewan Section), 
+
+Independent Labour Party (Manitoba), 
+
+and the Canadian Brotherhood of Railway Employees.
 
 The organizations have agreed to a 14-point provisional program calling for the socialization of finance, public ownership of utilities, and comprehensive social legislation. For the first time in Canadian history, a united front of Labour, Farmers, and Socialists will contest Dominion politics on a unified platform. 

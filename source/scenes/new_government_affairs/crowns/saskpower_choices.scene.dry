@@ -78,7 +78,7 @@ on-arrival: {!
     </div>
     
     <div class="gov_dashboard">
-        <div class="gov_panel" style="display:flex;flex-direction:column;">
+        <div class="info_panel" style="display:flex;flex-direction:column;">
         <span class="gov_stat_title">Current SaskPower Electricity Rates</span>
             <div style="border-radius: 4pxfont-size:1.5em;" class="gov_chart_row">!}
                 [+ saskpower.revenue.rates : saskpower_rates +]
@@ -86,7 +86,7 @@ on-arrival: {!
             <div class="gov_stat_label">Cost on Consumers</div>
         </div>
 
-        <div class="gov_panel" style="display:flex;flex-direction:column;">
+        <div class="info_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electrification Progress</span>
             <div style="border-radius: 4px;font-size:1.5em;" class="gov_chart_row">!}
                 [+ electrification : electrification +]
@@ -94,14 +94,14 @@ on-arrival: {!
             <div id="electrification_progress_bar"></div>
         </div>
 
-        <div class="gov_panel" style="display:flex;flex-direction:column;">
+        <div class="info_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electricity Market Shares</span>
             <div style="border-radius: 4px" class="gov_chart_row">!}
                 [+ electricity_pie_chart +]
             {!</div>
         </div>
 
-        <div class="gov_panel" style="display:flex;flex-direction:column;">
+        <div class="info_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">SaskPower Generation Sources</span>
             <div style="border-radius: 4px" class="gov_chart_row">!}
                 [+ electricity_sources_pie_chart +]

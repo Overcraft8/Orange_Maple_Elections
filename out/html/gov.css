@@ -1,12 +1,25 @@
 .gov_panel {
     min-height: 150px;
-    width: 100%;
+    width: 300px;
     box-sizing: border-box;
     flex-shrink: 0;
     /* overflow: visible; */
     padding: 13px;
     margin-bottom: 1em;
-    /* margin-right: 1em; */
+    margin-right: 1em;
+    background: var(--content-bg-color);
+    border: 3px solid #9c8c64;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px black;
+}
+
+.info_panel {
+  min-height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 13px;
+    margin-bottom: 1em;
     background: var(--content-bg-color);
     border: 3px solid #9c8c64;
     border-radius: 4px;
@@ -80,10 +93,14 @@
 
 
 .h1_gov {
+    border: 1px dashed black;
+    background: rgb(114 97 64);
     text-align: center;
     font-weight: bold; 
-    font-size: 1.3em;
-    text-decoration: underline;
+    font-size: 1.8em;
+    font-family: Georgia, "Frankin Gothic Medium", Arial;
+    padding: 0.2em;
+    color: #f1f1f1;
 }
 
 #crown_corps_panel {

@@ -93,7 +93,7 @@
 
 
 .h1_gov {
-    border: 1px dashed black;
+    border: 2px dashed black;
     background: rgb(114 97 64);
     text-align: center;
     font-weight: bold; 
@@ -131,7 +131,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     place-items: center;
-    gap: 5px;
+    gap: 10px;
     padding: 0 16px 16px 16px;
     box-sizing: border-box;
     margin-top: 1em;
@@ -181,13 +181,9 @@
 .chart_legend {
     display: flex;
     flex-direction: column;
-
     gap: 7px;
-
     font-family: Arial, sans-serif;
-
     font-size: 0.78em;
-
     color: #504c46;
 }
 
@@ -215,6 +211,38 @@
     font-weight: bold;
     letter-spacing: 0.4px;
     text-align: center;
+}
+
+/* 
+---------------------
+ Below are dots/circles
+ ----------------
+ */ 
+
+
+ .legend_dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 21, 9, 0.4);
+}
+
+.legend_dot.private {
+    background: rgba(90, 90, 209, 0.9);
+}
+
+.legend_dot.crown {
+    background: rgba(222, 157, 103, 0.9);
+}
+
+.legend_dot.coal {
+    background: rgba(65, 65, 65, 0.9);
+}
+
+.legend_dot.hydro {
+    background: rgba(45, 138, 154, 0.9);
 }
 
 

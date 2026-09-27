@@ -83,7 +83,7 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 
         var barHtml = 
             '<div class="tooltip" style="position: relative; width: 100%;">' + 
-                '<div style="height: 8px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
+                '<div style="height: 15px; background: ' + outercolor + '; border-radius: 4px; overflow: hidden; border: 1px solid #000000;">' +
                     '<div style="background: ' + innercolor + '; opacity: 0.7; height: 100%; width: ' + widthPercent + '%; transition: width 0.4s;"></div>' +
                 '</div>' +
                 '<span id="' + elementID + '_tooltip" class="tooltip-text" style="text-align: center;">' + finalTooltipText + '</span>' + 

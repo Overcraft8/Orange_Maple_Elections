@@ -69,25 +69,16 @@ on-arrival: {!
 
 !}
 
-<div id="saskpower_mandate" class="gov_panel main_panel" style="background-image: url('img/telecom_lines.jpg');">
+<div id="saskpower_mandate" class="main_panel" style="background-image: url('img/telecom_lines.jpg');">
     <div class="gov_header">
         <span class="gov_panel_title">The SaskPower Mandate</span>
         <span class="gov_header_subtitle">Saskatchewan Power Corporation</span>
     </div>
     
-#    <div style="display: flex;">
-#        <div class="gov_panel" style="background: var(--content-bg-color);">
-#            Current SaskPower Electricity Rates: <br> [+ saskpower.revenue.rates : saskpower_rates +]
-#        </div>
-#
-#        <div class="gov_panel" style="background: var(--content-bg-color);">
-#            Electrification Progress: <br> [+ electrification : electrification +]
-#        </div>
-#    </div>
-    <div style="gov_dashboard">
+    <div class="gov_dashboard">
         <div class="gov_panel" style="display:flex;flex-direction:column;">
         <span class="gov_stat_title">Current SaskPower Electricity Rates</span>
-            <span style="border-radius: 4px" class="panel_title">
+            <span style="border-radius: 4px" class="gov_chart_row">
                 [+ saskpower.revenue.rates : saskpower_rates +]
             </span>
             <div class="gov_stat_label">Cost on Consumers</div>
@@ -95,21 +86,21 @@ on-arrival: {!
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electrification Progress</span>
-            <span style="border-radius: 4px" class="panel_title">
+            <span style="border-radius: 4px" class="gov_chart_row">
                 [+ electrification : electrification +]
             </span>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electricity Market Shares</span>
-            <span style="border-radius: 4px" class="panel_title">
+            <span style="border-radius: 4px" class="gov_chart_row">
                 [+ electricity_pie_chart +]
             </span>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">SaskPower Generation Sources</span>
-            <span style="border-radius: 4px" class="panel_title">
+            <span style="border-radius: 4px" class="gov_chart_row">
                 [+ electricity_sources_pie_chart +]
             </span>
         </div>

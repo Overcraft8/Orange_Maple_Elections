@@ -12,12 +12,24 @@
 }
 
 .main_panel {
+  border: 2px solid #9c8c64;
   width: 100%; 
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(31, 21, 9, 0.18);
 }
 
-.gov_panel_title {font-family: Georgia, Franklin Gothic Medium, Arial; font-size: 2em; padding: 0.5em;}
+.gov_panel_title {
+    font-family: Georgia, "Franklin Gothic Medium", Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-align: center;
+}
+
 .gov_text {font-family: Franklin Gothic Medium;background: var(--content-bg-color);border: 2px ridge #6c512e; padding:0.5em;}
 
 .gov_panel::before {
@@ -94,8 +106,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .gov_dashboard {
@@ -125,6 +136,15 @@
     gap: 0.5rem;
 }
 
+.gov_chart_row {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding-top: 12px;
+}
+
 
 /* Pie charts Info */
 
@@ -136,8 +156,7 @@
     border-radius: 50%;
     box-sizing: border-box;
     border: 2px solid rgba(31, 21, 9, 0.45);
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 }
 
 .chart_legend {

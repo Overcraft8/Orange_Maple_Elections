@@ -23,7 +23,7 @@ window.generate_crown_info = function(crown_info) {
                             <span>${expense_cost}</span>
                         </div>`; 
     });
-    Expenses_HTML += `${expense_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;width:50%;">
+    Expenses_HTML += `${expense_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
                             <span>Total Expenses</span>
                             <span style="color: #bc312f;">${total_expense}</span>
                         </div>
@@ -41,7 +41,7 @@ window.generate_crown_info = function(crown_info) {
                             <span>${revenue_gain}</span>
                         </div>`; 
     });
-    Revenue_HTML += `${revenue_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;width:50%;">
+    Revenue_HTML += `${revenue_list}<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2em; border-top: 2px solid #9c8c64; padding-top: 8px; font-weight: bold;">
                             <span>Total Revenue</span>
                             <span style="color: #2d662d;">${total_revenue}</span>
                         </div>

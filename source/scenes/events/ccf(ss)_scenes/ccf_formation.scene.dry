@@ -8,32 +8,48 @@ max-visits: 1
 
 <div class="face-figure" style="max-width:100%;width:500px;"><img class="face-img" src="img/ccf_founding.jpg"></div>
 
-The Left of Canadian politics has historically been fraught with division and isolation. The Progressive Party failed miserably to mount a united front against the two old-line parties and party in-fighting destroyed any respect it once held. Out of its ashes sprung the United Farmer's Parties but then still, they remain divided along Provincial lines, unable to contest the Prime Ministership. 
+[ The *Left* of Canadian politics has historically been fraught with division and isolation. The Progressive Party failed miserably to mount a united front against the two old-line parties and party in-fighting destroyed any respect it once held. Out of its ashes sprung the United Farmer's Parties but then still, they remain divided along Provincial lines, unable to contest the Prime Ministership. 
 
 The Political Labour movement is doing even worse. The TLC has been noncommittal at best to the Labour and Socialist parties. What few Leftist parties exist are divided geographically and ideologically, from the Marxists of the Socialist Party of Canada to the moderates of the Independent Labour Party in Manitoba. 
 
-Now however, a collection of Labour, Farmer, and Socialist organizations are set to meet in Calgary to discuss the formation of a new Party devoted to the cause of Socialism and Social Democracy
+Now however, a collection of Labour, Farmer, and Socialist organizations are set to meet in Calgary to discuss the formation of a new Party devoted to the cause of Socialism and Social Democracy. ]
 
 Delegates from the UFC(SS) and our ILP members have been invited to the meeting. Now we must establish what exactly we will clamour for...
 
 - @ccf_name: What name will we advocate for the new party?
-- @ccf_policy: Do we seek a purely Socialist Federal Party or a Big-tent Reform Coalition?
 
 @ccf_name
 on-arrival: ccf_name_passed = 1
 view-if: ccf_name_passed = 0
 
-The name of the new party is highly significant. Delegates from the Socialist Party of Canada propose 
+The name of the new party is highly significant. Delegates from BC, with backgrounds in the old Socialist Labour tradition of the province, propose the name 'Socialist Party of Canada'. Other proposals include 'United Workers Commonwealth' and 'National Worker's Political Federation', both unrepresentative of the significant farm bloc present. 
 
-@ccf_policy
+- @ccf_name_spc: Clamour for 'Socialist Party of Canada'. 
+- @ccf_name_ccf: Let's go with 'Cooperative Commonweath Federation (Farmer-Labour-Socialist)'
 
-- @attend_ccf_formation: We send delegates representing the UFC(SS) and the former Saskatchewan ILP
+@ccf_name_spc
+subtitle: Supported by the BC Delegation
+on-arrival: ccf_bc_relation += 5; radical_strength += 3; radical_dissent -= 3; moderate_strength -= 3; moderate_dissent += 4
+go-to: attend_ccf_formation
+
+Our vocalness about an avowedly Socialist name garners us the goodwill of the BC delegation, headed under Ernest Winch. 
+
+While the Saskatchewan and British Columbia blocs form a large delegation, second only to Ontario, the name "Cooperative Commonwealth Federation (Farmer-Labour-Socialist)" is ultimately selected. 
+
+@ccf_name_ccf
+subtitle: Seems like this one is the majority choice
+on-arrival: moderate_strength += 5
+go-to: attend_ccf_formation
+
+The name "Cooperative Commonwealth Federation (Farmer-Labour-Socialist)" is adopted. 
 
 @attend_ccf_formation 
-face-image: img/ccf_founding.jpg
+face-image: img/CCF_logo.jpg
 
-= The New Face of Socialism
+= The New Face of the *Left*
 
-The meeting is fruitful, bringing together various progressive groups interested in profound economic and social change and includes the -> Socialist Party of Canada (Primarily of BC), United Farmers of Alberta (Alberta), Dominion Labor Party (Alberta), Canadian Labour Party (Primarily Alberta), United Farmers of Canada (Saskatchewan Section), Independent Labour Party (Manitoba), and the Canadian Brotherhood of Railway Employees.
+The meeting is fruitful in establishing the basis of the new Dominion party. A provisional platform has been drafted, though a second national convention in Regina is set for next year to finalize our program and constitution. 
 
-The organizations have agreed to a 
+Our delegates leave Calgary united under a single federation, bringing together various progressive groups interested in profound economic and social change: the Socialist Party of Canada (Primarily of BC), United Farmers of Alberta, Dominion Labor Party (Alberta), Canadian Labour Party (Alberta), United Farmers of Canada (Saskatchewan Section), Independent Labour Party (Manitoba), and the Canadian Brotherhood of Railway Employees.
+
+The organizations have agreed to a 14-point provisional program calling for the socialization of finance, public ownership of utilities, and comprehensive social legislation. For the first time in Canadian history, a united front of Labour, Farmers, and Socialists will contest Dominion politics on a unified platform. 

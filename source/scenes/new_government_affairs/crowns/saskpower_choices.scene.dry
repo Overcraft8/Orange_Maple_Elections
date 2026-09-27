@@ -70,10 +70,11 @@ on-arrival: {!
 
 !}
 
+{!
 <div id="saskpower_mandate" class="main_panel" style="background-image: url('img/telecom_lines.jpg');">
     <div class="gov_header">
-        <span class="gov_panel_title">The SaskPower Mandate</span>
-        <span class="gov_header_subtitle">Saskatchewan Power Corporation</span>
+        <span class="gov_panel_title" style="margin-bottom:0.2em;">The SaskPower Mandate</span>
+        <span style="color: var(--sidebar-bg-color);">Saskatchewan Power Corporation</span>
     </div>
     
     <div class="gov_dashboard">
@@ -118,7 +119,7 @@ on-arrival: {!
     </div>
 
 </div>
-
+!}
 
 # <div style="display: flex; flex-direction: row;">
 #     <div class="gov_panel">

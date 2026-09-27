@@ -1,11 +1,12 @@
 .gov_panel {
-    width: 200px;
+    min-height: 150px;
+    width: 100%;
     box-sizing: border-box;
     flex-shrink: 0;
     /* overflow: visible; */
     padding: 13px;
     margin-bottom: 1em;
-    margin-right: 1em;
+    /* margin-right: 1em; */
     background: var(--content-bg-color);
     border: 3px solid #9c8c64;
     border-radius: 4px;
@@ -111,11 +112,12 @@
 
 .gov_dashboard {
     display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(190px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    place-items: center;
+    gap: 5px;
     padding: 0 16px 16px 16px;
     box-sizing: border-box;
+    margin-top: 1em;
 }
 
 .gov_stat_label {

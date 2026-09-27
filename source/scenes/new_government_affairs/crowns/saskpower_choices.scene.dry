@@ -66,7 +66,7 @@ on-arrival: {!
 
     Q['electricity_pie_chart'] = window.GeneratePieChart(electricity_pieData);
     Q['electricity_sources_pie_chart'] = window.GeneratePieChart(sources_pieData);
-
+    window.customgeneratebar(Q.electrification, "#6e7b18", "#c9cb2d", "electrification_progress_bar");
 
 !}
 
@@ -80,7 +80,7 @@ on-arrival: {!
     <div class="gov_dashboard">
         <div class="gov_panel" style="display:flex;flex-direction:column;">
         <span class="gov_stat_title">Current SaskPower Electricity Rates</span>
-            <div style="border-radius: 4px" class="gov_chart_row">!}
+            <div style="border-radius: 4pxfont-size:1.5em;" class="gov_chart_row">!}
                 [+ saskpower.revenue.rates : saskpower_rates +]
             {!</div>
             <div class="gov_stat_label">Cost on Consumers</div>
@@ -88,9 +88,10 @@ on-arrival: {!
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electrification Progress</span>
-            <div style="border-radius: 4px" class="gov_chart_row">!}
+            <div style="border-radius: 4px;font-size:1.5em;" class="gov_chart_row">!}
                 [+ electrification : electrification +]
             {!</div>
+            <div id="electrification_progress_bar"></div>
         </div>
 
         <div class="gov_panel" style="display:flex;flex-direction:column;">
@@ -107,12 +108,12 @@ on-arrival: {!
             {!</div>!}
             [? if saskpower.Power_Sources.Coal > 0 :
                 <div id="sources_legend">
-                    <span class="legend_dot coal"></span> <strong>[+ Coal_share +]%</strong> 
+                    <div class="legend_dot coal"></div> <strong>Coal: [+ Coal_share +]%</strong> 
                 </div> 
             ?]
             [? if saskpower.Power_Sources.Hydro > 0 :
                 <div id="sources_legend">
-                    <span class="legend_dot hydro"></span> <strong>[+ Hydro_share +]%</strong> 
+                    <div class="legend_dot hydro"></div> <strong>Hydro: [+ Hydro_share +]%</strong> 
                 </div> 
             ?]{!
         </div>

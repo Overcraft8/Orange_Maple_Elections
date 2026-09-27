@@ -60,7 +60,7 @@ function GeneratePieChart(data, container_id = null) {
 
 
 
-window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip) {
+window.customgeneratebar = function(data, outercolor, innercolor, elementID, tooltip = null) {
 
     function renderBar() {
 
@@ -92,11 +92,6 @@ window.customgeneratebar = function(data, outercolor, innercolor, elementID, too
 
         container.innerHTML = barHtml;
     }
-
-    if (typeof window.__customGenerateBarAttempts === 'undefined') {
-        window.__customGenerateBarAttempts = 0;
-    }
-    window.__customGenerateBarAttempts = 0;
     renderBar();
 };
 

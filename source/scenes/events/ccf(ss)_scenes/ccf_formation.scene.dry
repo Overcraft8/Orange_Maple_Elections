@@ -4,24 +4,24 @@ view-if: year = 1932 and month = 5
 priority: 2
 max-visits: 1
 
-In the city of Calgary, there are rumblings that a new Dominion-spanning party is soon to be formed by delegates of Labour, Farmer, and Socialist organizations. 
+= Birth of a Party
 
-The Left of Canadian politics has historically been fraught with division and isolation. The Federal Progressives failed miserably to mount a united front against the two old-line parties and consequently lost relevance. Out of its ashes sprung the Farmer's Parties but then still, they remain divided along Provincial lines. 
+The Left of Canadian politics has historically been fraught with division and isolation. The Progressive Party failed miserably to mount a united front against the two old-line parties and party in-fighting destroyed any respect it once held. Out of its ashes sprung the United Farmer's Parties but then still, they remain divided along Provincial lines, unable to contest the Prime Ministership. 
 
-The Labour movement is doing even worse. The TLC has been noncommittal at best to the Labour and Socialist parties. And what few Leftist parties exist are divided geographically and ideologically. Without a united front, success is scarce.  
+The Political Labour movement is doing even worse. The TLC has been noncommittal at best to the Labour and Socialist parties. What few Leftist parties exist are divided geographically and ideologically, from the Marxists of the Socialist Party of Canada to the moderates of the Independent Labour Party in Manitoba. 
 
-The Meeting is set to establish the basis of the party before a future convention is called to lay out a specific programme. 
+Now however, a collection of Labour, Farmer, and Socialist organizations are set to meet in Calgary. The Calgary Meeting is set to establish the basis of the party before a future convention is called to lay out a specific programme. 
 
-Delegates from the UFC(SS) and our ILP members have been invited to the meeting. Now, we must establish what exactly we will ask for...
+Delegates from the UFC(SS) and our ILP members have been invited to the meeting. Now we must establish what exactly we will ask for...
 
 - @ccf_name: What name will we advocate for the new party?
-- @ccf_policy: Do we seek a more radical or more moderate route for the party?
+- @ccf_policy: Do we seek a purely Socialist Federal Party or a Big-tent Reform Coalition?
 
 @ccf_name
 on-arrival: ccf_name_passed = 1
 view-if: ccf_name_passed = 0
 
-The name of the new party is very important. It could be a symbol of our 
+The name of the new party is highly significant. Delegates from the Socialist Party of Canada propose 
 
 @ccf_policy
 

@@ -80,7 +80,7 @@ on-arrival: {!
     <div class="gov_dashboard">
         <div class="info_panel" style="display:flex;flex-direction:column;">
         <span class="gov_stat_title">Current SaskPower Electricity Rates</span>
-            <div style="border-radius: 4pxfont-size:1.5em;" class="gov_chart_row">!}
+            <div style="border-radius: 4px;font-size:1.8em;" class="gov_chart_row">!}
                 [+ saskpower.revenue.rates : saskpower_rates +]
             {!</div>
             <div class="gov_stat_label">Cost on Consumers</div>
@@ -88,7 +88,7 @@ on-arrival: {!
 
         <div class="info_panel" style="display:flex;flex-direction:column;">
             <span class="gov_stat_title">Electrification Progress</span>
-            <div style="border-radius: 4px;font-size:1.5em;" class="gov_chart_row">!}
+            <div style="border-radius: 4px;font-size:1.8em;" class="gov_chart_row">!}
                 [+ electrification : electrification +]
             {!</div>
             <div id="electrification_progress_bar"></div>

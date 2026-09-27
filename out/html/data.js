@@ -184,7 +184,7 @@ const colourList = [{
         style: "color: #86a71b; font-weight: bold;"
     },
     {
-        word: "ILP",
+        word: ["ILP", 'Independent Labour Party'],
         style: "color: #b06262; font-weight: bold;"
     },
     {
@@ -237,7 +237,7 @@ const colourList = [{
         style: "color: #a7391b; font-weight: bold;"
     },
     {
-        word: ['SPBC', 'Socialist Party of British Columbia'],
+        word: ['SPBC', 'Socialist Party of British Columbia', 'SPC', 'Socialist Party of Canada'],
         style: "color: #a7391b; font-weight: bold;"
     },
     {

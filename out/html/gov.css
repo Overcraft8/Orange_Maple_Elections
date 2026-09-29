@@ -3,7 +3,6 @@
     width: 300px;
     box-sizing: border-box;
     flex-shrink: 0;
-    /* overflow: visible; */
     padding: 13px;
     margin-bottom: 1em;
     margin-right: 1em;
@@ -15,19 +14,15 @@
 
 .info_panel {
   min-height: 150px;
-    width: 100%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    padding: 13px;
-    margin-bottom: 1em;
-    background: var(--content-bg-color);
-    border: 3px solid #9c8c64;
-    border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 13px;
+  border: 3px outset #5b4c24;
 }
 
 .main_panel {
-  border: 2px solid #9c8c64;
-  width: 100%; 
+  width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -203,14 +198,11 @@
 }
 
 .gov_stat_title {
-    padding-bottom: 8px;
     border-bottom: 1px solid #9c8c64;
     color: #504c46;
     font-family: "Franklin Gothic Medium", Arial, sans-serif;
-    font-size: 0.98em;
+    font-size: 1em;
     font-weight: bold;
-    letter-spacing: 0.4px;
-    text-align: center;
 }
 
 /* 
@@ -310,3 +302,4 @@
 .achievement-description {
   font-size: 0.85em;
 }
+

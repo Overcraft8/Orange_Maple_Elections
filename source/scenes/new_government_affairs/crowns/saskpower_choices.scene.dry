@@ -70,60 +70,6 @@ on-arrival: {!
 
 !}
 
-<!-- 
-{!
-<div id="saskpower_mandate" class="main_panel" style="background-image: url('img/telecom_lines.jpg');">
-    <div class="gov_header">
-        <span class="gov_panel_title" style="margin-bottom:0.2em;">The SaskPower Mandate</span>
-        <span style="color: var(--sidebar-bg-color);">Saskatchewan Power Corporation</span>
-    </div>
-    
-    <div class="gov_dashboard">
-        <div class="info_panel" style="display:flex;flex-direction:column;">
-        <span class="gov_stat_title">Current SaskPower Electricity Rates</span>
-            <div style="border-radius: 4px;font-size:1.8em;" class="gov_chart_row">!}
-                [+ saskpower.revenue.rates : saskpower_rates +]
-            {!</div>
-            <div class="gov_stat_label">Cost on Consumers</div>
-        </div>
-
-        <div class="info_panel" style="display:flex;flex-direction:column;">
-            <span class="gov_stat_title">Electrification Progress</span>
-            <div style="border-radius: 4px;font-size:1.8em;" class="gov_chart_row">!}
-                [+ electrification : electrification +]
-            {!</div>
-            <div id="electrification_progress_bar"></div>
-        </div>
-
-        <div class="info_panel" style="display:flex;flex-direction:column;">
-            <span class="gov_stat_title">Electricity Market Shares</span>
-            <div style="border-radius: 4px" class="gov_chart_row">!}
-                [+ electricity_pie_chart +]
-            {!</div>
-        </div>
-
-        <div class="info_panel" style="display:flex;flex-direction:column;">
-            <span class="gov_stat_title">SaskPower Generation Sources</span>
-            <div style="border-radius: 4px" class="gov_chart_row">!}
-                [+ electricity_sources_pie_chart +]
-            {!</div>!}
-            [? if saskpower.Power_Sources.Coal > 0 :
-                <div id="sources_legend">
-                    <div class="legend_dot coal"></div> <strong>Coal: [+ Coal_share +]%</strong> 
-                </div> 
-            ?]
-            [? if saskpower.Power_Sources.Hydro > 0 :
-                <div id="sources_legend">
-                    <div class="legend_dot hydro"></div> <strong>Hydro: [+ Hydro_share +]%</strong> 
-                </div> 
-            ?]{!
-        </div>
-    </div>
-
-</div>
-!}
--->
-
 {!
 <div id="saskpower_mandate" class="main_panel">
     <div class="gov_header">
@@ -296,6 +242,10 @@ go-to: exit_gov
 new-page: true
 
 Saskatchewan has many potential energy sources. 
+
+<div style="border-radius: 4px" class="gov_chart_row">
+    [+ electricity_sources_pie_chart +]
+</div>
 
 - @lng_expansion: Fund the Expansion of Natural Gas Extraction
 - @crude_oil_expansion: Expand Crude Oil Extraction operations

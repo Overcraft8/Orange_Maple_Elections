@@ -223,6 +223,8 @@ outline-offset: -5px;
     font-family: "Franklin Gothic Medium", Arial, sans-serif;
     font-size: 1em;
     font-weight: bold;
+    display: block;
+    text-align: center;
 }
 
 /* 

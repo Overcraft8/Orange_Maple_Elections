@@ -151,9 +151,12 @@ on-arrival: {!
 - @government_options.crown_corps_options: Return 
 
 @saskpower_market
-new-page: true
 
-[+ electricity_pie_chart +]
+= Electricity Market
+
+<div style="border-radius: 4px" class="gov_chart_row">
+    [+ electricity_pie_chart +]
+</div>
 
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies
@@ -217,8 +220,9 @@ on-arrival: {!
 go-to: exit_gov
 
 @saskpower_rates
-subtitle: [+ saskpower.revenue.rates : saskpower_rates +]
-new-page: true
+subtitle: Currently, SaskPower rates are [+ saskpower.revenue.rates : saskpower_rates +]
+
+= SaskPower Rates
 
 The current consumer electricity rate for Saskatchewan Power Corporation are [+ saskpower.revenue.rates : saskpower_rates +]
 
@@ -255,7 +259,8 @@ go-to: exit_gov
 
 
 @saskpower_construction
-new-page: true
+
+= Electricity Sources
 
 Saskatchewan has many potential energy sources. 
 
@@ -269,7 +274,10 @@ Saskatchewan has many potential energy sources.
 - @saskpower_choices: Return
 
 @lng_expansion
+subtitle: Saskatchewan has relatively little exploitable LNG, -3 budget
 
 @crude_oil_expansion
+subtitle: -2 budget
 
 @hydro_expansion
+subtitle: -4 budget

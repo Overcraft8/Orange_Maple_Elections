@@ -12,34 +12,46 @@ In our media and campaign materials, who should we consider as our main opponent
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @anti_dem: The anti-democratic parties of the far right and left - the CP(S), SCPS, and SCPS.
-- @far_right: The far right - the SCPS 
-- @scps: The SCPS alone.
-- @cp_s: The CP(S).
-- @bourgeois: The bourgeois parties - the PPS and CPS.
+- @anti_lps: The LPS
+- @anti_radical: The 'radical' parties of the SCPS and CP(S)
+- @anti_scps: The far right - the SCPS
+- @anti_establishment: The establishment parties - the CPS and LPS
+- @anti_cp_s: The CP(S).
 - @easy_discard
 
-@anti_dem
-on-arrival: enemies = "anti-democratic parties"; agrarian_strength += 5; managerial_strength += 5; radical_dissent += 5; workers_cp_s -= 2; workers_scps -= 2; workers_scps -= 2; cp_s_relation -= 10
+@anti_radical
+on-arrival:{! 
+Q.enemies = "SCPS and CP(S)"; 
+Q.managerial_strength += 2; 
+Q.moderate_strength += 3; 
+Q.moderate_dissent -= 3; 
+Q.radical_dissent += 3; 
+Q.farmers_cp_s -= 2;
+Q.farmers_scps -= 2;
+Q.workers_cp_s -= 2; 
+Q.workers_scps -= 2; ; 
+Q.cp_s_relation -= 5; 
+Q.scps_relation -= 5 
+!}
 
-Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the CP(S) in the future.
+Attacking Social Credit and 
 
-@far_right
-on-arrival: enemies = "far right"; radical_strength += 5; radical_dissent -= 5; workers_scps -= 3; workers_scps -= 3;
+@anti_scps
+on-arrival: enemies = "SCPS"; radical_strength += 5; radical_dissent -= 5; workers_scps -= 3; workers_scps -= 3;
 
-Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while the right is critical of our lack of response to the CP(S). Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism.
+Social Credit is a strong populist movement, more amenable to the economic conditions of farmer-dominated Saskatchewan in some aspects than us. It seems a wise choice to target them. 
 
-@scps
-on-arrival: enemies = "SCPS"; neorevisionist_strength += 5; scps_urgency += 1; workers_scps -= 4;
+@anti_lps
+on-arrival: enemies = "LPS"; scps_urgency += 1; workers_lps -= 2; farmers_lps -= 2; new_middle_lps -= 2;
 
 [? if scps_urgency == 0 or scps_r < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_r >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]
 
-@cp_s
+@anti_cp_s
 on-arrival: enemies = "CP(S)"; managerial_strength += 5; radical_dissent += 8; managerial_dissent -= 5; cp_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cp_s -= 4;
 
-Attacking the CP(S) is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the CP(S), this may not be the best choice.
+The party would earn much from distancing itself from the electorally-poisionous Communists
 
-@bourgeois
-on-arrival: enemies = "bourgeois parties"; radical_strength += 8; radical_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_s_relation += 5; managerial_dissent += 8; workers_pps -= 3; coalition_dissent += 1
+@anti_establishment
+on-arrival: enemies = "establishment parties"; radical_strength += 8; radical_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_s_relation += 5; managerial_dissent += 8; moderate_dissent += 8; workers_pps -= 3; coalition_dissent += 1
 
-Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.
+Targetting the old-line parties earns us populist goodwill.

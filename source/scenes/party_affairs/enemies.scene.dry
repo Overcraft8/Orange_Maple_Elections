@@ -42,6 +42,7 @@ on-arrival: enemies = "SCPS"; radical_strength += 5; radical_dissent -= 5; worke
 Social Credit is a strong populist movement, more amenable to the economic conditions of farmer-dominated Saskatchewan in some aspects than us. It seems a wise choice to target them. 
 
 @anti_lps
+subtitle: The dominant party right now
 on-arrival: enemies = "LPS"; scps_urgency += 1; workers_lps -= 2; farmers_lps -= 2; new_middle_lps -= 2;
 
 [? if scps_urgency == 0 or scps_r < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_r >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]

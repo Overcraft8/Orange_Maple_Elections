@@ -1224,6 +1224,13 @@ for (var party of Q.parties) {
     Q[party+'_polls_display'] = Math.round(Q[party+'_normalized']*100);
 };
 
+for (var c of Q.classes) {
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_display'] = Q[c + '_' + party] || 0;
+        
+        Q[c + '_' + party + '_normalized'] = Q[c + '_' + party] || 0; 
+    }
+}
 
 
 

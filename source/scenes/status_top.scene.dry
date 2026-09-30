@@ -32,6 +32,8 @@ on-arrival: {!
   Q.rural_elec_plat = 0;
   Q.rural_sanit_plat = 0;
 
+  Q.party_platform = ``;
+
 
   Object.values(Q.ccf_platform).forEach(category => {
     Object.values(category).forEach(policy => {

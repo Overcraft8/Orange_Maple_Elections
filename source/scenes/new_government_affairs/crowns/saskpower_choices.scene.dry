@@ -144,15 +144,21 @@ on-arrival: {!
 
 [+ saskpower_sheet +]
 
+- @saskpower_market: What can we do regarding the market?
+- @saskpower_construction: Construct new Power Generation Facilities
+- @rural_electrification: Expand Access to Electricity
+- @saskpower_rates: What can we do about the Rates?
+- @government_options.crown_corps_options: Return 
+
+@saskpower_market
+new-page: true
+
+[+ electricity_pie_chart +]
+
 - @saskpower_monopoly: Grant SaskPower a Monopoly on Power
 - @power_buyout: Buy Out Electrical Utilities Companies
 - @power_sellout: Sell Parts of SaskPower to Private Companies
-- @saskpower_construction: Construct new Power Generation Facilities
-- @rural_electrification: Expand Access to Electricity
-- @raise_saskpower_rates: Raise Electricity Rates
-- @lower_saskpower_rates: Lower Electricity Rates
-- @government_options.crown_corps_options: Return 
-
+- @saskpower_choices: Return
 
 @saskpower_monopoly
 subtitle: -[+ monopoly_cost +] budget
@@ -209,6 +215,16 @@ on-arrival: {!
     // This increases economic contribution
 !}
 go-to: exit_gov
+
+@saskpower_rates
+subtitle: [+ saskpower.revenue.rates : saskpower_rates +]
+new-page: true
+
+The current consumer electricity rate for Saskatchewan Power Corporation are [+ saskpower.revenue.rates : saskpower_rates +]
+
+- @raise_saskpower_rates: Raise Electricity Rates
+- @lower_saskpower_rates: Lower Electricity Rates
+- @saskpower_choices: Return
 
 @lower_saskpower_rates
 on-arrival: {!

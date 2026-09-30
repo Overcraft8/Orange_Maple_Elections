@@ -106,7 +106,14 @@ regina_riot_protest.jpg  -https://www.esask.uregina.ca/entry/labour.html
 williams_speech.jpg - https://www.winnipegfreepress.com/arts-and-life/entertainment/books/2018/05/26/from-plowing-to-politics
 
 
+// -----------------------------------
+// Other
+// -----------------------------------
 
+socialist_shakedown.png - https://ctasc.blog.yorku.ca/2022/04/05/march2022_catalogue/?utm_source=chatgpt.com
+the_cooperative_commonwealth.jpg - https://platform.coop/blog/navigating-the-goldilocks-dilemma/
+farmers_support_ccf.jpg - https://www.abebooks.co.uk/first-edition/Why-Farmers-Support-CCF-Co-operative-Commonwealth/31859887688/bd
+all_need_ccf.jpg - https://canadianworkingconditions.weebly.com/iii-actions-and-responses.html
 
 
 

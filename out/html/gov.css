@@ -7,9 +7,10 @@
     margin-bottom: 1em;
     margin-right: 1em;
     background: var(--content-bg-color);
-    border: 3px solid #9c8c64;
-    border-radius: 4px;
     box-shadow: 0 2px 4px black;
+    border: 2px solid #6c512e;
+outline: 1px solid #b5a27c;
+outline-offset: -5px;
 }
 
 .info_panel {
@@ -88,14 +89,19 @@
 
 
 .h1_gov {
-    border: 2px dashed black;
-    background: rgb(114 97 64);
+    background: #504c46;
+    color: #f1ead8;
+    border: none;
+    border-bottom: 3px double #9c8c64;
+
     text-align: center;
-    font-weight: bold; 
-    font-size: 1.8em;
-    font-family: Georgia, "Frankin Gothic Medium", Arial;
-    padding: 0.2em;
-    color: #f1f1f1;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    padding: 7px 4px 6px;
+    margin: 0 0 10px 0;
 }
 
 #crown_corps_panel {
@@ -145,9 +151,21 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    gap: 0.5rem;
+    gap: 0;
+    font-family: Arial, sans-serif;
+    gap: 0.3em;
+}
+
+.gov_stats > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    padding: 8px 3px;
+    border-bottom: 1px solid #9c8c64;
+
+    font-size: 0.95em;
+    font-weight: bold;
 }
 
 .gov_chart_row {
@@ -157,7 +175,9 @@
     justify-content: center;
     gap: 14px;
     padding-top: 12px;
+    margin-bottom: 0.3em;
 }
+
 
 
 /* Pie charts Info */

@@ -37,6 +37,9 @@ on-arrival: {!
         }
     };
 
+    Q.PrivateShare = electricity_pieData.privateSector.share; 
+    Q.StateShare = electricity_pieData.crownCorp.share; 
+
     var sources_final = {};
     var total_sources = 0;
 
@@ -66,7 +69,7 @@ on-arrival: {!
 
     Q['electricity_pie_chart'] = window.GeneratePieChart(electricity_pieData);
     Q['electricity_sources_pie_chart'] = window.GeneratePieChart(sources_pieData);
-    window.customgeneratebar(Q.electrification, "#7a8618", "#d6d33a", "electrification_progress_bar");
+    window.customgeneratebar(Q.electrification, "#7a8618", "#d6d33a", "electrification_progress_bar", 'Electrification Progress');
 
 !}
 
@@ -99,7 +102,21 @@ on-arrival: {!
             <span class="gov_stat_title">Electricity Market Shares</span>
             <div style="border-radius: 4px" class="gov_chart_row">!}
                 [+ electricity_pie_chart +]
-            {!</div>
+            {!</div>!}
+
+            [? if PrivateShare > 0 :
+                <div id="sources_legend">
+                    <div class="legend_dot coal"></div>
+                    <strong>Private: [+ privateShare +]%</strong>
+                </div>
+            ?]
+
+            [? if StateShare > 0 :
+                <div id="sources_legend">
+                    <div class="legend_dot hydro"></div>
+                    <strong>SaskPower: [+ StateShare +]%</strong>
+                </div>
+            ?]{!
         </div>
 
         <div class="info_panel">
@@ -127,18 +144,6 @@ on-arrival: {!
 </div>
  !}
 
-
-# <div style="display: flex; flex-direction: row;">
-#     <div class="gov_panel">
-#         Rates: [+ saskpower.revenue.rates +]
-#         = SaskPower Revenue: [+ saskpower_revenue_display +]
-#     </div>
-#     <div class="gov_panel">
-#         Administration: [+ saskpower.expenses.admin +]
-#         Maintenance: [+ saskpower.expenses.maintenance +]
-#         = SaskPower Expenses: [+ saskpower_revenue_display +]
-#     </div>
-# </div>
 
 <div id="saskpower_">
 

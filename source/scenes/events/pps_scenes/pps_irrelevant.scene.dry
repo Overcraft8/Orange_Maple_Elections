@@ -85,6 +85,7 @@ on-arrival: {!
     Q.southwest_d_pps_seats -= 1; 
     Q.southwest_d_ccf_seats += 1;
     Q.ccf_ss_name = 'PFLP';
+    Q.ccf_ss_ideology = 'Social Democracy';
     Q.pps_in_government = 0;
 !}
 

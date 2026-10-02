@@ -195,7 +195,7 @@ function getPartyIdeology(party, Q) {
             return 'Unknown';
         case 'CCF(SS)':
             if (Q.ccf_ss_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
-            if (Q.ccf_ss_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left</span>  (Social Democracy)';
+            if (Q.ccf_ss_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left - Left Wing</span>  (Social Democracy)';
             if (Q.ccf_ss_ideology === "Progressivism") return '<span style="color: #ecc22a;">Centre Left</span>  (Progressivism)';
             return 'Unknown';
         case 'PPS': 

@@ -69,7 +69,7 @@ on-arrival: {!
 
     Q['electricity_pie_chart'] = window.GeneratePieChart(electricity_pieData);
     Q['electricity_sources_pie_chart'] = window.GeneratePieChart(sources_pieData);
-    window.customgeneratebar(Q.electrification, "#7a8618", "#d6d33a", "electrification_progress_bar", 'Electrification Progress');
+    window.customgeneratebar(Q.electrification, "#7a8618", "#d6d33a", "electrification_progress_bar");
 
 !}
 

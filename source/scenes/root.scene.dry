@@ -1176,7 +1176,7 @@ Q.cps_seats = 24;
 Q.other_seats = 6;
 Q.scps_seats = 0;
 
-Q.largest_party = 'cps'
+Q.largest_party = 'cps';
 
 
 

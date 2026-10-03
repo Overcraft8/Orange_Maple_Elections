@@ -348,7 +348,7 @@ function applyWholesome(str) {
 }
 
 function createDetailedText(innerText, tooltipContent, style) {
-    return `<span class="tooltip" style="${style}; cursor: pointer; transition: background-color 0.2s;" onclick="
+    return `<span class="tooltip" style="${style}; transition: background-color 0.2s;" onclick="
         var dt = this.querySelector('.detailed-text');
         if(dt) {
             var isOpen = dt.style.display === 'block';

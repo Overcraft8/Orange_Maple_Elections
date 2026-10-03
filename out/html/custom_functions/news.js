@@ -23,8 +23,6 @@ window.news_addition = function(event = null) {
 window.news_activator = function() {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-    if (!Q?.active_news) return;
-
     window.news_addition();
 
     Object.keys(Q.active_news).forEach(topicKey => {

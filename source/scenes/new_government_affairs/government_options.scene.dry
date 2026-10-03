@@ -73,7 +73,9 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
         }
     };
 
-    Q[sectorName + '_pie_chart'] = window.GeneratePieChart(pieData); 
+    Q[crown + 'market_share'] = pieData.crownCorp.share;
+
+    // Q[sectorName + '_pie_chart'] = window.GeneratePieChart(pieData); 
     
 });
 
@@ -98,7 +100,9 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
 
         <div id='saskpower_stats' class='gov_stats'>
             <div>Electrification: [+ electrification : electrification +]</div>
-            <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div>
+            <div>Market Share: [+ saskpower_market_share +]</div>
+            <!-- 
+            <div class="market_share_wrapper"> Market Share: [+ electricity_pie_chart +]</div> -->
             <div class='tab_container'>
                 <div id='saskpower_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('saskpower_choices');">Saskpower Actions</div>
             </div>
@@ -112,7 +116,9 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
 
         <div id='sasktel_stats' class='gov_stats'>
             <div>Telecoms Access: [+ telecoms : telecom +]</div>
-            <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div>
+            <div>Market Share: [+ sasktel_market_share +]</div>
+            <!-- 
+            <div class="market_share_wrapper"> Market Share: [+ telecoms_pie_chart +]</div> -->
             <div class='tab_container'>
                 <div id='sasktel_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.sasktel_choices');">SaskTel Actions</div>
             </div>
@@ -126,7 +132,9 @@ Object.entries(Q.crown_economic_pairs).forEach(([crown, sectorName]) => {
 
         <div id='stc_stats' class='gov_stats'>
             <div>STC Ridership: [+ state_transport : stc +]</div>
-            <div class="market_share_wrapper"> Market Share: [+ transport_pie_chart +]</div>
+            <div>Market Share: [+ stc_market_share +]</div>
+            <!-- 
+            <div class="market_share_wrapper"> Market Share: [+ transport_pie_chart +]</div> -->
             <div class='tab_container'>
                 <div id='stc_options' style="justify-content: center;" class='tab_button' onclick="window.dendryUI.dendryEngine.goToScene('government_options.stc_choices');">STC Actions</div>
             </div>

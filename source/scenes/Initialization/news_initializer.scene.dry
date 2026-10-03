@@ -1,0 +1,20 @@
+title: News Initializer
+subtitle: You shouldn't be able to see this :>
+on-arrival: {!
+
+    Q.generic_news = {
+      'booming economy' : 'The economy is booming'
+  };
+
+
+Q.active_news = {
+    depression : {
+        start : {
+            called : false,
+            date : [1, 1932],
+            info : 'It is a dire time for Saskatchewan. The province is wracked by extreme drought the likes of which has never been seen before on the Canadian prairies. <br> Two thirds of farmers have already been forced to rely on relief.',
+            condition : `Q.started == 1 && Q.month == 1 && Q.year >= 1932;`
+        }
+    }
+}
+!}

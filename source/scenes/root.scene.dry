@@ -1640,6 +1640,12 @@ for (var party of Q.parties) {
 
 Q.parliament_diagram = data;
 
+// -------------------------------------------------------------
+//              Exterior Function calling
+// -------------------------------------------------------------
+
+dendryUI.dendryEngine._runActions(news_initializer.onArrival);
+
 
 
 
@@ -1858,6 +1864,8 @@ While Coldwell was a vibrant speaker and well-educated in matters of government,
 
 By 1934, the Cooperative Coalition was on its last legs. The PPS had disintegrated. 1 MLA had defected to the Liberals, 2 to the FLP, and the remainder to the Tories. Anderson himself was highly unpopular. The 'Bennett Buggies', engine-less cars pulled by horses, named after Tory Prime Minister Richard Bennett, were accompanied by 'Anderson Carts'. Meanwhile, the LPS had reimagined itself as a champion of the people, promising provision of the essentials, a stronger debt adjustment plan, and 'state medicine and health insurance'. The Liberals, with their allied newspapers, mounted a whole-scale assault on the FLP with a series of red-baiting, provocative, headlines. 
 
+<div class="face-figure"><img class="face-img" src="img/graphics/liberal_target_ad.png"></div>
+
 The FLP's most vulnerable policy was 'use-lease', a program of security of tenure that would've seen the government enter into voluntary talks with individual farmers to bring the title of the land under state-control as part of a method to prevent foreclosure by lenders. The farmer would be granted a life-long lease that could be passed down in exchange. While a far cry from Soviet land collectivization, this did not stop the LPS from making the comparisons. 
 
 In the end, the FLP would be gravely disappointed. They had come third in the popular vote and had won only 5 seats of 55. The LPS voteshare had hardly moved from it's median of ~50% and they retained an overwhelming majority of seats. 
@@ -1898,6 +1906,8 @@ The onset of World War 2 divided both the Saskatchewan and Federal CCF. William'
 In 1940, George Williams volunteered for the army and left the province to serve in Europe. In 1942, his leadership was contested by a young Federal MP named Tommy Douglas. Douglas was a veteran of the party, having joined from the ILP in 1930 as a protégé of Coldwell and had served as a Federal CCF MP since 1935. With Williams unable to campaign, John Brockelbank, a close Williamite ally, ran instead. However, Douglas' charisma and oratory proved too irresistible for the party base and Douglas was elected as the new leader of the [+ ccf_ss_name +]. 
 
 Douglas focused the party on grassroots organization, expanding party membership from about 4,000 in 1939 to 24,000 by 1944. Douglas also signalled a more pragmatic approach to socialism, realizing the constraints of a socialist provincial government within the Canadian federation. 
+
+<div class="face-figure"><img class="face-img" src="img/CCF/forward_with_ccf.jpg"></div>
 
 The 1944 election would prove to be a watershed moment in Saskatchewan history. Tommy Douglas' [+ ccf_ss_name +] won a landslide victory, taking 47 of 52 seats and 53% of the vote, marking the first nominally socialist sub-national government in North America. The LPS was reduced to only 5 seats and 35% of the vote. Social Credit and the Conservatives were both decimated seat and vote wise. 
 

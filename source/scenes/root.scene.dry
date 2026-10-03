@@ -1286,7 +1286,7 @@ Q.legislation = {
         'workplace_safety': 1,          // 0: Weak factory acts, 1: Mandatory state safety inspections, 2: Workers' Compensation Board expansion
         'unemployment_insurance': 0     // 0: Direct relief/work camps, 1: Non-contributory provincial relief, 2: Universal mandatory unemployment insurance
     }
-}
+};
 
 
 

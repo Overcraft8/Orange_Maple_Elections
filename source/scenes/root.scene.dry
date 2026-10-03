@@ -289,7 +289,7 @@ Q.inflation = 2.9;
 // quality of life (as % of 1932 - currently unused - should be welfare-adjusted.)
 
 
-Q.parties = ['ccf_ss', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
+Q.parties = ['ccf', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
 Q.parties_disp_names = ['[+ ccf_ss_name +]', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other'];
 
 // Dynamic parties / existing parties

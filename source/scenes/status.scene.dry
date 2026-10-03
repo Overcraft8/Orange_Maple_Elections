@@ -595,7 +595,7 @@ on-arrival: {!
     // Save to your display variable
     Q.general_polling = containerHtml;
 
-    console.log(Q.workers_ccf, Q.farmers_ccf);
+    console.log(Q.workers_ccf, Q.farmers_ccf, Q.workers_ccf_display, Q.farmers_ccf_display);
 !}
 
 = Overall Polls

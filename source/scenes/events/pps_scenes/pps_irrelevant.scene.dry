@@ -52,7 +52,7 @@ go-to: pps_merge_yes
 @pps_cancel 
 on-arrival: {! 
     Q.pps_seats -= 5; 
-    Q.ccf_ss_seats += 1; 
+    Q.ccf_seats += 1; 
     Q.lps_seats += 1;
     Q.cps_seats += 3; 
 
@@ -74,7 +74,7 @@ on-arrival: {!
 @pps_merge_yes
 on-arrival: {!
     Q.pps_seats -= 5; 
-    Q.ccf_ss_seats += 4; 
+    Q.ccf_seats += 4; 
     Q.lps_seats += 1; 
 
     Q.central_d_pps_seats -= 2; 
@@ -84,8 +84,8 @@ on-arrival: {!
     Q.southeast_d_ccf_seats += 2; 
     Q.southwest_d_pps_seats -= 1; 
     Q.southwest_d_ccf_seats += 1;
-    Q.ccf_ss_name = 'PFLP';
-    Q.ccf_ss_ideology = 'Social Democracy';
+    Q.ccf_name = 'PFLP';
+    Q.ccf_ideology = 'Social Democracy';
     Q.pps_in_government = 0;
 !}
 

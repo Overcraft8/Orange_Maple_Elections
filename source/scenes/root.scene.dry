@@ -151,17 +151,17 @@ Q.moderates_resigned = 0;
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
-// crisis_urgency indicates how seriously the [+ ccf_ss_name +] is taking the economic crisis - scale from 0 to 10.
+// crisis_urgency indicates how seriously the [+ ccf_name +] is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
-// scps_urgency indicates how seriously the [+ ccf_ss_name +] takes the scps - scale from 0 to 10.
+// scps_urgency indicates how seriously the [+ ccf_name +] takes the scps - scale from 0 to 10.
 Q.scps_urgency = 0;
-// radicalization indicates how radical the [+ ccf_ss_name +]'s rhetoric is - scale from 0 to 10.
+// radicalization indicates how radical the [+ ccf_name +]'s rhetoric is - scale from 0 to 10.
 Q.radicalization = 0;
 // Support for the WTB plan and proto-Keynesian works creation plans in general
 Q.wtb_support = 0;
-// Support for Pacifism within the [+ ccf_ss_name +] relative to 1928
+// Support for Pacifism within the [+ ccf_name +] relative to 1928
 Q.pacifism = 0;
-// Support for democratic reform within the [+ ccf_ss_name +] relative to 1928
+// Support for democratic reform within the [+ ccf_name +] relative to 1928
 Q.democratization = 0;
 // Support for a communist coalition relative to 1928
 Q.communist_coalition = 0;
@@ -184,31 +184,31 @@ Q.managerial_plan_adopted = 0;
 
 // inter-party relations
 Q.pps_relation = 50;
-Q.cp_s_relation = 25;
+Q.cpc_s_relation = 25;
 Q.lps_relation = 20;
 Q.cps_relation = 35;
 // SCPS are invariably hostile
 Q.scps_relation = 10;
 
 
-Q.ccf_ss_party_leader = "M.J. Coldwell";
-Q.ccf_ss_party_leader_img = "ColdwellMajorJames.jpg";
-Q.ccf_ss_president = "None";
-Q.ccf_ss_president_img = "ColdwellMajorJames.jpg";
-Q.ccf_ss_name = 'FLP';
+Q.ccf_party_leader = "M.J. Coldwell";
+Q.ccf_party_leader_img = "ColdwellMajorJames.jpg";
+Q.ccf_president = "None";
+Q.ccf_president_img = "ColdwellMajorJames.jpg";
+Q.ccf_name = 'FLP';
 
 
-Q.cp_s_leader = "None";
-Q.cp_s_party_leader = "None";
+Q.cpc_s_leader = "None";
+Q.cpc_s_party_leader = "None";
 Q.cps_leader = "James Anderson";
 Q.lps_leader = "James Gardiner";
 Q.scps_leader = "Joseph Needham"; 
 Q.pps_leader = "None";
 Q.pps_party_leader = "None";
 
-Q.ccf_ss_legislative_leader = "Williams";
-Q.ccf_ss_abpresident = "Williams";
-Q.cp_s_leader = "None";
+Q.ccf_legislative_leader = "Williams";
+Q.ccf_abpresident = "Williams";
+Q.cpc_s_leader = "None";
 Q.cps_leader = "Anderson";
 Q.lps_leader = "Gardiner";
 Q.scps_leader = "Needham"; 
@@ -222,10 +222,10 @@ Q.bennett_relation = 25;
 Q.bennett_enabled = 0;
 
 
-// Does the [+ ccf_ss_name +] lead in City Police?
-Q.ccf_ss_prussia = 1;
-// Options: ccf_ss, lps, cps, scps
-Q.city_government = "ccf_ss";
+// Does the [+ ccf_name +] lead in City Police?
+Q.ccf_prussia = 1;
+// Options: ccf, lps, cps, scps
+Q.city_government = "ccf";
 
 // The state of the country
 
@@ -251,7 +251,7 @@ Q.constructive_vonc = 0;
 Q.prime_ministerial_powers = 0;
 // allows banning of non-constitutional parties
 Q.constitutional_protection = 0;
-Q.cp_s_banned = 0;
+Q.cpc_s_banned = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
@@ -289,8 +289,8 @@ Q.inflation = 2.9;
 // quality of life (as % of 1932 - currently unused - should be welfare-adjusted.)
 
 
-Q.parties = ['ccf', 'cp_s', 'pps', 'lps', 'cps', 'scps', 'other'];
-Q.parties_disp_names = ['[+ ccf_ss_name +]', 'CP(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other'];
+Q.parties = ['ccf', 'cpc_s', 'pps', 'lps', 'cps', 'scps', 'other'];
+Q.parties_disp_names = ['FLP', 'CPC(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other'];
 
 // Dynamic parties / existing parties
 Q.pps_exists = 1;
@@ -299,10 +299,10 @@ Q.urban_seats = 24;
 Q.rural_seats = 31;
 
 //                           Party Ideologies
-Q.cp_s_ideology = "Marxism-Leninism";
-Q.cp_s_politlean = 3;
-Q.ccf_ss_ideology = "Democratic Socialism";
-Q.ccf_ss_politlean = 7;
+Q.cpc_s_ideology = "Marxism-Leninism";
+Q.cpc_s_politlean = 3;
+Q.ccf_ideology = "Democratic Socialism";
+Q.ccf_politlean = 7;
 Q.pps_ideology = "Even they don't know...";
 Q.pps_politlean = 8;
 Q.lps_ideology = "Classical Liberalism";
@@ -312,12 +312,12 @@ Q.cps_politlean = 13;
 Q.scps_ideology = "Social Credit";
 Q.scps_politlean = 16;
 
-Q.cp_s_unity_front = 0
+Q.cpc_s_unity_front = 0
 
 
 
 Q.ccf_in_government = 0; 
-Q.cp_s_in_government = 0; 
+Q.cpc_s_in_government = 0; 
 Q.pps_in_government = 1; 
 Q.cps_in_government = 1; 
 Q.other_in_government = 1; 
@@ -326,6 +326,9 @@ Q.scps_in_government = 0;
 
 
 Q.fptp = 1;
+Q.stv = 0;
+Q.mmp = 0;
+Q.pr = 0; 
 
 Q.alberta_premier = 'Brownlee'
 
@@ -344,7 +347,7 @@ Q.alberta_premier = 'Brownlee'
 // for changing the LPS's name to the DStP
 Q.lps_name = "LPS";
 
-// array of objects of the form {date: Date(), ccf_ss: 10, cp_s: 12, ...} for each election
+// array of objects of the form {date: Date(), ccf: 10, cpc_s: 12, ...} for each election
 Q.election_records = [];
 // party support records for every month
 Q.party_support_records = [];
@@ -360,30 +363,30 @@ Q.premier_img = 'AndersonJames.jpg';
 Q.premier_party = 'CPS';
 
 Q.in_right_coalition = 0;
-// Weimar coalition = [+ ccf_ss_name +] + PPS + LPS
+// Weimar coalition = [+ ccf_name +] + PPS + LPS
 Q.in_lps_coalition = 0;
-// Grand coalition = [+ ccf_ss_name +] + PPS + LPS + CPS
-// also includes the "new grand coalition" of [+ ccf_ss_name +] + PPS + LPS + CPS + Others
+// Grand coalition = [+ ccf_name +] + PPS + LPS + CPS
+// also includes the "new grand coalition" of [+ ccf_name +] + PPS + LPS + CPS + Others
 Q.in_grand_coalition = 0;
-// Popular front = [+ ccf_ss_name +] + CP(S) + PPS + LPS
+// Popular front = [+ ccf_name +] + CPC(S) + PPS + LPS
 Q.in_unity_government = 0;
-// left coalition = [+ ccf_ss_name +] + CP(S) + left-splinters
+// left coalition = [+ ccf_name +] + CPC(S) + left-splinters
 Q.in_left_front = 0;
-// emergency government containing the [+ ccf_ss_name +]: only prime minister JS_Woodsworth can do this.
+// emergency government containing the [+ ccf_name +]: only prime minister JS_Woodsworth can do this.
 Q.in_emergency_government = 0;
 Q.in_ccf_majority = 0;
 Q.grand_coalition_failed = 0;
-// if the [+ ccf_ss_name +] is ruling as part of a minority government
+// if the [+ ccf_name +] is ruling as part of a minority government
 Q.in_minority_government = 0;
 // national unity governmet
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
-// dissent from the CP(S), in a popular front or left front government
-Q.cp_s_coalition_dissent = 0;
+// dissent from the CPC(S), in a popular front or left front government
+Q.cpc_s_coalition_dissent = 0;
 
-// does the [+ ccf_ss_name +] tolerate the government even if it is not a participant?
-Q.ccf_ss_toleration = 0;
+// does the [+ ccf_name +] tolerate the government even if it is not a participant?
+Q.ccf_toleration = 0;
 
 // is the current government a minority government?
 Q.minority_government = 1;
@@ -569,9 +572,9 @@ Q.railway_length = 6551; // in km
 Q.road_length = 20127; // in km
 
 // our conduct in the government, and the conduct of our coalition opponents.
-// did the [+ ccf_ss_name +] vote against the previous government in a vote of no confidence?
-Q.ccf_ss_no_confidence = 0;
-// was the last [+ ccf_ss_name +] government taken down in a vote of no confidence by right-wing coalition partners?
+// did the [+ ccf_name +] vote against the previous government in a vote of no confidence?
+Q.ccf_no_confidence = 0;
+// was the last [+ ccf_name +] government taken down in a vote of no confidence by right-wing coalition partners?
 Q.no_confidence_against_ccf = 0;
 
 
@@ -1084,8 +1087,8 @@ Q.transport_pie_chart = 0;
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
 
-Q.ccf_ss_old_polls = 0;
-Q.cp_s_old_polls = 0;
+Q.ccf_old_polls = 0;
+Q.cpc_s_old_polls = 0;
 Q.cps_old_polls = 0;
 Q.lps_old_polls = 0;
 Q.scps_old_polls = 0;
@@ -1095,7 +1098,7 @@ Q.other_old_polls = 0;
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_ccf = 4;
-Q.workers_cp_s = 3;
+Q.workers_cpc_s = 3;
 Q.workers_pps = 3;
 Q.workers_lps = 43;
 Q.workers_cps = 35;
@@ -1103,7 +1106,7 @@ Q.workers_scps = 0;
 Q.workers_other = 12;
 
 Q.old_middle_ccf = 0;
-Q.old_middle_cp_s = 0;
+Q.old_middle_cpc_s = 0;
 Q.old_middle_pps = 10;
 Q.old_middle_lps= 38;
 Q.old_middle_cps = 49;
@@ -1111,7 +1114,7 @@ Q.old_middle_scps = 0;
 Q.old_middle_other = 3;
 
 Q.new_middle_ccf = 4;
-Q.new_middle_cp_s = 0;
+Q.new_middle_cpc_s = 0;
 Q.new_middle_pps = 12;
 Q.new_middle_lps= 44;
 Q.new_middle_cps = 38;
@@ -1119,7 +1122,7 @@ Q.new_middle_scps = 0;
 Q.new_middle_other = 2;
 
 Q.farmers_ccf = 7;
-Q.farmers_cp_s = 3;
+Q.farmers_cpc_s = 3;
 Q.farmers_pps = 6;
 Q.farmers_lps= 44;
 Q.farmers_cps = 37;
@@ -1127,7 +1130,7 @@ Q.farmers_scps = 0;
 Q.farmers_other = 3;
 
 Q.farmhands_ccf = 4;
-Q.farmhands_cp_s = 3;
+Q.farmhands_cpc_s = 3;
 Q.farmhands_lps = 39;
 Q.farmhands_pps = 5;
 Q.farmhands_cps = 34;
@@ -1135,7 +1138,7 @@ Q.farmhands_scps = 0;
 Q.farmhands_other = 5;
 
 Q.rural_workers_ccf = 8;
-Q.rural_workers_cp_s = 10;
+Q.rural_workers_cpc_s = 10;
 Q.rural_workers_lps = 42;
 Q.rural_workers_pps = 7;
 Q.rural_workers_cps = 28;
@@ -1143,7 +1146,7 @@ Q.rural_workers_scps = 0;
 Q.rural_workers_other = 5;
 
 Q.unemployed_ccf = 6;
-Q.unemployed_cp_s = 5;
+Q.unemployed_cpc_s = 5;
 Q.unemployed_pps = 7;
 Q.unemployed_lps = 43;
 Q.unemployed_cps = 32;
@@ -1151,7 +1154,7 @@ Q.unemployed_scps = 0;
 Q.unemployed_other = 5;
 
 Q.catholics_ccf = 7;
-Q.catholics_cp_s = 2;
+Q.catholics_cpc_s = 2;
 Q.catholics_pps = 10;
 Q.catholics_lps = 45;
 Q.catholics_cps = 30;
@@ -1165,8 +1168,8 @@ Q.catholics_other = 6;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 
-Q.ccf_ss_seats = 0;
-Q.cp_s_seats = 0;
+Q.ccf_seats = 0;
+Q.cpc_s_seats = 0;
 Q.pps_seats = 5;
 Q.lps_seats = 28;
 Q.cps_seats = 24;
@@ -1177,8 +1180,8 @@ Q.largest_party = 'cps';
 
 
 
-Q.ccf_ss_r = 0;
-Q.cp_s_r = 0;
+Q.ccf_r = 0;
+Q.cpc_s_r = 0;
 Q.pps_r =  8;
 Q.lps_r = 44;
 Q.cps_r = 38;
@@ -1187,7 +1190,7 @@ Q.other_r = 10;
 
 // diff from prev
 Q.old_ccf_r = 26;
-Q.old_cp_s_r = 9;
+Q.old_cpc_s_r = 9;
 Q.old_pps_r = 17;
 Q.old_lps_r = 6;
 Q.old_cps_r = 10;
@@ -1457,7 +1460,7 @@ Q.timers = ['advisor_action', 'confronting_scps', 'crisis_program',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'ful_ban', 'kkk_ban', 'papen_premier',
-            'cp_s_policy', 'cp_s_ultimatum', 'unity_government_dispute',
+            'cpc_s_policy', 'cpc_s_ultimatum', 'unity_government_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'schleichers_schemes'];
 Q.advisor_action_timer = 0;
@@ -1533,7 +1536,7 @@ Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
 Q.ful_ban_timer = 0;
 Q.kkk_ban_timer = 0;
-Q.cp_s_ultimatum_timer = 0;
+Q.cpc_s_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 
@@ -1593,18 +1596,18 @@ for (var party of Q.parties) {
 
 data = [
     {
-        "id": "ccf_ss",
-        "legend": "[+ ccf_ss_name +]",
-        "name": "[+ ccf_ss_name +]",
-        "seats": Q.ccf_ss_seats,
+        "id": "ccf",
+        "legend": "[+ ccf_name +]",
+        "name": "[+ ccf_name +]",
+        "seats": Q.ccf_seats,
         "bench": Q.ccf_in_government
     },
     {
-        "id": "cp_s",
-        "legend": "CP(S)",
-        "name": "CP(S)",
-        "seats": Q.cp_s_seats,
-        "bench": Q.cp_s_in_government
+        "id": "cpc_s",
+        "legend": "CPC(S)",
+        "name": "CPC(S)",
+        "seats": Q.cpc_s_seats,
+        "bench": Q.cpc_s_in_government
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -1721,7 +1724,7 @@ on-arrival: {!
   Q.labour_dissent = 25;
   Q.agrarian_dissent = 25;
   Q.pps_relation = 41;
-  Q.cp_s_relation = 16;
+  Q.cpc_s_relation = 16;
   Q.cps_relation = 31;
   Q.treasury = 5;
 !}
@@ -1742,7 +1745,7 @@ Q.radical_dissent = 30;
 Q.labour_dissent = 25;
 Q.agrarian_dissent = 25;
 Q.pps_relation = 41;
-Q.cp_s_relation = 16;
+Q.cpc_s_relation = 16;
 Q.cps_relation = 31;
 Q.treasury = 12;
 this.state.disableSaves = true;
@@ -1793,7 +1796,7 @@ Both the CPS under James Anderson and the PPS constructed programmes that drew o
 
 The Cooperative Coalition remains a contentious topic. Broadly, it maintained a nativist British stance but was pushed left-ward economically by the presence of Progressives. Both French as a language of instruction and the wearing of religious garb in public schools were banned. The Cooperative Coalition also established a minimum wage, protected the Wheat Pool, and removed partisan influence from the civil service. 
 
-Regardless, these failures and successes would soon become forgotten by the onset of the 'Dirty Thirties', a wave of intense drought, and the Great Depression, both of which were cataclysmic to the province. In the pursuing years, both labour and farmer organizations would radicalize. In 1931, RNWMP officers shot three miners in a strike at the coal mine near Bienfait. The FUL, a farmer's organization acting as a front for the CP(S) used militant tactics to protect farmer's from foreclosure. Perhaps most significantly, the FLP was formed. 
+Regardless, these failures and successes would soon become forgotten by the onset of the 'Dirty Thirties', a wave of intense drought, and the Great Depression, both of which were cataclysmic to the province. In the pursuing years, both labour and farmer organizations would radicalize. In 1931, RNWMP officers shot three miners in a strike at the coal mine near Bienfait. The FUL, a farmer's organization acting as a front for the CPC(S) used militant tactics to protect farmer's from foreclosure. Perhaps most significantly, the FLP was formed. 
 
 - @flp_intro: The birth of the FLP
 - @return: Return
@@ -1831,33 +1834,33 @@ In the years proceeding the 1934 election, the LPS pursued a typical Liberal-min
 
 During this period, a new national party was being formed. The Co-operative Commonwealth Federation (Farmer-Labour-Socialist) was formed in 1932 from a broad movement consisting of former United Farmers Representatives, MPs of the socialist "Ginger Group", the Independent Labour Party (Manitoba), Canadian Labour Party (based in Edmonton), and the Dominion Labour Party of Southern Alberta. Also involved were intellectuals from the League for Social Reconstruction, a group of academics disillusioned with the capitalist system. 
 
-The new Federal CCF's manifesto called for the socialization of the finance industry, state ownership of transportation, communications, and energy, free medical care to all Canadian citizens, and the abolishment of the unrepresentative Canadian Senate. The FLP would become adopted as the CCF’s provincial section but did not rebrand itself to the CCF (Saskatchewan Section) until 1936. Additionally, the [+ ccf_ss_name +] quickly removed the use-lease policy from its platform, replacing it with a vaguer promise of tenure' for farmers. 
+The new Federal CCF's manifesto called for the socialization of the finance industry, state ownership of transportation, communications, and energy, free medical care to all Canadian citizens, and the abolishment of the unrepresentative Canadian Senate. The FLP would become adopted as the CCF’s provincial section but did not rebrand itself to the CCF (Saskatchewan Section) until 1936. Additionally, the [+ ccf_name +] quickly removed the use-lease policy from its platform, replacing it with a vaguer promise of tenure' for farmers. 
 
 In the capital and largest city of Regina, the CLL, an alliance of Social Democrats and Communists was swept to the power in the City Council. The new Municipal government quickly attempted to provide more comprehensive relief but was blocked by both the Federal and Provincial government. Municipalities, after all, are ‘creatures of the Provinces’ in Canada and hold no constitutional rights or responsibilities. 
 
 Also interesting was the arrival of a new political opponent from the neighbouring province of Alberta. The Social Credit movement, based on the teachings of a British economist, advocated the distribution of "social credit" to all citizens, akin to a universal basic income to bypass large banks. In the 1935 Alberta election, Social Credit swept 56 of 63 seats. In practice, the movement became more socially conservative and its core tenent of social credit distribution was proved unconstitutional and never implemented. Nevertheless, the movement created a monstrous fervor in Western Canada, birthing the Saskatchewan Social Credit Party. 
 
-The SCPS saw significant initial success but quickly became disorganized, resulting in Alberta Social Credit Premier Aberhart directly intervening in the party's affairs and even directing Albertan Social Credit members to aid the organization. Despite these embarrassing events, the SCPS looked poised to steal the right-wing vote from the Conservatives and the protest vote from the [+ ccf_ss_name +]. 
+The SCPS saw significant initial success but quickly became disorganized, resulting in Alberta Social Credit Premier Aberhart directly intervening in the party's affairs and even directing Albertan Social Credit members to aid the organization. Despite these embarrassing events, the SCPS looked poised to steal the right-wing vote from the Conservatives and the protest vote from the [+ ccf_name +]. 
 
-On the far left, the Communist Party's Saskatchewan section CP(S) was also gaining traction, especially with the rise in police-on-worker violence observed in the Regina Riot and Bienfait Coal Miner's Strike. Normally a left flank opponent of the [+ ccf_ss_name +], the CP(S) adopted a popular front strategy in the mid 30s, advocating for a coalition against the Liberals. However, very little cooperation ever occurred between the top brass of the CP(S) and the [+ ccf_ss_name +]. 
+On the far left, the Communist Party's Saskatchewan section CPC(S) was also gaining traction, especially with the rise in police-on-worker violence observed in the Regina Riot and Bienfait Coal Miner's Strike. Normally a left flank opponent of the [+ ccf_name +], the CPC(S) adopted a popular front strategy in the mid 30s, advocating for a coalition against the Liberals. However, very little cooperation ever occurred between the top brass of the CPC(S) and the [+ ccf_name +]. 
 
 In the buildup to the 1938 provincial election, the political landscape of Saskatchewan was looking especially fractured. Limited efforts were made by all non-Liberal parties to avoid splitting the vote as parties 'sawed off' unlikely candidates. No party aside from the LPS ran a full slate of candidates. 3 "Unity" candidates as part of the Communist Popular Front strategy were nominated, all previous MLAs of the Cooperative Coalition. 
 
-The 1938 election ended up quite turbulent. In contest were 52 seats, down from 63 in 1929 as the province underwent extreme depopulation. The new [+ ccf_ss_name +] won a significant 10 seats and the status of official opposition on top of 19% of the vote. The SCPS won only 2 seats from 16% of the vote. Most surprisingly, 2 of the Unity candidates won their seats. The Labour Progressive-Party, a front for the Communists, won 2% of the vote and no seats. The Conservatives won none as well, reduced to only 12% of the vote. And unsurprisingly, on top of all this vote splitting, the LPS won another large majority of 38 seats. 
+The 1938 election ended up quite turbulent. In contest were 52 seats, down from 63 in 1929 as the province underwent extreme depopulation. The new [+ ccf_name +] won a significant 10 seats and the status of official opposition on top of 19% of the vote. The SCPS won only 2 seats from 16% of the vote. Most surprisingly, 2 of the Unity candidates won their seats. The Labour Progressive-Party, a front for the Communists, won 2% of the vote and no seats. The Conservatives won none as well, reduced to only 12% of the vote. And unsurprisingly, on top of all this vote splitting, the LPS won another large majority of 38 seats. 
 
-The 1938 election was another disappointment for the [+ ccf_ss_name +]. The party had hoped to at least reduce the LPS to a minority government, but this had not been the case. George Williams' leadership was called into question though he was saved much blame due to the 4-party vote-split, allowing Williams to retain his leadership of the party. The SCPS would fare worse, completely exploding after their failed election bid. 
+The 1938 election was another disappointment for the [+ ccf_name +]. The party had hoped to at least reduce the LPS to a minority government, but this had not been the case. George Williams' leadership was called into question though he was saved much blame due to the 4-party vote-split, allowing Williams to retain his leadership of the party. The SCPS would fare worse, completely exploding after their failed election bid. 
 
 Patterson's returned Liberal government continued to pursue a typical Liberal agenda. A sales tax was introduced to relieve the beleaguered education system. Debt relief and the provincial pension were extended. 
 
 The onset of World War 2 divided both the Saskatchewan and Federal CCF. William's pro-war leadership was challenged by the pacifist Carlyle King though the contest proved unsuccessful for the young King. Williams would draw much ire from the Federal CCF leader J.S. Woodsworth, a stout anti-war pacifist. 
 
-In 1940, George Williams volunteered for the army and left the province to serve in Europe. In 1942, his leadership was contested by a young Federal MP named Tommy Douglas. Douglas was a veteran of the party, having joined from the ILP in 1930 as a protégé of Coldwell and had served as a Federal CCF MP since 1935. With Williams unable to campaign, John Brockelbank, a close Williamite ally, ran instead. However, Douglas' charisma and oratory proved too irresistible for the party base and Douglas was elected as the new leader of the [+ ccf_ss_name +]. 
+In 1940, George Williams volunteered for the army and left the province to serve in Europe. In 1942, his leadership was contested by a young Federal MP named Tommy Douglas. Douglas was a veteran of the party, having joined from the ILP in 1930 as a protégé of Coldwell and had served as a Federal CCF MP since 1935. With Williams unable to campaign, John Brockelbank, a close Williamite ally, ran instead. However, Douglas' charisma and oratory proved too irresistible for the party base and Douglas was elected as the new leader of the [+ ccf_name +]. 
 
 Douglas focused the party on grassroots organization, expanding party membership from about 4,000 in 1939 to 24,000 by 1944. Douglas also signalled a more pragmatic approach to socialism, realizing the constraints of a socialist provincial government within the Canadian federation. 
 
 <div class="face-figure"><img class="face-img" src="img/CCF/forward_with_ccf.jpg"></div>
 
-The 1944 election would prove to be a watershed moment in Saskatchewan history. Tommy Douglas' [+ ccf_ss_name +] won a landslide victory, taking 47 of 52 seats and 53% of the vote, marking the first nominally socialist sub-national government in North America. The LPS was reduced to only 5 seats and 35% of the vote. Social Credit and the Conservatives were both decimated seat and vote wise. 
+The 1944 election would prove to be a watershed moment in Saskatchewan history. Tommy Douglas' [+ ccf_name +] won a landslide victory, taking 47 of 52 seats and 53% of the vote, marking the first nominally socialist sub-national government in North America. The LPS was reduced to only 5 seats and 35% of the vote. Social Credit and the Conservatives were both decimated seat and vote wise. 
 
 At last, it seemed, the CCF would revel in the fruits of their labour. 
 
@@ -1874,7 +1877,7 @@ Douglas’ Administration quickly got to work at a breakneck pace. Saskatchewan 
 
 These services would not come cheap. Joe Phelps, Minister of Resources and Development went about establishing Crown Corporations at a disorienting speed. The province expropriated a Box Factory in Prince Albert following a labour dispute. A sodium sulphate plant was acquired in 1946. The province founded new Crowns in the Wool, Leather, and Clay industries. Most of these ventures would prove unpopular, however. 
 
-Douglas’ tenure however, also marked a period of moderation. The left flank of the [+ ccf_ss_name +] found itself weakening. In 1945, George Williams, now Minister for Agriculture died of cancer. Joe Phelps lost his seat in 1948 and the Douglas government would choose not to rerun him, believing his state-industrial endeavours had partially been responsible for reducing the Douglas government to a slim 4 seat majority. John Brockelbank would replace Phelps though by this time, he had moderated somewhat from his Williamite days and would never commit to state-industrialized planning in the same manner. 
+Douglas’ tenure however, also marked a period of moderation. The left flank of the [+ ccf_name +] found itself weakening. In 1945, George Williams, now Minister for Agriculture died of cancer. Joe Phelps lost his seat in 1948 and the Douglas government would choose not to rerun him, believing his state-industrial endeavours had partially been responsible for reducing the Douglas government to a slim 4 seat majority. John Brockelbank would replace Phelps though by this time, he had moderated somewhat from his Williamite days and would never commit to state-industrialized planning in the same manner. 
 
 In the poor and largely inaccessible north, dominated demographically by First Nations and Metis, the Douglas government attempted even stronger government intervention. SaskAir attempted to develop a monopoly over northern commercial flying but ultimately failed. 
 
@@ -1897,6 +1900,6 @@ Credits to LBJ's Force Ghost for the idea behind the Westminster parliament diag
 
 @how_realistic
 
-While extensive research was done for this setting, the mod is not to be taken as an accurate depiction of Saskatchewan during the game's time period. Several viable paths in this game are very unlikely to have occured. This includes the formation of a true Unity Front against the Liberals. Such an effort did exist but ultimately failed to make a breakthrough or last. The [+ ccf_ss_name +] leadership viewed it as a mechanism for the Communists to infiltrate legitimate parties, Social Credit was more interested in giving a middle finger to Ottawa, and the Conservatives under Diefenbaker saw Unity only as a last resort. 
+While extensive research was done for this setting, the mod is not to be taken as an accurate depiction of Saskatchewan during the game's time period. Several viable paths in this game are very unlikely to have occured. This includes the formation of a true Unity Front against the Liberals. Such an effort did exist but ultimately failed to make a breakthrough or last. The [+ ccf_name +] leadership viewed it as a mechanism for the Communists to infiltrate legitimate parties, Social Credit was more interested in giving a middle finger to Ottawa, and the Conservatives under Diefenbaker saw Unity only as a last resort. 
 
 The mod also gives great liberties to the player. It is unlikely that a manufacturing industry not focused on agriculture could have ever sprung up in Saskatchewan. Winnipeg to the East was already a major manufacturing center with comparisons to Chicago and the National government would always favour Ontario and Quebec for heavy manufacturing.

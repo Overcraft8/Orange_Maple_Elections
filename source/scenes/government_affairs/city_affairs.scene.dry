@@ -1,7 +1,7 @@
 title: The Urban Bulwark
 new-page: true
 is-card: true
-view-if: ccf_ss_prussia = 1 and city_affairs_timer <= 0
+view-if: ccf_prussia = 1 and city_affairs_timer <= 0
 on-arrival: city_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
 card-image: img/regina_cityhall.jpg
@@ -74,7 +74,7 @@ The Ku Klux Klan is no longer banned.
 
 @ban_wul
 view-if: communist_coalition < 3 and wul_banned = 0
-on-arrival: cp_s_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1
+on-arrival: cpc_s_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
 

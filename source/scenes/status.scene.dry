@@ -21,18 +21,18 @@ on-display: {!
 
     data = [
     {
-        "id": "ccf_ss",
-        "legend": Q.ccf_ss_name,
-        "name": Q.ccf_ss_name,
-        "seats": Q.ccf_ss_seats,
+        "id": "ccf",
+        "legend": Q.ccf_name,
+        "name": Q.ccf_name,
+        "seats": Q.ccf_seats,
         "bench": Q.ccf_in_government
     },
     {
-        "id": "cp_s",
-        "legend": "CP(S)",
-        "name": "CP(S)",
-        "seats": Q.cp_s_seats,
-        "bench": Q.cp_s_in_government
+        "id": "cpc_s",
+        "legend": "CPC(S)",
+        "name": "CPC(S)",
+        "seats": Q.cpc_s_seats,
+        "bench": Q.cpc_s_in_government
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -129,12 +129,12 @@ window.westminster('westminster_legislature', false);
 
     Government: [+ ruling_government +]
 
-    [+ ccf_ss_name +] position: [? if ccf_ss_toleration : toleration ?][? if ccf_in_government : in government - ?][? if ccf_ss_toleration == 0 and ccf_in_government == 0 and ccf_ss_caretaker == 0 : opposition ?][? if ccf_ss_caretaker : caretaker government ?]
-    [? if in_lps_coalition and ccf_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_in_government: Grand Coalition ?][? if in_unity_government and ccf_in_government: Popular Front ?][? if in_left_front and ccf_in_government: Left Front ?][? if in_ccf_majority and ccf_in_government: [+ ccf_ss_name +] majority ?][? if in_minority_government and ccf_in_government: minority government ?]
+    [+ ccf_name +] position: [? if ccf_toleration : toleration ?][? if ccf_in_government : in government - ?][? if ccf_toleration == 0 and ccf_in_government == 0 and ccf_caretaker == 0 : opposition ?][? if ccf_caretaker : caretaker government ?]
+    [? if in_lps_coalition and ccf_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_in_government: Grand Coalition ?][? if in_unity_government and ccf_in_government: Popular Front ?][? if in_left_front and ccf_in_government: Left Front ?][? if in_ccf_majority and ccf_in_government: [+ ccf_name +] majority ?][? if in_minority_government and ccf_in_government: minority government ?]
 
     [? if ccf_in_government and not in_ccf_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-    [? if ccf_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
+    [? if ccf_in_government and (in_left_front or in_unity_government): CPC(S) coalition dissent: [+ cpc_s_coalition_dissent : coalition_dissent +] ?]
 
     Prime Minister: [+ prime_minister +]
 </div> 
@@ -149,12 +149,12 @@ window.westminster('westminster_legislature', false);
 # 
 # <div style='text-align: center;'>
 # # 1928: 30, 1930: 25, 1932: 22
-# [? if ccf_ss_seats > 0: [? if not ccf_ss_name: [+ ccf_ss_name +]?][? if ccf_ss_name != 0 : [+ ccf_ss_name +]?]{!</span>!}: [+ ccf_ss_seats +] ?]
+# [? if ccf_seats > 0: [? if not ccf_name: [+ ccf_name +]?][? if ccf_name != 0 : [+ ccf_name +]?]{!</span>!}: [+ ccf_seats +] ?]
 # [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # # 1928: 15, 1930: 15, 1932: 
 # [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
 # # 1928: 10, 1930: 13
-# [? if cp_s_seats > 0: [? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_seats +] ?]
+# [? if cpc_s_seats > 0: [? if not cpc_s_name: CPC(S)?][? if cpc_s_name != 0 : [+ cpc_s_name +]?]{!</span>!}: [+ cpc_s_seats +] ?]
 # # 1928: 5, 1930: 4 (as DstP)
 # [? if lps_seats > 0: [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_seats +] ?]
 # # 1928: 9, 1930: 5
@@ -177,12 +177,12 @@ Assembly composition:
 
 <div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22
-[? if ccf_ss_seats > 0: [? if not ccf_ss_name: [+ ccf_ss_name +]?][? if ccf_ss_name != 0 : [+ ccf_ss_name +]?]{!</span>!}: [+ ccf_ss_seats +] ?]
+[? if ccf_seats > 0: [? if not ccf_name: [+ ccf_name +]?][? if ccf_name != 0 : [+ ccf_name +]?]{!</span>!}: [+ ccf_seats +] ?]
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
 # 1928: 10, 1930: 13
-[? if cp_s_seats > 0: [? if not cp_s_name: CP(S)?][? if cp_s_name != 0 : [+ cp_s_name +]?]{!</span>!}: [+ cp_s_seats +] ?]
+[? if cpc_s_seats > 0: [? if not cpc_s_name: CPC(S)?][? if cpc_s_name != 0 : [+ cpc_s_name +]?]{!</span>!}: [+ cpc_s_seats +] ?]
 # 1928: 5, 1930: 4 (as DstP)
 [? if lps_seats > 0: [? if not lps_name: LPS?][? if lps_name != 0 : [+ lps_name +]?]{!</span>!}: [+ lps_seats +] ?]
 # 1928: 9, 1930: 5
@@ -216,7 +216,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>!} CPS {!</td><td>!}[+ cps_relation : relationships +] {!</td><tr>!}
 
-{!<tr><td>!} CP(S) {!</td><td>!}[+ cp_s_relation : relationships +] {!</td><tr>!}
+{!<tr><td>!} CPC(S) {!</td><td>!}[+ cpc_s_relation : relationships +] {!</td><tr>!}
 
 {!<tr><td>!} Others {!</td><td>!} Varied {!</td><tr>!}
 
@@ -229,9 +229,9 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 = Ideologies
 
-CP(S): [+ cp_s_ideology +] ([+cp_s_leader +])
+CPC(S): [+ cpc_s_ideology +] ([+cpc_s_leader +])
 
-[+ ccf_ss_name +]: [+ ccf_ss_ideology +] ([+ ccf_ss_president +])
+[+ ccf_name +]: [+ ccf_ideology +] ([+ ccf_president +])
 
 PPS: [+ pps_ideology +] ([+ pps_leader +])
 
@@ -523,8 +523,8 @@ on-arrival: {!
     // 1. Define your party colors here to feed the inline pie chart.
     // Update these hex codes to match your specific CSS theme colors.
     var partyColors = {
-        'ccf_ss': '#D26E28',
-        'cp_s': '#920c0c',  
+        'ccf': '#D26E28',
+        'cpc_s': '#920c0c',  
         'pps':'#7e741ab3', 
         'lps': '#BE0028',     
         'cps': '#0055A5',
@@ -539,7 +539,54 @@ on-arrival: {!
         totalVotes += (Q[party + '_polls'] || 0);
     }
 
+    var party_polls = {
+        ccf : { 
+            share: Q.ccf_polls, 
+            color: partyColors['ccf'],
+            tooltipInfo: 'CCF(SS)' 
+        },
+        cpc_s : { 
+            share: Q.cpc_s_polls, 
+            color: partyColors['cpc_s'],
+            tooltipInfo: 'CPC(S)' 
+        },
+        pps : { 
+            share: Q.pps_polls, 
+            color: partyColors['pps'],
+            tooltipInfo: 'PPS' 
+        },
+        lps : { 
+            share: Q.lps_polls, 
+            color: partyColors['lps'], // Added missing comma
+            tooltipInfo: 'LPS' 
+        },
+        cps : { 
+            share: Q.cps_polls, 
+            color: partyColors['cps'], // Added missing comma
+            tooltipInfo: 'CPS' 
+        },
+        scps : { 
+            share: Q.scps_polls, 
+            color: partyColors['scps'],
+            tooltipInfo: 'SCPS' 
+        },
+        other : { 
+            share: Q.other_polls, 
+            color: partyColors['other'],
+            tooltipInfo: 'Other' 
+        },
+        sapd : { 
+            share: Q.sapd_polls, 
+            color: partyColors['sapd'],
+            tooltipInfo: 'SAPD' 
+        }
+    };
+
     // 3. Build the dynamic pie chart slices and tooltips
+
+    window.GeneratePieChart(Q.general_polling, )
+
+    /* 
     var tooltipLines = [];
     var gradientStops = [];
     var currentStop = 0;
@@ -596,6 +643,7 @@ on-arrival: {!
     Q.general_polling = containerHtml;
 
     console.log(Q.workers_ccf, Q.farmers_ccf, Q.workers_ccf_display, Q.farmers_ccf_display);
+    */
 !}
 
 = Overall Polls
@@ -620,18 +668,18 @@ on-arrival: {!
             {!<th>Old Middle</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**[+ ccf_ss_name +]**{!</td>!}
+            {!<td>!}**[+ ccf_name +]**{!</td>!}
             {!<td style="background-color: #da8b53; ">!}[+ workers_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ unemployed_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ new_middle_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ old_middle_ccf_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**CP(S)**{!</td>!}
-            {!<td style="background-color: #8a4545; ">!}[+ workers_cp_s_display +]%{!</td>!}
-            {!<td style="background-color: #8a4545;">!}[+ unemployed_cp_s_display +]%{!</td>!}
-            {!<td style="background-color: #8a4545;">!}[+ new_middle_cp_s_display +]%{!</td>!}
-            {!<td style="background-color: #8a4545;">!}[+ old_middle_cp_s_display +]%{!</td>!}
+            {!<td>!}**CPC(S)**{!</td>!}
+            {!<td style="background-color: #8a4545; ">!}[+ workers_cpc_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ unemployed_cpc_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ new_middle_cpc_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ old_middle_cpc_s_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
@@ -675,16 +723,16 @@ on-arrival: {!
             {!<th>Rural Workers</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**[+ ccf_ss_name +]**{!</td>!}
+            {!<td>!}**[+ ccf_name +]**{!</td>!}
             {!<td style="background-color: #da8b53; ">!}[+ farmers_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ farmhands_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ rural_workers_ccf_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**CP(S)**{!</td>!}
-            {!<td style="background-color: #8a4545; ">!}[+ farmers_cp_s_display +]%{!</td>!}
-            {!<td style="background-color: #8a4545;">!}[+ farmhands_cp_s_display +]%{!</td>!}
-            {!<td style="background-color: #8a4545;">!}[+ rural_workers_cp_s_display +]%{!</td>!}
+            {!<td>!}**CPC(S)**{!</td>!}
+            {!<td style="background-color: #8a4545; ">!}[+ farmers_cpc_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ farmhands_cpc_s_display +]%{!</td>!}
+            {!<td style="background-color: #8a4545;">!}[+ rural_workers_cpc_s_display +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**PPS**{!</td>!}

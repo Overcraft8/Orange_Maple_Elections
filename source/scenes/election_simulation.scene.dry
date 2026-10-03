@@ -8,9 +8,9 @@ go-to: election_algorithm
 @post_election
 on-arrival: {!
 // set congress proportion to votes
-Q.ccf_ss_r = Q.ccf_ss_polls;
+Q.ccf_r = Q.ccf_polls;
 Q.pps_r = Q.pps_polls;
-Q.cp_s_r = Q.cp_s_polls;
+Q.cpc_s_r = Q.cpc_s_polls;
 Q.lps_r = Q.lps_polls;
 Q.cps_r = Q.cps_polls;
 Q.scps_r = Q.scps_polls;
@@ -19,32 +19,32 @@ Q.other_r = Q.other_polls;
 // The largest party can only be the CCF(SS), LPS, CPS, or SCPS.
 Q.largest_party = 'CCF(SS)';
 
-if (Q.lps_r >= Q.ccf_ss_r && Q.lps_r >= Q.cps_r && Q.lps_r >= Q.scps_r) {
+if (Q.lps_r >= Q.ccf_r && Q.lps_r >= Q.cps_r && Q.lps_r >= Q.scps_r) {
     Q.largest_party = 'LPS';
 }
-if (Q.cps_r >= Q.ccf_ss_r && Q.cps_r >= Q.lps_r && Q.cps_r >= Q.scps_r) {
+if (Q.cps_r >= Q.ccf_r && Q.cps_r >= Q.lps_r && Q.cps_r >= Q.scps_r) {
     Q.largest_party = 'CPS';
 }
-if (Q.scps_r >= Q.ccf_ss_r && Q.scps_r >= Q.lps_r && Q.scps_r >= Q.cps_r) {
+if (Q.scps_r >= Q.ccf_r && Q.scps_r >= Q.lps_r && Q.scps_r >= Q.cps_r) {
     Q.largest_party = 'SCPS';
 }
 
 // coalitions
-Q.lps_coalition = Q.ccf_ss_r + Q.lps_r;
-Q.pps_coalition = Q.ccf_ss_r + Q.pps_r;
-Q.scps_coalition = Q.ccf_ss_r + Q.scps_r;
-Q.left_coalition = Q.ccf_ss_r + Q.cp_s_r;
-Q.grand_coalition = Q.ccf_ss_r + Q.lps_r + Q.pps_r + Q.cps_r;
+Q.lps_coalition = Q.ccf_r + Q.lps_r;
+Q.pps_coalition = Q.ccf_r + Q.pps_r;
+Q.scps_coalition = Q.ccf_r + Q.scps_r;
+Q.left_coalition = Q.ccf_r + Q.cpc_s_r;
+Q.grand_coalition = Q.ccf_r + Q.lps_r + Q.pps_r + Q.cps_r;
 Q.bourgeois_coalition = Q.lps_r + Q.cps_r + Q.other_r;
 Q.conservative_coalition = Q.cps_r + Q.scps_r;
 Q.right_coalition = Q.cps_r + Q.other_r + Q.scps_r;
 Q.cooperative_coalition = Q.cps_r + Q.pps_r + Q.other_r;
 Q.scps_majority = Q.scps_r;
 // this is an absurd concept lol
-Q.united_front_coalition = Q.ccf_ss_r + Q.cp_s_r + Q.pps_r + Q.lps_r;
-Q.anti_democratic_coalition = Q.cp_s_r;
-// aka everyone except scps, cp_s, scps
-Q.neo_lps_coalition = Q.ccf_ss_r + Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
+Q.united_front_coalition = Q.ccf_r + Q.cpc_s_r + Q.pps_r + Q.lps_r;
+Q.anti_democratic_coalition = Q.cpc_s_r;
+// aka everyone except scps, cpc_s, scps
+Q.neo_lps_coalition = Q.ccf_r + Q.lps_r + Q.pps_r + Q.cps_r + Q.other_r;
 !}
 
 The electoral system is essentially proportional, with the proportion of Assembly seats roughly equal to the proportion of votes.
@@ -52,13 +52,13 @@ The electoral system is essentially proportional, with the proportion of Assembl
 **Election results:**
 
 # 1928: 30, 1930: 25, 1932: 22
-CCF(SS): [+ ccf_ss_r +]
+CCF(SS): [+ ccf_r +]
 
 # 1928: 15, 1930: 15, 1932: 
 PPS: [+ pps_r +]
 
 # 1928: 10, 1930: 13
-CP(S): [+ cp_s_r +]
+CPC(S): [+ cpc_s_r +]
 
 # 1928: 5, 1930: 4 
 LPS: [+ lps_r +]

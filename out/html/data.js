@@ -17,7 +17,7 @@ const tooltipList = [{
     explanationText: "The Progressive Farmer-Labour Party"
 }, 
 {
-    searchString: "CP(S)", 
+    searchString: "CPC(S)", 
     explanationText: "The Communist Party (Saskatchewan)"
 },
 {
@@ -151,7 +151,7 @@ const colourList = [{
         style: "color: #D26E28; font-weight: bold;"
     },
     {
-        word: "CP(S)", 
+        word: "CPC(S)", 
         style: "color: #920c0c; font-weight: bold;"
     },
     {

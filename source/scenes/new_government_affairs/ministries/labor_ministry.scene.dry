@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: ministries
 on-arrival: labour_affairs_timer = 6; month_actions += 1; labour_affairs_seen = 1
-view-if: ccf_in_government = 1 and labour_minister_party = ccf_ss_name and labour_affairs_timer = 0 and strike_term_seen = 0
+view-if: ccf_in_government = 1 and labour_minister_party = ccf_name and labour_affairs_timer = 0 and strike_term_seen = 0
 card-image: img/organizations/ReliefWorkHighway.jpg
 is-pinned-card: true
 
@@ -26,7 +26,7 @@ Q.scps_relation += 2;
 if (Q.ccf_in_government && Q.cps_in_government) {Q.cps_relation += 2}; 
 if (Q.ccf_in_government && Q.scps_in_government) {Q.scps_relation += 1};
 
-Q.cp_s_relation -= 4;
+Q.cpc_s_relation -= 4;
 
 !}
 

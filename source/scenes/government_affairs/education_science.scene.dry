@@ -1,7 +1,7 @@
 title: Education & Science
 new-page: true
 is-card: true
-view-if: ccf_in_government and ccf_ss_prussia and premier_party = ccf_ss_name and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
+view-if: ccf_in_government and ccf_prussia and premier_party = ccf_name and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
 on-arrival: education_science_timer += 9; month_actions += 1
 card-image: img/portraits/EinsteinAlbert.jpg
 go-to: ed_menu
@@ -43,7 +43,7 @@ view-if: not last_advisor_action
 
 @increase_science
 title: Increase funding for scientific research.
-choose-if: economic_minister_party = ccf_ss_name
+choose-if: economic_minister_party = ccf_name
 unavailable-subtitle: This requires the Economic Ministry.
 
 Socialism has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and reactionary attitudes of many academics, science in the Saskatchewanian Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
@@ -87,7 +87,7 @@ choose-if: science_funding >= 1
 unavailable-subtitle: We have not funded science.
 on-arrival: treasury += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_ccf -= 5; workers_ccf -= 2; lps_relation -= 5; unemployed += 0.3
 
-We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the [+ ccf_ss_name +].
+We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the [+ ccf_name +].
 
 
 @structure
@@ -115,12 +115,12 @@ Are you sure about this? The Liberal-CCF Coalition had an agreement to not touch
 - @cancel_advisor_action
 
 @secularize_2
-on-arrival: secularized = 1; catholics_ccf -= 15; pps_relation -= 15; cps_relation += 6*(1-dissent); lps_relation += 6*(1-dissent); cp_s_relation += 6*(1-dissent); new_middle_ccf += 3*(1-dissent); workers_ccf += 3*(1-dissent); education_science += 0.5; new_middle_lps += 4; new_middle_cps += 4
+on-arrival: secularized = 1; catholics_ccf -= 15; pps_relation -= 15; cps_relation += 6*(1-dissent); lps_relation += 6*(1-dissent); cpc_s_relation += 6*(1-dissent); new_middle_ccf += 3*(1-dissent); workers_ccf += 3*(1-dissent); education_science += 0.5; new_middle_lps += 4; new_middle_cps += 4
 go-to: vote_of_no_confidence.vonc_menu if in_lps_coalition or in_grand_coalition or in_unity_government
 
 # instant VONC from zentrum
 
-The [+ ccf_ss_name +], [+ lps_name +], CPS, and CP(S) vote in favor of secular education, overcoming the opposition of the religiously-oriented PPS Party and SCPS. We have funded secular community schools to replace some previous denominational schools.
+The [+ ccf_name +], [+ lps_name +], CPS, and CPC(S) vote in favor of secular education, overcoming the opposition of the religiously-oriented PPS Party and SCPS. We have funded secular community schools to replace some previous denominational schools.
 
 [? if in_lps_coalition or in_grand_coalition or in_unity_government: Of course, the PPS Party is in revolt at this proposal, and have called for a vote of no confidence in our government. ?]
 
@@ -148,7 +148,7 @@ We have created local elected school boards, and delegated some of the decision-
 @curriculum
 title: Change the educational curriculum.
 choose-if: curriculum_timer = 0
-unavailable-subtitle: [? if curriculum_timer > 0 : It is too early to change the curriculum again. ?][? if not ccf_ss_prussia: We are not in control of the Urban state government. ?]
+unavailable-subtitle: [? if curriculum_timer > 0 : It is too early to change the curriculum again. ?][? if not ccf_prussia: We are not in control of the Urban state government. ?]
 
 Many socialists believe that education in Saskatchewan is not fit for the modern era. Much of the educational system still follows imperial-era traditions of militaristic discipline, and far-right professors and students rule the universities. Nevertheless, there have been strides in bringing working-class children into the schools.
 
@@ -175,7 +175,7 @@ We should teach students how to be citizens of a democratic republic, by teachin
 @science_major
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
-on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_lps_coalition; pps_relation -= 5; lps_relation += 4*(1-dissent); cp_s_relation += 3*(1-dissent); new_middle_ccf += 3*(1-dissent); workers_ccf += 2*(1-dissent)
+on-arrival: curriculum_timer = 50; major_curriculum = "scientific"; education_science += 1; coalition_dissent += 1 if in_lps_coalition; pps_relation -= 5; lps_relation += 4*(1-dissent); cpc_s_relation += 3*(1-dissent); new_middle_ccf += 3*(1-dissent); workers_ccf += 2*(1-dissent)
 go-to: curriculum_minor
 
 Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
@@ -228,7 +228,7 @@ We should teach students how to be citizens of a democratic republic, by teachin
 title: Scientific curriculum
 subtitle: Modern science, mathematics, and technical skills
 view-if: major_curriculum != "scientific"
-on-arrival: minor_curriculum = "scientific"; education_science += 0.5; pps_relation -= 3; lps_relation += 3*(1-dissent); cp_s_relation += 2*(1-dissent); new_middle_ccf += 2*(1-dissent); workers_ccf += 2*(1-dissent)
+on-arrival: minor_curriculum = "scientific"; education_science += 0.5; pps_relation -= 3; lps_relation += 3*(1-dissent); cpc_s_relation += 2*(1-dissent); new_middle_ccf += 2*(1-dissent); workers_ccf += 2*(1-dissent)
 
 Our educational system should reflect the modern age, and we should teach science and rational thinking. Religious conservatives tend to react negatively against this. 
 

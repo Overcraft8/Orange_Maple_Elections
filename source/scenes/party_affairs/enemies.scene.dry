@@ -13,24 +13,24 @@ In our media and campaign materials, who should we consider as our main opponent
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
 - @anti_lps: The LPS
-- @anti_radical: The 'radical' parties of the SCPS and CP(S)
+- @anti_radical: The 'radical' parties of the SCPS and CPC(S)
 - @anti_scps: The far right - the SCPS
 - @anti_establishment: The establishment parties - the CPS and LPS
-- @anti_cp_s: The CP(S).
+- @anti_cpc_s: The CPC(S).
 - @easy_discard
 
 @anti_radical
 on-arrival:{! 
-Q.enemies = "SCPS and CP(S)"; 
+Q.enemies = "SCPS and CPC(S)"; 
 Q.managerial_strength += 2; 
 Q.moderate_strength += 3; 
 Q.moderate_dissent -= 3; 
 Q.radical_dissent += 3; 
-Q.farmers_cp_s -= 2;
+Q.farmers_cpc_s -= 2;
 Q.farmers_scps -= 2;
-Q.workers_cp_s -= 2; 
+Q.workers_cpc_s -= 2; 
 Q.workers_scps -= 2; ; 
-Q.cp_s_relation -= 5; 
+Q.cpc_s_relation -= 5; 
 Q.scps_relation -= 5 
 !}
 
@@ -47,12 +47,12 @@ on-arrival: enemies = "LPS"; scps_urgency += 1; workers_lps -= 2; farmers_lps -=
 
 [? if scps_urgency == 0 or scps_r < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_r >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]
 
-@anti_cp_s
-on-arrival: enemies = "CP(S)"; managerial_strength += 5; radical_dissent += 8; managerial_dissent -= 5; cp_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cp_s -= 4;
+@anti_cpc_s
+on-arrival: enemies = "CPC(S)"; managerial_strength += 5; radical_dissent += 8; managerial_dissent -= 5; cpc_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cpc_s -= 4;
 
 The party would earn much from distancing itself from the electorally-poisionous Communists
 
 @anti_establishment
-on-arrival: enemies = "establishment parties"; radical_strength += 8; radical_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cp_s_relation += 5; managerial_dissent += 8; moderate_dissent += 8; workers_pps -= 3; coalition_dissent += 1
+on-arrival: enemies = "establishment parties"; radical_strength += 8; radical_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cpc_s_relation += 5; managerial_dissent += 8; moderate_dissent += 8; workers_pps -= 3; coalition_dissent += 1
 
 Targetting the old-line parties earns us populist goodwill.

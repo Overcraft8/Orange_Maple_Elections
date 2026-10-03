@@ -1,7 +1,7 @@
 title: Constitutional Reform
 new-page: true
 is-card: true
-view-if: ccf_in_government = 1 and justice_minister_party = ccf_ss_name and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_lps_coalition) or (in_ccf_majority) or (in_left_front) or (in_unity_government)) and constitutional_reform < 3
+view-if: ccf_in_government = 1 and justice_minister_party = ccf_name and constitutional_reform_timer = 0 and judicial_reform >= 4 and neorevisionism and ((in_lps_coalition) or (in_ccf_majority) or (in_left_front) or (in_unity_government)) and constitutional_reform < 3
 frequency: 25
 on-arrival: month_actions += 1; constitutional_reform_timer += 12; pass_threshold = 0.51; pass_threshold = 0.6 if pro_republic < 65;
 card-image: img/portraits/UnderhillFrank.jpg
@@ -34,12 +34,12 @@ A constitutional reform requires either a two-thirds supermajority in the Assemb
 @vote_threshold
 subtitle: Change the vote threshold to 5% for parties to be represented in the Assembly.
 on-arrival: {!
-Q.reform_support = Q.ccf_ss_normalized;
+Q.reform_support = Q.ccf_normalized;
 if (Q.pps_relation > 30) {
     Q.reform_support += Q.pps_normalized - 0.03;
 }
-if (Q.cp_s_relation > 50 && Q.cp_s_normalized >= 0.1) {
-    Q.reform_support += Q.cp_s_normalized;
+if (Q.cpc_s_relation > 50 && Q.cpc_s_normalized >= 0.1) {
+    Q.reform_support += Q.cpc_s_normalized;
 }
 if (Q.scps_normalized >= 0.2 ) {
     Q.reform_support += Q.scps_normalized;
@@ -51,9 +51,9 @@ view-if: electoral_threshold = 0
 
 Some political thinkers believe that the proliferation of minor parties is responsible for the instability of the republic. They believe that a higher electoral threshold will reduce the influence of small radical parties. Parties that win a plurality in a constituency will maintain their representation. 
 
-The smaller parties will obviously oppose this reform. [? if pps_relation > 30 : The PPS Party supports this reform. ?] [? if cp_s_relation > 50 and cp_s_normalized >= 0.1 : Perhaps surprisingly, the CP(S) supports this reform. ?] [? if scps_normalized >= 0.2 : The SCPS supports this reform, as they believe they have something to gain. ?]
+The smaller parties will obviously oppose this reform. [? if pps_relation > 30 : The PPS Party supports this reform. ?] [? if cpc_s_relation > 50 and cpc_s_normalized >= 0.1 : Perhaps surprisingly, the CPC(S) supports this reform. ?] [? if scps_normalized >= 0.2 : The SCPS supports this reform, as they believe they have something to gain. ?]
 
-The [+ ccf_ss_name +] Left opposes this change, as they believe it to be anti-democratic.
+The [+ ccf_name +] Left opposes this change, as they believe it to be anti-democratic.
 
 - @vote_threshold_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.
@@ -62,7 +62,7 @@ The [+ ccf_ss_name +] Left opposes this change, as they believe it to be anti-de
 @vote_threshold_2
 choose-if: reform_support >= pass_threshold
 unavailable-subtitle: We do not have enough support for this policy. [? if pro_republic < 65 : We should have an additional margin for the referendum since we need a majority of voters, and many voters who do not support the republic will not participate. ?] [? if pps_relation <= 30 : The PPS Party does not trust us enough to support this policy. ?]
-on-arrival: constitutional_reform += 1; electoral_threshold = 5; lps_relation -= 25; cps_relation -= 25; radical_dissent += 20; workers_scps += workers_other*0.4; workers_scps += workers_other*0.4; workers_other *= 0.1; new_middle_cps += new_middle_other*0.3; new_middle_scps += new_middle_other*0.3; new_middle_other *= 0.1; old_middle_cps += 0.3*old_middle_other; old_middle_scps += 0.3*old_middle_other; old_middle_scps += 0.3*old_middle_other; old_middle_other *= 0.1; farmers_scps += 0.5*farmers_other; farmers_scps += 0.4*farmers_other; farmers_other *= 0.1; unemployed_scps += 0.3*unemployed_other; unemployed_cp_s += 0.4*unemployed_other; unemployed_other *= 0.2; catholics_pps += 0.6*catholics_other; catholics_other *= 0.1;
+on-arrival: constitutional_reform += 1; electoral_threshold = 5; lps_relation -= 25; cps_relation -= 25; radical_dissent += 20; workers_scps += workers_other*0.4; workers_scps += workers_other*0.4; workers_other *= 0.1; new_middle_cps += new_middle_other*0.3; new_middle_scps += new_middle_other*0.3; new_middle_other *= 0.1; old_middle_cps += 0.3*old_middle_other; old_middle_scps += 0.3*old_middle_other; old_middle_scps += 0.3*old_middle_other; old_middle_other *= 0.1; farmers_scps += 0.5*farmers_other; farmers_scps += 0.4*farmers_other; farmers_other *= 0.1; unemployed_scps += 0.3*unemployed_other; unemployed_cpc_s += 0.4*unemployed_other; unemployed_other *= 0.2; catholics_pps += 0.6*catholics_other; catholics_other *= 0.1;
 achievement: verfassungsreform
 
 # this should result in a redistribution of votes - other parties should not get so many votes anymore. maybe lps and cps get a recovery of middle-class votes? or maybe they flow to the others.
@@ -74,7 +74,7 @@ We have passed a constitutional amendment to increase the electoral threshold to
 @constructive_vonc
 subtitle: Votes of no confidence can only be called if an alternative plan for government formation can be passed, greatly reducing their incidence.
 on-arrival: {!
-Q.reform_support = Q.ccf_ss_normalized + Q.lps_normalized;
+Q.reform_support = Q.ccf_normalized + Q.lps_normalized;
 if (Q.pps_relation >= 30) {
     Q.reform_support += Q.pps_normalized - 0.03;
 }
@@ -84,7 +84,7 @@ if (!Q.stresemann_dead) {
 !}
 view-if: constructive_vonc = 0
 
-[? if pps_relation >= 30 : The Liberal-CCF Coalition parties, the [+ lps_name +] and PPS Party, support this reform, which will greatly improve the stability of the government. ?] [? if pps_relation < 30 : The [+ lps_name +] supports this reform, but the PPS Party does not trust us enough to support the constitutional referendum. ?] The more conservative and radical right-wing parties and the CP(S) are in opposition, as they seem to relish in the republican system's instability.
+[? if pps_relation >= 30 : The Liberal-CCF Coalition parties, the [+ lps_name +] and PPS Party, support this reform, which will greatly improve the stability of the government. ?] [? if pps_relation < 30 : The [+ lps_name +] supports this reform, but the PPS Party does not trust us enough to support the constitutional referendum. ?] The more conservative and radical right-wing parties and the CPC(S) are in opposition, as they seem to relish in the republican system's instability.
 
 - @constructive_vonc_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.
@@ -100,7 +100,7 @@ We have successfully passed a constitutional amendment to ban votes of no confid
 @prime_ministerial_powers
 subtitle: The prime minister can no longer dissolve the Assembly at will, or call a *Reichsexekution* on state governments.
 on-arrival: {!
-Q.reform_support = Q.ccf_ss_normalized + Q.lps_normalized + Q.cp_s_normalized;
+Q.reform_support = Q.ccf_normalized + Q.lps_normalized + Q.cpc_s_normalized;
 if (Q.pps_relation > 49 && (Q.prime_minister == "Richard Bennett" || Q.prime_minister == "Eckener")) {
     Q.reform_support += Q.pps_normalized;
 } else if (Q.prime_minister == "J. S. Woodsworth") {
@@ -111,7 +111,7 @@ view-if: prime_ministerial_powers = 0
 
 The wide-ranging prime ministerial powers promised by the constitution are a potential gateway to authoritarianism. Thus, we can support reforms that limit the powers of the prime minister, ending his power to unilaterally terminate an elected government and to remove state governments.
 
-The CP(S) is in favor of this reform, having been victims of the *Reichsexekution* in the past (when CP(S)-supported state governments in Thuringia and Saxony were removed). The democrats of the [+ lps_name +] also support this. [? if prime_minister == "Richard Bennett": However, the opposition from conservatives is vehement, as they see a reduction in prime ministerial powers as disrespectful to Richard Bennett. ?] [? if pps_relation <= 49 and prime_minister == "Richard Bennett" : Thus, the PPS Party has been influenced to oppose these reforms. ?] [? if pps_relation > 49 and prime_minister == "Richard Bennett" : Despite this, the PPS Party supports the proposed reform. ?] [? if prime_minister == "J. S. Woodsworth" : The PPS Party supports this reform. ?]
+The CPC(S) is in favor of this reform, having been victims of the *Reichsexekution* in the past (when CPC(S)-supported state governments in Thuringia and Saxony were removed). The democrats of the [+ lps_name +] also support this. [? if prime_minister == "Richard Bennett": However, the opposition from conservatives is vehement, as they see a reduction in prime ministerial powers as disrespectful to Richard Bennett. ?] [? if pps_relation <= 49 and prime_minister == "Richard Bennett" : Thus, the PPS Party has been influenced to oppose these reforms. ?] [? if pps_relation > 49 and prime_minister == "Richard Bennett" : Despite this, the PPS Party supports the proposed reform. ?] [? if prime_minister == "J. S. Woodsworth" : The PPS Party supports this reform. ?]
 
 - @prime_ministerial_powers_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.

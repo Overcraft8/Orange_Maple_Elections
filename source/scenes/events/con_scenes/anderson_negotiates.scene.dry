@@ -1,7 +1,7 @@
 title: Anderson negotiates with the PFLP
 subtitle: The Premier is desperate
 tags: event
-view-if: year = 1932 and month = 3 and ccf_ss_name == 'PFLP'
+view-if: year = 1932 and month = 3 and ccf_name == 'PFLP'
 priority: 1
 max-visits: 1
 face-image: img/portraits/AndersonJames.jpg

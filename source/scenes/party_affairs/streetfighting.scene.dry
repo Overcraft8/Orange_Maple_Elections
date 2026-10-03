@@ -46,7 +46,7 @@ max-visits: 2
 As part of the Iron Front, we are increasing coordination between the UFC(SS) and the unions, and many union members want to become more involved.
 
 @city_police_training
-view-if: ccf_ss_prussia == 1 and city_police_loyalty > 0.5
+view-if: ccf_prussia == 1 and city_police_loyalty > 0.5
 on-arrival: ufc_militancy += 0.05; ful_strength += 50; city_police_training += 1
 
 The loyal sections of the Urban police can help train the UFC(SS).
@@ -57,9 +57,9 @@ on-arrival: ufc_militancy -= 0.02; ufc_strength -= 50; pacifism += 1
 By not fighting, the strength of the UFC(SS) atrophies. Pacifists in the party are gaining the upper hand.
 
 @truce_wul
-choose-if: cp_s_relation >= 45
-view-if: cp_s_truce == 0
-unavailable-subtitle: The CP(S) is not interested.
-on-arrival: cp_s_truce = 1; cp_s_relation += 5; wul_strength += 50; ufc_strength += 50; ful_strength += 50;
+choose-if: cpc_s_relation >= 45
+view-if: cpc_s_truce == 0
+unavailable-subtitle: The CPC(S) is not interested.
+on-arrival: cpc_s_truce = 1; cpc_s_relation += 5; wul_strength += 50; ufc_strength += 50; ful_strength += 50;
 
-We have made at least a temporary truce with the CP(S), so that our respective organizations will stop fighting.
+We have made at least a temporary truce with the CPC(S), so that our respective organizations will stop fighting.

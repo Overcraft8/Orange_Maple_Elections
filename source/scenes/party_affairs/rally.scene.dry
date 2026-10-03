@@ -17,7 +17,7 @@ The SCPSs FUL has disrupted our rally! Their street troops are preventing us fro
 - @cancel: Cancel the rally.
 
 @police_protect
-view-if: ccf_ss_prussia == 1
+view-if: ccf_prussia == 1
 on-arrival: police_protect_success = city_police_loyalty * city_police_militancy * city_police_strength*2 - ful_militancy*ful_strength;
 go-to: police_protect_win if police_protect_success >= 0; police_protect_lose if police_protect_success < 0
 
@@ -46,7 +46,7 @@ on-arrival: workers_scps += 3; ufc_strength -= 50
 Unfortunately, the UFC(SS) was not able to hold back the FUL mob. The SCPSs have won this show of strength.
 
 @both_protect
-view-if: ccf_ss_prussia
+view-if: ccf_prussia
 choose-if: city_police_training > 0
 unavailable-subtitle: The loyal sections of the police have never coordinated with the UFC(SS) before.
 on-arrival: ufc_success = ufc_strength*ufc_militancy - ful_strength*ful_militancy + city_police_loyalty*city_police_militancy*city_police_strength*2; strife += 1

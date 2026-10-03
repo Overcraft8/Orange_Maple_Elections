@@ -77,12 +77,12 @@ Premier: [+ premier +] ([+ premier_party +])
 Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-CCF(SS): [+ ccf_ss_r +]%
+CCF(SS): [+ ccf_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 PPS: [+ pps_r +]%
 # 1928: 10, 1930: 13
-CP(S): [+ cp_s_r +]%
+CPC(S): [+ cpc_s_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 [+ lps_name +]: [+ lps_r +]%
 # 1928: 9, 1930: 5
@@ -93,12 +93,12 @@ SCPS: [+ scps_r +]%
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
-CCF(SS) position: [? if ccf_ss_toleration : toleration ?][? if ccf_in_government : in government - ?][? if ccf_ss_toleration == 0 and ccf_in_government == 0 and ccf_ss_caretaker == 0 : opposition ?][? if ccf_ss_caretaker : caretaker government ?]
+CCF(SS) position: [? if ccf_toleration : toleration ?][? if ccf_in_government : in government - ?][? if ccf_toleration == 0 and ccf_in_government == 0 and ccf_caretaker == 0 : opposition ?][? if ccf_caretaker : caretaker government ?]
 [? if in_lps_coalition and ccf_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_in_government: Grand Coalition ?][? if in_unity_government and ccf_in_government: Popular Front ?][? if in_left_front and ccf_in_government: Left Front ?][? if in_ccf_majority and ccf_in_government: CCF(SS) majority ?][? if in_minority_government and ccf_in_government: minority government ?]
 
 [? if ccf_in_government and not in_ccf_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if ccf_in_government and (in_left_front or in_unity_government): CP(S) coalition dissent: [+ cp_s_coalition_dissent : coalition_dissent +] ?]
+[? if ccf_in_government and (in_left_front or in_unity_government): CPC(S) coalition dissent: [+ cpc_s_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -127,7 +127,7 @@ go-to: menu
 
 **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Many are socialist, supporting either the CCF(SS) or CP(S). They make up 40-50% of the population.
+**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Many are socialist, supporting either the CCF(SS) or CPC(S). They make up 40-50% of the population.
 
 **Old Middle**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
 
@@ -137,7 +137,7 @@ go-to: menu
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the PPS Party (or the Bavarian People's Party in Bavaria).
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPS, although substantial numbers support the CCF(SS) or CP(S).
+**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPS, although substantial numbers support the CCF(SS) or CPC(S).
 
 
 @public_opinion
@@ -164,7 +164,7 @@ go-to: menu
 
 **Projected election results** (if the election were to be held now):
 
-CCF(SS): [+ ccf_ss_polls +]%
+CCF(SS): [+ ccf_polls +]%
 
 [? if sapd_formed: SAPD: [+ sapd_polls +]% ?]
 
@@ -172,7 +172,7 @@ CCF(SS): [+ ccf_ss_polls +]%
 PPS: [+ pps_polls +]%
 
 # 1928: 10, 1930: 13
-CP(S): [+ cp_s_polls +]%
+CPC(S): [+ cpc_s_polls +]%
 
 # 1928: 5, 1930: 4 (as DstP)
 [+ lps_name +]: [+ lps_polls +]%
@@ -188,17 +188,17 @@ Others: [+ other_polls +]%
 
 **Detailed results for each demographic**
 
-Workers: CCF(SS): [+ workers_ccf_display +]%, PPS: [+ workers_pps_display +]%, CP(S): [+ workers_cp_s_display +]%, [+ lps_name +]: [+ workers_lps_display +]%, CPS: [+ workers_cps_display +]%; SCPS: [+ workers_scps_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: CCF(SS): [+ workers_ccf_display +]%, PPS: [+ workers_pps_display +]%, CPC(S): [+ workers_cpc_s_display +]%, [+ lps_name +]: [+ workers_lps_display +]%, CPS: [+ workers_cps_display +]%; SCPS: [+ workers_scps_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: CCF(SS): [+ new_middle_ccf_display +]%, PPS: [+ new_middle_pps_display +]%, CP(S): [+ new_middle_cp_s_display +]%, [+ lps_name +]: [+ new_middle_lps_display +]%, CPS: [+ new_middle_cps_display +]%; SCPS: [+ new_middle_scps_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: CCF(SS): [+ new_middle_ccf_display +]%, PPS: [+ new_middle_pps_display +]%, CPC(S): [+ new_middle_cpc_s_display +]%, [+ lps_name +]: [+ new_middle_lps_display +]%, CPS: [+ new_middle_cps_display +]%; SCPS: [+ new_middle_scps_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: CCF(SS): [+ old_middle_ccf_display +]%, PPS: [+ old_middle_pps_display +]%, CP(S): [+ old_middle_cp_s_display +]%, [+ lps_name +]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCPS: [+ old_middle_scps_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: CCF(SS): [+ old_middle_ccf_display +]%, PPS: [+ old_middle_pps_display +]%, CPC(S): [+ old_middle_cpc_s_display +]%, [+ lps_name +]: [+ old_middle_lps_display +]%, CPS: [+ old_middle_cps_display +]%; SCPS: [+ old_middle_scps_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Farmers: CCF(SS): [+ farmers_ccf_display +]%, PPS: [+ farmers_pps_display +]%, CP(S): [+ farmers_cp_s_display +]%, [+ lps_name +]: [+ farmers_lps_display +]%, CPS: [+ farmers_cps_display +]%; SCPS: [+ farmers_scps_display +]%, Others: [+ farmers_other_display +]% [? if sapd_formed: SAPD: [+ farmers_sapd_display +]% ?]
+Farmers: CCF(SS): [+ farmers_ccf_display +]%, PPS: [+ farmers_pps_display +]%, CPC(S): [+ farmers_cpc_s_display +]%, [+ lps_name +]: [+ farmers_lps_display +]%, CPS: [+ farmers_cps_display +]%; SCPS: [+ farmers_scps_display +]%, Others: [+ farmers_other_display +]% [? if sapd_formed: SAPD: [+ farmers_sapd_display +]% ?]
 
-Unemployed: CCF(SS): [+ unemployed_ccf_display +]%, PPS: [+ unemployed_pps_display +]%, CP(S): [+ unemployed_cp_s_display +]%, [+ lps_name +]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCPS: [+ unemployed_scps_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: CCF(SS): [+ unemployed_ccf_display +]%, PPS: [+ unemployed_pps_display +]%, CPC(S): [+ unemployed_cpc_s_display +]%, [+ lps_name +]: [+ unemployed_lps_display +]%, CPS: [+ unemployed_cps_display +]%; SCPS: [+ unemployed_scps_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: CCF(SS): [+ catholics_ccf_display +]%, PPS: [+ catholics_pps_display +]%, CP(S): [+ catholics_cp_s_display +]%, [+ lps_name +]: [+ catholics_lps_display +]%, CPS: [+ catholics_cps_display +]%; SCPS: [+ catholics_scps_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: CCF(SS): [+ catholics_ccf_display +]%, PPS: [+ catholics_pps_display +]%, CPC(S): [+ catholics_cpc_s_display +]%, [+ lps_name +]: [+ catholics_lps_display +]%, CPS: [+ catholics_cps_display +]%; SCPS: [+ catholics_scps_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @parties
 go-to: menu
@@ -222,11 +222,11 @@ Current relations: [+ cps_relation : relationships +]
 
 Current relations: [+ scps_relation : relationships +]
 
-**CP(S)** - *Communist Party* - A far-Left party aiming to overthrow capitalism. 
+**CPC(S)** - *Communist Party* - A far-Left party aiming to overthrow capitalism. 
 
-Current relations: [+ cp_s_relation : relationships +]
+Current relations: [+ cpc_s_relation : relationships +]
 
-[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Saskatchewan) - a party recently formed in a split from the CCF(SS), the SAPD is essentially an agglomeration of various left-wing splinter groups between the CCF(SS) and CP(S). ?]
+[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Saskatchewan) - a party recently formed in a split from the CCF(SS), the SAPD is essentially an agglomeration of various left-wing splinter groups between the CCF(SS) and CPC(S). ?]
 
 **Other parties** - There is a multitude of small parties, including the miniscule Labour party and Economic Group. There are many candidates nominated by the LPS, CPS, or PPS that run as independents and also fusion candidates such as Liberal-Labour candidates. 
 
@@ -258,7 +258,7 @@ Strength: [+ kkk_strength +] Thousand
 
 Militarization: [+ kkk_militancy : militancy +]
 
-**Farmers Unity League (FUL)**: This is the farmers's organization of the CP(S), more militant and radical than the UFC(SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
+**Farmers Unity League (FUL)**: This is the farmers's organization of the CPC(S), more militant and radical than the UFC(SS). It has been under flak from the Communist Party for failing to advocate the abolition of capitalism. 
 
 Strength: [+ ful_strength +] Thousand
 
@@ -300,7 +300,7 @@ Dissent: [+ labour_dissent : dissent +]<br>
 ?]
 
 [? if 1 == 1 :
-<span class="tooltip-text" title="A faction of radical CCF(SS)ers. Most of them have ties to the CP(S)." style="color: #7b1616;">**Far Left**</span><br> 
+<span class="tooltip-text" title="A faction of radical CCF(SS)ers. Most of them have ties to the CPC(S)." style="color: #7b1616;">**Far Left**</span><br> 
 Strength: [+ radical_strength : strength +]<br> 
 Dissent: [+ radical_dissent : dissent +]<br>
 ?]
@@ -313,7 +313,7 @@ Dissent: [+ managerial_dissent : dissent +]<br>
 
 **Moderates**
 
-Moderates are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if ccf_ss_prussia : They are dominant in the state government of City Police. ?]
+Moderates are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the far right and left. [? if ccf_prussia : They are dominant in the state government of City Police. ?]
 
 Strength: [+ managerial_strength : strength +]
 
@@ -338,10 +338,10 @@ on-arrival: pps_r = pps_r;
 on-display: {!
 data = [
     {
-        "id": "cp_s",
-        "legend": "CP(S)",
-        "name": "CP(S)",
-        "seats": Q.cp_s_seats
+        "id": "cpc_s",
+        "legend": "CPC(S)",
+        "name": "CPC(S)",
+        "seats": Q.cpc_s_seats
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -355,10 +355,10 @@ if (Q.sapd_formed && Q.sapd_r) {
 
 data = data.concat([
     {
-        "id": "ccf_ss",
-        "legend": Q.ccf_ss_name,
-        "name": Q.ccf_ss_name,
-        "seats": Q.ccf_ss_seats
+        "id": "ccf",
+        "legend": Q.ccf_name,
+        "name": Q.ccf_name,
+        "seats": Q.ccf_seats
     },
     {
         "id": "lps",
@@ -413,8 +413,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'ccf_ss': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#49be39', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'ccf_ss': 'CCF(SS)', 'cp_s': 'CP(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
+            {'ccf': '#D26E28', 'cpc_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#49be39', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'ccf': 'CCF(SS)', 'cpc_s': 'CPC(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -426,8 +426,8 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'ccf_ss': '#D26E28', 'cp_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#49be39', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'ccf_ss': 'CCF(SS)', 'cp_s': 'CP(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
+            {'ccf': '#D26E28', 'cpc_s': '#920c0c', 'lps': '#BE0028', 'pps': '#7e741ab3', 'cps': '#0055A5', 'scps': '#49be39', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'ccf': 'CCF(SS)', 'cpc_s': 'CPC(S)', 'lps': Q.lps_name, 'pps': 'PPS', 'cps': 'CPS', 'scps': 'SCPS', 'other': 'Others', 'sapd': 'SAPD'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -449,11 +449,11 @@ if (d3 && window) {
 {!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div></td><td>!} **CCF(SS):** {!</td><td>!} **[+ ccf_ss_seats +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div></td><td>!} **CCF(SS):** {!</td><td>!} **[+ ccf_seats +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#920c0c'> </div></td> <td>!} CP(S): {!</td><td>!} [+ cp_s_seats +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#920c0c'> </div></td> <td>!} CPC(S): {!</td><td>!} [+ cpc_s_seats +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lps_name +]: {!</td><td>!} [+ lps_seats +]% {!</td></tr>!}
 

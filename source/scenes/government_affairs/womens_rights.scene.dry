@@ -2,7 +2,7 @@ title: Women's Rights
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-view-if: ccf_in_government = 1 and womens_rights_timer = 0 and premier_party == ccf_ss_name
+view-if: ccf_in_government = 1 and womens_rights_timer = 0 and premier_party == ccf_name
 on-arrival: womens_rights_timer += 10; month_actions += 1
 card-image: img/portraits/EliasonFrank.jpg
 frequency: 50
@@ -12,7 +12,7 @@ max-visits: 6
 
 According to the Constitution, women are equal to men, but this is not followed in practice. Women in the workforce are not paid equally for the same work, in addition to often being pushed out of employment after marriage. Men are still favored in marriage and family policy, and there are restrictions on women's rights in many other domains. And that is not to mention the overwhelming patriarchal culture present in Saskatchewan.
 
-For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if ccf_ss_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if ccf_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
 
 - @labour: Institute policies that help women in the workforce.
 - @family: Reform marriage, divorce, and property law.
@@ -58,4 +58,4 @@ Unfortunately, our proposal is voted down in the Assembly, with the Catholic PPS
 @liberalize_success
 on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; pps_relation -= 8; catholics_ccf -= 10; cps_relation -= 5; workers_ccf += 3*(1-dissent); new_middle_ccf += 3*(1-dissent); workers_pps += 3; new_middle_pps += 3; old_middle_pps += 3; old_middle_scps += 3; farmers_scps += 3; workers_scps -= 3; new_middle_scps -= 3; old_middle_scps -= 2; farmers_scps -= 2; unemployed_scps -= 2; unemployed_pps += 3; unemployed_ccf += 3*(1-dissent)
 
-With the support of a "progressive coalition" including the CP(S) and [+ lps_name +], we have successfully passed a bill to legalize abortion in Saskatchewan! This has heartened our more progressive supporters, while hurting our relations with the PPS Party. With the increasing political discourse around abortion, the religiously-oriented PPS Party and SCPS have gained conservative votes at the expense of the SCPS.
+With the support of a "progressive coalition" including the CPC(S) and [+ lps_name +], we have successfully passed a bill to legalize abortion in Saskatchewan! This has heartened our more progressive supporters, while hurting our relations with the PPS Party. With the increasing political discourse around abortion, the religiously-oriented PPS Party and SCPS have gained conservative votes at the expense of the SCPS.

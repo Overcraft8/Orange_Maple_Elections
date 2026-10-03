@@ -1,6 +1,6 @@
 
 // Change seats setup : 
-// [party_region] -> [ccf_ss_]
+// [party_region] -> [ccf_]
 
 
 

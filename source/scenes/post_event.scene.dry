@@ -421,7 +421,7 @@ if (Q.month_actions >= 1) {
 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce CCF(SS) support...
-    if (Q.pro_republic < (Q.ccf_ss_polls + Q.lps_polls + Q.pps_polls - 3)) {
+    if (Q.pro_republic < (Q.ccf_polls + Q.lps_polls + Q.pps_polls - 3)) {
         if (Q.new_middle_ccf > 0) {
             Q.new_middle_ccf -= 5/12;
         }
@@ -458,7 +458,7 @@ if (Q.month_actions >= 1) {
         // increase SCPS vote share
         Q.new_middle_lps -= 5/12;
         Q.new_middle_cps -= 5/12;
-        Q.workers_cp_s += 5/12;
+        Q.workers_cpc_s += 5/12;
         Q.ful_strength += 50/12;
         Q.kkk_strength += 100/12;
         Q.farmers_scps -= 15/12;
@@ -478,7 +478,7 @@ if (Q.month_actions >= 1) {
         Q.new_middle_pps += 2/12;
         if (!Q.works_program) {
             Q.workers_other += 5/12;
-            Q.workers_cp_s += 2/12;
+            Q.workers_cpc_s += 2/12;
         }
         Q.ful_strength += 100/12;
         Q.kkk_strength += 100/12;
@@ -499,9 +499,9 @@ if (Q.month_actions >= 1) {
             Q.new_middle_cps -= 6/12;
             Q.farmers_cps -= 6/12;
             Q.workers -= 4/12;
-            Q.unemployed_cp_s += 2/12;
+            Q.unemployed_cpc_s += 2/12;
             Q.farmers_other -= 12/12;
-            Q.workers_cp_s += 4/12;
+            Q.workers_cpc_s += 4/12;
             Q.ful_strength += 100/12;
             Q.kkk_strength += 50/12;
         } else if (Q.unemployed > 15) {
@@ -518,8 +518,8 @@ if (Q.month_actions >= 1) {
             Q.catholics_pps += 2/12;
             Q.workers -= 4/12;
             Q.farmers_scps -= 4/12;
-            Q.unemployed_cp_s += 2/12;
-            Q.workers_cp_s += 3/12;
+            Q.unemployed_cpc_s += 2/12;
+            Q.workers_cpc_s += 3/12;
             Q.ful_strength += 200/12;
             Q.new_middle_scps += 4/12;
             Q.new_middle_scps += 4/12;

@@ -7,7 +7,7 @@ new-page: true
 
 = Louise Lucas
 
-Louise Lucas is a leading feminist farmers, member of the [+ ccf_ss_name +]'s Board of Directors, and President of the Women's [+ ccf_ss_name +] section. She is an outstanding orator. 
+Louise Lucas is a leading feminist farmers, member of the [+ ccf_name +]'s Board of Directors, and President of the Women's [+ ccf_name +] section. She is an outstanding orator. 
 
 - @emergency_fundraising
 - @welfare
@@ -42,4 +42,4 @@ on-arrival: womens_rights += 1; workers_ccf += 4*(1-dissent); farmers_ccf += 3*(
 
 Lucas's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
 
-[? if ccf_ss_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+[? if ccf_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]

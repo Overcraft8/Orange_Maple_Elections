@@ -20,29 +20,29 @@ This is not to mention the possibility of a minority government where collaborat
 
 - @conservatives: Increase relations with the Conservatives
 - @social_credit: Court the Social Credit Party
-- @cp_s: Work towards repairing our relationship with the Communists
+- @cpc_s: Work towards repairing our relationship with the Communists
 - @reconstruction: Reach out to the Reconstruction Party
 - @new_democracy: Reach out to the New Democracy Movement
-- @ccf_ss_alone: The [+ ccf_ss_name +] can stand alone for now.
+- @ccf_alone: The [+ ccf_name +] can stand alone for now.
 - @easy_discard
 
 
-@cp_s
+@cpc_s
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; cp_s_inter_party_seen += 1
-go-to: cp_s_unity if cp_s_unity = 1; cp_s_social_fascism if cp_s_unity = 0
+on-arrival: resources -= 1; cpc_s_inter_party_seen += 1
+go-to: cpc_s_unity if cpc_s_unity = 1; cpc_s_social_fascism if cpc_s_unity = 0
 
-@cp_s_unity
-on-arrival: cp_s_relation += 5*(1 - dissent); radical_dissent -= 3; radical_strength += 5; 
+@cpc_s_unity
+on-arrival: cpc_s_relation += 5*(1 - dissent); radical_dissent -= 3; radical_strength += 5; 
 
 The Communists welcome our attempt to reach out to them. 
 
-[? if ccf_ss_unity == 0 : They are hopeful that we will join their Unity Front movement as a broad coalition dedicated to unseating the 'reactionary' dominant Liberals. ?]
+[? if ccf_unity == 0 : They are hopeful that we will join their Unity Front movement as a broad coalition dedicated to unseating the 'reactionary' dominant Liberals. ?]
 
-@cp_s_social_fascism
-on-arrival: cp_s_relation += 2*(1 - dissent); radical_dissent -= 3; radical_strength += 5; 
+@cpc_s_social_fascism
+on-arrival: cpc_s_relation += 2*(1 - dissent); radical_dissent -= 3; radical_strength += 5; 
 
 The Communists are not particularly thrilled that we have chosen to reach out to them. Perhaps Moscow has ordered them not to engage with us?
 
@@ -74,7 +74,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; lps_relation += 5*(1 - dissent)
-go-to: cps_anderson if cps_leader = 'James Anderson' and ccf_ss_name = 'PFLP'; cps_reform if cps_leader = 'John Diefenbaker'; cps_moribund if year > 1940
+go-to: cps_anderson if cps_leader = 'James Anderson' and ccf_name = 'PFLP'; cps_reform if cps_leader = 'John Diefenbaker'; cps_moribund if year > 1940
 
 @cps_anderson
 on-arrival: cps_relation += 7*(1 - dissent)
@@ -91,7 +91,7 @@ on-arrival: cps_relation += 5*(1 - dissent)
 
 The Conservatives are somewhat electorally moribund, given their reputation as the government that entered the Depression and drought. It seems their role in Saskatchewan politics has ceased altogether. 
 
-@ccf_ss_alone
+@ccf_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
 

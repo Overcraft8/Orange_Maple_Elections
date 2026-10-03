@@ -10,7 +10,7 @@ max-visits: 3
 
 = Questions of Ideology
 
-The [+ ccf_ss_name +] is torn between many different ideological currents. What should be our primary ideological guidance for now?
+The [+ ccf_name +] is torn between many different ideological currents. What should be our primary ideological guidance for now?
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
@@ -29,7 +29,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; radical_strength += 10; communist_coalition += 1; radical_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cp_s_relation += 3
+on-departure: ideology = "left"; radical_strength += 10; communist_coalition += 1; radical_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cpc_s_relation += 3
 
 The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
 
@@ -63,7 +63,7 @@ if (Q.ideology && Q.ideology != "labour") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "labour"; wtb_support += 1; labour_dissent -= 5; cp_s_relation -= 3
+on-departure: ideology = "labour"; wtb_support += 1; labour_dissent -= 5; cpc_s_relation -= 3
 
 The labour wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
 
@@ -75,7 +75,7 @@ if (Q.ideology && Q.ideology != "moderate") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "moderate"; managerial_strength += 10; democratization += 1; managerial_dissent -= 5; pps_relation += 5; cps_relation += 5; cp_s_relation -= 8; managerial_plan_support += 1
+on-departure: ideology = "moderate"; managerial_strength += 10; democratization += 1; managerial_dissent -= 5; pps_relation += 5; cps_relation += 5; cpc_s_relation -= 8; managerial_plan_support += 1
 
 The Moderate wing is most in favour of loose cooperation or even an electoral alliance with the Cooperative Coalition. Perhaps we could use this to our advantage?
 

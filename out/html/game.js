@@ -30,7 +30,7 @@
   window.showStats = function() {
   var scene = window.dendryUI.dendryEngine.state.sceneId;
 
-  if (scene.startsWith('library') || scene.startsWith('ccf_ss_president')) {
+  if (scene.startsWith('library') || scene.startsWith('ccf_president')) {
       window.dendryUI.dendryEngine.goToScene('backSpecialScene');
   } else {
       window.dendryUI.dendryEngine.goToScene('library');
@@ -189,14 +189,14 @@ function getRelationshipText(value) {
 function getPartyIdeology(party, Q) {
     if (!Q) return 'Unknown';
     switch(party){
-        case 'CP(S)': 
-            if (Q.cp_s_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Marxist-Leninist)';
-            if (Q.cp_s_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
+        case 'CPC(S)': 
+            if (Q.cpc_s_ideology === "Marxism-Leninism") return '<span style="color: #4c0e0e;">Far Left</span> (Marxist-Leninist)';
+            if (Q.cpc_s_ideology === "Popular Front Socialism") return '<span style="color: #4c0e0e;">Edgy Left Wing</span> (Popular Front Socialism)';
             return 'Unknown';
         case 'CCF(SS)':
-            if (Q.ccf_ss_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
-            if (Q.ccf_ss_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left - Left Wing</span>  (Social Democracy)';
-            if (Q.ccf_ss_ideology === "Progressivism") return '<span style="color: #ecc22a;">Centre Left</span>  (Progressivism)';
+            if (Q.ccf_ideology === "Democratic Socialism") return '<span style="color: #c46124;">Left Wing</span> (Democratic Socialism)';
+            if (Q.ccf_ideology === "Social Democracy") return '<span style="color: #eca12a;">Centre Left - Left Wing</span>  (Social Democracy)';
+            if (Q.ccf_ideology === "Progressivism") return '<span style="color: #ecc22a;">Centre Left</span>  (Progressivism)';
             return 'Unknown';
         case 'PPS': 
             if (Q.pps_ideology === "Even they don't know...") return '<span style="color: #b0d022;">Centre Left</span> (Agrarian Progressivism)';
@@ -229,7 +229,7 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     if (!Q) return baseTooltip.explanationText;
 
     const relationMap = {
-        'CP(S)': 'cp_s_relation',
+        'CPC(S)': 'cpc_s_relation',
         'PPS': 'pps_relation',
         'LPS': 'lps_relation',
         'CPS': 'cps_relation',
@@ -237,8 +237,8 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     };
 
     const ideologyMap = {
-        'CP(S)': 'cp_s_ideology',
-        'CCF(SS)': 'ccf_ss_ideology', 
+        'CPC(S)': 'cpc_s_ideology',
+        'CCF(SS)': 'ccf_ideology', 
         'PPS': 'pps_ideology', 
         'LPS': 'lps_ideology', 
         'CPS': 'cps_ideology', 
@@ -246,8 +246,8 @@ function getDynamicTooltipContent(searchString, baseTooltip) {
     };
 
     const party_seats = {
-        'CP(S)': 'cp_s_seats',
-        'CCF(SS)': 'ccf_ss_seats',
+        'CPC(S)': 'cpc_s_seats',
+        'CCF(SS)': 'ccf_seats',
         'PPS': 'pps_seats',
         'LPS': 'lps_seats',
         'CPS': 'cps_seats',

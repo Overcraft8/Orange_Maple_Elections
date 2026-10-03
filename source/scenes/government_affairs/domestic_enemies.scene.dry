@@ -1,6 +1,6 @@
 title: Investigating Domestic Enemies
 on-arrival: month_actions += 1
-view-if: ccf_in_government = 1 and interior_minister_party = ccf_ss_name
+view-if: ccf_in_government = 1 and interior_minister_party = ccf_name
 #card-image: img/protests/regina_riot_protest.jpg
 #is-card: true
 #new-page: true
@@ -67,19 +67,19 @@ We have arrested more of the Ku Klux Klan's leaders and confiscated their weapon
 
 @ban_wul
 view-if: communist_coalition < 3 and wul_banned = 0
-on-arrival: cp_s_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; cp_s_coalition_dissent += 2; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_banned = 0; n_wul_banned += 1
+on-arrival: cpc_s_relation -= 15; wul_strength -= 50; wul_banned = 1; communist_coalition -= 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; cpc_s_coalition_dissent += 2; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_banned = 0; n_wul_banned += 1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
 
 @unban_wul
 view-if: wul_banned = 1
-on-arrival: wul_banned = 0; cp_s_relation += 5; wul_strength += 50; city_police_loyalty -= 0.05; interior_police_loyalty -= 0.05
+on-arrival: wul_banned = 0; cpc_s_relation += 5; wul_strength += 50; city_police_loyalty -= 0.05; interior_police_loyalty -= 0.05
 
 The Communist WUL is no longer banned.
 
 @persecute_wul
 title: Further persecute the WUL.
 view-if: wul_banned = 1
-on-arrival: wul_strength *= 0.7; wul_militancy -= 0.05; cp_s_relation -= 10; cp_s_coalition_dissent += 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_persecuted = 0; n_wul_persecuted += 1
+on-arrival: wul_strength *= 0.7; wul_militancy -= 0.05; cpc_s_relation -= 10; cpc_s_coalition_dissent += 1; pps_relation += 5; cps_relation += 5; city_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_wul_persecuted = 0; n_wul_persecuted += 1
 
 We have arrested more of the WUL's leaders and confiscated their weapons.

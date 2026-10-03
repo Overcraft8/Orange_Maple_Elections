@@ -614,8 +614,9 @@ if (this.ui && this.ui.show_portraits) {
     }
 }
 
-window.news_addition();
 Q.news_display = ``;
+window.news_addition();
+window.news_activator();
 
 window.updateBar('right');
 window.updateBar('left');

@@ -584,7 +584,7 @@ on-arrival: {!
 
     // 3. Build the dynamic pie chart slices and tooltips
 
-    window.GeneratePieChart(Q.general_polling, )
+    Q.general_polling = window.GeneratePieChart(party_polls);
 
     /* 
     var tooltipLines = [];

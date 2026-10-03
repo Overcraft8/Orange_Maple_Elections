@@ -18,7 +18,7 @@ const tooltipList = [{
 }, 
 {
     searchString: "CPC(S)", 
-    explanationText: "The Communist Party (Saskatchewan)"
+    explanationText: "The Communist Party of Canada (Saskatchewan)"
 },
 {
     searchString: "LPS", 

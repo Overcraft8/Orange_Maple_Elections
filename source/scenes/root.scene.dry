@@ -1653,7 +1653,7 @@ Q.parliament_diagram = data;
 //              Exterior Function calling
 // -------------------------------------------------------------
 
-dendryUI.dendryEngine._runActions(news_initializer.onArrival);
+// dendryUI.dendryEngine._runActions(news_initializer.onArrival);
 
 
 

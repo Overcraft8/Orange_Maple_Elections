@@ -50,7 +50,7 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #644e19; 
+  background: #c67a40; 
 }
 
 body.dark-mode {

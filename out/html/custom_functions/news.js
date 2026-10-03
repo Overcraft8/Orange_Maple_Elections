@@ -16,9 +16,7 @@ window.news_addition = function(event = null) {
   Q.news_display = (Q.news_display || "") + `<div>${info}</div>`;
 
   // If this event is unique, mark it as having been displayed
-  if (Array.isArray(event.unique) && event.unique[0] === true) {
-    event.unique[1] = true;
-  }
+  if (event.called == false) { event.called = true; }
 };
 
 
@@ -34,9 +32,10 @@ window.news_activator = function() {
 
         Object.keys(topic).forEach(eventKey => {
             var event = topic[eventKey];
-            if (!event) return;
 
+            // if (!event) return;
             if (event.called == true) {return}
+            if (!event.date[1] == Q.year || !event.date[0] == Q.month) {return}
 
             var conditionMet = false;
 

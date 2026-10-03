@@ -473,7 +473,6 @@ Q.education_science = 0;
 //                     Economy 
 
 Q.old_economic_growth = 0;
-Q.old_economic_growth = 0;
 Q.economic_growth_trend = '<img src="img/arrowdown.png"> ';
 Q.economic_growth = -4.4;
 
@@ -568,8 +567,6 @@ Q.resource_nationalization = 0;
 // Railway Length
 Q.railway_length = 6551; // in km
 Q.road_length = 20127; // in km
-
-Q.electoral_threshold = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
 // did the [+ ccf_ss_name +] vote against the previous government in a vote of no confidence?
@@ -671,7 +668,7 @@ Q.classes = ['workers', 'old_middle', 'new_middle', 'farmers', 'farmhands', 'rur
 
 // With arrangement [Q.class_variable, Class Display Name, Class colour]
 Q.class_info = [['workers', 'Workers', '#2844d2'], ['old_middle', 'Old Middle', '#d7be1c'], ['new_middle', 'New Middle', '#22c3c0'], 
-['farmers', 'Farmers', '#b2c520'], ['farmhands', 'Farmhands', '#3a9c1c'], ['rural_workers', 'Workers', '#2844d2'], ['unemployed', 'Unemployed', '#595959"']];
+['farmers', 'Farmers', '#b2c520'], ['farmhands', 'Farmhands', '#3a9c1c'], ['rural_workers', 'Workers', '#2844d2'], ['unemployed', 'Unemployed', '#595959']];
 
 
 Q.class_incomes = {
@@ -703,7 +700,7 @@ Q.class_incomes = {
 /* 
                              Electoral district information
  Q.district_names = [
-     'regina_d', 'saskatoon_d', 'moosejaw_d', 'princealbert_d',
+     'regina_d', 'saskatoon_d', 'moose_jaw_d', 'prince_albert_d',
      'southwest_d', 'southeast_d', 'north_d', 'central_d'
  ];
  
@@ -721,17 +718,17 @@ Q.class_incomes = {
  Q.saskatoon_d_new_middle = 25;
  Q.saskatoon_d_unemployed = 30;
  
- Q.moosejaw_d_seats = 2;
- Q.moosejaw_d_workers = 40;
- Q.moosejaw_d_old_middle = 20; 
- Q.moosejaw_d_new_middle = 10;
- Q.moosejaw_d_unemployed = 30;
+ Q.moose_jaw_d_seats = 2;
+ Q.moose_jaw_d_workers = 40;
+ Q.moose_jaw_d_old_middle = 20; 
+ Q.moose_jaw_d_new_middle = 10;
+ Q.moose_jaw_d_unemployed = 30;
  
- Q.princealbert_d_seats = 1;
- Q.princealbert_d_workers = 35;
- Q.princealbert_d_old_middle = 15; 
- Q.princealbert_d_new_middle = 20;
- Q.princealbert_d_unemployed = 30;
+ Q.prince_albert_d_seats = 1;
+ Q.prince_albert_d_workers = 35;
+ Q.prince_albert_d_old_middle = 15; 
+ Q.prince_albert_d_new_middle = 20;
+ Q.prince_albert_d_unemployed = 30;
  
  
  Q.southwest_d_seats = 7;
@@ -795,8 +792,8 @@ Q.region_names = {
 Q.district_demography = {
     "regina_d": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
     "saskatoon_d": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "moosejaw_d": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "princealbert_d": { "seats": 0, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "moose_jaw_d": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "prince_albert_d": { "seats": 0, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
     "southwest_d": { "seats": 10, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
     "southeast_d": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "farmhands": 25, "rural_workers": 10 },
     "north_d": { "seats": 2, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
@@ -1203,7 +1200,33 @@ Q.old_sapd_r = 0;
 
 
 // calculate support for each of the parties
+
+
+for (var c of Q.classes) {
+    // Find total party support within this class
+    var class_total = 0;
+
+    for (var party of Q.parties) {
+        class_total += Number(Q[c + '_' + party]) || 0;
+    }
+
+    // Normalize each party's share within the class
+    for (var party of Q.parties) {
+        var value = Number(Q[c + '_' + party]) || 0;
+
+        Q[c + '_' + party + '_display'] = value;
+
+        if (class_total > 0) {
+            Q[c + '_' + party + '_normalized'] =
+                (value / class_total) * 100;
+        } else {
+            Q[c + '_' + party + '_normalized'] = 0;
+        }
+    }
+}
+
 var total_support = 0; 
+
 for (var party of Q.parties) {
     var party_support = 0;
     for (var c of Q.classes) {
@@ -1223,15 +1246,6 @@ for (var party of Q.parties) {
     Q[party+'_polls'] = Math.round(Q[party+'_normalized']*100);
     Q[party+'_polls_display'] = Math.round(Q[party+'_normalized']*100);
 };
-
-for (var c of Q.classes) {
-    for (var party of Q.parties) {
-        Q[c + '_' + party + '_display'] = Q[c + '_' + party] || 0;
-        
-        Q[c + '_' + party + '_normalized'] = Q[c + '_' + party] || 0; 
-    }
-}
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1387,7 +1401,9 @@ Q.canada_map_intraparty = '';
 /////////////////////////////////////////////////////////////////
 //---------------------------------------------------------------
 
-window.news_activator(); 
+if (typeof window.news_activator === 'function') {
+    window.news_activator();
+}
 
 
 

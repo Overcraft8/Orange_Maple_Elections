@@ -5,7 +5,6 @@ go-to: post_event if started = 1; start_menu if started = 0
 @start_menu
 new-page: true
 set-bg: img/CCF/forward_with_ccf.jpg
-go-to: start_menu_2
 on-arrival: {!
     document.getElementById('page').style.display = 'none'; 
 !}
@@ -17,7 +16,6 @@ on-departure: {!
 = Social Democracy: The Prairie Lily
 
 @start_menu_2
-set-bg: img/Towards_The_Dawn.jpg
 
 - @start: Start game
 - @election_simulation: Election simulation

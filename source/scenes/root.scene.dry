@@ -5,14 +5,27 @@ go-to: post_event if started = 1; start_menu if started = 0
 @start_menu
 new-page: true
 set-bg: img/CCF/forward_with_ccf.jpg
-go-to: start_menu_2
+on-arrival: {!
+    document.getElementById('topbar').style.display = 'none'; 
+    document.getElementById('tools_wrapper').style.display = 'none'; 
+    document.getElementById('game-title').style.display = 'none'; 
+    document.getElementById('game-author').style.display = 'none'; 
+    document.getElementById('header-links').style.display = 'none'; 
+!}
 
-= Social Democracy: The Prairie Lily
+- @start_menu_2: Begin
 
 @start_menu_2
 on-arrival: {! 
-    document.getElementById('page').style.display = ''; 
+    document.getElementById('topbar').style.display = ''; 
+    document.getElementById('tools_wrapper').style.display = ''; 
+    document.getElementById('game-title').style.display = ''; 
+    document.getElementById('game-author').style.display = ''; 
+    document.getElementById('header-links').style.display = ''; 
 !}
+subtitle: <img src="img/Towards_The_Dawn.jpg">
+
+= Social Democracy: The Prairie Lily
 
 - @start: Start game
 - @election_simulation: Election simulation

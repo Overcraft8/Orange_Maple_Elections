@@ -4,7 +4,7 @@ go-to: post_event if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
-set-bg: img/CCF/forward_with_ccf.jpg
+set-bg: img/cities/rokeby_overhead.jpg
 go-to: start_menu_2
 
 @start_menu_2
@@ -16,9 +16,19 @@ on-arrival: {!
     document.getElementById('header-links').style.display = 'none'; 
     document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0.8), rgba(232, 220, 195, 0.8)), center 72% / cover no-repeat'; 
 !}
+on-departure: {!
+    // Reverting start menu graphics
+    document.getElementById('topbar').style.display = ''; 
+    document.getElementById('tools_wrapper').style.display = ''; 
+    document.getElementById('game-title').style.display = ''; 
+    document.getElementById('game-author').style.display = ''; 
+    document.getElementById('header-links').style.display = ''; 
+    document.getElementById('content').style.background = ''; 
+!}
 style: start-scene
 
 = Social Democracy: The Prairie Lily
+<div style="background: url("img/CCF/forward_with_ccf.jpg") center 72% / cover no-repeat;width:100%;"></div>
 
 - @start: Start game
 - @election_simulation: Election simulation
@@ -29,18 +39,9 @@ style: start-scene
 
 
 @start
-set-bg: img/weyburn_street.jpg
+set-bg: img/cities/weyburn_street.jpg
 new-page: true
 on-arrival: {!
-
-// Reverting start menu graphics
-
-document.getElementById('topbar').style.display = ''; 
-document.getElementById('tools_wrapper').style.display = ''; 
-document.getElementById('game-title').style.display = ''; 
-document.getElementById('game-author').style.display = ''; 
-document.getElementById('header-links').style.display = ''; 
-document.getElementById('content').style.background = ''; 
 
 
 Q.started = 1;

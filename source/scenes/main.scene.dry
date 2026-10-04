@@ -1,5 +1,5 @@
 title: Next month
-set-bg: img/weyburn_street.jpg
+set-bg: img/cities/weyburn_street.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
@@ -26,7 +26,7 @@ max-cards: 6
 - @shuffle_leadership_pinned
 
 @main_easy
-set-bg: img/weyburn_street.jpg
+set-bg: img/cities/weyburn_street.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {

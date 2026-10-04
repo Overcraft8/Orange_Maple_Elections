@@ -8,16 +8,20 @@ tags: party_affairs
 
 = Choosing our enemies
 
-In our media and campaign materials, who should we consider as our main opponents?
+In our media and campaign materials, who should we consider as our main opponents? 
+
+Currently, the LPS remains our biggest threat. They maintain strong alliances with local newspaper networks that strangle most of our messages outside of the general public. 
+
+[? if year >= 1935 : The threat of the SCPS is always on our backs as well. As a capitalist reform and populist party, they may easily overtake us. ?]
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @anti_lps: The LPS
-- @anti_radical: The 'radical' parties of the SCPS and CPC(S)
-- @anti_scps: The far right - the SCPS
-- @anti_establishment: The establishment parties - the CPS and LPS
-- @anti_cpc_s: The CPC(S).
-- @easy_discard
+- @anti_lps: We need to focus our attacks on the Liberals.
+- @anti_radical: We have to target the radical parties: the SCPS and the CPC(S).
+- @anti_scps: Social Credit is the biggest threat to this campaign.
+- @anti_establishment: We must take on the establishment: the CPS and the LPS.
+- @anti_cpc_s: We need to go after the CPC(S).
+- @easy_discard: Let's drop this and move on.
 
 @anti_radical
 on-arrival:{! 
@@ -38,6 +42,7 @@ Attacking Social Credit and
 
 @anti_scps
 on-arrival: enemies = "SCPS"; radical_strength += 5; radical_dissent -= 5; workers_scps -= 3; workers_scps -= 3;
+view-if: year >= 1935
 
 Social Credit is a strong populist movement, more amenable to the economic conditions of farmer-dominated Saskatchewan in some aspects than us. It seems a wise choice to target them. 
 

@@ -17,6 +17,7 @@ on-departure: {!
 = Social Democracy: The Prairie Lily
 
 @start_menu_2
+set-bg: img/Towards_The_Dawn.jpg
 
 - @start: Start game
 - @election_simulation: Election simulation
@@ -27,7 +28,6 @@ on-departure: {!
 
 
 @start
-set-bg: img/Towards_The_Dawn.jpg
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)

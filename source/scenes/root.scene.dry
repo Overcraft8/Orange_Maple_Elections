@@ -28,7 +28,8 @@ on-departure: {!
 style: start-scene
 
 = Social Democracy: The Prairie Lily
-<div style="background: url("img/CCF/forward_with_ccf.jpg") center 72% / cover no-repeat;width:100%;"></div>
+
+<div style="background: url('img/CCF/forward_with_ccf.jpg') center 72% / cover no-repeat;width:100%;"></div>
 
 - @start: Start game
 - @election_simulation: Election simulation

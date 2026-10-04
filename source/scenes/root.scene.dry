@@ -16,7 +16,7 @@ on-arrival: {!
     document.getElementById('header-links').style.display = 'none'; 
     document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
     document.getElementById('content').style.border = `0px solid #000`;
-    var collage = `<div id='start_collage' style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-bottom: 2em;"></div>`
+    var collage = `<div id='start_collage' style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-bottom: 2em;margin-top:2em;"></div>`
     var collage_div = document.createElement('div');
     collage_div.innerHTML = collage;
     document.getElementById('center_panel_holder').prepend(collage_div.firstChild);
@@ -34,7 +34,7 @@ on-departure: {!
 !}
 style: start-scene
 
-<div style="padding:10px;background:var(--content-bg-color);width:10em;">
+<div style="width: 30.7em;padding:  0 0 0 0;font-family: Isometra, monospace;line-height: 2em;text-shadow: 6px 2px 4px black;">
     = Social Democracy: The Prairie Lily
 </div>
 

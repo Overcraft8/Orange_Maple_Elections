@@ -163,7 +163,7 @@ if (Q.month == 7) {
         Q.crown_corp_revenue = 0;
         Q.other_revenue = Q.property_tax
         //for (crown_corp in Q.crown_corps) {
-        console.log("Got into economic annual")
+        console.log("Got into economic annual");
 }
 
 
@@ -239,7 +239,7 @@ if (Q.month == 7) {
         }
         console.log(c + ' population percent: ' + Q[c + '_population_percent']);
     }
-    console.log("Got into pop distribution")
+    console.log("Got into pop distribution");
 }
 
 
@@ -575,8 +575,9 @@ if (Q.month_actions >= 1) {
             Q.catholics_ccf -= 6/12;
         }
     }
-}
-console.log(Q.month)
+};
+
+console.log(Q.month);
 
 
 

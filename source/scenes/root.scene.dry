@@ -8,14 +8,14 @@ set-bg: img/CCF/forward_with_ccf.jpg
 on-arrival: {!
     document.getElementById('page').style.display = 'none'; 
 !}
-on-departure: {!
-    document.getElementById('inital_button').style.display = 'none'; 
-    document.getElementById('page').style.display = ''; 
-!}
 
 = Social Democracy: The Prairie Lily
 
 @start_menu_2
+on-arrival: {! 
+    document.getElementById('inital_button').style.display = 'none'; 
+    document.getElementById('page').style.display = ''; 
+!}
 
 - @start: Start game
 - @election_simulation: Election simulation

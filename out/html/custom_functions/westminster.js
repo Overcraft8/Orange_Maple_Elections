@@ -52,7 +52,7 @@ window.westminster = function(container_id, forming_government) {
 
     // This will color the Speaker with their party
     if (!brit_mode && speaker_party) {
-        var soth = brit_mode ? `<circle id="soth" cx="15" cy="65" r="6"></circle>` : `<rect id="soth" x="15" y="65" height="15px" width="15px"/>`; // This is the speaker of the house circle and it's cords
+        var soth = brit_mode ? `<circle id="soth" cx="15" cy="65" r="6"></circle>` : `<rect id="soth" x="15" y="65" height="15px" width="15px" stroke="black" stroke-width="2" />`; // This is the speaker of the house circle and it's cords
     }
 
     var parliament_html = soth;
@@ -83,7 +83,7 @@ window.westminster = function(container_id, forming_government) {
 
                 var id = 'O' + opp_count;
                 // Generate the circle with party class, ternary operator for circles vs squares
-                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="15px" width="15px" />`;
+                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="15px" width="15px" stroke="black" stroke-width="2" />`;
                 
                 opp_count += 1;
             }
@@ -110,7 +110,7 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'G' + gov_count;
-                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="15px" width="15px" />`;
+                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="15px" width="15px" stroke="black" stroke-width="2" />`;
                 
                 gov_count += 1;
             }

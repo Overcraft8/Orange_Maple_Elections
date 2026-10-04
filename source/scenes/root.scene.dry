@@ -31,15 +31,18 @@ style: start-scene
 @start
 set-bg: img/weyburn_street.jpg
 new-page: true
-on-arrival: {! 
-    document.getElementById('topbar').style.display = ''; 
-    document.getElementById('tools_wrapper').style.display = ''; 
-    document.getElementById('game-title').style.display = ''; 
-    document.getElementById('game-author').style.display = ''; 
-    document.getElementById('header-links').style.display = ''; 
-    document.getElementById('content').style.background = ''; 
-!}
 on-arrival: {!
+
+// Reverting start menu graphics
+
+document.getElementById('topbar').style.display = ''; 
+document.getElementById('tools_wrapper').style.display = ''; 
+document.getElementById('game-title').style.display = ''; 
+document.getElementById('game-author').style.display = ''; 
+document.getElementById('header-links').style.display = ''; 
+document.getElementById('content').style.background = ''; 
+
+
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;

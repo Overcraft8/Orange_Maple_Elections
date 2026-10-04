@@ -332,7 +332,7 @@ const colourList = [{
         style: "color: #e0452a; font-weight: bold;"
     },
     {
-        word: ['Social Democracy'], 
+        word: ['Social Democracy', 'Social Democracy: The Prairie Lily'], 
         style: "color: #e06a2a; font-weight: bold;"
     },
     {

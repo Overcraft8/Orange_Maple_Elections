@@ -12,6 +12,7 @@ on-arrival: {!
     document.getElementById('game-author').style.display = 'none'; 
     document.getElementById('header-links').style.display = 'none'; 
 !}
+style: begin-scene
 
 - @start_menu_2: <span style="font-size:3em;">**Begin**</span>
 
@@ -24,7 +25,7 @@ on-arrival: {!
     document.getElementById('header-links').style.display = ''; 
 !}
 subtitle: <img src="img/Towards_The_Dawn.jpg">
-style: spooky-scene
+style: start-scene
 
 = Social Democracy: The Prairie Lily
 

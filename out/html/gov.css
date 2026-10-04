@@ -325,13 +325,32 @@ outline-offset: -5px;
   font-size: 0.85em;
 }
 
-
-.spooky-scene {
-  background: #1a1a1a;
-  color: #c9c9c9;
-  font-family: 'Courier New', monospace;
+.start-scene .choices li {
+    text-align: center;
+    background-color: transparent;
+    background-image: radial-gradient(70% 76%, rgba(248, 245, 235, 0.94), rgba(248, 245, 235, 0.6) 42%, rgba(248, 245, 235, 0) 75%);
+    backdrop-filter: none;
+    transition: background-color 0.18s, backdrop-filter 0.18s;
 }
 
-.spooky-scene .choices a {
-  color: #8b0000;
+.start-scene .choices a {
+  color: #b9631c;
+}
+
+.begin-scene .choices {
+  background: url("img/Towards_The_Dawn.jpg") center 72% / cover no-repeat;
+  color: #c9c9c9;
+}
+
+.begin-scene .choices li {
+    text-align: center;
+    font-size: 4em;
+    background-color: transparent;
+    background-image: radial-gradient(70% 76%, rgba(248, 245, 235, 0.94), rgba(248, 245, 235, 0.6) 42%, rgba(248, 245, 235, 0) 75%);
+    backdrop-filter: none;
+    transition: background-color 0.18s, backdrop-filter 0.18s;
+}
+
+.begin-scene .choices a {
+  color: #b9631c;
 }

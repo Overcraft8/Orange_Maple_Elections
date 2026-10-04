@@ -577,18 +577,6 @@ if (Q.month_actions >= 1) {
     }
 };
 
-window.updateBar('right');
-window.updateBar('left');
-window.updateBar('top');
-window.updateBar('bottom');
-
-console.log('reached end of post event');
-
-Q.news_display = ``;
-
-window.news_addition();
-window.news_activator();
-
 
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
@@ -609,6 +597,17 @@ if (this.ui && this.ui.show_portraits) {
         }
     }
 }
+
+window.updateBar('right');
+window.updateBar('left');
+window.updateBar('top');
+window.updateBar('bottom');
+
+console.log('reached end of post event');
+
+Q.news_display = ``;
+
+window.news_activator();
 
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0

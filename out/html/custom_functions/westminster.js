@@ -2,18 +2,16 @@ window.westminster = function(container_id, forming_government) {
     // container_id has to be an svg for this to work
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-    var brit_mode = false; // Right now, brit mode only handles whether the speaker is non-affiliated or still a party member in the house
+    var brit_mode = false; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
     var house_width = 3; 
     var container = document.getElementById(container_id);
 
     container.innerHTML = ''; //Remove any previous html inside the container first
 
     var data = Q.parliament_diagram; // This may not be applicable to base game
-    // If you are seeking to use this function yourself, find all instances of the data variable (1 in root, 1 in 1928_election scene, and possibly 1 in post_event) and then make Q.parliament_diagram equal to it. 
+    // If you are seeking to use this function yourself, find all instances of the 'vara data' variable (1 in root, 1 in 1928_election scene, and possibly 1 in post_event) and then make Q.parliament_diagram equal to it. 
     
     var parties_list = Q.parties || ['ccf', 'cpc_s', 'pps', 'lps', 'cps', 'scps', 'other']; ;
-
-    var soth = `<circle id="soth" cx="15" cy="65" r="6"></circle>`; // This is the speaker of the house circle and it's cords
 
     var governing_parties_list = [];
     var governing_seats = 0; 
@@ -54,13 +52,13 @@ window.westminster = function(container_id, forming_government) {
 
     // This will color the Speaker with their party
     if (!brit_mode && speaker_party) {
-        soth = `<circle id="soth" class="seat ${speaker_party}" cx="15" cy="65" r="6"></circle>`;
+        var soth = brit_mode ? `<circle id="soth" cx="15" cy="65" r="6"></circle>` : `<rect id="soth" cx="15" cy="65" height="15px" width="15px"/>`; // This is the speaker of the house circle and it's cords
     }
 
-    // We will build all the circles in a string first, then append them all at once.
     var parliament_html = soth;
 
     // For now, this will be for displaying parliament, not creating a new government
+    // Animations are planned for forming new government
     if (!forming_government) {
 
         // This is for opposition seats
@@ -84,8 +82,8 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'O' + opp_count;
-                // Generate the circle with party class
-                parliament_html += `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>`;
+                // Generate the circle with party class, ternary operator for circles vs squares
+                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" height="15px;" width="15px" />`;
                 
                 opp_count += 1;
             }
@@ -112,7 +110,7 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'G' + gov_count;
-                parliament_html += `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>`;
+                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" height="15px;" width="15px" />`;
                 
                 gov_count += 1;
             }
@@ -122,3 +120,5 @@ window.westminster = function(container_id, forming_government) {
     // Now let's apply all of that to the container
     container.innerHTML += parliament_html;
 };
+
+// Thanks so much to LBJ's Force Ghost on the SDAAH discord for the idea behind this function!

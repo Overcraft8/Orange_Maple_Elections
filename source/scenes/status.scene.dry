@@ -649,8 +649,9 @@ on-arrival: {!
 = Overall Polls
 
 # {!<div id="overall-polls-chart" style="width: 90%; height: 200px; justify-content: center;"></div>!}
-
-[+ general_polling +]
+<div style="display:flex;justify-content:center;">
+    [+ general_polling +]
+</div>
 
 
 
@@ -714,7 +715,7 @@ on-arrival: {!
 
 =                             Rural Polling
 
-{!<div style="width: 100%; max-width:npm install -g nodemon  100%; overflow: visible; font-size: 1.05em; box-sizing: border-box;">!}
+{!<div style="width: 100%; max-width:100%; overflow: visible; font-size: 1.05em; box-sizing: border-box;">!}
 {!<table style='text-align: center; width: 100%; max-width: 100%;'>!}
         {!<tr>!}
             {!<th>Party</th>!}

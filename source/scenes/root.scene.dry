@@ -5,25 +5,16 @@ go-to: post_event if started = 1; start_menu if started = 0
 @start_menu
 new-page: true
 set-bg: img/CCF/forward_with_ccf.jpg
+go-to: start_menu_2
+
+@start_menu_2
 on-arrival: {!
     document.getElementById('topbar').style.display = 'none'; 
     document.getElementById('tools_wrapper').style.display = 'none'; 
     document.getElementById('game-title').style.display = 'none'; 
     document.getElementById('game-author').style.display = 'none'; 
     document.getElementById('header-links').style.display = 'none'; 
-    document.getElementById('content').style.display = 'none'; 
-!}
-style: begin-scene
-
-- @start_menu_2: <span style="font-size:3em;">**Begin**</span>
-
-@start_menu_2
-on-arrival: {! 
-    document.getElementById('topbar').style.display = ''; 
-    document.getElementById('tools_wrapper').style.display = ''; 
-    document.getElementById('game-title').style.display = ''; 
-    document.getElementById('game-author').style.display = ''; 
-    document.getElementById('header-links').style.display = ''; 
+    document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0.8), rgba(232, 220, 195, 0.8)), center 72% / cover no-repeat'; 
 !}
 style: start-scene
 
@@ -38,6 +29,16 @@ style: start-scene
 
 
 @start
+set-bg: img/weyburn_street.jpg
+new-page: true
+on-arrival: {! 
+    document.getElementById('topbar').style.display = ''; 
+    document.getElementById('tools_wrapper').style.display = ''; 
+    document.getElementById('game-title').style.display = ''; 
+    document.getElementById('game-author').style.display = ''; 
+    document.getElementById('header-links').style.display = ''; 
+    document.getElementById('content').style.background = ''; 
+!}
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
@@ -1707,8 +1708,6 @@ console.log("reached end of root");
 
 
 !}
-set-bg: img/weyburn_street.jpg
-new-page: true
 
 > *"Our party stands at the crossroad in Saskatchewan. The relentless work of capitalism is changing and corrupting the province and the people. Many have been crushed; more dispersed; all are confused and manipulated.
 

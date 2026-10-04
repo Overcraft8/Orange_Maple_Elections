@@ -33,7 +33,7 @@ style: start-scene
 
 # <div style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width:100%;display: block;height: 20em;border: 3px ridge #4b422b;"></div>
 
-</div>
+# </div>
 
 - @start: Start game
 - @election_simulation: Election simulation

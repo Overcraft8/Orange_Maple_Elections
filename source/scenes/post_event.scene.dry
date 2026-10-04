@@ -577,23 +577,6 @@ if (Q.month_actions >= 1) {
     }
 };
 
-console.log(Q.month);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
@@ -616,8 +599,10 @@ if (this.ui && this.ui.show_portraits) {
 }
 
 Q.news_display = ``;
+/* 
 window.news_addition();
 window.news_activator();
+*/
 
 window.updateBar('right');
 window.updateBar('left');

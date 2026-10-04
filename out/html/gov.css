@@ -325,3 +325,13 @@ outline-offset: -5px;
   font-size: 0.85em;
 }
 
+
+.spooky-scene {
+  background: #1a1a1a;
+  color: #c9c9c9;
+  font-family: 'Courier New', monospace;
+}
+
+.spooky-scene .choices a {
+  color: #8b0000;
+}

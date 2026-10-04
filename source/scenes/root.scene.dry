@@ -14,7 +14,8 @@ on-arrival: {!
     document.getElementById('game-title').style.display = 'none'; 
     document.getElementById('game-author').style.display = 'none'; 
     document.getElementById('header-links').style.display = 'none'; 
-    document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0.8), rgba(232, 220, 195, 0.8)), center 72% / cover no-repeat'; 
+    document.getElementById('content').style.background = 'linear-gradient(rgba(232, 220, 195, 0), rgba(232, 220, 195, 0)), center 72% / cover no-repeat';
+    document.getElementById('content').style.border = `0px solid #000`;
     var collage = `<div id='start_collage' style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width: 25em;display: block;height: 20em;border: 3px ridge #4b422b;margin-bottom: 2em;"></div>`
     var collage_div = document.createElement('div');
     collage_div.innerHTML = collage;
@@ -28,11 +29,14 @@ on-departure: {!
     document.getElementById('game-author').style.display = ''; 
     document.getElementById('header-links').style.display = ''; 
     document.getElementById('content').style.background = ''; 
+    document.getElementById('content').style.border = ``;
     document.getElementById('start_collage').remove();
 !}
 style: start-scene
 
-= Social Democracy: The Prairie Lily
+<div style="padding:10px;background:var(--content-bg-color);width:10em;">
+    = Social Democracy: The Prairie Lily
+</div>
 
 # <div style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width:100%;display: block;height: 20em;border: 3px ridge #4b422b;"></div>
 

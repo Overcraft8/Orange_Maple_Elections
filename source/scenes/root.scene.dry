@@ -29,7 +29,11 @@ style: start-scene
 
 = Social Democracy: The Prairie Lily
 
-<div style="background: url('img/CCF/forward_with_ccf.jpg') center 72% / cover no-repeat;width:100%;"></div>
+<div style="background: url('img/graphics/CCF.png') center 72% / cover no-repeat;width:100%;display: block;height: 20em;border: 3px ridge #4b422b;"></div>
+
+<div>Modded by Overcraft16, based off</div>
+
+<div>Social Democracy: An Alternate History by Autumn Chen</div>
 
 - @start: Start game
 - @election_simulation: Election simulation

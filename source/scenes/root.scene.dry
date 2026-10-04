@@ -13,7 +13,7 @@ on-arrival: {!
     document.getElementById('header-links').style.display = 'none'; 
 !}
 
-- @start_menu_2: Begin
+- @start_menu_2: <span style="width:100%;font-size:2em;text-align:center;">**Begin**</span>
 
 @start_menu_2
 on-arrival: {! 
@@ -24,6 +24,7 @@ on-arrival: {!
     document.getElementById('header-links').style.display = ''; 
 !}
 subtitle: <img src="img/Towards_The_Dawn.jpg">
+style: tab_button
 
 = Social Democracy: The Prairie Lily
 

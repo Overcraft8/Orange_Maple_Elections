@@ -1,6 +1,6 @@
 
 
-window.news_addition = function(event = null) {
+function news_addition(event = undefined) {
   var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
   // if (!Q) return;
@@ -20,7 +20,7 @@ window.news_addition = function(event = null) {
 };
 
 
-window.news_activator = function() {
+function news_activator() {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
     window.news_addition();

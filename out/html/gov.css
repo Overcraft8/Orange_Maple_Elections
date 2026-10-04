@@ -343,7 +343,10 @@ outline-offset: -5px;
 }
 
 .begin-scene .choices li {
+    height: 6em;
     text-align: center;
+    display:flex-box; 
+    align-content: center;
     font-size: 4em;
     background-color: transparent;
     background-image: radial-gradient(70% 76%, rgba(248, 245, 235, 0.94), rgba(248, 245, 235, 0.6) 42%, rgba(248, 245, 235, 0) 75%);

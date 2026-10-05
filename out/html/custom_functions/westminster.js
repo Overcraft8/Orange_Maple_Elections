@@ -52,7 +52,7 @@ window.westminster = function(container_id, forming_government) {
     };
 
     // First option: british mode second: Canada
-    var soth = brit_mode ? `<circle id="soth" cx="-30" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-30" y="65" height="15px" width="15px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
+    var soth = brit_mode ? `<circle id="soth" cx="-60" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-30" y="65" height="15px" width="15px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
 
     var parliament_html = soth;
 
@@ -60,7 +60,7 @@ window.westminster = function(container_id, forming_government) {
     // Animations are planned for forming new government
     if (!forming_government) {
 
-        var x = 0; 
+        var x = -30; 
         var opp_y_base = 60;
         var y = opp_y_base; 
         var seats_in_row = 0;
@@ -76,7 +76,7 @@ window.westminster = function(container_id, forming_government) {
                 // This is for new row
                 if (seats_in_row >= house_width) {
                     opp_col_index++;
-                    x += 15; 
+                    x += 20; 
                     y = opp_y_base; 
                     seats_in_row = 0;
                     
@@ -97,8 +97,8 @@ window.westminster = function(container_id, forming_government) {
         }
 
         // Let's load base settings for government side
-        var x = 0; 
-        var gov_y_base = 90; 
+        var x = -30; 
+        var gov_y_base = 85; 
         y = gov_y_base; 
         var seats_in_row = 0;
         var gov_count = 1;
@@ -111,7 +111,7 @@ window.westminster = function(container_id, forming_government) {
             for (var s = 0; s < seats_to_add; s++) {
                 if (seats_in_row >= house_width) {
                     gov_col_index++;
-                    x += 15; 
+                    x += 20; 
                     y = gov_y_base; // Reset to base Y
                     seats_in_row = 0;
                     

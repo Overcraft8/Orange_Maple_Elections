@@ -52,7 +52,7 @@ window.westminster = function(container_id, forming_government) {
     };
 
     // First option: british mode second: Canada
-    var soth = brit_mode ? `<circle id="soth" cx="-60" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="10px" width="10px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
+    var soth = brit_mode ? `<circle id="soth" cx="-60" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="12px" width="12px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
 
     var parliament_html = soth;
 
@@ -76,13 +76,13 @@ window.westminster = function(container_id, forming_government) {
                 // This is for new row
                 if (seats_in_row >= house_width) {
                     opp_col_index++;
-                    x += 12; 
+                    x += 15; 
                     y = opp_y_base; 
                     seats_in_row = 0;
                     
                     // Extra gap after every second column
                     if (sask_mode && opp_col_index % 2 === 0) {
-                        x += 3; 
+                        x += 5; 
                     }
                 }
                 
@@ -90,7 +90,7 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'O' + opp_count;
-                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="10px" width="10px" stroke="black" stroke-width="1" />`;
+                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="12px" width="12px" stroke="black" stroke-width="1" />`;
                 
                 opp_count += 1;
             }
@@ -111,13 +111,13 @@ window.westminster = function(container_id, forming_government) {
             for (var s = 0; s < seats_to_add; s++) {
                 if (seats_in_row >= house_width) {
                     gov_col_index++;
-                    x += 12; 
+                    x += 15; 
                     y = gov_y_base; // Reset to base Y
                     seats_in_row = 0;
                     
                     // Extra gap after every second column
                     if (sask_mode && gov_col_index % 2 === 0) {
-                        x += 3; 
+                        x += 5; 
                     }
                 }
                 
@@ -126,7 +126,7 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'G' + gov_count;
-                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="10px" width="10px" stroke="black" stroke-width="1" />`;
+                parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="12px" width="12px" stroke="black" stroke-width="1" />`;
                 
                 gov_count += 1;
             }

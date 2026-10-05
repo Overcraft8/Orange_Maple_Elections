@@ -2,8 +2,8 @@ window.westminster = function(container_id, forming_government) {
     // container_id has to be an svg for this to work
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-    var brit_mode = false; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
-    var sask_mode = true; // This will create paired seats
+    Q.brit_mode = false; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
+    Q.sask_mode = true; // This will create paired seats
     var house_width = 3; 
     var container = document.getElementById(container_id);
 
@@ -52,9 +52,9 @@ window.westminster = function(container_id, forming_government) {
     };
 
     // First option: british mode second: Canada
-    var soth = brit_mode ? `<circle id="soth" cx="-60" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="12px" width="12px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
+    var soth = Q.brit_mode ? `<circle id="soth" cx="-60" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="12px" width="12px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
 
-    var parliament_html = soth;
+    Q.parliament_html = soth;
 
     // For now, this will be for displaying parliament, not creating a new government
     // Animations are planned for forming new government
@@ -90,7 +90,7 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'O' + opp_count;
-                addSeat(id, party_id, x, y, container);
+                addSeat(id, party_id, x, y, container, forming_government);
                 opp_count += 1;
             }
         }
@@ -125,17 +125,19 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'G' + gov_count;
-                addSeat(id, party_id, x, y, container);
+                addSeat(id, party_id, x, y, container, forming_government);
                 gov_count += 1;
             }
         }
     };
 
     // Now let's apply all of that to the container
-    container.innerHTML += parliament_html;
+    container.innerHTML += Q.parliament_html;
 };
 
-function addSeat(id, party_id, x, y, container) {
+function addSeat(id, party_id, x, y, container, forming_government) {
+
+    var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
     var dx;
     var dy;
@@ -150,12 +152,12 @@ function addSeat(id, party_id, x, y, container) {
         ? viewBox.y + viewBox.height / 2
         : 0;
 
-    if (brit_mode) {
+    if (Q.brit_mode) {
         // Circle's center is cx/cy
         dx = centerX - x;
         dy = centerY - y;
 
-        parliament_html +=
+        Q.parliament_html +=
             `<circle id="${id}" class="seat ${party_id}"
                 cx="${x}" cy="${y}" r="6"
                 ${forming_government ? `transform="translate(${dx} ${dy})"` : ''}>
@@ -165,7 +167,7 @@ function addSeat(id, party_id, x, y, container) {
         dx = centerX - (x + 6);
         dy = centerY - (y + 6);
 
-        parliament_html +=
+        Q.parliament_html +=
             `<rect id="${id}" class="seat ${party_id}"
                 x="${x}" y="${y}"
                 height="12px" width="12px"

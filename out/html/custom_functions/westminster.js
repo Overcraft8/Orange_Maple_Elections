@@ -3,6 +3,7 @@ window.westminster = function(container_id, forming_government) {
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
     var brit_mode = false; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
+    var sask_mode = true; // This will create paired seats
     var house_width = 3; 
     var container = document.getElementById(container_id);
 
@@ -51,7 +52,7 @@ window.westminster = function(container_id, forming_government) {
     };
 
     // First option: british mode second: Canada
-    var soth = brit_mode ? `<circle id="soth" cx="15" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="15" y="65" height="15px" width="15px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
+    var soth = brit_mode ? `<circle id="soth" cx="-30" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-30" y="65" height="15px" width="15px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
 
     var parliament_html = soth;
 
@@ -60,22 +61,32 @@ window.westminster = function(container_id, forming_government) {
     if (!forming_government) {
 
         // This is for opposition seats
-        var x = 40; 
+        var x = 0; 
         var y = 60; 
         var seats_in_row = 0;
         var opp_count = 1;
+        var col_index = 0;
 
         for (var party of opposition_parties_list) {
             var party_id = party[0];
             var seats_to_add = party[1]; 
             
             for (var s = 0; s < seats_to_add; s++) {
-                // Start a new column once we are past house_width
+                // Start a new column once we reach house_width
                 if (seats_in_row >= house_width) {
+                    col_index++;
+
+                    // normal column space
                     x += 15; 
                     y = 60;
                     seats_in_row = 0;
+                    
+                    // extra gap after every column
+                    if (sask_mode && col_index % 2 === 1) {
+                        x += 10; 
+                    }
                 }
+                
                 y -= 15; 
                 seats_in_row += 1;
 
@@ -89,22 +100,33 @@ window.westminster = function(container_id, forming_government) {
 
         // Now let's load government seats
         // Reset base settings for government side
-        x = 40; 
+        x = 0; 
         y = 70; 
         seats_in_row = 0;
         var gov_count = 1;
+        var col_index = 0;
 
         for (var party of governing_parties_list) {
             var party_id = party[0];
             var seats_to_add = party[1]; 
             
             for (var s = 0; s < seats_to_add; s++) {
+                // Start a new column once we reach house_width
                 if (seats_in_row >= house_width) {
+                    col_index++;
+
+                    // normal column space
                     x += 15; 
-                    y = 70;
+                    y = 60;
                     seats_in_row = 0;
+                    
+                    // extra gap after every column
+                    if (sask_mode && col_index % 2 === 1) {
+                        x += 10; 
+                    }
                 }
-                y += 15; 
+                
+                y -= 15; 
                 seats_in_row += 1;
 
                 var id = 'G' + gov_count;

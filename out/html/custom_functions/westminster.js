@@ -60,29 +60,28 @@ window.westminster = function(container_id, forming_government) {
     // Animations are planned for forming new government
     if (!forming_government) {
 
-        // This is for opposition seats
         var x = 0; 
-        var y = 60; 
+        var opp_y_base = 60;
+        var y = opp_y_base; 
         var seats_in_row = 0;
         var opp_count = 1;
-        var col_index = 0;
+        var opp_col_index = 0;
 
         for (var party of opposition_parties_list) {
             var party_id = party[0];
             var seats_to_add = party[1]; 
             
             for (var s = 0; s < seats_to_add; s++) {
-                // Start a new column once we reach house_width
-                if (seats_in_row >= house_width) {
-                    col_index++;
 
-                    // normal column space
+                // This is for new row
+                if (seats_in_row >= house_width) {
+                    opp_col_index++;
                     x += 15; 
-                    y = 60;
+                    y = opp_y_base; 
                     seats_in_row = 0;
                     
-                    // extra gap after every column
-                    if (sask_mode && col_index % 2 === 1) {
+                    // Extra gap after every second column
+                    if (sask_mode && opp_col_index % 2 === 1) {
                         x += 10; 
                     }
                 }
@@ -91,42 +90,39 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'O' + opp_count;
-                // Generate the circle with party class, ternary operator for circles vs squares
                 parliament_html += brit_mode ? `<circle id="${id}" class="seat ${party_id}" cx="${x}" cy="${y}" r="6"></circle>` : `<rect id="${id}" class="seat ${party_id}" x="${x}" y="${y}" height="15px" width="15px" stroke="black" stroke-width="1" />`;
                 
                 opp_count += 1;
             }
-        };
+        }
 
-        // Now let's load government seats
-        // Reset base settings for government side
-        x = 0; 
-        y = 70; 
-        seats_in_row = 0;
+        // Let's load base settings for government side
+        var x = 0; 
+        var gov_y_base = 90; 
+        y = gov_y_base; 
+        var seats_in_row = 0;
         var gov_count = 1;
-        var col_index = 0;
+        var gov_col_index = 0;
 
         for (var party of governing_parties_list) {
             var party_id = party[0];
             var seats_to_add = party[1]; 
             
             for (var s = 0; s < seats_to_add; s++) {
-                // Start a new column once we reach house_width
                 if (seats_in_row >= house_width) {
-                    col_index++;
-
-                    // normal column space
+                    gov_col_index++;
                     x += 15; 
-                    y = 70;
+                    y = gov_y_base; // Reset to base Y
                     seats_in_row = 0;
                     
-                    // extra gap after every column
-                    if (sask_mode && col_index % 2 === 1) {
+                    // Extra gap after every second column
+                    if (sask_mode && gov_col_index % 2 === 1) {
                         x += 10; 
                     }
                 }
                 
-                y -= 15; 
+                // Adding 15 moves the government seats DOWN towards the bottom of the screen
+                y += 15; 
                 seats_in_row += 1;
 
                 var id = 'G' + gov_count;
@@ -134,8 +130,8 @@ window.westminster = function(container_id, forming_government) {
                 
                 gov_count += 1;
             }
-        };
-    }
+        }
+    };
 
     // Now let's apply all of that to the container
     container.innerHTML += parliament_html;

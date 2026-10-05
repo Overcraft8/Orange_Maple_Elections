@@ -493,6 +493,7 @@ for (var party of Q.parties) {
 
 Q.parliament_diagram = data
 
+/* 
 if (window && d3) {
 
     d3.select("#assembly").selectAll("*").remove();
@@ -511,7 +512,10 @@ if (window && d3) {
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#assembly").datum(data).call(parliament);
-}
+}*/
+
+window.westminster('assembly', true);
+
 !}
 go-to: coalition_menu
 
@@ -519,7 +523,11 @@ go-to: coalition_menu
 
 (28 seats for a majority)
 
-{!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
+<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+<svg id='assembly' viewBox="-80 0 400 150" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" ></svg>
+</div>
+
+# {!<svg id="assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td><td>Seat Change</td></tr>!}

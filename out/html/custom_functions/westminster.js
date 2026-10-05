@@ -117,7 +117,7 @@ window.westminster = function(container_id, forming_government) {
 
                     // normal column space
                     x += 15; 
-                    y = 60;
+                    y = 70;
                     seats_in_row = 0;
                     
                     // extra gap after every column

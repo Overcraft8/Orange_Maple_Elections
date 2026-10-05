@@ -90,7 +90,7 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'O' + opp_count;
-                addSeat(id, party_id, x, y);
+                addSeat(id, party_id, x, y, container);
                 opp_count += 1;
             }
         }
@@ -125,7 +125,7 @@ window.westminster = function(container_id, forming_government) {
                 seats_in_row += 1;
 
                 var id = 'G' + gov_count;
-                addSeat(id, party_id, x, y);
+                addSeat(id, party_id, x, y, container);
                 gov_count += 1;
             }
         }
@@ -133,6 +133,12 @@ window.westminster = function(container_id, forming_government) {
 
     // Now let's apply all of that to the container
     container.innerHTML += parliament_html;
+};
+
+function addSeat(id, party_id, x, y, container) {
+
+    var dx;
+    var dy;
 
     var viewBox = container.viewBox.baseVal;
 
@@ -143,11 +149,6 @@ window.westminster = function(container_id, forming_government) {
     var centerY = viewBox.height
         ? viewBox.y + viewBox.height / 2
         : 0;
-};
-
-function addSeat(id, party_id, x, y) {
-    var dx;
-    var dy;
 
     if (brit_mode) {
         // Circle's center is cx/cy

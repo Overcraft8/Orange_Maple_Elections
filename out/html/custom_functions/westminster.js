@@ -58,7 +58,6 @@ window.westminster = function(container_id, forming_government) {
 
     // For now, this will be for displaying parliament, not creating a new government
     // Animations are planned for forming new government
-    if (!forming_government) {
 
         var x = -30; 
         var opp_y_base = 60;
@@ -81,7 +80,7 @@ window.westminster = function(container_id, forming_government) {
                     seats_in_row = 0;
                     
                     // Extra gap after every second column
-                    if (sask_mode && opp_col_index % 2 === 0) {
+                    if (Q.sask_mode && opp_col_index % 2 === 0) {
                         x += 5; 
                     }
                 }
@@ -115,7 +114,7 @@ window.westminster = function(container_id, forming_government) {
                     seats_in_row = 0;
                     
                     // Extra gap after every second column
-                    if (sask_mode && gov_col_index % 2 === 0) {
+                    if (Q.sask_mode && gov_col_index % 2 === 0) {
                         x += 5; 
                     }
                 }
@@ -129,10 +128,39 @@ window.westminster = function(container_id, forming_government) {
                 gov_count += 1;
             }
         }
-    };
 
     // Now let's apply all of that to the container
     container.innerHTML += Q.parliament_html;
+
+    if (forming_government) {
+
+        var seats = container.querySelectorAll('.seat');
+
+        seats.forEach(function(seat) {
+            seat.style.transition = 'none';
+        });
+
+        // Force the browser to render the starting positions
+        void container.getBoundingClientRect();
+
+        requestAnimationFrame(function() {
+
+            seats.forEach(function(seat, index) {
+
+                seat.style.transition =
+                    'transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+
+                seat.style.transitionDelay =
+                    (index * 0.015) + 's';
+
+                seat.setAttribute(
+                    'transform',
+                    'translate(0 0)'
+                );
+            });
+
+        });
+}
 };
 
 function addSeat(id, party_id, x, y, container, forming_government) {

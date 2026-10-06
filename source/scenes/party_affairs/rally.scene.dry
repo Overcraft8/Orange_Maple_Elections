@@ -72,15 +72,15 @@ The FUL have won this show of strength.
 
 Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
 
-- @rally_cooperative_commonwealth: Spread the ideals of a Cooperative Commonwealth 
+- @rally_commonwealth: Spread the ideals of a Cooperative Commonwealth 
 - @welfare: Agitate for a stronger relief program in the face of the Drought and Economic Crisis
 - @blame_old_line: Blame the old-line parties for doing nothing
 - @pacifism: Opposing war, nationalism, and militarism at all costs.
 - @wtb: Support the WTB plan!
-- @local: A mixture of various local and national concerns that resonate most with the audience.
+- @local: A mixture of various local and provincial concerns that resonate most with our audience.
 - @easy_discard
 
-@rally_cooperative_commonwealth
+@rally_commonwealth
 on-arrival: workers_ccf += 4*(1-dissent); unemployed_ccf += 3*(1-dissent) if radical_strength > managerial_strength; workers_ccf += 4*(1-dissent) if nationalization_progress > 0; unemployed_ccf += 3*(1-dissent) if nationalization_progress > 0; radical_strength += 5; radical_dissent -= 5; old_middle_ccf -= 3; new_middle_ccf -= 2;
 
 Spreading the gospel of a true Cooperative Commonwealth increases general support for Socialism, both among farmers and worker alike. 

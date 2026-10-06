@@ -222,8 +222,8 @@ Q.cps_relation = 35;
 Q.scps_relation = 10;
 
 
-Q.ccf_party_leader = "M.J. Coldwell";
-Q.ccf_party_leader_img = "ColdwellMajorJames.jpg";
+Q.ccf_leader = "M.J. Coldwell";
+Q.ccf_leader_img = "ColdwellMajorJames.jpg";
 Q.ccf_president = "None";
 Q.ccf_president_img = "ColdwellMajorJames.jpg";
 Q.ccf_name = 'FLP';
@@ -833,6 +833,8 @@ Q.district_demography = {
     "north_d": { "seats": 2, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
     "central_d": { "seats": 20, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
 };
+
+Q.seat_majority = 28; 
 
 
 // Layout = 

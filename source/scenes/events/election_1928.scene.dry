@@ -681,7 +681,8 @@ There are some potential coalition arrangements.
 
 - @ccf_majority
 - @ccf_minority
-- @lps_coalition
+- @coalition_options: What are our options regarding coalitions?
+- @supply_confidence_options: Could we seek Supply and Confidence?
 - @grand_coalition
 #- @new_grand_coalition
 #- @scps_majority
@@ -697,66 +698,53 @@ There are some potential coalition arrangements.
 
 # Custom Coalitions here:
 
+@ccf_forms_government
+on-arrival: premier = ccf_leader; premier_party = ccf_name
+
 @ccf_majority
 title: We have achieved a majority!
 subtitle: [+ ccf_name +] ([+ ccf_seats +])
 unavailable-subtitle: [+ ccf_name +] ([+ ccf_seats +]) We do not have enough support.
 view-if: ccf_seats >= 28 
-on-arrival: premier = "Empty"; premier_party = ccf_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
-
-The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
-
-- @majority_premier: Our legislative leader will become Premier
-
-@majority_premier
-on-arrival: premier =  party_leader 
+on-arrival: ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+call: ccf_forms_government
 go-to: ministries
+
+We have achieved a majority of seats. We can now govern in a stable capacity for up to five years. 
 
 
 @ccf_minority
 title: Could we rule in a minority?
 subtitle: [+ ccf_name +] ([+ ccf_seats +])
 unavailable-subtitle: [+ ccf_name +] ([+ ccf_seats +]) We do not have enough support.
-view-if: ccf_seats <= 28 and largest_party = ccf_name
-on-arrival: premier = "Empty"; premier_party = ccf_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+view-if: ccf_seats <= seat_majority and largest_party = ccf_name
+on-arrival: premier = ccf_leader; premier_party = ccf_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
-The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
+We have achieved a plurality of the vote. For one reason or another, we can choose to continue as a minority government, negotiating with parties on a bill by bill basis.
 
 - @minority_premier: Our legislative leader will become Premier
 
 @minority_premier
-on-arrival: premier =  party_leader 
+on-arrival: premier = party_leader 
 go-to: ministries
 
+@coalition_options
+title: Coalition Options
+
+- @ccf_tory_coalition
+- @ccf_socred_coalition
 
 
+@ccf_tory_coalition
+title: Could we coalition with the Tories?
+choose-if: cps_relation >= 60; cps_leader == 'John Diefenbaker'; cps_leader == 'James Anderson' if ccf_name == 'PFLP' or ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
+on-arrival: 
+call: ccf_forms_government
 
-@lps_coalition
-title: Will the Liberals coalition with us?
-subtitle: LPS + [+ ccf_name +] ([+ lps_coalition +])
-unavailable-subtitle: [+ ccf_name +] ([+ ccf_r +]) We do not have enough support.
-view-if: lps_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = ccf_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+@ccf_socred_coalition
+title: Could we coalition with Social Credit?
+choose-if: scps_relation >= 70; ccf_name == 'PFLP' or ccf_ideology = 'Social Democracy' or ccf_ideology == 'Progressivism'
 
-The LPS has demanded that we keep schools good. 
-
-- @lps_coalition_succeed: We will agree to these terms. 
-- @lps_coalition_fail: We cannot agree to these terms. 
-
-@lps_coalition_succeed
-title: We have suceeded!
-on-arrival: premier = ccf_party_leader
-choose-if: lps_relation >= 70
-go-to: ministries
-
-Now we must negotiate for ministy positions. 
-
-@lps_coalition_fail
-choose-if: lps_relation <= 70
-
-We have failed to convince the Liberals to coalition with us. 
-
-- @coalition_menu: Let's go back
 
 @grand_coalition
 title: Could we coalition with the Liberals, Conservatives, and Progressives?
@@ -767,89 +755,6 @@ on-arrival: premier = "Empty"; premier_party = ccf_name; ccf_in_government = 1; 
 go-to: ministries
 
 The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
-
-
-
-
-
-
-@left_coalition
-title: Is a United Left coalition possible?
-subtitle: [+ ccf_name +] + CPC(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +])
-unavailable-subtitle: [+ ccf_name +] + CPC(S) [? if sapd_formed: + SAPD ?] ([+ left_coalition +]). [? if cpc_s_relation < 50 : We do not have adequate relations with the CPC(S). ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
-view-if: left_coalition >= 28
-choose-if: (cpc_s_relation >= 50 or (cpc_s_party_leader == "Conciliators" and cpc_s_relation >= 40)) and communist_coalition >= 3
-
-There are enough votes for a [+ ccf_name +] + CPC(S) coalition government, if such a thing were actually possible.
-
-The far-right might attempt a coup, if such a coalition were formed.
-
-- @left_coalition_impossible: This is impossible.
-- @left_coalition_possible: This could be possible.
-
-@left_coalition_impossible
-go-to: coalition_menu
-
-A far left coalition is impossible.
-
-
-@left_coalition_possible
-
-The CPC(S) is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Tim Buck as premier in exchange for a coalition. [? if prime_minister == "George V" : There is no chance whatsoever that Prime Minister George V would approve of the appointment of a die-hard communist as premier. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our agrarian or left-leaning members as premier.
-
-- @tim_buck_premier: Appoint Tim Buck as premier.
-- @left_coalition_resources
-- @left_coalition_relations
-- @coalition_menu: Try a different governing arrangement.
-
-@tim_buck_premier
-choose-if: prime_minister == "JS Woodsworth" and managerial_strength + neorevisionist_strength < radical_strength
-unavailable-subtitle: [? if prime_minister != "JS Woodsworth": Prime Minister [+ prime_minister +] would never allow such a thing. ?] [? if managerial_strength >= radical_strength : Most in the parliamentary party would not support Tim Buck as premier. ?]
-on-arrival: premier = "Tim Buck"; premier_party = "CPC(S)"; cpc_s_relation = 80; in_left_front = 1; ccf_in_government = 1 
-
-With great reluctance, Prime Minister [+ prime_minister +] appoints [+ premier +] as premier.
-
-Immediately, [+ premier +] goes to work building a "Soviet Saskatchewan": consolidating as much power as possible in the CPC(S), purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
-
-In response to [+ premier +] being appointed Premier, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Ku Klux Klan and SCPSs FUL enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the RCMP have taken their troops out of the barracks and joined them with the Ku Klux Klan to stop the CPC(S) from taking power. We are forced to be on the same side as the CPC(S), whether we want to or not.
-
-
-@left_coalition_resources
-title: Use our resources to smooth things over.
-unavailable-subtitle: Required: 3 resources
-subtitle: -3 resources
-choose-if: resources >= 3
-on-arrival: resources -= 3
-go-to: left_coalition_success
-
-@left_coalition_relations
-title: Convince the CPC(S) to accept democracy.
-unavailable-subtitle: Our relationships with the CPC(S) are not good enough.
-choose-if: cpc_s_relation >= 60 or cpc_s_party_leader == "Conciliators"
-go-to: left_coalition_success
-
-
-@left_coalition_success
-on-arrival: ccf_in_government = 1; in_left_front = 1; premier = "Williams"; premier_party = ccf_name; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cpc_s_relation += 10
-go-to: left_coalition_no_civil_war
-achievement: einheitsfront
-
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Tim Buck as premier. The consensus choice for premier, accepted by the [+ ccf_name +], CPC(S), and Prime Minister [+ prime_minister +], is George Hara Williams, who belongs to the agrarian faction of the [+ ccf_name +], but was acceptable to the left due to his previous membership in the left-wing anti-war U[+ ccf_name +].
-
-# just raise the coup limit, don't immediately go to civil war
-
-@left_coalition_no_civil_war
-on-arrival: cpc_s_goals_seen = 0; foreign_minister_party = ccf_name; interior_minister_party = ccf_name; justice_minister_party = ccf_name; labour_minister_party = ccf_name; rcmp_minister_party = ccf_name; economic_minister_party = ccf_name; finance_minister_party = ccf_name; agriculture_minister_party = ccf_name; rcmp_loyalty -= 0.05
-
-In response to the CPC(S)'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
-
-The CPC(S) has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
-
-Whatever their reasoning is, the [+ ccf_name +] has control over the ministries of government.
-
-@left_coalition_civil_war
-on-arrival: rcmp_loyalty += 0.1
-
 
 
 @cooperative_coalition

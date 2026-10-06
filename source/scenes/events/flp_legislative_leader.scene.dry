@@ -7,11 +7,11 @@ view-if: 2 = 1
 = The Legislative Leader
 
 <div>
-  <img src="img/portraits/[+ ccf_party_leader_img +]" 
+  <img src="img/portraits/[+ ccf_leader_img +]" 
        style="width: 60%; display: block; margin: auto; margin-bottom: 5px;">
 </div>
 
-<p style="text-align: center; margin-bottom: 0;">[+ ccf_party_leader +]</p>
+<p style="text-align: center; margin-bottom: 0;">[+ ccf_leader +]</p>
 
 [? if ccf_president = "George Hara Williams" : George Hara Williams is a farmers by trade and de facto leader of the Agrarian wing of the party. ?]
 

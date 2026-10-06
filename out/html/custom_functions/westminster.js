@@ -132,6 +132,7 @@ window.westminster = function(container_id, forming_government) {
     // Now let's apply all of that to the container
     container.innerHTML += Q.parliament_html;
 
+    // Animation below credited to ChatGPT
     if (forming_government) {
 
         var seats = container.querySelectorAll('.seat');

@@ -736,7 +736,7 @@ title: Coalition Options
 
 @ccf_tory_coalition
 title: Could we coalition with the Tories?
-choose-if: cps_relation >= 60; cps_leader == 'John Diefenbaker' or cps_leader == 'James Anderson'; ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
+choose-if: cps_relation >= 60; cps_ideology == 'Red Toryism' or cps_leader == 'James Anderson'; ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
 call: ccf_forms_government
 
 @ccf_socred_coalition
@@ -750,8 +750,21 @@ title: What are our options for Supply and Confidence?
 
 We could seek the support of another party in a Supply and Confidence Agreement; guaranteeing policy concessions for a vote with us against non-confidence motions. 
 
-- @ccf_tory_sc:
-- @ccf_socred_sc: 
+- @ccf_tory_sc: Could we enter into an S&C Agreement with the Tories?
+- @ccf_socred_sc: Could we enter into an S&C Agreement with the SoCreds?
+
+@ccf_tory_sc
+title: Tory Supply and Confidence
+choose-if: cps_relation >= 40; cps_ideology == 'Red Toryism'
+call: ccf_forms_government
+
+The Tories have agreed to enter into a Supply and Confidence agreement. [? if cps_leader == 'John Diefenbaker' : John Diefenbaker's Red Toryism remains markedly economically interventionist. ?]
+
+@ccf_socred_sc
+choose-if: scps_relation >= 60
+call: ccf_forms_government
+
+The Social Credit Party has agreed to enter into a Supply and Confidence agreement with us. 
 
 
 

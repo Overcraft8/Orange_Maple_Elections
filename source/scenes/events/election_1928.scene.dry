@@ -743,7 +743,7 @@ call: ccf_forms_government
 
 @ccf_socred_coalition
 title: Could we coalition with Social Credit?
-choose-if: scps_relation >= 70; ccf_name == 'PFLP' or ccf_ideology = 'Social Democracy' or ccf_ideology == 'Progressivism'
+choose-if: scps_relation >= 70; ccf_name == 'PFLP' or ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
 
 
 @grand_coalition

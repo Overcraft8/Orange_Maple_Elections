@@ -688,7 +688,6 @@ There are some potential coalition arrangements.
 #- @scps_majority
 #- @no_majority
 #- @woodsworths_dilemma
-- @left_coalition
 #- @unity_government_coalition
 - @cooperative_coalition
 #- @right_coalition
@@ -737,13 +736,23 @@ title: Coalition Options
 
 @ccf_tory_coalition
 title: Could we coalition with the Tories?
-choose-if: cps_relation >= 60; cps_leader == 'John Diefenbaker' or 'James Anderson'; ccf_name == 'PFLP' or ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
-on-arrival: 
+choose-if: cps_relation >= 60; cps_leader == 'John Diefenbaker' or 'James Anderson'; ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
 call: ccf_forms_government
 
 @ccf_socred_coalition
 title: Could we coalition with Social Credit?
-choose-if: scps_relation >= 70; ccf_name == 'PFLP' or ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
+choose-if: scps_relation >= 70; ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
+call: ccf_forms_government
+
+
+@supply_confidence_options
+title: What are our options for Supply and Confidence?
+
+We could seek the support of another party in a Supply and Confidence Agreement; guaranteeing policy concessions for a vote with us against non-confidence motions. 
+
+
+
+
 
 
 @grand_coalition

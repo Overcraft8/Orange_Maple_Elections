@@ -64,6 +64,15 @@ on-arrival: {!
     Q.southwest_d_pps_seats -= 1; 
     Q.southwest_d_cps_seats += 1;
 
+    // Split PPS vote between LPS, FLP, and CPS
+    for (c of Q.classes) {
+        var third_pps_vote = Q[c + 'pps'] / 3;
+        Q[c + 'ccf'] += third_pps_vote; 
+        Q[c + 'cps'] += third_pps_vote; 
+        Q[c + 'lps'] += third_pps_vote; 
+        Q[c + 'pps'] = 0; 
+    }
+
     window.updateBar('left');
 !}
 
@@ -87,6 +96,14 @@ on-arrival: {!
     Q.ccf_name = 'PFLP';
     Q.ccf_ideology = 'Social Democracy';
     Q.pps_in_government = 0;
+
+    // Split PPS vote between LPS (1/3) and PFLP (2/3)
+    for (c of Q.classes) {
+        var third_pps_vote = Q[c + 'pps'] / 3;
+        Q[c + 'ccf'] += third_pps_vote + third_pps_vote; 
+        Q[c + 'lps'] += third_pps_vote; 
+        Q[c + 'pps'] = 0; 
+    }
 !}
 
 The influx of Progressives into our party dilutes our socialist origins. The more moderate wing of our party is satisfied and believes that our move to the right will allow us to maneuver around the inevitable red-baiting we will receive in the next General Election. 

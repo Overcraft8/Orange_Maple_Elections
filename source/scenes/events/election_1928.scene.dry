@@ -659,18 +659,6 @@ go-to: coalition_menu
 {!</div>!}
 
 
-**Potential coalitions:**
-
-Liberal-CCF Coalition ([+ ccf_name +] + LPS): [+ lps_coalition +]%
-
-Progressive-CCF Coalition ([+ ccf_name +] + PPS): [+ pps_coalition +]%
-
-Bourgeois Coalition (PPS + LPS + CPS + Others): [+ bourgeois_coalition +]%
-
-Right-wing Coalition (CPS + Others + SCPS): [+ right_coalition +]%
-
-Cooperative Coalition (PPS + CPS + Others): [+ cooperative_coalition +]%
-
 [? if scps_urgency <= 1 and scps_r >= 15 : The rapid rise in SCPS votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Saskatchewan. ?]
 
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic CPC(S), SCPS, and SCPS have a majority in the Assembly. A stable governing majority will be almost impossible. ?]
@@ -683,7 +671,10 @@ There are some potential coalition arrangements.
 - @ccf_minority
 - @coalition_options: What are our options regarding coalitions?
 - @supply_confidence_options: Could we seek Supply and Confidence?
-- @grand_coalition
+- @socred_plurality: Social Credit wins a Plurality
+- @socred_majority: Social Credit wins a Majority
+- @liberal_plurality: The Liberals win a Plurality
+- @liberal_majority: The Liberals win a Majority
 #- @new_grand_coalition
 #- @scps_majority
 #- @no_majority
@@ -699,6 +690,12 @@ There are some potential coalition arrangements.
 
 @ccf_forms_government
 on-arrival: premier = ccf_leader; premier_party = ccf_name
+
+@socred_forms_government
+on-arrival: premier = scps_leader; premier_party = 'SCPS'
+
+@lps_forms_government
+on-arrival: premier = lps_leader; premier_party = 'LPS'
 
 @ccf_majority
 title: We have achieved a majority!
@@ -721,17 +718,13 @@ on-arrival: premier = ccf_leader; premier_party = ccf_name; ccf_in_government = 
 
 We have achieved a plurality of the vote. For one reason or another, we can choose to continue as a minority government, negotiating with parties on a bill by bill basis.
 
-- @minority_premier: Our legislative leader will become Premier
-
-@minority_premier
-on-arrival: premier = party_leader 
-go-to: ministries
 
 @coalition_options
 title: Coalition Options
 
 - @ccf_tory_coalition
 - @ccf_socred_coalition
+- @election_1928.coalition_menu: Return
 
 
 @ccf_tory_coalition
@@ -752,6 +745,7 @@ We could seek the support of another party in a Supply and Confidence Agreement;
 
 - @ccf_tory_sc: Could we enter into an S&C Agreement with the Tories?
 - @ccf_socred_sc: Could we enter into an S&C Agreement with the SoCreds?
+- @election_1928.coalition_menu: Return
 
 @ccf_tory_sc
 title: Tory Supply and Confidence
@@ -768,16 +762,38 @@ The Social Credit Party has agreed to enter into a Supply and Confidence agreeme
 
 
 
+@socred_plurality
+view-if: largest_party == 'SCPS' and scps_seats <= seat_majority
+call: socred_forms_government
 
-@grand_coalition
-title: Could we coalition with the Liberals, Conservatives, and Progressives?
-subtitle: LPS + CPS + PPS + [+ ccf_name +] ([+ grand_coalition +])
-unavailable-subtitle: [+ ccf_name +] ([+ ccf_r +]) We do not have enough support.
-view-if: grand_coalition >= 28
-on-arrival: premier = "Empty"; premier_party = ccf_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
-go-to: ministries
+@socred_majority
+view-if: scps_seats >= seat_majority
+call: socred_forms_government
+on-arrival: {!
+    for (var p of Q.parties) {
+        Q[p + ['_in_governmnet']] = 0;
+    }
+    Q.scps_in_government = 1; 
+!}
 
-The work of the Party has finally borne fruition! We can now rule unhindered by the naggings of other parties.
+@liberal_plurality
+view-if: largest_party == 'LPS' and lps_seats <= seat_majority
+call: lps_forms_government; lps_negotiates
+
+@lps_negotiates
+on-arrival: lps_in_government = 1;
+
+
+@liberal_majority
+view-if: lps_seats >= seat_majority
+call: lps_forms_government
+on-arrival: {!
+    for (var p of Q.parties) {
+        Q[p + ['_in_governmnet']] = 0;
+    }
+    Q.lps_in_government = 1; 
+!}
+
 
 
 @cooperative_coalition
@@ -788,12 +804,14 @@ view-if: cooperative_coalition >= 50
 choose-if: cooperative_coalition >= 50
 on-arrival: ccf_in_government = 0; ccf_toleration = 0; foreign_minister_party = "CPS"; interior_minister_party = "CPS"; justice_minister_party = "CPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "CPS"; agriculture_minister_party = "CPS"; in_cooperative_coalition = 1;
 
+# Haha, not happening
+
 Anderson's Cooperative Coalition has managed to attain another majority. 
 
 - @anderson_premier: Anderson holds steady
 
 @anderson_premier
-on-arrival: premier =  "Anderson"; premier_party = "CPS"; ccf_in_government = 0; in_ccf_majority = 0; 
+on-arrival: premier =  "James Anderson"; premier_party = "CPS"; ccf_in_government = 0; in_ccf_majority = 0; 
 
 
 

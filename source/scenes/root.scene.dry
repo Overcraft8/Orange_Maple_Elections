@@ -230,12 +230,10 @@ Q.ccf_name = 'FLP';
 
 
 Q.cpc_s_leader = "None";
-Q.cpc_s_party_leader = "None";
 Q.cps_leader = "James Anderson";
 Q.lps_leader = "James Gardiner";
 Q.scps_leader = "Joseph Needham"; 
 Q.pps_leader = "None";
-Q.pps_party_leader = "None";
 
 Q.ccf_legislative_leader = "Williams";
 Q.ccf_abpresident = "Williams";

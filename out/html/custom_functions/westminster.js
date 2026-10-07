@@ -7,7 +7,6 @@ window.westminster = function(container_id, forming_government) {
     var house_width = 3; 
     var container = document.getElementById(container_id);
 
-    var seat_size = '12px'; // This is the display dimensions of the actual seats
     // Make sure to remove units such as 'em' or 'px' if using brit_mode which uses circle element -> unit-less numbers for radius
 
     container.innerHTML = ''; //Remove any previous html inside the container first
@@ -56,7 +55,7 @@ window.westminster = function(container_id, forming_government) {
 
     // First option: british mode second: Canada
     // This uses ternary operator syntax, google it for more info but basic is this -> condition ? true : false -> returning the contents on either side of colon depending on truthyness or falsyness
-    var soth = Q.brit_mode ? `<circle id="soth" cx="-60" cy="65" r="${seat_size}"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="${seat_size}" width="${seat_size}" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
+    var soth = Q.brit_mode ? `<circle id="soth" cx="-60" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="12px" width="12px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
 
     Q.parliament_html = soth;
 
@@ -190,7 +189,7 @@ function addSeat(id, party_id, x, y, container, forming_government) {
 
         Q.parliament_html +=
             `<circle id="${id}" class="seat ${party_id}"
-                cx="${x}" cy="${y}" r="${seat_size}"
+                cx="${x}" cy="${y}" r="6"
                 ${forming_government ? `transform="translate(${dx} ${dy})"` : ''}>
             </circle>`;
     } else {
@@ -201,7 +200,7 @@ function addSeat(id, party_id, x, y, container, forming_government) {
         Q.parliament_html +=
             `<rect id="${id}" class="seat ${party_id}"
                 x="${x}" y="${y}"
-                height="${seat_size}" width="${seat_size}"
+                height="12px" width="12px"
                 stroke="black" stroke-width="1"
                 ${forming_government ? `transform="translate(${dx} ${dy})"` : ''} />`;
     }

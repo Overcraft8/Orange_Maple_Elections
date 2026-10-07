@@ -667,22 +667,15 @@ There are some potential coalition arrangements.
 
 @coalition_menu
 
-- @ccf_majority
-- @ccf_minority
+- @ccf_majority: We have achieved a Majority!
+- @ccf_minority: Attempt to continue on as a Minority government
 - @coalition_options: What are our options regarding coalitions?
 - @supply_confidence_options: Could we seek Supply and Confidence?
 - @socred_plurality: Social Credit wins a Plurality
 - @socred_majority: Social Credit wins a Majority
 - @liberal_plurality: The Liberals win a Plurality
 - @liberal_majority: The Liberals win a Majority
-#- @new_grand_coalition
-#- @scps_majority
-#- @no_majority
-#- @woodsworths_dilemma
-#- @unity_government_coalition
-- @cooperative_coalition
-#- @right_coalition
-- @no_govt
+- @cooperative_coalition: Impossible, wtf?
 
 # TODO: black-brown coalition
 
@@ -699,8 +692,6 @@ on-arrival: premier = lps_leader; premier_party = 'LPS'
 
 @ccf_majority
 title: We have achieved a majority!
-subtitle: [+ ccf_name +] ([+ ccf_seats +])
-unavailable-subtitle: [+ ccf_name +] ([+ ccf_seats +]) We do not have enough support.
 view-if: ccf_seats >= 28 
 on-arrival: ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 call: ccf_forms_government
@@ -711,8 +702,6 @@ We have achieved a majority of seats. We can now govern in a stable capacity for
 
 @ccf_minority
 title: Could we rule in a minority?
-subtitle: [+ ccf_name +] ([+ ccf_seats +])
-unavailable-subtitle: [+ ccf_name +] ([+ ccf_seats +]) We do not have enough support.
 view-if: ccf_seats <= seat_majority and largest_party = ccf_name
 on-arrival: premier = ccf_leader; premier_party = ccf_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
@@ -729,11 +718,13 @@ title: Coalition Options
 
 @ccf_tory_coalition
 title: Could we coalition with the Tories?
+unavailable-subtitle: They do not trust us enough
 choose-if: cps_relation >= 60 and cps_ideology == 'Red Toryism' or cps_leader == 'James Anderson' and ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
 call: ccf_forms_government
 
 @ccf_socred_coalition
 title: Could we coalition with Social Credit?
+unavailable-subtitle: The Socreds are unwilling to coalition with us
 choose-if: scps_relation >= 70 and ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
 call: ccf_forms_government
 
@@ -749,24 +740,29 @@ We could seek the support of another party in a Supply and Confidence Agreement;
 
 @ccf_tory_sc
 title: Tory Supply and Confidence
+subtitle: The Red Tories are pulling their clout
+unavailable-subtitle: They do not trust us enough
 choose-if: cps_relation >= 40 and cps_ideology == 'Red Toryism'
 call: ccf_forms_government
 
-The Tories have agreed to enter into a Supply and Confidence agreement. [? if cps_leader == 'John Diefenbaker' : John Diefenbaker's Red Toryism remains markedly economically interventionist. ?]
+The Tories have agreed to enter into a Supply and Confidence agreement. [? if cps_leader == 'John Diefenbaker' : John Diefenbaker's Red Toryism remains markedly economically interventionist and therefore, friendly to our own policies. ?]
 
 @ccf_socred_sc
+title: S&C with Socreds
 choose-if: scps_relation >= 60
+subtitle: The Socreds are, surprisingly, willing to enter an S&A agreement
+unavailable-subtitle: The Socreds are unwilling to negotiate 
 call: ccf_forms_government
 
 The Social Credit Party has agreed to enter into a Supply and Confidence agreement with us. 
-
-
 
 @socred_plurality
 view-if: largest_party == 'SCPS' and scps_seats <= seat_majority
 call: socred_forms_government
 
+
 @socred_majority
+title: Social Credit wins a Majority Government
 view-if: scps_seats >= seat_majority
 call: socred_forms_government
 on-arrival: {!
@@ -780,11 +776,11 @@ on-arrival: {!
 view-if: largest_party == 'LPS' and lps_seats <= seat_majority
 call: lps_forms_government
 
-@lps_negotiates
-on-arrival: lps_in_government = 1;
+The LPS does not maintain strong enough relations with any one party to form a majority governing coalition. Therefore, they will attempt to organize a minority government and receieve support on an ad hoc basis. 
 
 
 @liberal_majority
+title: The Liberals win a Majority Government
 view-if: lps_seats >= seat_majority
 call: lps_forms_government
 on-arrival: {!
@@ -812,7 +808,6 @@ Anderson's Cooperative Coalition has managed to attain another majority.
 
 @anderson_premier
 on-arrival: premier =  "James Anderson"; premier_party = "CPS"; ccf_in_government = 0; in_ccf_majority = 0; 
-
 
 
 @new_elections
@@ -875,115 +870,6 @@ if (Q.scps_majority >= 50) {
 There is no path to a workable Assembly majority or minority government. The next elections are set for [+ next_parl_election_month : month +] [+ next_parl_election_year +].
 
 The people's faith in democracy is shaken by this ordeal. Of course, the SCPSs are exploiting the instability to claim that democracy is unworkable, and that Saskatchewan needs a strong leader.
-
-
-@douglas
-title: Tommy Douglas for Premier
-view-if: douglas_dead = 0
-subtitle: Douglas is popular within the party, and is the preferred candidate of the PPS and other parties.
-on-arrival: ccf_in_government = 1; premier = "Douglas"; premier_party = ccf_name; in_grand_coalition = 1 if in_lps_coalition == 0
-go-to: ministries
-
-Douglas's appointment as premier is approved by all our potential allies.
-
-@coldwell
-title: Major James Coldwell for Premier
-view-if: douglas_dead = 1
-subtitle: Major James Coldwell is a party leader, but can he also be premier?
-on-arrival: ccf_in_government = 1; premier = "Coldwell"; premier_party = ccf_name; in_grand_coalition = 1 if in_lps_coalition == 0
-go-to: ministries
-
-Major James Coldwell's appointment as premier is approved by our potential allies.
-
-@woodsworth
-title: J. S. Woodsworth for Premier
-view-if: not historical_mode or not ccf_prussia
-subtitle: J. S. Woodsworth is currently the Minister-Prime Minister of City Police, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
-
-The PPS party has significant qualms about appointing J. S. Woodsworth as premier, given that he is already Minister-Prime Minister of City Police. They ask for either more cabinet positions, or for J. S. Woodsworth to resign his state government role. The latter is completely unacceptable.
-
-- @douglas
-- @coldwell
-- @woodsworth_2: Let the PPS have their cabinet positions.
-
-@woodsworth_2
-subtitle: J. S. Woodsworth will be Premier.
-view-if: not historical_mode
-on-arrival: ccf_in_government = 1; premier = "JS Woodsworth"; premier_party = ccf_name; leverage -= 10; in_grand_coalition = 1 if in_lps_coalition == 0
-go-to: ministries
-
-We have promised to let the PPS have more influence in the government in response to the appointment of J. S. Woodsworth as premier.
-
-
-@pps_premier
-title: Let the PPS Party have their premier.
-subtitle: Heinrich Brüning will be premier. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: radical_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; pps_relation += 10; cps_relation += 5; cpc_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Brüning"; premier_party = "PPS"; ccf_in_government = 1; leverage += 5
-go-to: ministries
-
-This is highly unexpected, and many in the left and agrarian of our party are criticizing this decision.
-
-[? if year == 1932 : Since James Anderson resigned, Heinrich Brüning has been appointed premier. ?]
-[? if year > 1932: Heinrich Brüning of the PPS Party has been appointed premier. ?]
-
-@pps_premier_wirth
-title: Let Joseph Wirth of the PPS Party be premier.
-view-if: pps_party_leader == "Joos"
-subtitle: Wirth is on the left wing of the PPS Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: radical_dissent += 2; pps_relation += 6; lps_relation += 3; cpc_s_relation -= 5; in_grand_coalition = 1 if in_lps_coalition == 0; premier = "Wirth"; premier_party = "PPS"; ccf_in_government = 1; leverage += 5
-go-to: ministries
-
-
-
-
-@no_govt
-title: We do not form the government.
-subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
-on-arrival: managerial_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; neorevisionist_dissent += 5
-
-Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by Prime Minister [+ prime_minister +].
-
-- @douglas
-- @woodsworth
-- @pps_premier
-- @no_govt_goals: Yes, we're sure.
-
-@no_govt_goals
-
-What are our goals here, exactly?
-
-- @majority: We hope to reach a socialist majority in the next election.
-- @trap: It is a trap to form a government now. We would be unable to accomplish our goals.
-- @socialism: Revolutionary socialism is our goal.
-
-@majority
-go-to: no_govt_2
-
-@trap
-on-arrival: radicalization += 1
-go-to: no_govt_2
-
-@socialism
-go-to: no_govt_2
-
-
-@no_govt_2
-on-arrival: managerial_dissent += 25; agrarian_dissent += 10; labour_dissent += 25; neorevisionist_dissent += 25; in_lps_coalition = 0; in_grand_coalition = 0; premier = "Brüning" if premier == "Anderson"; ccf_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_ccf if right_coalition >= 50 and prime_minister != "JS Woodsworth" and year < 1929; new_elections_ccf if (right_coalition < 50 or year >= 1929) and prime_minister != "J. S. Woodsworth"
-
-
-@right_coalition_post_ccf
-go-to: right_coalition_2
-
-@right_coalition_2
-unavailable-subtitle: The SCPS is not interested in a coalition with the PPS.
-view-if: right_coalition >= 50
-choose-if: year < 1929
-on-arrival: ccf_in_government = 0; ccf_toleration = 0; premier = "Brüning"; premier_party = "PPS"; foreign_minister_party = "CPS"; interior_minister_party = "SCPS"; justice_minister_party = "SCPS"; labour_minister_party = "PPS"; rcmp_minister_party = "I"; economic_minister_party = "CPS"; finance_minister_party = "PPS"; agriculture_minister_party = "SCPS"; in_right_coalition = 1;
-
-Even though the SCPS is very reluctant to participate in such a coalition, they still accede to Prime Minister George V's wishes. Thus, a majority center-right coalition is formed, with Brüning as premier.
-
-
 
 
 @new_elections_ccf

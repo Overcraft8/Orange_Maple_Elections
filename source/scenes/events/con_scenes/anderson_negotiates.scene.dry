@@ -53,7 +53,7 @@ Q.leverage = 6;
 Q.ccf_in_government = 1 
 Q.window.updateBar('left');
 !}
-go-to: election_1928.ministries
+go-to: election.ministries
 
 Many of our immigrant and Catholic base are disgusted at our compromise with Anderson's government. Even some in the leadership question whether is was right to achieve this legislation at the cost of aligning ourselves with the Premier. 
 

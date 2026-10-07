@@ -778,7 +778,7 @@ on-arrival: {!
 
 @liberal_plurality
 view-if: largest_party == 'LPS' and lps_seats <= seat_majority
-call: lps_forms_government; lps_negotiates
+call: lps_forms_government
 
 @lps_negotiates
 on-arrival: lps_in_government = 1;

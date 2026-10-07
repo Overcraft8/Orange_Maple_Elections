@@ -2,7 +2,7 @@ window.westminster = function(container_id, forming_government) {
     // container_id has to be an svg for this to work
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
-    Q.brit_mode = true; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
+    Q.brit_mode = false; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
     Q.sask_mode = false; // This will create paired seats like in most Canadian Assemblies graphics
     var house_width = 3; 
     var container = document.getElementById(container_id);
@@ -55,7 +55,8 @@ window.westminster = function(container_id, forming_government) {
     };
 
     // First option: british mode second: Canada
-    var soth = Q.brit_mode ? `<circle id="soth" cx="-60" cy="65" r="6"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="12px" width="12px" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
+    // This uses ternary operator syntax, google it for more info but basic is this -> condition ? true : false -> returning the contents on either side of colon depending on truthyness or falsyness
+    var soth = Q.brit_mode ? `<circle id="soth" cx="-60" cy="65" r="${seat_size}"></circle>` : `<rect id="soth" class="seat ${speaker_party}" x="-60" y="65" height="${seat_size}" width="${seat_size}" stroke="black" stroke-width="1" />`; // This is the speaker of the house circle and it's cords
 
     Q.parliament_html = soth;
 
@@ -189,7 +190,7 @@ function addSeat(id, party_id, x, y, container, forming_government) {
 
         Q.parliament_html +=
             `<circle id="${id}" class="seat ${party_id}"
-                cx="${x}" cy="${y}" r="6"
+                cx="${x}" cy="${y}" r="${seat_size}"
                 ${forming_government ? `transform="translate(${dx} ${dy})"` : ''}>
             </circle>`;
     } else {
@@ -200,7 +201,7 @@ function addSeat(id, party_id, x, y, container, forming_government) {
         Q.parliament_html +=
             `<rect id="${id}" class="seat ${party_id}"
                 x="${x}" y="${y}"
-                height="12px" width="12px"
+                height="${seat_size}" width="${seat_size}"
                 stroke="black" stroke-width="1"
                 ${forming_government ? `transform="translate(${dx} ${dy})"` : ''} />`;
     }

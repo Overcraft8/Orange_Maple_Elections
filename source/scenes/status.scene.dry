@@ -233,13 +233,13 @@ CPC(S): [+ cpc_s_ideology +] ([+cpc_s_leader +])
 
 [+ ccf_name +]: [+ ccf_ideology +] ([+ ccf_president +])
 
-PPS: [+ pps_ideology +] ([+ pps_leader +])
+[? if year <= 1932 and month <= 3 : PPS: [+ pps_ideology +] ([+ pps_leader +]) ?]
 
 LPS: [+ lps_ideology +] ([+ lps_leader +])
 
 CPS: [+ cps_ideology +] ([+ cps_leader +])
 
-SCPS: [+ scps_ideology +] ([+ scps_leader +])
+[? if year <= 1935 and month <= 3 : SCPS: [+ scps_ideology +] ([+ scps_leader +]) ?]
 
 @organizations
 on-arrival: {!
@@ -735,12 +735,6 @@ on-arrival: {!
             {!<td style="background-color: #8a4545;">!}[+ farmhands_cpc_s_display +]%{!</td>!}
             {!<td style="background-color: #8a4545;">!}[+ rural_workers_cpc_s_display +]%{!</td>!}
         {!</tr>!}
-        {!<tr>!}
-            {!<td>!}**PPS**{!</td>!}
-            {!<td style="background-color: #c8c288; ">!}[+ farmers_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ farmhands_pps_display +]%{!</td>!}
-            {!<td style="background-color: #c8c288;">!}[+ rural_workers_pps_display +]%{!</td>!} 
-        {!</tr>!} 
         {!<tr>!}
             {!<td>!}**LPS**{!</td>!}
             {!<td style="background-color: #a86a77; ">!}[+ farmers_lps_display +]%{!</td>!}

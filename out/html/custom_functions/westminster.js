@@ -7,12 +7,15 @@ window.westminster = function(container_id, forming_government) {
     var house_width = 3; 
     var container = document.getElementById(container_id);
 
+    var seat_size = '12px'; // This is the display dimensions of the actual seats
+    // Make sure to remove units such as 'em' or 'px' if using brit_mode which uses circle element -> unit-less numbers for radius
+
     container.innerHTML = ''; //Remove any previous html inside the container first
 
     var data = Q.parliament_diagram; // This may not be applicable to base game
-    // If you are seeking to use this function yourself, find all instances of the 'vara data' variable (1 in root, 1 in 1928_election scene, and possibly 1 in post_event) and then make Q.parliament_diagram equal to it. 
+    // If you are seeking to use this function yourself, find all instances of the 'var data' variable (1 in root, 1 in 1928_election scene, and possibly 1 in post_event) and then make Q.parliament_diagram equal to it. 
     
-    var parties_list = Q.parties || ['ccf', 'cpc_s', 'pps', 'lps', 'cps', 'scps', 'other']; ;
+    var parties_list = Q.parties || ['ccf', 'cpc_s', 'pps', 'lps', 'cps', 'scps', 'other']; // Replace as you wish
 
     var governing_parties_list = [];
     var governing_seats = 0; 
@@ -56,8 +59,7 @@ window.westminster = function(container_id, forming_government) {
 
     Q.parliament_html = soth;
 
-    // For now, this will be for displaying parliament, not creating a new government
-    // Animations are planned for forming new government
+    // If you'd like only the largest party to be on the government benches at first, ensure only that party has Q expression Q[(party_id) + '_in_government'] set to 1 (or true ig)
 
         var x = -30; 
         var opp_y_base = 60;
@@ -118,8 +120,7 @@ window.westminster = function(container_id, forming_government) {
                         x += 5; 
                     }
                 }
-                
-                // Adding 15 moves the government seats DOWN towards the bottom of the screen
+
                 y += 15; 
                 seats_in_row += 1;
 

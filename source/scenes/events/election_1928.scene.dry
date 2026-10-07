@@ -784,7 +784,6 @@ The LPS does not maintain strong enough relations with any one party to form a m
 @liberal_majority
 title: The Liberals win a Majority Government
 view-if: lps_seats >= seat_majority
-call: lps_forms_government
 on-arrival: {!
     for (var p of Q.parties) {
         Q[p + ['_in_governmnet']] = 0;
@@ -793,8 +792,6 @@ on-arrival: {!
 !}
 
 - @root: Buggers
-
-
 
 @cooperative_coalition
 title: A traditional alliance

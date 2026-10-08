@@ -210,7 +210,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 {!<tr><td>Party</td><td>Relations</td></tr>!}
 
-{!<tr><td>!} PPS {!</td><td>!}[+ pps_relation : relationships +] {!</td><tr>!}
+[? if year == 1932 and month <= 4 : {!<tr><td>!} PPS {!</td><td>!}[+ pps_relation : relationships +] {!</td><tr>!} ?]
 
 {!<tr><td>!} LPS {!</td><td>!}[+ lps_relation : relationships +] {!</td><tr>!}
 

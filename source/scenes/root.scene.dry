@@ -1595,7 +1595,6 @@ Q.winch_advisor = 0; // Ernest Winch
 Q.irvine_advisor = 0; // William Irvine
 
 // agrarian alternate advisors
-Q.eliason_advisor = 1; // Frank Eliason
 Q.williams_advisor = 1; // George Hara Williams
 
 // Moderate advisors
@@ -1606,7 +1605,7 @@ Q.pool_advisor = 0; // The Wheat Pool
 
 // Labour advisors
 Q.rcwu_advisor = 0; // Relief Camp Worker's Union
-Q.sarm_advisor = 0; // Joe Phelps
+Q.sarm_advisor = 0; // Saskatchewan Association of Rural Municipalities
 Q.ccf_wc = 0; // CCF Women's Clubs
 
 // Revisionist advisors
@@ -1616,7 +1615,7 @@ Q.leber_advisor = 0; // Julius Leber (post-1930)
 Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 
 // party advisors
-Q.underhill_advisor = 0; // Frank Underhill
+Q.lsr_advisor = 0; // Frank Underhill
 Q.spry_advisor = 0; // Graham Spry
 Q.ccym_advisor = 0; // CCYM
 

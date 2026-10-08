@@ -100,16 +100,6 @@ go-to: rm_main
 
 Lucas has been removed as a pinned organization. The Moderate faction disapproves.
 
-@remove_eliason
-title: Remove Eliason
-view-if: eliason_advisor = 1
-tags: remove_advisor
-on-arrival: eliason_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
-go-to: rm_main
-
-Eliason has been removed as a pinned organization. The Agrarian faction disapproves.
-
-
 # labour
 
 @remove_rcwu
@@ -249,11 +239,11 @@ go-to: rm_main
 
 Spry has been removed as a pinned organization. 
 
-@remove_underhill
+@remove_lsr
 title: Remove Underhill
-view-if: underhill_advisor = 1
+view-if: lsr_advisor = 1
 tags: remove_advisor
-on-arrival: underhill_advisor = 0; n_advisors -= 1
+on-arrival: lsr_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
 Underhill has been removed as a pinned organization. 
@@ -365,17 +355,18 @@ tags: agrarian_advisor
 
 The Wheat Pool is now an advisor.
 
-@add_eliason
-title: Frank Eliason
-subtitle: Frank Eliason is secretary of the [+ ccf_name +] and UFC(SS). {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
+@add_sarm
+title: Saskatchewan Association of Rural Municipalities
+subtitle: <img src="img/cities/craven_scene.jpg" class="face-figure"><span>SARM is an organization of RM's</span> {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/EliasonFrank.jpg
-view-if: eliason_advisor = 0 and n_advisors < 3 and agrarians_resign = 0
-on-arrival: eliason_advisor = 1; n_advisors += 1
-go-to: advisor_menu
+card-image: img/cities/craven_scene.jpg
 tags: agrarian_advisor
+view-if: sarm_advisor = 0 and n_advisors < 3
+on-arrival: sarm_advisor = 1; n_advisors += 1; labour_dissent += 5
+go-to: advisor_menu
 
-Frank Eliason is now an advisor.
+The SARM is now an advisor. 
+
 
 @add_irvine
 title: William Irvine
@@ -507,18 +498,6 @@ go-to: advisor_menu
 
 Tommy Douglas is now an advisor.
 
-@add_sarm
-title: Saskatchewan Association of Rural Municipalities
-subtitle: <img src="img/cities/craven_scene.jpg" class="face-figure"><span>SARM is an organization of RM's</span> {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
-is-card: true
-card-image: img/cities/craven_scene.jpg
-tags: labour_advisor
-view-if: sarm_advisor = 0 and n_advisors < 3
-on-arrival: sarm_advisor = 1; n_advisors += 1; labour_dissent += 5
-go-to: advisor_menu
-
-The SARM is now an advisor. 
-
 @add_ccf_wc
 title: CCF Women's Clubs
 subtitle: <img src="img/organizations/women_grain_growers.jpg" class="face-figure"><span>The CCF(SS) always aims to provide for women as well as men.</span><br><br>
@@ -546,13 +525,13 @@ tags: party_advisor
 
 The CCYM is now an advisor. 
 
-@add_underhill
+@add_lsr
 title: Frank Underhill
 subtitle: Frank Underhill is a renowned legal scholar and cofounder of the LSR. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
 is-card: true
 card-image: img/portraits/UnderhillFrank.jpg
-view-if: underhill_advisor = 0 and n_advisors < 3
-on-arrival: underhill_advisor = 1; n_advisors += 1
+view-if: lsr_advisor = 0 and n_advisors < 3
+on-arrival: lsr_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: party_advisor
 

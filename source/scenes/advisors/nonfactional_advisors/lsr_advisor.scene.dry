@@ -1,26 +1,23 @@
-title: Frank Underhill
+title: League for Social Reconstruction
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/UnderhillFrank.jpg
-view-if: underhill_advisor = 1
+view-if: lsr_advisor = 1
 new-page: true 
 
-= Frank Underhill
+= League for Social Reconstruction
 
-Frank Underhill is a renowned legal scholar.
+The League for Social Reconstruction, LSR, is a think tank of Socialist academics from Ottawa. They primarily produce materials aimed towards Socialist education and provide policy-proposals to the National CCF.
 
 
-- @judiciary_
-- @constitutional_reform_
+- @lsr_papers: Call on the LSR to distribute educational pamphlets
 - @root: Return to main
 
 
-@judiciary_
-title: Judicial Affairs
-subtitle: Enact judicial reforms.
-choose-if: advisor_action_timer = 0 and ccf_in_government and justice_minister_party = ccf_name
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not ccf_in_government : The [+ ccf_name +] is not currently in government. ?][? if justice_minister_party != ccf_name : We do not have the Justice Ministry. ?]
-on-arrival: advisor_action_timer = 6; judiciary_timer -= 6; last_advisor_action = 1
+@lsr_papers
+title: LSR Papers
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: judiciary
 
 

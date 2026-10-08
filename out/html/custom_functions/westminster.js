@@ -1,9 +1,19 @@
 window.westminster = function(container_id, forming_government) {
     // container_id has to be an svg for this to work
+    
+
+    // Here is my html setup in status.scene.dry to display an svg graphic 
+    /* 
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <svg id='westminster_legislature' viewBox="-80 0 400 150" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" ></svg>
+        </div> 
+    */
+
+
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
     Q.brit_mode = false; // Handles whether speaker is non-affiliated (uk) or a party member (canada) and whether circles (uk) or squares (canada)
-    Q.sask_mode = false; // This will create paired seats like in most Canadian Assemblies graphics
+    Q.sask_mode = true; // This will create paired seats like in most Canadian Assemblies graphics
     var house_width = 3; 
     var container = document.getElementById(container_id);
 
@@ -67,6 +77,8 @@ window.westminster = function(container_id, forming_government) {
         var seats_in_row = 0;
         var opp_count = 1;
         var opp_col_index = 0;
+
+        // Lets assemble this display now
 
         for (var party of opposition_parties_list) {
             var party_id = party[0];

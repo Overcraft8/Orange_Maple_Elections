@@ -677,6 +677,8 @@ There are some potential coalition arrangements.
 - @socred_majority: Social Credit wins a Majority
 - @liberal_plurality: The Liberals win a Plurality
 - @liberal_majority: The Liberals win a Majority
+- @tory_plurality: The Tories win a Plurality
+- @tory_majority: The Tories win a Majority
 - @cooperative_coalition: Impossible, wtf?
 
 # TODO: black-brown coalition
@@ -691,6 +693,9 @@ on-arrival: premier = scps_leader; premier_party = 'SCPS'
 
 @lps_forms_government
 on-arrival: premier = lps_leader; premier_party = 'LPS'
+
+@cps_forms_government
+on-arrival: premier = cps_leader; premier_party = 'CPS'
 
 @ccf_majority
 title: We have achieved a majority!
@@ -721,7 +726,7 @@ title: Coalition Options
 @ccf_tory_coalition
 title: Could we coalition with the Tories?
 unavailable-subtitle: They do not trust us enough
-choose-if: cps_relation >= 60 and cps_ideology == 'Red Toryism' or cps_leader == 'James Anderson' and ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism'
+choose-if: cps_relation >= 60 and (cps_ideology == 'Red Toryism' or cps_leader == 'James Anderson') and (ccf_ideology == 'Social Democracy' or ccf_ideology == 'Progressivism')
 call: election.ccf_forms_government
 
 @ccf_socred_coalition
@@ -769,7 +774,7 @@ view-if: scps_seats >= seat_majority
 call: election.socred_forms_government
 on-arrival: {!
     for (var p of Q.parties) {
-        Q[p + ['_in_government']] = 0;
+        Q[p + '_in_government'] = 0;
     }
     Q.scps_in_government = 1; 
 !}
@@ -787,7 +792,7 @@ view-if: lps_seats >= seat_majority
 call: election.lps_forms_government
 on-arrival: {!
     for (var p of Q.parties) {
-        Q[p + ['_in_government']] = 0;
+        Q[p + '_in_government'] = 0;
     }
     Q.lps_in_government = 1; 
 !}
@@ -795,6 +800,29 @@ on-arrival: {!
 The LPS has achieved a majority. For the next 4-5 years, the LPS will be essentially free to do as they please in Saskatchewan. 
 
 - @root: Buggers
+
+@tory_plurality
+title: The Tories win a Plurality
+view-if: largest_party == 'CPS' and cps_seats <= seat_majority
+call: election.cps_forms_government
+on-arrival: {!
+    for (var p of Q.parties) {
+        Q[p + '_in_government'] = 0;
+    }
+    Q.cps_in_government = 1; 
+!}
+
+@tory_majority
+title: The Tories win a Majority
+view-if: cps_seats >= seat_majority
+call: election.cps_forms_government
+on-arrival: {!
+    for (var p of Q.parties) {
+        Q[p + '_in_government'] = 0;
+    }
+    Q.cps_in_government = 1; 
+!}
+
 
 @cooperative_coalition
 title: A traditional alliance

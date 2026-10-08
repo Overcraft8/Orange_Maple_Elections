@@ -1012,6 +1012,15 @@ Q.economic_data = {
         'contribution' : 2, 
         'business_climate' : 100
     }, 
+    'retail' : {
+        'marketshare' : {
+            'private' : 0.95, 
+            'coop' : 0.05, 
+            'state' : 0
+        }, 
+        'contribution' : 2, 
+        'business_climate' : 85
+    }
 };
 
 // Total amount of natural resources available
@@ -1597,7 +1606,7 @@ Q.pool_advisor = 0; // The Wheat Pool
 
 // Labour advisors
 Q.rcwu_advisor = 0; // Relief Camp Worker's Union
-Q.phelps_advisor = 0; // Joe Phelps
+Q.sarm_advisor = 0; // Joe Phelps
 Q.ccf_wc = 0; // CCF Women's Clubs
 
 // Revisionist advisors

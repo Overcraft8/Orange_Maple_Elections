@@ -61,7 +61,7 @@ is-deck: true
 
 @govt
 title: Government Affairs
-view-if: time >= 6
+view-if: time >= 6 and ccf_in_government = 1
 card-image: img/Saskatchewan_Legislature.jpg
 is-deck: true
 

@@ -340,15 +340,15 @@ const colourList = [{
         style: "color: #e0452a; font-weight: bold;"
     },
     {
-        word: 'Communist', 
+        word: ['Communist', 'Communist Party'], 
         style: "color: #861a1a; font-weight: bold;"
     },
     {
-        word: 'Liberal', 
+        word: ['Liberal', 'Liberal Party', 'Grit', 'Grits'], 
         style: "color: #BE0028; font-weight: bold;"
     },
     {
-        word: 'Conservative', 
+        word: ['Conservative', 'Conservative Party', 'Tory', 'Tories'], 
         style: "color: #0055A5; font-weight: bold;"
     },
 ];

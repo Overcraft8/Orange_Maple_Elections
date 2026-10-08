@@ -1,0 +1,34 @@
+title: SARM
+is-pinned-card: true
+tags: advisor, agrarian
+card-image: img/cities/craven_scene.jpg
+view-if: sarm_advisor = 1
+new-page: true 
+
+= Saskatchewan Association of Rural Municipalities
+
+One of the local levels of government are the RM's or Rural Municipalities. They oversee municipal functions in the sparsely populated areas of the province such as local infrastructure, public safety, and land use. 
+
+SARM is a collective of RM's united to serve the broader interests of the Rural municipalities.
+
+- @fund_rms: Let's provide additional funding to the Rural Municipalities
+- @rm_cooperatives: Provide financial backing for RM's supporting Cooperatives
+- @root: Return to main
+
+@fund_rms
+title: RM Funding
+subtitle: Improve our standing among rural citizens
+choose-if: advisor_action_timer <= 0 and financial_minister_party = ccf_name
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+on-arrival: farmers_ccf += 2; 
+
+We have increased funding to the RM's. This increases our relationship with the SARM who may well endorse us in the next general election. 
+
+@rm_cooperatives
+title: RM Cooperatives
+subtitle: Increases presence of Cooperatives
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: economic_data.retail.coop += 0.05; economic_data.retail.private -= 0.05
+
+We are incentivizing the RM's to provide backing for cooperatives. 

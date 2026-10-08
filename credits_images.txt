@@ -87,6 +87,7 @@ forward_with_ccf.jpg - https://commons.wikimedia.org/wiki/File:Flag-Billboard-Fo
 credit_union.jpg
 powerhouse.jpg
 rokeby_overhead.jpg - https://prairie-towns.com/rokeby-images.html
+craven_scene.jpg - https://www.prairie-towns.com/craven-images.html
 
 // -----------------------------------
 //  Reddit

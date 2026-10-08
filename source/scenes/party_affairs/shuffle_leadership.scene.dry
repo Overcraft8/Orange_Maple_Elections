@@ -40,7 +40,7 @@ on-arrival: ufc_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-The UFC(SS) has been removed as an advisor. The Agrarian faction disapproves.
+The UFC(SS) has been removed as a pinned organization. The Agrarian faction disapproves.
 
 @remove_coldwell
 title: Remove Coldwell
@@ -49,7 +49,7 @@ tags: remove_advisor
 on-arrival: coldwell_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Coldwell has been removed as an advisor. The Labour faction disapproves.
+Coldwell has been removed as a pinned organization. The Labour faction disapproves.
 
 @remove_douglas
 title: Remove Douglas
@@ -58,7 +58,7 @@ tags: remove_advisor
 on-arrival: douglas_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Douglas has been removed as an advisor. The Labour faction disapproves.
+Douglas has been removed as a pinned organization. The Labour faction disapproves.
 
 
 @remove_williams
@@ -68,7 +68,7 @@ tags: remove_advisor
 on-arrival: williams_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Williams has been removed as an advisor. The Agrarian faction disapproves.
+Williams has been removed as a pinned organization. The Agrarian faction disapproves.
 
 # moderates
 
@@ -89,7 +89,7 @@ tags: remove_advisor
 on-arrival: woodsworth_advisor = 0; managerial_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-J. S. Woodsworth has been removed as an advisor. The Moderate faction disapproves.
+J. S. Woodsworth has been removed as a pinned organization. The Moderate faction disapproves.
 
 @remove_lucas
 title: Remove Lucas
@@ -98,7 +98,7 @@ tags: remove_advisor
 on-arrival: lucas_advisor = 0; managerial_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Lucas has been removed as an advisor. The Moderate faction disapproves.
+Lucas has been removed as a pinned organization. The Moderate faction disapproves.
 
 @remove_eliason
 title: Remove Eliason
@@ -107,7 +107,7 @@ tags: remove_advisor
 on-arrival: eliason_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Eliason has been removed as an advisor. The Agrarian faction disapproves.
+Eliason has been removed as a pinned organization. The Agrarian faction disapproves.
 
 
 # labour
@@ -119,16 +119,16 @@ tags: remove_advisor
 on-arrival: rcwu_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-The RCWU has been removed as an advisor. The Labour faction disapproves.
+The RCWU has been removed as a pinned organization
 
-@remove_phelps
-title: Remove Phelps
-view-if: phelps_advisor = 1
+@remove_sarm
+title: Remove the SARM
+view-if: sarm_advisor = 1
 tags: remove_advisor
-on-arrival: phelps_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
+on-arrival: sarm_advisor = 0; agrarian_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Phelps has been removed as an advisor. The Agrarian faction disapproves.
+The SARM has been removed as a pinned organization. 
 
 @remove_ccf_wc
 title: Remove the Women's Clubs
@@ -137,7 +137,7 @@ tags: remove_advisor
 on-arrival: ccf_wc_advisor = 0; labour_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-The Women's Clubs has been removed as an advisor. The Labour faction disapproves.
+The Women's Clubs has been removed as a pinned organization. 
 
 
 @remove_ccym
@@ -147,7 +147,7 @@ tags: remove_advisor
 on-arrival: ccym_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-The CCYM has been removed as an advisor. 
+The CCYM has been removed as a pinned organization. 
 
 # left
 
@@ -158,7 +158,7 @@ tags: remove_advisor
 on-arrival: fines_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Fines has been removed as an advisor. The Labour faction disapproves.
+Fines has been removed as a pinned organization. The Labour faction disapproves.
 
 @remove_jamieson
 title: Remove Jamieson
@@ -167,7 +167,7 @@ tags: remove_advisor
 on-arrival: jamieson_advisor = 0; radical_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Jamieson has been removed as an advisor. The Leftist faction disapproves.
+Jamieson has been removed as a pinned organization. The Leftist faction disapproves.
 
 @remove_winch
 title: Remove Winch
@@ -176,7 +176,7 @@ tags: remove_advisor
 on-arrival: winch_advisor = 0; radical_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Winch has been removed as an advisor. The Leftist faction disapproves.
+Winch has been removed as a pinned organization. The Leftist faction disapproves.
 
 @remove_irvine
 title: Remove Irvine
@@ -185,7 +185,7 @@ tags: remove_advisor
 on-arrival: irvine_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Irvine has been removed as an advisor. The Agrarian faction disapproves.
+Irvine has been removed as a pinned organization. The Agrarian faction disapproves.
 
 @remove_nielsen
 title: Remove Nielsen
@@ -194,7 +194,7 @@ tags: remove_advisor
 on-arrival: nielsen_advisor = 0; radical_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Nielsen has been removed as an advisor. The Leftist faction disapproves.
+Nielsen has been removed as a pinned organization. The Leftist faction disapproves.
 
 
 
@@ -208,7 +208,7 @@ tags: remove_advisor
 on-arrival: mierendorff_advisor = 0; neorevisionist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
+Mierendorff has been removed as a pinned organization. The Neorevisionist faction disapproves.
 
 @remove_leber
 title: Remove Leber
@@ -217,7 +217,7 @@ tags: remove_advisor
 on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Leber has been removed as an advisor. The Neorevisionist faction disapproves.
+Leber has been removed as a pinned organization. The Neorevisionist faction disapproves.
 
 @remove_schumacher
 title: Remove Schumacher
@@ -226,7 +226,7 @@ tags: remove_advisor
 on-arrival: schumacher_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
+Schumacher has been removed as a pinned organization. The Neorevisionist faction disapproves.
 
 
 ## party
@@ -238,7 +238,7 @@ tags: remove_advisor
 on-arrival: pool_advisor = 0; agrarian_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-The Wheat Pool has been removed as an advisor. The Agrarian faction disapproves.
+The Wheat Pool has been removed as a pinned organization. The Agrarian faction disapproves.
 
 @remove_spry
 title: Remove Spry
@@ -247,7 +247,7 @@ tags: remove_advisor
 on-arrival: spry_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Spry has been removed as an advisor. 
+Spry has been removed as a pinned organization. 
 
 @remove_underhill
 title: Remove Underhill
@@ -256,7 +256,7 @@ tags: remove_advisor
 on-arrival: underhill_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Underhill has been removed as an advisor. 
+Underhill has been removed as a pinned organization. 
 
 
 
@@ -507,17 +507,17 @@ go-to: advisor_menu
 
 Tommy Douglas is now an advisor.
 
-@add_phelps
-title: Joe Phelps
-subtitle: Joe Phelps is a radical agrarian and advocate for public ownership of natural resources. (Joined 1938) {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
+@add_sarm
+title: Saskatchewan Association of Rural Municipalities
+subtitle: <img src="img/cities/craven_scene.jpg" class="face-figure"><span>SARM is an organization of RM's</span> {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/PhelpsJoe.jpg
+card-image: img/cities/craven_scene.jpg
 tags: labour_advisor
-view-if: phelps_advisor = 0 and n_advisors < 3
-on-arrival: phelps_advisor = 1; n_advisors += 1; labour_dissent += 5
+view-if: sarm_advisor = 0 and n_advisors < 3
+on-arrival: sarm_advisor = 1; n_advisors += 1; labour_dissent += 5
 go-to: advisor_menu
 
-Joe Phelps is now an advisor.
+The SARM is now an advisor. 
 
 @add_ccf_wc
 title: CCF Women's Clubs

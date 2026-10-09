@@ -50,7 +50,7 @@ Social Credit is a strong populist movement, more amenable to the economic condi
 subtitle: The dominant party right now
 on-arrival: enemies = "LPS"; scps_urgency += 1; workers_lps -= 2; farmers_lps -= 2; new_middle_lps -= 2;
 
-[? if scps_urgency == 0 or scps_r < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_r >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]
+[? if scps_urgency == 0 or scps_seats < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_seats >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]
 
 @anti_cpc_s
 on-arrival: enemies = "CPC(S)"; managerial_strength += 5; radical_dissent += 8; managerial_dissent -= 5; cpc_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cpc_s -= 4;

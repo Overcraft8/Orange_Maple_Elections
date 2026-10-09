@@ -35,7 +35,7 @@ on-display: {!
         "bench": Q.cpc_s_in_government
     }
 ];
-if (Q.sapd_formed && Q.sapd_r) {
+if (Q.sapd_formed && Q.sapd_seats) {
     data.push({
             "id": "sapd",
             "legend": "SAPD",
@@ -150,7 +150,7 @@ window.westminster('westminster_legislature', false);
 # <div style='text-align: center;'>
 # # 1928: 30, 1930: 25, 1932: 22
 # [? if ccf_seats > 0: [? if not ccf_name: [+ ccf_name +]?][? if ccf_name != 0 : [+ ccf_name +]?]{!</span>!}: [+ ccf_seats +] ?]
-# [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
+# [? if sapd_formed and sapd_seats > 0: SAPD: [+ sapd_r +]% ?]
 # # 1928: 15, 1930: 15, 1932: 
 # [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
 # # 1928: 10, 1930: 13
@@ -178,7 +178,7 @@ Assembly composition:
 <div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22
 [? if ccf_seats > 0: [? if not ccf_name: [+ ccf_name +]?][? if ccf_name != 0 : [+ ccf_name +]?]{!</span>!}: [+ ccf_seats +] ?]
-[? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
+[? if sapd_formed and sapd_seats > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
 # 1928: 10, 1930: 13
@@ -240,6 +240,10 @@ LPS: [+ lps_ideology +] ([+ lps_leader +])
 CPS: [+ cps_ideology +] ([+ cps_leader +])
 
 [? if year <= 1935 and month <= 3 : SCPS: [+ scps_ideology +] ([+ scps_leader +]) ?]
+
+Support for Socialism: [+ socialism_support +]
+
+Support for Social Credit: [+ social_credit_support +]
 
 @organizations
 on-arrival: {!

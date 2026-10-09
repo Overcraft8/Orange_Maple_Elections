@@ -1,7 +1,7 @@
 title: Confronting the SCPSs
 new-page: true
 is-card: true
-view-if: (scps_r >= 10 and scps_urgency > 1) and confronting_scps_timer == 0 and iron_front_formed == 0
+view-if: (scps_seats >= 10 and scps_urgency > 1) and confronting_scps_timer == 0 and iron_front_formed == 0
 on-arrival: confronting_scps_seen += 1; confronting_scps_timer = 5; month_actions += 1
 card-image: img/iron_front.png
 tags: party_affairs; antifascism

@@ -105,7 +105,7 @@ Education in Saskatchewan has traditionally been organized on religious and clas
 title: Support secular schools to end the religious dominance in education.
 subtitle: -1 budget
 unavailable-subtitle: -1 treasury - requres a majority of parties to support secular schools.
-choose-if: treasury >= 1 and (progressive_coalition + cps_r >= 50)
+choose-if: treasury >= 1 and (progressive_coalition + cps_seats >= 50)
 view-if: secularized = 0
 
 Are you sure about this? The Liberal-CCF Coalition had an agreement to not touch religious schools; the Catholic PPS Party will revolt.

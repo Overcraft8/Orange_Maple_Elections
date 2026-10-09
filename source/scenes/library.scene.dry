@@ -78,7 +78,7 @@ Assembly composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 CCF(SS): [+ ccf_r +]%
-[? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
+[? if sapd_formed and sapd_seats > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 PPS: [+ pps_r +]%
 # 1928: 10, 1930: 13
@@ -330,7 +330,6 @@ Dissent: [+ neorevisionist_dissent : dissent +]
 @figures
 title: Figures and Charts
 go-to: menu
-on-arrival: pps_r = pps_r;
 on-display: {!
 data = [
     {
@@ -340,7 +339,7 @@ data = [
         "seats": Q.cpc_s_seats
     }
 ];
-if (Q.sapd_formed && Q.sapd_r) {
+if (Q.sapd_formed && Q.sapd_seats) {
     data.push({
             "id": "sapd",
             "legend": "SAPD",

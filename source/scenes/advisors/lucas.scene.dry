@@ -42,4 +42,4 @@ on-arrival: womens_rights += 1; workers_ccf += 4*(1-dissent); farmers_ccf += 3*(
 
 Lucas's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
 
-[? if ccf_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+[? if ccf_seats < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]

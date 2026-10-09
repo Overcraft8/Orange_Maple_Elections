@@ -33,7 +33,7 @@ on-arrival: womens_rights += 1; workers_ccf += 3*(1-dissent); new_middle_ccf += 
 
 Jamieson's message is popular among young women working in the service sector, and we have recruited many white-collar employees.
 
-[? if ccf_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+[? if ccf_seats < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
 
 @against_toleration
 title: Against toleration

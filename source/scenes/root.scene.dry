@@ -264,7 +264,8 @@ Q.city_government = "ccf";
 // nationalism vs internationalism or pacifism or non-nationalism
 Q.nationalism = 60;
 // socialism vs capitalism
-Q.socialism_support = 40;
+Q.socialism_support = 26;
+Q.social_credit_support = 0;
 Q.cooperative_support = 60; 
 // pro-republic vs anti-republic
 Q.pro_republic = 59;
@@ -1220,29 +1221,6 @@ Q.scps_seats = 0;
 Q.largest_party = 'cps';
 
 
-
-Q.ccf_r = 0;
-Q.cpc_s_r = 0;
-Q.pps_r =  8;
-Q.lps_r = 44;
-Q.cps_r = 38;
-Q.scps_r = 0;
-Q.other_r = 10;
-
-// diff from prev
-Q.old_ccf_r = 26;
-Q.old_cpc_s_r = 9;
-Q.old_pps_r = 17;
-Q.old_lps_r = 6;
-Q.old_cps_r = 10;
-Q.old_scps_r = 20;
-Q.old_other_r = 9;
-
-// sapd isn't formed yet, but it may be formed
-Q.sapd_r = 0;
-Q.old_sapd_r = 0;
-
-
 // calculate support for each of the parties
 
 
@@ -1468,7 +1446,7 @@ if (typeof window.news_activator === 'function') {
 ///////////
 
 // Advisors/Leaders
-Q.n_advisors = 3;
+Q.n_advisors = 1;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
@@ -1650,7 +1628,7 @@ data = [
         "bench": Q.cpc_s_in_government
     }
 ];
-if (Q.sapd_formed && Q.sapd_r) {
+if (Q.sapd_formed && Q.sapd_seats) {
     data.push({
             "id": "sapd",
             "legend": "SAPD",

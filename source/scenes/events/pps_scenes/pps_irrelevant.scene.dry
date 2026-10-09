@@ -52,9 +52,9 @@ go-to: pps_merge_yes
 @pps_cancel 
 on-arrival: {! 
     Q.pps_seats -= 5; 
-    Q.ccf_seats += 1; 
+    Q.ccf_seats += 2; 
     Q.lps_seats += 1;
-    Q.cps_seats += 3; 
+    Q.cps_seats += 2; 
 
     Q.central_d_pps_seats -= 2;
     Q.central_d_ccf_seats += 1; 

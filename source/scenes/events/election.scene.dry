@@ -30,6 +30,10 @@ Q.district_results_legislative = [];
 
 Q.use_decimals = 1;
 
+// -------------------------------------------
+//          CLASS THINGS
+// -------------------------------------------
+
 for (var party of Q.parties) {
     Q['old_' + party + '_seats'] = Q[party + '_seats'];
     Q['old_' + party + '_polls'] = Q[party + '_polls'];
@@ -59,9 +63,6 @@ for (var c of Q.classes) {
 }
 
 
-
-
-
 // 1. Normalize class voting shares (0–100)
 for (var c of Q.classes) {
     var class_polls = 0;
@@ -73,6 +74,17 @@ for (var c of Q.classes) {
         Q[c + '_' + party + '_normalized'] = class_polls > 0 ? Q[c + '_' + party] / class_polls : 0;
     }
 }
+
+
+
+
+
+
+// ----------------------------------------------
+//              Party Things
+// ----------------------------------------------
+
+
 
 // 2. Reset seat counts
 for (var party of Q.parties) {
@@ -124,7 +136,7 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
 
         Q[d + '_' + party + '_raw_support'] = support; // Store raw support for this party in this district
 
-        // Cubing for FPTP simulation (rudimentary, ik)
+        // Squaring for FPTP simulation (rudimentary, ik)
         console.log(party, support)
         district_party_support[party] = support * support; // FPTP Distorted
     }
@@ -132,10 +144,10 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
     Q[d + '_party_support'] = district_party_support; // Save FPTP distorted support for the district
 
     // Normalize distorted votes to 1
-    var total_support = Object.values(district_party_support).reduce((a, b) => a + b, 0);
+    var party_district_support = Object.values(district_party_support).reduce((a, b) => a + b, 0);
     var district_polls = {};
     for (var party of Q.parties) {
-        district_polls[party] = total_support > 0 ? district_party_support[party] / total_support : 0;
+        district_polls[party] = party_district_support > 0 ? district_party_support[party] / party_district_support : 0;
     }
 
     // Allocate seats
@@ -169,25 +181,27 @@ console.log(Q.district_results_legislative);
 
 
 // 5. Compute total vote share (party_r)
-var grand_total_support = 0;
+var total_support = 0;
 for (var d of Q.district_names) {
-    grand_total_support += Object.values(Q[d + '_party_support']).reduce((a,b)=>a+b,0);
+    total_support += Object.values(Q[d + '_party_support']).reduce((a,b)=>a+b,0);
 }
 
 for (var party of Q.parties) {
-    var combined_support = 0;
+    var party_support = 0;
     for (var d of Q.district_names) {
-        combined_support += Q[d + '_party_support'][party] || 0;
+        party_support += Q[d + '_party_support'][party] || 0;
     }
 
     // party_r = total vote share in percent
-    Q[party + '_r'] = grand_total_support > 0 ? Math.round((combined_support / grand_total_support) * 1000)/10 : 0;
+    Q[party + '_r'] = total_support > 0 ? Math.round((party_support / total_support) * 1000)/10 : 0;
 
     // Display
     Q[party + '_r_disp'] = Q[party + '_r'].toFixed(1);
 }
 
-// Calculating voteshare!
+// ---------------------------------------------------------------------
+//                      Calculating voteshare!
+// ---------------------------------------------------------------------
 
 for (var party of Q.parties) {
     Q[party + '_raw_polls'] = 0;
@@ -407,7 +421,7 @@ Q.rcmp_goal_completed = 0;
 Q.strike_term_seen = 0;
 
 // understanding the enemy
-if (Q.scps_r >= 15) {
+if (Q.scps_seats >= 15) {
     Q.understanding_enemy_timer = 2;
 }
 
@@ -417,7 +431,7 @@ for (var party of Q.parties) {
 }
 Q.election_records.push(election_result);
 !}
-on-departure: scps_urgency = 1 if (scps_urgency == 0 and scps_r >= 15)
+on-departure: scps_urgency = 1 if (scps_urgency == 0 and scps_seats >= 15)
 on-display: {!
 data = [
     {
@@ -435,7 +449,7 @@ data = [
         "bench": Q.cpc_s_in_government
     }
 ];
-if (Q.sapd_formed && Q.sapd_r) {
+if (Q.sapd_formed && Q.sapd_seats) {
     data.push({
             "id": "sapd",
             "legend": "SAPD",
@@ -661,7 +675,7 @@ go-to: coalition_menu
 {!</div>!}
 
 
-[? if scps_urgency <= 1 and scps_r >= 15 : The rapid rise in SCPS votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Saskatchewan. ?]
+[? if scps_urgency <= 1 and scps_seats >= 15 : The rapid rise in SCPS votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Saskatchewan. ?]
 
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic CPC(S), SCPS, and SCPS have a majority in the Assembly. A stable governing majority will be almost impossible. ?]
 

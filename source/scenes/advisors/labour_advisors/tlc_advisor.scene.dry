@@ -38,5 +38,5 @@ is-card: true
 card-image: img/organizations/dominion_labour_congress.jpg
 view-if: tlc_advisor = 0 and n_advisors < 3
 on-arrival: tlc_advisor = 1; n_advisors += 1
-go-to: advisor_menu
+go-to: shuffle_leadership.advisor_menu
 tags: labour_advisor

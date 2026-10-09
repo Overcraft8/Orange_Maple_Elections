@@ -1,0 +1,42 @@
+title: Trades and Labour Congress
+is-pinned-card: true
+tags: advisor, labour
+card-image: img/organizations/dominion_labour_congress.jpg
+view-if: tlc_advisor = 1
+new-page: true 
+
+= Trades and Labour Congress
+
+The Trades and Labour Congress is a Canada-wide central federation of trade unions, only the third attempt at the formation of a unified, national labour federation in Canadian history. It is a relatively conservative organization, favouring craft-unionism, and rivalled the more left-leaning International Workers of the World and the One Big Union in the 1920s.
+
+- @tlc_relations: Improve relations with the TLC
+- @tlc_organizing: Aid the TLC in organizing workers
+- @root: Return to main
+
+@tlc_relations
+title: TLC Relations
+subtitle: -1 resources
+choose-if: advisor_action_timer == 0 and resources >= 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; tlc_relations += 2; resources -= 1
+
+Our relations with the TLC have improved. 
+
+@tlc_organizing
+title: TLC Organizing
+subtitle: -2 resources
+choose-if: advisor_action_timer == 0 and resources >= 2
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; resources -= 2; tlc_strength += 1*(1-dissent); tlc_relations += 4
+
+The strength of the TLC has been increased. Our relations with the TLC have improved. 
+
+@add_tlc
+title: Trades and Labour Congress
+subtitle: <img src="img/organizations/dominion_labour_congress.jpg" class="face-figure"><span>The TLC is a fairly conservative but influential Labour Federation</span>  {!<br><br>!}
+is-card: true
+card-image: img/organizations/dominion_labour_congress.jpg
+view-if: tlc_advisor = 0 and n_advisors < 3
+on-arrival: tlc_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: labour_advisor

@@ -1582,10 +1582,10 @@ Q.march_on_berlin_timer = 0;
 
 
 // all the initial advisors are centrists.
-Q.coldwell_advisor = 1; // Major James Coldwell
+Q.coldwell_advisor = 0; // Major James Coldwell
 Q.douglas_advisor = 0; // Tommy Douglas
 Q.douglas_dead = 0;
-Q.ufc_advisor = 0; // United Farmers of Canada (Saskatchewan Section)
+Q.ufc_advisor = 1; // United Farmers of Canada (Saskatchewan Section)
 
 // left advisors
 Q.jamieson_advisor = 0; // Laura Jamieson
@@ -1595,7 +1595,7 @@ Q.winch_advisor = 0; // Ernest Winch
 Q.irvine_advisor = 0; // William Irvine
 
 // agrarian alternate advisors
-Q.williams_advisor = 1; // George Hara Williams
+Q.williams_advisor = 0; // George Hara Williams
 
 // Moderate advisors
 Q.cll_advisor = 0; // Civic Labor League
@@ -1606,16 +1606,16 @@ Q.pool_advisor = 0; // The Wheat Pool
 // Labour advisors
 Q.rcwu_advisor = 0; // Relief Camp Worker's Union
 Q.sarm_advisor = 0; // Saskatchewan Association of Rural Municipalities
-Q.ccf_wc = 0; // CCF Women's Clubs
+Q.ccf_wc = 1; // CCF Women's Clubs
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
 
-Q.leber_advisor = 0; // Julius Leber (post-1930)
+Q.tlc_advisor = 0; // Julius Leber (post-1930)
 Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 
 // party advisors
-Q.lsr_advisor = 0; // Frank Underhill
+Q.lsr_advisor = 0; // League for Social Reconstruction
 Q.spry_advisor = 0; // Graham Spry
 Q.ccym_advisor = 0; // CCYM
 

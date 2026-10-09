@@ -7,13 +7,11 @@ on-arrival: month_activities += 1; shuffle_leadership_timer = 8;
 card-image: img/CCF_Convention.jpg
 go-to: rm_main
 
-Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
+The various organizations of Saskatchewan exert considerable influence in both political and extrapolitical affairs. Our relationships and strategies regarding them owe much of the attention of the party. 
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
-
-- @rm_main: Remove advisors
-- @add_advisors: Add advisors
-- @remove_none: Don't change advisors.
+- @rm_main: Remove Priority Organizations
+- @add_advisors: Add Priority Organizations
+- @remove_none: Don't change Priority Organizations.
 - @easy_discard
 
 
@@ -200,14 +198,14 @@ go-to: rm_main
 
 Mierendorff has been removed as a pinned organization. The Neorevisionist faction disapproves.
 
-@remove_leber
-title: Remove Leber
-view-if: leber_advisor = 1
+@remove_tlc
+title: Remove TLC
+view-if: tlc_advisor = 1
 tags: remove_advisor
-on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
+on-arrival: tlc_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Leber has been removed as a pinned organization. The Neorevisionist faction disapproves.
+The TLC has been removed as a pinned organization. The Labour faction disapproves.
 
 @remove_schumacher
 title: Remove Schumacher

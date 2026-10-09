@@ -10,14 +10,14 @@ card-image: img/CCYM_Sings.jpg
 
 In addition to being a political party, the [+ ccf_name +] is a social world onto itself, with a vast array of associated organizations which serve the social needs of their members from cradle to grave.
 
-- @ufc: Improve relations with the UFC(SS)
+- @ufc_relations: Improve relations with the UFC(SS)
 - @sta: Improve relations with the Teacher's union
 - @tlc: Improve relations with the Trades and Labour Congress
 - @ccl: Improve relations with the Canadian Congress of Labour. 
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
-@ufc
+@ufc_relations
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources

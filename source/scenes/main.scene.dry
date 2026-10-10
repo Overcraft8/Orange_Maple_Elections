@@ -21,7 +21,6 @@ max-cards: 6
 - @party
 - @govt
 - @govt_two
-- @programme
 - @electoral_strategy_deck
 - #advisor
 - @shuffle_leadership_pinned
@@ -49,6 +48,7 @@ max-cards: 6
 - @party
 - @govt_two
 - @govt
+- @electoral_strategy_deck
 - #advisor
 # - @shuffle_leadership_pinned
 

@@ -1,7 +1,7 @@
 title: Electoral Strategy
 new-page: true
-face-image: img/graphics/safe_future.png
-view-if: year == next_parl_election_year and month == (next_parl_election_month - 1)
+card-image: img/graphics/safe_future.png
+face-image: img/graphics/all_need_ccf.jpg
 on-arrival: {!
     Q.full_slate; 
     Q.cps_cooperation;

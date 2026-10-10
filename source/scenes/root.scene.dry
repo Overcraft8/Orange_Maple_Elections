@@ -8,7 +8,7 @@ set-bg: img/cities/rokeby_overhead.jpg
 go-to: start_menu_2
 
 @start_menu_2
-audio: shuffle music/ccf_song.m4a
+audio: shuffle music/ccf_song.m4a music/WHITERIVERSTOMP.mp3
 on-arrival: {!
     document.getElementById('topbar').style.display = 'none'; 
     document.getElementById('tools_wrapper').style.display = 'none'; 
@@ -1798,9 +1798,9 @@ The 1929 election would change this status quo however.
 
 In 1926, the Ku Klux Klan entered the province from the USA. While it's American founders left with the organization's treasury the following year, the movement proved to be insatiable. KKK leaders boasted a membership of 40,000 strong, targetting minorities from Central and Southeastern Europe and the Catholic Church for it's lobbying of the seperate school system. 
 
-<div class="face-figure"><img class="face-img" src="img/portraits/AndersonJames.jpg"></div>
-
 <div class="face-figure"><img class="face-img" src="img/burn_cross.jpg"></div>
+
+<div class="face-figure"><img class="face-img" src="img/portraits/AndersonJames.jpg"></div>
 
 Both the CPS under James Anderson and the PPS constructed programmes that drew on the prejudice raised by the KKK, likely aiding them in the 1929 election. Additionally, the CPS, PPS, and numerous Independents made electoral pacts that reduced the occurence of vote-splitting, leaving the LPS with only a plurality of seats. James Anderson organized the CPS, PPS, and Independents into what he'd call a Cooperative Coalition and took the mantle of government from the LPS. 
 
@@ -1823,6 +1823,10 @@ Instead, the UFC(SS) formed the UFPA, headed by George Hara Williams. Around the
 
 While Coldwell was a vibrant speaker and well-educated in matters of government, he was not a farmer but instead a teacher and later a principal. He was also a former Progressive and thus considered on the right-wing of the FLP. Nonetheless, FLP leadership predicted a respectable beachead seat-wise in the FLP's first election.
 
+During this period, a new national party was being formed. The Co-operative Commonwealth Federation (Farmer-Labour-Socialist) was formed in 1932 from a broad movement consisting of former United Farmers Representatives, MPs of the left-leaning "Ginger Group", the Independent Labour Party (Manitoba), Canadian Labour Party (based in Edmonton), and the Dominion Labour Party of Southern Alberta. The League for Social Reconstruction, a group of Academics disillusioned by the Depression, became the party's unofficial think tank. 
+
+The new Federal CCF's manifesto called for the socialization of the finance industry, state ownership of transportation, communications, and energy, a national economic planning board, free medical care to all Canadian citizens, and the abolishment of the Canadian Senate. The FLP would become adopted as the CCF’s provincial section but did not rebrand itself to the CCF (Saskatchewan Section) until 1936. Additionally, the [+ ccf_name +] removed the use-lease policy from its platform, replacing it with a vaguer promise of tenure' for farmers. 
+
 By 1934, the Cooperative Coalition was on its last legs. The PPS had disintegrated. 1 MLA had defected to the Liberals, 2 to the FLP, and the remainder to the Tories. Anderson himself was highly unpopular. The 'Bennett Buggies', engine-less cars pulled by horses, named after Tory Prime Minister Richard Bennett, were accompanied by 'Anderson Carts'. Meanwhile, the LPS had reimagined itself as a champion of the people, promising provision of the essentials, a stronger debt adjustment plan, and 'state medicine and health insurance'. The Liberals, with their allied newspapers, mounted a whole-scale assault on the FLP with a series of red-baiting, provocative, headlines. 
 
 <div class="face-figure"><img class="face-img" src="img/graphics/liberal_target_ad.png"></div>
@@ -1841,10 +1845,6 @@ High hopes for an early FLP victory were thus shut down. The only road now would
 @1934-1944
 
 In the years proceeding the 1934 election, the LPS pursued a typical Liberal-minded government. Premier Patterson extended publicly funded care for several chronic diseases, supported the establishment of Credit Unions, and generally attempted to improve labour conditions. Anderson’s Relief Program was scrapped. 
-
-During this period, a new national party was being formed. The Co-operative Commonwealth Federation (Farmer-Labour-Socialist) was formed in 1932 from a broad movement consisting of former United Farmers Representatives, MPs of the socialist "Ginger Group", the Independent Labour Party (Manitoba), Canadian Labour Party (based in Edmonton), and the Dominion Labour Party of Southern Alberta. Also involved were intellectuals from the League for Social Reconstruction, a group of academics disillusioned with the capitalist system. 
-
-The new Federal CCF's manifesto called for the socialization of the finance industry, state ownership of transportation, communications, and energy, free medical care to all Canadian citizens, and the abolishment of the unrepresentative Canadian Senate. The FLP would become adopted as the CCF’s provincial section but did not rebrand itself to the CCF (Saskatchewan Section) until 1936. Additionally, the [+ ccf_name +] quickly removed the use-lease policy from its platform, replacing it with a vaguer promise of tenure' for farmers. 
 
 In the capital and largest city of Regina, the CLL, an alliance of Social Democrats and Communists was swept to the power in the City Council. The new Municipal government quickly attempted to provide more comprehensive relief but was blocked by both the Federal and Provincial government. Municipalities, after all, are ‘creatures of the Provinces’ in Canada and hold no constitutional rights or responsibilities. 
 

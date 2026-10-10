@@ -114,8 +114,6 @@ window.westminster('westminster_legislature', false, data);
 
 <button class="status_tab_button" id="budget_tab" onclick="window.ChangeTab('left', 'status.budget', 'budget_tab');">Budget</button>
 
-= Status
-
 <div style="text-align: center; display:flex; align-items:flex-start;"> <div style="width:60%; text-align:center;">
 <img src="img/Red_Lily.png" style="max-width:100%;">
  </div>

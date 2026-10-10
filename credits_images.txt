@@ -96,7 +96,7 @@ craven_scene.jpg - https://www.prairie-towns.com/craven-images.html
 progressive_poster.jpg - https://www.reddit.com/r/Kaiserreich/comments/m65rio/help_reclaim_our_future_canadian_progressive/
 canada_ccf_call.png - https://www.reddit.com/r/cooperatives/comments/1bvs35n/posters_published_by_cooperative_commonwealth/
 safe_future.jpg - https://www.reddit.com/r/cooperatives/comments/1bvs35n/posters_published_by_cooperative_commonwealth/
-
+post_medicare.jpg - https://www.reddit.com/r/ndp/comments/17btwb5/posters_and_pamphlets_from_the_saskonly_ccf/
 
 
 
@@ -130,7 +130,7 @@ socialist_shakedown.png - https://ctasc.blog.yorku.ca/2022/04/05/march2022_catal
 the_cooperative_commonwealth.jpg - https://platform.coop/blog/navigating-the-goldilocks-dilemma/
 farmers_support_ccf.jpg - https://www.abebooks.co.uk/first-edition/Why-Farmers-Support-CCF-Co-operative-Commonwealth/31859887688/bd
 all_need_ccf.jpg - https://canadianworkingconditions.weebly.com/iii-actions-and-responses.html
-
+start_fresh.jpg - https://www.tvo.org/article/how-leslie-frosts-1959-election-win-predicted-the-future
 
 
 stacked bar graph (thanks maybe): https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html

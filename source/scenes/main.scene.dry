@@ -22,6 +22,7 @@ max-cards: 6
 - @govt
 - @govt_two
 - @programme
+- @electoral_strategy_deck
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -67,17 +68,16 @@ is-deck: true
 
 - #govt_affairs
 
-@programme 
-view-if: programme_timer <= 0
-title: Party Programme
-card-image: img/Sask_CCF_Programme.jpg
-is-deck: true
-
-- #programme
-
 @govt_two
 title: Government Test 
 card-image: img/Saskatchewan_Legislature.jpg
 is-deck: true
 
 - #govtwo
+
+@electoral_strategy_deck
+title: Electoral Strategy
+card-image: 
+is-deck: true
+
+- #electoral_affairs

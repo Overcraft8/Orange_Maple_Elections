@@ -90,7 +90,7 @@ for (var party of Q.parties) {
 }
 
 // allocate seats function
-function allocateSeats(votes, totalSeats) {
+function allocateSeats(votes, totalSeats, maxSeats) {
     var seats = {};
     for (var p in votes) seats[p] = 0; // Set all party seats at 0
 
@@ -98,13 +98,20 @@ function allocateSeats(votes, totalSeats) {
         var maxQ = -1;
         var winner = null; // 'winning' party of the seat
         for (var p in votes) {
+
+            // maxSeats being seats contested by the party in this district.
+            if (seats[p] >= maxSeats[p]) continue;
+
             var q = votes[p] / (seats[p] + 1); // D'hondt quotient for each party
             if (q > maxQ) { // If this party has the highest quotient so far, they are the current winner of the seat
                 maxQ = q; // Update maxQ to this party's quotient
                 winner = p; // Winner of the seat is the party with the highest quotient
             }
         }
-        seats[winner]++; //Increase winner seat count by 1
+        // Increment winner only if a valid party eligible for seats was found
+        if (winner !== null) {
+            seats[winner]++;
+        }
     }
     return seats; //return final seat distribution for all parties contesting
 }
@@ -118,21 +125,35 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
     }
 
     var district_party_support = {}; // Dictionary to hold support for each party's support in this district
+    var max_seats_party = {}; // Maximum number of seats each party can get in the region
 
-    // Compute raw support per party in this district
+    // Compute raw support per party in this region/district
     for (var party of Q.parties) {
-        var support = 0;
+
+        // rcr being percentage of seats being contested by the party
+        // region_candidate_ratio -> rcr
+        var rcr = Q[d + '_' + party + '_rcr'] !== undefined ? Q[d + '_' + party + '_rcr'] : 1.0;
+        var max_candidates = Math.floor(district_seats * rcr);
+        max_seats_party[party] = max_candidates;
+
+
+        var base_support = 0;
         for (var c of Q.classes) {
             var class_share = Q[d + '_' + c] || 0; // Class share - proportion of class in the district
 
-            support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
+            base_support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
         }
 
-        Q[d + '_' + party + '_raw_support'] = support; // Store raw support for this party in this district
+        Q[d + '_' + party + '_raw_support'] = base_support; // Store raw support for this party in this district
 
         // Squaring for FPTP simulation (rudimentary, ik)
-        console.log(party, support)
-        district_party_support[party] = support * support; // FPTP Distorted
+        console.log(party, base_support)
+
+        var effective_support = base_support * rcr;
+        Q[d + '_' + party + '_raw_support'] = effective_support;
+
+        // FPTP Squared distortion
+        district_party_support[party] = effective_support * effective_support;
     }
 
     Q[d + '_party_support'] = district_party_support; // Save FPTP distorted support for the district
@@ -145,7 +166,7 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
     }
 
     // Allocate seats
-    var result = allocateSeats(district_polls, district_seats);
+    var result = allocateSeats(district_polls, district_seats, max_seats_party);
 
     // Store + add to party seat total
     for (var party of Q.parties) {

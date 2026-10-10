@@ -107,7 +107,7 @@ data = data.concat([
 //         d3.select("#legislative_status").datum(data).call(legislative_status);
 // }
 
-window.westminster('westminster_legislature', false);
+window.westminster('westminster_legislature', false, data);
 
 
 !}

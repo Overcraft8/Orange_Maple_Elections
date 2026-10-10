@@ -732,65 +732,65 @@ Q.class_incomes = {
 /* 
                              Electoral district information
  Q.district_names = [
-     'regina_d', 'saskatoon_d', 'moose_jaw_d', 'prince_albert_d',
-     'southwest_d', 'southeast_d', 'north_d', 'central_d'
+     'regina', 'saskatoon', 'moose_jaw', 'prince_albert',
+     'southwest', 'southeast', 'north', 'central'
  ];
  
  
- Q.regina_d_seats = 2;
- Q.regina_d_workers = 30;
- Q.regina_d_old_middle = 20; 
- Q.regina_d_new_middle = 20;
- Q.regina_d_unemployed = 30;
+ Q.regina_seats = 2;
+ Q.regina_workers = 30;
+ Q.regina_old_middle = 20; 
+ Q.regina_new_middle = 20;
+ Q.regina_unemployed = 30;
  
- //Q.saskatoon_d_seats = 2;
- Q.saskatoon_d_seats = 14;
- Q.saskatoon_d_workers = 25;
- Q.saskatoon_d_old_middle = 20; 
- Q.saskatoon_d_new_middle = 25;
- Q.saskatoon_d_unemployed = 30;
+ //Q.saskatoon_seats = 2;
+ Q.saskatoon_seats = 14;
+ Q.saskatoon_workers = 25;
+ Q.saskatoon_old_middle = 20; 
+ Q.saskatoon_new_middle = 25;
+ Q.saskatoon_unemployed = 30;
  
- Q.moose_jaw_d_seats = 2;
- Q.moose_jaw_d_workers = 40;
- Q.moose_jaw_d_old_middle = 20; 
- Q.moose_jaw_d_new_middle = 10;
- Q.moose_jaw_d_unemployed = 30;
+ Q.moose_jaw_seats = 2;
+ Q.moose_jaw_workers = 40;
+ Q.moose_jaw_old_middle = 20; 
+ Q.moose_jaw_new_middle = 10;
+ Q.moose_jaw_unemployed = 30;
  
- Q.prince_albert_d_seats = 1;
- Q.prince_albert_d_workers = 35;
- Q.prince_albert_d_old_middle = 15; 
- Q.prince_albert_d_new_middle = 20;
- Q.prince_albert_d_unemployed = 30;
- 
- 
- Q.southwest_d_seats = 7;
- Q.southwest_d_workers = 15;
- Q.southwest_d_farmers = 40; 
- Q.southwest_d_farmhands = 25;
- Q.southwest_d_rural_workers = 20;
+ Q.prince_albert_seats = 1;
+ Q.prince_albert_workers = 35;
+ Q.prince_albert_old_middle = 15; 
+ Q.prince_albert_new_middle = 20;
+ Q.prince_albert_unemployed = 30;
  
  
- Q.southeast_d_seats = 13;
- Q.southeast_d_workers = 5;
- Q.southeast_d_farmers = 40; 
- Q.southeast_d_farmhands = 25;
- Q.southeast_d_rural_workers = 10;
- Q.southeast_d_unemployed = 20;
+ Q.southwest_seats = 7;
+ Q.southwest_workers = 15;
+ Q.southwest_farmers = 40; 
+ Q.southwest_farmhands = 25;
+ Q.southwest_rural_workers = 20;
  
  
- Q.north_d_seats = 3;
- Q.north_d_workers = 20;
- Q.north_d_farmers = 20; 
- Q.north_d_farmhands = 20;
- Q.north_d_rural_workers = 40;
+ Q.southeast_seats = 13;
+ Q.southeast_workers = 5;
+ Q.southeast_farmers = 40; 
+ Q.southeast_farmhands = 25;
+ Q.southeast_rural_workers = 10;
+ Q.southeast_unemployed = 20;
  
  
- Q.central_d_seats = 14;
- Q.central_d_workers = 15;
- Q.central_d_farmers = 35; 
- Q.central_d_farmhands = 15;
- Q.central_d_rural_workers = 15;
- Q.central_d_unemployed = 20;
+ Q.north_seats = 3;
+ Q.north_workers = 20;
+ Q.north_farmers = 20; 
+ Q.north_farmhands = 20;
+ Q.north_rural_workers = 40;
+ 
+ 
+ Q.central_seats = 14;
+ Q.central_workers = 15;
+ Q.central_farmers = 35; 
+ Q.central_farmhands = 15;
+ Q.central_rural_workers = 15;
+ Q.central_unemployed = 20;
 */
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -810,26 +810,26 @@ Q.class_incomes = {
                                                 // DISTRICT DATA + INITALIZING
 
 Q.region_names = {
-    "regina_d":'Regina', 
-    "saskatoon_d": 'Saskatoon', 
-    "moose_jaw_d": 'Moose Jaw', 
-    "prince_albert_d":' Prince Albert', 
-    "southwest_d": 'Southwest', 
-    "southeast_d": 'Southeast', 
-    "north_d": 'North',
-    "central_d": 'Central'
+    "regina":'Regina', 
+    "saskatoon": 'Saskatoon', 
+    "moose_jaw": 'Moose Jaw', 
+    "prince_albert":' Prince Albert', 
+    "southwest": 'Southwest', 
+    "southeast": 'Southeast', 
+    "north": 'North',
+    "central": 'Central'
 };
 
 
 Q.district_demography = {
-    "regina_d": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "saskatoon_d": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "moose_jaw_d": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "prince_albert_d": { "seats": 0, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "southwest_d": { "seats": 10, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
-    "southeast_d": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "farmhands": 25, "rural_workers": 10 },
-    "north_d": { "seats": 2, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
-    "central_d": { "seats": 20, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
+    "regina": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "saskatoon": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "moose_jaw": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "prince_albert": { "seats": 0, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
+    "southwest": { "seats": 10, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
+    "southeast": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "farmhands": 25, "rural_workers": 10 },
+    "north": { "seats": 2, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
+    "central": { "seats": 20, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
 };
 
 Q.seat_majority = 28; 
@@ -841,14 +841,14 @@ Q.seat_majority = 28;
 //                                       Ownership type below
 // New organization! = '[Sector]' : [[private, cooperative, state], economic contribution]
 Q.district_economy = {
-    'regina_d': {
+    'regina': {
         'economy' : {
             'Manufacturing' : [[1, 0 , 0], 7],
             'Finance' : [[0.5, 0.5, 0], 5],
             'Government' : [[0, 0, 1], 0]
         }
         },
-    'central_d': {
+    'central': {
         'economy': {
             'Farming' : [[1, 0 , 0], 4],
             'Agricultural Marketing' : [[0.5, 0.5, 0], 2],
@@ -856,7 +856,7 @@ Q.district_economy = {
         }
         
     },
-    'southwest_d': {
+    'southwest': {
         'economy': {
             'Farming' : [[1, 0 , 0], 4],
             'Agricultural Marketing' : [[0.5, 0.5, 0], 2],
@@ -864,7 +864,7 @@ Q.district_economy = {
         }
         
     },
-    'southeast_d': {
+    'southeast': {
         'economy': {
             'Farming' : [[1, 0 , 0], 4],
             'Agricultural Marketing' : [[0.5, 0.5, 0], 2],
@@ -873,21 +873,21 @@ Q.district_economy = {
         }
         
     },
-    'prince_albert_d': {
+    'prince_albert': {
         'economy': {
             'Manufacturing' : [[1, 0 , 0], 7],
             'Finance' : [[0.5, 0.5, 0], 5]
         }
         
     },
-    'moose_jaw_d': {
+    'moose_jaw': {
         'economy': {
             'Manufacturing' : [[1, 0 , 0], 7],
             'Finance' : [[0.5, 0.5, 0], 5]
         }
         
     },
-    'saskatoon_d': {
+    'saskatoon': {
         'economy': {
             'Manufacturing' : [[1, 0 , 0], 7],
             'Finance' : [[0.5, 0.5, 0], 5]
@@ -904,7 +904,7 @@ for (var region in Q.district_demography) {
     
     // Loop through every property (seats, workers, etc.) in the district
     for (var key in data) {
-        // Create the string name: e.g., "Q.regina_d_seats"
+        // Create the string name: e.g., "Q.regina_seats"
         var varName = region + "_" + key;
         
         // Assign the value to the Q object
@@ -953,27 +953,27 @@ Q.region_situation;
 //          Region Seats              //
 //--------------------------------------
 
-Q.regina_d_cps_seats = 2; 
-Q.saskatoon_d_cps_seats = 2; 
+Q.regina_cps_seats = 2; 
+Q.saskatoon_cps_seats = 2; 
 
-Q.north_d_lps_seats = 2; 
+Q.north_lps_seats = 2; 
 
-Q.central_d_lps_seats = 15; 
-Q.central_d_cps_seats = 3; 
-Q.central_d_other_seats = 3; 
-Q.central_d_pps_seats = 2; 
+Q.central_lps_seats = 15; 
+Q.central_cps_seats = 3; 
+Q.central_other_seats = 3; 
+Q.central_pps_seats = 2; 
 
-Q.southwest_d_cps_seats = 8;
-Q.southwest_d_lps_seats = 5; 
-Q.southwest_d_pps_seats = 1; 
+Q.southwest_cps_seats = 8;
+Q.southwest_lps_seats = 5; 
+Q.southwest_pps_seats = 1; 
 
-Q.southeast_d_cps_seats = 7; 
-Q.southeast_d_lps_seats = 6; 
-Q.southeast_d_other_seats = 2; 
-Q.southeast_d_pps_seats = 2; 
+Q.southeast_cps_seats = 7; 
+Q.southeast_lps_seats = 6; 
+Q.southeast_other_seats = 2; 
+Q.southeast_pps_seats = 2; 
 
-Q.prince_albert_d_lps_seats = 1; 
-Q.moose_jaw_d_cps_seats = 2;
+Q.prince_albert_lps_seats = 1; 
+Q.moose_jaw_cps_seats = 2;
 
 
 //--------------------------------------------------------------

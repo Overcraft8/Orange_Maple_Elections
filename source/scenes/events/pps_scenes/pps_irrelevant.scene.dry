@@ -56,13 +56,13 @@ on-arrival: {!
     Q.lps_seats += 1;
     Q.cps_seats += 2; 
 
-    Q.central_d_pps_seats -= 2;
-    Q.central_d_ccf_seats += 1; 
-    Q.central_d_lps_seats += 1; 
-    Q.southeast_d_pps_seats -= 2; 
-    Q.southeast_d_cps_seats += 2; 
-    Q.southwest_d_pps_seats -= 1; 
-    Q.southwest_d_cps_seats += 1;
+    Q.central_pps_seats -= 2;
+    Q.central_ccf_seats += 1; 
+    Q.central_lps_seats += 1; 
+    Q.southeast_pps_seats -= 2; 
+    Q.southeast_cps_seats += 2; 
+    Q.southwest_pps_seats -= 1; 
+    Q.southwest_cps_seats += 1;
 
     // Split PPS vote between LPS, FLP, and CPS
     for (var c of Q.classes) {
@@ -86,13 +86,13 @@ on-arrival: {!
     Q.ccf_seats += 4; 
     Q.lps_seats += 1; 
 
-    Q.central_d_pps_seats -= 2; 
-    Q.central_d_ccf_seats += 1; 
-    Q.central_d_lps_seats += 1; 
-    Q.southeast_d_pps_seats -= 2; 
-    Q.southeast_d_ccf_seats += 2; 
-    Q.southwest_d_pps_seats -= 1; 
-    Q.southwest_d_ccf_seats += 1;
+    Q.central_pps_seats -= 2; 
+    Q.central_ccf_seats += 1; 
+    Q.central_lps_seats += 1; 
+    Q.southeast_pps_seats -= 2; 
+    Q.southeast_ccf_seats += 2; 
+    Q.southwest_pps_seats -= 1; 
+    Q.southwest_ccf_seats += 1;
     Q.ccf_name = 'PFLP';
     Q.ccf_ideology = 'Social Democracy';
     Q.pps_in_government = 0;

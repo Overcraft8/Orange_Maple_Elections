@@ -12,6 +12,7 @@ The riding organizations are local branches of the party, responsible for organi
 
 We can choose to focus on strengthening certain riding organizations which will increase our support in those areas, or decrease funding to some of them to save resources, but this may lead to dissent and loss of support in those areas.
 
+
 - @urban_orgs: Focus on the urban riding organizations
 - @southeast_orgs: Focus on the poor southeast ridings
 - @rural_orgs: Focus on the rural riding organizations
@@ -38,23 +39,23 @@ The poor southeast is the most impoversished region of the province, drought-pro
 
 
 @decrease_urban_ridings
-on-arrival: resources -=2; ccf_regina_d_orgs -= 0.05; ccf_saskatoon_d_orgs -= 0.05; ccf_moose_jaw_d_orgs -= 0.05;
+on-arrival: resources -=2; ccf_regina_orgs -= 0.05; ccf_saskatoon_orgs -= 0.05; ccf_moose_jaw_orgs -= 0.05;
 
 We have chosen to decrease funding in the urban ridings. This will save us some resources but it will also decrease our support in those areas.
 
 @increase_urban_ridings
 
 choose-if: resources >= 2
-on-arrival: resources +=2; ccf_regina_d_orgs += 0.05; ccf_saskatoon_d_orgs += 0.05; ccf_moose_jaw_d_orgs += 0.05; labour_dissent += 3; labour_strength += 5;
+on-arrival: resources +=2; ccf_regina_orgs += 0.05; ccf_saskatoon_orgs += 0.05; ccf_moose_jaw_orgs += 0.05; labour_dissent += 3; labour_strength += 5;
 
 Increasing funding in the urban ridings will help us maintain or increase our support in those areas. 
 
 @decrease_southeast_ridings
-on-arrival: resources -=2; ccf_southeast_d_orgs -= 0.10;
+on-arrival: resources -=2; ccf_southeast_orgs -= 0.10;
 
 @increase_southeast_ridings
 choose-if: resources >= 2
-on-arrival: resources +=2; ccf_southeast_d_orgs += 0.10;
+on-arrival: resources +=2; ccf_southeast_orgs += 0.10;
 
 
 

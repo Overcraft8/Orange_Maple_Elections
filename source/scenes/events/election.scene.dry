@@ -118,9 +118,9 @@ function allocateSeats(votes, totalSeats, maxSeats) {
 
 // 4. Loop over districts
 for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district_names
-    var district_seats = Q[d + '_seats'] || 0; // district_seats is that districts name + '_seats' (e.g. regina_d_seats) or 0 if that doesn't exist, changes each loop
+    var district_seats = Q[d + '_seats'] || 0; // district_seats is that districts name + '_seats' (e.g. regina_seats) or 0 if that doesn't exist, changes each loop
     Q[d + '_district_seats'] = district_seats; // store district seats in the old Q variable
-    if (d == 'regina_d') {
+    if (d == 'regina') {
         console.log("District:", d, "Seats:", district_seats);
     }
 
@@ -263,9 +263,9 @@ on-arrival: {!
 // Q.total_assembly_seats = 110;
 
 /*
- 'saskatoon_d', 'moosejaw_d', 
-    'southeast_d', 'southwest_d', 
-    'central_d', 'north_d'
+ 'saskatoon', 'moosejaw_d', 
+    'southeast', 'southwest', 
+    'central', 'north'
 */
 
 // set old results
@@ -599,91 +599,91 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Regina**{!</td>!}
-            {!<td>!}[+ regina_d_district_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ regina_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ regina_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ reginaistrict_seats +]{!</td>!}
+            {!<td>!}[+ regina_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ regina_ccf_seats +]{!</td>!}
+            {!<td>!}[+ regina_pps_seats +]{!</td>!}
+            {!<td>!}[+ regina_lps_seats +]{!</td>!}
+            {!<td>!}[+ regina_cps_seats +]{!</td>!}
+            {!<td>!}[+ regina_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ regina_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Saskatoon**{!</td>!}
-            {!<td>!}[+ saskatoon_d_district_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ saskatoon_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ saskatoonistrict_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_ccf_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_pps_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_lps_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_cps_seats +]{!</td>!}
+            {!<td>!}[+ saskatoon_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ saskatoon_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Moose Jaw**{!</td>!}
-            {!<td>!}[+ moosejaw_d_district_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ moosejaw_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ moosejaw_district_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_ccf_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_pps_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_lps_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_cps_seats +]{!</td>!}
+            {!<td>!}[+ moosejaw_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ moosejaw_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Prince Albert**{!</td>!}
-            {!<td>!}[+ princealbert_d_district_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ princealbert_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ princealbert_district_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_ccf_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_pps_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_lps_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_cps_seats +]{!</td>!}
+            {!<td>!}[+ princealbert_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ princealbert_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Southwest**{!</td>!}
-            {!<td>!}[+ southwest_d_district_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ southwest_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ southwest_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ southwestistrict_seats +]{!</td>!}
+            {!<td>!}[+ southwest_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ southwest_ccf_seats +]{!</td>!}
+            {!<td>!}[+ southwest_pps_seats +]{!</td>!}
+            {!<td>!}[+ southwest_lps_seats +]{!</td>!}
+            {!<td>!}[+ southwest_cps_seats +]{!</td>!}
+            {!<td>!}[+ southwest_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ southwest_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Southeast**{!</td>!}
-            {!<td>!}[+ southeast_d_district_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ southeast_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ southeast_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ southeastistrict_seats +]{!</td>!}
+            {!<td>!}[+ southeast_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ southeast_ccf_seats +]{!</td>!}
+            {!<td>!}[+ southeast_pps_seats +]{!</td>!}
+            {!<td>!}[+ southeast_lps_seats +]{!</td>!}
+            {!<td>!}[+ southeast_cps_seats +]{!</td>!}
+            {!<td>!}[+ southeast_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ southeast_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**Central**{!</td>!}
-            {!<td>!}[+ central_d_district_seats +]{!</td>!}
-            {!<td>!}[+ central_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ central_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ central_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ central_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ central_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ central_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ central_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ centralistrict_seats +]{!</td>!}
+            {!<td>!}[+ central_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ central_ccf_seats +]{!</td>!}
+            {!<td>!}[+ central_pps_seats +]{!</td>!}
+            {!<td>!}[+ central_lps_seats +]{!</td>!}
+            {!<td>!}[+ central_cps_seats +]{!</td>!}
+            {!<td>!}[+ central_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ central_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**North**{!</td>!}
-            {!<td>!}[+ north_d_district_seats +]{!</td>!}
-            {!<td>!}[+ north_d_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ north_d_ccf_seats +]{!</td>!}
-            {!<td>!}[+ north_d_pps_seats +]{!</td>!}
-            {!<td>!}[+ north_d_lps_seats +]{!</td>!}
-            {!<td>!}[+ north_d_cps_seats +]{!</td>!}
-            {!<td>!}[+ north_d_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ north_d_scps_seats +]{!</td>!} ?]
+            {!<td>!}[+ northistrict_seats +]{!</td>!}
+            {!<td>!}[+ north_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ north_ccf_seats +]{!</td>!}
+            {!<td>!}[+ north_pps_seats +]{!</td>!}
+            {!<td>!}[+ north_lps_seats +]{!</td>!}
+            {!<td>!}[+ north_cps_seats +]{!</td>!}
+            {!<td>!}[+ north_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ north_scps_seats +]{!</td>!} ?]
         {!</tr>!}
     {!</table>!}
     {!</div>!}

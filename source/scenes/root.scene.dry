@@ -8,7 +8,7 @@ set-bg: img/cities/rokeby_overhead.jpg
 go-to: start_menu_2
 
 @start_menu_2
-audio: shuffle music/ccf_Song.m4a
+audio: shuffle music/ccf_song.m4a
 on-arrival: {!
     document.getElementById('topbar').style.display = 'none'; 
     document.getElementById('tools_wrapper').style.display = 'none'; 

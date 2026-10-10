@@ -49,7 +49,6 @@ max-cards: 6
 - @party
 - @govt_two
 - @govt
-- @programme
 - #advisor
 # - @shuffle_leadership_pinned
 
@@ -77,7 +76,7 @@ is-deck: true
 
 @electoral_strategy_deck
 title: Electoral Strategy
-card-image: 
+card-image: img/graphics/new_order_ccf.jpg
 is-deck: true
 
 - #electoral_affairs

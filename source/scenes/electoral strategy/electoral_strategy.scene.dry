@@ -17,6 +17,7 @@ on-arrival: {!
     } */
 !}
 tags: party_affairs, electoral_affairs
+is-card: true
 
 = Electoral Strategy
 

@@ -133,7 +133,7 @@ go-to: menu
 
 **New Middle**: The new middle class consists of white-collar workers and government employees. 5-10% of the population. 
 
-**Farmers**: Farmers, many of whom are beholden to large banks out East. This is the base of the [+ ccf_name +]. They have been radicalized by the Depression and the Drought though they remain committed to holding their property. 50-65% of the population.
+**Farmers**: Farmers, many of whom are beholden to large banks out East. This is the base of the [+ party_names.ccf +]. They have been radicalized by the Depression and the Drought though they remain committed to holding their property. 50-65% of the population.
 
 
 @public_opinion
@@ -351,8 +351,8 @@ if (Q.sapd_formed && Q.sapd_seats) {
 data = data.concat([
     {
         "id": "ccf",
-        "legend": Q.ccf_name,
-        "name": Q.ccf_name,
+        "legend": Q.party_names.ccf,
+        "name": Q.party_names.ccf,
         "seats": Q.ccf_seats
     },
     {

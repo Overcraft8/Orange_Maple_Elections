@@ -307,7 +307,7 @@ view-if: n_advisors < 3
 
 @add_williams
 title: George Hara Williams
-subtitle: George Hara Williams is the serving President of the [+ ccf_name +]. He is a farmers by trade and was a key figure in activating agrarian socialism across Saskatchewan.  {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+subtitle: George Hara Williams is the serving President of the [+ party_names.ccf +]. He is a farmers by trade and was a key figure in activating agrarian socialism across Saskatchewan.  {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/WilliamsHaraGeorge.jpg
 view-if: williams_advisor = 0 and n_advisors < 3
@@ -382,7 +382,7 @@ William Irvine is now an advisor.
 
 @add_woodsworth
 title: J. S. Woodsworth
-subtitle: James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the [+ ccf_name +]'s Party Leader. {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Negotiating with the Coalition ?]
+subtitle: James Woodsworth is a former methodist minister, and one of the most recognizable and well-known Democratic Socialist leaders. He is the [+ party_names.ccf +]'s Party Leader. {!<br><br>!}[? if difficulty < 0 : Actions - Urban Bulwark, Negotiating with the Coalition ?]
 is-card: true
 card-image: img/portraits/WoodsworthJS.jpg
 tags: managerial_advisor
@@ -394,7 +394,7 @@ J. S. Woodsworth is now an advisor.
 
 @add_lucas
 title: Louise Lucas
-subtitle: Louise Lucas is a leading feminist farmers, member of the [+ ccf_name +]'s Board of Directors, and President of the Women's [+ ccf_name +] section. She is an outstanding orator.  {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+subtitle: Louise Lucas is a leading feminist farmers, member of the [+ party_names.ccf +]'s Board of Directors, and President of the Women's [+ party_names.ccf +] section. She is an outstanding orator.  {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
 card-image: img/portraits/LucasLouise.jpg
 view-if: lucas_advisor = 0 and n_advisors < 3
@@ -422,7 +422,7 @@ Laura Jamieson is now an advisor.
 
 @add_winch
 title: Ernest Winch
-subtitle: Ernest Winch is a left [+ ccf_name +] who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CPC(S), Against Toleration ?]
+subtitle: Ernest Winch is a left [+ party_names.ccf +] who has supported other Leftist parties in the past. He is known for serving as President of the Vancouver Trade and Labour Council. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CPC(S), Against Toleration ?]
 is-card: true
 card-image: img/portraits/WinchErnest.jpg
 view-if: winch_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -434,7 +434,7 @@ Ernest Winch is now an advisor.
 
 @add_nielsen
 title: Dorise Nielsen
-subtitle: Dorise Nielsen is a left [+ ccf_name +] and campaign manager. (Joined 1934) {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
+subtitle: Dorise Nielsen is a left [+ party_names.ccf +] and campaign manager. (Joined 1934) {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
 card-image: img/portraits/NielsenDorise.png
 view-if: nielsen_advisor = 0 and n_advisors < 3 and left_split = 0

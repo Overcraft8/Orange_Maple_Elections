@@ -1,4 +1,4 @@
-title: The [+ ccf_name +]
+title: The [+ party_names.ccf +]
 new-page: true
 is-special: true
 

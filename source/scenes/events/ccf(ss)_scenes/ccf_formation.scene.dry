@@ -17,18 +17,18 @@ Now however, a collection of Labour, Farmer, and Socialist organizations are set
 
 Delegates from the UFC(SS) and ILP in Saskatchewan have been invited to the meeting. Now we must establish what exactly we will clamour for...
 
-- @ccf_name: What name will we advocate for the new party?
+- @party_names.ccf: What name will we advocate for the new party?
 
-@ccf_name
-on-arrival: ccf_name_passed = 1
-view-if: ccf_name_passed = 0
+@party_names.ccf
+on-arrival: party_names.ccf_passed = 1
+view-if: party_names.ccf_passed = 0
 
 The name of the new party is highly significant. Delegates from BC, with backgrounds in the old Socialist Labour tradition of the province, propose the name 'Socialist Party of Canada'. Other proposals include 'United Workers Commonwealth' and 'National Worker's Political Federation', both unrepresentative of the significant farm bloc present. 
 
-- @ccf_name_spc: Clamour for 'Socialist Party of Canada'. 
-- @ccf_name_ccf: Let's go with 'Cooperative Commonweath Federation (Farmer-Labour-Socialist)'
+- @party_names.ccf_spc: Clamour for 'Socialist Party of Canada'. 
+- @party_names.ccf_ccf: Let's go with 'Cooperative Commonweath Federation (Farmer-Labour-Socialist)'
 
-@ccf_name_spc
+@party_names.ccf_spc
 subtitle: Supported by the BC Delegation
 on-arrival: ccf_bc_relation += 5; radical_strength += 3; radical_dissent -= 3; moderate_strength -= 3; moderate_dissent += 4
 go-to: attend_ccf_formation
@@ -37,7 +37,7 @@ Our vocalness about an avowedly Socialist name garners us the goodwill of the BC
 
 While the Saskatchewan and British Columbia blocs form a large delegation, second only to Ontario, the name "Cooperative Commonwealth Federation (Farmer-Labour-Socialist)" is ultimately selected. 
 
-@ccf_name_ccf
+@party_names.ccf_ccf
 subtitle: Seems like this is the majority choice
 on-arrival: moderate_strength += 5
 go-to: attend_ccf_formation

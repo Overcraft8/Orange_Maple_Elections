@@ -18,7 +18,7 @@ SARM is a collective of RM's united to serve the broader interests of the Rural 
 @fund_rms
 title: RM Funding
 subtitle: Improve our standing among rural citizens
-choose-if: advisor_action_timer <= 0 and financial_minister_party = ccf_name
+choose-if: advisor_action_timer <= 0 and financial_minister_party = party_names.ccf
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 on-arrival: farmers_ccf += 2; 
 

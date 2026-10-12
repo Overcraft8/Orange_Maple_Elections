@@ -343,8 +343,8 @@ for (var party of Q.parties) {
 }
 
 
-// The largest party can only be the [+ ccf_name +], LPS, CPS, or SCPS.
-Q.largest_party = Q.ccf_name;
+// The largest party can only be the [+ party_names.ccf +], LPS, CPS, or SCPS.
+Q.largest_party = Q.party_names.ccf;
 
 if (Q.lps_seats >= Q.ccf_seats && Q.lps_seats >= Q.cps_seats && Q.lps_seats >= Q.scps_seats) {
     Q.largest_party = 'LPS';
@@ -451,8 +451,8 @@ on-display: {!
 data = [
     {
         "id": "ccf",
-        "legend": "[+ ccf_name +]",
-        "name": "[+ ccf_name +]",
+        "legend": "[+ party_names.ccf +]",
+        "name": "[+ party_names.ccf +]",
         "seats": Q.ccf_seats,
         "bench": Q.ccf_in_government
     },
@@ -563,7 +563,7 @@ go-to: coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Total Seats</td><td>Seat Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **[+ ccf_name +]:** {!</td><td>!} **[+ ccf_polls +]%** {!</td><td>!} **[+ ccf_vote_change +]** {!</td><td>!}  **[+ ccf_seats +]** {!</td><td>!}  **[+ seats_change_ccf +]**{!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div> !} **[+ party_names.ccf +]:** {!</td><td>!} **[+ ccf_polls +]%** {!</td><td>!} **[+ ccf_vote_change +]** {!</td><td>!}  **[+ ccf_seats +]** {!</td><td>!}  **[+ seats_change_ccf +]**{!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ sapd_vote_change +] {!</td><td>!} [+ seat_change_sapd +]{!</td></tr>!} ?]
 
@@ -590,7 +590,7 @@ go-to: coalition_menu
             {!<th>District</th>!}
             {!<th>Seats</th>!}
             {!<th>CPC(S)</th>!}
-            {!<th>!}[+ ccf_name +]{!</th>!}
+            {!<th>!}[+ party_names.ccf +]{!</th>!}
             {!<th>PPS</th>!}
             {!<th>LPS</th>!}
             {!<th>CPS</th>!}
@@ -715,7 +715,7 @@ There are some potential coalition arrangements.
 # Custom Coalitions here:
 
 @ccf_forms_government
-on-arrival: premier = ccf_leader; premier_party = ccf_name
+on-arrival: premier = ccf_leader; premier_party = party_names.ccf
 
 @socred_forms_government
 on-arrival: premier = scps_leader; premier_party = 'SCPS'
@@ -729,7 +729,7 @@ on-arrival: premier = cps_leader; premier_party = 'CPS'
 @ccf_majority
 title: We have achieved a majority!
 view-if: ccf_seats >= seat_majority
-on-arrival: ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+on-arrival: ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = party_names.ccf; foreign_minister = "Williams"; interior_minister_party = party_names.ccf; interior_minister = "Brockelbank"; justice_minister_party = party_names.ccf; justice_minister = "Underhill"; labour_minister_party = party_names.ccf; labour_minister = "Carlyle"; rcmp_minister_party = party_names.ccf; rcmp_minister = "Leber"; economic_minister_party = party_names.ccf; economic_minister = "Schmidt"; finance_minister_party = party_names.ccf; finance_minister = "Nicholson"; agriculture_minister_party = party_names.ccf; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 call: ccf_forms_government
 go-to: ministries
 
@@ -738,8 +738,8 @@ We have achieved a majority of seats. We can now govern in a stable capacity for
 
 @ccf_minority
 title: Could we rule in a minority?
-view-if: ccf_seats <= seat_majority and largest_party = ccf_name
-on-arrival: premier = ccf_leader; premier_party = ccf_name; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = ccf_name; foreign_minister = "Williams"; interior_minister_party = ccf_name; interior_minister = "Brockelbank"; justice_minister_party = ccf_name; justice_minister = "Underhill"; labour_minister_party = ccf_name; labour_minister = "Carlyle"; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"; economic_minister_party = ccf_name; economic_minister = "Schmidt"; finance_minister_party = ccf_name; finance_minister = "Nicholson"; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
+view-if: ccf_seats <= seat_majority and largest_party = party_names.ccf
+on-arrival: premier = ccf_leader; premier_party = party_names.ccf; ccf_in_government = 1; in_ccf_majority = 1; pro_republic += 5; foreign_minister_party = party_names.ccf; foreign_minister = "Williams"; interior_minister_party = party_names.ccf; interior_minister = "Brockelbank"; justice_minister_party = party_names.ccf; justice_minister = "Underhill"; labour_minister_party = party_names.ccf; labour_minister = "Carlyle"; rcmp_minister_party = party_names.ccf; rcmp_minister = "Leber"; economic_minister_party = party_names.ccf; economic_minister = "Schmidt"; finance_minister_party = party_names.ccf; finance_minister = "Nicholson"; agriculture_minister_party = party_names.ccf; agriculture_minister = "Wright"; rcmp_loyalty -= 0.05; 
 
 We have achieved a plurality of the vote. For one reason or another, we can choose to continue as a minority government, negotiating with parties on a bill by bill basis.
 
@@ -955,8 +955,8 @@ subtitle: A new ministry to oversee the cooperatives.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: cooperatives_minister_party != ccf_name
-on-arrival: leverage -= 5; cooperatives_minister_party = ccf_name; cooperatives_minister = "Carlyle"
+view-if: cooperatives_minister_party != party_names.ccf
+on-arrival: leverage -= 5; cooperatives_minister_party = party_names.ccf; cooperatives_minister = "Carlyle"
 go-to: ministries
 
 @education
@@ -965,8 +965,8 @@ subtitle: Saskatchewan has many issues in education, and we should be in a posit
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: education_minister_party != ccf_name
-on-arrival: leverage -= 5; education_minister_party = ccf_name; education_minister = "Carlyle"
+view-if: education_minister_party != party_names.ccf
+on-arrival: leverage -= 5; education_minister_party = party_names.ccf; education_minister = "Carlyle"
 go-to: ministries
 
 @mineral_resoures
@@ -975,8 +975,8 @@ subtitle: Saskatchewan has many untapped natural resources that we could use to 
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: mineral_resources_minister_party != ccf_name
-on-arrival: leverage -= 5; mineral_resources_minister_party = ccf_name; mineral_resources_minister = "Carlyle"
+view-if: mineral_resources_minister_party != party_names.ccf
+on-arrival: leverage -= 5; mineral_resources_minister_party = party_names.ccf; mineral_resources_minister = "Carlyle"
 go-to: ministries
 
 @municipal
@@ -985,8 +985,8 @@ subtitle: We can utilize relations with the municipalities to develop the provin
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: municipal_minister_party != ccf_name
-on-arrival: leverage -= 5; municipal_minister_party = ccf_name; municipal_minister = "Carlyle"
+view-if: municipal_minister_party != party_names.ccf
+on-arrival: leverage -= 5; municipal_minister_party = party_names.ccf; municipal_minister = "Carlyle"
 go-to: ministries
 
 @transportation
@@ -995,8 +995,8 @@ subtitle: Saskatchewan is a large province, and transportation is a key issue.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: transportation_minister_party != ccf_name
-on-arrival: leverage -= 5; transportation_minister_party = ccf_name; transportation_minister = "Carlyle"
+view-if: transportation_minister_party != party_names.ccf
+on-arrival: leverage -= 5; transportation_minister_party = party_names.ccf; transportation_minister = "Carlyle"
 go-to: ministries
 
 @telephones_telegraphs
@@ -1005,8 +1005,8 @@ subtitle: Saskatchewan has an undeveloped telecommunications infrastructure, and
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: telephones_telegraphs_minister_party != ccf_name
-on-arrival: leverage -= 5; telephones_telegraphs_minister_party = ccf_name; telephones_telegraphs_minister = "Carlyle"
+view-if: telephones_telegraphs_minister_party != party_names.ccf
+on-arrival: leverage -= 5; telephones_telegraphs_minister_party = party_names.ccf; telephones_telegraphs_minister = "Carlyle"
 go-to: ministries
 
 
@@ -1019,11 +1019,11 @@ subtitle: Taking the Labour Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
-view-if: labour_minister_party != ccf_name
-on-arrival: leverage -= 5; labour_minister_party = ccf_name; labour_minister = "Carlyle"
+view-if: labour_minister_party != party_names.ccf
+on-arrival: leverage -= 5; labour_minister_party = party_names.ccf; labour_minister = "Carlyle"
 go-to: ministries
 
-Carlyle King of the [+ ccf_name +] has been appointed labour minister.
+Carlyle King of the [+ party_names.ccf +] has been appointed labour minister.
 
 @finance
 title: Finance Ministry
@@ -1031,11 +1031,11 @@ subtitle: The Finance Ministry controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: finance_minister_party != ccf_name
-on-arrival: leverage -= 10; finance_minister_party = ccf_name; finance_minister = "Nicholson"
+view-if: finance_minister_party != party_names.ccf
+on-arrival: leverage -= 10; finance_minister_party = party_names.ccf; finance_minister = "Nicholson"
 go-to: ministries
 
-Alexander Nicholson of the [+ ccf_name +] has been appointed Finance Minister.
+Alexander Nicholson of the [+ party_names.ccf +] has been appointed Finance Minister.
 
 
 @justice
@@ -1044,19 +1044,19 @@ subtitle: The Justice Ministry controls the courts.
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
-view-if: justice_minister_party != ccf_name
-on-arrival: leverage -= 10; justice_minister_party = ccf_name; justice_minister = "Underhill"
+view-if: justice_minister_party != party_names.ccf
+on-arrival: leverage -= 10; justice_minister_party = party_names.ccf; justice_minister = "Underhill"
 go-to: ministries
 
-Frank Underhill of the [+ ccf_name +] has been appointed Justice Minister.
+Frank Underhill of the [+ party_names.ccf +] has been appointed Justice Minister.
 
 @agriculture
 title: Agricultural Ministry
 subtitle: This is not our usual domain.
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 10 
-view-if: agriculture_minister_party != ccf_name
-on-arrival: leverage -= 10; agriculture_minister_party = ccf_name; agriculture_minister = "Wright"
+view-if: agriculture_minister_party != party_names.ccf
+on-arrival: leverage -= 10; agriculture_minister_party = party_names.ccf; agriculture_minister = "Wright"
 go-to: ministries
 tags: mins_1928
 
@@ -1070,11 +1070,11 @@ subtitle: The Ministry responsible for the armed forces is not typically our dom
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 15 
-view-if: rcmp_minister_party != ccf_name
-on-arrival: leverage -= 15; rcmp_minister_party = ccf_name; rcmp_minister = "Leber"
+view-if: rcmp_minister_party != party_names.ccf
+on-arrival: leverage -= 15; rcmp_minister_party = party_names.ccf; rcmp_minister = "Leber"
 go-to: ministries
 
-Julius Leber of the [+ ccf_name +] has been appointed RCMP Minister.
+Julius Leber of the [+ party_names.ccf +] has been appointed RCMP Minister.
 
 
 
@@ -1087,56 +1087,56 @@ This coalition arrangement is tolerable to all.
 
 @drop_labour
 title: Drop the Labour Ministry.
-view-if: labour_minister_party = ccf_name
+view-if: labour_minister_party = party_names.ccf
 on-arrival: labour_minister_party = "PPS"; labour_minister = "Stegerwald"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_interior
 title: Drop the Interior Ministry.
-view-if: interior_minister_party = ccf_name
+view-if: interior_minister_party = party_names.ccf
 on-arrival: interior_minister_party = "PPS"; interior_minister = "Wirth"; leverage += 5;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_finance
 title: Drop the Finance Ministry.
-view-if: finance_minister_party = ccf_name
+view-if: finance_minister_party = party_names.ccf
 on-arrival: finance_minister_party = "CPS"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "PPS" if in_lps_coalition or in_unity_government; finance_minister = "Köhler" if in_lps_coalition or in_unity_government
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
-view-if: economic_minister_party = ccf_name
+view-if: economic_minister_party = party_names.ccf
 on-arrival: economic_minister_party = "CPS"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = lps_name if in_lps_coalition or in_unity_government; economic_minister = "Dietrich" if in_lps_coalition or in_unity_government;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_justice
 title: Drop the Justice Ministry.
-view-if: justice_minister_party = ccf_name
+view-if: justice_minister_party = party_names.ccf
 on-arrival: justice_minister_party = lps_name; justice_minister = "Koch-Weser"; leverage += 10;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_foreign
 title: Drop the Foreign Ministry.
-view-if: foreign_minister_party = ccf_name
+view-if: foreign_minister_party = party_names.ccf
 on-arrival: foreign_minister_party = "CPS"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "PPS" if in_lps_coalition or in_unity_government; foreign_minister = "Wirth" if in_lps_coalition or in_unity_government;
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
-view-if: agriculture_minister_party = ccf_name
+view-if: agriculture_minister_party = party_names.ccf
 on-arrival: agriculture_minister_party = lps_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "PPS" if in_lps_coalition; agriculture_minister = "Hermes" if in_lps_coalition
 tags: drop_mins_1928
 go-to: ministries
 
 @drop_rcmp
 title: Drop the RCMP Ministry.
-view-if: rcmp_minister_party = ccf_name
+view-if: rcmp_minister_party = party_names.ccf
 on-arrival: rcmp_minister_party = "I"; rcmp_minister = "Groener"; leverage += 15;
 tags: drop_mins_1928
 go-to: ministries

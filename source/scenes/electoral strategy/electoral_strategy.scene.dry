@@ -31,8 +31,57 @@ on-arrival: {!
        var emptyCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; border: 1.5px dashed #9c8c64; display:inline-block;" title="No Candidate"></div>`;
        
        return activeCircle.repeat(contestedSeats) + emptyCircle.repeat(uncontestedSeats);
-
    }; 
+
+   function electoral_map(party) {
+    return `
+        <div style="text-align:center;">Rural Ridings</div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>North (${Q.districts.north.seats} seats) : </span>
+            ${Q.north_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Central (${Q.districts.central.seats} seats) : </span>
+            ${Q.central_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Southwest (${Q.districts.southwest.seats} seats) : </span>
+            ${Q.southwest_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Southeast (${Q.districts.southeast.seats} seats) : </span>
+            ${Q.southeast_contests}
+        </div>
+
+        <div style="text-align:center;">Urban Ridings</div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Regina (${Q.districts.regina.seats} seats) : </span>
+            ${Q.regina_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Saskatoon (${Q.districts.saskatoon.seats} seats) : </span> 
+            ${Q.saskatoon_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Moose Jaw (${Q.districts.moose_jaw.seats} seats) : </span>
+            ${Q.moose_jaw_contests}
+        </div>
+
+        ${Q.districts.prince_albert.seats > 0 ? `
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Prince Albert (${Q.districts.prince_albert.seats} seats) : </span>${Q.prince_albert_contests}
+        </div>
+        ` : ''}
+
+        The ${Q.party_names[party]} is currently contesting ${Q[party + '_contests']} of ${Q.total_seats} seats.`;
+}
 
    Q.north_contests = electoral_strat('north', 'ccf');
    Q.central_contests = electoral_strat('central', 'ccf'); 
@@ -45,6 +94,8 @@ on-arrival: {!
 
    Q.electoral_strategy_timer = 1;
 
+   Q.ccf_electoral_map = electoral_map('ccf');
+
 !}
 tags: electoral_affairs
 is-card: true
@@ -53,57 +104,12 @@ is-card: true
 
 The electoral system of Saskatchewan makes it possibly advantageous for parties to cooperate electorally.  Parties can collaborate to nominate joint candidates and 'saw-off' their own candidates. Alternatively, running a full slate displays confidence and a better chance for a majority government. 
 
-<div style="text-align:center;">Rural Ridings</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>North ([+ districts.north.seats +] seats) : </span>
-    [+ north_contests +]
-</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>Central ([+ districts.central.seats +] seats) : </span>
-    [+ central_contests +]
-</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>Southwest ([+ districts.southwest.seats +] seats) : </span>
-    [+ southwest_contests +]
-</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>Southeast ([+ districts.southeast.seats +] seats) : </span>
-    [+ southeast_contests +]
-</div>
-
-<div style="text-align:center;">Urban Ridings</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>Regina ([+ districts.regina.seats +] seats) : </span>
-    [+ regina_contests +]
-</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>Saskatoon ([+ districts.saskatoon.seats +] seats) : </span> 
-    [+ saskatoon_contests +]
-</div>
-
-<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>Moose Jaw ([+ districts.moose_jaw.seats +] seats) : </span>
-    [+ moose_jaw_contests +]
-</div>
-
-[? if districts.prince_albert.seats > 0 : {!
-    <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-    <span>Prince Albert !}([+ districts.prince_albert.seats +] seats){! : </span>
-    !}[+ prince_albert_contests +]{!
-  </div>
-!}?]
-
-The [+ ccf_name +] is currently contesting [+ ccf_contests +] of [+ total_seats +] seats. 
+[+ ccf_electoral_map +] 
 
 
 
 - @full_slate: Let's run a Full Slate!
+- @ccf_saw_offs: Let's 'saw-off' our weaker candidates
 - @cps_strategy: What Electoral Options can we discuss with the Tories?
 - @scps_strategy: Will Social Credit discuss Electoral Strategy with us?
 - @cpc_s_strategy: The Communists may be willing to help us...
@@ -120,15 +126,39 @@ on-arrival: {!
 !}
 choose-if: cps_cooperation = 0 and scps_cooperation = 0 and cpc_s_cooperation = 0
 
+@ccf_saw_offs
+title: CCF Saw-Offs
+subtitle: We must choose which region we will remove candidates from
+on-arrival: party_contest_map = 'ccf';
+
 @cps_strategy
 unavailable-subtitle: They are not willing to entertain cooperation with us
 choose-if: cps_relation >= 50
-on-arrival: cps_election_planning = 1;
+on-arrival: cps_election_planning = 1; party_contest_map = 'cps';
+
+
+
+- @cps_saw_offs: Can we convince them to 'saw-off' candidates for us?
+
+@cps_saw_offs: 
+
+
+
+
+
+######################################################
 
 @scps_strategy
 unavailable-subtitle: They are not willing to entertain cooperation with us
 choose-if: scps_relation >= 70
 on-arrival: scps_election_planning = 1;
+
+
+
+
+
+########################################################
+
 
 @cpc_s_strategy
 unavailable-subtitle: They are not willing to entertain cooperation with us

@@ -22,8 +22,8 @@ on-display: {!
     data = [
     {
         "id": "ccf",
-        "legend": Q.ccf_name,
-        "name": Q.ccf_name,
+        "legend": Q.party_names.ccf,
+        "name": Q.party_names.ccf,
         "seats": Q.ccf_seats,
         "bench": Q.ccf_in_government
     },
@@ -127,8 +127,8 @@ window.westminster('westminster_legislature', false, data);
 
     Government: [+ ruling_government +]
 
-    [+ ccf_name +] position: [? if ccf_toleration : toleration ?][? if ccf_in_government : in government - ?][? if ccf_toleration == 0 and ccf_in_government == 0 and ccf_caretaker == 0 : opposition ?][? if ccf_caretaker : caretaker government ?]
-    [? if in_lps_coalition and ccf_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_in_government: Grand Coalition ?][? if in_unity_government and ccf_in_government: Popular Front ?][? if in_left_front and ccf_in_government: Left Front ?][? if in_ccf_majority and ccf_in_government: [+ ccf_name +] majority ?][? if in_minority_government and ccf_in_government: minority government ?]
+    [+ party_names.ccf +] position: [? if ccf_toleration : toleration ?][? if ccf_in_government : in government - ?][? if ccf_toleration == 0 and ccf_in_government == 0 and ccf_caretaker == 0 : opposition ?][? if ccf_caretaker : caretaker government ?]
+    [? if in_lps_coalition and ccf_in_government: Liberal-CCF Coalition ?][? if in_grand_coalition and ccf_in_government: Grand Coalition ?][? if in_unity_government and ccf_in_government: Popular Front ?][? if in_left_front and ccf_in_government: Left Front ?][? if in_ccf_majority and ccf_in_government: [+ party_names.ccf +] majority ?][? if in_minority_government and ccf_in_government: minority government ?]
 
     [? if ccf_in_government and not in_ccf_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
@@ -147,7 +147,7 @@ window.westminster('westminster_legislature', false, data);
 # 
 # <div style='text-align: center;'>
 # # 1928: 30, 1930: 25, 1932: 22
-# [? if ccf_seats > 0: [? if not ccf_name: [+ ccf_name +]?][? if ccf_name != 0 : [+ ccf_name +]?]{!</span>!}: [+ ccf_seats +] ?]
+# [? if ccf_seats > 0: [? if not party_names.ccf: [+ party_names.ccf +]?][? if party_names.ccf != 0 : [+ party_names.ccf +]?]{!</span>!}: [+ ccf_seats +] ?]
 # [? if sapd_formed and sapd_seats > 0: SAPD: [+ sapd_r +]% ?]
 # # 1928: 15, 1930: 15, 1932: 
 # [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
@@ -175,7 +175,7 @@ Assembly composition:
 
 <div style='text-align: center;'>
 # 1928: 30, 1930: 25, 1932: 22
-[? if ccf_seats > 0: [? if not ccf_name: [+ ccf_name +]?][? if ccf_name != 0 : [+ ccf_name +]?]{!</span>!}: [+ ccf_seats +] ?]
+[? if ccf_seats > 0: [? if not party_names.ccf: [+ party_names.ccf +]?][? if party_names.ccf != 0 : [+ party_names.ccf +]?]{!</span>!}: [+ ccf_seats +] ?]
 [? if sapd_formed and sapd_seats > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 [? if pps_seats > 0: [? if not pps_name: PPS?][? if pps_name != 0 : [+ pps_name +]?]{!</span>!}: [+ pps_seats +] ?]
@@ -229,7 +229,7 @@ Next Legislative Election: [+ next_parl_election_month : month +] [+ next_parl_e
 
 CPC(S): [+ cpc_s_ideology +] ([+cpc_s_leader +])
 
-[+ ccf_name +]: [+ ccf_ideology +] ([+ ccf_president +])
+[+ party_names.ccf +]: [+ ccf_ideology +] ([+ ccf_president +])
 
 [? if year <= 1932 and month <= 3 : PPS: [+ pps_ideology +] ([+ pps_leader +]) ?]
 
@@ -671,7 +671,7 @@ on-arrival: {!
             {!<th>Old Middle</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**[+ ccf_name +]**{!</td>!}
+            {!<td>!}**[+ party_names.ccf +]**{!</td>!}
             {!<td style="background-color: #da8b53; ">!}[+ workers_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ unemployed_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ new_middle_ccf_display +]%{!</td>!}
@@ -726,7 +726,7 @@ on-arrival: {!
             {!<th>Rural Workers</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**[+ ccf_name +]**{!</td>!}
+            {!<td>!}**[+ party_names.ccf +]**{!</td>!}
             {!<td style="background-color: #da8b53; ">!}[+ farmers_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ farmhands_ccf_display +]%{!</td>!}
             {!<td style="background-color: #da8b53;">!}[+ rural_workers_ccf_display +]%{!</td>!}

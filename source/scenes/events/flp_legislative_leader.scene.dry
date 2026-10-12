@@ -1,4 +1,4 @@
-title: [+ ccf_name +] Legislative Leader
+title: [+ party_names.ccf +] Legislative Leader
 new-page: true
 is-special: true
 tags: event

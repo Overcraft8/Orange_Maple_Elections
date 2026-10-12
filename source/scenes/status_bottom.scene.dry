@@ -14,8 +14,7 @@ on-display: {!
 
   var data = [];
   for (var party of Q.parties) {
-    var index = Q.parties.indexOf(party);
-    var name = Q.parties_disp_names[index];
+    var name = Q.party_names[party];
 
     data.push({
       "id": party,

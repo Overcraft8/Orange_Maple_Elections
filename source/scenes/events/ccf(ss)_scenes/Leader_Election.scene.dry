@@ -1,4 +1,4 @@
-title: [+ ccf_name +] President Election
+title: [+ party_names.ccf +] President Election
 new-page: true
 subtitle: Who will lead our party?
 tags: event
@@ -50,13 +50,13 @@ on-departure: {!
 
 = Selection of our President
 
-The time has come for the [+ ccf_name +] to select a President. Five distinguished party members have been nominated though 3 have already declined to run. That leaves 2, George Williams and Major James Coldwell. 
+The time has come for the [+ party_names.ccf +] to select a President. Five distinguished party members have been nominated though 3 have already declined to run. That leaves 2, George Williams and Major James Coldwell. 
 
 We must pick wisely...
 
 
-- @GeorgeWilliams: George Williams will surely lead the [+ ccf_name +] to victory.
-- @Coldwell: Coldwell will surely lead the [+ ccf_name +] to victory. 
+- @GeorgeWilliams: George Williams will surely lead the [+ party_names.ccf +] to victory.
+- @Coldwell: Coldwell will surely lead the [+ party_names.ccf +] to victory. 
 
 @GeorgeWilliams 
 on-arrival: farmers_ccf += 4; agrarian_strength += 4; agrarian_dissent -= 4; ccf_president = "George Williams"; ccf_president_img = "WilliamsHaraGeorge.jpg"

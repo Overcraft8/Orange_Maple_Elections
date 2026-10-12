@@ -12,8 +12,11 @@ on-arrival: {!
     Q.month_actions += 1;
     Q.party_contest_map = 'ccf'
 
+    for (party of Q.parties) {
+        Q[party + '_contests'] = 0; 
+    };
+
    function electoral_strat(region, party) {
-    Q[party + '_contests'] = 0; 
      var totalSeats = Q.districts[region].seats;
      var party_contesting_ratio = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
      var contestedSeats = Math.floor(totalSeats * party_contesting_ratio);

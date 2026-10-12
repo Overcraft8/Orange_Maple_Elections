@@ -13,11 +13,18 @@ on-arrival: {!
     Q.party_contest_map = 'ccf'
 
    function electoral_strat(region, party) {
-     var circle = `<div style="border-radius:50%;width:0.8em;height:0.8em;background-color:orange;"></div>`
-     var party_contesting = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
-     var number_of_circles = Math.floor(party_contesting * Q.districts[region].seats);
+     var totalSeats = Q.districts[region].seats;
+     var party_contesting_ratio = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
+     var contestedSeats = Math.floor(totalSeats * party_contesting_ratio);
+     var uncontestedSeats = totalSeats - contestedSeats;
+
+       // Active orange circle for a running candidate
+       var activeCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; background-color:${Q.partyColors.party}; display:inline-block; margin: 2px 1px;" title="Candidate Running"></div>`;
        
-       return circle.repeat(number_of_circles);
+       // Faded grey ring for an un-contested seat
+       var emptyCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; border: 1.5px dashed #9c8c64; display:inline-block; margin: 2px 1px;" title="No Candidate"></div>`;
+       
+       return activeCircle.repeat(contestedSeats) + emptyCircle.repeat(uncontestedSeats);
 
    }; 
 
@@ -81,7 +88,7 @@ The electoral system of Saskatchewan makes it possibly advantageous for parties 
     [+ moose_jaw_contests +]
 </div>
 
-[? if districts.prince_albert.seats >= 0 : {!
+[? if districts.prince_albert.seats > 0 : {!
     <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>Prince Albert !}([+ districts.prince_albert.seats +] seats){! : </span>
     !}[+ prince_albert_contests +]{!

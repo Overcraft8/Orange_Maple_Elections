@@ -1,7 +1,6 @@
 title: Electoral Strategy
 new-page: true
-card-image: img/graphics/safe_future.png
-face-image: img/graphics/all_need_ccf.jpg
+card-image: img/graphics/all_need_ccf.jpg
 on-arrival: {!
     Q.full_slate; 
     Q.cps_cooperation;
@@ -11,42 +10,82 @@ on-arrival: {!
     Q.scps_election_planning; 
     Q.cpc_s_election_planning;
     Q.month_actions += 1;
+    Q.party_contest_map = 'ccf'
 
    function electoral_strat(region, party) {
      var circle = `<div style="border-radius:50%;width:1em;height:1em;background-color:orange;"></div>`
-     //var number_of_circles = Q[region + '_' + party + '_rcr']*Q.district_demography[region].seats; // RCR ratio compared to seats
-     return `<div style="width:100%;height:auto;">${circle}</div`
+     var number_of_circles = Q[region + '_' + party + '_rcr']*Q.districts[region].seats; // RCR ratio compared to seats
+     return circle*number_of_circles;
+
+     //return `<div style="width:100%;height:auto;">${circle}</div`
    }; 
 
-   Q.north_contests = electoral_strat('north', 'ccf')
+   Q.north_contests = electoral_strat('north', 'ccf');
+   Q.central_contests = electoral_strat('central', 'ccf'); 
+   Q.southwest_contests = electoral_strat('southwest', 'ccf'); 
+   Q.southeast_contests = electoral_strat('southeast', 'ccf'); 
+   Q.saskatoon_contests = electoral_strat('saskatoon', 'ccf'); 
+   Q.regina_contests = electoral_strat('regina', 'ccf');  
+   Q.moose_jaw_contests = electoral_strat('moose_jaw', 'ccf'); 
+   if (Q.districts.prince_albert.seats > 0) {Q.prince_albert_contests = electoral_strat('prince_albert', 'ccf');}
+
+   Q.electoral_strategy_timer = 1;
 
 !}
-tags: party_affairs, electoral_affairs
+tags: electoral_affairs
 is-card: true
 
 = Electoral Strategy
 
 The electoral system of Saskatchewan makes it possibly advantageous for parties to cooperate electorally.  Parties can collaborate to nominate joint candidates and 'saw-off' their own candidates. Alternatively, running a full slate displays confidence and a better chance for a majority government. 
 
+
+
 <div style="text-align:center;">Rural Ridings</div>
 
-North : [+ north_contests +]
+<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>North ([+ districts.north.seats +] seats) : </span>
+    [+ north_contests +]
+</div>
 
-Central : [+ central_contests +]
+<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>Central ([+ districts.central.seats +] seats) : </span>
+    [+ central_contests +]
+</div>
 
-Southwest : [+ southwest_contests +]
+<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>Southwest ([+ districts.southwest.seats +] seats) : </span>
+    [+ southwest_contests +]
+</div>
 
-Southeast : [+ southeast_contests +]
+<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>Southeast ([+ districts.southeast.seats +] seats) : </span>
+    [+ southeast_contests +]
+</div>
 
 <div style="text-align:center;">Urban Ridings</div>
 
-Regina : [+ regina_contests +]
+<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>Regina ([+ districts.regina.seats +] seats) : </span>
+    [+ regina_contests +]
+</div>
 
-Saskatoon : [+ saskatoon_contests +]
+<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>Saskatoon ([+ districts.saskatoon.seats +] seats) : </span> 
+    [+ saskatoon_contests +]
+</div>
 
-Moose Jaw : [+ moose_jaw_contests +]
+<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>Moose Jaw ([+ districts.moose_jaw.seats +] seats) : </span>
+    [+ moose_jaw_contests +]
+</div>
 
-[? if district_demography.prince_albert.seats >= 0 : Prince Albert : [+ prince_albert_contests +]?]
+[? if districts.prince_albert.seats >= 0 : {!
+    <div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+    <span>Prince Albert ([+ districts.prince_albert.seats +] seats) : </span>
+    <div style="border-radius:50%; width:1em; height:1em; background-color:orange;"></div>
+  </div>
+!}?]
 
 
 
@@ -60,7 +99,7 @@ Moose Jaw : [+ moose_jaw_contests +]
 title: Let's run a Full Slate
 unavailable-subtitle: We should cancel our inter-party plans if we plan to full slate
 on-arrival: {!
-    Object.keys(Q.district_demography).forEach(district => {
+    Object.keys(Q.districts).forEach(district => {
         Q[district + '_ccf_rcr'] = 1; 
     });
 !}

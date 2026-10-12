@@ -524,7 +524,7 @@ on-arrival: {!
 
     // 1. Define your party colors here to feed the inline pie chart.
     // Update these hex codes to match your specific CSS theme colors.
-    Q.party_colors = {
+    Q.party_colours = {
         'ccf': '#D26E28',
         'cpc_s': '#920c0c',  
         'pps':'#7e741ab3', 
@@ -544,42 +544,42 @@ on-arrival: {!
     var party_polls = {
         ccf : { 
             share: Q.ccf_polls, 
-            color: Q.party_colors['ccf'],
+            color: Q.party_colours['ccf'],
             tooltipInfo: 'CCF(SS)' 
         },
         cpc_s : { 
             share: Q.cpc_s_polls, 
-            color: Q.party_colors['cpc_s'],
+            color: Q.party_colours['cpc_s'],
             tooltipInfo: 'CPC(S)' 
         },
         pps : { 
             share: Q.pps_polls, 
-            color: Q.party_colors['pps'],
+            color: Q.party_colours['pps'],
             tooltipInfo: 'PPS' 
         },
         lps : { 
             share: Q.lps_polls, 
-            color: Q.party_colors['lps'], // Added missing comma
+            color: Q.party_colours['lps'], // Added missing comma
             tooltipInfo: 'LPS' 
         },
         cps : { 
             share: Q.cps_polls, 
-            color: Q.party_colors['cps'], // Added missing comma
+            color: Q.party_colours['cps'], // Added missing comma
             tooltipInfo: 'CPS' 
         },
         scps : { 
             share: Q.scps_polls, 
-            color: Q.party_colors['scps'],
+            color: Q.party_colours['scps'],
             tooltipInfo: 'SCPS' 
         },
         other : { 
             share: Q.other_polls, 
-            color: Q.party_colors['other'],
+            color: Q.party_colours['other'],
             tooltipInfo: 'Other' 
         },
         sapd : { 
             share: Q.sapd_polls, 
-            color: Q.party_colors['sapd'],
+            color: Q.party_colours['sapd'],
             tooltipInfo: 'SAPD' 
         }
     };
@@ -599,7 +599,7 @@ on-arrival: {!
         var share = Math.round((votes / totalVotes) * 100);
         var nextStop = currentStop + share;
         
-        var color = Q.party_colors[party]; 
+        var color = Q.party_colours[party]; 
         gradientStops.push(`${color} ${currentStop}% ${nextStop}%`);
         
         tooltipLines.push(`${party.toUpperCase()}: ${share}%`);

@@ -321,7 +321,7 @@ Q.inflation = 2.9;
 Q.parties = ['ccf', 'cpc_s', 'pps', 'lps', 'cps', 'scps', 'other'];
 Q.parties_disp_names = ['FLP', 'CPC(S)', 'PPS', 'LPS', 'CPS', 'SCPS', 'Other'];
 
-Q.party_colors = {
+Q.party_colours = {
         'ccf': '#D26E28',
         'cpc_s': '#920c0c',  
         'pps':'#7e741ab3', 

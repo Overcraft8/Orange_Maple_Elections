@@ -19,7 +19,7 @@ on-arrival: {!
      var uncontestedSeats = totalSeats - contestedSeats;
 
        // Active orange circle for a running candidate
-       var activeCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; background-color:${Q.partyColors[party]}; display:inline-block; margin: 2px 1px;" title="Candidate Running"></div>`;
+       var activeCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; background-color:${Q.party_colours[party]}; display:inline-block; margin: 2px 1px;" title="Candidate Running"></div>`;
        
        // Faded grey ring for an un-contested seat
        var emptyCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; border: 1.5px dashed #9c8c64; display:inline-block; margin: 2px 1px;" title="No Candidate"></div>`;

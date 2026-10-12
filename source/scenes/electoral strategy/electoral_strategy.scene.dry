@@ -16,6 +16,8 @@ on-arrival: {!
      var totalSeats = Q.districts[region].seats;
      var party_contesting_ratio = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
      var contestedSeats = Math.floor(totalSeats * party_contesting_ratio);
+     Q[party + '_contests'] += contestedSeats;
+     Q[region + '_' + party + '_contested'] = contestedSeats
      var uncontestedSeats = totalSeats - contestedSeats;
 
        // Active orange circle for a running candidate
@@ -46,8 +48,6 @@ is-card: true
 = Electoral Strategy
 
 The electoral system of Saskatchewan makes it possibly advantageous for parties to cooperate electorally.  Parties can collaborate to nominate joint candidates and 'saw-off' their own candidates. Alternatively, running a full slate displays confidence and a better chance for a majority government. 
-
-
 
 <div style="text-align:center;">Rural Ridings</div>
 
@@ -94,6 +94,8 @@ The electoral system of Saskatchewan makes it possibly advantageous for parties 
     !}[+ prince_albert_contests +]{!
   </div>
 !}?]
+
+The [+ ccf_name +] is currently contesting [+ ccf_contests +] of [+ total_seats +] seats. 
 
 
 

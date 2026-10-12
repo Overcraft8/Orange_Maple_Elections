@@ -332,6 +332,14 @@ Q.party_colours = {
         'sapd': '#C40000'
     };
 
+Q.ccf_contests = 55; 
+Q.lps_contests = 55;
+Q.cps_contests = 55;
+Q.scps_contests = 55;
+Q.cpc_s_contests = 55;
+Q.pps_contests = 55;
+Q.other_contests = 55;
+
 // Dynamic parties / existing parties
 Q.pps_exists = 1;
 
@@ -837,13 +845,23 @@ Q.districts = {
     "saskatoon": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
     "moose_jaw": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
     "prince_albert": { "seats": 0, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "southwest": { "seats": 10, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
+    "southwest": { "seats": 11, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
     "southeast": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "farmhands": 25, "rural_workers": 10 },
-    "north": { "seats": 2, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
-    "central": { "seats": 20, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
+    "north": { "seats": 4, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
+    "central": { "seats": 21, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
 };
 
+// North ridings being Athabasca, Turtleford, Meadow Lake, and Tisdale. 
+
 Q.seat_majority = 28; 
+Q.total_seats = 55; 
+
+function seatCount() {
+    Q.total_seats = 0;
+    Object.keys(Q.districts).ForEach(region => {
+        Q.total_seats += Q.districts.region['seats']; 
+    })
+};
 
 
 // Layout = 

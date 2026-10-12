@@ -167,7 +167,7 @@ const colourList = [{
         style: "color: #0055A5; font-weight: bold;"
     },
     {
-        word: "SCPS", 
+        word: ["SCPS", 'Social Credit', 'Socred', 'social credit', 'socred'], 
         style: "color: #49be39; font-weight: bold;"
     },
     // Federal Parties
@@ -340,7 +340,7 @@ const colourList = [{
         style: "color: #e0452a; font-weight: bold;"
     },
     {
-        word: ['Communist', 'Communist Party'], 
+        word: ['Communist', 'Communist Party', 'Communists', 'communist', 'communists'], 
         style: "color: #861a1a; font-weight: bold;"
     },
     {

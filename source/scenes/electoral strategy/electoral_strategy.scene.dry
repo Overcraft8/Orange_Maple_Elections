@@ -14,7 +14,8 @@ on-arrival: {!
 
    function electoral_strat(region, party) {
      var circle = `<div style="border-radius:50%;width:1em;height:1em;background-color:orange;"></div>`
-     var number_of_circles = Q[region + '_' + party + '_rcr']*Q.districts[region].seats; // RCR ratio compared to seats
+     var party_contesting = Q[region + '_' + party + '_rcr'] || 1;
+     var number_of_circles = party_contesting*Q.districts[region].seats; // RCR ratio compared to seats
      return circle*number_of_circles;
 
      //return `<div style="width:100%;height:auto;">${circle}</div`

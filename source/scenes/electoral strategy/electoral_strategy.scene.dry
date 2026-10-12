@@ -13,12 +13,12 @@ on-arrival: {!
     Q.party_contest_map = 'ccf'
 
    function electoral_strat(region, party) {
-     var circle = `<div style="border-radius:50%;width:1em;height:1em;background-color:orange;"></div>`
-     var party_contesting = Q[region + '_' + party + '_rcr'] || 1;
-     var number_of_circles = party_contesting*Q.districts[region].seats; // RCR ratio compared to seats
-     return circle*number_of_circles;
+     var circle = `<div style="border-radius:50%;width:0.8em;height:0.8em;background-color:orange;"></div>`
+     var party_contesting = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
+     var number_of_circles = Math.floor(party_contesting * Q.districts[region].seats);
+       
+       return circle.repeat(number_of_circles);
 
-     //return `<div style="width:100%;height:auto;">${circle}</div`
    }; 
 
    Q.north_contests = electoral_strat('north', 'ccf');
@@ -44,47 +44,47 @@ The electoral system of Saskatchewan makes it possibly advantageous for parties 
 
 <div style="text-align:center;">Rural Ridings</div>
 
-<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>North ([+ districts.north.seats +] seats) : </span>
     [+ north_contests +]
 </div>
 
-<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>Central ([+ districts.central.seats +] seats) : </span>
     [+ central_contests +]
 </div>
 
-<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>Southwest ([+ districts.southwest.seats +] seats) : </span>
     [+ southwest_contests +]
 </div>
 
-<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>Southeast ([+ districts.southeast.seats +] seats) : </span>
     [+ southeast_contests +]
 </div>
 
 <div style="text-align:center;">Urban Ridings</div>
 
-<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>Regina ([+ districts.regina.seats +] seats) : </span>
     [+ regina_contests +]
 </div>
 
-<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>Saskatoon ([+ districts.saskatoon.seats +] seats) : </span> 
     [+ saskatoon_contests +]
 </div>
 
-<div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
+<div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
     <span>Moose Jaw ([+ districts.moose_jaw.seats +] seats) : </span>
     [+ moose_jaw_contests +]
 </div>
 
 [? if districts.prince_albert.seats >= 0 : {!
-    <div style="display: flex;align-items: center;gap: 8px;margin: 5px 0;">
-    <span>Prince Albert ([+ districts.prince_albert.seats +] seats) : </span>
-    <div style="border-radius:50%; width:1em; height:1em; background-color:orange;"></div>
+    <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+    <span>Prince Albert !}([+ districts.prince_albert.seats +] seats){! : </span>
+    !}[+ prince_albert_contests +]{!
   </div>
 !}?]
 

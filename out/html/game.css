@@ -678,6 +678,9 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   vertical-align: bottom;
   object-fit: cover;
 }
+.leader-election-portrait {
+  max-width: none;
+}
 
 /*
  * sprite stuff- feel free to comment out/remove if not using

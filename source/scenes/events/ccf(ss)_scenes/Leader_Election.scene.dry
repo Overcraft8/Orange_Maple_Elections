@@ -50,7 +50,7 @@ on-departure: {!
 
 = Selection of our President
 
-The time has come for the [+ party_names.ccf +] to select a President. Five distinguished party members have been nominated though 3 have already declined to run. That leaves 2, George Williams and Major James Coldwell. 
+The time has come for the [+ party_names.ccf +] to select a President. Of the 5 party members nominated, 3 have already declined their nomination. That leaves 2, George Hara Williams and Major James Coldwell, Williams heading the left-flank and agrarian elements of the party and Coldwell leading the urban and right-wing 
 
 We must pick wisely...
 
@@ -77,9 +77,9 @@ Coldwell will lead us to victory!
 
 <div style="display: flex; flex-direction: row; text-align: left; gap: 15px;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div id="george_william_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg" style="width:6em; height: auto;"><span class="card-caption">George Williams</span></div>
-        <div id="Phelps" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/PhelpsJoe.jpg" style="width:6em; height: auto;"><span class="card-caption">Joe Phelps</span></div>
-        <div id="Brockelbank" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/BrockelbankJohn.jpg" style="width:6em; height: auto;"><span class="card-caption">John Brockelbank</span></div>
+        <img class="face-img" src="img/portraits/WilliamsHaraGeorge.jpg" style="width:6em;height: auto;border: 3px ridge #675845;width:6em;"><span class="card-caption">George Williams</span>
+        <img class="face-img" src="img/portraits/PhelpsJoe.jpg" style="width:6em;height: auto;border: 3px ridge #675845;width:6em;"><span class="card-caption">Joe Phelps</span>
+        <img class="face-img" src="img/portraits/BrockelbankJohn.jpg" style="width:6em;height: auto;border: 3px ridge #675845;width:6em;"><span class="card-caption">John Brockelbank</span>
     </div>
     <div style="width: 1000px; border: 3px solid tan; padding: 10px;">
     George Williams is a former president of the UFC(SS) and on the left-wing of the party. Williams led the UFC(SS) into provincial politics on a socialist programme and was the architect behind the controversial "use-lease" policy, a program that would: 
@@ -88,7 +88,7 @@ Coldwell will lead us to victory!
 
     B: Provide an option for land-owning farmers to enter the use-lease program
 
-    Williams has faced controversy over his visit to the Soviet Union, returning with approval for its largely state-managed agricultural sector (nonetheless, he seeks a different path for Saskatchewan agriculture). It is guaranteed that this history will be pounced upon by the Liberals and almost certainly prove too contentious for any Conservative-CCF electoral alliance, even with the relatively open James Anderson leading. 
+    Williams has faced controversy over his visit to the Soviet Union, returning with approval for its largely state-managed agricultural sector (nonetheless, he seeks a different path for Saskatchewan agriculture). It is guaranteed that this history will be a key target of any anti-socialist messaging done by either of the capitalist parties should he become leader.
     </div>
 </div>
 
@@ -98,13 +98,13 @@ Coldwell will lead us to victory!
 
 <div style="display: flex; flex-direction: row; text-align: left; gap: 15px;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div id="major_coldwell_leadership_candidacy" style="display: flex; flex-direction: column; border: 3px ridge tan; padding: 5px;"><img class="face-img" src="img/portraits/ColdwellMajorJames.jpg" style="width:6em; height: auto;"><span class="card-caption">Major James Coldwell</span></div>
-        <div id="Douglas" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/DouglasTommy.jpg" style="width:6em; height: auto;"><span class="card-caption">Tommy Douglas</span></div>
-        <div id="Fines" style="display: flex; flex-direction: column; border: 3px solid tan; padding: 5px;"><img class="face-img" src="img/portraits/FinesClarence.jpg" style="width:6em; height: auto;"><span class="card-caption">Clarence Fines</span></div>
+        <img class="face-img" src="img/portraits/ColdwellMajorJames.jpg" style="width:6em;height: auto;border: 3px ridge #675845;width:6em;"><span class="card-caption">Major James Coldwell</span>
+        <img class="face-img" src="img/portraits/DouglasTommy.jpg" style="width:6em;height: auto;border: 3px ridge #675845;width:6em;"><span class="card-caption">Tommy Douglas</span>
+        <img class="face-img" src="img/portraits/FinesClarence.jpg" style="width:6em;height: auto;border: 3px ridge #675845;width:6em;"><span class="card-caption">Clarence Fines</span>
     </div>
     <div style="width: 1000px; border: 3px solid tan; padding: 10px;">
-    Major James Coldwell is the moderate former leader of the ILP and former PPS member. He has political and governing experience, having served as a Regina City Councillor in the past, and has been active in the teacher's unions. 
+    Major James Coldwell is the moderate former leader of the ILP and a former PPS member. He has political and governing experience, having served as a Regina City Councillor in the past, and has been active in the teacher's unions. 
     
-    As a middle-class professional, it is likely that he will be able to expand the party's appeal into the cities. While he is on the right-wing of the party, he remains avowedly against an electoral pact with the Conservatives. 
+    As a middle-class professional, it is likely that he will be able to expand the party's appeal into the cities. 
     </div>
 </div>

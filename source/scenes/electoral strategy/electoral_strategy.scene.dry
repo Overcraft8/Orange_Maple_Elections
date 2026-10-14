@@ -2,15 +2,8 @@ title: Electoral Strategy
 new-page: true
 card-image: img/graphics/all_need_ccf.jpg
 on-arrival: {!
-    Q.full_slate; 
-    Q.cps_cooperation;
-    Q.scps_cooperation; 
-    Q.cpc_s_cooperation; 
-    Q.cps_election_planning; 
-    Q.scps_election_planning; 
-    Q.cpc_s_election_planning;
-    Q.month_actions += 1;
     Q.party_contest_map = 'ccf';
+    Q.month_actions += 1;
 
     for (party of Q.parties) {
         Q[party + '_contests'] = 0; 

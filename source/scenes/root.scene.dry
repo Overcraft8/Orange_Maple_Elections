@@ -348,6 +348,12 @@ Q.cpc_s_contests = 55;
 Q.pps_contests = 55;
 Q.other_contests = 55;
 
+Q.cps_cooperation = 0;
+Q.scps_cooperation = 0; 
+Q.cpc_s_cooperation = 0;
+Q.cps_election_planning = 0;
+Q.scps_election_planning = 0;
+Q.cpc_s_election_planning = 0;
 // Dynamic parties / existing parties
 Q.pps_exists = 1;
 

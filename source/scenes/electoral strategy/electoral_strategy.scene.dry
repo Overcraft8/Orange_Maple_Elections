@@ -10,7 +10,7 @@ on-arrival: {!
     Q.scps_election_planning; 
     Q.cpc_s_election_planning;
     Q.month_actions += 1;
-    Q.party_contest_map = 'ccf'
+    Q.party_contest_map = 'ccf';
 
     for (party of Q.parties) {
         Q[party + '_contests'] = 0; 

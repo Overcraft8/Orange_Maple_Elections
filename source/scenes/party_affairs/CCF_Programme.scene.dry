@@ -4,7 +4,7 @@ is-card: true
 tags: party_affairs
 view-if: programme_timer <= 0
 on-arrival: month_actions += 1; programme_timer = 3
-card-image: img/Sask_CCF_Programme.jpg
+card-image: img/CCF/ccf_program_sk.png
 
 Our Party has many policies that we can choose from. Some of them include a use-lease policy to protect farmers from foreclosure, a comprehensive labour rights platform to ensure that tragedies such as the Bienfait Coal Miner's strike never occur again, or to attempt nationalizing the Saskatchewan railways. We can promise multiple policies within a single group or promise none at all. 
 

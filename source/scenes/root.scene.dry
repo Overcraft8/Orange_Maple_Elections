@@ -225,7 +225,6 @@ Q.ccf_leader = "M.J. Coldwell";
 Q.ccf_leader_img = "ColdwellMajorJames.jpg";
 Q.ccf_president = "None";
 Q.ccf_president_img = "ColdwellMajorJames.jpg";
-Q.party_names.ccf = 'FLP';
 
 
 Q.cpc_s_leader = "None";
@@ -327,7 +326,9 @@ Q.party_names = {
     'cps': 'CPS', 
     'scps' : 'SCPS', 
     'other' : 'Other'
-}
+};
+
+Q.party_names.ccf = 'FLP';
 
 Q.party_colours = {
         'ccf': '#D26E28',

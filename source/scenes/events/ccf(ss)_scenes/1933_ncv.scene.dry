@@ -1,10 +1,31 @@
 title: Liberals Propose a Non-Confidence Motion
 subtitle: The End of the Cooperative Coalition?
 tags: event
-view-if: year = 1933 and month = 1
+view-if: year = 1932 and month = 8 and party_names.ccf == 'PFLP';
 priority: 2
 max-visits: 1
 
 = LPS Non-confidence Motion
 
-The defections of the PPS MLAs have not gone unnoticed by the Liberals. 
+The defections of the PPS MLAs have not gone unnoticed by the Liberals. Jimmy Gardiner's LPS is now moving for a motion of no-confidence against the Conservative Party and their Independent allies. The choice now lays with us whether Anderson's government survives. 
+
+- @lps_no_confidence: Let's collapse the Cooperative Coalition government now
+- @lps_confidence: Vote against the motion
+
+@lps_no_confidence
+choose-if: support_cooperative_coalition = 0; 
+call: set_next_election_time
+
+# set_next_election_time seems to be snap elections
+
+= Snap Elections
+
+The motion of no-confidence has passed. Now, the CPS will be entering an election burdened by the Depression. Our own party has much to gain; perhaps we may overcome the Conservatives as the official opposition? 
+
+@lps_confidence
+choose-if: support_cooperative_coalition = 1;
+on-arrival: workers_ccf -= 1; farmers_ccf -= 1; old_middle_ccf -= 4; new_middle_ccf -= 5;
+
+= Anderson Holds steady
+
+Thanks to the support of the [+ party_names.ccf +], Anderson's government manages to pass the LPS no-confidence motion. LPS-aligned newspapers are now unloading a heap of criticism at the PFLP for upholding Anderson's government. 

@@ -3,7 +3,7 @@ new-page: true
 tags: event
 priority: -1
 view-if: (year = next_parl_election_year and month >= next_parl_election_month) or (year > next_parl_election_year)
-on-departure: month_actions += 1; in_election = 0; next_parl_election_year = next_parl_election_year + 4; n_elections += 1; next_election_time = time + 48; papen_premier_timer = 4;
+on-departure: month_actions += 1; in_election = 0; next_parl_election_year = next_parl_election_year + 4; n_elections += 1; next_election_time = time + 60; papen_premier_timer = 4;
 set-jump: post_election
 face-image: img/Rothe_Wahlen_1903.jpg
 
@@ -715,7 +715,7 @@ There are some potential coalition arrangements.
 # Custom Coalitions here:
 
 @ccf_forms_government
-on-arrival: premier = ccf_leader; premier_party = party_names.ccf
+on-arrival: premier = ccf_leader; premier_party = party_names.ccf; premier_img = premier_portraits[Q.ccf_leader];
 
 @socred_forms_government
 on-arrival: premier = scps_leader; premier_party = 'SCPS'

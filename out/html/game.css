@@ -6,8 +6,8 @@ html {
 body {
   --bg-color: #555555;
   --border-color: #000;
-  --sidebar-bg-color: #f5ebd6;
-  --content-bg-color: #e8dcc3;
+  --sidebar-bg-color: #fbf0d9;
+  --content-bg-color: #fff1d3;
   --text-color: #431;
   --link-color: #6c2f00; 
   --link-hover-color: rgba(0, 0, 0, 0.05);

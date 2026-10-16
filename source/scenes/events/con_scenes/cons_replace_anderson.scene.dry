@@ -1,0 +1,20 @@
+title: A Fall from Grace
+subtitle: The End of Anderson
+tags: event
+view-if: year = 1934 and month = 8
+priority: 2
+max-visits: 1
+face-image: img/portraits/AndersonJames.jpg
+on-departure: cps_leader = 'John Diefenbaker'
+
+= The End of Anderson
+
+Former Premier James Anderson, previously renowned for leading the Conservative Party to it's first electoral success in Grit-Dominated Saskatchewan, has disconsolately resigned his leadership of the party over the disappointing results of the election. Sections of the right-wing of the CPS have always been uncomfortable with the parties growing collaboration with the Progressive Party. In addition, Anderson had refused to support Federal Conservatives in constituencies where the CPS did not run in 1929. Thus, the party's president, John Diefenbaker, has called a leadership convention to replace him. 
+
+
+
+<div class='face-figure'>
+    <img src="img/portraits/Diefenbaker_John_young.jpg" class="face-img">
+</div>
+
+The most notable figure to appear has been John Diefenbaker, a lawyer.

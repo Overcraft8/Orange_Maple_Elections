@@ -2,8 +2,10 @@ title: News Initializer
 subtitle: You shouldn't be able to see this :>
 on-arrival: {!
 
-    Q.generic_news = {
-      'booming economy' : 'The economy is booming'
+    Q.news_display = 
+
+  Q.generic_news = {
+    'booming economy' : 'The economy is booming'
   };
 
 
@@ -18,3 +20,5 @@ Q.active_news = {
     }
 }
 !}
+
+[+  +]

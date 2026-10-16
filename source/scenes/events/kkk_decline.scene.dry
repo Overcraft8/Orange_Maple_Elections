@@ -5,6 +5,7 @@ tags: event
 view-if: year = 1932 and month = 4
 max-visits: 1
 face-image: img/burn_cross.jpg
+on-arrival: workers_cps -= 5; farmers_cps -= 10; new_middle_cps -= 5; old_middle_cps -= 5
 
 = Terrorists Struggle to Feed Families
 

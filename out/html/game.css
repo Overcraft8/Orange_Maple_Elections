@@ -573,8 +573,8 @@ ul.decks, ul.hand, ul.pinned-cards {
 
 a.card {
   display: inline-block;
-  width: 90px;
-  height: 112.5px;
+  width: 110px;
+  height: 140px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
@@ -591,8 +591,8 @@ a.card:hover {
 
 div.blank-card {
   display: inline-block;
-  width: 90px;
-  height: 112.5px;
+  width: 110px;
+  height: 140px;
   background-color: var(--card-bg-color);
   border: 8px solid var(--card-border-color);
   margin-bottom: 0.5em;
@@ -602,11 +602,10 @@ div.blank-card {
   padding: 0.3em;
   display: inline-block;
   position: relative;
-  max-width: 95px;
+  max-width: 110px;
   margin-right: 1em;
   vertical-align: top;
 }
-
 /* TODO: unavailable card */
 .unavailable-card {
   color: var(--unavailable-color);
@@ -620,6 +619,7 @@ div.blank-card {
   font-size: 0.95em;
   -webkit-text-stroke: 0.15px #000000;
   color: #d6703a;
+  font-family: 'Times New Roman', Georgia, serif;
 }
 
 .dark-mode .card-caption {

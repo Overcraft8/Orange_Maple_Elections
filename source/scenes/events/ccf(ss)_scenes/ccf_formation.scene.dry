@@ -17,27 +17,28 @@ Now however, a collection of Labour, Farmer, and Socialist organizations are set
 
 Delegates from the UFC(SS) and ILP in Saskatchewan have been invited to the meeting. Now we must establish what exactly we will clamour for...
 
-- @party_names.ccf: What name will we advocate for the new party?
+- @party_names: What name will we advocate for the new party?
 
-@party_names.ccf
-on-arrival: party_names.ccf_passed = 1
-view-if: party_names.ccf_passed = 0
+@party_names
+on-arrival: party_names_ccf_passed = 1
+view-if: party_names_ccf_passed = 0
 
 The name of the new party is highly significant. Delegates from BC, with backgrounds in the old Socialist Labour tradition of the province, propose the name 'Socialist Party of Canada'. Other proposals include 'United Workers Commonwealth' and 'National Worker's Political Federation', both unrepresentative of the significant farm bloc present. 
 
-- @party_names.ccf_spc: Clamour for 'Socialist Party of Canada'. 
-- @party_names.ccf_ccf: Let's go with 'Cooperative Commonweath Federation (Farmer-Labour-Socialist)'
+- @party_names_spc: Clamour for 'Socialist Party of Canada'. 
+- @party_names_ccf: Let's go with 'Cooperative Commonweath Federation (Farmer-Labour-Socialist)'
 
-@party_names.ccf_spc
+@party_names_spc
 subtitle: Supported by the BC Delegation
 on-arrival: ccf_bc_relation += 5; radical_strength += 3; radical_dissent -= 3; moderate_strength -= 3; moderate_dissent += 4
 go-to: attend_ccf_formation
+face-image: img/organizations/SPC_logo.png
 
 Our vocalness about an avowedly Socialist name garners us the goodwill of the BC delegation, headed under Ernest Winch. 
 
 While the Saskatchewan and British Columbia blocs form a large delegation, second only to Ontario, the name "Cooperative Commonwealth Federation (Farmer-Labour-Socialist)" is ultimately selected. 
 
-@party_names.ccf_ccf
+@party_names_ccf
 subtitle: Seems like this is the majority choice
 on-arrival: moderate_strength += 5
 go-to: attend_ccf_formation
@@ -55,11 +56,9 @@ Our delegates leave Calgary united under a single federation, bringing together 
 
 The Socialist Party of Canada (Primarily of BC), 
 
-United Farmers of Alberta, Dominion Labor Party (Alberta), 
+United Farmers of Alberta, Dominion Labor Party, Canadian Labour Party (Alberta), 
 
-Canadian Labour Party (Alberta), 
-
-United Farmers of Canada (Saskatchewan Section), 
+United Farmers of Canada (Saskatchewan), 
 
 Independent Labour Party (Manitoba), 
 

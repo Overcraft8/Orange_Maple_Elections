@@ -472,6 +472,16 @@ tags: labour_advisor
 
 Clarence Fines is now an advisor.
 
+@add_tlc
+title: Trades and Labour Congress
+subtitle: <img src="img/organizations/dominion_labour_congress.jpg" class="face-figure"><span>The TLC is a fairly conservative but influential Labour Federation</span>  {!<br><br>!}
+is-card: true
+card-image: img/organizations/dominion_labour_congress.jpg
+view-if: tlc_advisor = 0 and n_advisors < 3
+on-arrival: tlc_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: labour_advisor
+
 @add_rcwu
 title: Relief Camp Worker's Union
 subtitle: <img src="img/williams_speech.jpg" class="face-image"><span>The RWCU is a militant union for the workers of Bennett's relief camps. It has close links to the Communist movement.</span> {!<br><br>!}

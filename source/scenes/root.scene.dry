@@ -593,8 +593,6 @@ Q.credit_unions = 3;
 Q.housing_coops = 1;
 Q.factory_coops = 0;
 
-Q.news_display = ``; 
-
 
 
 

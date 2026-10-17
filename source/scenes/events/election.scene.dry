@@ -715,16 +715,32 @@ There are some potential coalition arrangements.
 # Custom Coalitions here:
 
 @ccf_forms_government
-on-arrival: premier = ccf_leader; premier_party = party_names.ccf; premier_img = premier_portraits[ccf_leader];
+on-arrival: {! 
+Q.premier = Q.ccf_leader; 
+Q.premier_party = party_names.ccf; 
+Q.premier_img = Q.premier_portraits[Q.ccf_leader];
+!}
 
 @socred_forms_government
-on-arrival: premier = scps_leader; premier_party = 'SCPS'
+on-arrival: {! 
+Q.premier = Q.scps_leader; 
+Q.premier_party = party_names.scps; 
+Q.premier_img = Q.premier_portraits[Q.scps_leader];
+!}
 
 @lps_forms_government
-on-arrival: premier = lps_leader; premier_party = 'LPS'
+on-arrival: {! 
+Q.premier = Q.lps_leader; 
+Q.premier_party = party_names.lps; 
+Q.premier_img = Q.premier_portraits[Q.lps_leader];
+!}
 
 @cps_forms_government
-on-arrival: premier = cps_leader; premier_party = 'CPS'
+on-arrival: {! 
+Q.premier = Q.cps_leader; 
+Q.premier_party = party_names.cps; 
+Q.premier_img = Q.premier_portraits[Q.cps_leader];
+!}
 
 @ccf_majority
 title: We have achieved a majority!

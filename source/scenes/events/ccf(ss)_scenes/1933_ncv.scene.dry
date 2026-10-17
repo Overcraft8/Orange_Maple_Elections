@@ -1,7 +1,7 @@
 title: Liberals Propose a Non-Confidence Motion
 subtitle: The End of the Cooperative Coalition?
 tags: event
-view-if: year = 1932 and month = 8 and party_names.ccf == 'PFLP';
+view-if: year = 1932 and month = 8 and party_names.ccf = 'PFLP'
 priority: 2
 max-visits: 1
 

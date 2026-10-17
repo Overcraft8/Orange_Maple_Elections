@@ -23,7 +23,7 @@ call: set_next_election_time
 The motion of no-confidence has passed. Now, the CPS will be entering an election burdened by the Depression. Our own party has much to gain; perhaps we may overcome the Conservatives as the official opposition? 
 
 @lps_confidence
-choose-if: support_cooperative_coalition = 1;
+choose-if: support_cooperative_coalition = 1
 on-arrival: workers_ccf -= 1; farmers_ccf -= 1; old_middle_ccf -= 4; new_middle_ccf -= 5;
 
 = Anderson Holds steady

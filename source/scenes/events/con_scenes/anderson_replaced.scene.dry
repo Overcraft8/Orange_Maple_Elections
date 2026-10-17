@@ -1,11 +1,10 @@
 title: A Fall from Grace
 subtitle: The End of Anderson
 tags: event
-view-if: year = 1936 and month = 8
-priority: 2
+view-if: year = 1936 and month = 7
+priority: 1
 max-visits: 1
 face-image: img/portraits/Tories/AndersonJames.jpg
-
 = The End of Anderson
 
 Former Premier James Anderson, previously renowned for leading the Conservative Party to it's first electoral success in Grit-Dominated Saskatchewan, has resigned his leadership of the party over the disappointing results of the election. A section of the CPS right-wing, calling themselves 'True Blue Tories' have been pressing Anderson on his cooperation with the left-leaning Progressive Party and his lack of support for the Federal Conservatives, refusing to support Federal Tories in seats that the CPS did not contest in 1929. Some support, however, still remains for a broad anti-liberal stance. Thus, the party's acting president, John Diefenbaker, has called a leadership convention to replace him. 
@@ -19,7 +18,7 @@ Former Premier James Anderson, previously renowned for leading the Conservative 
 @diefenbaker_cps
 face-image: img/portraits/Tories/DiefenbakerJohn_young.jpg
 subtitle: The Red Tory
-choose-if: cps_seats < 3 and cps_voteshare < 25
+choose-if: cps_voteshare < 25 and cps_seats > 2
 on-arrival: cps_leader = 'Diefenbaker'
 
 John Diefenbaker is a wildcard. With a background as a defence lawyer, he has been unsuccessful in attempts to enter the Legislature despite close results in 1929. Still, he is the standing President of the CPS. 
@@ -29,7 +28,7 @@ He represents a strand of the party that supports an active role of the governme
 @macpherson_cps
 subtitle: Establishment Toryism
 face-image: img/portraits/Tories/MacPhersonMA.jpg
-choose-if: cps_seats < 3 and cps_voteshare >= 25
+choose-if: cps_voteshare >= 25 and ccf_relation >= 40 and cps_seats < 2
 on-arrival: cps_leader = 'MacPherson'
 
 Murdoch Macpherson, also known by M.A. MacPherson, represents a continuation of traditional Saskatchewan Toryism. He was Anderson's Attorney General, during which he negotiated the return of natural resource rights to Saskatchewan, withheld by Ottawa during the province's formation. He also served as the liaison between the Relief Commission and the Cooperative Coalition. It is expected that he will focus on questions of administration and public finance as leader. 
@@ -39,7 +38,7 @@ There are not high hopes that he will be able to reverse the party's sinking for
 @bryant_cps
 subtitle: British Nativism
 face-image: img/portraits/Tories/BryantJames.jpg
-choose-if: cps_seats < 1 and cps_voteshare >= 25
+choose-if: cps_voteshare >= 25 and ccf_relation < 40 and cps_seats < 2
 on-arrival: cps_leader = 'Bryant'
 
 James Fraser Bryant is a former Cabinet member of the Anderson government whose leadership signals a continuation of Anderson's social policies. He is primarily known for rewriting the School Act to prohibit religious symbols in schools and strengthen the usage of English as the language of instruction. He was also a promoter of the KKK in Saskatchewan. 

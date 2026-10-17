@@ -1955,10 +1955,13 @@ Credits to LBJ's Force Ghost for the idea behind the Westminster parliament diag
 
 [ After the fact explanation here ]
 
+
+- @return: Return
+
 @how_realistic
 
 While extensive research was done for this setting, the mod is not to be taken as an accurate depiction of Saskatchewan during the game's time period. Several viable paths in this game are very unlikely to have occured. This includes the formation of a true Unity Front against the Liberals. Such an effort did exist but ultimately failed to make a breakthrough or last. The [+ party_names.ccf +] leadership viewed it as a mechanism for the Communists to infiltrate legitimate parties, Social Credit was more interested in giving a middle finger to Ottawa, and the Conservatives under Diefenbaker saw Unity only as a last resort. 
 
 The mod also gives great liberties to the player. It is unlikely that a manufacturing industry not focused on agriculture could have ever sprung up in Saskatchewan. Winnipeg to the East was already a major manufacturing center with comparisons to Chicago and the National government would always favour Ontario and Quebec for heavy manufacturing.
 
-- @root.information: Return
+- @return: Return

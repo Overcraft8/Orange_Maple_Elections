@@ -4,7 +4,7 @@ tags: event
 view-if: year = 1932 and month = 3 and party_names.ccf == 'PFLP'
 priority: 1
 max-visits: 1
-face-image: img/portraits/Tories/AndersonJames.jpg
+face-image: img/portraits/AndersonJames.jpg
 
 = Anderson's Bargain
 

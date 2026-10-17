@@ -5,7 +5,7 @@ tags: event
 view-if: year = 1936 and month = 7
 priority: 1
 max-visits: 1
-face-image: img/portraits/Tories/AndersonJames.jpg
+face-image: img/portraits/AndersonJames.jpg
 
 = The End of Anderson
 
@@ -25,7 +25,7 @@ on-arrival: cps_leader = 'Diefenbaker'
 
 John Diefenbaker is a wildcard. With a background as a defence lawyer, he has been unsuccessful in attempts to enter the Legislature despite close results in 1929. Still, he is the standing President of the CPS. 
 
-He represents a strand of the party that supports an active role of the government in the economy; colloquially, the Red Tories or a form of Paternalistic Conservatism. He is expected to draft a reform-programme for the CPS in a middle-ground between the LPS and [+ party_names.ccf +] platforms. 
+He represents a strand of the party that supports an active role of the government in the economy; colloquially, the Red Tories or a form of Paternalistic Conservatism. He is expected to draft a reform-programme for the CPS in a middle-ground between the LPS and [+ party_names.ccf +] platforms. The devasting loss means that he will likely collaborate with us to ensure his party's survival, whether he wants to or not. 
 
 @macpherson_cps
 subtitle: Establishment Toryism
@@ -35,7 +35,7 @@ on-arrival: cps_leader = 'MacPherson'
 
 Murdoch Macpherson, also known by M.A. MacPherson, represents a continuation of traditional Saskatchewan Toryism. He was Anderson's Attorney General, during which he negotiated the return of natural resource rights to Saskatchewan, withheld by Ottawa during the province's formation. He also served as the liaison between the Relief Commission and the Cooperative Coalition. It is expected that he will focus on questions of administration and public finance as leader. 
 
-There are not high hopes that he will be able to reverse the party's sinking fortunes. However, he may be able to leverage his connections in the Federal Party to pull in organizational and financial support from out East. 
+There are not high hopes that he will be able to reverse the party's sinking fortunes. However, he may be able to leverage his connections in the Federal Party to pull in organizational and financial support from out East. While the party has been badly damaged by the recent election, MacPherson is strident in not forming official ties with the [+ party_names.ccf +]. Thus, we can cross off any formal working partnership with MacPherson's CPS though electoral cooperation may be on the table. 
 
 @bryant_cps
 subtitle: British Nativism
@@ -45,4 +45,4 @@ on-arrival: cps_leader = 'Bryant'
 
 James Fraser Bryant is a former Cabinet member of the Anderson government whose leadership signals a continuation of Anderson's social policies. He is primarily known for rewriting the School Act to prohibit religious symbols in schools and strengthen the usage of English as the language of instruction. He was also a promoter of the KKK in Saskatchewan. 
 
-His strong British-nativist stance earns him a swathe of attacks by the Liberal Party, likening him to the worst of the KKK. His election consolidates the traditionalist factions of the CPS, committed to making social issues a prominent issue in the campaign. 
+His strong British-nativist stance earns him a swathe of attacks by the Liberal Party, likening him to the worst of the KKK. His election consolidates the traditionalist factions of the CPS, committed to making social issues a prominent issue in the campaign. Bryant will likely use us as a punching bad, committing the same red-bait tactics that the LPS uses against us. 

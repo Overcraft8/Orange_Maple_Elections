@@ -351,6 +351,10 @@ const colourList = [{
         word: ['Conservative', 'Conservative Party', 'Tory', 'Tories'], 
         style: "color: #0055A5; font-weight: bold;"
     },
+    {
+        word: ['Red Tory', 'Red Tories'], 
+        style: "color: #b7227b; font-weight: bold;"
+    },
 ];
 
 

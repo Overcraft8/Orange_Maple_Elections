@@ -13,7 +13,7 @@ The defections of the PPS MLAs have not gone unnoticed by the Liberals. Jimmy Ga
 - @lps_confidence: Vote against the motion
 
 @lps_no_confidence
-choose-if: support_cooperative_coalition = 0; 
+choose-if: support_cooperative_coalition = 0
 call: set_next_election_time
 
 # set_next_election_time seems to be snap elections

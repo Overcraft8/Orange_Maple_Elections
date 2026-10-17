@@ -339,7 +339,7 @@ Q.party_colours = {
     };
 
 Q.premier_portraits = {
-    'Anderson' : 'AndersonJames.jpg',
+    'Anderson' : 'Tories/AndersonJames.jpg',
     'Gardiner' : 'Gardiner_Jimmy.jpg',
     'Douglas' : 'DouglasTommy.jpg', 
     'Williams' : 'WilliamsHaraGeorge.jpg', 
@@ -427,7 +427,7 @@ Q.economic_records = [];
 Q.prime_minister = "Richard Bennett (CPC)";
 // starting premier: James Anderson
 Q.premier = "James Anderson";
-Q.premier_img = 'AndersonJames.jpg';
+Q.premier_img = 'Tories/AndersonJames.jpg';
 Q.premier_party = 'CPS';
 
 Q.in_right_coalition = 0;
@@ -1570,8 +1570,8 @@ Q.in_election = 1;
 
 
 
-Q.next_parl_election_year = 1932;
-Q.next_parl_election_month = 6;
+Q.next_parl_election_year = 1934;
+Q.next_parl_election_month = 4;
 Q.next_election_time = 6; //months until the next election
 // government affairs timers
 Q.agricultural_policy_timer = 0;
@@ -1847,7 +1847,7 @@ In 1926, the Ku Klux Klan entered the province from the USA. While it's American
 
 <div class="face-figure"><img class="face-img" src="img/burn_cross.jpg"></div>
 
-<div class="face-figure"><img class="face-img" src="img/portraits/AndersonJames.jpg"></div>
+<div class="face-figure"><img class="face-img" src="img/portraits/Tories/AndersonJames.jpg"></div>
 
 Both the CPS under James Anderson and the PPS constructed programmes that drew on the prejudice raised by the KKK, likely aiding them in the 1929 election. Additionally, the CPS, PPS, and numerous Independents made electoral pacts that reduced the occurence of vote-splitting, leaving the LPS with only a plurality of seats. James Anderson organized the CPS, PPS, and Independents into what he'd call a Cooperative Coalition and took the mantle of government from the LPS. 
 

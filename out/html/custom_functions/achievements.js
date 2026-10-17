@@ -19,7 +19,7 @@ window.achievements_list = {
       "name": "Dief The Chief",
       "description": "John Diefenbaker is elected as Premier.",
       "difficulty": 3,
-      "image": "img/portraits/diefenbaker_john_old.png"
+      "image": "img/portraits/Tories/DiefenbakerJohn_old.png"
     }
   ]
 }

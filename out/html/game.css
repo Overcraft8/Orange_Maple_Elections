@@ -599,13 +599,14 @@ div.blank-card {
 }
 
 .card-in-hand, .pinned-card, .deck {
-  padding: 0.3em;
   display: inline-block;
   position: relative;
-  max-width: 110px;
+  width: 126px;
+  max-width: 126px; 
   margin-right: 1em;
   vertical-align: top;
 }
+
 /* TODO: unavailable card */
 .unavailable-card {
   color: var(--unavailable-color);

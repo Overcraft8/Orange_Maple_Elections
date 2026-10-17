@@ -1,20 +1,47 @@
 title: A Fall from Grace
 subtitle: The End of Anderson
 tags: event
-view-if: year = 1934 and month = 8
+view-if: year = 1936 and month = 8
 priority: 2
 max-visits: 1
-face-image: img/portraits/AndersonJames.jpg
-on-departure: cps_leader = 'John Diefenbaker'
+face-image: img/portraits/Tories/AndersonJames.jpg
 
 = The End of Anderson
 
-Former Premier James Anderson, previously renowned for leading the Conservative Party to it's first electoral success in Grit-Dominated Saskatchewan, has disconsolately resigned his leadership of the party over the disappointing results of the election. Sections of the right-wing of the CPS have always been uncomfortable with the parties growing collaboration with the Progressive Party. In addition, Anderson had refused to support Federal Conservatives in constituencies where the CPS did not run in 1929. Thus, the party's president, John Diefenbaker, has called a leadership convention to replace him. 
+Former Premier James Anderson, previously renowned for leading the Conservative Party to it's first electoral success in Grit-Dominated Saskatchewan, has resigned his leadership of the party over the disappointing results of the election. A section of the CPS right-wing, calling themselves 'True Blue Tories' have been pressing Anderson on his cooperation with the left-leaning Progressive Party and his lack of support for the Federal Conservatives, refusing to support Federal Tories in seats that the CPS did not contest in 1929. Some support, however, still remains for a broad anti-liberal stance. Thus, the party's acting president, John Diefenbaker, has called a leadership convention to replace him. 
 
+11 nominations have been drawn so far though it remains to be seen how many Tories actually choose to accept them. [? if cps_voteshare < 20 : To many, it seems the CPS is electorally moribund, destined to become an insignificant force between the LPS and [+ party_names.ccf +]. ?]
 
+- @diefenbaker_cps: John Diefenbaker is the only candidate who will accept a nomination
+- @macpherson_cps: Murdoch MacPherson will lead the Tories
+- @bryant_cps: James Fraser Bryant will lead the Tories
 
-<div class='face-figure'>
-    <img src="img/portraits/Diefenbaker_John_young.jpg" class="face-img">
-</div>
+@diefenbaker_cps
+face-image: img/portraits/Tories/DiefenbakerJohn_young.jpg
+subtitle: The Red Tory
+choose-if: cps_seats < 3 and cps_voteshare < 25
+on-arrival: cps_leader = 'Diefenbaker'
 
-The most notable figure to appear has been John Diefenbaker, a lawyer.
+John Diefenbaker is a wildcard. With a background as a defence lawyer, he has been unsuccessful in attempts to enter the Legislature despite close results in 1929. Still, he is the standing President of the CPS. 
+
+He represents a strand of the party that supports an active role of the government in the economy; colloquially, the Red Tories or a form of Paternalistic Conservatism. He is expected to draft a reform-programme for the CPS in a middle-ground between the LPS and [+ party_names.ccf +] platforms. 
+
+@macpherson_cps
+subtitle: Establishment Toryism
+face-image: img/portraits/Tories/MacPhersonMA.jpg
+choose-if: cps_seats < 3 and cps_voteshare >= 25
+on-arrival: cps_leader = 'MacPherson'
+
+Murdoch Macpherson, also known by M.A. MacPherson, represents a continuation of traditional Saskatchewan Toryism. He was Anderson's Attorney General, during which he negotiated the return of natural resource rights to Saskatchewan, withheld by Ottawa during the province's formation. He also served as the liaison between the Relief Commission and the Cooperative Coalition. It is expected that he will focus on questions of administration and public finance as leader. 
+
+There are not high hopes that he will be able to reverse the party's sinking fortunes. However, he may be able to leverage his connections in the Federal Party to pull in organizational and financial support from out East. 
+
+@bryant_cps
+subtitle: British Nativism
+face-image: img/portraits/Tories/BryantJames.jpg
+choose-if: cps_seats < 1 and cps_voteshare >= 25
+on-arrival: cps_leader = 'Bryant'
+
+James Fraser Bryant is a former Cabinet member of the Anderson government whose leadership signals a continuation of Anderson's social policies. He is primarily known for rewriting the School Act to prohibit religious symbols in schools and strengthen the usage of English as the language of instruction. He was also a promoter of the KKK in Saskatchewan. 
+
+His strong British-nativist stance earns him a swathe of attacks by the Liberal Party, likening him to the worst of the KKK. His election consolidates the traditionalist factions of the CPS, committed to making social issues a prominent issue in the campaign. 

@@ -239,7 +239,7 @@ for (var party of Q.parties) {
 
 console.log("Vote shares (party_polls):");
 for (var party of Q.parties) {
-    console.log(party, Q[party + '_polls']);
+    console.log(party, Q[party + 'voteshare']);
 }
 
 // Q.lps_polls = Q.lps_polls.toFixed(1);

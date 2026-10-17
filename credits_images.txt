@@ -64,7 +64,7 @@ grain_elevator.jpg
 bank.png
 regina_trolleybus.jpg
 ccf_founding.jpg https://commons.wikimedia.org/wiki/File:CooperativeCommonwealthFederationFoundingMeeting.jpg
-diefenbaker_john_old.png https://commons.wikimedia.org/w/index.php?search=John+Diefenbaker&title=Special%3AMediaSearch&type=image
+Tories/DiefenbakerJohn_old.png https://commons.wikimedia.org/w/index.php?search=John+Diefenbaker&title=Special%3AMediaSearch&type=image
 women_grain_growers.jpg - https://commons.wikimedia.org/w/index.php?search=saskatchewan+women+&title=Special%3AMediaSearch&type=image
 ReliefWorkHighway.jpg - https://commons.wikimedia.org/wiki/File:ReliefWorkHighway.jpg
 pool_elevator.jpg - https://commons.wikimedia.org/wiki/File:SaskatchewanWheatPool.svg
@@ -72,6 +72,7 @@ Canada map - https://commons.wikimedia.org/wiki/File:BlankMap-USA-states-Canada-
 Premier_Scott.jpg, FrederickWAGHaultain.png - https://en.wikipedia.org/wiki/1905_Saskatchewan_general_election
 SGGA_picnic.jpg - https://en.wikipedia.org/wiki/Saskatchewan_Grain_Growers%27_Association#/media/File:William_Charles_Sutherland_addresses_a_Saskatchewan_Grain_Growers'_Picnic_at_Eagle_Creek_on_19_July_1911.jpg
 HaldemanJoshua.png - https://en.wikipedia.org/wiki/Joshua_N._Haldeman
+MacphersonMA.jpg - https://commons.wikimedia.org/wiki/File:Murdoch_Alexander_MacPherson.jpg
 
 // -----------------------------------
 //    Internet Archive
@@ -114,6 +115,7 @@ telecom_lines.jpg - https://www.insulators.info/pictures/?id=675207949
 
 Sask_CCL.jpg - https://www.esask.uregina.ca/entry/saskatchewan_federation_of_labour_sfl.html
 regina_riot_protest.jpg  -https://www.esask.uregina.ca/entry/labour.html
+BryantJames.jpg - https://esask.uregina.ca/entry/bryant_james_fraser_1877-1945.html
 
 
 // ------------------------------------

@@ -11,7 +11,7 @@ face-image: img/portraits/AndersonJames.jpg
 
 Former Premier James Anderson, previously renowned for leading the Conservative Party to it's first electoral success in Grit-Dominated Saskatchewan, has resigned his leadership of the party over the disappointing results of the election. A section of the CPS right-wing, calling themselves 'True Blue Tories' have been pressing Anderson on his cooperation with the left-leaning Progressive Party and his lack of support for the Federal Conservatives, refusing to support Federal Tories in seats that the CPS did not contest in 1929. Some support, however, still remains for a broad anti-liberal stance. Thus, the party's acting president, John Diefenbaker, has called a leadership convention to replace him. 
 
-11 nominations have been drawn so far though it remains to be seen how many Tories actually choose to accept them. [? if cps_voteshare < 20 : To many, it seems the CPS is electorally moribund, destined to become an insignificant force between the LPS and [+ party_names.ccf +]. ?]
+11 nominations have been drawn so far though it remains to be seen how many Tories actually choose to accept them. [? if cps_polls < 20 : To many, it seems the CPS is electorally moribund, destined to become an insignificant force between the LPS and [+ party_names.ccf +]. ?]
 
 - @diefenbaker_cps: John Diefenbaker is the only candidate who will accept a nomination
 - @macpherson_cps: Murdoch MacPherson will lead the Tories
@@ -20,7 +20,7 @@ Former Premier James Anderson, previously renowned for leading the Conservative 
 @diefenbaker_cps
 face-image: img/portraits/Tories/DiefenbakerJohn_young.jpg
 subtitle: The Red Tory
-choose-if: cps_voteshare < 25 and cps_seats > 2
+choose-if: cps_polls < 25 and cps_seats > 2
 on-arrival: cps_leader = 'Diefenbaker'
 
 John Diefenbaker is a wildcard. With a background as a defence lawyer, he has been unsuccessful in attempts to enter the Legislature despite close results in 1929. Still, he is the standing President of the CPS. 
@@ -30,7 +30,7 @@ He represents a strand of the party that supports an active role of the governme
 @macpherson_cps
 subtitle: Establishment Toryism
 face-image: img/portraits/Tories/MacPhersonMA.jpg
-choose-if: cps_voteshare >= 25 and ccf_relation >= 40 and cps_seats < 2
+choose-if: cps_polls >= 25 and ccf_relation >= 40 and cps_seats < 2
 on-arrival: cps_leader = 'MacPherson'
 
 Murdoch Macpherson, also known by M.A. MacPherson, represents a continuation of traditional Saskatchewan Toryism. He was Anderson's Attorney General, during which he negotiated the return of natural resource rights to Saskatchewan, withheld by Ottawa during the province's formation. He also served as the liaison between the Relief Commission and the Cooperative Coalition. It is expected that he will focus on questions of administration and public finance as leader. 
@@ -40,7 +40,7 @@ There are not high hopes that he will be able to reverse the party's sinking for
 @bryant_cps
 subtitle: British Nativism
 face-image: img/portraits/Tories/BryantJames.jpg
-choose-if: cps_voteshare >= 25 and ccf_relation < 40 and cps_seats < 2
+choose-if: cps_polls >= 25 and ccf_relation < 40 and cps_seats < 2
 on-arrival: cps_leader = 'Bryant'
 
 James Fraser Bryant is a former Cabinet member of the Anderson government whose leadership signals a continuation of Anderson's social policies. He is primarily known for rewriting the School Act to prohibit religious symbols in schools and strengthen the usage of English as the language of instruction. He was also a promoter of the KKK in Saskatchewan. 

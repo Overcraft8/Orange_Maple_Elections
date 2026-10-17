@@ -715,7 +715,7 @@ There are some potential coalition arrangements.
 # Custom Coalitions here:
 
 @ccf_forms_government
-on-arrival: premier = ccf_leader; premier_party = party_names.ccf; premier_img = premier_portraits[Q.ccf_leader];
+on-arrival: premier = ccf_leader; premier_party = party_names.ccf; premier_img = premier_portraits[ccf_leader];
 
 @socred_forms_government
 on-arrival: premier = scps_leader; premier_party = 'SCPS'

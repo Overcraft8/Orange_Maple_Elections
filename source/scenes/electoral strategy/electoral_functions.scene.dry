@@ -19,6 +19,7 @@ on-arrival: {!
 
     Q.ccf_electoral_map = window.electoral_map(party);
 !}
+go-to: ccf_electoral_strategy
 
 
 @add_candidates
@@ -37,3 +38,4 @@ on-arrival: {!
 
     Q.ccf_electoral_map = window.electoral_map(party);
 !}
+go-to: ccf_electoral_strategy

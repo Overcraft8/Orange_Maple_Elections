@@ -1,12 +1,38 @@
 title: [+ party_names.ccf +] Strategy
 subtitle: We must plan for the next election
-on-arrival: party_contest_map = 'ccf';
 new-page: true
+on-arrival: {!
+    for (party of Q.parties) {
+        Q[party + '_contests'] = 0; 
+    };
+    Q.party_contest_map = 'ccf';
+
+   Q.north_contests = window.electoral_strat('north', 'ccf');
+   Q.central_contests = window.electoral_strat('central', 'ccf'); 
+   Q.southwest_contests = window.electoral_strat('southwest', 'ccf'); 
+   Q.southeast_contests = window.electoral_strat('southeast', 'ccf'); 
+   Q.saskatoon_contests = window.electoral_strat('saskatoon', 'ccf'); 
+   Q.regina_contests = window.electoral_strat('regina', 'ccf');  
+   Q.moose_jaw_contests = window.electoral_strat('moose_jaw', 'ccf'); 
+   if (Q.districts.prince_albert.seats > 0) {Q.prince_albert_contests = window.electoral_strat('prince_albert', 'ccf');}
+
+   Q.ccf_electoral_map = window.electoral_map('ccf');
+
+!}
+
+
+[+ ccf_electoral_map +] 
 
 - @ccf_election_action: What action are we planning to do?
 - @ccf_north: [+ ccf_electoral_action +] candidates in the North
 - @ccf_central: [+ ccf_electoral_action +] candidates in the Central Region
-- @electoral_strategy: 
+- @ccf_southeast: [+ ccf_electoral_action +] candidates in the Southeast
+- @ccf_southwest: [+ ccf_electoral_action +] candidates in the Southwest
+- @ccf_saskatoon: [+ ccf_electoral_action +] candidates in Saskatoon
+- @ccf_regina: [+ ccf_electoral_action +] candidates in Regina
+- @ccf_moose_jaw: [+ ccf_electoral_action +] candidates in Moose Jaw
+- @ccf_prince_albert: [+ ccf_electoral_action +] candidates in Prince Albert
+- @electoral_strategy: Return to General Electoral Strategy Screen
 
 
 
@@ -33,13 +59,41 @@ go-to: ccf_electoral_strategy
 
 
 @ccf_north
-on-arrival: {!
-    if (Q.ccf_election_action == 'Saw-off') {
-        Q.region_electoral = 'north'
-        Q.electoral_action = 'electoral_functions.sawoffs'
-    }
-!}
-call: [+ electoral_action +]
+on-arrival: region_electoral = 'north'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
 
 
 @ccf_central
+on-arrival: region_electoral = 'central'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+
+
+@ccf_southeast
+on-arrival: region_electoral = 'southeast'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+
+
+@ccf_southwest
+on-arrival: region_electoral = 'southwest'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+
+
+@ccf_saskatoon
+on-arrival: region_electoral = 'saskatoon'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+
+
+@ccf_regina
+on-arrival: region_electoral = 'regina'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+
+
+@ccf_moose_jaw
+on-arrival: region_electoral = 'moose_jaw'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+
+
+@ccf_prince_albert
+on-arrival: region_electoral = 'prince_albert'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+view-if: districts.prince_albert.seats > 0

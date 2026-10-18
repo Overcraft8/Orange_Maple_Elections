@@ -17,22 +17,17 @@ The CCYM is the the youth corps of the CCF. It is populated by young radicals, m
 - @cancel_advisor_action
 
 @songs
-choose-if: resources >= 1
+choose-if: advisor_action_timer <= 0 and resources >= 1
 unavailable-subtitle: Not enough resources, 1 resource needed).
 subtitle: -1 resources
 on-arrival: resources -= 1; ccym_strength += 0.5; labour_dissent -= 3; new_middle_ccf += 3; old_middle_ccf += 3
 
 Spreading happiness always gives the urban middle class a better view of our party. 
 
-@same
-
-The CCYM is doing just fine on it's own. 
-
-- @return: Continue...
-
 
 @pamphlets
 subtitle: -2 resources
+choose-if: advisor_action_timer <= 0 
 on-arrival: resources -= 2; socialism += 2; farmers_ccf += 1; worker_ccf += 1; unemployed_ccf += 1; new_middle_ccf += 1; labour_radicalism -= 1;
 
 Spreading pamphlets increases awareness of the benefits of socialism and helps everyone get a better grasp of what we stand for. 
@@ -42,6 +37,7 @@ The suggestion to allow women into the UFC(SS) is ridiculed by most, except for 
 After allowing women to join, the number of comrades who leave is more than balanced out by the number of radicalized women and others who join. However, many of our departed members were veterans, and many of the new members have no experience with military-style training.
 
 @ccym_communists
+choose-if: advisor_action_timer <= 0 
 subtitle: The CCYM maintains unofficial links to Communist movements
 
 
@@ -60,3 +56,9 @@ The parties on our right are concerned about our courting of the Communists.
 
 @homosexual
 achievement: anders_als_die_andern
+
+@same
+
+The CCYM is doing just fine on it's own. 
+
+- @return: Continue...

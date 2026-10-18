@@ -1,0 +1,39 @@
+title: Electoral Functions
+
+
+
+
+@saw_offs
+on-arrival: {!
+    var region = Q.region_electoral;
+    var party = 'ccf';
+
+    if (Q[region + '_' + party + '_rcr'] === undefined) {
+        Q[region + '_' + party + '_rcr'] = 1;
+    };
+
+    Q[region + '_' + party + '_rcr'] = Math.max(0, Q[region + '_' + party + '_rcr'] - 0.25);
+
+    var contest_key = region + '_contests';
+    Q[contest_key] = window.electoral_strat(region, party);
+
+    Q.ccf_electoral_map = window.electoral_map(party);
+!}
+
+
+@add_candidates
+on-arrival: {!
+    var region = Q.region_electoral;
+    var party = 'ccf';
+
+    if (Q[region + '_' + party + '_rcr'] === undefined) {
+        Q[region + '_' + party + '_rcr'] = 1;
+    };
+
+    Q[region + '_' + party + '_rcr'] = Math.max(0, Q[region + '_' + party + '_rcr'] + 0.25);
+
+    var contest_key = region + '_contests';
+    Q[contest_key] = window.electoral_strat(region, party);
+
+    Q.ccf_electoral_map = window.electoral_map(party);
+!}

@@ -6,8 +6,8 @@ html {
 body {
   --bg-color: #555555;
   --border-color: #000;
-  --sidebar-bg-color: #fbf0d9;
-  --content-bg-color: #fff1d3;
+  --sidebar-bg-color: #eee7d8;
+  --content-bg-color: #f0e7d2;
   --text-color: #431;
   --link-color: #6c2f00; 
   --link-hover-color: rgba(0, 0, 0, 0.05);
@@ -118,7 +118,8 @@ header {
   border-color: var(--border-color);
   border-radius: 4px;
   box-shadow: 2px 2px 6px rgb(0 0 0 / 50%);
-  background-color: var(--content-bg-color)
+  background-color: var(--content-bg-color);
+  padding: 1px; 
 }
 
 #header-links a:last-of-type {

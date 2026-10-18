@@ -4,10 +4,6 @@
 
 
 
-
-
-
-
 var Q = window.dendryUI?.dendryEngine?.state?.qualities;
 
 
@@ -89,3 +85,88 @@ window.loadElectionData = async function() {
 
 // Load election data when script initializes
 window.loadElectionData();
+
+
+
+
+
+
+
+
+// -------------------------------------------------
+//            ELECTORAL STRATEGY CODE
+// -------------------------------------------------
+
+
+
+
+
+
+
+
+window.electoral_strat = function(region, party) {
+     var totalSeats = Q.districts[region].seats;
+     var party_contesting_ratio = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
+     var contestedSeats = Math.floor(totalSeats * party_contesting_ratio);
+     Q[party + '_contests'] += contestedSeats;
+     Q[region + '_' + party + '_contested'] = contestedSeats
+     var uncontestedSeats = totalSeats - contestedSeats;
+
+       // Active orange circle for a running candidate
+       var activeCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; background-color:${Q.party_colours[party]}; display:inline-block;" title="Candidate Running"></div>`;
+       
+       // Faded grey ring for an un-contested seat
+       var emptyCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; border: 1.5px dashed #9c8c64; display:inline-block;" title="No Candidate"></div>`;
+       
+       return activeCircle.repeat(contestedSeats) + emptyCircle.repeat(uncontestedSeats);
+   }; 
+
+   window.electoral_map = function(party) {
+    return `
+        <div style="text-align:center;">Rural Ridings</div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>North (${Q.districts.north.seats} seats) : </span>
+            ${Q.north_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Central (${Q.districts.central.seats} seats) : </span>
+            ${Q.central_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Southwest (${Q.districts.southwest.seats} seats) : </span>
+            ${Q.southwest_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Southeast (${Q.districts.southeast.seats} seats) : </span>
+            ${Q.southeast_contests}
+        </div>
+
+        <div style="text-align:center;">Urban Ridings</div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Regina (${Q.districts.regina.seats} seats) : </span>
+            ${Q.regina_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Saskatoon (${Q.districts.saskatoon.seats} seats) : </span> 
+            ${Q.saskatoon_contests}
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Moose Jaw (${Q.districts.moose_jaw.seats} seats) : </span>
+            ${Q.moose_jaw_contests}
+        </div>
+
+        ${Q.districts.prince_albert.seats > 0 ? `
+        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
+            <span>Prince Albert (${Q.districts.prince_albert.seats} seats) : </span>${Q.prince_albert_contests}
+        </div>
+        ` : ''}
+
+        The ${Q.party_names[party]} is currently contesting ${Q[party + '_contests']} of ${Q.total_seats} seats.`;
+}

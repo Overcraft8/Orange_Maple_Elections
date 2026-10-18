@@ -1,0 +1,45 @@
+title: [+ party_names.ccf +] Strategy
+subtitle: We must plan for the next election
+on-arrival: party_contest_map = 'ccf';
+new-page: true
+
+- @ccf_election_action: What action are we planning to do?
+- @ccf_north: [+ ccf_electoral_action +] candidates in the North
+- @ccf_central: [+ ccf_electoral_action +] candidates in the Central Region
+- @electoral_strategy: 
+
+
+
+
+@ccf_election_action
+
+- @saw-off: Saw-off Candidates
+- @add-candidates: Add Candidates
+- @unity: Propose Joint Candidates (broken, don't use)
+
+@saw-off
+on-arrival: ccf_electoral_action = 'Saw-off'
+go-to: ccf_electoral_strategy
+
+@add-candidates
+on-arrival: ccf_electoral_action = 'Add Candidates'
+go-to: ccf_electoral_strategy
+
+@unity
+
+######################################################################################
+######################################################################################
+##                      Regions 
+
+
+@ccf_north
+on-arrival: {!
+    if (Q.ccf_election_action == 'Saw-off') {
+        Q.region_electoral = 'north'
+        Q.electoral_action = 'electoral_functions.sawoffs'
+    }
+!}
+call: electoral_functions.saw_offs if Q.ccf_election_action == 'Saw-off'; electoral_functions.add_candidates if Q.ccf_election_action == 'Add-candidates'
+
+
+@ccf_central

@@ -20,9 +20,11 @@ The UFC(SS) is a farmer's educational organization. In 1932, it's political wing
 
 @ufc_relations
 subtitle: -1 resources
-on-arrival: ufc_relations += 5
+choose-if: advisor_action_timer <= 0 
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; ufc_relations += 5
 
 @ufc_organizing
-on-arrival: farmers_ccf += 3; agrarian_strength += 3
+choose-if: advisor_action_timer <= 0 
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; farmers_ccf += 3; agrarian_strength += 3
 
 @ufc_mi

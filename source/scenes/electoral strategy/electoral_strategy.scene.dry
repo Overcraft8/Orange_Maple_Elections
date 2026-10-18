@@ -9,85 +9,18 @@ on-arrival: {!
         Q[party + '_contests'] = 0; 
     };
 
-   function electoral_strat(region, party) {
-     var totalSeats = Q.districts[region].seats;
-     var party_contesting_ratio = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
-     var contestedSeats = Math.floor(totalSeats * party_contesting_ratio);
-     Q[party + '_contests'] += contestedSeats;
-     Q[region + '_' + party + '_contested'] = contestedSeats
-     var uncontestedSeats = totalSeats - contestedSeats;
-
-       // Active orange circle for a running candidate
-       var activeCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; background-color:${Q.party_colours[party]}; display:inline-block;" title="Candidate Running"></div>`;
-       
-       // Faded grey ring for an un-contested seat
-       var emptyCircle = `<div style="border-radius:50%; width:0.8em; height:0.8em; border: 1.5px dashed #9c8c64; display:inline-block;" title="No Candidate"></div>`;
-       
-       return activeCircle.repeat(contestedSeats) + emptyCircle.repeat(uncontestedSeats);
-   }; 
-
-   function electoral_map(party) {
-    return `
-        <div style="text-align:center;">Rural Ridings</div>
-
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>North (${Q.districts.north.seats} seats) : </span>
-            ${Q.north_contests}
-        </div>
-
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Central (${Q.districts.central.seats} seats) : </span>
-            ${Q.central_contests}
-        </div>
-
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Southwest (${Q.districts.southwest.seats} seats) : </span>
-            ${Q.southwest_contests}
-        </div>
-
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Southeast (${Q.districts.southeast.seats} seats) : </span>
-            ${Q.southeast_contests}
-        </div>
-
-        <div style="text-align:center;">Urban Ridings</div>
-
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Regina (${Q.districts.regina.seats} seats) : </span>
-            ${Q.regina_contests}
-        </div>
-
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Saskatoon (${Q.districts.saskatoon.seats} seats) : </span> 
-            ${Q.saskatoon_contests}
-        </div>
-
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Moose Jaw (${Q.districts.moose_jaw.seats} seats) : </span>
-            ${Q.moose_jaw_contests}
-        </div>
-
-        ${Q.districts.prince_albert.seats > 0 ? `
-        <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Prince Albert (${Q.districts.prince_albert.seats} seats) : </span>${Q.prince_albert_contests}
-        </div>
-        ` : ''}
-
-        The ${Q.party_names[party]} is currently contesting ${Q[party + '_contests']} of ${Q.total_seats} seats.`;
-}
-
-   Q.north_contests = electoral_strat('north', 'ccf');
-   Q.central_contests = electoral_strat('central', 'ccf'); 
-   Q.southwest_contests = electoral_strat('southwest', 'ccf'); 
-   Q.southeast_contests = electoral_strat('southeast', 'ccf'); 
-   Q.saskatoon_contests = electoral_strat('saskatoon', 'ccf'); 
-   Q.regina_contests = electoral_strat('regina', 'ccf');  
-   Q.moose_jaw_contests = electoral_strat('moose_jaw', 'ccf'); 
-   if (Q.districts.prince_albert.seats > 0) {Q.prince_albert_contests = electoral_strat('prince_albert', 'ccf');}
+   Q.north_contests = window.electoral_strat('north', 'ccf');
+   Q.central_contests = window.electoral_strat('central', 'ccf'); 
+   Q.southwest_contests = window.electoral_strat('southwest', 'ccf'); 
+   Q.southeast_contests = window.electoral_strat('southeast', 'ccf'); 
+   Q.saskatoon_contests = window.electoral_strat('saskatoon', 'ccf'); 
+   Q.regina_contests = window.electoral_strat('regina', 'ccf');  
+   Q.moose_jaw_contests = window.electoral_strat('moose_jaw', 'ccf'); 
+   if (Q.districts.prince_albert.seats > 0) {Q.prince_albert_contests = window.electoral_strat('prince_albert', 'ccf');}
 
    Q.electoral_strategy_timer = 1;
 
-   Q.ccf_electoral_map = electoral_map('ccf');
+   Q.ccf_electoral_map = window.electoral_map('ccf');
 
 !}
 tags: electoral_affairs
@@ -95,14 +28,14 @@ is-card: true
 
 = Electoral Strategy
 
-The electoral system of Saskatchewan makes it possibly advantageous for parties to cooperate electorally.  Parties can collaborate to nominate joint candidates and 'saw-off' their own candidates. Alternatively, running a full slate displays confidence and a better chance for a majority government. 
+The electoral system of Saskatchewan makes it possibly advantageous for parties to cooperate electorally. Parties can collaborate to nominate joint candidates and 'saw-off' their own candidates. Alternatively, running a full slate displays confidence and a better chance for a majority government. 
 
 [+ ccf_electoral_map +] 
 
 
 
 - @full_slate: Let's run a Full Slate!
-- @ccf_saw_offs: Let's 'saw-off' our weaker candidates
+- @ccf_electoral_strategy: Questions of [+ party_names.ccf +] Electoral Strategy
 - @cps_strategy: What Electoral Options can we discuss with the Tories?
 - @scps_strategy: Will Social Credit discuss Electoral Strategy with us?
 - @cpc_s_strategy: The Communists may be willing to help us...
@@ -119,17 +52,15 @@ on-arrival: {!
 !}
 choose-if: cps_cooperation = 0 and scps_cooperation = 0 and cpc_s_cooperation = 0
 
-@ccf_saw_offs
-title: CCF Saw-Offs
-subtitle: We must choose which region we will remove candidates from
-on-arrival: party_contest_map = 'ccf';
+
+
+###########################################################################3
+
 
 @cps_strategy
 unavailable-subtitle: They are not willing to entertain cooperation with us
 choose-if: cps_relation >= 50
 on-arrival: cps_election_planning = 1; party_contest_map = 'cps';
-
-
 
 - @cps_saw_offs: Can we convince them to 'saw-off' candidates for us?
 

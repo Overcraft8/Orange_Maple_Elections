@@ -39,7 +39,7 @@ on-arrival: {!
         Q.electoral_action = 'electoral_functions.sawoffs'
     }
 !}
-call: electoral_functions.saw_offs if Q.ccf_election_action == 'Saw-off'; electoral_functions.add_candidates if Q.ccf_election_action == 'Add-candidates'
+call: [+ electoral_action +]
 
 
 @ccf_central

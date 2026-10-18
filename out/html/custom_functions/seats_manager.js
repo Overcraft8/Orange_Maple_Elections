@@ -4,9 +4,6 @@
 
 
 
-var Q = window.dendryUI?.dendryEngine?.state?.qualities;
-
-
 window.change_seats = function([party_region], [seat_changes]) {
     
     var Q = window.dendryUI?.dendryEngine?.state?.qualities;
@@ -105,6 +102,7 @@ window.loadElectionData();
 
 
 window.electoral_strat = function(region, party) {
+     var Q = window.dendryUI.dendryEngine.state.qualities;
      var totalSeats = Q.districts[region].seats;
      var party_contesting_ratio = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
      var contestedSeats = Math.floor(totalSeats * party_contesting_ratio);
@@ -122,6 +120,7 @@ window.electoral_strat = function(region, party) {
    }; 
 
    window.electoral_map = function(party) {
+    var Q = window.dendryUI.dendryEngine.state.qualities;
     return `
         <div style="text-align:center;">Rural Ridings</div>
 

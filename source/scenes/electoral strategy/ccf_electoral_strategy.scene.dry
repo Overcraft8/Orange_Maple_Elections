@@ -2,22 +2,7 @@ title: [+ party_names.ccf +] Strategy
 subtitle: We must plan for the next election
 new-page: true
 on-arrival: {!
-    for (party of Q.parties) {
-        Q[party + '_contests'] = 0; 
-    };
     Q.party_contest_map = 'ccf';
-
-   Q.north_contests = window.electoral_strat('north', 'ccf');
-   Q.central_contests = window.electoral_strat('central', 'ccf'); 
-   Q.southwest_contests = window.electoral_strat('southwest', 'ccf'); 
-   Q.southeast_contests = window.electoral_strat('southeast', 'ccf'); 
-   Q.saskatoon_contests = window.electoral_strat('saskatoon', 'ccf'); 
-   Q.regina_contests = window.electoral_strat('regina', 'ccf');  
-   Q.moose_jaw_contests = window.electoral_strat('moose_jaw', 'ccf'); 
-   if (Q.districts.prince_albert.seats > 0) {Q.prince_albert_contests = window.electoral_strat('prince_albert', 'ccf');}
-
-   Q.ccf_electoral_map = window.electoral_map('ccf');
-
 !}
 
 

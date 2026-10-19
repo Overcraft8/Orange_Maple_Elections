@@ -765,71 +765,6 @@ Q.class_incomes = {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-/* 
-                             Electoral district information
- Q.district_names = [
-     'regina', 'saskatoon', 'moose_jaw', 'prince_albert',
-     'southwest', 'southeast', 'north', 'central'
- ];
- 
- 
- Q.regina_seats = 2;
- Q.regina_workers = 30;
- Q.regina_old_middle = 20; 
- Q.regina_new_middle = 20;
- Q.regina_unemployed = 30;
- 
- //Q.saskatoon_seats = 2;
- Q.saskatoon_seats = 14;
- Q.saskatoon_workers = 25;
- Q.saskatoon_old_middle = 20; 
- Q.saskatoon_new_middle = 25;
- Q.saskatoon_unemployed = 30;
- 
- Q.moose_jaw_seats = 2;
- Q.moose_jaw_workers = 40;
- Q.moose_jaw_old_middle = 20; 
- Q.moose_jaw_new_middle = 10;
- Q.moose_jaw_unemployed = 30;
- 
- Q.prince_albert_seats = 1;
- Q.prince_albert_workers = 35;
- Q.prince_albert_old_middle = 15; 
- Q.prince_albert_new_middle = 20;
- Q.prince_albert_unemployed = 30;
- 
- 
- Q.southwest_seats = 7;
- Q.southwest_workers = 15;
- Q.southwest_farmers = 40; 
- Q.southwest_farmhands = 25;
- Q.southwest_rural_workers = 20;
- 
- 
- Q.southeast_seats = 13;
- Q.southeast_workers = 5;
- Q.southeast_farmers = 40; 
- Q.southeast_farmhands = 25;
- Q.southeast_rural_workers = 10;
- Q.southeast_unemployed = 20;
- 
- 
- Q.north_seats = 3;
- Q.north_workers = 20;
- Q.north_farmers = 20; 
- Q.north_farmhands = 20;
- Q.north_rural_workers = 40;
- 
- 
- Q.central_seats = 14;
- Q.central_workers = 15;
- Q.central_farmers = 35; 
- Q.central_farmhands = 15;
- Q.central_rural_workers = 15;
- Q.central_unemployed = 20;
-*/
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -856,7 +791,7 @@ Q.region_names = {
     "north": 'North',
     "central": 'Central'
 };
-
+/* 
 
 Q.districts = {
     "regina": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
@@ -869,10 +804,323 @@ Q.districts = {
     "central": { "seats": 21, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
 };
 
-// North ridings being Athabasca, Turtleford, Meadow Lake, and Tisdale. 
+*/ 
+
+Q.districts = {
+    // --------------------------------------------------
+    // Regina — 2 seats
+    // --------------------------------------------------
+    regina: {
+        seats: 2,
+
+        demographics: {
+            workers: 30,
+            old_middle: 20,
+            new_middle: 20,
+            unemployed: 30,
+            farmers: 0,
+            farmhands: 0,
+            rural_workers: 0
+        },
+
+        constituencies: {
+            regina_1: {
+                seats: 1,
+                adjustments: {
+                    workers: 8,
+                    old_middle: -5,
+                    new_middle: 5,
+                    unemployed: -8
+                }
+            },
+
+            regina_2: {
+                seats: 1,
+                adjustments: {
+                    workers: -8,
+                    old_middle: 5,
+                    new_middle: -5,
+                    unemployed: 8
+                }
+            }
+        }
+    },
+
+    // --------------------------------------------------
+    // Saskatoon — 2 seats
+    // --------------------------------------------------
+    saskatoon: {
+        seats: 2,
+
+        demographics: {
+            workers: 25,
+            old_middle: 20,
+            new_middle: 25,
+            unemployed: 30,
+            farmers: 0,
+            farmhands: 0,
+            rural_workers: 0
+        },
+
+        constituencies: {
+            saskatoon_1: {
+                seats: 1,
+                adjustments: {
+                    workers: 6,
+                    old_middle: -2,
+                    new_middle: 3,
+                    unemployed: -7
+                }
+            },
+
+            saskatoon_2: {
+                seats: 1,
+                adjustments: {
+                    workers: -6,
+                    old_middle: 2,
+                    new_middle: -3,
+                    unemployed: 7
+                }
+            }
+        }
+    },
+
+    // --------------------------------------------------
+    // Moose Jaw — 2 seats
+    // --------------------------------------------------
+    moose_jaw: {
+        seats: 2,
+
+        demographics: {
+            workers: 40,
+            old_middle: 20,
+            new_middle: 10,
+            unemployed: 30,
+            farmers: 0,
+            farmhands: 0,
+            rural_workers: 0
+        },
+
+        constituencies: {
+            moose_jaw_1: {
+                seats: 1,
+                adjustments: {
+                    workers: 5,
+                    old_middle: -3,
+                    new_middle: 3,
+                    unemployed: -5
+                }
+            },
+
+            moose_jaw_2: {
+                seats: 1,
+                adjustments: {
+                    workers: -5,
+                    old_middle: 3,
+                    new_middle: -3,
+                    unemployed: 5
+                }
+            }
+        }
+    },
+
+    // --------------------------------------------------
+    // Prince Albert — 0 seats at start
+    // --------------------------------------------------
+    prince_albert: {
+        seats: 0,
+
+        demographics: {
+            workers: 35,
+            old_middle: 15,
+            new_middle: 20,
+            unemployed: 30,
+            farmers: 0,
+            farmhands: 0,
+            rural_workers: 0
+        },
+
+        constituencies: {}
+    },
+
+    // --------------------------------------------------
+    // Southwest — 11 seats
+    // --------------------------------------------------
+    southwest: {
+        seats: 11,
+
+        demographics: {
+            workers: 15,
+            old_middle: 0,
+            new_middle: 0,
+            unemployed: 0,
+            farmers: 40,
+            farmhands: 25,
+            rural_workers: 20
+        },
+
+        constituencies: {
+            southwest_towns: {
+                seats: 4,
+                adjustments: {
+                    workers: 5,
+                    farmers: -5
+                }
+            },
+
+            southwest_farmland: {
+                seats: 4,
+                adjustments: {
+                    workers: -5,
+                    farmers: 5
+                }
+            },
+
+            southwest_mixed: {
+                seats: 3,
+                adjustments: {}
+            }
+        }
+    },
+
+    // --------------------------------------------------
+    // Southeast — 13 seats
+    // --------------------------------------------------
+    southeast: {
+        seats: 13,
+
+        demographics: {
+            workers: 5,
+            old_middle: 0,
+            new_middle: 0,
+            unemployed: 20,
+            farmers: 40,
+            farmhands: 25,
+            rural_workers: 10
+        },
+
+        constituencies: {
+            southeast_towns: {
+                seats: 5,
+                adjustments: {
+                    workers: 4,
+                    rural_workers: -4
+                }
+            },
+
+            southeast_farmland: {
+                seats: 4,
+                adjustments: {
+                    workers: -5,
+                    rural_workers: 5
+                }
+            },
+
+            southeast_mixed: {
+                seats: 4,
+                adjustments: {}
+            }
+        }
+    },
+
+    // --------------------------------------------------
+    // North — 4 seats
+    // --------------------------------------------------
+    north: {
+        seats: 4,
+
+        demographics: {
+            workers: 20,
+            old_middle: 0,
+            new_middle: 0,
+            unemployed: 0,
+            farmers: 20,
+            farmhands: 20,
+            rural_workers: 40
+        },
+
+        constituencies: {
+            north_towns: {
+                seats: 2,
+                adjustments: {
+                    workers: 8,
+                    rural_workers: -8
+                }
+            },
+
+            north_rural: {
+                seats: 2,
+                adjustments: {
+                    workers: -8,
+                    rural_workers: 8
+                }
+            }
+        }
+    },
+
+    // --------------------------------------------------
+    // Central — 21 seats
+    // --------------------------------------------------
+    central: {
+        seats: 21,
+
+        demographics: {
+            workers: 15,
+            old_middle: 0,
+            new_middle: 0,
+            unemployed: 20,
+            farmers: 35,
+            farmhands: 15,
+            rural_workers: 15
+        },
+
+        constituencies: {
+            central_towns: {
+                seats: 3,
+                adjustments: {
+                    workers: 5,
+                    unemployed: 3,
+                    farmers: -5,
+                    farmhands: -1,
+                    rural_workers: -2
+                }
+            },
+
+            central_farmland: {
+                seats: 7,
+                adjustments: {
+                    workers: -5,
+                    unemployed: -3,
+                    farmers: 5,
+                    farmhands: 1,
+                    rural_workers: 2
+                }
+            },
+
+            central_farmland_2: {
+                seats: 4,
+                adjustments: {
+                    workers: -8,
+                    unemployed: -3,
+                    farmers: 13,
+                    farmhands: -5,
+                    rural_workers: 2
+                }
+            },
+
+            central_mixed: {
+                seats: 7,
+                adjustments: {}
+            }
+        }
+    }
+};
+
+// North ridings being Athabasca, Turtleford, Meadow Lake, and Tisdale?
 
 Q.seat_majority = 28; 
 Q.total_seats = 55; 
+Q.ccf_electoral_action = "Saw-off";
 
 function seatCount() {
     Q.total_seats = 0;
@@ -1025,7 +1273,7 @@ Q.moose_jaw_cps_seats = 2;
 
 //--------------------------------------------------------------
 /////////////////////////////////////////////////////////////////
-//                Dynamic Economy Data                         //
+//                        Economy Data                         //
 /////////////////////////////////////////////////////////////////
 //---------------------------------------------------------------
 

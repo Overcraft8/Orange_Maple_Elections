@@ -26,248 +26,497 @@ on-arrival: {!
 
 
 // Lots of this election code taken from the Beeshana Kelaya mod...
-Q.district_results_legislative = [];
 
+Q.district_results_legislative = [];
 Q.use_decimals = 1;
 
-// -------------------------------------------
-//          CLASS THINGS
-// -------------------------------------------
+// ----------------------------------------------
+// SAVE PREVIOUS RESULTS
+// ----------------------------------------------
 
 for (var party of Q.parties) {
-    Q['old_' + party + '_seats'] = Q[party + '_seats'];
-    Q['old_' + party + '_polls'] = Q[party + '_polls'];
+    Q["old_" + party + "_seats"] = Q[party + "_seats"];
+    Q["old_" + party + "_polls"] = Q[party + "_polls"];
 }
 
 
-// Recalculate total population and class population just in case
+// ----------------------------------------------
+// BUILD NESTED ELECTION GROUPS
+// Regional demographics + group adjustments
+// ----------------------------------------------
+
+var electionGroups = [];
+var groupsByRegion = {};
+
+for (var regionName in Q.districts) {
+    var regionData = Q.districts[regionName];
+
+    groupsByRegion[regionName] = [];
+
+    var baseline = regionData.demographics || regionData;
+    var constituencies = regionData.constituencies || {};
+    var constituencyNames = Object.keys(constituencies);
+
+    // Use nested groups if present.
+    if (constituencyNames.length > 0) {
+
+        for (var constituencyName of constituencyNames) {
+            var constituency = constituencies[constituencyName];
+
+            var seats = Math.max(
+                0,
+                Math.floor(Number(constituency.seats) || 0)
+            );
+
+            if (seats <= 0) continue;
+
+            var demographics = {};
+            var adjustments = constituency.adjustments || {};
+
+            for (var c of Q.classes) {
+                demographics[c] =
+                    (Number(baseline[c]) || 0) +
+                    (Number(adjustments[c]) || 0);
+            }
+
+            var group = {
+                region: regionName,
+                name: constituencyName,
+                key: constituencyName,
+                seats: seats,
+                demographics: demographics,
+                results: {}
+            };
+
+            electionGroups.push(group);
+            groupsByRegion[regionName].push(group);
+        }
+
+    } else {
+        // Backward compatibility for regions without nested groups.
+        var seats = Math.max(
+            0,
+            Math.floor(Number(regionData.seats) || 0)
+        );
+
+        if (seats <= 0) continue;
+
+        var demographics = {};
+
+        for (var c of Q.classes) {
+            demographics[c] = Number(baseline[c]) || 0;
+        }
+
+        var group = {
+            region: regionName,
+            name: regionName,
+            key: regionName,
+            seats: seats,
+            demographics: demographics,
+            results: {}
+        };
+
+        electionGroups.push(group);
+        groupsByRegion[regionName].push(group);
+    }
+}
+
+
+// ----------------------------------------------
+// CLASS POPULATION CALCULATIONS
+// Weight demographic profiles by represented seats
+// ----------------------------------------------
+
 Q.total_population = 0;
 
-// Let's get total population
 for (var c of Q.classes) {
-    Q[c + '_total_population'] = 0;
-    for (var d of Q.district_names) {
-        if (Q[d + '_' + c] !== undefined) {
-            Q[c + '_total_population'] += (Number(Q[d + '_' + c]) * Number(Q[d + '_seats'])) || 0;
-        }
-    }
-    Q.total_population += Q[c + '_total_population'];
+    Q[c + "_total_population"] = 0;
 }
 
-// Get percentage of population of each class
-for (var c of Q.classes) {
-    if (Q.total_population > 0) {
-        Q[c + '_population_percent'] = 100 * Q[c + '_total_population'] / Q.total_population;
-    } else {
-        Q[c + '_population_percent'] = 0;
+for (var group of electionGroups) {
+    for (var c of Q.classes) {
+        Q[c + "_total_population"] +=
+            group.demographics[c] * group.seats;
     }
-    console.log(c + ' population percent: ' + Q[c + '_population_percent']);
+}
+
+for (var c of Q.classes) {
+    Q.total_population += Q[c + "_total_population"];
+}
+
+for (var c of Q.classes) {
+    Q[c + "_population_percent"] =
+        Q.total_population > 0
+            ? 100 * Q[c + "_total_population"] / Q.total_population
+            : 0;
+
+    console.log(
+        c + " population percent: " + Q[c + "_population_percent"]
+    );
 }
 
 
-// Normalize class voting shares (0–100)
+// ----------------------------------------------
+// NORMALIZE CLASS VOTING SHARES
+// ----------------------------------------------
+
 for (var c of Q.classes) {
     var class_polls = 0;
+
     for (var party of Q.parties) {
-        if (Q[c + '_' + party] < 0) Q[c + '_' + party] = 0;
-        class_polls += Q[c + '_' + party];
+        if (Q[c + "_" + party] < 0) {
+            Q[c + "_" + party] = 0;
+        }
+
+        class_polls += Number(Q[c + "_" + party]) || 0;
     }
+
     for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalized'] = class_polls > 0 ? Q[c + '_' + party] / class_polls : 0;
+        Q[c + "_" + party + "_normalized"] =
+            class_polls > 0
+                ? (Number(Q[c + "_" + party]) || 0) / class_polls
+                : 0;
     }
 }
 
 
 // ----------------------------------------------
-//              Party Things
+// RESET ELECTION COUNTS
 // ----------------------------------------------
 
-
-
-// Reset seat counts
 for (var party of Q.parties) {
-    Q[party + '_seats'] = 0;
+    Q[party + "_seats"] = 0;
+    Q[party + "_contests"] = 0;
+    Q[party + "_raw_polls"] = 0;
+    Q[party + "_contested_votes"] = 0;
+    Q[party + "_national_votes"] = 0;
+}
+
+Q._total_votes_all_seats = 0;
+
+for (var regionName in Q.districts) {
+    var regionSeats = (groupsByRegion[regionName] || [])
+        .reduce(function(total, group) {
+            return total + group.seats;
+        }, 0);
+
+    Q[regionName + "_district_seats"] = regionSeats;
+
+    for (var party of Q.parties) {
+        Q[regionName + "_" + party + "_seats"] = 0;
+    }
 }
 
 
-for (var party of Q.parties) {
-    Q[party + '_contested_votes'] = 0; // votes in districts the party actually contested
-    Q[party + '_national_votes'] = 0;  // votes across all districts (zero where not contested)
+// ----------------------------------------------
+// DISTRIBUTE EACH PARTY'S RCR ACROSS GROUPS
+// Preserve the exact regional candidate total
+// ----------------------------------------------
+
+var groupCaps = {};
+
+for (var group of electionGroups) {
+    groupCaps[group.key] = {};
 }
-Q._total_votes_all_seats = 0; // denominator: sum of votes across all parties and all districts
 
+for (var regionName in Q.districts) {
+    var regionGroups = groupsByRegion[regionName] || [];
 
+    var regionSeats = regionGroups.reduce(function(total, group) {
+        return total + group.seats;
+    }, 0);
 
-// allocate seats function
-function allocateSeats(votes, totalSeats, maxSeats) {
-    var seats = {};
-    for (var p in votes) seats[p] = 0; // Set all party seats at 0
+    for (var party of Q.parties) {
+        var rawRCR =
+            Q[regionName + "_" + party + "_rcr"] !== undefined
+                ? Number(Q[regionName + "_" + party + "_rcr"])
+                : 1;
 
-    for (var s = 0; s < totalSeats; s++) { //Loop once per seat to allocate
-        var maxQ = -1;
-        var winner = null; // 'winning' party of the seat
-        for (var p in votes) {
+        if (!Number.isFinite(rawRCR)) rawRCR = 1;
 
-            // maxSeats being seats contested by the party in this district.
-            if (seats[p] >= maxSeats[p]) continue;
+        var rcr = Math.max(0, Math.min(1, rawRCR));
 
-            var q = votes[p] / (seats[p] + 1); // D'hondt quotient for each party
-            if (q > maxQ) { // If this party has the highest quotient so far, they are the current winner of the seat
-                maxQ = q; // Update maxQ to this party's quotient
-                winner = p; // Winner of the seat is the party with the highest quotient
+        // The regional target is the exact number of candidates.
+        var targetContests = Math.floor(regionSeats * rcr + 1e-9);
+
+        // Initially distribute candidates proportionally.
+        var plan = regionGroups.map(function(group) {
+            var quota = group.seats * rcr;
+            var floorQuota = Math.floor(quota);
+
+            return {
+                group: group,
+                contested: floorQuota,
+                remainder: quota - floorQuota
+            };
+        });
+
+        var assigned = plan.reduce(function(total, entry) {
+            return total + entry.contested;
+        }, 0);
+
+        // Distribute remaining candidates by largest remainder.
+        var ranked = plan.slice().sort(function(a, b) {
+            return (b.remainder - a.remainder) ||
+                   a.group.name.localeCompare(b.group.name);
+        });
+
+        var remaining = targetContests - assigned;
+
+        for (var i = 0; i < ranked.length && remaining > 0; i++) {
+            if (ranked[i].contested < ranked[i].group.seats) {
+                ranked[i].contested++;
+                remaining--;
             }
         }
-        // Increment winner only if a valid party eligible for seats was found
-        if (winner !== null) {
-            seats[winner]++;
+
+        for (var entry of plan) {
+            groupCaps[entry.group.key][party] = entry.contested;
         }
+
+        // Maintain the regional qualities used by your existing UI.
+        Q[regionName + "_" + party + "_contested"] = targetContests;
+        Q[party + "_contests"] += targetContests;
     }
-    return seats; //return final seat distribution for all parties contesting
 }
 
-// Loop over districts
-for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district_names
-    var district_seats = Q[d + '_seats'] || 0; // district_seats is that districts name + '_seats' (e.g. regina_seats) or 0 if that doesn't exist, changes each loop
-    Q[d + '_district_seats'] = district_seats; // store district seats in the old Q variable
-    if (d == 'regina') {
-        console.log("District:", d, "Seats:", district_seats);
+
+// ----------------------------------------------
+// SEAT ALLOCATION FUNCTION
+// Retain your existing D'Hondt allocator
+// ----------------------------------------------
+
+function allocateSeats(votes, totalSeats, maxSeats) {
+    var seats = {};
+
+    for (var p in votes) {
+        seats[p] = 0;
     }
 
-    var district_party_support = {}; // Dictionary to hold support for each party's support in this district
-    var max_seats_party = {}; // Maximum number of seats each party can get in the region
+    for (var s = 0; s < totalSeats; s++) {
+        var maxQ = -1;
+        var winner = null;
 
-    // Compute raw support per party in this region/district
+        for (var p in votes) {
+            if (seats[p] >= maxSeats[p]) continue;
+
+            var q = votes[p] / (seats[p] + 1);
+
+            if (q > maxQ) {
+                maxQ = q;
+                winner = p;
+            }
+        }
+
+        // Leave remaining seats vacant if no party has
+        // any candidate capacity remaining.
+        if (winner === null) break;
+
+        seats[winner]++;
+    }
+
+    return seats;
+}
+
+
+// ----------------------------------------------
+// CALCULATE EACH NESTED GROUP
+// ----------------------------------------------
+
+for (var group of electionGroups) {
+    var d = group.key;
+    var district_seats = group.seats;
+
+    Q[d + "_district_seats"] = district_seats;
+
+    var district_party_support = {};
+    var max_seats_party = {};
+
     for (var party of Q.parties) {
-
-        // rcr being percentage of seats being contested by the party
-        // region_candidate_ratio -> rcr
-        var rcr = Q[d + '_' + party + '_rcr'] !== undefined ? Q[d + '_' + party + '_rcr'] : 1.0;
-        rcr = Math.max(0, Math.min(1, rcr));
-        var contestedSeats = Math.floor(district_seats * rcr);
-        max_seats_party[party] = contestedSeats;
-
-
         var base_support = 0;
+
         for (var c of Q.classes) {
-            var class_share = Q[d + '_' + c] || 0; // Class share - proportion of class in the district
+            var class_share = group.demographics[c] || 0;
 
-            base_support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
+            base_support +=
+                class_share *
+                (Q[c + "_" + party + "_normalized"] || 0);
         }
 
-        // Squaring for FPTP simulation (rudimentary, ik)
-        console.log(party, base_support)
+        // Calculate the candidate limit for this group.
+        var max_candidates = groupCaps[d][party] || 0;
+        max_seats_party[party] = max_candidates;
 
-        var contestedRatio = district_seats > 0 ? contestedSeats / district_seats : 0;
-        var effective_support = base_support * contestedRatio;
+        Q[d + "_" + party + "_base_support"] = base_support;
 
-        // Use the actual slate size as the vote weight; RCR may round down.
-        var votes_for_party_in_district = base_support * contestedSeats;
-        Q[d + '_' + party + '_raw_support'] = votes_for_party_in_district;
+        // Candidate availability determines the vote contribution
+        // used for the estimated contested-candidate vote share.
+        var raw_support = base_support * max_candidates;
 
-        var party_contested_here = contestedSeats > 0;
+        Q[d + "_" + party + "_raw_support"] = raw_support;
 
-        Q[party + '_national_votes'] = (Q[party + '_national_votes'] || 0) + votes_for_party_in_district;
-        if (party_contested_here) {
-            Q[party + '_contested_votes'] = (Q[party + '_contested_votes'] || 0) + votes_for_party_in_district;
-        }
-        Q._total_votes_all_seats = (Q._total_votes_all_seats || 0) + votes_for_party_in_district;
+        Q[party + "_raw_polls"] += raw_support;
+        Q[party + "_contested_votes"] += raw_support;
+        Q[party + "_national_votes"] += raw_support;
+        Q._total_votes_all_seats += raw_support;
 
-        // FPTP Squared distortion
-        district_party_support[party] = effective_support * effective_support;
+        // Keep the existing squared-support distortion.
+        // RCR is applied as a cap, not a second popularity penalty.
+        district_party_support[party] =
+            base_support * base_support;
     }
 
-    Q[d + '_party_support'] = district_party_support; // Save FPTP distorted support for the district
+    Q[d + "_party_support"] = district_party_support;
 
-    // Normalize distorted votes to 1
-    var party_district_support = Object.values(district_party_support).reduce((a, b) => a + b, 0);
+    // Normalize squared support.
+    var party_district_support = Object.values(
+        district_party_support
+    ).reduce(function(a, b) {
+        return a + b;
+    }, 0);
+
     var district_polls = {};
+
     for (var party of Q.parties) {
-        district_polls[party] = party_district_support > 0 ? district_party_support[party] / party_district_support : 0;
+        district_polls[party] =
+            party_district_support > 0
+                ? district_party_support[party] / party_district_support
+                : 0;
     }
 
-    // Allocate seats
-    var result = allocateSeats(district_polls, district_seats, max_seats_party);
+    // Allocate the group's seats using the existing method.
+    var result = allocateSeats(
+        district_polls,
+        district_seats,
+        max_seats_party
+    );
 
-    // Store + add to party seat total
+    // Store group results and aggregate them into regional totals.
     for (var party of Q.parties) {
-        Q[d + '_' + party + '_seats'] = result[party]; //District-level seat results
-        Q[party + '_seats'] += result[party]; // Add to party's total seat count
+        var won = result[party] || 0;
+
+        Q[d + "_" + party + "_seats"] = won;
+        group.results[party] = won;
+
+        Q[party + "_seats"] += won;
+
+        if (group.key !== group.region) {
+            Q[group.region + "_" + party + "_seats"] += won;
+        } else {
+            Q[group.region + "_" + party + "_seats"] = won;
+        }
     }
 }
 
-// 
-for (var d of Q.district_names) {
 
-    var results = {}; // Soon to be dictionary
+// ----------------------------------------------
+// BUILD REGIONAL RESULTS
+// Keep the old name / seats / results interface
+// and add nested group detail.
+// ----------------------------------------------
+
+for (var regionName in Q.districts) {
+    var regionGroups = groupsByRegion[regionName] || [];
+
+    var regionSeats = regionGroups.reduce(function(total, group) {
+        return total + group.seats;
+    }, 0);
+
+    var regionResults = {};
+    var groupResults = [];
 
     for (var party of Q.parties) {
-        results[party] = Q[d + "_" + party + "_seats"] || 0; //results[specific party] is number of seats that specific party won in this district (or 0)
+        regionResults[party] =
+            Q[regionName + "_" + party + "_seats"] || 0;
     }
 
-    Q.district_results_legislative.push({ // Another dictionary (?) to hold all information for election results
-        name: d, // Name of district
-        seats: Q[d + '_district_seats'] || 0, // total seats in this district
-        results: results // Dictionary for this district's results by party
+    for (var group of regionGroups) {
+        groupResults.push({
+            name: group.name,
+            seats: group.seats,
+            results: group.results
+        });
+    }
+
+    Q.district_results_legislative.push({
+        name: regionName,
+        seats: regionSeats,
+        results: regionResults,
+        constituencies: groupResults
     });
 }
 
 console.log(Q.district_results_legislative);
 
-for (var party of Q.parties) {
-    var denom = Q._total_votes_all_seats || 1; 
-    Q[party + '_contested_only_pct'] = Math.round(((Q[party + '_contested_votes'] || 0) / denom) * 1000) / 10;
-    // also store a national pct for comparison (party votes across all districts / total votes)
-    Q[party + '_national_pct'] = Math.round(((Q[party + '_national_votes'] || 0) / denom) * 1000) / 10;
-}
 
+// ----------------------------------------------
+// CALCULATE SQUARED-SUPPORT SHARE
+// Weight each group by its number of seats.
+// ----------------------------------------------
 
-
-// Compute total vote share (party_r)
 var total_support = 0;
-for (var d of Q.district_names) {
-    total_support += Object.values(Q[d + '_party_support']).reduce((a,b)=>a+b,0);
+
+for (var group of electionGroups) {
+    var weights = Q[group.key + "_party_support"] || {};
+
+    var groupSupport = Object.values(weights).reduce(
+        function(a, b) {
+            return a + b;
+        }, 0
+    );
+
+    total_support += groupSupport * group.seats;
 }
 
 for (var party of Q.parties) {
     var party_support = 0;
-    for (var d of Q.district_names) {
-        party_support += Q[d + '_party_support'][party] || 0;
+
+    for (var group of electionGroups) {
+        var weights = Q[group.key + "_party_support"] || {};
+
+        party_support +=
+            (weights[party] || 0) * group.seats;
     }
 
-    // party_r = total vote share in percent
-    Q[party + '_r'] = total_support > 0 ? Math.round((party_support / total_support) * 1000)/10 : 0;
+    Q[party + "_r"] =
+        total_support > 0
+            ? Math.round((party_support / total_support) * 1000) / 10
+            : 0;
 
-    // Display
-    Q[party + '_r_disp'] = Q[party + '_r'].toFixed(1);
+    Q[party + "_r_disp"] = Q[party + "_r"].toFixed(1);
 }
 
-// ---------------------------------------------------------------------
-//                      Calculating voteshare!
-// ---------------------------------------------------------------------
 
-for (var party of Q.parties) {
-    Q[party + '_raw_polls'] = 0;
-    for (var d of Q.district_names) {
-        Q[party + '_raw_polls'] += Q[d + '_' + party + '_raw_support']
-    }
-}
-
+// ----------------------------------------------
+// CALCULATE ESTIMATED VOTE SHARE
+// Weighted by the number of candidates contested.
+// ----------------------------------------------
 
 var total_polls = 0;
 
 for (var party of Q.parties) {
-    total_polls += Q[party + '_raw_polls'];
+    total_polls += Q[party + "_raw_polls"];
 }
 
 for (var party of Q.parties) {
-    Q[party + '_polls'] = total_polls > 0 ? Math.round((Q[party + '_raw_polls'] / total_polls) * 1000)/10 : 0;
-    Q[party + 'vote_change'] = Q[party + '_polls'] - (Q['old_' + party + '_polls'] || 0);
+    Q[party + "_polls"] =
+        total_polls > 0
+            ? Math.round(
+                (Q[party + "_raw_polls"] / total_polls) * 1000
+            ) / 10
+            : 0;
+
+    Q[party + "vote_change"] =
+        Q[party + "_polls"] -
+        (Q["old_" + party + "_polls"] || 0);
 }
 
 console.log("Vote shares (party_polls):");
+
 for (var party of Q.parties) {
-    console.log(party, Q[party + '_polls']);
+    console.log(party, Q[party + "_polls"]);
 }
+
 
 // Q.lps_polls = Q.lps_polls.toFixed(1);
 // Q.ccf_polls = Q.ccf_polls.toFixed(1);

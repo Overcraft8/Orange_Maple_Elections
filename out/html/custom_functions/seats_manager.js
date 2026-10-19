@@ -123,12 +123,23 @@ window.electoral_strat = function(region, party) {
 window.get_party_total_contests = function(party) {
     var Q = window.dendryUI.dendryEngine.state.qualities;
     var total = 0;
+
     for (var region in Q.districts) {
         var seats = Q.districts[region].seats;
-        var rcr = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
+        var rcr = Q[region + '_' + party + '_rcr'] !== undefined
+            ? Q[region + '_' + party + '_rcr']
+            : 1;
+
         rcr = Math.max(0, Math.min(1, rcr));
-        total += Math.floor(seats * rcr);
+
+        var contested = Math.floor(seats * rcr);
+
+        // Store the regional count for the map.
+        Q[region + '_' + party + '_contested'] = contested;
+
+        total += contested;
     }
+
     Q[party + '_contests'] = total;
 };
 
@@ -139,36 +150,36 @@ window.electoral_map = function(party) {
         <div style="text-align:center;">Rural Ridings</div>
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
             <span>North (${Q.districts.north.seats} seats) : </span>
-            ${Q.north_contests}
+            ${Q["north_" + party + "_contested"] || 0}
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
             <span>Central (${Q.districts.central.seats} seats) : </span>
-            ${Q.central_contests}
+            ${Q["central_" + party + "_contested"] || 0}
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
             <span>Southwest (${Q.districts.southwest.seats} seats) : </span>
-            ${Q.southwest_contests}
+            ${Q["southwest_" + party + "_contested"] || 0}
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
             <span>Southeast (${Q.districts.southeast.seats} seats) : </span>
-            ${Q.southeast_contests}
+            ${Q["southeast_" + party + "_contested"] || 0}
         </div>
         <div style="text-align:center;">Urban Ridings</div>
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
             <span>Regina (${Q.districts.regina.seats} seats) : </span>
-            ${Q.regina_contests}
+            ${Q["regina_" + party + "_contested"] || 0}
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
             <span>Saskatoon (${Q.districts.saskatoon.seats} seats) : </span> 
-            ${Q.saskatoon_contests}
+            ${Q["saskatoon_" + party + "_contested"] || 0}
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
             <span>Moose Jaw (${Q.districts.moose_jaw.seats} seats) : </span>
-            ${Q.moose_jaw_contests}
+            ${Q["moose_jaw_" + party + "_contested"] || 0}
         </div>
         ${Q.districts.prince_albert.seats > 0 ? `
         <div style="display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap">
-            <span>Prince Albert (${Q.districts.prince_albert.seats} seats) : </span>${Q.prince_albert_contests}
+            <span>Prince Albert (${Q.districts.prince_albert.seats} seats) : </span>${Q["prince_albert_" + party + "_contested"] || 0}
         </div>
         ` : ''}
         The ${Q.party_names[party]} is currently contesting ${Q[party + '_contests']} of ${Q.total_seats} seats.`;

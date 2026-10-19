@@ -105,6 +105,7 @@ window.electoral_strat = function(region, party) {
      var Q = window.dendryUI.dendryEngine.state.qualities;
      var totalSeats = Q.districts[region].seats;
      var party_contesting_ratio = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
+     party_contesting_ratio = Math.max(0, Math.min(1, party_contesting_ratio));
      var contestedSeats = Math.floor(totalSeats * party_contesting_ratio);
      //Q[party + '_contests'] += contestedSeats;
      Q[region + '_' + party + '_contested'] = contestedSeats
@@ -125,6 +126,7 @@ window.get_party_total_contests = function(party) {
     for (var region in Q.districts) {
         var seats = Q.districts[region].seats;
         var rcr = Q[region + '_' + party + '_rcr'] !== undefined ? Q[region + '_' + party + '_rcr'] : 1;
+        rcr = Math.max(0, Math.min(1, rcr));
         total += Math.floor(seats * rcr);
     }
     Q[party + '_contests'] = total;

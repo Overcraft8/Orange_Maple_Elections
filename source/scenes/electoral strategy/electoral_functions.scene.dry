@@ -12,7 +12,7 @@ on-arrival: {!
         Q[region + '_' + party + '_rcr'] = 1;
     };
 
-    Q[region + '_' + party + '_rcr'] = Math.max(0, Q[region + '_' + party + '_rcr'] - 0.25);
+    Q[region + '_' + party + '_rcr'] = Math.min(1, Math.max(0, Q[region + '_' + party + '_rcr'] - 0.25));
 
     var contest_key = region + '_contests';
     Q[contest_key] = window.electoral_strat(region, party);
@@ -32,7 +32,7 @@ on-arrival: {!
         Q[region + '_' + party + '_rcr'] = 1;
     };
 
-    Q[region + '_' + party + '_rcr'] = Math.max(0, Q[region + '_' + party + '_rcr'] + 0.25);
+    Q[region + '_' + party + '_rcr'] = Math.min(1, Math.max(0, Q[region + '_' + party + '_rcr'] + 0.25));
 
     var contest_key = region + '_contests';
     Q[contest_key] = window.electoral_strat(region, party);

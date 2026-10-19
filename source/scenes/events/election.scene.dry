@@ -142,8 +142,9 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
         // rcr being percentage of seats being contested by the party
         // region_candidate_ratio -> rcr
         var rcr = Q[d + '_' + party + '_rcr'] !== undefined ? Q[d + '_' + party + '_rcr'] : 1.0;
-        var max_candidates = Math.floor(district_seats * rcr);
-        max_seats_party[party] = max_candidates;
+        rcr = Math.max(0, Math.min(1, rcr));
+        var contestedSeats = Math.floor(district_seats * rcr);
+        max_seats_party[party] = contestedSeats;
 
 
         var base_support = 0;
@@ -153,29 +154,23 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
             base_support += class_share * (Q[c + '_' + party + '_normalized'] || 0);
         }
 
-        Q[d + '_' + party + '_raw_support'] = base_support; // Store raw support for this party in this district
-
         // Squaring for FPTP simulation (rudimentary, ik)
         console.log(party, base_support)
 
-        var effective_support = base_support * rcr;
-        Q[d + '_' + party + '_raw_support'] = effective_support;
+        var contestedRatio = district_seats > 0 ? contestedSeats / district_seats : 0;
+        var effective_support = base_support * contestedRatio;
 
-        // --- BEGIN: minimal vote accumulation for contested-only popular vote ---
-        // treat effective_support as the vote proxy for this district/party
-        var votes_for_party_in_district = effective_support;
+        // Use the actual slate size as the vote weight; RCR may round down.
+        var votes_for_party_in_district = base_support * contestedSeats;
+        Q[d + '_' + party + '_raw_support'] = votes_for_party_in_district;
 
-        // was the party actually contesting at least one seat in this district?
-        var contestedSeats = Math.floor(district_seats * rcr);
         var party_contested_here = contestedSeats > 0;
 
-        // accumulate
         Q[party + '_national_votes'] = (Q[party + '_national_votes'] || 0) + votes_for_party_in_district;
         if (party_contested_here) {
             Q[party + '_contested_votes'] = (Q[party + '_contested_votes'] || 0) + votes_for_party_in_district;
         }
         Q._total_votes_all_seats = (Q._total_votes_all_seats || 0) + votes_for_party_in_district;
-        // --- END ---
 
         // FPTP Squared distortion
         district_party_support[party] = effective_support * effective_support;

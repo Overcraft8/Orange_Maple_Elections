@@ -20,8 +20,8 @@ on-arrival: {!
 
    Q.electoral_strategy_timer = 1;
 
-   window.get_party_total_contests(party);
-    Q.ccf_electoral_map = window.electoral_map(party);
+   window.get_party_total_contests('ccf');
+   Q.ccf_electoral_map = window.electoral_map('ccf');
 !}
 tags: electoral_affairs
 is-card: true
@@ -42,9 +42,21 @@ The electoral system of Saskatchewan makes it possibly advantageous for parties 
 - @electoral_strategy_finished: We have finished our electoral preparations!
 
 @full_slate
-title: Let's run a Full Slate
+title: Let's run with this slate!
 subtitle: -3 resources
-unavailable-subtitle: -3 resources, We should cancel our inter-party plans if we plan to run a full slate
+unavailable-subtitle: {!
+    var subtitle = ''; 
+    if (Q.resources < 3) {
+        subtitle += '-3 resources'
+    }
+    if (Q.cps_cooperation == 1 || Q.scps_cooperation == 1 || Q.cpc_s_cooperation == 1) {
+        if (Q.resources < 3>) {
+            subtitle += ', '
+        }
+        subtitle += 'We should cancel our inter-party plans if we plan to run a full slate'
+    }
+    return subtitle
+!}
 on-arrival: {!
     Object.keys(Q.districts).forEach(district => {
         Q[district + '_ccf_rcr'] = 1; 

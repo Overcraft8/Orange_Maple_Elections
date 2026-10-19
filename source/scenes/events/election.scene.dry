@@ -65,7 +65,7 @@ for (var c of Q.classes) {
 }
 
 
-// 1. Normalize class voting shares (0–100)
+// Normalize class voting shares (0–100)
 for (var c of Q.classes) {
     var class_polls = 0;
     for (var party of Q.parties) {
@@ -84,10 +84,19 @@ for (var c of Q.classes) {
 
 
 
-// 2. Reset seat counts
+// Reset seat counts
 for (var party of Q.parties) {
     Q[party + '_seats'] = 0;
 }
+
+
+for (var party of Q.parties) {
+    Q[party + '_contested_votes'] = 0; // votes in districts the party actually contested
+    Q[party + '_national_votes'] = 0;  // votes across all districts (zero where not contested)
+}
+Q._total_votes_all_seats = 0; // denominator: sum of votes across all parties and all districts
+
+
 
 // allocate seats function
 function allocateSeats(votes, totalSeats, maxSeats) {
@@ -116,7 +125,7 @@ function allocateSeats(votes, totalSeats, maxSeats) {
     return seats; //return final seat distribution for all parties contesting
 }
 
-// 4. Loop over districts
+// Loop over districts
 for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district_names
     var district_seats = Q[d + '_seats'] || 0; // district_seats is that districts name + '_seats' (e.g. regina_seats) or 0 if that doesn't exist, changes each loop
     Q[d + '_district_seats'] = district_seats; // store district seats in the old Q variable
@@ -151,6 +160,22 @@ for (var d of Q.district_names) { // Loop though 'd' for districts of Q.district
 
         var effective_support = base_support * rcr;
         Q[d + '_' + party + '_raw_support'] = effective_support;
+
+        // --- BEGIN: minimal vote accumulation for contested-only popular vote ---
+        // treat effective_support as the vote proxy for this district/party
+        var votes_for_party_in_district = effective_support;
+
+        // was the party actually contesting at least one seat in this district?
+        var contestedSeats = Math.floor(district_seats * rcr);
+        var party_contested_here = contestedSeats > 0;
+
+        // accumulate
+        Q[party + '_national_votes'] = (Q[party + '_national_votes'] || 0) + votes_for_party_in_district;
+        if (party_contested_here) {
+            Q[party + '_contested_votes'] = (Q[party + '_contested_votes'] || 0) + votes_for_party_in_district;
+        }
+        Q._total_votes_all_seats = (Q._total_votes_all_seats || 0) + votes_for_party_in_district;
+        // --- END ---
 
         // FPTP Squared distortion
         district_party_support[party] = effective_support * effective_support;
@@ -193,9 +218,16 @@ for (var d of Q.district_names) {
 
 console.log(Q.district_results_legislative);
 
+for (var party of Q.parties) {
+    var denom = Q._total_votes_all_seats || 1; 
+    Q[party + '_contested_only_pct'] = Math.round(((Q[party + '_contested_votes'] || 0) / denom) * 1000) / 10;
+    // also store a national pct for comparison (party votes across all districts / total votes)
+    Q[party + '_national_pct'] = Math.round(((Q[party + '_national_votes'] || 0) / denom) * 1000) / 10;
+}
 
 
-// 5. Compute total vote share (party_r)
+
+// Compute total vote share (party_r)
 var total_support = 0;
 for (var d of Q.district_names) {
     total_support += Object.values(Q[d + '_party_support']).reduce((a,b)=>a+b,0);
@@ -571,7 +603,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lps_name +]: {!</td><td>!} [+ lps_polls +]% {!</td><td>!} [+ lps_vote_change +] {!</td><td>!} [+ lps_seats +] {!</td><td>!} [+ seats_change_lps +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#7e741ab3'> </div> !} PPS: {!</td><td>!} [+ pps_polls +]% {!</td><td>!} [+ pps_vote_change +] {!</td><td>!} [+ pps_seats +] {!</td><td>!} [+ seats_change_pps +]  {!</td></tr>!}
+[? if year == 1932 and month >= 2 : {!<tr><td><div class="box" style='background-color:#7e741ab3'> </div> !} PPS: {!</td><td>!} [+ pps_polls +]% {!</td><td>!} [+ pps_vote_change +] {!</td><td>!} [+ pps_seats +] {!</td><td>!} [+ seats_change_pps +]  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#0055A5'> </div> !} CPS: {!</td><td>!} [+ cps_polls +]% {!</td><td>!} [+ cps_vote_change +] {!</td><td>!} [+ cps_seats +] {!</td><td>!} [+ seats_change_cps +] {!</td></tr>!}
  
@@ -591,7 +623,7 @@ go-to: coalition_menu
             {!<th>Seats</th>!}
             {!<th>CPC(S)</th>!}
             {!<th>!}[+ party_names.ccf +]{!</th>!}
-            {!<th>PPS</th>!}
+            [? if year == 1932 and month >= 2 : {!<th>PPS</th>!} ?]
             {!<th>LPS</th>!}
             {!<th>CPS</th>!}
             {!<th>Other</th>!}
@@ -602,7 +634,7 @@ go-to: coalition_menu
             {!<td>!}[+ reginaistrict_seats +]{!</td>!}
             {!<td>!}[+ regina_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ regina_ccf_seats +]{!</td>!}
-            {!<td>!}[+ regina_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ regina_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ regina_lps_seats +]{!</td>!}
             {!<td>!}[+ regina_cps_seats +]{!</td>!}
             {!<td>!}[+ regina_other_seats +]{!</td>!}
@@ -613,7 +645,7 @@ go-to: coalition_menu
             {!<td>!}[+ saskatoonistrict_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_ccf_seats +]{!</td>!}
-            {!<td>!}[+ saskatoon_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ saskatoon_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ saskatoon_lps_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_cps_seats +]{!</td>!}
             {!<td>!}[+ saskatoon_other_seats +]{!</td>!}
@@ -624,7 +656,7 @@ go-to: coalition_menu
             {!<td>!}[+ moosejaw_district_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_ccf_seats +]{!</td>!}
-            {!<td>!}[+ moosejaw_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ moosejaw_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ moosejaw_lps_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_cps_seats +]{!</td>!}
             {!<td>!}[+ moosejaw_other_seats +]{!</td>!}
@@ -635,7 +667,7 @@ go-to: coalition_menu
             {!<td>!}[+ princealbert_district_seats +]{!</td>!}
             {!<td>!}[+ princealbert_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ princealbert_ccf_seats +]{!</td>!}
-            {!<td>!}[+ princealbert_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ princealbert_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ princealbert_lps_seats +]{!</td>!}
             {!<td>!}[+ princealbert_cps_seats +]{!</td>!}
             {!<td>!}[+ princealbert_other_seats +]{!</td>!}
@@ -646,7 +678,7 @@ go-to: coalition_menu
             {!<td>!}[+ southwestistrict_seats +]{!</td>!}
             {!<td>!}[+ southwest_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ southwest_ccf_seats +]{!</td>!}
-            {!<td>!}[+ southwest_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ southwest_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ southwest_lps_seats +]{!</td>!}
             {!<td>!}[+ southwest_cps_seats +]{!</td>!}
             {!<td>!}[+ southwest_other_seats +]{!</td>!}
@@ -657,7 +689,7 @@ go-to: coalition_menu
             {!<td>!}[+ southeastistrict_seats +]{!</td>!}
             {!<td>!}[+ southeast_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ southeast_ccf_seats +]{!</td>!}
-            {!<td>!}[+ southeast_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ southeast_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ southeast_lps_seats +]{!</td>!}
             {!<td>!}[+ southeast_cps_seats +]{!</td>!}
             {!<td>!}[+ southeast_other_seats +]{!</td>!}
@@ -668,7 +700,7 @@ go-to: coalition_menu
             {!<td>!}[+ centralistrict_seats +]{!</td>!}
             {!<td>!}[+ central_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ central_ccf_seats +]{!</td>!}
-            {!<td>!}[+ central_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ central_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ central_lps_seats +]{!</td>!}
             {!<td>!}[+ central_cps_seats +]{!</td>!}
             {!<td>!}[+ central_other_seats +]{!</td>!}
@@ -679,7 +711,7 @@ go-to: coalition_menu
             {!<td>!}[+ northistrict_seats +]{!</td>!}
             {!<td>!}[+ north_cpc_s_seats +]{!</td>!}
             {!<td>!}[+ north_ccf_seats +]{!</td>!}
-            {!<td>!}[+ north_pps_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ north_pps_seats +]{!</td>!} ?]
             {!<td>!}[+ north_lps_seats +]{!</td>!}
             {!<td>!}[+ north_cps_seats +]{!</td>!}
             {!<td>!}[+ north_other_seats +]{!</td>!}

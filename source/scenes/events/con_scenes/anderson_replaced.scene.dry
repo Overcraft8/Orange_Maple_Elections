@@ -27,9 +27,9 @@ on-arrival: cps_leader = 'Diefenbaker'; cps_ideology = 'Red Toryism'
 
 John Diefenbaker is a wildcard. With a background as a defence lawyer, he has been unsuccessful in attempts to enter the Legislature despite close results in 1929. Still, he is the standing President of the CPS. 
 
-He represents a strand of the party that supports most strongly a strong welfare system and increased government intervention; colloquially, the Red Tories or a form of Paternalistic Conservatism. He is expected to draft a Red Tory reform-programme for the CPS as a middle-ground between the LPS and [+ party_names.ccf +] platforms. Whether it will succeed in attracting the masses of disaffected people remains to be seen. 
+He represents a strand of the party that supports most strongly a strong welfare system and increased government intervention; colloquially, the Red Tories or a form of Paternalistic Conservatism. He is expected to draft a Red Tory-minded reform package for the CPS as a middle-ground between the LPS and [+ party_names.ccf +] platforms. Whether it will succeed in attracting the masses of disaffected people remains to be seen though he is certainly a marked difference from Anderson.
 
-The devasting loss means that he will likely collaborate with us to ensure his party's survival, whether he wants to or not. We can expect him to participate in saw-offs with us and support most reform-minded legislation introduced. 
+The marginalization of the CPS in the recent election means that he will likely collaborate with us to ensure his party's survival, whether he wants to or not. We can expect him to participate in saw-offs with us and support most reform-minded legislation we introduce. 
 
 @macpherson_cps
 subtitle: Establishment Toryism yet again?
@@ -53,6 +53,6 @@ on-arrival: cps_leader = 'Bryant'; cps_ideology = 'Nativist Conservatism'
 
 = Bryant
 
-James Fraser Bryant is a former Cabinet member of the Anderson government whose leadership signals a continuation of Anderson's social policies. He is primarily known for rewriting the School Act to prohibit religious symbols in schools and strengthen the usage of English as the language of instruction. Like the other Tories, he is in favour of de-politicizing the civil service, primarily as a measure to prevent another LPS machine from running day-to-day operations. He is among many Saskatchewanians who engaged with the KKK.
+James Fraser Bryant is a former Cabinet member of the Anderson government whose leadership signals a continuation of Anderson's social policies. He is primarily known for rewriting the School Act to prohibit religious symbols in schools and strengthen the usage of English as the language of instruction. Like the other Tories, he is in favour of de-politicizing the civil service, pragmatically as a measure to prevent another LPS machine from running day-to-day operations. He is among many Saskatchewanians who engaged with the KKK.
 
 His strong British-nativist stance earns him a swathe of attacks by the Liberal Party, likening him to the worst of the KKK. His election consolidates the traditionalist factions of the CPS, committed to making social issues a prominent feature in the campaign alongside anti-corruption policies. Bryant will likely use us as a punching bag, out of opposition to our Socialist and Socialistic tendencies. 

@@ -17,6 +17,7 @@ on-arrival: {!
     var contest_key = region + '_contests';
     Q[contest_key] = window.electoral_strat(region, party);
 
+    window.get_party_total_contests(party);
     Q.ccf_electoral_map = window.electoral_map(party);
 !}
 go-to: ccf_electoral_strategy
@@ -36,6 +37,7 @@ on-arrival: {!
     var contest_key = region + '_contests';
     Q[contest_key] = window.electoral_strat(region, party);
 
+    window.get_party_total_contests(party);
     Q.ccf_electoral_map = window.electoral_map(party);
 !}
 go-to: ccf_electoral_strategy

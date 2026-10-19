@@ -20,8 +20,8 @@ on-arrival: {!
 
    Q.electoral_strategy_timer = 1;
 
-   Q.ccf_electoral_map = window.electoral_map('ccf');
-
+   window.get_party_total_contests(party);
+    Q.ccf_electoral_map = window.electoral_map(party);
 !}
 tags: electoral_affairs
 is-card: true

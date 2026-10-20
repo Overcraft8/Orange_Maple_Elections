@@ -56,6 +56,7 @@ on-arrival: {!
     Q.lps_seats += 1;
     Q.cps_seats += 2; 
 
+// Needs to be updated for west and east central
     Q.central_pps_seats -= 2;
     Q.central_ccf_seats += 1; 
     Q.central_lps_seats += 1; 

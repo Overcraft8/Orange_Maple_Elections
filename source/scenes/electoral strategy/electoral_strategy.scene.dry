@@ -10,7 +10,8 @@ on-arrival: {!
     };
 
    Q.north_contests = window.electoral_strat('north', 'ccf');
-   Q.central_contests = window.electoral_strat('central', 'ccf'); 
+   Q.east_central_contests = window.electoral_strat('east_central', 'ccf');
+   Q.west_central_contests = window.electoral_strat('west_central', 'ccf'); 
    Q.southwest_contests = window.electoral_strat('southwest', 'ccf'); 
    Q.southeast_contests = window.electoral_strat('southeast', 'ccf'); 
    Q.saskatoon_contests = window.electoral_strat('saskatoon', 'ccf'); 

@@ -261,8 +261,8 @@ if (Q.sta_strength) {
 if (Q.tlc_strength) {
     Q.tlc_strength_2 = Q.tlc_strength.toFixed(2);
 }
-if (Q.ccl_strength) {
-    Q.ccl_strength_2 = Q.ccl_strength.toFixed(2);
+if (Q.accl_strength) {
+    Q.accl_strength_2 = Q.accl_strength.toFixed(2);
 }
 if (Q.ccym_strength) {
     Q.ccym_strength_2 = Q.ccym_strength.toFixed(2);
@@ -305,10 +305,10 @@ TLC Militancy: [+ tlc_militancy : militancy +]<br>
 TLC Strength: [+ tlc_strength +] Thousand<br>
 ?]
 
-[? if ccl_affiliated == 0:
-CCL Relations: [+ ccl_relations : relationships +]<br>
-CCL Militancy: [+ ccl_militancy : militancy +]<br>
-CCL Strength: [+ ccl_strength +] Thousand<br>
+[? if accl_affiliated == 0:
+ACCL Relations: [+ accl_relations : relationships +]<br>
+ACCL Militancy: [+ accl_militancy : militancy +]<br>
+ACCL Strength: [+ accl_strength +] Thousand<br>
 ?]
 
 

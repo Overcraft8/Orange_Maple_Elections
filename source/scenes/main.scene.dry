@@ -78,6 +78,6 @@ is-deck: true
 title: Electoral Strategy
 card-image: img/graphics/new_order_ccf.jpg
 is-deck: true
-view-if: electoral_strategy_timer <= 0
+choose-if: electoral_strategy_timer <= 0
 
 - #electoral_affairs

@@ -13,7 +13,7 @@ In addition to being a political party, the [+ party_names.ccf +] is a social wo
 - @ufc_rel: Improve relations with the UFC(SS)
 - @sta_rel: Improve relations with the Teacher's union
 - @tlc_rel: Improve relations with the Trades and Labour Congress
-- @ccl_rel: Improve relations with the Canadian Congress of Labour. 
+- @accl_rel: Improve relations with the Canadian Congress of Labour. 
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
@@ -44,7 +44,7 @@ The TLC has a strong presence in Saskatchewan.
 
 We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
 
-@ccl_rel
+@accl_rel
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources

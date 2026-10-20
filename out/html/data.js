@@ -119,8 +119,8 @@ const tooltipList = [{
     explanationText: "The Trades and Labour Congress of Canada "
 },
 {
-    searchString: "CCL", 
-    explanationText: "The Canadian Congress of Labour "
+    searchString: "ACCL", 
+    explanationText: "All-Canadian Congress of Labour "
 },
 {
     searchString: "CLL", 
@@ -220,7 +220,7 @@ const colourList = [{
         style: "color: #b33a3a; font-weight: bold;"
     },
     {
-        word: "CCL", 
+        word: "ACCL", 
         style: "color: #b33a3a; font-weight: bold;"
     },
     {

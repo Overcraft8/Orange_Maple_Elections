@@ -941,15 +941,26 @@ go-to: coalition_menu
             [? if scps_formed : {!<td>!}[+ southeast_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
-            {!<td>!}**Central**{!</td>!}
-            {!<td>!}[+ centralistrict_seats +]{!</td>!}
-            {!<td>!}[+ central_cpc_s_seats +]{!</td>!}
-            {!<td>!}[+ central_ccf_seats +]{!</td>!}
-            [? if year == 1932 and month >= 2 : {!<td>!}[+ central_pps_seats +]{!</td>!} ?]
-            {!<td>!}[+ central_lps_seats +]{!</td>!}
-            {!<td>!}[+ central_cps_seats +]{!</td>!}
-            {!<td>!}[+ central_other_seats +]{!</td>!}
-            [? if scps_formed : {!<td>!}[+ central_scps_seats +]{!</td>!} ?]
+            {!<td>!}**East-Central**{!</td>!}
+            {!<td>!}[+ east_central_ccf_seats +]{!</td>!}
+            {!<td>!}[+ east_central_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ east_central_ccf_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ east_central_pps_seats +]{!</td>!} ?]
+            {!<td>!}[+ east_central_lps_seats +]{!</td>!}
+            {!<td>!}[+ east_central_cps_seats +]{!</td>!}
+            {!<td>!}[+ east_central_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ east_central_scps_seats +]{!</td>!} ?]
+        {!</tr>!}
+        {!<tr>!}
+            {!<td>!}**West-Central**{!</td>!}
+            {!<td>!}[+ west_central_ccf_seats +]{!</td>!}
+            {!<td>!}[+ west_central_cpc_s_seats +]{!</td>!}
+            {!<td>!}[+ west_central_ccf_seats +]{!</td>!}
+            [? if year == 1932 and month >= 2 : {!<td>!}[+ west_central_pps_seats +]{!</td>!} ?]
+            {!<td>!}[+ west_central_lps_seats +]{!</td>!}
+            {!<td>!}[+ west_central_cps_seats +]{!</td>!}
+            {!<td>!}[+ west_central_other_seats +]{!</td>!}
+            [? if scps_formed : {!<td>!}[+ west_central_scps_seats +]{!</td>!} ?]
         {!</tr>!}
         {!<tr>!}
             {!<td>!}**North**{!</td>!}

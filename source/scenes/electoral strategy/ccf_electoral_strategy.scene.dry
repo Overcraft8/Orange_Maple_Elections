@@ -10,7 +10,8 @@ on-arrival: {!
 
 - @ccf_election_action: What action are we planning to do?
 - @ccf_north: [+ ccf_electoral_action +] candidates in the North
-- @ccf_central: [+ ccf_electoral_action +] candidates in the Central Region
+- @ccf_east_central: [+ ccf_electoral_action +] candidates in the East-Central Region
+- @ccf_west_central: [+ ccf_electoral_action +] candidates in the West-Central Region
 - @ccf_southwest: [+ ccf_electoral_action +] candidates in the Southwest
 - @ccf_southeast: [+ ccf_electoral_action +] candidates in the Southeast
 - @ccf_saskatoon: [+ ccf_electoral_action +] candidates in Saskatoon
@@ -48,8 +49,13 @@ on-arrival: region_electoral = 'north'
 go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
 
 
-@ccf_central
-on-arrival: region_electoral = 'central'
+@ccf_east_central
+on-arrival: region_electoral = 'east_central'
+go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
+
+
+@ccf_west_central
+on-arrival: region_electoral = 'west_central'
 go-to: electoral_functions.saw_offs if ccf_electoral_action == 'Saw-off'; electoral_functions.add_candidates if ccf_electoral_action == 'Add Candidates'
 
 

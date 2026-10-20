@@ -676,9 +676,9 @@ Q.tlc_relations = 40;
 Q.tlc_militancy = 0.20;
 Q.tlc_strength = 30.00;
 
-Q.ccl_relations = 0;
-Q.ccl_militancy = 0.20;
-Q.ccl_strength = 20.00;
+Q.accl_relations = 0;
+Q.accl_militancy = 0.20;
+Q.accl_strength = 20.00;
 
 
 Q.cll_in_government = 0;
@@ -1059,10 +1059,10 @@ Q.districts = {
     },
 
     // --------------------------------------------------
-    // Central — 21 seats
+    // East Central — 10 seats
     // --------------------------------------------------
-    central: {
-        seats: 21,
+    east_central: {
+        seats: 10,
 
         demographics: {
             workers: 15,
@@ -1075,8 +1075,8 @@ Q.districts = {
         },
 
         constituencies: {
-            central_towns: {
-                seats: 3,
+            east_central_towns: {
+                seats: 4,
                 adjustments: {
                     workers: 5,
                     unemployed: 3,
@@ -1086,8 +1086,8 @@ Q.districts = {
                 }
             },
 
-            central_farmland: {
-                seats: 7,
+            east_central_farmland: {
+                seats: 5,
                 adjustments: {
                     workers: -5,
                     unemployed: -3,
@@ -1097,7 +1097,53 @@ Q.districts = {
                 }
             },
 
-            central_farmland_2: {
+            east_central_mixed: {
+                seats: 1,
+                adjustments: {}
+            }
+        }
+    },
+
+    // --------------------------------------------------
+    // West Central — 10 seats
+    // --------------------------------------------------
+    west_central : {
+        seats: 11,
+
+        demographics: {
+            workers: 15,
+            old_middle: 0,
+            new_middle: 0,
+            unemployed: 20,
+            farmers: 35,
+            farmhands: 15,
+            rural_workers: 15
+        },
+
+        constituencies: {
+            west_central_towns: {
+                seats: 2,
+                adjustments: {
+                    workers: 5,
+                    unemployed: 3,
+                    farmers: -5,
+                    farmhands: -1,
+                    rural_workers: -2
+                }
+            },
+
+            west_central_farmland: {
+                seats: 3,
+                adjustments: {
+                    workers: -5,
+                    unemployed: -3,
+                    farmers: 5,
+                    farmhands: 1,
+                    rural_workers: 2
+                }
+            },
+
+            west_central_farmland_2: {
                 seats: 4,
                 adjustments: {
                     workers: -8,
@@ -1109,7 +1155,7 @@ Q.districts = {
             },
 
             central_mixed: {
-                seats: 7,
+                seats: 2,
                 adjustments: {}
             }
         }
@@ -1253,10 +1299,15 @@ Q.saskatoon_cps_seats = 2;
 
 Q.north_lps_seats = 2; 
 
-Q.central_lps_seats = 15; 
-Q.central_cps_seats = 3; 
-Q.central_other_seats = 3; 
-Q.central_pps_seats = 2; 
+Q.east_central_lps_seats = 7; 
+Q.east_central_cps_seats = 2; 
+Q.east_central_other_seats = 1; 
+Q.east_central_pps_seats = 1; 
+
+Q.west_central_lps_seats = 8; 
+Q.west_central_cps_seats = 1; 
+Q.west_central_other_seats = 2; 
+Q.west_central_pps_seats = 1; 
 
 Q.southwest_cps_seats = 8;
 Q.southwest_lps_seats = 5; 

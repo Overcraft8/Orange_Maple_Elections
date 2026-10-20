@@ -29,7 +29,7 @@ Q.enemies = "SCPS and CPC(S)";
 Q.managerial_strength += 2; 
 Q.moderate_strength += 3; 
 Q.moderate_dissent -= 3; 
-Q.radical_dissent += 3; 
+Q.left_hardliner_dissent += 3; 
 Q.farmers_cpc_s -= 2;
 Q.farmers_scps -= 2;
 Q.workers_cpc_s -= 2; 
@@ -41,7 +41,7 @@ Q.scps_relation -= 5
 Attacking Social Credit and 
 
 @anti_scps
-on-arrival: enemies = "SCPS"; radical_strength += 5; radical_dissent -= 5; workers_scps -= 3; workers_scps -= 3;
+on-arrival: enemies = "SCPS"; left_hardliner_strength += 5; left_hardliner_dissent -= 5; workers_scps -= 3; workers_scps -= 3;
 view-if: year >= 1935
 
 Social Credit is a strong populist movement, more amenable to the economic conditions of farmer-dominated Saskatchewan in some aspects than us. It seems a wise choice to target them. 
@@ -53,11 +53,11 @@ on-arrival: enemies = "LPS"; scps_urgency += 1; workers_lps -= 2; farmers_lps -=
 [? if scps_urgency == 0 or scps_seats < 10 : The SCPS is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if scps_urgency > 0 and scps_seats >= 10 : The SCPSs are the most urgent problem for us to deal with. ?]
 
 @anti_cpc_s
-on-arrival: enemies = "CPC(S)"; managerial_strength += 5; radical_dissent += 8; managerial_dissent -= 5; cpc_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cpc_s -= 4;
+on-arrival: enemies = "CPC(S)"; managerial_strength += 5; left_hardliner_dissent += 8; managerial_dissent -= 5; cpc_s_relation -= 15; cps_relation += 5; pps_relation += 5; workers_cpc_s -= 4;
 
 The party would earn much from distancing itself from the electorally-poisionous Communists
 
 @anti_establishment
-on-arrival: enemies = "establishment parties"; radical_strength += 8; radical_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cpc_s_relation += 5; managerial_dissent += 8; moderate_dissent += 8; workers_pps -= 3; coalition_dissent += 1
+on-arrival: enemies = "establishment parties"; left_hardliner_strength += 8; left_hardliner_dissent -= 5; cps_relation -= 5; pps_relation -= 5; cpc_s_relation += 5; managerial_dissent += 8; moderate_dissent += 8; workers_pps -= 3; coalition_dissent += 1
 
 Targetting the old-line parties earns us populist goodwill.

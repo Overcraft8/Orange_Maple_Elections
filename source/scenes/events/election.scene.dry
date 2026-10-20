@@ -26,6 +26,7 @@ on-arrival: {!
 
 
 // Lots of this election code taken from the Beeshana Kelaya mod...
+// Now also ai
 
 Q.district_results_legislative = [];
 Q.use_decimals = 1;

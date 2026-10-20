@@ -30,7 +30,7 @@ The name of the new party is highly significant. Delegates from BC, with backgro
 
 @party_names_spc
 subtitle: Supported by the BC Delegation
-on-arrival: ccf_bc_relation += 5; radical_strength += 3; radical_dissent -= 3; moderate_strength -= 3; moderate_dissent += 4
+on-arrival: ccf_bc_relation += 5; left_hardliner_strength += 3; left_hardliner_dissent -= 3; moderate_strength -= 3; moderate_dissent += 4
 go-to: attend_ccf_formation
 face-image: img/organizations/SPC_logo.png
 

@@ -34,7 +34,7 @@ To whom should we send aid?
 @manitoba_ccf_relations
 subtitle: -1 resources
 choose-if: resources >= 1
-on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources -= 1; moderate_strength += 5; moderate_dissent -= 10; radical_dissent += 5
+on-arrival: ccf_m_relation += 5; ccf_m_strength += 5; resources -= 1; moderate_strength += 5; moderate_dissent -= 10; left_hardliner_dissent += 5
 
 The Manitoba CCF is a more moderate wing of the CCF and in somewhat of a fusion/struggle with the provincial ILP. It remains to be seen which of the two will become the dominant force of the democratic left in Manitoba. 
 
@@ -45,7 +45,7 @@ The Manitoba wing is thankful for our aid.
 @bc_ccf_relations
 subtitle: -1 resources
 choose-if: resources >= 1
-on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1; radical_strength += 8; radical_dissent -= 10; moderate_dissent += 10
+on-arrival: ccf_bc_relation += 5; ccf_bc_strength += 5; resources -= 1; left_hardliner_strength += 8; left_hardliner_dissent -= 10; moderate_dissent += 10
 
 The British Columbia CCF is a more radical wing of the CCF, influenced by it's roots in the Socialist tradition that predated the CCF through the Socialist Party of British Columbia (SPBC) and various provincial Labour parties. 
 

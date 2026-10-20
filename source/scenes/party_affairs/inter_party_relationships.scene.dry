@@ -36,14 +36,14 @@ on-arrival: resources -= 1; cpc_s_inter_party_seen += 1
 go-to: cpc_s_unity if cpc_s_unity = 1; cpc_s_social_fascism if cpc_s_unity = 0
 
 @cpc_s_unity
-on-arrival: cpc_s_relation += 5*(1 - dissent); radical_dissent -= 3; radical_strength += 5; 
+on-arrival: cpc_s_relation += 5*(1 - dissent); left_hardliner_dissent -= 3; left_hardliner_strength += 5; 
 
 The Communists welcome our attempt to reach out to them. 
 
 [? if ccf_unity == 0 : They are hopeful that we will join their Unity Front movement as a broad coalition dedicated to unseating the 'reactionary' dominant Liberals. ?]
 
 @cpc_s_social_fascism
-on-arrival: cpc_s_relation += 2*(1 - dissent); radical_dissent -= 3; radical_strength += 5; 
+on-arrival: cpc_s_relation += 2*(1 - dissent); left_hardliner_dissent -= 3; left_hardliner_strength += 5; 
 
 The Communists are not particularly thrilled that we have chosen to reach out to them. Perhaps Moscow has ordered them not to engage with us?
 

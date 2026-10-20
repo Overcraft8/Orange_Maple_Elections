@@ -307,11 +307,12 @@ img.inline-img.icon {
 #tools_wrapper {
   position: absolute;
   width: 100%;
-  max-width: 80em;
+  max-width: 76em;
   left: 0;
   right: 0;
   margin: 0 auto;
   pointer-events: none;
+  
 }
 
 .tools {
@@ -747,10 +748,15 @@ img {
 }
   
   #content {
-      position: static;
-      font-size: 1.2em;
-      line-height: 130%;
-      padding: 1em 1em 1.5em 1em;
+    position: static;
+    font-size: 1.2em;
+    line-height: 130%;
+    padding: 1em 1em 1.5em 1em;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
   }
   #qualities {
       font-size: 0.85em;
@@ -773,8 +779,17 @@ img {
   }
   #mid_panel {
     font-size: 0.7em;
-    width: auto;
     margin: 0 1.2em;
+     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 0.5em;
+  }
+  #center_panel_holder {
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
   }
 
   /* cards are smaller on mobile */

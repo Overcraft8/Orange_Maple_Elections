@@ -297,8 +297,8 @@ Dissent: [+ labour_dissent : dissent +]<br>
 
 [? if 1 == 1 :
 <span class="tooltip-text" title="A faction of radical CCF(SS)ers. Most of them have ties to the CPC(S)." style="color: #7b1616;">**Far Left**</span><br> 
-Strength: [+ radical_strength : strength +]<br> 
-Dissent: [+ radical_dissent : dissent +]<br>
+Strength: [+ left_hardliner_strength : strength +]<br> 
+Dissent: [+ left_hardliner_dissent : dissent +]<br>
 ?]
 
 [? if 1 == 1 : 

@@ -80,6 +80,7 @@ MacphersonMA.jpg - https://commons.wikimedia.org/wiki/File:Murdoch_Alexander_Mac
 
 liberal_target_ad.png - https://archive.org/details/P011067/P011067/
 forward_with_ccf.jpg - https://commons.wikimedia.org/wiki/File:Flag-Billboard-Forward_with_CCF,_1944.jpg
+cps_platform.png - https://archive.org/details/P004290
 
 
 // -----------------------------------

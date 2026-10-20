@@ -352,7 +352,7 @@ const colourList = [{
         style: "color: #0055A5; font-weight: bold;"
     },
     {
-        word: ['Red Tory', 'Red Tories'], 
+        word: ['Red Tory', 'Red Tories', 'Red Toryism'], 
         style: "color: #b7227b; font-weight: bold;"
     },
 ];

@@ -2102,7 +2102,7 @@ The Cooperative Coalition remains a contentious topic. Broadly, it maintained a 
 
 Regardless, these failures and successes would soon become forgotten by the onset of the 'Dirty Thirties', a wave of intense drought, and the Great Depression, both of which were cataclysmic to the province. In the pursuing years, both labour and farmer organizations would radicalize. In 1931, RNWMP officers shot three miners in a strike at the coal mine near Bienfait. The FUL, a farmer's organization acting as a front for the CPC(S) used militant tactics to protect farmer's from foreclosure. Perhaps most significantly, the FLP was formed. 
 
-- @flp_intro: The birth of the FLP
+- @root.flp_intro: The birth of the FLP
 - @return: Return
 
 @flp_intro
@@ -2133,7 +2133,7 @@ The most surprising result, however, was the complete and dismal shut-out of the
 
 High hopes for an early FLP victory were thus shut down. The only road now would be a long and arduous one, filled with struggle. 
 
-- @1934-1944: The CCF Blossoms
+- @root.1934-1944: The CCF Blossoms
 - @return: Return 
 
 @1934-1944
@@ -2168,7 +2168,7 @@ The 1944 election would prove to be a watershed moment in Saskatchewan history. 
 
 At last, it seemed, the CCF would revel in the fruits of their labour. 
 
-- @1944-1961: The Douglas Era
+- @root.1944-1961: The Douglas Era
 - @return: Return
 
 @1944-1961

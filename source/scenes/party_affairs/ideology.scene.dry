@@ -16,7 +16,7 @@ The [+ party_names.ccf +] is torn between many different ideological currents. W
 
 - @class_struggle: We must maintain a purely Socialist movement, aimed at the creation of a true Cooperative Commonwealth. 
 - @managerial: Our main goal should be to exercise Democratic Socialism in government where we can. 
-- @reform: We should attempt to limit our excesses to improve our electability and cards in electoral negotiating. 
+- @reform: We should attempt to limit our excesses to improve our electability. 
 - @agrarian: The plight of the struggling farmers will be our calling.
 - @labour: We should work with the trade unions to improve the lives of workers.
 - @easy_discard
@@ -31,9 +31,16 @@ if (Q.ideology && Q.ideology != "left") {
 go-to: changed if changed = 1
 on-departure: ideology = "left"; left_hardliner_strength += 10; communist_coalition += 1; left_hardliner_dissent -= 5; pps_relation -= 3; cps_relation -= 5; nationalization_support += 1; cpc_s_relation += 3
 
-The hardliner left of the party supports a course of class struggle among farmers and workers alike, and cooperation with Communists where necessary. 
+The hardliner left of the party supports a course of class struggle among farmers and workers alike, aiming to transform the province into a Socialist beachead. They view cooperation with less-Socialist reform movements with skepticism and are willing to cooperate with Communists on a case-by-case basis. 
 
 [? if 1 == 1: The election of the CLL to the City Council and Mayorship of Regina demonstrates that Social Democrats and Communists are not necessarily enemies. ?]
+
+
+@managerial
+subtitle: The Managerial Wing will be pleased. 
+on-arrival: managerial_strength += 5; 
+
+The Managerial wing of the party supports top-down economic planning, primarily through a central governmental body whose primary goal would be to use crown corporations and state-incentives to raise the standard of living. 
 
 @agrarian
 subtitle: The Agrarians will be pleased.
@@ -47,14 +54,6 @@ on-departure: ideology = "agrarian"; agrarian_strength += 10; agrarian_dissent -
 
 The Agrarian wing of the party seeks to work with the farmers' movement to improve the lives of small farmers. 
 
-
-@managerial
-subtitle: The Managerial Wing will be pleased. 
-on-arrival: managerial_strength += 5; 
-
-The Managerial wing of the party supports top-down economic planning, primarily through a central governmental body whose primary goal would be to use crown corporations and state-incentives to raise the standard of living. 
-
-
 @labour
 subtitle: The Labour Wing will be pleased. 
 on-arrival: {!
@@ -65,7 +64,7 @@ if (Q.ideology && Q.ideology != "labour") {
 go-to: changed if changed = 1
 on-departure: ideology = "labour"; wtb_support += 1; labour_dissent -= 5; cpc_s_relation -= 3
 
-The labour wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+The labour wing of the party supports continued participation in government in order to provide labour legislation to the workers, and the creation of public works programs for employment.
 
 @reform
 subtitle: The Moderates will be pleased. 
@@ -77,7 +76,7 @@ if (Q.ideology && Q.ideology != "moderate") {
 go-to: changed if changed = 1
 on-departure: ideology = "moderate"; managerial_strength += 10; democratization += 1; managerial_dissent -= 5; pps_relation += 5; cps_relation += 5; cpc_s_relation -= 8; managerial_plan_support += 1
 
-The Moderate wing is most in favour of cooperation with reformist parties to root out the worst of capitalism. Perhaps we could use this to our advantage?
+The Moderate wing is most in favour of cooperation with reformist parties to advance gradual systemic transformation. Perhaps we could use this to our advantage?
 
 @changed
 on-arrival: left_hardliner_dissent += 5; agrarian_dissent += 5; labour_dissent += 5; managerial_dissent += 5

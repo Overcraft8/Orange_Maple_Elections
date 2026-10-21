@@ -898,97 +898,50 @@ table {
 }
 
 
-/* status tooltip (For individual/select words or phrases */
 .tooltip {
   position: relative;
   cursor: help;
 }
 
-span.tooltip { 
-  display: inline; 
-}
-div.tooltip { 
-  display: block; 
-}
-
 .tooltip-text {
   position: absolute;
-  bottom: 100%; 
+  bottom: 100%;
   left: 50%;
-  margin-bottom: 8px; 
-  
-  margin-left: var(--tt-shift, 0px);
-  
-  transform: translateX(-50%) translateY(5px); 
+  margin-bottom: 8px;
 
-  text-indent: 0;
-  font-family: Franklin Gothic Medium, Arial;
-  color: #3b1f0a;
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.2em;
-  font-weight: 500;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.12s ease-out, transform 0.12s ease-out;
+  transform: translateX(-50%) translateY(4px);
 
   width: max-content;
-  max-width: 180px; 
+  max-width: 200px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+
+  background-color: #f4ead4;
+  border: 1px solid #80613a;
+  border-radius: 0;
+
+  color: #352719;
+  font-family: "Minion Pro", Georgia, "Times New Roman", serif;
+  font-size: 0.7em;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align: center;
+  text-indent: 0;
   white-space: normal;
-  
-  background-color: #fff4e6;
-  border: 1px solid #b27b22d9;
-  border-radius: 5px;
-  padding: 8px 11px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+
+  /* Hover animation */
+  opacity: 0;
+  pointer-events: none;
   z-index: 9999;
+
+  transition:
+    opacity 0.14s ease-out,
+    transform 0.14s ease-out;
 }
 
 .tooltip:hover .tooltip-text {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
 }
-
-
- /* Tooltip box */
- .mytooltip .mytooltiptext {
-   position: absolute;
-   z-index: 999999;
-   width: 120px;
-   background: #fff4e6;
-   color: #3b1f0a;
-   border-radius: 8px;
-   padding: 12px 14px;
-   border: 1px solid #b27b22d9;
-   font-size: 12px;
-   line-height: 1.3em;
-   font-weight: 500;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-   text-indent: 0%;
-   text-align: center;
- 
-   /* Final state */
-   left: 50%;
-   transform: translate(-50%, -100%);
- 
-   /* Starting state */
-   opacity: 0;
-   transform-origin: bottom center;
-   transform: translate(-50%, -80%);
- 
-   /* Animation */
-   transition: opacity 0.15s ease-out, transform 0.15s ease-out;
- 
-   pointer-events: none;
- }
- 
- /* Hover state */
- .mytooltip:hover .mytooltiptext,
- .mytooltip .mytooltiptext:hover {
-   opacity: 1;
-   transform: translate(-50%, -100%);
- }
  
  .bar {
      position: relative;

@@ -471,7 +471,7 @@ window.updateBar = function(regionKey) {
 };
 
 // ==========================================
-// Unified Tab Changing
+// Tab Changing
 // ==========================================
 window.ChangeTab = function(regionKey, newTab, tabId) {
     if (regionKey === 'left' && tabId === 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {

@@ -7,13 +7,17 @@ priority: 1
 max-visits: 1
 face-image: img/Tory/cps_platform.png
 
+- @diefenbaker_platform: The CPS adopts a Red Tory Platform
+- @macpherson_platform: The Return of Traditional Conservatism
+- @bryant_platform: Anderson's 
+
 @diefenbaker_platform
 view-if: cps_leader = 'Diefenbaker'
 
 
 = Red Toryism
 
-As expected John Diefenbaker is pursuing a reform-oriented campaign, emphasizing the ability of government to raise the standard of living for Saskatchewan residents and resist the societal effects of the Great Depression, in line with Red Toryism. 
+As expected John Diefenbaker is pushing the Conservative Party leftwards, emphasizing the ability of government to raise the standard of living for Saskatchewan residents and resist the societal effects of the Great Depression, in line with Red Toryism. 
 
 The Tories are now campaigning on debtor protection, prevention of mortgage foreclosure, the promotion of co-operatives, crop insurance, and stricter enforcement of the Minimum Wage Act. Perhaps most surprisingly, Diefenbaker's Red Tories have included a provision advocating state medicine, hospitalization, and health insurance pending a government investigation into the matter. For all intents and purposes, it seems the Red Tory wing of the CPS is moving the party in the programmatic direction of the Progressives!
 
@@ -26,7 +30,7 @@ view-if: cps_leader = 'MacPherson'
 
 For MacPherson, a return to good government and public confidence in government requires the restoration of sound public finance. The province has earned the most debt of all the Canadian provinces as it's dominant agricultural sector has been decimated by successive years of crop failure and low prices. 
 
-MacPherson emphasizes the 
+MacPherson is moving the party in a traditional fiscal conservatist direction, emphasizing the need for balanced budgets in order to attract capital and ease the burdens of the depression. 
 
 
 

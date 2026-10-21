@@ -588,9 +588,8 @@ a.card:hover {
    z-index: 999;
   filter: brightness(105%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  transform: translate(-6px,-6px) rotate(-2deg);
+  transform: translate(-6px,-6px);
 }
-
 div.blank-card {
   display: inline-block;
   width: 110px;

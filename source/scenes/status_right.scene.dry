@@ -24,3 +24,7 @@ if (document.getElementById('news_title') == null) {
 </div>
 
 [+ news_display +]
+
+@government_actions
+
+= Government Actions

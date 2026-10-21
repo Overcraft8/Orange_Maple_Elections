@@ -261,13 +261,11 @@ Q.treasury = 10;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
-Q.workers = 19; // industry and trade
+Q.workers = 24; // industry and trade
 Q.old_middle = 5; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
 Q.new_middle = 13; // "new mittelstand"
-Q.farmers = 40; // agriculture and forestry employment... but many of those are proletarians so...
-Q.farmhands = 20;
-Q.rural_workers = 3;
+Q.farmers = 58; // agriculture and forestry employment... but many of those are proletarians so...
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
 Q.unemployed = 15;
 Q.catholics = 1;
@@ -733,18 +731,16 @@ Q.rcmp_suspicion = 50;
 //                                           CLASS DATA
 
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'farmers', 'farmhands', 'rural_workers', 'unemployed', 'catholics'];
+Q.classes = ['workers', 'old_middle', 'new_middle', 'farmers', 'unemployed', 'catholics'];
 
 // With arrangement [Q.class_variable, Class Display Name, Class colour]
 Q.class_info = [['workers', 'Workers', '#2844d2'], ['old_middle', 'Old Middle', '#d7be1c'], ['new_middle', 'New Middle', '#22c3c0'], 
-['farmers', 'Farmers', '#b2c520'], ['farmhands', 'Farmhands', '#3a9c1c'], ['rural_workers', 'Workers', '#2844d2'], ['unemployed', 'Unemployed', '#595959']];
+['farmers', 'Farmers', '#b2c520'], ['unemployed', 'Unemployed', '#595959']];
 
 
 Q.class_incomes = {
     'unemployed' : 0,
     'workers' : 0.2, 
-    'farmhands' : 0.1, 
-    'rural_workers' : 0.3, 
     'farmers' : 0.2, 
     'new_middle' : 0.5, 
     'old_middle' : 1
@@ -794,14 +790,14 @@ Q.region_names = {
 /* 
 
 Q.districts = {
-    "regina": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "saskatoon": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "moose_jaw": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "prince_albert": { "seats": 0, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "farmhands": 0, "rural_workers": 0 },
-    "southwest": { "seats": 11, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "farmhands": 25, "rural_workers": 20 },
-    "southeast": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "farmhands": 25, "rural_workers": 10 },
-    "north": { "seats": 4, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "farmhands": 20, "rural_workers": 40 },
-    "central": { "seats": 21, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "farmhands": 15, "rural_workers": 15 }
+    "regina": { "seats": 2, "workers": 30, "old_middle": 20, "new_middle": 20, "unemployed": 30, "farmers": 0, "rural_workers": 0 },
+    "saskatoon": { "seats": 2, "workers": 25, "old_middle": 20, "new_middle": 25, "unemployed": 30, "farmers": 0, "rural_workers": 0 },
+    "moose_jaw": { "seats": 2, "workers": 40, "old_middle": 20, "new_middle": 10, "unemployed": 30, "farmers": 0, "rural_workers": 0 },
+    "prince_albert": { "seats": 0, "workers": 35, "old_middle": 15, "new_middle": 20, "unemployed": 30, "farmers": 0, "rural_workers": 0 },
+    "southwest": { "seats": 11, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 40, "rural_workers": 20 },
+    "southeast": { "seats": 13, "workers": 5, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 40, "rural_workers": 10 },
+    "north": { "seats": 4, "workers": 20, "old_middle": 0, "new_middle": 0, "unemployed": 0, "farmers": 20, "rural_workers": 40 },
+    "central": { "seats": 21, "workers": 15, "old_middle": 0, "new_middle": 0, "unemployed": 20, "farmers": 35, "rural_workers": 15 }
 };
 
 */ 
@@ -819,8 +815,6 @@ Q.districts = {
             new_middle: 20,
             unemployed: 30,
             farmers: 0,
-            farmhands: 0,
-            rural_workers: 0
         },
 
         constituencies: {
@@ -858,8 +852,6 @@ Q.districts = {
             new_middle: 25,
             unemployed: 30,
             farmers: 0,
-            farmhands: 0,
-            rural_workers: 0
         },
 
         constituencies: {
@@ -897,8 +889,6 @@ Q.districts = {
             new_middle: 10,
             unemployed: 30,
             farmers: 0,
-            farmhands: 0,
-            rural_workers: 0
         },
 
         constituencies: {
@@ -936,8 +926,6 @@ Q.districts = {
             new_middle: 20,
             unemployed: 30,
             farmers: 0,
-            farmhands: 0,
-            rural_workers: 0
         },
 
         constituencies: {}
@@ -950,13 +938,11 @@ Q.districts = {
         seats: 11,
 
         demographics: {
-            workers: 15,
-            old_middle: 0,
-            new_middle: 0,
-            unemployed: 0,
-            farmers: 40,
-            farmhands: 25,
-            rural_workers: 20
+            workers: 13,
+            old_middle: 7,
+            new_middle: 8,
+            unemployed: 2,
+            farmers: 55,
         },
 
         constituencies: {
@@ -990,13 +976,11 @@ Q.districts = {
         seats: 13,
 
         demographics: {
-            workers: 5,
-            old_middle: 0,
-            new_middle: 0,
+            workers: 10,
+            old_middle: 3,
+            new_middle: 2,
             unemployed: 20,
-            farmers: 40,
-            farmhands: 25,
-            rural_workers: 10
+            farmers: 55,
         },
 
         constituencies: {
@@ -1004,7 +988,6 @@ Q.districts = {
                 seats: 5,
                 adjustments: {
                     workers: 4,
-                    rural_workers: -4
                 }
             },
 
@@ -1012,7 +995,6 @@ Q.districts = {
                 seats: 4,
                 adjustments: {
                     workers: -5,
-                    rural_workers: 5
                 }
             },
 
@@ -1030,13 +1012,11 @@ Q.districts = {
         seats: 4,
 
         demographics: {
-            workers: 20,
-            old_middle: 0,
-            new_middle: 0,
-            unemployed: 0,
-            farmers: 20,
-            farmhands: 20,
-            rural_workers: 40
+            workers: 30,
+            old_middle: 7,
+            new_middle: 15,
+            unemployed: 18,
+            farmers: 30,
         },
 
         constituencies: {
@@ -1044,7 +1024,6 @@ Q.districts = {
                 seats: 2,
                 adjustments: {
                     workers: 8,
-                    rural_workers: -8
                 }
             },
 
@@ -1052,7 +1031,6 @@ Q.districts = {
                 seats: 2,
                 adjustments: {
                     workers: -8,
-                    rural_workers: 8
                 }
             }
         }
@@ -1066,12 +1044,10 @@ Q.districts = {
 
         demographics: {
             workers: 15,
-            old_middle: 0,
-            new_middle: 0,
+            old_middle: 7,
+            new_middle: 8,
             unemployed: 20,
-            farmers: 35,
-            farmhands: 15,
-            rural_workers: 15
+            farmers: 50,
         },
 
         constituencies: {
@@ -1081,8 +1057,6 @@ Q.districts = {
                     workers: 5,
                     unemployed: 3,
                     farmers: -5,
-                    farmhands: -1,
-                    rural_workers: -2
                 }
             },
 
@@ -1092,8 +1066,6 @@ Q.districts = {
                     workers: -5,
                     unemployed: -3,
                     farmers: 5,
-                    farmhands: 1,
-                    rural_workers: 2
                 }
             },
 
@@ -1115,9 +1087,7 @@ Q.districts = {
             old_middle: 0,
             new_middle: 0,
             unemployed: 20,
-            farmers: 35,
-            farmhands: 15,
-            rural_workers: 15
+            farmers: 65,
         },
 
         constituencies: {
@@ -1127,8 +1097,6 @@ Q.districts = {
                     workers: 5,
                     unemployed: 3,
                     farmers: -5,
-                    farmhands: -1,
-                    rural_workers: -2
                 }
             },
 
@@ -1138,8 +1106,6 @@ Q.districts = {
                     workers: -5,
                     unemployed: -3,
                     farmers: 5,
-                    farmhands: 1,
-                    rural_workers: 2
                 }
             },
 
@@ -1149,8 +1115,6 @@ Q.districts = {
                     workers: -8,
                     unemployed: -3,
                     farmers: 13,
-                    farmhands: -5,
-                    rural_workers: 2
                 }
             },
 
@@ -1514,22 +1478,6 @@ Q.farmers_lps= 44;
 Q.farmers_cps = 37;
 Q.farmers_scps = 0;
 Q.farmers_other = 3;
-
-Q.farmhands_ccf = 4;
-Q.farmhands_cpc_s = 3;
-Q.farmhands_lps = 39;
-Q.farmhands_pps = 5;
-Q.farmhands_cps = 34;
-Q.farmhands_scps = 0;
-Q.farmhands_other = 5;
-
-Q.rural_workers_ccf = 8;
-Q.rural_workers_cpc_s = 10;
-Q.rural_workers_lps = 42;
-Q.rural_workers_pps = 7;
-Q.rural_workers_cps = 28;
-Q.rural_workers_scps = 0;
-Q.rural_workers_other = 5;
 
 Q.unemployed_ccf = 6;
 Q.unemployed_cpc_s = 5;
